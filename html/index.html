@@ -24,6 +24,7 @@
       wizard.on("onAcceptEvent", function () {
         if (wizard._data.termsAndConditions) wizard.nextPage();
       });
+
       wizard.on("onBackEvent", function () {
         wizard.prevPage();
       });
