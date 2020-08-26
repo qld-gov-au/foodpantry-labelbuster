@@ -130,25 +130,16 @@
         "role": "authenticated"
       },
       "priority": 1,
-      "method": [
-        "create"
-      ],
-      "handler": [
-        "after"
-      ]
+      "method": ["create"],
+      "handler": ["after"]
     },
     "user:save": {
       "title": "Save Submission",
       "name": "save",
       "form": "user",
       "priority": 10,
-      "method": [
-        "create",
-        "update"
-      ],
-      "handler": [
-        "before"
-      ]
+      "method": ["create", "update"],
+      "handler": ["before"]
     },
     "admin:role": {
       "title": "Role Assignment",
@@ -160,38 +151,24 @@
         "role": "administrator"
       },
       "priority": 1,
-      "method": [
-        "create"
-      ],
-      "handler": [
-        "after"
-      ]
+      "method": ["create"],
+      "handler": ["after"]
     },
     "admin:save": {
       "title": "Save Submission",
       "name": "save",
       "form": "admin",
       "priority": 10,
-      "method": [
-        "create",
-        "update"
-      ],
-      "handler": [
-        "before"
-      ]
+      "method": ["create", "update"],
+      "handler": ["before"]
     },
     "formWizard:save": {
       "title": "Save Submission",
       "name": "save",
       "form": "formWizard",
       "priority": 10,
-      "method": [
-        "create",
-        "update"
-      ],
-      "handler": [
-        "before"
-      ]
+      "method": ["create", "update"],
+      "handler": ["before"]
     }
   },
   "resources": {
