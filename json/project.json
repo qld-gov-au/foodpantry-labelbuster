@@ -1,0 +1,279 @@
+{
+  "title": "Form Wizard",
+  "version": "2.0.0",
+  "description": "A form wizard.",
+  "name": "fesrqwsyzlbtegd",
+  "roles": {
+    "administrator": {
+      "title": "Administrator",
+      "description": "A role for Administrative Users.",
+      "admin": true,
+      "default": false
+    },
+    "authenticated": {
+      "title": "Authenticated",
+      "description": "A role for Authenticated Users.",
+      "admin": false,
+      "default": false
+    },
+    "anonymous": {
+      "title": "Anonymous",
+      "description": "A role for Anonymous Users.",
+      "admin": false,
+      "default": true
+    }
+  },
+  "forms": {
+    "formWizard": {
+      "title": "Form Wizard",
+      "type": "form",
+      "name": "formWizard",
+      "path": "formwizard",
+      "display": "wizard",
+      "tags": [],
+      "settings": {},
+      "components": [
+        {
+          "title": "Page 1",
+          "label": "Page 1",
+          "type": "panel",
+          "key": "page1",
+          "input": false,
+          "tableView": false,
+          "components": [
+            {
+              "label": "HTML",
+              "tag": "div",
+              "attrs": [
+                {
+                  "attr": "",
+                  "value": ""
+                }
+              ],
+              "content": "<style>\n  .fa {\n    margin-right: 5px;\n    font-size: 1.5625rem;\n  }\n\n  .alert-instructions {\n    background-color: #f5f5f5;\n    border-left: 5px solid #808080;\n  }\n\n  .special {\n    color: #f85c50;\n  }\n\n  .qg-grab {\n    margin-bottom: 1rem;\n  }\n\n  .flex-row {\n    display: flex;\n    flex-direction: row;\n  }\n</style>\n\n<figure>\n  <img src=\"https://via.placeholder.com/400x300.png/ccc/ccc\" alt=\"\" />\n</figure>\n\n<p>\n  Label Buster is a step-by-step guide to help you identify information you need\n  to create a food label that meets Australian requirements. At the end, you\n  will have generated a product sheet you can give to a printer to design a\n  label for you and an example of what your food label should look like.\n</p>\n\n<p>\n  The\n  <a href=\"\">\n    <span class=\"title\">Australia New Zealand Food Standards Code</span>\n  </a>\n  (the Food Standards Code) sets the standards for food labelling in Australia.\n  Significant penalties apply in Queensland under the Food Act 2006 (the Act),\n  for non-compliance with the Food Standards Code.\n</p>\n\n<div class=\"qg-grab\">\n  <h3><i class=\"fa fa-lightbulb-o\"></i>Did you know</h3>\n  <p>\n    Labels must have the same information whether you sell your product once at\n    a market stall or regularly to a supermarket.\n  </p>\n</div>\n\n<h2>\n  Who can use Label Buster?\n</h2>\n<p>\n  Label Buster is designed for small to medium food businesses. If your food has\n  complex labelling requirements, such as infant formula, sports supplements or\n  alcohol, the tool does not provide all the information you need, and you are\n  recommended to seek professional legal advice from a food labelling\n  consultant.\n</p>\n\n<div class=\"alert alert-instructions\" role=\"alert\">\n  <h3>Before you start</h3>\n  <p>\n    To use Label Buster, you will need:\n  </p>\n  <div class=\"flex-row\">\n    <i class=\"fa fa-clock-o\"></i>\n    <div>\n      <p>\n        Up to 1 hour - if you are familiar with food labelling requirements.\n      </p>\n      <p>Up to 2 hours - if you have never made a food label before.</p>\n    </div>\n  </div>\n  <p>\n    <i class=\"fa fa-list-ul\"></i>You will be asked questions about your food,\n    such as:\n  </p>\n  <ul>\n    <li>ingredients</li>\n    <li>use-by or best-before dates</li>\n    <li>any storage conditions or directions for use</li>\n  </ul>\n  <p>\n    The questions marked with a <span class=\"special\">*</span> must be\n    completed. Other questions are optional.\n  </p>\n</div>\n\n<div class=\"qg-grab\">\n  <h3><i class=\"fa fa-lightbulb-o\"></i>Did you know</h3>\n  <p>\n    Label Buster will provide you with food labelling information to help you to\n    comply with the Food Standards Code. After you finish Label Buster, you will\n    need to include other mandatory requirements for a\n    <a\n      href=\"https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx\"\n      target=\"_blank\"\n      rel=\"noopener\"\n    >\n      Nutrition Information Panel </a\n    >,\n    <a\n      href=\"https://www.industry.gov.au/regulations-and-standards/buying-and-selling-goods-and-services-by-weights-and-other-measures\"\n      target=\"_blank\"\n      rel=\"noopener\"\n    >\n      weights and measures </a\n    >, and\n    <a\n      href=\"https://www.accc.gov.au/consumers/groceries/country-of-origin\"\n      target=\"_blank\"\n      rel=\"noopener\"\n    >\n      Country of origin\n    </a>\n    labelling.\n    <a\n      href=\"http://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/content/home\"\n      target=\"_blank\"\n      rel=\"noopener\"\n    >\n      Health Star Rating\n    </a>\n    is a voluntary scheme you can choose to add to your food.\n  </p>\n</div>\n\n<button class=\"qg-btn btn-primary\" type=\"button\">Start now</button>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html",
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "title": "Page 2",
+          "label": "Page 2",
+          "type": "panel",
+          "key": "page2",
+          "input": false,
+          "tableView": false,
+          "components": [
+            {
+              "label": "HTML",
+              "attrs": [
+                {
+                  "attr": "",
+                  "value": ""
+                }
+              ],
+              "content": "<h1>Terms of use</h1>\n\n<p>Please read and accept the terms of use before using Label Buster</p>\n\n<ul>\n<li> <a href = \"\">Terms and Conditions</a> </li>\n<li> <a href = \"\">Privacy statement</a> </li>\n<li> <a href = \"\">Disclaimer</a> </li>\n<li> <a href = \"\">Copyright</a> </li>\n</ul>\n\n<div class=\"alert alert-warning\" role=\"alert\">\n  <h2><i class=\"fa fa-exclamation-triangle\"></i>Warning</h2>\n<p>\nThis tool does not meet all your legislative requirements, only those relating to the Food Standards Code. You will need to include other requirements on your food label, such as country of origin labelling. <br>\n<br>It is your responsibility to ensure all the information on you food label is true and correct.\n\n</p>\n</div>\nQueensland Health respects your right to privacy in using Label Buster. Any information you give will be handled by Queensland Health in accordance with the <i>Information Privacy Act 2009.</i> <br>\n<br>No personal information is stored when you use Label Buster. For information about how Queensland Health protects your personal information, or to learn about your right to access your personal information, please see out website at <a href= \"www.health.qld.gov.au\">www.health.qld.gov.au</a><br>\n<br>Please note that our terms of use may change over time.<br>\n<br>Label Buster is current as of June 2020 and shows information up to and including amendment number 192 of the Food Standards Code. It is recommended that you refer to the most current version of the Food Standards Code for full details and note any changes.<br>\n<br>Your use of this website is your agreement to our terms and conditions.",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html",
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "I have read and accept the terms of use for Label Buster",
+              "tableView": false,
+              "key": "iHaveReadAndAcceptTheTermsOfUseForLabelBuster",
+              "type": "checkbox",
+              "input": true,
+              "defaultValue": false
+            },
+            {
+              "label": "Accept",
+              "action": "event",
+              "showValidations": false,
+              "autofocus": true,
+              "tableView": false,
+              "key": "accept",
+              "type": "button",
+              "input": true,
+              "event": "onAcceptEvent"
+            },
+            {
+              "label": "Back",
+              "action": "event",
+              "showValidations": false,
+              "theme": "secondary",
+              "tableView": false,
+              "key": "back",
+              "type": "button",
+              "input": true,
+              "event": "onBackEvent"
+            }
+          ]
+        }
+      ],
+      "properties": {},
+      "controller": ""
+    }
+  },
+  "actions": {
+    "user:role": {
+      "title": "Role Assignment",
+      "name": "role",
+      "form": "user",
+      "settings": {
+        "association": "new",
+        "type": "add",
+        "role": "authenticated"
+      },
+      "priority": 1,
+      "method": ["create"],
+      "handler": ["after"]
+    },
+    "user:save": {
+      "title": "Save Submission",
+      "name": "save",
+      "form": "user",
+      "priority": 10,
+      "method": ["create", "update"],
+      "handler": ["before"]
+    },
+    "admin:role": {
+      "title": "Role Assignment",
+      "name": "role",
+      "form": "admin",
+      "settings": {
+        "association": "new",
+        "type": "add",
+        "role": "administrator"
+      },
+      "priority": 1,
+      "method": ["create"],
+      "handler": ["after"]
+    },
+    "admin:save": {
+      "title": "Save Submission",
+      "name": "save",
+      "form": "admin",
+      "priority": 10,
+      "method": ["create", "update"],
+      "handler": ["before"]
+    },
+    "formWizard:save": {
+      "title": "Save Submission",
+      "name": "save",
+      "form": "formWizard",
+      "priority": 10,
+      "method": ["create", "update"],
+      "handler": ["before"]
+    }
+  },
+  "resources": {
+    "user": {
+      "title": "User",
+      "type": "resource",
+      "name": "user",
+      "path": "user",
+      "tags": [],
+      "components": [
+        {
+          "type": "email",
+          "persistent": true,
+          "unique": false,
+          "protected": false,
+          "defaultValue": "",
+          "suffix": "",
+          "prefix": "",
+          "placeholder": "Enter your email address",
+          "key": "email",
+          "label": "Email",
+          "inputType": "email",
+          "tableView": true,
+          "input": true
+        },
+        {
+          "type": "password",
+          "persistent": true,
+          "protected": true,
+          "suffix": "",
+          "prefix": "",
+          "placeholder": "Enter your password.",
+          "key": "password",
+          "label": "Password",
+          "inputType": "password",
+          "tableView": false,
+          "input": true
+        },
+        {
+          "type": "button",
+          "theme": "primary",
+          "disableOnInvalid": true,
+          "action": "submit",
+          "block": false,
+          "rightIcon": "",
+          "leftIcon": "",
+          "size": "md",
+          "key": "submit",
+          "tableView": false,
+          "label": "Submit",
+          "input": true
+        }
+      ]
+    },
+    "admin": {
+      "title": "Admin",
+      "type": "resource",
+      "name": "admin",
+      "path": "admin",
+      "tags": [],
+      "components": [
+        {
+          "type": "email",
+          "persistent": true,
+          "unique": false,
+          "protected": false,
+          "defaultValue": "",
+          "suffix": "",
+          "prefix": "",
+          "placeholder": "Enter your email address",
+          "key": "email",
+          "label": "Email",
+          "inputType": "email",
+          "tableView": true,
+          "input": true
+        },
+        {
+          "type": "password",
+          "persistent": true,
+          "protected": true,
+          "suffix": "",
+          "prefix": "",
+          "placeholder": "Enter your password.",
+          "key": "password",
+          "label": "Password",
+          "inputType": "password",
+          "tableView": false,
+          "input": true
+        },
+        {
+          "type": "button",
+          "theme": "primary",
+          "disableOnInvalid": true,
+          "action": "submit",
+          "block": false,
+          "rightIcon": "",
+          "leftIcon": "",
+          "size": "md",
+          "key": "submit",
+          "tableView": false,
+          "label": "Submit",
+          "input": true
+        }
+      ]
+    }
+  },
+  "excludeAccess": true
+}
