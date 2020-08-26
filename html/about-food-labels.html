@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+  .fa {
+    margin-right: 5px;
+    font-size: 1.5625rem;
+  }
+
+  .alert-instructions {
+    background-color: #f5f5f5;
+    border-left: 5px solid #808080;
+  }
+
+  .special {
+    color: #f85c50;
+  }
+
+  .qg-grab {
+    margin-bottom: 1rem;
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .accordion .acc-number {
+    width: 25px;
+    height: 25px;
+    background-color: #5b5b5b;
+  }
+</style>
+
+<figure>
+  <img src="https://via.placeholder.com/600x400.png/ccc/ccc" alt="" />
+</figure>
+
+<p>
+  <section class="qg-accordion" aria-label="Accordion Label">
+    <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
+    <label for="collapse" class="controls">Collapse all</label>
+    <span class="controls">|</span>
+    <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
+    <label for="expand" class="controls">Expand all</label>
+
+    <article>
+      <input
+        id="without-icon"
+        type="checkbox"
+        name="tabs"
+        tabindex="-1"
+        aria-controls="id-panel-content-1"
+        aria-expanded="false"
+        role="checkbox">
+      <h3 class="acc-heading"><label for="without-icon"><span class="title">Without icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
+        <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+            <p><span class="acc-number">1</span> Food name and description</p>
+            <ul>
+                <li>If dot points are available</li>
+                <li>Can go here</li>
+            </ul>
+            <p>Or provide any semantic html structure</p>
+        </div>
+    </article>
+ </section>
+</p>
+
+
+</body>
+</html>

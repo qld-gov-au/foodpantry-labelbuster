@@ -19,3 +19,7 @@
 /_site/
 /dist/
 /out-tsc/
+
+# Node/Yarn locks for now
+yarn.lock
+package-lock.json

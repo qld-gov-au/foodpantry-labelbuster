@@ -1,0 +1,52 @@
+{
+  "name": "label-buster",
+  "version": "0.0.0",
+  "description": "Label buster dev setup",
+  "author": "Smart Service Queensland",
+  "contributors": [
+    {
+      "name": "Nishtha Gakkhar"
+    },
+    {
+      "name": "Jordan Binskin"
+    },
+    {
+      "name": "Daniel Turner"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielTurner/label-buster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DanielTurner/label-buster/issues"
+  },
+  "scripts": {
+    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
+    "lint": "npm run lint:eslint",
+    "format": "npm run format:eslint"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-html": "^6.0.3",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-json": "^2.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.2",
+    "rollup": "^2.6.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {}
+}
