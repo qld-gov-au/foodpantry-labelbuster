@@ -1,72 +1,593 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    
+    <style>@keyframes beginBrowserAutofill{0%{}to{}}@keyframes endBrowserAutofill{0%{}to{}}.pac-container{background-color:#fff;position:absolute!important;z-index:1000;border-radius:2px;border-top:1px solid #d9d9d9;font-family:Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,0.3);-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.pac-logo:after{content:"";padding:1px 1px 1px 0;height:18px;box-sizing:border-box;text-align:right;display:block;background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3.png);background-position:right;background-repeat:no-repeat;background-size:120px 14px}.hdpi.pac-logo:after{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3_hdpi.png)}.pac-item{cursor:default;padding:0 4px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:30px;text-align:left;border-top:1px solid #e6e6e6;font-size:11px;color:#999}.pac-item:hover{background-color:#fafafa}.pac-item-selected,.pac-item-selected:hover{background-color:#ebf2fe}.pac-matched{font-weight:700}.pac-item-query{font-size:13px;padding-right:3px;color:#000}.pac-icon{width:15px;height:20px;margin-right:7px;margin-top:6px;display:inline-block;vertical-align:top;background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);background-size:34px}.hdpi .pac-icon{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png)}.pac-icon-search{background-position:-1px -1px}.pac-item-selected .pac-icon-search{background-position:-18px -1px}.pac-icon-marker{background-position:-1px -161px}.pac-item-selected .pac-icon-marker{background-position:-18px -161px}.pac-placeholder{color:gray}.pac-target-input:-webkit-autofill{animation-name:beginBrowserAutofill}.pac-target-input:not(:-webkit-autofill){animation-name:endBrowserAutofill}
+</style>
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+    <title>Components | Web Template | Queensland Government</title>
+  
+    <meta name="description" content="DESCRIPTION">
+    <meta name="keywords" content="KEYWORDS">
+  
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+    <link rel="schema.AGLSTERMS" href="http://www.agls.gov.au/agls/terms/">
+  
+    <meta name="DCTERMS.creator" scheme="AGLSTERMS.GOLD" content="c=AU; o=The State of Queensland; ou=DEPARTMENT NAME; ou=UNIT NAME">
+    <meta name="DCTERMS.publisher" scheme="AGLSTERMS.AglsAgent" content="corporateName=The State of Queensland; jurisdiction=Queensland">
+    <meta name="DCTERMS.created" content="2010-11-04">
+    <meta name="DCTERMS.modified" content="2011-03-05">
+    <meta name="DCTERMS.title" content="Add your heading">
+    <meta name="DCTERMS.alternative" content="Add your heading">
+    <meta name="DCTERMS.description" content="">
+    <meta name="DCTERMS.subject" scheme="AGLSTERMS.APAIS" content="SUBJECT">
+    <meta name="AGLSTERMS.function" scheme="AGLSTERMS.AGIFT" content="FUNCTION">
+    <meta name="DCTERMS.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="AGLSTERMS.documentType" scheme="AGLSTERMS.agls-document" content="guidelines">
+    <meta name="DCTERMS.audience" scheme="AGLSTERMS.agls-audience" content="">
+    <meta name="DCTERMS.jurisdiction" scheme="AGLSTERMS.AglsJuri" content="Queensland">
+  
+    <!-- Open graph -->
+    <meta property="og:title" content="Queensland Government">
+    <meta property="og:description" content="DESCRIPTION">
+    <meta property="og:image" content="https://static.qgov.net.au/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png">
+    <meta property="og:url" content="https://qld-gov-au.github.io/web-template-release/components.html">
+    <meta property="og:type" content="article">
+  
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Queensland Government">
+    <meta name="twitter:description" content="DESCRIPTION">
+    <meta name="twitter:image" content="https://static.qgov.net.au/assets/v4/latest/images/coat-of-arms/coa-thumbnail.png">
+  
+    <meta name="DCTERMS.license" scheme="DCTERMS.URI" content="https://creativecommons.org/licenses/by/4.0/">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="shortcut icon" href="https://static.qgov.net.au/assets/v4/latest/images/favicon.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+  
+  <link href="https://static.qgov.net.au/assets/v4/latest/css/qg-main.css" rel="stylesheet" type="text/css" media="all">
+  
+  <noscript>
+    <link href="https://static.qgov.net.au/assets/v4/latest/css/qg-noscript.css" rel="stylesheet" type="text/css" media="all">
+  </noscript>
+  
+  <script src="https://connect.facebook.net/en_GB/sdk.js?hash=4fd02170b3037868cee9f0669f0e6248&amp;ua=modern_es6" async="" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script id="facebook-wjs" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&amp;version=v2.8"></script><script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-PMDS7K"></script><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+  
+  <style type="text/css">.grecaptcha-badge { visibility: hidden; }</style><script type="text/javascript" id="googleapi" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE95_qL90MT9loY1roLnHJ3uaBYbleYeM&amp;region=AU&amp;libraries=places"></script><link rel="stylesheet" href="https://static.qgov.net.au/assets/v4/latest/lib/ext/fancybox/jquery.fancybox.min.css" type="text/css" media="screen"><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/42/1/intl/en_gb/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/42/1/intl/en_gb/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/42/1/intl/en_gb/controls.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/42/1/intl/en_gb/places_impl.js"></script><script charset="utf-8" src="https://platform.twitter.com/js/moment~timeline~tweet.006e6e150e3a965b21e4fc914a590d30.js"></script><script charset="utf-8" src="https://platform.twitter.com/js/timeline.5ca108765b2ea8f4f7bf6784a62617a7.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+  .fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+  .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/42/1/intl/en_gb/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/42/1/intl/en_gb/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/42/1/intl/en_gb/stats.js"></script></head>
 <body>
 
-<style>
-  .fa {
-    margin-right: 5px;
-    font-size: 1.5625rem;
-  }
+  <style>
+    .fa {
+      margin-right: 5px;
+      font-size: 1.5625rem;
+    }
 
-  .alert-instructions {
-    background-color: #f5f5f5;
-    border-left: 5px solid #808080;
-  }
+    .alert-instructions {
+      background-color: #f5f5f5;
+      border-left: 5px solid #808080;
+    }
 
-  .special {
-    color: #f85c50;
-  }
+    .special {
+      color: #f85c50;
+    }
 
-  .qg-grab {
-    margin-bottom: 1rem;
-  }
+    .qg-grab {
+      margin-bottom: 1rem;
+    }
 
-  .flex-row {
-    display: flex;
-    flex-direction: row;
-  }
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+    
+    .title > .acc-number {
+      width: 1.56265rem;
+      height: 1.56265rem;
+      border-radius: 100%;
+      line-height: 1.56265rem;
+      background-color: #5b5b5b;
+      display: inline-block;
+      color: #FFFFFF;
+      text-align: center;
+    }
+  </style>
 
-  .accordion .acc-number {
-    width: 25px;
-    height: 25px;
-    background-color: #5b5b5b;
-  }
-</style>
+  <figure>
+    <img src="https://via.placeholder.com/600x400.png/ccc/ccc" alt="" />
+  </figure>
 
-<figure>
-  <img src="https://via.placeholder.com/600x400.png/ccc/ccc" alt="" />
-</figure>
-
-<p>
-  <section class="qg-accordion" aria-label="Accordion Label">
-    <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
-    <label for="collapse" class="controls">Collapse all</label>
-    <span class="controls">|</span>
-    <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
-    <label for="expand" class="controls">Expand all</label>
-
-    <article>
+  <p>
+    <section class="qg-accordion" aria-label="Accordion Label">
       <input
-        id="without-icon"
-        type="checkbox"
-        name="tabs"
-        tabindex="-1"
-        aria-controls="id-panel-content-1"
-        aria-expanded="false"
-        role="checkbox">
-      <h3 class="acc-heading"><label for="without-icon"><span class="title">Without icon</span> <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
-        <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
-            <p><span class="acc-number">1</span> Food name and description</p>
-            <ul>
-                <li>If dot points are available</li>
-                <li>Can go here</li>
-            </ul>
-            <p>Or provide any semantic html structure</p>
+        type="radio"
+        name="control"
+        id="collapse"
+        class="controls collapse"
+        value="collapse"
+        role="radio">
+      
+      <label for="collapse" class="controls">Collapse all</label>
+      
+      <span class="controls">|</span>
+      
+      <input
+        type="radio"
+        name="control"
+        id="expand"
+        class="controls expand"
+        value="expand"
+        role="radio">
+      
+      <label for="expand" class="controls">Expand all</label>
+
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">1</span>
+              Food name and description
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            Food labels must show the name of the food to help identify the
+            food.
+          </p>
+
+          <p>
+            The name and description of the food must reflect its true nature.
+            For example, strawberry yoghurt must contain strawberries. If the
+            yoghurt contained strawberry flavouring rather than real fruit, then
+            the name would need to indicate that it is strawberry-flavoured
+            yoghurt.
+          </p>
+
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+
+          <p>
+            If the name of the food does not reflect its true nature, then you
+            must include a description of the true nature on the label. For
+            example, Luke's Hot's Sauce (red chilli pepper sauce).
+          </p>
         </div>
-    </article>
- </section>
-</p>
+      </article>
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">2</span>
+              Business details
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            To help customers identify where food has come from or to use for a
+            food recall when food is unsafe, a food label must include the
+            following business details: * name of the business supplying the
+            food
+            <ul>
+              <li>
+                business address in Australia or New Zealand, or a description
+                of the location, of the premises where the business is being
+                operated. A postal address cannot be used.
+              </li>
+            </ul>
+          </p>
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+        </div>
+      </article>
+
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">3</span>
+              Weights
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            The National Measurement Institute is responsible for making sure
+            food is measured and weighed correctly, and that the food is
+            labelled with the correct weight and unit.
+          </p>
+          
+          <p>
+            For example, food labelled as being 500g should weigh 500g and use
+            the metric system of grams (g), kilograms (kg), millilitres (mL),
+            litres (L), etc.
+          </p>
+
+          <p>
+            Visit the
+            <a
+              href="https://www.industry.gov.au/regulations-and-standards/buying-and-selling-goods-and-services-by-weights-and-other-measures"
+              target="_blank">
+              NMI website
+            </a>
+            for more information on how to comply with the laws around weights
+            and other measures.
+          </p>
+
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+
+        </div>
+      </article>
+
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">4</span>
+              Date marks
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            Food packaged with a shelf life of 2 years or less must show a date
+            mark.
+          </p>
+          
+          <p>
+            Foods that should be eaten before a certain date for health and
+            safety reasons must be labelled with a use-by date. Otherwise, a
+            best-before date is required if the food has a shelf life of less
+            than 2 years. Although it may be safe to eat the food after the
+            best-before date, the food may have lost quality or some nutritional
+            value.
+          </p>
+
+          <p>
+            Bread with a shelf-life of less than 7 days, can use a baked-for date or baked-on date instead of a best-before date.
+          </p>
+
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+
+        </div>
+      </article>
+
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">5</span>
+              Lot identification
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            The lot identification means a number or other information that
+            identifies where the food was made and the batch it is was part of.
+            Often the date mark, name and address of the manufacturer meets this
+            requirement.
+          </p>
+
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+        </div>
+      </article>
+
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">6</span>
+              Storage conditions and directions for use
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            <b>Storage conditions</b> 
+            <!-- Find out if this is meant to be a header, it should be -->
+            <br>
+            To keep food until its best-before or use-by date include storage conditions on your label.
+          </p>
+          <p>
+            <b>Directions for use</b>
+            <br>
+            A food label must have directions on how to use or prepare the food
+            if needed for health and safety reasons.
+          </p>
+
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+        </div>
+      </article>
+
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">7</span>
+              Ingredients
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            A food label must contain a list of ingredients. The Food Standards
+            Code has rules that describe how each ingredient must be listed,
+            what it is called, and how it is formatted.
+          </p>
+          
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+
+        </div>
+      </article>
+
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">8</span>
+              Advisory statements, warning statements and declarations
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            To help consumers avoid foods that are not safe for them to eat due
+            to health conditions they may have, the Food Standards Code lists
+            mandatory advisory statements, warning statements and allergen
+            declarations that must be shown on a food label depending on the
+            type of food and its ingredients.
+          </p>
+          
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+        </div>
+      </article>
+
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">9</span>
+              Nutrition information panel
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            The nutrition information panel (NIP) shows the number of servings
+            in the package and the average amounts in a serving of food and per
+            100 grams (or 100 millilitres) of food for: * energy (in kilojoules)
+            <ul>
+              <li>protein</li>
+              <li>fat (including saturated fat)</li>
+              <li>carbohydrates (including sugars)</li>
+              <li>sodium</li>
+            </ul>
+          </p>
+          
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+
+          <p>
+            If a nutrition, health or related claim is made, the NIP must also
+            show the amount of nutrient or substance. For example: the amount of
+            calcium must be shown in the nutrition information panel if a claim
+            about calcium is made.| 
+          </p>
+        </div>
+      </article>
+
+      <article>
+        <input
+          id="without-icon"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox">
+        <h3
+          class="acc-heading">
+          <label for="without-icon">
+            <span class="title">
+              <span class="acc-number">10</span>
+              Claims
+            </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </h3>
+        
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1">
+          
+          <p>
+            There are strict requirements about claims that can be made and how
+            they should be written on a label.
+          </p>
+          
+          <p>
+            Nutrition content claims are claims about the content of certain
+            nutrients or substances in a food. For example, contains calcium.
+          </p>
+
+          <p>
+            Health claims refer to a relationship between food and health. For
+            example, calcium for bone and teeth.
+          </p>
+
+          <figure>
+            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
+          </figure>
+        </div>
+      </article>
 
 
-</body>
+
+    </section>
+  </p>
+
+  </body>
 </html>

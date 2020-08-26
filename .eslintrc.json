@@ -3,8 +3,13 @@
         "browser": true,
         "es6": true
       },
+      "globals": {
+        "Formio": "readonly"
+      },
       "plugins": [
         "eslint-plugin-html"
       ],
-    "extends": "airbnb-base"
+    "extends": [
+        "airbnb-base"
+    ]
 }
