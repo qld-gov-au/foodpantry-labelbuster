@@ -13,6 +13,7 @@
         "airbnb-base"
     ],
     "rules": {
+        "eol-last": "error",
         "no-console": "error",
         "no-alert": "error",
         "valid-jsdoc": "error",
