@@ -12,6 +12,7 @@ The Label Buster is a product that allows you to better understand requirements 
   * [Built With](#built-with)
   * [Decisions](#decisions)
   * [Unknowns](#unknowns)
+  * [Resources](#resources)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -47,6 +48,10 @@ This project is a single page application embedded within a Squiz Matrix page. I
 * Versioning Squiz code?
 #### Misc
 * How to contribute to SWE?
+
+### Resources
+* Zeplin : https://app.zeplin.io/project/5ef040ac25b1322a575ffac8
+* Sktech : https://www.sketch.com/s/de2eeaee-d83b-4c09-9a36-1424c690fee3/a/K1YzEy
 
 ## Getting Started
 
