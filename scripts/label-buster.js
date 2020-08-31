@@ -1,12 +1,15 @@
 /**
  * @class LabelBuster
  */
-class LabelBuster {
+const formLocation =
+  'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
+module.exports = class LabelBuster {
   /**
+   * @param {Boolean} test if we are running a test
+   * @returns {void}
    */
-  constructor() {
-    this.formLocation =
-      'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
+  constructor(test = false) {
+    this.formLocation = formLocation;
     this.formElement = {};
     this.formSettings = {
       buttonSettings: {
@@ -20,6 +23,7 @@ class LabelBuster {
     this.loaded = false;
 
     window.addEventListener('DOMContentLoaded', () => {
+      if (test) return;
       this.initialise();
     });
   }
@@ -45,6 +49,7 @@ class LabelBuster {
   goToNextPage() {
     if (!this.loaded) {
       this.notLoaded();
+      return;
     }
     this.wizard.nextPage();
   }
@@ -53,6 +58,10 @@ class LabelBuster {
    * @returns {void}
    */
   acceptEvent() {
+    if (!this.loaded) {
+      this.notLoaded();
+      return;
+    }
     if (this.wizard._data.termsAndConditions) {
       this.wizard.nextPage();
     }
@@ -62,6 +71,10 @@ class LabelBuster {
    * @return {void}
    */
   goToPreviousPage() {
+    if (!this.loaded) {
+      this.notLoaded();
+      return;
+    }
     this.wizard.prevPage();
   }
 
@@ -79,6 +92,4 @@ class LabelBuster {
 
     throw errorObject;
   }
-}
-
-window.label = new LabelBuster();
+};
