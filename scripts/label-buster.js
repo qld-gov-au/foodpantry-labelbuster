@@ -29,7 +29,11 @@ class LabelBuster {
    */
   initialise() {
     this.formElement = document.querySelector('#formio');
-    Formio.createForm(this.formElement, this.formLocation).then(wizard => {
+    Formio.createForm(
+      this.formElement,
+      this.formLocation,
+      this.formSettings
+    ).then(wizard => {
       this.wizard = wizard;
       this.loaded = true;
     });
