@@ -44,7 +44,6 @@
     "eslint-plugin-html": "^6.0.3",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-json": "^2.1.2",
-    "esm": "^3.2.25",
     "husky": "^4.2.3",
     "istanbul": "^0.4.5",
     "jasmine": "^3.6.1",
@@ -75,7 +74,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "pre-commit": ["test"],
   "lint-staged": {
     "*.js": [
       "eslint --fix",
