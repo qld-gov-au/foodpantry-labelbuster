@@ -100,6 +100,15 @@
       color: #FFFFFF;
       text-align: center;
     }
+
+    .lb .flex-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lb .controls-group {
+      align-self: flex-end;
+    }
   </style>
 
   <h1>
@@ -115,29 +124,32 @@
   </figure>
 
   <p>
-    <section class="qg-accordion" aria-label="Accordion Label">
-      <input
+    <section class="qg-accordion flex-column" aria-label="Accordion Label">
+      
+      <div class="controls-group">
+        <input
         type="radio"
         name="control"
         id="collapse"
         class="controls collapse"
         value="collapse"
         role="radio">
-      
-      <label for="collapse" class="controls">Collapse all</label>
-      
-      <span class="controls">|</span>
-      
-      <input
-        type="radio"
-        name="control"
-        id="expand"
-        class="controls expand"
-        value="expand"
-        role="radio">
-      
-      <label for="expand" class="controls">Expand all</label>
 
+        <label for="collapse" class="controls">Collapse all</label>
+      
+        <span class="controls">|</span>
+        
+        <input
+          type="radio"
+          name="control"
+          id="expand"
+          class="controls expand"
+          value="expand"
+          role="radio">
+        
+        <label for="expand" class="controls">Expand all</label>
+      </div>
+      
       <article>
         <input
           id="about-food-labels-1"
@@ -595,24 +607,5 @@
 
     </section>
   </p>
-  <script>
-    function modifyAllCheckbox(newState) {
-      const accordionArticles = document.querySelectorAll('.qg-accordion article input[type="checkbox"]');
-      accordionArticles.forEach((article) => {
-        article.checked = newState;
-      });
-    }
-    
-    const collapse = document.querySelector('label[for="collapse"]');
-    const expand = document.querySelector('label[for="expand"]');
-
-    collapse.addEventListener('click', () => {
-      modifyAllCheckbox(false);
-    });
-
-    expand.addEventListener('click', () => {
-      modifyAllCheckbox(true);
-    });
-  </script>
   </body>
 </html>
