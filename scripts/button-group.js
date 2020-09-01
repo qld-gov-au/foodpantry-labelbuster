@@ -1,12 +1,4 @@
 /**
- * @returns {void}
- */
-function fireEvent() {
-    const event = new Event('view-change');
-    event.dispatchEvent();
-}
-
-/**
  * @returns {TemplateString}
  */
 function startNow() {
@@ -14,7 +6,7 @@ function startNow() {
         <button ${() => console.log('javascript things!')}>
             Accept things
         </button>
-    `
+    `;
 }
 
 /**
@@ -54,7 +46,15 @@ function button(text, pageHandler) {
     `;
 }
 
-module.exports = class ButtonGroup {
+/**
+ * @returns {void}
+ */
+function fireEvent() {
+    const event = new Event('view-change');
+    event.dispatchEvent();
+}
+
+class ButtonGroup {
     constructor(target, formWizard) {
         this.wizard = formWizard;
         this.target = target;
@@ -62,7 +62,7 @@ module.exports = class ButtonGroup {
 
         document.body.addEventListener('view-change', () => {
             this.target = this.render();
-        })
+        });
     }
 
     getPageNo() {
