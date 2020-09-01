@@ -66,32 +66,33 @@
 <body>
 
   <style>
-    .fa {
+    .lb .fa {
       margin-right: 5px;
       font-size: 1.5625rem;
     }
 
-    .alert-instructions {
+    .lb .alert-instructions {
       background-color: #f5f5f5;
       border-left: 5px solid #808080;
     }
 
-    .special {
+    .lb .special {
       color: #f85c50;
     }
 
-    .qg-grab {
+    .lb .qg-grab {
       margin-bottom: 1rem;
     }
 
-    .flex-row {
+    .lb .flex-row {
       display: flex;
       flex-direction: row;
     }
     
-    .title > .acc-number {
+    .lb .title > .acc-number {
       width: 1.56265rem;
       height: 1.56265rem;
+      margin-right: 10px;
       border-radius: 100%;
       line-height: 1.56265rem;
       background-color: #5b5b5b;
@@ -100,6 +101,14 @@
       text-align: center;
     }
   </style>
+
+  <h1>
+    About food labels
+  </h1>
+
+  <p>
+    Select on the food label sections below to learn about labels.
+  </p>
 
   <figure>
     <img src="https://via.placeholder.com/600x400.png/ccc/ccc" alt="" />
@@ -586,6 +595,24 @@
 
     </section>
   </p>
+  <script>
+    function modifyAllCheckbox(newState) {
+      const accordionArticles = document.querySelectorAll('.qg-accordion article input[type="checkbox"]');
+      accordionArticles.forEach((article) => {
+        article.checked = newState;
+      });
+    }
+    
+    const collapse = document.querySelector('label[for="collapse"]');
+    const expand = document.querySelector('label[for="expand"]');
 
+    collapse.addEventListener('click', () => {
+      modifyAllCheckbox(false);
+    });
+
+    expand.addEventListener('click', () => {
+      modifyAllCheckbox(true);
+    });
+  </script>
   </body>
 </html>

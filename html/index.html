@@ -1,33 +1,97 @@
 <script src="https://unpkg.com/formiojs@latest/dist/formio.full.min.js"></script>
 
-<div id="formio"></div>
+<div id="formio" class="lb"></div>
 
 <script type="text/javascript">
-  window.addEventListener("DOMContentLoaded", () => {
-    Formio.createForm(
-      document.getElementById("formio"),
-      "https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard",
-      {
-        buttonSettings: {
-          showCancel: false,
-          showPrevious: false,
-          showNext: false,
-          showSubmit: false,
-        },
-      }
-    ).then((wizard) => {
-      // register navigation handlers for button events
-      wizard.on("gotoNextPage", function () {
-        wizard.nextPage();
-      });
 
-      wizard.on("onAcceptEvent", function () {
-        if (wizard._data.termsAndConditions) wizard.nextPage();
-      });
+/**
+ * @class LabelBuster
+ */
+class LabelBuster {
+  /**
+   */
+  constructor() {
+    this.formLocation = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
+    this.formElement = {};
+    this.formSettings = {
+      buttonSettings: {
+        showCancel: false,
+        showPrevious: false,
+        showNext: false,
+        showSubmit: false,
+      },
+    };
+    this.wizard = {};
+    this.loaded = false;
 
-      wizard.on("onBackEvent", function () {
-        wizard.prevPage();
-      });
+    window.addEventListener('DOMContentLoaded', () => {
+      this.initialise();
     });
-  });
+  }
+
+  /**
+   * @returns {void}
+   */
+  initialise() {
+    this.formElement = document.querySelector('#formio');
+    Formio.createForm(this.formElement, this.formLocation, this.formSettings).then((wizard) => {
+      this.wizard = wizard;
+      this.loaded = true;
+    });
+  }
+
+  /**
+   * @returns {void}
+   */
+  goToNextPage() {
+    if (!this.loaded) {
+      this.notLoaded();
+    }
+    this.wizard.nextPage();
+  }
+
+  /**
+   * @returns {void}
+   */
+  acceptEvent() {
+    if (this.wizard._data.termsAndConditions) {
+      this.wizard.nextPage();
+    }
+  }
+
+  /**
+   * @return {void}
+   */
+  goToPreviousPage() {
+    this.wizard.prevPage();
+  }
+
+  /**
+   * @returns {void}
+   */
+  notLoaded() {
+    const errorObject = {
+      element: this.formElement,
+      loaded: this.loaded,
+      settings: this.settings,
+      name: 'Loaded Exception',
+      message: 'FormIO not properly loaded',
+    };
+
+    throw errorObject;
+  }
+}
+
+window.label = new LabelBuster();
+
+</script>
+
+<style>
+/* .formio-form > div > nav {
+    display: none;
+} */
+</style>
+<script>
+  /* remove Squiz rendered H1 in favour of H1 for each view from Form.io */
+  document.querySelector('#qg-primary-content').removeChild(document.querySelector('h1'));
 </script>
