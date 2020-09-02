@@ -3,7 +3,7 @@
  */
 function firePageChangeEvent() {
   const event = new CustomEvent('labelbusterPageChange');
-  document.dispatchEvent(event);
+  window.dispatchEvent(event);
 }
 
 /**
