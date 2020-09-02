@@ -1,4 +1,12 @@
 /**
+ * @returns {void}
+ */
+function firePageChangeEvent() {
+  const event = new CustomEvent('labelbusterPageChange', { bubbles: true });
+  window.dispatchEvent(event);
+}
+
+/**
  * @class LabelBuster
  */
 const formLocation =
@@ -21,15 +29,27 @@ module.exports = class LabelBuster {
     };
     this.wizard = {};
     this.loaded = false;
+    this.isTest = test;
 
     window.addEventListener('DOMContentLoaded', () => {
-      if (test) return;
+      if (this.isTest) return;
       this.initialise();
+    });
+
+    window.addEventListener('labelbusterGoToNext', () => {
+      this.goToNextPage();
+    });
+
+    window.addEventListener('labelbusterAccept', () => {
+      this.acceptEvent();
+    });
+
+    window.addEventListener('labelbusterGoToPrevious', () => {
+      this.goToPreviousPage();
     });
   }
 
   /**
-   * @returns {void}
    */
   initialise() {
     this.formElement = document.querySelector('#formio');
@@ -41,45 +61,62 @@ module.exports = class LabelBuster {
       this.wizard = wizard;
       this.loaded = true;
     });
+    firePageChangeEvent();
   }
 
   /**
-   * @returns {void}
+   * @return {Boolean}
    */
   goToNextPage() {
     if (!this.loaded) {
       this.notLoaded();
-      return;
+      return false;
     }
-    this.wizard.nextPage();
+    if (this.isTest) {
+      return true;
+    }
+    this.wizard.nextPage().then(() => {
+      firePageChangeEvent();
+    });
+    return true;
   }
 
   /**
-   * @returns {void}
+   * @return {Boolean}
    */
   acceptEvent() {
     if (!this.loaded) {
       this.notLoaded();
-      return;
+      return false;
     }
-    if (this.wizard._data.termsAndConditions) {
-      this.wizard.nextPage();
+    if (!this.wizard._data.termsAndConditions) return false;
+    if (this.isTest) {
+      return true;
     }
+    this.wizard.nextPage().then(() => {
+      firePageChangeEvent();
+    });
+    return true;
   }
 
   /**
-   * @return {void}
+   * @return {Boolean}
    */
   goToPreviousPage() {
     if (!this.loaded) {
       this.notLoaded();
-      return;
+      return false;
     }
-    this.wizard.prevPage();
+    if (this.isTest) {
+      return true;
+    }
+    this.wizard.prevPage().then(() => {
+      firePageChangeEvent();
+    });
+    return true;
   }
 
   /**
-   * @returns {void}
    */
   notLoaded() {
     const errorObject = {
