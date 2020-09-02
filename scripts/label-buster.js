@@ -2,7 +2,7 @@
  * @returns {void}
  */
 function firePageChangeEvent() {
-  const event = new CustomEvent('labelbusterPageChange');
+  const event = new CustomEvent('labelbusterPageChange', { bubbles: true });
   window.dispatchEvent(event);
 }
 
