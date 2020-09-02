@@ -2,11 +2,13 @@
  * Render a button
  * @param {String} text the button's inner text
  * @param {function} handler the handler the button should fire on click
+ * @param {Boolean} isPrimary indicates whether button is primary
  * @returns {TemplateString}
  */
-function button(text, handler) {
+function button(text, handler, isPrimary = false) {
   const _button = document.createElement('button');
   _button.innerText = text;
+  _button.className = `qg-btn btn-default ${isPrimary && 'primary'}`;
   _button.addEventListener('click', handler);
   return _button;
 }
@@ -23,10 +25,12 @@ function fireEvent(domEvent, name) {
 
 function buttonGroup() {
   const container = document.createElement('div');
-  const previous = button('previous', e =>
-    fireEvent(e, 'labelbusterGoToPrevious')
+  const previous = button(
+    'Back',
+    e => fireEvent(e, 'labelbusterGoToPrevious'),
+    true
   );
-  const next = button('next', e => fireEvent(e, 'labelbusterGoToNext'));
+  const next = button('Next', e => fireEvent(e, 'labelbusterGoToNext'));
   container.appendChild(previous);
   container.appendChild(next);
   return container;
