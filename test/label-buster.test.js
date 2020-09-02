@@ -51,18 +51,7 @@ describe('Label buster class works as expected.', function () {
     window.Formio = {};
     window.Formio.createForm = new Promise(() => {});
     labelBuster = new LabelBuster(true);
-    labelBuster.goneNext = false;
-    labelBuster.gonePrevious = false;
-
-    labelBuster.wizard = {};
-    labelBuster.wizard.nextPage = function () {
-      labelBuster.goneNext = true;
-    };
-    labelBuster.wizard.prevPage = function () {
-      labelBuster.gonePrevious = true;
-    };
-    labelBuster.wizard._data = {};
-    labelBuster.wizard._data.termsAndConditions = false;
+    labelBuster.wizard = { _data: { termsAndConditions: false } };
   });
 
   it('goToNextPage fails if not loaded', function () {
@@ -74,10 +63,10 @@ describe('Label buster class works as expected.', function () {
     }
   });
 
-  it('goToNextPage runs the function on Formio expected', function () {
+  it('goToNextPage can trigger formIO', function () {
     labelBuster.loaded = true;
-    labelBuster.goToNextPage();
-    expect(labelBuster.goneNext).toEqual(true);
+    const result = labelBuster.goToNextPage();
+    expect(result).toEqual(true);
   });
 
   it('goToPreviousPage fails if not loaded', function () {
@@ -91,8 +80,8 @@ describe('Label buster class works as expected.', function () {
 
   it('goToPreviousPage runs the function on Formio expected', function () {
     labelBuster.loaded = true;
-    labelBuster.goToPreviousPage();
-    expect(labelBuster.gonePrevious).toEqual(true);
+    const result = labelBuster.goToPreviousPage();
+    expect(result).toEqual(true);
   });
 
   it('acceptEvent fails if not loaded', function () {
@@ -107,15 +96,14 @@ describe('Label buster class works as expected.', function () {
   it('acceptEvent runs the function on Formio expected, but fail', function () {
     labelBuster.loaded = true;
     labelBuster.wizard._data.termsAndConditions = false;
-    labelBuster.goneNext = false;
-    labelBuster.acceptEvent();
-    expect(labelBuster.goneNext).toEqual(false);
+    const result = labelBuster.acceptEvent();
+    expect(result).toEqual(false);
   });
 
   it('acceptEvent runs the function on Formio expected, but succeed cause accepted', function () {
     labelBuster.loaded = true;
     labelBuster.wizard._data.termsAndConditions = true;
-    labelBuster.acceptEvent();
-    expect(labelBuster.goneNext).toEqual(true);
+    const result = labelBuster.acceptEvent();
+    expect(result).toEqual(true);
   });
 });
