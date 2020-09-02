@@ -2,7 +2,7 @@
  * @returns {void}
  */
 function firePageChangeEvent() {
-  const event = new CustomEvent('formioPageChange');
+  const event = new CustomEvent('labelbusterPageChange');
   document.dispatchEvent(event);
 }
 
@@ -36,15 +36,15 @@ module.exports = class LabelBuster {
       this.initialise();
     });
 
-    window.addEventListener('formioGoToNext', () => {
+    window.addEventListener('labelbusterGoToNext', () => {
       this.goToNextPage();
     });
 
-    window.addEventListener('formioAccept', () => {
+    window.addEventListener('labelbusterAccept', () => {
       this.acceptEvent();
     });
 
-    window.addEventListener('formioGoToPrevious', () => {
+    window.addEventListener('labelbusterGoToPrevious', () => {
       this.goToPreviousPage();
     });
   }
