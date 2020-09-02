@@ -6,8 +6,8 @@
  */
 function button(text, handler) {
   const _button = document.createElement('button');
-  button.innerText = text;
-  button.addEventListener('click', handler);
+  _button.innerText = text;
+  _button.addEventListener('click', handler);
   return _button;
 }
 
@@ -37,7 +37,7 @@ class ButtonGroup {
     this.target = target;
     this.target.appendChild(this.render());
 
-    document.body.addEventListener('view-change', () => {
+    document.body.addEventListener('labelbusterPageChange', () => {
       this.target = this.render();
     });
   }
