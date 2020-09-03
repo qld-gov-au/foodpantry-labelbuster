@@ -9,7 +9,11 @@
    * @returns {TemplateString}
    */
   function firePageChangeEvent() {
-    const event = new CustomEvent('labelbusterPageChange', { bubbles: true });
+    const event = new CustomEvent('labelbusterPageChange', {
+      bubbles: true, data: {
+        page: this.wizard.page ? this.wizard.page : 0,
+      },
+    });
     window.dispatchEvent(event);
   }
 
@@ -55,11 +59,12 @@
         this.goToPreviousPage();
       });
 
-      window.addEventListener('labelbusterGoToFirstPage', () => {
-        this.goToFirstPage();
-      });
-    }
+      window.addEventListener('labelbusterCancel', () => {
+        this.goToPage(0);
+      })
 
+
+    }
     /**
      */
     initialise() {
@@ -129,7 +134,8 @@
 
     /**
      */
-    goToFirstPage() {
+    goToPage(pageNo) {
+      console.log("PageNum", pageNo);
       if (!this.loaded) {
         this.notLoaded();
         return false;
@@ -137,15 +143,12 @@
       if (this.isTest) {
         return true;
       }
-      if (this.wizard.page != 0) {
-        this.wizard.setPage(0).then(() => {
-          firePageChangeEvent();
-        });
-        return true;
-      }
-
+      this.wizard.setPage(pageNo).then(() => {
+        firePageChangeEvent();
+      })
       return true;
     }
+
 
     notLoaded() {
       const errorObject = {
@@ -195,19 +198,27 @@
     domEvent.target.dispatchEvent(customEvent);
   }
 
-  function buttonGroup() {
+  // to do - parameterise the function to accept different configurations of the button group. Array of button objects.
+  function buttonGroup(buttons) {
+    // const container = document.createElement('div');
+    // const previous = button('Back', e =>
+    //   fireEvent(e, 'labelbusterGoToPrevious')
+    // );
+    // const next = button('Next', e => fireEvent(e, 'labelbusterGoToNext'), true);
+    // const cancel = anchor(
+    //   'Cancel',
+    //   e => fireEvent(e, 'labelbusterCancel')
+    // );
+    // container.appendChild(previous);
+    // container.appendChild(next);
+    // container.appendChild(cancel);
+    // return container;
     const container = document.createElement('div');
-    const previous = button('Back', e =>
-      fireEvent(e, 'labelbusterGoToPrevious')
-    );
-    const next = button('Next', e => fireEvent(e, 'labelbusterGoToNext'), true);
-    const cancel = anchor(
-      'Cancel',
-      e => fireEvent(e, 'labelbusterGoToFirstPage')
-    );
-    container.appendChild(previous);
-    container.appendChild(next);
-    container.appendChild(cancel);
+    if (buttons.length > 0) buttons.forEach((buttonConfig) => {
+      let { text, primary } = buttonConfig;
+      let buttonElement = button(text, null, primary);
+      container.appendChild(buttonElement);
+    })
     return container;
   }
 
@@ -217,17 +228,21 @@
       this.target = target;
       this.target.appendChild(this.render());
 
-      document.body.addEventListener('labelbusterPageChange', () => {
-        this.target = this.render();
+      window.addEventListener('labelbusterPageChange', ({ data }) => {
+        this.target = this.render(data.page);
       });
     }
 
-    render() {
-      return buttonGroup(this);
+    render(pageNo) {
+      if (pageNo === 1) {
+        return buttonGroup([{ text: "Start now", primary: true }]);
+      }
+      if (pageNo === 2) {
+        return buttonGroup([{ text: "Accept", primary: true }, { text: "Back", primary: false }, { text: "Cancel" }]);
+      }
+      return buttonGroup();
     }
   }
-
-
 
   window.buttonGroup = new ButtonGroup(
     document.querySelector('.button-container')
