@@ -2,7 +2,12 @@
  * @returns {void}
  */
 function firePageChangeEvent() {
-  const event = new CustomEvent('labelbusterPageChange', { bubbles: true });
+  const event = new CustomEvent('labelbusterPageChange', {
+    bubbles: true,
+    data: {
+      button: this.wizard.page,
+    },
+  });
   window.dispatchEvent(event);
 }
 
