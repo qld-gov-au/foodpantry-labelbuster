@@ -11,7 +11,7 @@
   function firePageChangeEvent() {
     const event = new CustomEvent('labelbusterPageChange', {
       bubbles: true, data: {
-        page: this.wizard.page ? this.wizard.page : 0,
+        page: this.wizard ? this.wizard.page : 0,
       },
     });
     window.dispatchEvent(event);

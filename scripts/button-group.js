@@ -30,6 +30,9 @@ function fireEvent(domEvent, name) {
   domEvent.target.dispatchEvent(customEvent);
 }
 
+/**
+ * @return {HTMLElement}
+ */
 function buttonGroup() {
   const container = document.createElement('div');
   const previous = button(
@@ -47,6 +50,9 @@ function buttonGroup() {
   return container;
 }
 
+/**
+ * @class ButtonGroup
+ */
 class ButtonGroup {
   constructor(target) {
     this.target = target;
