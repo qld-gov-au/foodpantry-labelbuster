@@ -13,6 +13,13 @@ function button(text, handler, isPrimary = false) {
   return _button;
 }
 
+function anchor(text, handler) {
+  const _anchor = document.createElement('a');
+  _anchor.innerText = text;
+  _anchor.addEventListener('click', handler);
+  _anchor.setAttribute('href', _anchor);
+  return _anchor;
+}
 /**
  * @param {Event} domEvent the element's event
  * @param {String} name the name of the custom event
@@ -30,9 +37,13 @@ function buttonGroup() {
     e => fireEvent(e, 'labelbusterGoToPrevious'),
     true
   );
+  const cancel = anchor('Cancel', e =>
+    fireEvent(e, 'labelbusterGoToFirstPage')
+  );
   const next = button('Next', e => fireEvent(e, 'labelbusterGoToNext'));
   container.appendChild(previous);
   container.appendChild(next);
+  container.appendChild(cancel);
   return container;
 }
 

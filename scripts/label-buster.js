@@ -47,6 +47,10 @@ module.exports = class LabelBuster {
     window.addEventListener('labelbusterGoToPrevious', () => {
       this.goToPreviousPage();
     });
+
+    window.addEventListener('labelbusterGoToFirstPage', () => {
+      this.goToFirstPage();
+    });
   }
 
   /**
@@ -113,6 +117,27 @@ module.exports = class LabelBuster {
     this.wizard.prevPage().then(() => {
       firePageChangeEvent();
     });
+    return true;
+  }
+
+  /**
+   * @return {Boolean}
+   */
+  goToFirstPage() {
+    if (!this.loaded) {
+      this.notLoaded();
+      return false;
+    }
+    if (this.isTest) {
+      return true;
+    }
+    if (this.wizard.page !== 0) {
+      this.wizard.setPage(0).then(() => {
+        firePageChangeEvent();
+      });
+      return true;
+    }
+
     return true;
   }
 
