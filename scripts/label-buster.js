@@ -5,7 +5,7 @@ function firePageChangeEvent() {
   const event = new CustomEvent('labelbusterPageChange', {
     bubbles: true,
     data: {
-      button: this.wizard.page,
+      page: this.wizard.page,
     },
   });
   window.dispatchEvent(event);
