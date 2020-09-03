@@ -90,7 +90,6 @@ to set a support level
 [Babel](https://babeljs.io/)
 
 ### Unknowns
-* What browser support is required?
 
 #### Form.io
 * CI/CD? (Unlikely to be resolved)

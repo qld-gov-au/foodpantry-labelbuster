@@ -6,13 +6,25 @@
 
 <script type="text/javascript">
   /**
+   * @returns {TemplateString}
+   */
+  function firePageChangeEvent() {
+    const event = new CustomEvent('labelbusterPageChange', { bubbles: true });
+    window.dispatchEvent(event);
+  }
+
+  /**
    * @class LabelBuster
    */
+  const formLocation =
+    'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
   class LabelBuster {
     /**
+     * @param {Boolean} test if we are running a test
+     * @returns {void}
      */
-    constructor() {
-      this.formLocation = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
+    constructor(test = false) {
+      this.formLocation = formLocation;
       this.formElement = {};
       this.formSettings = {
         buttonSettings: {
@@ -24,52 +36,119 @@
       };
       this.wizard = {};
       this.loaded = false;
+      this.isTest = test;
 
       window.addEventListener('DOMContentLoaded', () => {
+        if (this.isTest) return;
         this.initialise();
+      });
+
+      window.addEventListener('labelbusterGoToNext', () => {
+        this.goToNextPage();
+      });
+
+      window.addEventListener('labelbusterAccept', () => {
+        this.acceptEvent();
+      });
+
+      window.addEventListener('labelbusterGoToPrevious', () => {
+        this.goToPreviousPage();
+      });
+
+      window.addEventListener('labelbusterGoToFirstPage', () => {
+        this.goToFirstPage();
       });
     }
 
     /**
-     * @returns {void}
      */
     initialise() {
       this.formElement = document.querySelector('#formio');
-      Formio.createForm(this.formElement, this.formLocation, this.formSettings).then((wizard) => {
+      Formio.createForm(
+        this.formElement,
+        this.formLocation,
+        this.formSettings
+      ).then(wizard => {
         this.wizard = wizard;
         this.loaded = true;
       });
+      firePageChangeEvent();
     }
 
     /**
-     * @returns {void}
+     * @return {Boolean}
      */
     goToNextPage() {
       if (!this.loaded) {
         this.notLoaded();
+        return false;
       }
-      this.wizard.nextPage();
+      if (this.isTest) {
+        return true;
+      }
+      this.wizard.nextPage().then(() => {
+        firePageChangeEvent();
+      });
+      return true;
     }
 
     /**
-     * @returns {void}
+     * @return {Boolean}
      */
     acceptEvent() {
-      if (this.wizard._data.termsAndConditions) {
-        this.wizard.nextPage();
+      if (!this.loaded) {
+        this.notLoaded();
+        return false;
       }
+      if (!this.wizard._data.termsAndConditions) return false;
+      if (this.isTest) {
+        return true;
+      }
+      this.wizard.nextPage().then(() => {
+        firePageChangeEvent();
+      });
+      return true;
     }
 
     /**
-     * @return {void}
+     * @return {Boolean}
      */
     goToPreviousPage() {
-      this.wizard.prevPage();
+      if (!this.loaded) {
+        this.notLoaded();
+        return false;
+      }
+      if (this.isTest) {
+        return true;
+      }
+      this.wizard.prevPage().then(() => {
+        firePageChangeEvent();
+      });
+      return true;
     }
 
     /**
-     * @returns {void}
      */
+    goToFirstPage() {
+      console.log("Inside goToFirstPage() Line 147)\n");
+      if (!this.loaded) {
+        this.notLoaded();
+        return false;
+      }
+      if (this.isTest) {
+        return true;
+      }
+      if (this.wizard.page != 0) {
+        this.wizard.setPage(0).then(() => {
+          console.log("Inside goToFirstPage() Line 157)\n");
+          firePageChangeEvent();
+        });
+        return true;
+      }
+
+      return true;
+    }
+
     notLoaded() {
       const errorObject = {
         element: this.formElement,
@@ -85,98 +164,87 @@
 
   window.label = new LabelBuster();
 
-  // ButtonGroup
+  /**
+   * Render a button
+   * @param {String} text the button's inner text
+   * @param {function} handler the handler the button should fire on click
+   * @param {Boolean} isPrimary indicates whether button is primary
+   * @returns {TemplateString}
+   */
+  function button(text, handler, isPrimary = false) {
+    const _button = document.createElement('button');
+    _button.innerText = text;
+    _button.className = `qg-btn ${isPrimary ? 'btn-primary' : 'btn-default'}`;
+    _button.addEventListener('click', handler);
+    return _button;
+  }
+
+  function anchor(text, handler) {
+    const _anchor = document.createElement('a');
+    _anchor.innerText = text;
+    _anchor.addEventListener('click', handler);
+    _anchor.setAttribute("href", _anchor);
+    return _anchor;
+  }
+
+  /**
+   * @param {Event} domEvent the element's event
+   * @param {String} name the name of the custom event
+   * @returns {void}
+   */
+  function fireEvent(domEvent, name) {
+    const customEvent = new Event(name, { bubbles: true });
+    domEvent.target.dispatchEvent(customEvent);
+  }
+
+  function buttonGroup() {
+    const container = document.createElement('div');
+    const previous = button('Back', e =>
+      fireEvent(e, 'labelbusterGoToPrevious')
+    );
+    const next = button('Next', e => fireEvent(e, 'labelbusterGoToNext'), true);
+    const cancel = anchor(
+      'Cancel',
+      e => fireEvent(e, 'labelbusterGoToFirstPage')
+    );
+    container.appendChild(previous);
+    container.appendChild(next);
+    container.appendChild(cancel);
+    return container;
+  }
+
+
   class ButtonGroup {
-    constructor(target, formWizard) {
-      this.wizard = formWizard;
+    constructor(target) {
       this.target = target;
-      this.target.innerHTML = this.render();
+      this.target.appendChild(this.render());
 
-      document.body.addEventListener('view-change', () => {
+      document.body.addEventListener('labelbusterPageChange', () => {
         this.target = this.render();
-      })
-    }
-
-    getPageNo() {
-      return this.wizard.page;
+      });
     }
 
     render() {
-      if (this.getPageNo() === 1) {
-        return startNow();
-      }
-      if (this.getPageNo() === 13) {
-        return finalStep();
-      }
-      return buttonGroup(this.wizard);
+      return buttonGroup(this);
     }
   }
 
-  /**
-   * @returns {TemplateString}
-   */
-  function startNow() {
-    return `
-        <button ${() => console.log('javascript things!')}>
-            Accept things
-        </button>
-    `
-  }
 
-  /**
-   * @returns {TemplateString}
-   */
-  function buttonGroup(wizard) {
-    return `
-        <div>
-            ${button('previous', wizard.prevPage)}
-            ${button('next', wizard.nextPage)}
-        </div>
-    `;
-  }
 
-  /**
-   * @returns {TemplateString}
-   */
-  function finalStep() {
-    return `
-        <div>
-            This is the final step
-        </div>
-    `;
-  }
+  window.buttonGroup = new ButtonGroup(
+    document.querySelector('.button-container')
+  );
 
-  /**
-   * @returns {TemplateString}
-   */
-  function button(text, pageHandler) {
-    return `
-        <button onclick=${() => {
-        pageHandler && pageHandler();
-        fireEvent();
-      }}>
-            ${text}
-        </button>
-    `;
-  }
-
-  /**
-   * @returns {void}
-   */
-  function fireEvent() {
-    const event = new Event('view-change');
-    event.dispatchEvent();
-  }
-
-  window.buttonGroup = new ButtonGroup(document.querySelector('.button-container'), window.label)
 </script>
 
 <style>
-  /* .formio-form > div > nav {
+  .formio-form>div>nav {
     display: none;
-} */
+  }
 </style>
 <script>
   /* remove Squiz rendered H1 in favour of H1 for each view from Form.io */
-  document.querySelector('#qg-primary-content').removeChild(document.querySelector('h1'));
+  document
+    .querySelector('#qg-primary-content')
+    .removeChild(document.querySelector('h1'));
 </script>

@@ -1,81 +1,56 @@
 /**
+ * Render a button
+ * @param {String} text the button's inner text
+ * @param {function} handler the handler the button should fire on click
+ * @param {Boolean} isPrimary indicates whether button is primary
  * @returns {TemplateString}
  */
-function startNow() {
-    return `
-        <button ${() => console.log('javascript things!')}>
-            Accept things
-        </button>
-    `;
+function button(text, handler, isPrimary = false) {
+  const _button = document.createElement('button');
+  _button.innerText = text;
+  _button.className = `qg-btn btn-default ${isPrimary && 'primary'}`;
+  _button.addEventListener('click', handler);
+  return _button;
 }
 
 /**
- * @returns {TemplateString}
- */
-function buttonGroup(wizard) {
-    return `
-        <div>
-            ${button('previous', wizard.prevPage)}
-            ${button('next', wizard.nextPage)}
-        </div>
-    `;
-}
-
-/**
- * @returns {TemplateString}
- */
-function finalStep() {
-    return `
-        <div>
-            This is the final step
-        </div>
-    `;
-}
-
-/**
- * @returns {TemplateString}
- */
-function button(text, pageHandler) {
-    return `
-        <button onclick=${() => {
-            pageHandler && pageHandler();
-            fireEvent();
-        }}>
-            ${text}
-        </button>
-    `;
-}
-
-/**
+ * @param {Event} domEvent the element's event
+ * @param {String} name the name of the custom event
  * @returns {void}
  */
-function fireEvent() {
-    const event = new Event('view-change');
-    event.dispatchEvent();
+function fireEvent(domEvent, name) {
+  const customEvent = new Event(name, { bubbles: true });
+  domEvent.target.dispatchEvent(customEvent);
+}
+
+function buttonGroup() {
+  const container = document.createElement('div');
+  const previous = button(
+    'Back',
+    e => fireEvent(e, 'labelbusterGoToPrevious'),
+    true
+  );
+  const next = button('Next', e => fireEvent(e, 'labelbusterGoToNext'));
+  container.appendChild(previous);
+  container.appendChild(next);
+  return container;
 }
 
 class ButtonGroup {
-    constructor(target, formWizard) {
-        this.wizard = formWizard;
-        this.target = target;
-        this.target.innerHTML = this.render();
+  constructor(target) {
+    this.target = target;
+    this.target.appendChild(this.render());
 
-        document.body.addEventListener('view-change', () => {
-            this.target = this.render();
-        });
-    }
+    document.body.addEventListener('labelbusterPageChange', () => {
+      this.target = this.render();
+    });
+  }
 
-    getPageNo() {
-        return this.wizard.page;
-    }
-
-    render() {
-        if (this.getPageNo() === 1) {
-            return startNow();
-        }
-        if (this.getPageNo() === 13) {
-            return finalStep();
-        }
-        return buttonGroup(this.wizard);
-    }
+  render() {
+    return buttonGroup(this);
+  }
 }
+
+window.buttonGroup = new ButtonGroup(
+  document.querySelector('.button-container')
+);

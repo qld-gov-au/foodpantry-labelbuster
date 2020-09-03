@@ -16,7 +16,10 @@
         "eol-last": "error",
         "no-console": "error",
         "no-alert": "error",
-        "valid-jsdoc": "error",
+        "valid-jsdoc": [2, {
+            "requireReturnDescription": false,
+            "requireReturn": false
+        }],
         "arrow-parens": [
             "error",
             "as-needed",
