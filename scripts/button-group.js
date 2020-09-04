@@ -1,26 +1,4 @@
 /**
- * Render a button
- * @param {String} text the button's inner text
- * @param {function} handler the handler the button should fire on click
- * @param {Boolean} isPrimary indicates whether button is primary
- * @returns {TemplateString}
- */
-function button(text, handler, isPrimary = false) {
-  const _button = document.createElement('button');
-  _button.innerText = text;
-  _button.className = `qg-btn btn-default ${isPrimary && 'primary'}`;
-  _button.addEventListener('click', handler);
-  return _button;
-}
-
-function anchor(text, handler) {
-  const _anchor = document.createElement('a');
-  _anchor.innerText = text;
-  _anchor.addEventListener('click', handler);
-  _anchor.setAttribute('href', _anchor);
-  return _anchor;
-}
-/**
  * @param {Event} domEvent the element's event
  * @param {String} name the name of the custom event
  * @returns {void}
@@ -31,22 +9,37 @@ function fireEvent(domEvent, name) {
 }
 
 /**
+ * Render a button
+ * @param {String} text the button's inner text
+ * @param {String} eventName the custom event that button will fire
+ * @param {String} cssClass the class that describes the presentation of the button
+ * @returns {HTMLButtonElement}
+ */
+function button(text, eventName, cssClass) {
+  const _button = document.createElement('button');
+  _button.innerText = text;
+  _button.className = `qg-btn ${cssClass}`;
+  _button.addEventListener('click', e => fireEvent(e, eventName));
+  return _button;
+}
+
+/**
+ * @param {Array} buttons the array of config buttons
  * @return {HTMLElement}
  */
-function buttonGroup() {
+function buttonGroup(buttons) {
   const container = document.createElement('div');
-  const previous = button(
-    'Back',
-    e => fireEvent(e, 'labelbusterGoToPrevious'),
-    true
-  );
-  const cancel = anchor('Cancel', e =>
-    fireEvent(e, 'labelbusterGoToFirstPage')
-  );
-  const next = button('Next', e => fireEvent(e, 'labelbusterGoToNext'));
-  container.appendChild(previous);
-  container.appendChild(next);
-  container.appendChild(cancel);
+  container.className = 'panel-body';
+  const p = document.createElement('p');
+
+  if (buttons.length > 0) {
+    buttons.forEach(buttonConfig => {
+      const { text, eventName, cssClass } = buttonConfig;
+      const buttonElement = button(text, eventName, cssClass);
+      p.appendChild(buttonElement);
+    });
+  }
+  container.appendChild(p);
   return container;
 }
 
@@ -55,19 +48,73 @@ function buttonGroup() {
  */
 class ButtonGroup {
   constructor(target) {
-    this.target = target;
-    this.target.appendChild(this.render());
+    this.target = target; // <div class="button-group"></div>
+    this.updateTarget(this.render());
 
-    document.body.addEventListener('labelbusterPageChange', () => {
-      this.target = this.render();
+    window.addEventListener('labelbusterPageChange', ({ detail: { page } }) => {
+      this.updateTarget(this.render(page));
     });
   }
 
-  render() {
-    return buttonGroup(this);
+  /**
+   * @param {HTMLElement} result is the HTML returned by the render method for button group
+   */
+  updateTarget(result) {
+    this.target.innerHTML = '';
+    this.target.appendChild(result);
+  }
+
+  /**
+   * @param {Number} pageNo the page number provided by the wizard instance
+   */
+  // eslint-disable-next-line class-methods-use-this
+  render(pageNo) {
+    if (pageNo === 0) {
+      return buttonGroup([
+        {
+          text: 'Start now',
+          eventName: 'labelbusterGoToNext',
+          cssClass: 'btn-primary',
+        },
+      ]);
+    }
+    if (pageNo === 1) {
+      return buttonGroup([
+        {
+          text: 'Back',
+          eventName: 'labelbusterGoToPrevious',
+          cssClass: 'btn-default',
+        },
+        {
+          text: 'Accept',
+          eventName: 'labelbusterAccept',
+          cssClass: 'btn-primary',
+        },
+        {
+          text: 'Cancel',
+          eventName: 'labelbusterCancel',
+          cssClass: 'btn-link',
+        },
+      ]);
+    }
+    return buttonGroup([
+      {
+        text: 'Back',
+        eventName: 'labelbusterGoToPrevious',
+        cssClass: 'btn-default',
+      },
+      {
+        text: 'Next',
+        eventName: 'labelbusterAccept',
+        cssClass: 'btn-primary',
+      },
+      {
+        text: 'Cancel',
+        eventName: 'labelbusterCancel',
+        cssClass: 'btn-link',
+      },
+    ]);
   }
 }
 
-window.buttonGroup = new ButtonGroup(
-  document.querySelector('.button-container')
-);
+window.controls = new ButtonGroup(document.querySelector('.button-container'));

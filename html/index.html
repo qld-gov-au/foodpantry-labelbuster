@@ -1,27 +1,24 @@
+<style>
+  .formio-form>div>nav {
+    display: none;
+  }
+
+  .lb p button {
+    margin-right: 5px;
+  }
+</style>
+
 <script src="https://unpkg.com/formiojs@latest/dist/formio.full.min.js"></script>
 
 <div id="formio" class="lb"></div>
 
-<div class="button-container"></div>
+<div class="button-container lb"></div>
 
 <script type="text/javascript">
   /**
-   * @returns {TemplateString}
-   */
-  function firePageChangeEvent() {
-    const event = new CustomEvent('labelbusterPageChange', {
-      bubbles: true, data: {
-        page: this.wizard ? this.wizard.page : 0,
-      },
-    });
-    window.dispatchEvent(event);
-  }
-
-  /**
    * @class LabelBuster
    */
-  const formLocation =
-    'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
+  const formLocation = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
   class LabelBuster {
     /**
      * @param {Boolean} test if we are running a test
@@ -61,10 +58,9 @@
 
       window.addEventListener('labelbusterCancel', () => {
         this.goToPage(0);
-      })
-
-
+      });
     }
+
     /**
      */
     initialise() {
@@ -72,12 +68,25 @@
       Formio.createForm(
         this.formElement,
         this.formLocation,
-        this.formSettings
-      ).then(wizard => {
+        this.formSettings,
+      ).then((wizard) => {
         this.wizard = wizard;
         this.loaded = true;
       });
-      firePageChangeEvent();
+      this.firePageChangeEvent();
+    }
+
+    /**
+     * @returns {void}
+    */
+    firePageChangeEvent() {
+      const event = new CustomEvent('labelbusterPageChange', {
+        bubbles: true,
+        detail: {
+          page: this.wizard && this.wizard.page ? this.wizard.page : 0,
+        },
+      });
+      window.dispatchEvent(event);
     }
 
     /**
@@ -92,7 +101,7 @@
         return true;
       }
       this.wizard.nextPage().then(() => {
-        firePageChangeEvent();
+        this.firePageChangeEvent();
       });
       return true;
     }
@@ -105,14 +114,21 @@
         this.notLoaded();
         return false;
       }
-      if (!this.wizard._data.termsAndConditions) return false;
+      if (!this.hasAccepted()) return false;
       if (this.isTest) {
         return true;
       }
       this.wizard.nextPage().then(() => {
-        firePageChangeEvent();
+        this.firePageChangeEvent();
       });
       return true;
+    }
+
+    /**
+     * @return {Boolean}
+     */
+    hasAccepted() {
+      return this.wizard._data.termsAndConditions;
     }
 
     /**
@@ -127,15 +143,15 @@
         return true;
       }
       this.wizard.prevPage().then(() => {
-        firePageChangeEvent();
+        this.firePageChangeEvent();
       });
       return true;
     }
 
     /**
+     * @return {Boolean}
      */
     goToPage(pageNo) {
-      console.log("PageNum", pageNo);
       if (!this.loaded) {
         this.notLoaded();
         return false;
@@ -144,11 +160,10 @@
         return true;
       }
       this.wizard.setPage(pageNo).then(() => {
-        firePageChangeEvent();
-      })
+        this.firePageChangeEvent();
+      });
       return true;
     }
-
 
     notLoaded() {
       const errorObject = {
@@ -168,24 +183,16 @@
   /**
    * Render a button
    * @param {String} text the button's inner text
-   * @param {function} handler the handler the button should fire on click
-   * @param {Boolean} isPrimary indicates whether button is primary
-   * @returns {TemplateString}
+   * @param {String} eventName the custom event that button will fire
+   * @param {String} cssClass the class that describes the presentation of the button
+   * @returns {HTMLButtonElement}
    */
-  function button(text, handler, isPrimary = false) {
+  function button(text, eventName, cssClass) {
     const _button = document.createElement('button');
     _button.innerText = text;
-    _button.className = `qg-btn ${isPrimary ? 'btn-primary' : 'btn-default'}`;
-    _button.addEventListener('click', handler);
+    _button.className = `qg-btn ${cssClass}`;
+    _button.addEventListener('click', e => fireEvent(e, eventName));
     return _button;
-  }
-
-  function anchor(text, handler) {
-    const _anchor = document.createElement('a');
-    _anchor.innerText = text;
-    _anchor.addEventListener('click', handler);
-    _anchor.setAttribute("href", _anchor);
-    return _anchor;
   }
 
   /**
@@ -198,63 +205,103 @@
     domEvent.target.dispatchEvent(customEvent);
   }
 
-  // to do - parameterise the function to accept different configurations of the button group. Array of button objects.
   function buttonGroup(buttons) {
-    // const container = document.createElement('div');
-    // const previous = button('Back', e =>
-    //   fireEvent(e, 'labelbusterGoToPrevious')
-    // );
-    // const next = button('Next', e => fireEvent(e, 'labelbusterGoToNext'), true);
-    // const cancel = anchor(
-    //   'Cancel',
-    //   e => fireEvent(e, 'labelbusterCancel')
-    // );
-    // container.appendChild(previous);
-    // container.appendChild(next);
-    // container.appendChild(cancel);
-    // return container;
     const container = document.createElement('div');
-    if (buttons.length > 0) buttons.forEach((buttonConfig) => {
-      let { text, primary } = buttonConfig;
-      let buttonElement = button(text, null, primary);
-      container.appendChild(buttonElement);
-    })
+    container.className = 'panel-body';
+    const p = document.createElement('p');
+
+    if (buttons.length > 0) {
+      buttons.forEach((buttonConfig) => {
+        const { text, eventName, cssClass } = buttonConfig;
+        const buttonElement = button(text, eventName, cssClass);
+        p.appendChild(buttonElement);
+      });
+    }
+    container.appendChild(p);
     return container;
   }
 
-
+  /**
+   * @class ButtonGroup
+   */
   class ButtonGroup {
     constructor(target) {
-      this.target = target;
-      this.target.appendChild(this.render());
+      this.target = target; // <div class="button-group"></div>
+      this.updateTarget(this.render());
 
-      window.addEventListener('labelbusterPageChange', ({ data }) => {
-        this.target = this.render(data.page);
+      window.addEventListener('labelbusterPageChange', ({ detail: { page } }) => {
+        this.updateTarget(this.render(page));
       });
     }
 
+    /**
+     * @param {HTMLElement}
+     */
+    updateTarget(result) {
+      this.target.innerHTML = '';
+      this.target.appendChild(result);
+    }
+
+    /**
+     * @param {Number} pageNo the page number provided by the wizard instance
+     */
+    // eslint-disable-next-line class-methods-use-this
     render(pageNo) {
+      if (pageNo === 0) {
+        return buttonGroup([
+          {
+            text: 'Start now',
+            eventName: 'labelbusterGoToNext',
+            cssClass: 'btn-primary',
+          },
+        ]);
+      }
       if (pageNo === 1) {
-        return buttonGroup([{ text: "Start now", primary: true }]);
+        return buttonGroup([
+          {
+            text: 'Back',
+            eventName: 'labelbusterGoToPrevious',
+            cssClass: 'btn-default',
+          },
+          {
+            text: 'Accept',
+            eventName: 'labelbusterAccept',
+            cssClass: 'btn-primary',
+          },
+          {
+            text: 'Cancel',
+            eventName: 'labelbusterCancel',
+            cssClass: 'btn-link',
+          },
+        ]);
       }
-      if (pageNo === 2) {
-        return buttonGroup([{ text: "Accept", primary: true }, { text: "Back", primary: false }, { text: "Cancel" }]);
-      }
-      return buttonGroup();
+      return buttonGroup(
+        [
+          {
+            text: 'Back',
+            eventName: 'labelbusterGoToPrevious',
+            cssClass: 'btn-default',
+          },
+          {
+            text: 'Next',
+            eventName: 'labelbusterAccept',
+            cssClass: 'btn-primary',
+          },
+          {
+            text: 'Cancel',
+            eventName: 'labelbusterCancel',
+            cssClass: 'btn-link',
+          },
+        ],
+      );
     }
   }
 
-  window.buttonGroup = new ButtonGroup(
-    document.querySelector('.button-container')
+  new ButtonGroup(
+    document.querySelector('.button-container'),
   );
-
 </script>
 
-<style>
-  .formio-form>div>nav {
-    display: none;
-  }
-</style>
 <script>
   /* remove Squiz rendered H1 in favour of H1 for each view from Form.io */
   document
