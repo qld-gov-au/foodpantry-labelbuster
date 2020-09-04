@@ -5,7 +5,7 @@ function firePageChangeEvent() {
   const event = new CustomEvent('labelbusterPageChange', {
     bubbles: true,
     data: {
-      page: this.wizard.page,
+      page: this.wizard ? this.wizard.page : 0,
     },
   });
   window.dispatchEvent(event);
@@ -65,8 +65,8 @@ module.exports = class LabelBuster {
     ).then(wizard => {
       this.wizard = wizard;
       this.loaded = true;
+      firePageChangeEvent();
     });
-    firePageChangeEvent();
   }
 
   /**
