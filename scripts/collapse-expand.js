@@ -1,3 +1,6 @@
+/**
+ * @param {Boolean} newState checked or not checked
+ */
 function modifyAllCheckbox(newState) {
   const accordionArticles = document.querySelectorAll(
     '.qg-accordion article input[type="checkbox"]'
@@ -7,14 +10,23 @@ function modifyAllCheckbox(newState) {
     article.checked = newState;
   });
 }
+// Remove before production!
+window.addEventListener(
+  'labelbusterPageChange',
+  () => {
+    const collapse = document.querySelector('label[for="collapse"]');
+    const expand = document.querySelector('label[for="expand"]');
+    if (collapse) {
+      collapse.addEventListener('click', () => {
+        modifyAllCheckbox(false);
+      });
+    }
 
-const collapse = document.querySelector('label[for="collapse"]');
-const expand = document.querySelector('label[for="expand"]');
-
-collapse.addEventListener('click', () => {
-  modifyAllCheckbox(false);
-});
-
-expand.addEventListener('click', () => {
-  modifyAllCheckbox(true);
-});
+    if (expand) {
+      expand.addEventListener('click', () => {
+        modifyAllCheckbox(true);
+      });
+    }
+  },
+  false
+);
