@@ -31,7 +31,10 @@
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier",
     "test": "karma start --coverage --experimental",
-    "build": "rimraf dist && rollup -c rollup.config.js"
+    "start": "parcel src/index.html",
+    "build": "rimraf dist && npm run build:resources && npm run build:squiz",
+    "build:resources": "parcel build src/resources/**/view.html",
+    "build:squiz": "parcel build src/index.html"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
