@@ -20,6 +20,7 @@
 /_site/
 /dist/
 /out-tsc/
+.cache
 
 # Node/Yarn locks for now
 yarn.lock

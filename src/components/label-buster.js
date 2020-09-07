@@ -3,7 +3,8 @@
  */
 const formLocation =
   'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
-class LabelBuster {
+// eslint-disable-next-line import/prefer-default-export
+export class LabelBuster {
   /**
    * @param {Boolean} test if we are running a test
    * @returns {void}

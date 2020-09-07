@@ -4,7 +4,7 @@
  * @returns {void}
  */
 function fireEvent(domEvent, name) {
-  const customEvent = new Event(name, { bubbles: true });
+  const customEvent = new CustomEvent(name, { bubbles: true });
   domEvent.target.dispatchEvent(customEvent);
 }
 
@@ -46,7 +46,8 @@ function buttonGroup(buttons) {
 /**
  * @class ButtonGroup
  */
-class ButtonGroup {
+// eslint-disable-next-line import/prefer-default-export
+export class ButtonGroup {
   constructor(target) {
     this.target = target; // <div class="button-group"></div>
     this.updateTarget(this.render());
