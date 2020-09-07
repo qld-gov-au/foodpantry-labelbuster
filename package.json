@@ -19,7 +19,14 @@
     "type": "git",
     "url": "git+https://github.com/DanielTurner/label-buster.git"
   },
-  "browserslist": "> 0.25%, not dead",
+  "browserslist": [
+    "chrome >= 76",
+    "safari >= 11",
+    "ie 11",
+    "firefox >= 68",
+    "edge >= 17",
+    "samsung >= 9"
+  ],
   "bugs": {
     "url": "https://github.com/DanielTurner/label-buster/issues"
   },
