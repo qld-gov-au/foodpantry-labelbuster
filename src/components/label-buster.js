@@ -65,47 +65,29 @@ export class LabelBuster {
    * @returns {void}
    */
 
-
   // eslint-ignored here while committing
   firePageChangeEvent() {
     const event = new CustomEvent('labelbusterPageChange', {
       bubbles: true,
       detail: {
         page: this.wizard && this.wizard.page ? this.wizard.page : 0,
-        navigation: [{
-          label: homePage,
-          destination: goToPage(page),
-          disabled: false,
-        },
-        {
-          label: stepValidation,
-          destination: allowPreviousStep(page),
-          disabled: false,
-        },
-        {
-          label: refuseNavigation,
-          destination: disallowNextStep(page),
-          disabled: true,
-        },
-        ]
+        navigation: this.progressBarCheck(),
       },
     });
     window.dispatchEvent(event);
   }
 
-
-  allowPreviousStep(page) {
-    this.wizard.nextPage().then(() => {
-      this.firePageChangeEvent();
+  progressBarCheck() {
+    const navigationArray = [];
+    this.wizard.setPage(this.wizard.page);
+    this.wizard.components.forEach(page => {
+      const outputObject = {
+        label: page.component.title,
+        destination: this.goToPage(page),
+        disabled: !!page.component.disabled,
+      };
+      return navigationArray.push(outputObject);
     });
-    return true;
-  }
-
-  disallowNextStep(page) {
-    this.wizard._seenPages().then(() => {
-      this.firePageChangeEvent();
-    });
-    return true;
   }
 
   /**
