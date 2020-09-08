@@ -50,6 +50,12 @@ export class LabelBuster {
    */
   initialise() {
     this.formElement = document.querySelector('#formio');
+    // listens for terms and conditions selection
+    this.formElement.addEventListener('click', e => {
+      if (e.target.name === 'data[termsAndConditions]') {
+        this.firePageChangeEvent();
+      }
+    });
     Formio.createForm(
       this.formElement,
       this.formLocation,
@@ -69,6 +75,7 @@ export class LabelBuster {
       bubbles: true,
       detail: {
         page: this.wizard && this.wizard.page ? this.wizard.page : 0,
+        hasAccepted: this.hasAccepted(),
       },
     });
     window.dispatchEvent(event);
@@ -113,7 +120,10 @@ export class LabelBuster {
    * @return {Boolean}
    */
   hasAccepted() {
-    return this.wizard._data.termsAndConditions;
+    if (this.wizard && this.wizard._data) {
+      return this.wizard._data.termsAndConditions;
+    }
+    return false;
   }
 
   /**
