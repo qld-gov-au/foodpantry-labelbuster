@@ -10,23 +10,22 @@ function modifyAllCheckbox(newState) {
     article.checked = newState;
   });
 }
-// Remove before production!
-window.addEventListener(
-  'labelbusterPageChange',
-  () => {
-    const collapse = document.querySelector('label[for="collapse"]');
-    const expand = document.querySelector('label[for="expand"]');
-    if (collapse) {
-      collapse.addEventListener('click', () => {
-        modifyAllCheckbox(false);
-      });
-    }
 
-    if (expand) {
-      expand.addEventListener('click', () => {
-        modifyAllCheckbox(true);
-      });
-    }
-  },
-  false
-);
+/**
+ * @returns {void}
+ */
+export default () => {
+  const collapse = document.querySelector('label[for="collapse"]');
+  const expand = document.querySelector('label[for="expand"]');
+  if (collapse) {
+    collapse.addEventListener('click', () => {
+      modifyAllCheckbox(false);
+    });
+  }
+
+  if (expand) {
+    expand.addEventListener('click', () => {
+      modifyAllCheckbox(true);
+    });
+  }
+};
