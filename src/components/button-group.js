@@ -13,16 +13,14 @@ function fireEvent(domEvent, name) {
  * @param {String} text the button's inner text
  * @param {String} eventName the custom event that button will fire
  * @param {String} cssClass the class that describes the presentation of the button
- * @param {Boolean} disabled if the button should be disabled
+ * @param {Boolean} isDisabled if the button should be disabled
  * @returns {HTMLButtonElement}
  */
-function button(text, eventName, cssClass, disabled = false) {
+function button(text, eventName, cssClass, isDisabled = false) {
   const _button = document.createElement('button');
   _button.innerText = text;
   _button.className = `qg-btn ${cssClass}`;
-  if (disabled) {
-    _button.disabled = true;
-  }
+  _button.disabled = isDisabled;
   _button.addEventListener('click', e => fireEvent(e, eventName));
   return _button;
 }
