@@ -104,28 +104,23 @@ export class LabelBuster {
     // this.wizard.setPage(this.wizard.page);
     let invalidPreviousStep = false;
     this.wizard.components.forEach((page, offset) => {
-      let isValid = this.checkPageValidity(
+      const isValid = this.checkPageValidity(
         offset,
         this.wizard.components,
         this.wizard.data
       );
-
-      if (invalidPreviousStep) {
-        isValid = false;
-      }
-
-      if (!isValid) {
-        invalidPreviousStep = true;
-      }
 
       const outputObject = {
         cssClass: 'qg-btn btn-link',
         step: offset + 1,
         label: page.component.title,
         destination: offset,
-        disabled: !isValid,
+        disabled: invalidPreviousStep,
         visited: this.wizard._seenPages.indexOf(offset) !== -1,
       };
+      if (!isValid) {
+        invalidPreviousStep = true;
+      }
       navigationArray.push(outputObject);
     });
     return navigationArray;
