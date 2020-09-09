@@ -35,7 +35,8 @@ export class SectionNavigation {
           nav.cssClass,
           nav.label,
           nav.destination,
-          nav.disabled
+          nav.disabled,
+          nav.visited
         );
         this.target.appendChild(element);
       });
@@ -58,13 +59,15 @@ export class SectionNavigation {
    * @param {String} label the label of the button
    * @param {String} destination the destination (formio page) on click
    * @param {Boolean} disabled is the button disabled
+   * @param {Boolean} visited has this been visited
    * @return {HTMLElement}
    */
   // eslint-disable-next-line class-methods-use-this
-  renderButton(cssClass, label, destination, disabled) {
+  renderButton(cssClass, label, destination, disabled, visited) {
+    const buttonClass = visited ? `${cssClass} visited` : cssClass;
     const button = document.createElement('button');
     button.type = 'button';
-    button.class = cssClass;
+    button.className = buttonClass;
     button.setAttribute('data-destination', destination);
     button.disabled = disabled;
     button.textContent = label;

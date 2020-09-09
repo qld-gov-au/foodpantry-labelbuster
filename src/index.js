@@ -22,6 +22,8 @@ import attachStepHandler from './scripts/step-handlers';
       sectionNav.display = 'block';
     }
     const sectionNavTarget = sectionNav.querySelector('ul');
+    sectionNavTarget.classList.add('lb');
+
     const sectionNavigation = new SectionNavigation(sectionNavTarget);
   });
 })();

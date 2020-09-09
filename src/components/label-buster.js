@@ -82,7 +82,6 @@ export class LabelBuster {
 
   // eslint-ignored here while committing
   firePageChangeEvent() {
-    if (!this.wizard || typeof this.wizard.page === 'undefined') return;
     const event = new CustomEvent('labelbusterPageChange', {
       bubbles: true,
       detail: {
@@ -120,6 +119,7 @@ export class LabelBuster {
       }
 
       const outputObject = {
+        cssClass: 'qg-btn btn-link',
         step: offset + 1,
         label: page.component.title,
         destination: offset,
