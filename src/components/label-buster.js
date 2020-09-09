@@ -3,7 +3,7 @@
  */
 const formLocation =
   'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
-// eslint-disable-next-line import/prefer-default-export
+
 export class LabelBuster {
   /**
    * @param {Boolean} test if we are running a test
@@ -44,6 +44,10 @@ export class LabelBuster {
     window.addEventListener('labelbusterCancel', () => {
       this.goToPage(0);
     });
+
+    window.addEventListener('gotoPage', (event) => {
+      this.goToPage(Number(event.detail.page));
+    });
   }
 
   /**
@@ -63,8 +67,13 @@ export class LabelBuster {
     ).then((wizard) => {
       this.wizard = wizard;
       this.loaded = true;
+      this.wizard.on('initialized', () => {
+        this.firePageChangeEvent();
+      });
+      this.wizard.on('render', () => {
+        this.firePageChangeEvent();
+      });
     });
-    this.firePageChangeEvent();
   }
 
   /**
@@ -73,28 +82,64 @@ export class LabelBuster {
 
   // eslint-ignored here while committing
   firePageChangeEvent() {
+    if (!this.wizard || typeof this.wizard.page === 'undefined') return;
     const event = new CustomEvent('labelbusterPageChange', {
       bubbles: true,
       detail: {
         page: this.wizard && this.wizard.page ? this.wizard.page : 0,
-        navigation: this.progressBarCheck(),
+        navigation: this.buildProgressMenuData(),
         hasAccepted: this.hasAccepted(),
       },
     });
     window.dispatchEvent(event);
   }
 
-  progressBarCheck() {
+  /**
+   * @returns {Array} the array of options to distribute
+   */
+  buildProgressMenuData() {
     const navigationArray = [];
-    this.wizard.setPage(this.wizard.page);
-    this.wizard.components.forEach((page) => {
+    if (!this.wizard || !this.wizard.components) {
+      return navigationArray;
+    }
+    // this.wizard.setPage(this.wizard.page);
+    let invalidPreviousStep = false;
+    this.wizard.components.forEach((page, offset) => {
+      let isValid = this.checkPageValidity(
+        offset,
+        this.wizard.components,
+        this.wizard.data
+      );
+
+      if (invalidPreviousStep) {
+        isValid = false;
+      }
+
+      if (!isValid) {
+        invalidPreviousStep = true;
+      }
+
       const outputObject = {
+        step: offset + 1,
         label: page.component.title,
-        destination: this.goToPage(page),
-        disabled: !!page.component.disabled,
+        destination: offset,
+        disabled: !isValid,
+        visited: this.wizard._seenPages.indexOf(offset) !== -1,
       };
-      return navigationArray.push(outputObject);
+      navigationArray.push(outputObject);
     });
+    return navigationArray;
+  }
+
+  /**
+   * @param {Number} offset the offset in the page array
+   * @param {Object} pages the details about the page
+   * @param {Object} data the data entered by the user
+   * @returns {Boolean}
+   */
+  // eslint-disable-next-line class-methods-use-this
+  checkPageValidity(offset, pages, data) {
+    return pages[offset].checkValidity(data);
   }
 
   /**
@@ -108,9 +153,7 @@ export class LabelBuster {
     if (this.isTest) {
       return true;
     }
-    this.wizard.nextPage().then(() => {
-      this.firePageChangeEvent();
-    });
+    this.wizard.nextPage();
     return true;
   }
 
@@ -126,9 +169,7 @@ export class LabelBuster {
     if (this.isTest) {
       return true;
     }
-    this.wizard.nextPage().then(() => {
-      this.firePageChangeEvent();
-    });
+    this.wizard.nextPage();
     return true;
   }
 
@@ -137,7 +178,11 @@ export class LabelBuster {
    */
   hasAccepted() {
     if (this.wizard && this.wizard._data) {
-      return this.wizard._data.termsAndConditions;
+      return this.checkPageValidity(
+        this.wizard.page,
+        this.wizard.components,
+        this.wizard.data
+      );
     }
     return false;
   }
@@ -153,9 +198,7 @@ export class LabelBuster {
     if (this.isTest) {
       return true;
     }
-    this.wizard.prevPage().then(() => {
-      this.firePageChangeEvent();
-    });
+    this.wizard.prevPage();
     return true;
   }
 
@@ -171,12 +214,12 @@ export class LabelBuster {
     if (this.isTest) {
       return true;
     }
-    this.wizard.setPage(pageNo).then(() => {
-      this.firePageChangeEvent();
-    });
+    this.wizard.setPage(pageNo);
     return true;
   }
 
+  /**
+   */
   notLoaded() {
     const errorObject = {
       element: this.formElement,
