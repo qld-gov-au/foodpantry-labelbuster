@@ -13,13 +13,15 @@ function fireEvent(domEvent, name) {
  * @param {String} text the button's inner text
  * @param {String} eventName the custom event that button will fire
  * @param {String} cssClass the class that describes the presentation of the button
+ * @param {Boolean} isDisabled if the button should be disabled
  * @returns {HTMLButtonElement}
  */
-function button(text, eventName, cssClass) {
+function button(text, eventName, cssClass, isDisabled = false) {
   const _button = document.createElement('button');
   _button.innerText = text;
   _button.className = `qg-btn ${cssClass}`;
-  _button.addEventListener('click', e => fireEvent(e, eventName));
+  _button.disabled = isDisabled;
+  _button.addEventListener('click', (e) => fireEvent(e, eventName));
   return _button;
 }
 
@@ -33,9 +35,9 @@ function buttonGroup(buttons) {
   const p = document.createElement('p');
 
   if (buttons.length > 0) {
-    buttons.forEach(buttonConfig => {
-      const { text, eventName, cssClass } = buttonConfig;
-      const buttonElement = button(text, eventName, cssClass);
+    buttons.forEach((buttonConfig) => {
+      const { text, eventName, cssClass, disabled } = buttonConfig;
+      const buttonElement = button(text, eventName, cssClass, disabled);
       p.appendChild(buttonElement);
     });
   }
@@ -52,9 +54,12 @@ export class ButtonGroup {
     this.target = target; // <div class="button-group"></div>
     this.updateTarget(this.render());
 
-    window.addEventListener('labelbusterPageChange', ({ detail: { page } }) => {
-      this.updateTarget(this.render(page));
-    });
+    window.addEventListener(
+      'labelbusterPageChange',
+      ({ detail: { page, hasAccepted } }) => {
+        this.updateTarget(this.render(page, hasAccepted));
+      }
+    );
   }
 
   /**
@@ -69,7 +74,7 @@ export class ButtonGroup {
    * @param {Number} pageNo the page number provided by the wizard instance
    */
   // eslint-disable-next-line class-methods-use-this
-  render(pageNo) {
+  render(pageNo, hasAccepted) {
     if (pageNo === 0) {
       return buttonGroup([
         {
@@ -90,6 +95,7 @@ export class ButtonGroup {
           text: 'Accept',
           eventName: 'labelbusterAccept',
           cssClass: 'btn-primary',
+          disabled: !hasAccepted,
         },
         {
           text: 'Cancel',

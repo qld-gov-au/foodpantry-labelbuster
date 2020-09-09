@@ -50,11 +50,17 @@ export class LabelBuster {
    */
   initialise() {
     this.formElement = document.querySelector('#formio');
+    // listens for terms and conditions selection
+    this.formElement.addEventListener('click', (e) => {
+      if (e.target.name === 'data[termsAndConditions]') {
+        this.firePageChangeEvent();
+      }
+    });
     Formio.createForm(
       this.formElement,
       this.formLocation,
       this.formSettings
-    ).then(wizard => {
+    ).then((wizard) => {
       this.wizard = wizard;
       this.loaded = true;
     });
@@ -72,6 +78,7 @@ export class LabelBuster {
       detail: {
         page: this.wizard && this.wizard.page ? this.wizard.page : 0,
         navigation: this.progressBarCheck(),
+        hasAccepted: this.hasAccepted(),
       },
     });
     window.dispatchEvent(event);
@@ -80,7 +87,7 @@ export class LabelBuster {
   progressBarCheck() {
     const navigationArray = [];
     this.wizard.setPage(this.wizard.page);
-    this.wizard.components.forEach(page => {
+    this.wizard.components.forEach((page) => {
       const outputObject = {
         label: page.component.title,
         destination: this.goToPage(page),
@@ -129,7 +136,10 @@ export class LabelBuster {
    * @return {Boolean}
    */
   hasAccepted() {
-    return this.wizard._data.termsAndConditions;
+    if (this.wizard && this.wizard._data) {
+      return this.wizard._data.termsAndConditions;
+    }
+    return false;
   }
 
   /**
