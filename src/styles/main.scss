@@ -19,9 +19,9 @@
   list-style-type: none;
 
   > li {
+    margin-left: 0!important;
     &.active {
       background-color: #005e85;
-
       > span {
         &.number {
           background-color: #ffffff;
