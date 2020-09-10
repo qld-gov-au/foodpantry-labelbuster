@@ -36,7 +36,9 @@ export class SectionNavigation {
           nav.label,
           nav.destination,
           nav.disabled,
-          nav.visited
+          nav.visited,
+          nav.active,
+          nav.step
         );
         this.target.appendChild(element);
       });
@@ -60,10 +62,20 @@ export class SectionNavigation {
    * @param {String} destination the destination (formio page) on click
    * @param {Boolean} disabled is the button disabled
    * @param {Boolean} visited has this been visited
+   * @param {Boolean} active if the step is active
+   * @param {Number} step the step displayed -1 for no display
    * @return {HTMLElement}
    */
   // eslint-disable-next-line class-methods-use-this
-  renderButton(cssClass, label, destination, disabled, visited) {
+  renderButton(
+    cssClass,
+    label,
+    destination,
+    disabled,
+    visited,
+    active,
+    step = -1
+  ) {
     const buttonClass = visited ? `${cssClass} visited` : cssClass;
     const button = document.createElement('button');
     button.type = 'button';
@@ -72,6 +84,20 @@ export class SectionNavigation {
     button.disabled = disabled;
     button.textContent = label;
     const li = document.createElement('li');
+    if (active) {
+      li.className = 'active';
+    }
+    if (step !== -1) {
+      let className = 'number';
+      if (disabled) {
+        className += ' disabled';
+      }
+      const stepHtml = document.createElement('span');
+      stepHtml.className = className;
+      stepHtml.textContent = step;
+      li.appendChild(stepHtml);
+    }
+
     li.appendChild(button);
     return li;
   }

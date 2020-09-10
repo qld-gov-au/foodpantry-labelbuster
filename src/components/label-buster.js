@@ -117,6 +117,7 @@ export class LabelBuster {
         destination: offset,
         disabled: invalidPreviousStep,
         visited: this.wizard._seenPages.indexOf(offset) !== -1,
+        active: offset === this.wizard.page,
       };
       if (!isValid) {
         invalidPreviousStep = true;
