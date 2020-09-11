@@ -21,7 +21,7 @@ function button(text, eventName, cssClass, isDisabled = false) {
   _button.innerText = text;
   _button.className = `qg-btn ${cssClass}`;
   _button.disabled = isDisabled;
-  _button.addEventListener('click', e => fireEvent(e, eventName));
+  _button.addEventListener('click', (e) => fireEvent(e, eventName));
   return _button;
 }
 
@@ -35,7 +35,7 @@ function buttonGroup(buttons) {
   const p = document.createElement('p');
 
   if (buttons.length > 0) {
-    buttons.forEach(buttonConfig => {
+    buttons.forEach((buttonConfig) => {
       const { text, eventName, cssClass, disabled } = buttonConfig;
       const buttonElement = button(text, eventName, cssClass, disabled);
       p.appendChild(buttonElement);

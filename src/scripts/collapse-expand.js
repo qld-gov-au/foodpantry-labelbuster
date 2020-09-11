@@ -5,7 +5,7 @@ function modifyAllCheckbox(newState) {
   const accordionArticles = document.querySelectorAll(
     '.qg-accordion article input[type="checkbox"]'
   );
-  accordionArticles.forEach(article => {
+  accordionArticles.forEach((article) => {
     // eslint-disable-next-line no-param-reassign
     article.checked = newState;
   });
