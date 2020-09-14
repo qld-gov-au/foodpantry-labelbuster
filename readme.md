@@ -125,7 +125,8 @@ This project calls for Formio to be setup as a CMS for the form, allowing faster
 changes of the form without the need for a developer resource.
 Form.io is not a developer centric platform therefore the front-end is not
 easily extensible and the support team suggest using Form.io as a backend only.
-Form.io isn't allowed to save collected data in this project.
+The requirements for this project stipulate that Form.io isn't to save collected
+data.
 
 To this end we need to:
 * Create a wrapper around the form.io API to expose useful functionality in a way that doesn't pollute the single responsibility of the other parts of the app
