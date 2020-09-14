@@ -123,8 +123,8 @@ TODO: Show examples on how
 ### Leveraging Form.io
 This project calls for Formio to be setup as a CMS for the form, allowing faster
 changes of the form without the need for a developer resource.
-Form.io is not a developer centric platform therefore the documentation isn't
-ideal and the support team suggest using Form.io as a backend only.
+Form.io is not a developer centric platform therefore the front-end is not
+easily extensible and the support team suggest using Form.io as a backend only.
 Form.io isn't allowed to save collected data in this project.
 
 To this end we need to:
