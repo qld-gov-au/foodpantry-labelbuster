@@ -106,7 +106,7 @@ This is how to get started with what you need to contribute to the application.
 1. Get the repostory.
 
 ```sh
-git clone git@github.com:DanielTurner/label-buster.git
+git clone git@github.com:qld-gov-au/foodpantry-labelbuster.git
 ```
 
 
