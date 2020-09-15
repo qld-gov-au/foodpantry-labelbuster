@@ -41,7 +41,7 @@ This project is a single page application embedded within a Squiz Matrix page. I
 ### Built With
 * [Form.io](https://www.form.io/)
 * [Squiz Matrix](https://www.squiz.net/platform/products/cms)
-* [SWE](https://github.com/qld-gov-au/swe)
+* [SWE](https://qld-gov-au.github.io/web-template-release/)
 
 ### Decisions
 
@@ -106,7 +106,7 @@ This is how to get started with what you need to contribute to the application.
 1. Get the repostory.
 
 ```sh
-git clone git@github.com:DanielTurner/label-buster.git
+git clone git@github.com:qld-gov-au/foodpantry-labelbuster.git
 ```
 
 
