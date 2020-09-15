@@ -41,7 +41,7 @@ This project is a single page application embedded within a Squiz Matrix page. I
 ### Built With
 * [Form.io](https://www.form.io/)
 * [Squiz Matrix](https://www.squiz.net/platform/products/cms)
-* [SWE](https://github.com/qld-gov-au/swe)
+* [SWE](https://qld-gov-au.github.io/web-template-release/)
 
 ### Decisions
 
