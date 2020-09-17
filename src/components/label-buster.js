@@ -3,7 +3,7 @@ import debounce from '../scripts/debounce';
  * @class LabelBuster
  */
 const formLocation =
-  'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/kyfb';
+  'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
 
 export class LabelBuster {
   /**
