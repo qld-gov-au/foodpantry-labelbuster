@@ -1,15 +1,17 @@
+import debounce from '../scripts/debounce';
 /**
  * @class LabelBuster
  */
 const formLocation =
-  'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
+  'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/kyfb';
 
 export class LabelBuster {
   /**
    * @param {Boolean} test if we are running a test
+   * @param {Number} scrollTarget the numerical target for scroll
    * @returns {void}
    */
-  constructor(test = false) {
+  constructor(test = false, scrollTarget = 0) {
     this.formLocation = formLocation;
     this.formElement = {};
     this.formSettings = {
@@ -23,6 +25,7 @@ export class LabelBuster {
     this.wizard = {};
     this.loaded = false;
     this.isTest = test;
+    this.scrollTaret = scrollTarget;
 
     window.addEventListener('DOMContentLoaded', () => {
       if (this.isTest) return;
@@ -55,10 +58,8 @@ export class LabelBuster {
   initialise() {
     this.formElement = document.querySelector('#formio');
     // listens for terms and conditions selection
-    this.formElement.addEventListener('click', (e) => {
-      if (e.target.name === 'data[termsAndConditions]') {
-        this.firePageChangeEvent();
-      }
+    this.formElement.addEventListener('click', () => {
+      this.firePageChangeEvent();
     });
     Formio.createForm(
       this.formElement,
@@ -67,10 +68,12 @@ export class LabelBuster {
     ).then((wizard) => {
       this.wizard = wizard;
       this.loaded = true;
+      this.observeMutations();
       this.wizard.on('initialized', () => {
         this.firePageChangeEvent();
       });
       this.wizard.on('render', () => {
+        this.scrollToTop();
         this.firePageChangeEvent();
       });
     });
@@ -226,6 +229,27 @@ export class LabelBuster {
     };
 
     throw errorObject;
+  }
+
+  /**
+   */
+  observeMutations() {
+    const config = { attributes: false, childList: true, subtree: true };
+    const observer = new MutationObserver(
+      debounce(() => {
+        this.firePageChangeEvent();
+      }, 250)
+    );
+    observer.observe(this.formElement, config);
+  }
+
+  /**
+   */
+  scrollToTop() {
+    window.scroll({
+      top: this.scrollTaret,
+      behavior: 'smooth',
+    });
   }
 }
 
