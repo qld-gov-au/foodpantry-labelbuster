@@ -25,10 +25,10 @@
       > span {
         &.number {
           background-color: #ffffff;
-          color: #005e85;
+          color: #007eb1;
           height: 21px;
           width: 21px;
-          margin: 9px 15px 12px 77px;
+          margin: 9px 0 12px 77px;
           display: inline-block;
           text-align: center;
           font-size: 0.9375rem;
@@ -42,12 +42,12 @@
 
     > span {
       &.number {
-        background-color: #005e85;
-        color: #ffffff;
+        background-color: transparent;
+        color: #005E85;
         height: 21px;
         width: 21px;
         margin: 15px;
-        margin: 9px 15px 12px 77px;
+        margin: 9px 0 12px 77px;
         display: inline-block;
         text-align: center;
         font-size: 0.9375rem;
@@ -57,6 +57,10 @@
         background-color: transparent;
         color: #6f777b;
       }
+    }
+
+    > button {
+      padding-left: 12px;
     }
   }
 }
