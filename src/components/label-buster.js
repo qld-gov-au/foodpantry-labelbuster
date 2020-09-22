@@ -16,7 +16,7 @@ export class LabelBuster {
     // Replace with properties set when using this, same as the form location
     this.buttonCSS = {
       baseClass: 'qg-btn',
-      previous: 'btn-link',
+      previous: 'btn-default',
       next: 'btn-primary',
       cancel: 'btn-link',
     };
