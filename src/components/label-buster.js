@@ -1,4 +1,3 @@
-import debounce from '../scripts/debounce';
 /**
  * @class LabelBuster
  */
@@ -13,6 +12,20 @@ export class LabelBuster {
    */
   constructor(test = false, scrollTarget = 0) {
     this.formLocation = formLocation;
+
+    // Replace with properties set when using this, same as the form location
+    this.buttonCSS = {
+      baseClass: 'qg-btn',
+      previous: 'btn-default',
+      next: 'btn-primary',
+      cancel: 'btn-link',
+    };
+
+    this.buttonConfig = {
+      startOnFirst: true,
+      acceptWhenTermsFound: true,
+    };
+
     this.formElement = {};
     this.formSettings = {
       buttonSettings: {
@@ -68,7 +81,6 @@ export class LabelBuster {
     ).then((wizard) => {
       this.wizard = wizard;
       this.loaded = true;
-      this.observeMutations();
       this.wizard.on('initialized', () => {
         this.firePageChangeEvent();
       });
@@ -91,6 +103,7 @@ export class LabelBuster {
         page: this.wizard && this.wizard.page ? this.wizard.page : 0,
         navigation: this.buildProgressMenuData(),
         hasAccepted: this.hasAccepted(),
+        buttons: this.buildButtonData(),
       },
     });
     window.dispatchEvent(event);
@@ -131,6 +144,60 @@ export class LabelBuster {
   }
 
   /**
+   * @return {Array} the button data array
+   */
+  buildButtonData() {
+    const { page } = this.wizard;
+    const { pages } = this.wizard;
+    const { data } = this.wizard;
+
+    const previousButton = {
+      title: 'Previous',
+      event: 'labelbusterGoToPrevious',
+      cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.previous}`,
+      disabled: !this.checkPageValidity(page - 1, pages, data),
+      displayed: true,
+    };
+
+    const nextButton = {
+      title: 'Next',
+      event: 'labelbusterGoToNext',
+      cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.next}`,
+      disabled: !this.checkPageValidity(page, pages, data),
+      displayed: true,
+    };
+
+    const cancelButton = {
+      title: 'Cancel',
+      event: 'labelbusterCancel',
+      cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.cancel}`,
+      disabled: false,
+      displayed: true,
+    };
+
+    if (page === 0) {
+      previousButton.displayed = false;
+      cancelButton.displayed = false;
+      if (this.buttonConfig.startOnFirst) {
+        nextButton.title = 'Start';
+      }
+    }
+
+    if (page === this.wizard.pages.length - 1) {
+      nextButton.displayed = false;
+    }
+
+    const currentPageTitle = this.wizard.pages[this.wizard.page].component
+      .title;
+    if (currentPageTitle.toLowerCase().includes('terms')) {
+      nextButton.title = 'Accept';
+      nextButton.disabled = !this.checkPageValidity(page, pages, data);
+    }
+
+    return [previousButton, nextButton, cancelButton];
+  }
+
+  /**
    * @param {Number} offset the offset in the page array
    * @param {Object} pages the details about the page
    * @param {Object} data the data entered by the user
@@ -138,6 +205,7 @@ export class LabelBuster {
    */
   // eslint-disable-next-line class-methods-use-this
   checkPageValidity(offset, pages, data) {
+    if (offset < 0) return false;
     return pages[offset].checkValidity(data);
   }
 
@@ -229,18 +297,6 @@ export class LabelBuster {
     };
 
     throw errorObject;
-  }
-
-  /**
-   */
-  observeMutations() {
-    const config = { attributes: false, childList: true, subtree: true };
-    const observer = new MutationObserver(
-      debounce(() => {
-        this.firePageChangeEvent();
-      }, 250)
-    );
-    observer.observe(this.formElement, config);
   }
 
   /**

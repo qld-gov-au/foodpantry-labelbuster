@@ -41,7 +41,8 @@
     "start": "parcel src/index.html",
     "build": "rimraf dist && npm run build:resources && npm run build:squiz",
     "build:resources": "parcel build src/resources/**/view.html",
-    "build:squiz": "parcel build src/index.html"
+    "build:squiz": "parcel build src/index.html",
+    "postinstall": "rm -rf ./.cache && node ./postinstall.js"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
@@ -91,5 +92,8 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "lit-html": "^1.3.0"
   }
 }
