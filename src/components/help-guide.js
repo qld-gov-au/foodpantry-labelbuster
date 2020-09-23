@@ -9,23 +9,20 @@ export class HelpGuide {
    */
   constructor(target) {
     this.target = target;
-    this.firstView = true;
-    this.open = true;
-    this.render();
+    this.state = {
+      firstView: true,
+      open: true,
+    };
+    this.render(this.state);
 
     window.addEventListener('labelbusterPageChange', () => {
-      this.render();
+      this.render(this.state);
     });
   }
 
   _closeButton() {
     return html`
-      <button
-        @click=${() => {
-          this.open = false;
-          this.render();
-        }}
-      >
+      <button @click=${() => this.updateTemplate({ open: false })}>
         close
       </button>
     `;
@@ -39,12 +36,7 @@ export class HelpGuide {
   // CLOSED STATE
   _callout() {
     return html`
-      <button
-        @click=${() => {
-          this.open = true;
-          this.render();
-        }}
-      >
+      <button @click=${() => this.updateTemplate({ open: true })}>
         <i>fa-icon here</i>
         Help guide
       </button>
@@ -562,10 +554,7 @@ export class HelpGuide {
         </ul>
         <button
           class="qg-btn btn-primary"
-          @click=${() => {
-            this.firstView = false;
-            this.render();
-          }}
+          @click=${() => this.updateTemplate({ firstView: false })}
         >
           Got it!
         </button>
@@ -573,18 +562,27 @@ export class HelpGuide {
     `;
   }
 
-  createTemplate() {
-    if (this.open) {
+  updateTemplate(newState) {
+    this.state = {
+      ...this.state,
+      ...newState,
+    };
+
+    this.render(this.state);
+  }
+
+  createTemplate(state) {
+    if (state.open) {
       return html`
-        ${this.firstView ? this._overlay() : ''}
+        ${state.firstView ? this._overlay() : ''}
         <div>
           <div class="top-block">
-            ${!this.firstView ? this.closeButton() : ''}
+            ${!state.firstView ? this._closeButton() : ''}
             <div class="side-padding">
               <i class="fa fa-book"></i>
               <h3>Help guide</h3>
             </div>
-            ${this.firstView ? this._initialTemplate() : this._mainScreen()}
+            ${state.firstView ? this._initialTemplate() : this._mainScreen()}
           </div>
         </div>
       `;
@@ -594,6 +592,6 @@ export class HelpGuide {
   }
 
   render() {
-    render(this.createTemplate(), this.target);
+    render(this.createTemplate(this.state), this.target);
   }
 }
