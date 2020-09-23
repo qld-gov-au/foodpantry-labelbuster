@@ -1,7 +1,3 @@
-/* eslint-disable lines-between-class-members */
-/* eslint-disable indent */
-/* eslint-disable no-return-assign */
-/* eslint-disable class-methods-use-this */
 import { html, render } from 'lit-html';
 /**
  * @class HelpGuide
@@ -35,6 +31,7 @@ export class HelpGuide {
     `;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _overlay() {
     return html`<div class="overlay"></div>`;
   }
@@ -55,6 +52,7 @@ export class HelpGuide {
   }
 
   // MAIN STATE
+  // eslint-disable-next-line class-methods-use-this
   _mainScreen() {
     return html`
       <div>
