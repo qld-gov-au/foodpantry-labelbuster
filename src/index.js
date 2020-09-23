@@ -3,11 +3,13 @@ import { LabelBuster } from './components/label-buster';
 import { SectionNavigation } from './components/section-navigation';
 import { ButtonGroup } from './components/button-group';
 import attachStepHandler from './scripts/step-handlers';
+import { HelpGuide } from './components/help-guide';
 
 (() => {
   const lb = new LabelBuster();
   const bg = new ButtonGroup(document.querySelector('.button-container'));
   attachStepHandler();
+  const hg = new HelpGuide(document.getElementById('help-guide'));
 
   window.addEventListener('DOMContentLoaded', () => {
     /* Remove Squiz default H1 */
