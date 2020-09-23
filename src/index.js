@@ -1,11 +1,37 @@
 /* eslint-disable no-unused-vars */
-import { LabelBuster } from './components/label-buster';
-import { SectionNavigation } from './components/section-navigation';
+import { FormioWrapper } from './components/formio-wrapper';
 import { ButtonGroup } from './components/button-group';
 import attachStepHandler from './scripts/step-handlers';
 
 (() => {
-  const lb = new LabelBuster();
+  const configuration = {
+    formLocation:
+      'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard',
+    formSettings: {
+      buttonSettings: {
+        showCancel: false,
+        showPrevious: false,
+        showNext: false,
+        showSubmit: false,
+      },
+    },
+    buttonCSS: {
+      baseClass: 'qg-btn',
+      previous: 'btn-default',
+      next: 'btn-primary',
+      cancel: 'btn-link',
+    },
+    scrollTarget: 0,
+    buttonConfig: {
+      startOnFirst: true,
+      acceptWhenTermsFound: true,
+    },
+    navigationCSS: {
+      baseClass: 'qg-btn btn-link',
+    },
+  };
+
+  const lb = new FormioWrapper(configuration);
   const bg = new ButtonGroup(document.querySelector('.button-container'));
   attachStepHandler();
 
@@ -17,7 +43,7 @@ import attachStepHandler from './scripts/step-handlers';
     }
 
     let sectionNav = document.querySelector(
-      '#qg-section-nav > ul > li:nth-child(1)'
+      '#qg-section-nav > ul > li:nth-child(1)',
     );
     if (!sectionNav) {
       sectionNav = document.querySelector('#formnav');
@@ -29,6 +55,6 @@ import attachStepHandler from './scripts/step-handlers';
     sectionNav.appendChild(unorderdList);
     const sectionNavTarget = sectionNav.querySelector('ul');
 
-    const sectionNavigation = new SectionNavigation(sectionNavTarget);
+    const sectionNavigation = new ButtonGroup(sectionNavTarget, 'navigation');
   });
 })();

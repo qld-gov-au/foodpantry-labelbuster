@@ -1,10 +1,11 @@
 import { html, render } from 'lit-html';
 
 export class ButtonGroup {
-  constructor(target) {
+  constructor(target, data = 'buttons') {
     this.target = target;
+    this.data = data;
 
-    window.addEventListener('labelbusterPageChange', ({ detail }) => {
+    window.addEventListener('formiowrapperPageChange', ({ detail }) => {
       this.updateTarget(detail);
     });
   }
@@ -14,7 +15,7 @@ export class ButtonGroup {
    * @param {Array} data the event data
    */
   updateTarget(data) {
-    render(this.updateButtons(data.buttons), this.target);
+    render(this.updateButtons(data[this.data]), this.target);
   }
 
   /**
@@ -28,8 +29,9 @@ export class ButtonGroup {
         but.event,
         but.cssClass,
         but.disabled,
-        but.displayed
-      )
+        but.displayed,
+        but.detail,
+      ),
     );
 
     return html`${output}`;
@@ -41,13 +43,15 @@ export class ButtonGroup {
    * @param {String} cssClass the class string for the buttons display
    * @param {Boolean} disabled is the button disabled
    * @param {Boolean} displayed do we display the button
+   * @param {Object} detail detail object to pass through
    * @return {Object}
    */
-  generateButton(text, event, cssClass, disabled, displayed) {
+  generateButton(text, event, cssClass, disabled, displayed, detail) {
     if (!displayed) return html``;
     return html` <button
       class="${cssClass}"
       data-event=${event}
+      data-detail=${JSON.stringify(detail)}
       @click=${this.fireEvent}
       ?disabled=${disabled}
     >
@@ -62,6 +66,7 @@ export class ButtonGroup {
   fireEvent(event) {
     const newEvent = new CustomEvent(event.target.dataset.event, {
       bubbles: true,
+      detail: JSON.parse(event.target.dataset.detail),
     });
     window.dispatchEvent(newEvent);
   }

@@ -1,63 +1,45 @@
 /**
- * @class LabelBuster
+ * @class FormioWrapper
  */
-const formLocation =
-  'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
-
-export class LabelBuster {
+export class FormioWrapper {
   /**
-   * @param {Boolean} test if we are running a test
-   * @param {Number} scrollTarget the numerical target for scroll
+   * @param {Object} configuration the configuration object
    * @returns {void}
    */
-  constructor(test = false, scrollTarget = 0) {
-    this.formLocation = formLocation;
-
-    // Replace with properties set when using this, same as the form location
-    this.buttonCSS = {
-      baseClass: 'qg-btn',
-      previous: 'btn-default',
-      next: 'btn-primary',
-      cancel: 'btn-link',
-    };
-
+  constructor(configuration) {
+    this.formLocation = configuration.formLocation;
+    this.buttonCSS = configuration.buttonCSS;
+    this.navigationCSS = configuration.navigationCSS;
+    this.scrollTaret = configuration.scrollTaret;
+    this.formSettings = configuration.formSettings;
     this.buttonConfig = {
       startOnFirst: true,
       acceptWhenTermsFound: true,
     };
 
     this.formElement = {};
-    this.formSettings = {
-      buttonSettings: {
-        showCancel: false,
-        showPrevious: false,
-        showNext: false,
-        showSubmit: false,
-      },
-    };
+
     this.wizard = {};
     this.loaded = false;
-    this.isTest = test;
-    this.scrollTaret = scrollTarget;
 
     window.addEventListener('DOMContentLoaded', () => {
       if (this.isTest) return;
       this.initialise();
     });
 
-    window.addEventListener('labelbusterGoToNext', () => {
+    window.addEventListener('formiowrapperGoToNext', () => {
       this.goToNextPage();
     });
 
-    window.addEventListener('labelbusterAccept', () => {
+    window.addEventListener('formiowrapperAccept', () => {
       this.acceptEvent();
     });
 
-    window.addEventListener('labelbusterGoToPrevious', () => {
+    window.addEventListener('formiowrapperGoToPrevious', () => {
       this.goToPreviousPage();
     });
 
-    window.addEventListener('labelbusterCancel', () => {
+    window.addEventListener('formiowrapperCancel', () => {
       this.goToPage(0);
     });
 
@@ -113,6 +95,8 @@ export class LabelBuster {
    * @returns {Array} the array of options to distribute
    */
   buildProgressMenuData() {
+    // btn-link
+
     const navigationArray = [];
     if (!this.wizard || !this.wizard.components) {
       return navigationArray;
@@ -126,14 +110,19 @@ export class LabelBuster {
         this.wizard.data,
       );
 
+      const activeClass = offset === this.wizard.page ? 'active' : '';
+      const visitedClass =
+        this.wizard._seenPages.indexOf(offset) !== -1 ? 'visited' : '';
+
       const outputObject = {
-        cssClass: 'qg-btn btn-link',
-        step: offset + 1,
-        label: page.component.title,
-        destination: offset,
+        cssClass: `${this.navigationCSS.baseClass} ${activeClass} ${visitedClass}`,
+        detail: {
+          page: offset,
+        },
+        event: 'gotoPage',
+        title: page.component.title,
         disabled: invalidPreviousStep,
-        visited: this.wizard._seenPages.indexOf(offset) !== -1,
-        active: offset === this.wizard.page,
+        displayed: true,
       };
       if (!isValid) {
         invalidPreviousStep = true;
@@ -153,26 +142,29 @@ export class LabelBuster {
 
     const previousButton = {
       title: 'Previous',
-      event: 'labelbusterGoToPrevious',
+      event: 'formiowrapperGoToPrevious',
       cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.previous}`,
       disabled: !this.checkPageValidity(page - 1, pages, data),
       displayed: true,
+      visited: false,
     };
 
     const nextButton = {
       title: 'Next',
-      event: 'labelbusterGoToNext',
+      event: 'formiowrapperGoToNext',
       cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.next}`,
       disabled: !this.checkPageValidity(page, pages, data),
       displayed: true,
+      visited: false,
     };
 
     const cancelButton = {
       title: 'Cancel',
-      event: 'labelbusterCancel',
+      event: 'formiowrapperCancel',
       cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.cancel}`,
       disabled: false,
       displayed: true,
+      visited: false,
     };
 
     if (page === 0) {
@@ -308,5 +300,3 @@ export class LabelBuster {
     });
   }
 }
-
-window.label = new LabelBuster();
