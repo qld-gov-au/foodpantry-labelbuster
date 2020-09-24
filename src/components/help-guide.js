@@ -22,8 +22,11 @@ export class HelpGuide {
 
   _closeButton() {
     return html`
-      <button @click=${() => this.updateTemplate({ open: false })}>
-        close
+      <button
+        class="btn btn-link"
+        @click=${() => this.updateTemplate({ open: false })}
+      >
+        Hide ->
       </button>
     `;
   }
@@ -36,8 +39,12 @@ export class HelpGuide {
   // CLOSED STATE
   _callout() {
     return html`
-      <button @click=${() => this.updateTemplate({ open: true })}>
-        <h3 class="helpGuide"><i class="fa fa-book"></i> Help guide</h3>
+      <button
+        class="help-guide-callout"
+        @click=${() => this.updateTemplate({ open: true })}
+      >
+        <i class="fa fa-book"></i>
+        <span>Help guide</span>
       </button>
     `;
   }
@@ -603,10 +610,13 @@ export class HelpGuide {
     if (state.open) {
       return html`
         ${state.firstView ? this._overlay() : ''}
-        <div>
+        <div class="help-guide-content">
           <div class="top-block">
+            <div class="side-padding">
+              <i class="fa fa-book"></i>
+              <h3>Help guide</h3>
+            </div>
             ${!state.firstView ? this._closeButton() : ''}
-            <h3 class="helpGuide"><i class="fa fa-book"></i> Help guide</h3>
           </div>
           ${state.firstView ? this._initialTemplate() : this._mainScreen()}
         </div>
