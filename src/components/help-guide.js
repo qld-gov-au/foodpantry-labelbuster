@@ -548,10 +548,10 @@ export class HelpGuide {
           requirements.
         </p>
         <p>
-          <b
-            >It is important you read the information in this help guide
-            carefully</b
-          >
+          <b>
+            It is important you read the information in this help guide
+            carefully
+          </b>
           so that you can create a food label that complies with the Food
           Standards Code.
         </p>
