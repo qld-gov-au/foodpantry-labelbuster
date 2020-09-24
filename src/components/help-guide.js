@@ -53,8 +53,8 @@ export class HelpGuide {
   // eslint-disable-next-line class-methods-use-this
   _mainScreen() {
     return html`
-      <div>
-      <h4 id ="heading-complex" >Complex requirements</h4>
+      <div class="side-padding"> 
+      <h4>Complex requirements</h4>
       <section class="qg-accordion flex-column" aria-label="Accordion Label">
           
       <article>
