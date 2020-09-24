@@ -7,8 +7,9 @@
 
   display: flex;
   flex-direction: row;
-  
-  div:not(.overlay) {
+  align-items: center;
+
+  .help-guide-content {
     height: 100%;
     width: 370px;
     z-index: 9999;
@@ -16,24 +17,63 @@
     align-self: flex-end;
 
     .top-block {
-        height: 105px;
-        background-color: #00384f;
+      height: 105px;
+      background-color: #00384f;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+
+      > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-self: flex-end;
+
+        i {
+          font-size: 1.5rem;
+          margin-right: 5px;
+        }
+
+        h3 {
+          margin-bottom: 20px;
+        }
+      }
+
+      button {
+        align-self: start;
         color: #fff;
       }
+    }
   }
-  
 }
 
 .side-padding {
-    padding: 0 16px;
+  padding: 0 16px;
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.help-guide-callout {
+  width: 70px;
+  border: none;
+  padding: 10px;
+  background-color: #00384f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  i,
+  span {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+  }
 }
