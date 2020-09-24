@@ -4,6 +4,7 @@
   right: 0;
   height: 100%;
   z-index: 9999;
+
   display: flex;
   flex-direction: row;
   
@@ -13,7 +14,6 @@
     z-index: 9999;
     background-color: #fff;
     align-self: flex-end;
-    overflow-y: scroll;
 
     .top-block {
         height: 105px;
@@ -24,15 +24,9 @@
   
 }
 
-.helpGuide{
-margin-top: 60px;
-margin-left: 18px;
-}
-
 .side-padding {
     padding: 0 16px;
-    color: #202529;
-  }
+}
 
 .overlay {
     position: fixed;

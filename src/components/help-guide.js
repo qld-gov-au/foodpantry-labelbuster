@@ -37,7 +37,7 @@ export class HelpGuide {
   _callout() {
     return html`
       <button @click=${() => this.updateTemplate({ open: true })}>
-        <h3 class="helpGuide"><i class="fa fa-book"></i> Help guide</h3>
+        <i>fa-icon here</i>
         Help guide
       </button>
     `;
@@ -540,46 +540,18 @@ export class HelpGuide {
   _initialTemplate() {
     return html`
       <div class="side-padding">
-        <h4>
-          <i class="fa fa-info-circle"></i> Important information before you
-          start
-        </h4>
+        <i>information</i>
+        <h4>Important information before you start</h4>
         <p>
           The help guide is here to help you understand your labelling
-          requirements.
+          requirements. It is important you read the information in this help
+          guide carefully so that you can create a food label that complies with
+          the Food Standards Code. There are two sections in the help guide:
         </p>
-        <p>
-          <b
-            >It is important you read the information in this help guide
-            carefully</b
-          >
-          so that you can create a food label that complies with the Food
-          Standards Code.
-        </p>
-        <p>There are two sections in the help guide:</p>
         <ul>
           <li>General requirements</li>
           <li>Food with extra requirements</li>
         </ul>
-
-        <h4>General requirements</h4>
-        <p>
-          Learn about food label rules that apply to all types of food. You can
-          view help information by clicking on a link in Label Buster.
-        </p>
-        <figure>
-          <img src="https://via.placeholder.com/338x106.png/ccc/ccc" alt="" />
-        </figure>
-
-        <h4>Food with extra requirements</h4>
-        <p>
-          Some foods and ingredients have extra rules in the Food Standards
-          Code. Select the food groups that apply to your food or its
-          ingredients to learn more about these extra rules.
-        </p>
-        <figure>
-          <img src="https://via.placeholder.com/338x106.png/ccc/ccc" alt="" />
-        </figure>
         <button
           class="qg-btn btn-primary"
           @click=${() => this.updateTemplate({ firstView: false })}
@@ -606,10 +578,13 @@ export class HelpGuide {
         <div>
           <div class="top-block">
             ${!state.firstView ? this._closeButton() : ''}
-            <h3 class="helpGuide"><class="fa fa-book"> Help guide</h3>
-          </div>
+            <div class="side-padding">
+              <i class="fa fa-book"></i>
+              <h3>Help guide</h3>
+            </div>
             ${state.firstView ? this._initialTemplate() : this._mainScreen()}
-         </div>
+          </div>
+        </div>
       `;
     }
 
