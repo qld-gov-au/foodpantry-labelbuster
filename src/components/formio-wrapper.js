@@ -10,7 +10,7 @@ export class FormioWrapper {
     this.formLocation = configuration.formLocation;
     this.buttonCSS = configuration.buttonCSS;
     this.navigationCSS = configuration.navigationCSS;
-    this.scrollTaret = configuration.scrollTaret;
+    this.scrollTarget = configuration.scrollTarget;
     this.formSettings = configuration.formSettings;
     this.buttonConfig = {
       startOnFirst: true,
@@ -23,28 +23,23 @@ export class FormioWrapper {
     this.loaded = false;
 
     window.addEventListener('DOMContentLoaded', () => {
-      if (this.isTest) return;
       this.initialise();
     });
 
     window.addEventListener('formiowrapperGoToNext', () => {
-      this.goToNextPage();
-    });
-
-    window.addEventListener('formiowrapperAccept', () => {
-      this.acceptEvent();
+      this._goToNextPage();
     });
 
     window.addEventListener('formiowrapperGoToPrevious', () => {
-      this.goToPreviousPage();
+      this._goToPreviousPage();
     });
 
     window.addEventListener('formiowrapperCancel', () => {
-      this.goToPage(0);
+      this._goToPage(0);
     });
 
-    window.addEventListener('gotoPage', (event) => {
-      this.goToPage(Number(event.detail.page));
+    window.addEventListener('goToPage', (event) => {
+      this._goToPage(Number(event.detail.page));
     });
   }
 
@@ -52,9 +47,9 @@ export class FormioWrapper {
    */
   initialise() {
     this.formElement = document.querySelector('#formio');
-    // listens for terms and conditions selection
+    // responds to form changing events
     this.formElement.addEventListener('click', () => {
-      this.firePageChangeEvent();
+      this._firePageChangeEvent();
     });
     Formio.createForm(
       this.formElement,
@@ -64,11 +59,11 @@ export class FormioWrapper {
       this.wizard = wizard;
       this.loaded = true;
       this.wizard.on('initialized', () => {
-        this.firePageChangeEvent();
+        this._firePageChangeEvent();
       });
       this.wizard.on('render', () => {
         this.scrollToTop();
-        this.firePageChangeEvent();
+        this._firePageChangeEvent();
       });
     });
   }
@@ -78,13 +73,12 @@ export class FormioWrapper {
    */
 
   // eslint-ignored here while committing
-  firePageChangeEvent() {
+  _firePageChangeEvent() {
     const event = new CustomEvent('formiowrapperPageChange', {
       bubbles: true,
       detail: {
         page: this.wizard && this.wizard.page ? this.wizard.page : 0,
         navigation: this.buildProgressMenuData(),
-        hasAccepted: this.hasAccepted(),
         buttons: this.buildButtonData(),
       },
     });
@@ -95,8 +89,6 @@ export class FormioWrapper {
    * @returns {Array} the array of options to distribute
    */
   buildProgressMenuData() {
-    // btn-link
-
     const navigationArray = [];
     if (!this.wizard || !this.wizard.components) {
       return navigationArray;
@@ -104,7 +96,7 @@ export class FormioWrapper {
     // this.wizard.setPage(this.wizard.page);
     let invalidPreviousStep = false;
     this.wizard.components.forEach((page, offset) => {
-      const isValid = this.checkPageValidity(
+      const isValid = this._checkPageValidity(
         offset,
         this.wizard.components,
         this.wizard.data,
@@ -119,7 +111,7 @@ export class FormioWrapper {
         detail: {
           page: offset,
         },
-        event: 'gotoPage',
+        event: 'goToPage',
         title: page.component.title,
         disabled: invalidPreviousStep,
         displayed: true,
@@ -144,7 +136,7 @@ export class FormioWrapper {
       title: 'Previous',
       event: 'formiowrapperGoToPrevious',
       cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.previous}`,
-      disabled: !this.checkPageValidity(page - 1, pages, data),
+      disabled: !this._checkPageValidity(page - 1, pages, data),
       displayed: true,
       visited: false,
     };
@@ -153,7 +145,7 @@ export class FormioWrapper {
       title: 'Next',
       event: 'formiowrapperGoToNext',
       cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.next}`,
-      disabled: !this.checkPageValidity(page, pages, data),
+      disabled: !this._checkPageValidity(page, pages, data),
       displayed: true,
       visited: false,
     };
@@ -181,12 +173,21 @@ export class FormioWrapper {
 
     const currentPageTitle = this.wizard.pages[this.wizard.page].component
       .title;
-    if (currentPageTitle.toLowerCase().includes('terms')) {
+    if (this._determineTitleChange(currentPageTitle)) {
       nextButton.title = 'Accept';
-      nextButton.disabled = !this.checkPageValidity(page, pages, data);
+      nextButton.disabled = !this._checkPageValidity(page, pages, data);
     }
 
     return [previousButton, nextButton, cancelButton];
+  }
+
+  /**
+   * @param {String} currentPageTitle the current page title
+   * @return {Boolean}
+   */
+  _determineTitleChange(currentPageTitle) {
+    if (!this.buttonConfig.acceptWhenTermsFound) return false;
+    return currentPageTitle.toLowerCase().includes('terms');
   }
 
   /**
@@ -196,7 +197,7 @@ export class FormioWrapper {
    * @returns {Boolean}
    */
   // eslint-disable-next-line class-methods-use-this
-  checkPageValidity(offset, pages, data) {
+  _checkPageValidity(offset, pages, data) {
     if (offset < 0) return false;
     return pages[offset].checkValidity(data);
   }
@@ -204,13 +205,9 @@ export class FormioWrapper {
   /**
    * @return {Boolean}
    */
-  goToNextPage() {
+  _goToNextPage() {
     if (!this.loaded) {
       this.notLoaded();
-      return false;
-    }
-    if (this.isTest) {
-      return true;
     }
     this.wizard.nextPage();
     return true;
@@ -219,43 +216,9 @@ export class FormioWrapper {
   /**
    * @return {Boolean}
    */
-  acceptEvent() {
+  _goToPreviousPage() {
     if (!this.loaded) {
       this.notLoaded();
-      return false;
-    }
-    if (!this.hasAccepted()) return false;
-    if (this.isTest) {
-      return true;
-    }
-    this.wizard.nextPage();
-    return true;
-  }
-
-  /**
-   * @return {Boolean}
-   */
-  hasAccepted() {
-    if (this.wizard && this.wizard._data) {
-      return this.checkPageValidity(
-        this.wizard.page,
-        this.wizard.components,
-        this.wizard.data,
-      );
-    }
-    return false;
-  }
-
-  /**
-   * @return {Boolean}
-   */
-  goToPreviousPage() {
-    if (!this.loaded) {
-      this.notLoaded();
-      return false;
-    }
-    if (this.isTest) {
-      return true;
     }
     this.wizard.prevPage();
     return true;
@@ -265,13 +228,9 @@ export class FormioWrapper {
    * @param {Number} pageNo the page number provided by the wizard instance
    * @return {Boolean}
    */
-  goToPage(pageNo) {
+  _goToPage(pageNo) {
     if (!this.loaded) {
       this.notLoaded();
-      return false;
-    }
-    if (this.isTest) {
-      return true;
     }
     this.wizard.setPage(pageNo);
     return true;

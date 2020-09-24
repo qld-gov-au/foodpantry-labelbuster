@@ -46,7 +46,7 @@ export class ButtonGroup {
    * @param {Object} detail detail object to pass through
    * @return {Object}
    */
-  generateButton(text, event, cssClass, disabled, displayed, detail) {
+  generateButton(text, event, cssClass, disabled, displayed, detail = '') {
     if (!displayed) return html``;
     return html` <button
       class="${cssClass}"
