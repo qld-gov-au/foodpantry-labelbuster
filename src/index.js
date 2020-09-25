@@ -52,10 +52,10 @@ import { HelpGuide } from './components/help-guide';
       sectionNav.display = 'block';
     }
 
-    const unorderdList = document.createElement('ul');
-    unorderdList.classList = 'lb';
+    const unorderdList = document.createElement('ol');
+    unorderdList.classList = 'lb guide-sub-nav';
     sectionNav.appendChild(unorderdList);
-    const sectionNavTarget = sectionNav.querySelector('ul');
+    const sectionNavTarget = sectionNav.querySelector('ol');
 
     const sectionNavigation = new ButtonGroup(sectionNavTarget, 'navigation');
   });

@@ -115,6 +115,7 @@ export class FormioWrapper {
         title: page.component.title,
         disabled: invalidPreviousStep,
         displayed: true,
+        type: 'li',
       };
       if (!isValid) {
         invalidPreviousStep = true;

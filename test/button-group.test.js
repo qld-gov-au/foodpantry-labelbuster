@@ -100,3 +100,54 @@ describe('Button Group Tests', () => {
     expect(buttonGroup2.data).to.equal('buttons');
   });
 });
+
+describe('Navigation specialities', () => {
+  let element;
+  let buttonGroup;
+
+  beforeEach(async () => {
+    element = await fixture(html` <div class="navigation" id="target"></div> `);
+    buttonGroup = new ButtonGroup(element, 'navigation');
+  });
+
+  it('Button group renders as expected', async () => {
+    const data = {
+      navigation: [
+        {
+          title: 'Previous',
+          event: 'labelbusterGoToPrevious',
+          cssClass: 'class1',
+          disabled: false,
+          displayed: true,
+          type: 'li',
+        },
+        {
+          title: 'Next',
+          event: 'labelbusterGoToNext',
+          cssClass: 'class2',
+          disabled: true,
+          displayed: true,
+          type: 'li',
+        },
+        {
+          title: 'Invisible',
+          event: 'noevent',
+          cssClass: 'nope',
+          disabled: false,
+          displayed: false,
+          type: 'li',
+        },
+      ],
+    };
+
+    buttonGroup.updateTarget(data, element);
+    const button = element.querySelector('li');
+    expect(button.innerHTML).includes('Previous');
+    expect(button).to.be.ok;
+    const secondButton = element.querySelectorAll('li')[1];
+    expect(secondButton.innerHTML).includes('Next');
+    expect(secondButton).to.be.ok;
+    const thirdButton = element.querySelectorAll('li')[2];
+    expect(thirdButton).to.not.be.ok;
+  });
+});

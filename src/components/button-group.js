@@ -31,6 +31,7 @@ export class ButtonGroup {
         but.disabled,
         but.displayed,
         but.detail,
+        but.type,
       ),
     );
 
@@ -44,12 +45,22 @@ export class ButtonGroup {
    * @param {Boolean} disabled is the button disabled
    * @param {Boolean} displayed do we display the button
    * @param {Object} detail detail object to pass through
+   * @param {String} type type of element overrites button
    * @return {Object}
    */
-  generateButton(text, event, cssClass, disabled, displayed, detail = '') {
+  generateButton(
+    text,
+    event,
+    cssClass,
+    disabled,
+    displayed,
+    detail = '',
+    type = 'button',
+  ) {
     if (!displayed) return html``;
-    return html` <button
-      class="${cssClass}"
+    const extraClass = disabled ? 'disabled' : '';
+    const button = html` <button
+      class="${cssClass} ${extraClass}"
       data-event=${event}
       data-detail=${JSON.stringify(detail)}
       @click=${this.fireEvent}
@@ -57,6 +68,15 @@ export class ButtonGroup {
     >
       ${text}
     </button>`;
+
+    switch (type) {
+      case 'li': {
+        return html` <li class="${cssClass} ${extraClass}">${button}</li>`;
+      }
+      default: {
+        return html`${button}`;
+      }
+    }
   }
 
   /**
