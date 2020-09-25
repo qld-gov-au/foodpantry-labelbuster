@@ -11,6 +11,8 @@
   .help-guide-content {
     height: 100%;
     width: 370px;
+    position: absolute;
+    top: 0;
     z-index: 9999;
     background-color: #fff;
     align-self: flex-end;
@@ -75,5 +77,37 @@
     display: block;
     color: #fff;
     font-size: 16px;
+  }
+}
+
+.open-menu {
+  animation-name: slideOpen;
+  animation-duration: 0.3s;
+  right: 0px;
+}
+
+.close-menu {
+  animation-name: slideClose;
+  animation-duration: 0.3s;
+  right: -370px;
+}
+
+@keyframes slideOpen {
+  from {
+    right: -370px;
+  }
+
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes slideClose {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -370px;
   }
 }

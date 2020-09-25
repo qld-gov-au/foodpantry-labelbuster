@@ -607,23 +607,24 @@ export class HelpGuide {
   }
 
   createTemplate(state) {
-    if (state.open) {
-      return html`
-        ${state.firstView ? this._overlay() : ''}
-        <div class="help-guide-content">
-          <div class="top-block">
-            <div class="side-padding">
-              <i class="fa fa-book"></i>
-              <h3>Help guide</h3>
-            </div>
-            ${!state.firstView ? this._closeButton() : ''}
+    return html`
+      ${!state.open ? this._callout() : ''}
+      ${state.firstView ? this._overlay() : ''}
+      <div
+        class=${state.open
+          ? 'help-guide-content open-menu'
+          : 'help-guide-content close-menu'}
+      >
+        <div class="top-block">
+          <div class="side-padding">
+            <i class="fa fa-book"></i>
+            <h3>Help guide</h3>
           </div>
-          ${state.firstView ? this._initialTemplate() : this._mainScreen()}
+          ${!state.firstView ? this._closeButton() : ''}
         </div>
-      `;
-    }
-
-    return this._callout();
+        ${state.firstView ? this._initialTemplate() : this._mainScreen()}
+      </div>
+    `;
   }
 
   render() {
