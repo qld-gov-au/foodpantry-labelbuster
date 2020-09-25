@@ -4,7 +4,6 @@
   right: 0;
   height: 100%;
   z-index: 9999;
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,6 +16,7 @@
     z-index: 9999;
     background-color: #fff;
     align-self: flex-end;
+    overflow-y: scroll;
 
     .top-block {
       height: 105px;
