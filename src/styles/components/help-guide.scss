@@ -63,6 +63,14 @@
   z-index: 999;
 }
 
+@media screen and (max-width: 768px) {
+  button.help-guide-callout {
+    width: 156px;
+    height: 54px;
+    align-self: flex-end;
+  }
+}
+
 .help-guide-callout {
   width: 70px;
   border: none;
