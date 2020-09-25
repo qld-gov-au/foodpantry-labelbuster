@@ -58,69 +58,65 @@ export class HelpGuide {
       <section class="qg-accordion flex-column" aria-label="Accordion Label">
           
       <article>
-        <input
-          id="about-food-labels-1"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-1">
-            <span class="title">
-            Alcoholic drinks
-            </span>
-            <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-          Alcohol includes beer, wine and spirits and has unique and additional 
-          requirements such as number of standard drinks.           
-          </p>
-          <p>
-          <b>Further reading</b></br>
-          <i>Australia New Zealand Food Standards Code</i>
-          <ul>
-            <li>
-            <a href="#">Standard 2.7.1</a> Labelling of alcoholic beverages and food containing alcohol
-            </li>
-            <li>
-            <a href="#">Standard 2.7.2</a> Beer 
-            </li>
-            <li>
-            <a href="#">Standard 2.7.3</a> Fruit wine, vegetable wine and mead
-            </li>
-            <li>
-            <a href="#">Standard 2.7.4</a> Wine and wine product           
-            </li>
-            <li>
-            <a href="#">Standard 2.7.5</a> Spirits
-            </li>                                        
-          </ul>
-          </p>
-        </div>
+      <input
+        id="alcoholic-drinks"
+        type="checkbox"
+        name="tabs"
+        tabindex="-1"
+        aria-controls="id-panel-content-1"
+        aria-expanded="false"
+        role="checkbox"/>
+      <h3 class="acc-heading">
+        <label for="alcoholic-drinks">
+          <span class="title">
+          Alcoholic drinks
+          </span>
+          <span class="arrow"><i></i></span>
+        </label>
+      </h3>
+      
+      <div
+        class="collapsing-section"
+        aria-hidden="true"
+        id="id-panel-content-1">
+        <p>
+        Alcohol includes beer, wine and spirits and has unique and additional 
+        requirements such as number of standard drinks. </br>          
+        <b>Further reading</b> </br>
+        <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+          <li>
+          <a href="#">Standard 2.7.1</a> Labelling of alcoholic beverages and food containing alcohol
+          </li>
+          <li>
+          <a href="#">Standard 2.7.2</a> Beer 
+          </li>
+          <li>
+          <a href="#">Standard 2.7.3</a> Fruit wine, vegetable wine and mead
+          </li>
+          <li>
+          <a href="#">Standard 2.7.4</a> Wine and wine product           
+          </li>
+          <li>
+          <a href="#">Standard 2.7.5</a> Spirits
+          </li>                                        
+        </ul>
+        </p>
+      </div>
       </article>
 
       <article>
         <input
-          id="about-food-labels-2"
+          id="nutrition-claims"
           type="checkbox"
           name="tabs"
           tabindex="-1"
           aria-controls="id-panel-content-1"
           aria-expanded="false"
-          role="checkbox">
+          role="checkbox"/>
         <h3
           class="acc-heading">
-          <label for="about-food-labels-2">
+          <label for="nutrition-claims">
             <span class="title">
               Claims: Nutrition, health and realted claims
             </span>
@@ -230,7 +226,258 @@ export class HelpGuide {
         </p>
         </div>
       </article>
+
+    <article>
+    <input id="drinks-made" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="drinks-made">
+            <span class="title">
+                Drinks made from cereals, nuts, and/or seeds
+            </span>
+            <span class="arrow"><i></i></span>
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Drinks made from cereals, nuts and or seeds are not suitable for certain age groups,
+            depending on the amount of protein and fats in the product. There are strict rules on
+            how this information must be labelled. </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 1.2.3</a> Information requirements – warning statements, advisory statements and
+                declarations
+            </li>
+            <li>
+                <a href="#">Schedule 9 </a> Mandatory advisory statements
+            </li>
+        </ul>
+        </p>
     </div>
+</article>
+
+<article>
+    <input id="drinks-electrolyte" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="drinks-electrolyte">
+            <span class="title">
+                Electrolyte drinks
+            </span>
+            <span class="arrow"><i></i></span>
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Electrolyte drinks are formulated drinks which are designed for the rapid replacement of fluid,
+            carbohydrates, electrolytes and minerals. These types of drinks, or drink bases, have strict rules about
+            what substances are allowed and how this information must be labelled.
+            </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 2.6.2</a> Non-alcoholic beverages and brewed soft drinks
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+<article>
+    <input id="caffeinated-drinks" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="caffeinated-drinks">
+            <span class="title">
+                Formulated caffeinated drinks
+            </span>
+            <span class="arrow"><i></i></span>
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Formulated caffeinated drinks have very specific rules about what substances are allowed and how this
+            information must be labelled.
+            </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 2.6.4</a> Formulated caffeinated beverages
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+<article>
+    <input id="modified-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="modified-food">
+            <span class="title">
+                Genetically modified food
+            </span>
+            <span class="arrow"><i></i></span>
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Food produced using gene technology means a food that has been derived or developed from an organism that
+            has been genetically modified. Genetically modified food means a food produced using gene technology that
+            contains novel DNA, novel protein or is listed in <a href="#">Schedule 26</a> of the Food Standard Code.
+            </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 1.5.2</a> Food produced using gene technology
+            </li>
+            <li>
+                <a href="#">Schedule 26</a> Food produced using gene technology
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+
+<article>
+    <input id="irradiated-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="irradiated-food">
+            <span class="title">
+                Irradiated food
+            </span>
+            <span class="arrow"><i></i></span>
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Food irradiation is a technology that improves the safety and extends the shelf life of foods by reducing or
+            eliminating microorganisms and insects. Some fruits, vegetables, herbs and spices are allowed to be
+            irradiated under strict conditions.
+            </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 1.5.3</a> Irradiation of food
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+<article>
+    <input id="novel-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="novel-food">
+            <span class="title">
+                Novel foods
+            </span>
+            <span class="arrow"><i></i></span>
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Novel foods are non-traditional foods that require a safety assessment by FSANZ before they used in
+            Australia. Examples of novel foods include:
+            </br>
+        <ul>
+            <li>
+                Dried marine micro-algae (Schizochytrium sp.) rich in docosahexaenoic acid
+            </li>
+            <li>
+                Insects for human consumption as a protein source
+            </li>
+        </ul>
+        <p>The <a href="#">Australian Novel Food Committee has developed resources to help determine if a food is a
+                novel food that needs assessment. </a></p>
+        <b>Further reading</b> </br>
+        <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 1.5.1</a> Novel foods
+            </li>
+            <li>
+                <a href="#">Schedule 25</a> Permitted Novel foods
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+<article>
+    <input id="special-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="special-food">
+            <span class="title">
+                Special purpose foods
+            </span>
+            <span class="arrow"><i></i></span>
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Special purpose foods have complex labelling requirements, such as an expanded nutrition information panel,
+            compositional requirements and advisory statements. Special purpose foods include:
+            </br>
+        <ul>
+            <li>
+                Infant formula products
+            </li>
+            <li>
+                Foods for infants
+            </li>
+            <li>
+                Formulated meal replacements and formulated supplementary foods
+            </li>
+            <li>
+                Formulated supplementary sports foods
+            </li>
+            <li>
+                Food for special medical purposes
+            </li>
+        </ul>
+
+        <b>Further reading</b> </br>
+        <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 2.9.1</a> Infant formula products
+            </li>
+            <li>
+                <a href="#">Schedule 2.9.2</a> Food for infants
+            </li>
+            <li>
+                <a href="#">Standard 2.9.3</a> Formulated meal replacements and formulated supplementary foods
+            </li>
+            <li>
+                <a href="#">Schedule 2.9.4</a> Formulated supplementary sports foods
+            </li>
+            <li>
+                <a href="#">Schedule 2.9.5</a> Food for special medical purposes
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+</div>
     `;
   }
 
