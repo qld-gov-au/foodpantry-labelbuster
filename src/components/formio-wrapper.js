@@ -1,68 +1,45 @@
 /**
- * @class LabelBuster
+ * @class FormioWrapper
  */
-const formLocation =
-  'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
-
-export class LabelBuster {
+export class FormioWrapper {
   /**
-   * @param {Boolean} test if we are running a test
-   * @param {Number} scrollTarget the numerical target for scroll
+   * @param {Object} configuration the configuration object
    * @returns {void}
    */
-  constructor(test = false, scrollTarget = 0) {
-    this.formLocation = formLocation;
-
-    // Replace with properties set when using this, same as the form location
-    this.buttonCSS = {
-      baseClass: 'qg-btn',
-      previous: 'btn-default',
-      next: 'btn-primary',
-      cancel: 'btn-link',
-    };
-
+  constructor(configuration) {
+    this.formLocation = configuration.formLocation;
+    this.buttonCSS = configuration.buttonCSS;
+    this.navigationCSS = configuration.navigationCSS;
+    this.scrollTarget = configuration.scrollTarget;
+    this.formSettings = configuration.formSettings;
     this.buttonConfig = {
       startOnFirst: true,
       acceptWhenTermsFound: true,
     };
 
     this.formElement = {};
-    this.formSettings = {
-      buttonSettings: {
-        showCancel: false,
-        showPrevious: false,
-        showNext: false,
-        showSubmit: false,
-      },
-    };
+
     this.wizard = {};
     this.loaded = false;
-    this.isTest = test;
-    this.scrollTaret = scrollTarget;
 
     window.addEventListener('DOMContentLoaded', () => {
-      if (this.isTest) return;
       this.initialise();
     });
 
-    window.addEventListener('labelbusterGoToNext', () => {
-      this.goToNextPage();
+    window.addEventListener('formiowrapperGoToNext', () => {
+      this._goToNextPage();
     });
 
-    window.addEventListener('labelbusterAccept', () => {
-      this.acceptEvent();
+    window.addEventListener('formiowrapperGoToPrevious', () => {
+      this._goToPreviousPage();
     });
 
-    window.addEventListener('labelbusterGoToPrevious', () => {
-      this.goToPreviousPage();
+    window.addEventListener('formiowrapperCancel', () => {
+      this._goToPage(0);
     });
 
-    window.addEventListener('labelbusterCancel', () => {
-      this.goToPage(0);
-    });
-
-    window.addEventListener('gotoPage', (event) => {
-      this.goToPage(Number(event.detail.page));
+    window.addEventListener('goToPage', (event) => {
+      this._goToPage(Number(event.detail.page));
     });
   }
 
@@ -70,23 +47,23 @@ export class LabelBuster {
    */
   initialise() {
     this.formElement = document.querySelector('#formio');
-    // listens for terms and conditions selection
+    // responds to form changing events
     this.formElement.addEventListener('click', () => {
-      this.firePageChangeEvent();
+      this._firePageChangeEvent();
     });
     Formio.createForm(
       this.formElement,
       this.formLocation,
-      this.formSettings
+      this.formSettings,
     ).then((wizard) => {
       this.wizard = wizard;
       this.loaded = true;
       this.wizard.on('initialized', () => {
-        this.firePageChangeEvent();
+        this._firePageChangeEvent();
       });
       this.wizard.on('render', () => {
         this.scrollToTop();
-        this.firePageChangeEvent();
+        this._firePageChangeEvent();
       });
     });
   }
@@ -96,13 +73,12 @@ export class LabelBuster {
    */
 
   // eslint-ignored here while committing
-  firePageChangeEvent() {
-    const event = new CustomEvent('labelbusterPageChange', {
+  _firePageChangeEvent() {
+    const event = new CustomEvent('formiowrapperPageChange', {
       bubbles: true,
       detail: {
         page: this.wizard && this.wizard.page ? this.wizard.page : 0,
         navigation: this.buildProgressMenuData(),
-        hasAccepted: this.hasAccepted(),
         buttons: this.buildButtonData(),
       },
     });
@@ -120,20 +96,31 @@ export class LabelBuster {
     // this.wizard.setPage(this.wizard.page);
     let invalidPreviousStep = false;
     this.wizard.components.forEach((page, offset) => {
-      const isValid = this.checkPageValidity(
+      const isValid = this._checkPageValidity(
         offset,
         this.wizard.components,
-        this.wizard.data
+        this.wizard.data,
       );
 
+      const active = offset === this.wizard.page;
+      const activeClass = active ? 'active' : '';
+      const visited = this.wizard._seenPages.indexOf(offset) !== -1;
+      const visitedClass = visited ? 'visited' : '';
+
+      if (!visited) {
+        invalidPreviousStep = true;
+      }
       const outputObject = {
-        cssClass: 'qg-btn btn-link',
-        step: offset + 1,
-        label: page.component.title,
-        destination: offset,
+        cssClass: `${this.navigationCSS.baseClass} ${activeClass} ${visitedClass}`,
+        detail: {
+          page: offset,
+        },
+        event: 'goToPage',
+        title: page.component.title,
         disabled: invalidPreviousStep,
-        visited: this.wizard._seenPages.indexOf(offset) !== -1,
-        active: offset === this.wizard.page,
+        displayed: true,
+        active,
+        type: 'li',
       };
       if (!isValid) {
         invalidPreviousStep = true;
@@ -153,26 +140,29 @@ export class LabelBuster {
 
     const previousButton = {
       title: 'Previous',
-      event: 'labelbusterGoToPrevious',
+      event: 'formiowrapperGoToPrevious',
       cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.previous}`,
-      disabled: !this.checkPageValidity(page - 1, pages, data),
+      disabled: !this._checkPageValidity(page - 1, pages, data),
       displayed: true,
+      visited: false,
     };
 
     const nextButton = {
       title: 'Next',
-      event: 'labelbusterGoToNext',
+      event: 'formiowrapperGoToNext',
       cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.next}`,
-      disabled: !this.checkPageValidity(page, pages, data),
+      disabled: !this._checkPageValidity(page, pages, data),
       displayed: true,
+      visited: false,
     };
 
     const cancelButton = {
       title: 'Cancel',
-      event: 'labelbusterCancel',
+      event: 'formiowrapperCancel',
       cssClass: `${this.buttonCSS.baseClass} ${this.buttonCSS.cancel}`,
       disabled: false,
       displayed: true,
+      visited: false,
     };
 
     if (page === 0) {
@@ -189,12 +179,21 @@ export class LabelBuster {
 
     const currentPageTitle = this.wizard.pages[this.wizard.page].component
       .title;
-    if (currentPageTitle.toLowerCase().includes('terms')) {
+    if (this._determineTitleChange(currentPageTitle)) {
       nextButton.title = 'Accept';
-      nextButton.disabled = !this.checkPageValidity(page, pages, data);
+      nextButton.disabled = !this._checkPageValidity(page, pages, data);
     }
 
     return [previousButton, nextButton, cancelButton];
+  }
+
+  /**
+   * @param {String} currentPageTitle the current page title
+   * @return {Boolean}
+   */
+  _determineTitleChange(currentPageTitle) {
+    if (!this.buttonConfig.acceptWhenTermsFound) return false;
+    return currentPageTitle.toLowerCase().includes('terms');
   }
 
   /**
@@ -204,7 +203,7 @@ export class LabelBuster {
    * @returns {Boolean}
    */
   // eslint-disable-next-line class-methods-use-this
-  checkPageValidity(offset, pages, data) {
+  _checkPageValidity(offset, pages, data) {
     if (offset < 0) return false;
     return pages[offset].checkValidity(data);
   }
@@ -212,13 +211,9 @@ export class LabelBuster {
   /**
    * @return {Boolean}
    */
-  goToNextPage() {
+  _goToNextPage() {
     if (!this.loaded) {
       this.notLoaded();
-      return false;
-    }
-    if (this.isTest) {
-      return true;
     }
     this.wizard.nextPage();
     return true;
@@ -227,43 +222,9 @@ export class LabelBuster {
   /**
    * @return {Boolean}
    */
-  acceptEvent() {
+  _goToPreviousPage() {
     if (!this.loaded) {
       this.notLoaded();
-      return false;
-    }
-    if (!this.hasAccepted()) return false;
-    if (this.isTest) {
-      return true;
-    }
-    this.wizard.nextPage();
-    return true;
-  }
-
-  /**
-   * @return {Boolean}
-   */
-  hasAccepted() {
-    if (this.wizard && this.wizard._data) {
-      return this.checkPageValidity(
-        this.wizard.page,
-        this.wizard.components,
-        this.wizard.data
-      );
-    }
-    return false;
-  }
-
-  /**
-   * @return {Boolean}
-   */
-  goToPreviousPage() {
-    if (!this.loaded) {
-      this.notLoaded();
-      return false;
-    }
-    if (this.isTest) {
-      return true;
     }
     this.wizard.prevPage();
     return true;
@@ -273,13 +234,9 @@ export class LabelBuster {
    * @param {Number} pageNo the page number provided by the wizard instance
    * @return {Boolean}
    */
-  goToPage(pageNo) {
+  _goToPage(pageNo) {
     if (!this.loaded) {
       this.notLoaded();
-      return false;
-    }
-    if (this.isTest) {
-      return true;
     }
     this.wizard.setPage(pageNo);
     return true;
@@ -308,5 +265,3 @@ export class LabelBuster {
     });
   }
 }
-
-window.label = new LabelBuster();
