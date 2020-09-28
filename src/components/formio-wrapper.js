@@ -102,10 +102,14 @@ export class FormioWrapper {
         this.wizard.data,
       );
 
-      const activeClass = offset === this.wizard.page ? 'active' : '';
-      const visitedClass =
-        this.wizard._seenPages.indexOf(offset) !== -1 ? 'visited' : '';
+      const active = offset === this.wizard.page;
+      const activeClass = active ? 'active' : '';
+      const visited = this.wizard._seenPages.indexOf(offset) !== -1;
+      const visitedClass = visited ? 'visited' : '';
 
+      if (!visited) {
+        invalidPreviousStep = true;
+      }
       const outputObject = {
         cssClass: `${this.navigationCSS.baseClass} ${activeClass} ${visitedClass}`,
         detail: {
@@ -115,6 +119,7 @@ export class FormioWrapper {
         title: page.component.title,
         disabled: invalidPreviousStep,
         displayed: true,
+        active,
         type: 'li',
       };
       if (!isValid) {

@@ -30,6 +30,7 @@ export class ButtonGroup {
         but.cssClass,
         but.disabled,
         but.displayed,
+        but.active,
         but.detail,
         but.type,
       ),
@@ -44,6 +45,7 @@ export class ButtonGroup {
    * @param {String} cssClass the class string for the buttons display
    * @param {Boolean} disabled is the button disabled
    * @param {Boolean} displayed do we display the button
+   * @param {Boolean} active if the nav button is active
    * @param {Object} detail detail object to pass through
    * @param {String} type type of element overrites button
    * @return {Object}
@@ -54,13 +56,15 @@ export class ButtonGroup {
     cssClass,
     disabled,
     displayed,
+    active,
     detail = '',
     type = 'button',
   ) {
     if (!displayed) return html``;
     const extraClass = disabled ? 'disabled' : '';
+    const activeClass = active ? 'active' : '';
     const button = html` <button
-      class="${cssClass} ${extraClass}"
+      class="${cssClass} ${extraClass} ${activeClass}"
       data-event=${event}
       data-detail=${JSON.stringify(detail)}
       @click=${this.fireEvent}
@@ -71,7 +75,7 @@ export class ButtonGroup {
 
     switch (type) {
       case 'li': {
-        return html` <li class="${cssClass} ${extraClass}">${button}</li>`;
+        return html` <li class="${extraClass} ${activeClass}">${button}</li>`;
       }
       default: {
         return html`${button}`;

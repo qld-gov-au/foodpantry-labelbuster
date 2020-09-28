@@ -301,7 +301,7 @@ describe('Formio Wrapper Tests.', () => {
         },
       },
     ];
-    wrapper.wizard._seenPages = [1, 2];
+    wrapper.wizard._seenPages = [0, 1];
 
     const initialProgressBar = wrapper.buildProgressMenuData();
     expect(initialProgressBar.length).equals(3);
@@ -322,11 +322,10 @@ describe('Formio Wrapper Tests.', () => {
     expect(initialProgressBar[1].displayed).equals(true);
 
     expect(initialProgressBar[2].cssClass).includes('qg-btn btn-link');
-    expect(initialProgressBar[2].cssClass).includes('visited');
     expect(typeof initialProgressBar[2].detail).equals('object');
     expect(initialProgressBar[2].title).equals('something');
     expect(initialProgressBar[2].event).equals('goToPage');
-    expect(initialProgressBar[2].disabled).equals(false);
+    expect(initialProgressBar[2].disabled).equals(true);
     expect(initialProgressBar[2].displayed).equals(true);
     stubbedValidity.restore();
   });
