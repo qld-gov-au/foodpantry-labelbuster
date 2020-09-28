@@ -44,7 +44,7 @@ ol.lb {
         color: white;
       }
     }
-    &:before {
+    &::before {
       content: counter(lb-counter);
       color: #005e85;
       font-weight: bold;
