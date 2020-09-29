@@ -20,7 +20,7 @@
     overflow-y: scroll;
 
     .top-block {
-      height: 105px;
+      height: 90px;
       background-color: #00384f;
       color: #fff;
       display: flex;
@@ -51,7 +51,13 @@
 }
 
 .side-padding {
-  padding: 0 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.vertical-padding {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .overlay {
@@ -77,7 +83,7 @@
   span {
     display: block;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -100,24 +106,13 @@
       top: unset;
 
       .top-block {
-        > div {
-          i {
-          }
-
-          h3 {
-          }
-        }
-
         button {
+          i {
+            transform: rotate(90deg)
+          }
         }
       }
     }
-  }
-
-  .side-padding {
-  }
-
-  .overlay {
   }
 
   .help-guide-callout {
@@ -125,10 +120,7 @@
     height: 54px;
     align-self: flex-end;
     flex-direction: row;
-
-    i,
-    span {
-    }
+    justify-content: space-evenly;
   }
 
   .open-menu {

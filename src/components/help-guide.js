@@ -64,7 +64,7 @@ export class HelpGuide {
         class="btn btn-link"
         @click=${() => this.updateTemplate({ open: false })}
       >
-        Hide ->
+        Hide <i class="fa fa-arrow-right"></i>
       </button>
     `;
   }

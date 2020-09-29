@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 
 export default (handler) => html`
-  <div class="side-padding">
+  <div class="side-padding vertical-padding">
     <h4>
       <i class="fa fa-info-circle"></i> Important information before you start
     </h4>

@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 
 export default () => html`
-      <div class="side-padding"> 
+      <div class="side-padding vertical-padding"> 
       <h4>Complex requirements</h4>
       <section class="qg-accordion flex-column" aria-label="Accordion Label">
           
