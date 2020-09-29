@@ -7,11 +7,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
 
   .help-guide-content {
     height: 100%;
     width: 370px;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 9999;
     background-color: #fff;
@@ -19,7 +20,7 @@
     overflow-y: scroll;
 
     .top-block {
-      height: 105px;
+      height: 90px;
       background-color: #00384f;
       color: #fff;
       display: flex;
@@ -50,7 +51,13 @@
 }
 
 .side-padding {
-  padding: 0 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.vertical-padding {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .overlay {
@@ -76,7 +83,7 @@
   span {
     display: block;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -90,6 +97,44 @@
   animation-name: slideClose;
   animation-duration: 0.3s;
   right: -370px;
+}
+
+@media screen and (max-width: 768px) {
+  #help-guide {
+    .help-guide-content {
+      width: 90%;
+      top: unset;
+
+      .top-block {
+        button {
+          i {
+            transform: rotate(90deg)
+          }
+        }
+      }
+    }
+  }
+
+  .help-guide-callout {
+    width: 156px;
+    height: 54px;
+    align-self: flex-end;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .open-menu {
+    bottom: 0;
+    animation: slideUp;
+    animation-duration: 0.3s;
+  }
+
+  .close-menu {
+    bottom: -100vh;
+    animation: slideDown;
+    animation-duration: 0.3s;
+    right: unset;
+  }
 }
 
 @keyframes slideOpen {
@@ -109,5 +154,25 @@
 
   to {
     right: -370px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -100vh;
+  }
+
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: -100vh;
   }
 }

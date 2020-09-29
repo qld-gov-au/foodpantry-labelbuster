@@ -3,6 +3,8 @@ import { FormioWrapper } from './components/formio-wrapper';
 import { ButtonGroup } from './components/button-group';
 import attachStepHandler from './scripts/step-handlers';
 import { HelpGuide } from './components/help-guide';
+import mainView from './components/partials/help-guide-lb-main';
+import initialView from './components/partials/help-guide-lb-initial';
 
 (() => {
   const configuration = {
@@ -35,7 +37,13 @@ import { HelpGuide } from './components/help-guide';
   const lb = new FormioWrapper(configuration);
   const bg = new ButtonGroup(document.querySelector('.button-container'));
   attachStepHandler();
-  const hg = new HelpGuide(document.getElementById('help-guide'));
+  const hg = new HelpGuide(document.getElementById('help-guide'), {
+    views: {
+      main: mainView,
+      initial: initialView,
+    },
+    initialState: 'onboarding',
+  });
 
   window.addEventListener('DOMContentLoaded', () => {
     /* Remove Squiz default H1 */
