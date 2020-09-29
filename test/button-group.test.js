@@ -22,14 +22,14 @@ describe('Button Group Tests', () => {
       navigation: [
         {
           title: 'Previous',
-          event: 'labelbusterGoToPrevious',
+          event: 'formGoToPrevious',
           cssClass: 'class1',
           disabled: false,
           displayed: true,
         },
         {
           title: 'Next',
-          event: 'labelbusterGoToNext',
+          event: 'formGoToNext',
           cssClass: 'class2',
           disabled: true,
           displayed: true,
@@ -50,14 +50,14 @@ describe('Button Group Tests', () => {
     expect(button).to.be.ok;
     expect(JSON.stringify(button.classList)).includes('class1');
     expect(button.dataset.detail).includes('""');
-    expect(button.dataset.event).equals('labelbusterGoToPrevious');
+    expect(button.dataset.event).equals('formGoToPrevious');
 
     const secondButton = element.querySelectorAll('button')[1];
     expect(secondButton.innerHTML).includes('Next');
     expect(secondButton).to.be.ok;
     expect(JSON.stringify(secondButton.classList)).includes('class2');
     expect(secondButton.dataset.detail).includes('""');
-    expect(secondButton.dataset.event).equals('labelbusterGoToNext');
+    expect(secondButton.dataset.event).equals('formGoToNext');
     expect(secondButton.disabled).equals(true);
 
     const thirdButton = element.querySelectorAll('button')[2];
@@ -115,7 +115,7 @@ describe('Navigation specialities', () => {
       navigation: [
         {
           title: 'Previous',
-          event: 'labelbusterGoToPrevious',
+          event: 'formGoToPrevious',
           cssClass: 'class1',
           disabled: false,
           displayed: true,
@@ -123,7 +123,7 @@ describe('Navigation specialities', () => {
         },
         {
           title: 'Next',
-          event: 'labelbusterGoToNext',
+          event: 'formGoToNext',
           cssClass: 'class2',
           disabled: true,
           displayed: true,
