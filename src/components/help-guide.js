@@ -608,7 +608,8 @@ export class HelpGuide {
 
   createTemplate(state) {
     return html`
-      ${!state.open && this._callout()} ${state.firstView && this._overlay()}
+      ${!state.open ? this._callout() : ''}
+      ${state.firstView ? this._overlay() : ''}
       <div
         class=${state.open
           ? 'help-guide-content open-menu'
@@ -619,7 +620,7 @@ export class HelpGuide {
             <i class="fa fa-book"></i>
             <h3>Help guide</h3>
           </div>
-          ${!state.firstView && this._closeButton()}
+          ${!state.firstView ? this._closeButton() : ''}
         </div>
         ${state.firstView ? this._initialTemplate() : this._mainScreen()}
       </div>
