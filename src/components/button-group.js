@@ -1,10 +1,11 @@
 import { html, render } from 'lit-html';
 
 export class ButtonGroup {
-  constructor(target) {
+  constructor(target, data = 'buttons') {
     this.target = target;
+    this.data = data;
 
-    window.addEventListener('labelbusterPageChange', ({ detail }) => {
+    window.addEventListener('formiowrapperPageChange', ({ detail }) => {
       this.updateTarget(detail);
     });
   }
@@ -14,7 +15,7 @@ export class ButtonGroup {
    * @param {Array} data the event data
    */
   updateTarget(data) {
-    render(this.updateButtons(data.buttons), this.target);
+    render(this.updateButtons(data[this.data]), this.target);
   }
 
   /**
@@ -28,8 +29,11 @@ export class ButtonGroup {
         but.event,
         but.cssClass,
         but.disabled,
-        but.displayed
-      )
+        but.displayed,
+        but.active,
+        but.detail,
+        but.type,
+      ),
     );
 
     return html`${output}`;
@@ -41,18 +45,42 @@ export class ButtonGroup {
    * @param {String} cssClass the class string for the buttons display
    * @param {Boolean} disabled is the button disabled
    * @param {Boolean} displayed do we display the button
+   * @param {Boolean} active if the nav button is active
+   * @param {Object} detail detail object to pass through
+   * @param {String} type type of element overrites button
    * @return {Object}
    */
-  generateButton(text, event, cssClass, disabled, displayed) {
+  generateButton(
+    text,
+    event,
+    cssClass,
+    disabled,
+    displayed,
+    active,
+    detail = '',
+    type = 'button',
+  ) {
     if (!displayed) return html``;
-    return html` <button
-      class="${cssClass}"
+    const extraClass = disabled ? 'disabled' : '';
+    const activeClass = active ? 'active' : '';
+    const button = html` <button
+      class="${cssClass} ${extraClass} ${activeClass}"
       data-event=${event}
+      data-detail=${JSON.stringify(detail)}
       @click=${this.fireEvent}
       ?disabled=${disabled}
     >
       ${text}
     </button>`;
+
+    switch (type) {
+      case 'li': {
+        return html` <li class="${extraClass} ${activeClass}">${button}</li>`;
+      }
+      default: {
+        return html`${button}`;
+      }
+    }
   }
 
   /**
@@ -62,6 +90,7 @@ export class ButtonGroup {
   fireEvent(event) {
     const newEvent = new CustomEvent(event.target.dataset.event, {
       bubbles: true,
+      detail: JSON.parse(event.target.dataset.detail),
     });
     window.dispatchEvent(newEvent);
   }

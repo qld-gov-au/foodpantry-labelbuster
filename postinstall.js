@@ -4,7 +4,7 @@
 // postinstall.js
 const fs = require('fs');
 
-const nodeVersion = 'node 10.11';
+const nodeVersion = 'node 10';
 
 // Patch to node_modules/*
 const patch = (staticPath) => {
@@ -22,9 +22,8 @@ const patch = (staticPath) => {
       fs.writeFileSync(browserListFilePath, nodeVersion);
       fs.writeFileSync(
         packageFilePath,
-        JSON.stringify(packageFileData, null, 2)
+        JSON.stringify(packageFileData, null, 2),
       );
-      // console.log(`Fixed browserlist in ${packageFilePath}`)
 
       // Patch to node_modules/*/node_modules/*
       const nestedModulePath = `${staticPath}/${folderName}/node_modules`;

@@ -53,96 +53,72 @@ export class HelpGuide {
   // eslint-disable-next-line class-methods-use-this
   _mainScreen() {
     return html`
-      <div>
+      <div class="side-padding"> 
       <h4>Complex requirements</h4>
       <section class="qg-accordion flex-column" aria-label="Accordion Label">
-    
-      <div class="controls-group">
-        <input
-        type="radio"
-        name="control"
-        id="collapse"
-        class="controls collapse"
-        value="collapse"
-        role="radio">
-  
-        <label for="collapse" class="controls">Collapse all</label>
+          
+      <article>
+      <input
+        id="alcoholic-drinks"
+        type="checkbox"
+        name="tabs"
+        tabindex="-1"
+        aria-controls="id-panel-content-1"
+        aria-expanded="false"
+        role="checkbox"/>
+      <h3 class="acc-heading">
+        <label for="alcoholic-drinks">
+          <span class="title">
+          Alcoholic drinks
+          </span>
+          <span class="arrow"><i></i></span>
+        </label>
+      </h3>
       
-        <span class="controls">|</span>
-        
-        <input
-          type="radio"
-          name="control"
-          id="expand"
-          class="controls expand"
-          value="expand"
-          role="radio">
-        
-        <label for="expand" class="controls">Expand all</label>
+      <div
+        class="collapsing-section"
+        aria-hidden="true"
+        id="id-panel-content-1">
+        <p>
+        Alcohol includes beer, wine and spirits and has unique and additional 
+        requirements such as number of standard drinks. </br>          
+        <b>Further reading</b> </br>
+        <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+          <li>
+          <a href="#">Standard 2.7.1</a> Labelling of alcoholic beverages and food containing alcohol
+          </li>
+          <li>
+          <a href="#">Standard 2.7.2</a> Beer 
+          </li>
+          <li>
+          <a href="#">Standard 2.7.3</a> Fruit wine, vegetable wine and mead
+          </li>
+          <li>
+          <a href="#">Standard 2.7.4</a> Wine and wine product           
+          </li>
+          <li>
+          <a href="#">Standard 2.7.5</a> Spirits
+          </li>                                        
+        </ul>
+        </p>
       </div>
-      
-      <article>
-        <input
-          id="about-food-labels-1"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-1">
-            <span class="title">
-              <span class="acc-number">1</span>
-              Food name and description
-            </span>
-            <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-            Food labels must show the name of the food to help identify the food.
-          </p>
-  
-          <p>
-            The name and description of the food must reflect its true nature. For
-            example, strawberry yoghurt must contain strawberries. If the yoghurt
-            contained strawberry flavouring rather than real fruit, then the name
-            would need to indicate that it is strawberry-flavoured yoghurt.
-          </p>
-  
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
-  
-          <p>
-            If the name of the food does not reflect its true nature, then you
-            must include a description of the true nature on the label. For
-            example, Luke’s Hot’s Sauce (<i>red chilli pepper sauce</i>).
-          </p>
-        </div>
       </article>
+
       <article>
         <input
-          id="about-food-labels-2"
+          id="nutrition-claims"
           type="checkbox"
           name="tabs"
           tabindex="-1"
           aria-controls="id-panel-content-1"
           aria-expanded="false"
-          role="checkbox">
+          role="checkbox"/>
         <h3
           class="acc-heading">
-          <label for="about-food-labels-2">
+          <label for="nutrition-claims">
             <span class="title">
-              <span class="acc-number">2</span>
-              Business details
+              Claims: Nutrition, health and realted claims
             </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -154,391 +130,354 @@ export class HelpGuide {
           id="id-panel-content-1">
           
           <p>
-            To help customers identify where food has come from or to use for a
-            food recall when food is unsafe, a food label must include the
-            following business details:
+          Nutrition, health and related claims are voluntary statements made by food 
+          businesses on labels and in advertising about the content 
+          of certain nutrients or substances in a food, or the relationship between 
+          food and health.
+          </p>
+          <p> Claims cannot be made about: </br>
             <ul>
               <li>
-                name of the business supplying the food
+                kava
               </li>
               <li>
-                business address in Australia or New Zealand, or a description of
-                the location, of the premises where the business is being
-                operated. A postal address cannot be used.
+               infant formula
               </li>
+              <li>
+              any food that contains more than 1.15% alcohol by volume, other than a
+              nutrition content claim about energy, carbohydrate or gluten content; 
+              or salt or sodium content about a food that is not a beverage.              
+              </li>              
             </ul>
           </p>
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
+
+        <p>
+        <b>Health Claims</b> </br>
+        <p>
+         Health claims refer to a relationship between a food and health. For example:
+        </p>
+          <ul>
+          <li>
+          Calcium for bones and teeth
+          </li>
+          <li>
+            Diets high in calcium may reduce the risk of osteoporosis in people 65 years and over          
+            </li>          
+          </ul>
+          <p>
+          Health claims are not permitted on foods that are high in saturated fat, sugar or salt.</br>
+          There are lists of pre-approved food-health relationships that businesses can base their 
+          claims on. These are listed in <a href="#">Schedule 4 of the Code</a>.
+          </p>
+        </p> 
+
+        <p><b>Nutrition content claims</b>
+        <p>
+          Nutrition content claims indicate the presence or absence of certain nutrients or substances 
+          in the food, for example, ‘low in fat’ or ‘good source of calcium’. These claims will need to 
+          meet certain criteria set out in the Standard. For example, 
+          food with a ‘good source of calcium’ claim will need to contain not less than the amount of 
+          calcium specified in the Standard.
+        </p>
+        
+        <b>Endorsements</b>
+        <p>
+          An endorsement is a nutrition content claim or health claim that is made with the 
+          permission of an endorsing body, for example the Heart Foundation Tick.
+        </p>
+        
+        <b>Consumer value claims</b>
+        <p>
+          Other consumer value claims such as cage free; organic or locally grown are covered
+          by Australian Competition and Consumer Commission.
+        </p>
+        
+        <b>Further reading</b></br>
+        <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+          <li> <a href="#">Standard 1.2.7</a> Nutrition, health and related claims.
+            <li>
+            See section 1.2.7—23 Endorsing bodies
+            </li>
+            <li>
+            See section 1.2.7—24 Criteria for endorsements
+            </li>
+          </li>
+          <li>
+            <a href = "#">Schedule 4</a> Nutrition, health and related claims
+          </li>
+          <li>
+          Australian Government Department of Health
+          <li>
+          Getting Your Claims Right 7. Endorsing bodies and endorsements 
+          <a href="#">https://www1.health.gov.au/internet/publications/publishing.nsf/Content/frs-getting-your-claims-right-toc~7-endorsing</a>        
+          </li>
+          </li>
+          <li>
+          <a href= "#">Australian Competition and Consumer Commission</a>
+          <li>
+          website https://www.accc.gov.au/business
+          </li>
+          <li>
+          Food and beverage industry – Food descriptors guideline to the Trade Practices Act
+          </li>
+          </li>                              
+        </ul>
+        </p>
         </div>
       </article>
-  
-      <article>
-        <input
-          id="about-food-labels-3"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-3">
+
+    <article>
+    <input id="drinks-made" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="drinks-made">
             <span class="title">
-              <span class="acc-number">3</span>
-              Weights
+                Drinks made from cereals, nuts, and/or seeds
             </span>
             <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-            The National Measurement Institute is responsible for making sure food
-            is measured and weighed correctly, and that the food is labelled with
-            the correct weight and unit. 
-          </p>
-          
-          <p>
-            For example, food labelled as being 500g should weigh 500g and use the
-            metric system of grams (g), kilograms (kg), millilitres (mL), litres
-            (L), etc.
-          </p>
-  
-          <p>
-            Visit the
-            <a
-              href="https://www.industry.gov.au/regulations-and-standards/buying-and-selling-goods-and-services-by-weights-and-other-measures"
-              target="_blank">
-              NMI website
-            </a>
-            for more information on how to comply with the laws around weights and
-            other measures.
-          </p>
-  
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
-  
-        </div>
-      </article>
-  
-      <article>
-        <input
-          id="about-food-labels-4"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-4">
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Drinks made from cereals, nuts and or seeds are not suitable for certain age groups,
+            depending on the amount of protein and fats in the product. There are strict rules on
+            how this information must be labelled. </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 1.2.3</a> Information requirements – warning statements, advisory statements and
+                declarations
+            </li>
+            <li>
+                <a href="#">Schedule 9 </a> Mandatory advisory statements
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+<article>
+    <input id="drinks-electrolyte" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="drinks-electrolyte">
             <span class="title">
-              <span class="acc-number">4</span>
-              Date marks
+                Electrolyte drinks
             </span>
             <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-            Food packaged with a shelf life of 2 years or less must show a date
-            mark.
-          </p>
-          
-          <p>
-            Foods that should be eaten before a certain date for health and safety
-            reasons must be labelled with a use-by date. Otherwise, a best-before
-            date is required if the food has a shelf life of less than 2 years.
-            Although it may be safe to eat the food after the best-before date,
-            the food may have lost quality or some nutritional value.
-          </p>
-  
-          <p>
-            Bread with a shelf-life of less than 7 days, can use a baked-for date
-            or baked-on date instead of a best-before date.
-          </p>
-  
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
-  
-        </div>
-      </article>
-  
-      <article>
-        <input
-          id="about-food-labels-5"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-5">
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Electrolyte drinks are formulated drinks which are designed for the rapid replacement of fluid,
+            carbohydrates, electrolytes and minerals. These types of drinks, or drink bases, have strict rules about
+            what substances are allowed and how this information must be labelled.
+            </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 2.6.2</a> Non-alcoholic beverages and brewed soft drinks
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+<article>
+    <input id="caffeinated-drinks" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="caffeinated-drinks">
             <span class="title">
-              <span class="acc-number">5</span>
-              Lot identification
+                Formulated caffeinated drinks
             </span>
             <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-            The lot identification means a number or other information that
-            identifies where the food was made and the batch it was part of.
-            Often the date mark, name and address of the manufacturer meets this
-            requirement.
-          </p>
-  
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
-        </div>
-      </article>
-  
-      <article>
-        <input
-          id="about-food-labels-6"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-6">
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Formulated caffeinated drinks have very specific rules about what substances are allowed and how this
+            information must be labelled.
+            </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 2.6.4</a> Formulated caffeinated beverages
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+<article>
+    <input id="modified-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="modified-food">
             <span class="title">
-              <span class="acc-number">6</span>
-              Storage conditions and directions for use
+                Genetically modified food
             </span>
             <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-            <b>Storage conditions</b>
-            <br>
-            To keep food until its best-before or use-by date include storage
-            conditions on your label.
-          </p>
-          <p>
-            <b>Directions for use</b>
-            <br>
-            A food label must have directions on how to use or prepare the food if
-            needed for health and safety reasons.
-          </p>
-  
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
-        </div>
-      </article>
-  
-      <article>
-        <input
-          id="about-food-labels-7"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-7">
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Food produced using gene technology means a food that has been derived or developed from an organism that
+            has been genetically modified. Genetically modified food means a food produced using gene technology that
+            contains novel DNA, novel protein or is listed in <a href="#">Schedule 26</a> of the Food Standard Code.
+            </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 1.5.2</a> Food produced using gene technology
+            </li>
+            <li>
+                <a href="#">Schedule 26</a> Food produced using gene technology
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+
+<article>
+    <input id="irradiated-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="irradiated-food">
             <span class="title">
-              <span class="acc-number">7</span>
-              Ingredients
+                Irradiated food
             </span>
             <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-            A food label must contain a list of ingredients. The Food Standards
-            Code has rules that describe how each ingredient must be listed, what
-            it is called, and how it is formatted.
-          </p>
-          
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
-  
-        </div>
-      </article>
-  
-      <article>
-        <input
-          id="about-food-labels-8"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-8">
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Food irradiation is a technology that improves the safety and extends the shelf life of foods by reducing or
+            eliminating microorganisms and insects. Some fruits, vegetables, herbs and spices are allowed to be
+            irradiated under strict conditions.
+            </br>
+            <b>Further reading</b> </br>
+            <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 1.5.3</a> Irradiation of food
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+<article>
+    <input id="novel-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="novel-food">
             <span class="title">
-              <span class="acc-number">8</span>
-              Advisory statements, warning statements and declarations
+                Novel foods
             </span>
             <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-            To help consumers avoid foods that are not safe for them to eat due to
-            health conditions they may have, the Food Standards Code lists
-            mandatory advisory statements, warning statements and allergen
-            declarations that must be shown on a food label depending on the type
-            of food and its ingredients.
-          </p>
-          
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
-        </div>
-      </article>
-  
-      <article>
-        <input
-          id="about-food-labels-9"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-9">
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Novel foods are non-traditional foods that require a safety assessment by FSANZ before they used in
+            Australia. Examples of novel foods include:
+            </br>
+        <ul>
+            <li>
+                Dried marine micro-algae (Schizochytrium sp.) rich in docosahexaenoic acid
+            </li>
+            <li>
+                Insects for human consumption as a protein source
+            </li>
+        </ul>
+        <p>The <a href="#">Australian Novel Food Committee has developed resources to help determine if a food is a
+                novel food that needs assessment. </a></p>
+        <b>Further reading</b> </br>
+        <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 1.5.1</a> Novel foods
+            </li>
+            <li>
+                <a href="#">Schedule 25</a> Permitted Novel foods
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+<article>
+    <input id="special-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        aria-expanded="false" role="checkbox" />
+    <h3 class="acc-heading">
+        <label for="special-food">
             <span class="title">
-              <span class="acc-number">9</span>
-              Nutrition information panel
+                Special purpose foods
             </span>
             <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-            The nutrition information panel (NIP) shows the number of servings in
-            the package and the average amounts in a serving of food and per 100
-            grams (or 100 millilitres) of food for:
-            <ul>
-              <li>energy (in kilojoules)</li>
-              <li>protein</li>
-              <li>fat (including saturated fat)</li>
-              <li>carbohydrates (including sugars)</li>
-              <li>sodium</li>
-            </ul>
-          </p>
-          
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
-  
-          <p>
-            If a nutrition, health or related claim is made, the NIP must also
-            show the amount of nutrient or substance. For example: the amount of
-            calcium must be shown in the nutrition information panel if a claim
-            about calcium is made.
-          </p>
-        </div>
-      </article>
-  
-      <article>
-        <input
-          id="about-food-labels-10"
-          type="checkbox"
-          name="tabs"
-          tabindex="-1"
-          aria-controls="id-panel-content-1"
-          aria-expanded="false"
-          role="checkbox">
-        <h3
-          class="acc-heading">
-          <label for="about-food-labels-10">
-            <span class="title">
-              <span class="acc-number">10</span>
-              Claims
-            </span>
-            <span class="arrow"><i></i></span>
-          </label>
-        </h3>
-        
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1">
-          
-          <p>
-            There are strict requirements about claims that can be made and how
-            they should be written on a label. 
-          </p>
-          
-          <p>
-            Nutrition content claims are claims about the content of certain
-            nutrients or substances in a food. For example, contains calcium.
-          </p>
-  
-          <p>
-            Health claims refer to a relationship between food and health. For
-            example, calcium for bone and teeth.
-          </p>
-  
-          <figure>
-            <img src="https://via.placeholder.com/300x300.png/ccc/ccc" alt="" />
-          </figure>
-        </div>
-      </article>
-  
-    </section>
-      </div>
+        </label>
+    </h3>
+
+    <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <p>
+            Special purpose foods have complex labelling requirements, such as an expanded nutrition information panel,
+            compositional requirements and advisory statements. Special purpose foods include:
+            </br>
+        <ul>
+            <li>
+                Infant formula products
+            </li>
+            <li>
+                Foods for infants
+            </li>
+            <li>
+                Formulated meal replacements and formulated supplementary foods
+            </li>
+            <li>
+                Formulated supplementary sports foods
+            </li>
+            <li>
+                Food for special medical purposes
+            </li>
+        </ul>
+
+        <b>Further reading</b> </br>
+        <i>Australia New Zealand Food Standards Code</i>
+        <ul>
+            <li>
+                <a href="#">Standard 2.9.1</a> Infant formula products
+            </li>
+            <li>
+                <a href="#">Schedule 2.9.2</a> Food for infants
+            </li>
+            <li>
+                <a href="#">Standard 2.9.3</a> Formulated meal replacements and formulated supplementary foods
+            </li>
+            <li>
+                <a href="#">Schedule 2.9.4</a> Formulated supplementary sports foods
+            </li>
+            <li>
+                <a href="#">Schedule 2.9.5</a> Food for special medical purposes
+            </li>
+        </ul>
+        </p>
+    </div>
+</article>
+
+</div>
     `;
   }
 
