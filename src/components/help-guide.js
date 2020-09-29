@@ -577,7 +577,11 @@ export class HelpGuide {
 <section class="qg-accordion flex-column" aria-label="Accordion Label">
 
     <article>
-        <input id="about-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        <input id="about-food" 
+        type="checkbox" 
+        name="tabs" 
+        tabindex = "-1" 
+        aria-controls = "id-panel-content-1"
             aria-expanded="false" role="checkbox" />
         <h3 class="acc-heading">
             <label for="about-food">
@@ -628,8 +632,13 @@ export class HelpGuide {
     </article>
 
     <article>
-        <input id="about-ingredients" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-            aria-expanded="false" role="checkbox" />
+        <input id="about-ingredients" 
+        type="checkbox" 
+        name="tabs" 
+        tabindex="-1" 
+        aria-controls="id-panel-content-1"
+            aria-expanded="false" 
+            role="checkbox" />
         <h3 class="acc-heading">
             <label for="about-ingredients">
                 <span class="title">
@@ -689,8 +698,13 @@ export class HelpGuide {
     </article>
 
     <article>
-        <input id="prescribed-names" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-            aria-expanded="false" role="checkbox" />
+        <input id="prescribed-names" 
+        type="checkbox" 
+        name="tabs" 
+        tabindex="-1" 
+        aria-controls="id-panel-content-1"
+            aria-expanded="false" 
+            role="checkbox" />
         <h3 class="acc-heading">
             <label for="prescribed-names">
                 <span class="title">
@@ -749,8 +763,13 @@ export class HelpGuide {
 <h4>Food with extra requirements</h4>
 
     <article>
-        <input id="bcr" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-            aria-expanded="false" role="checkbox" />
+        <input id="bcr" 
+        type="checkbox" 
+        name="tabs" 
+        tabindex="-1" 
+        aria-controls="id-panel-content-1"
+            aria-expanded="false" 
+            role="checkbox" />
         <h3 class="acc-heading">
             <label for="bcr">
                 <span class="title">
@@ -782,7 +801,11 @@ export class HelpGuide {
     </article>
 
     <article>
-        <input id="choco-cocoa" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+        <input id="choco-cocoa" 
+        type="checkbox" 
+        name="tabs" 
+        tabindex="-1" 
+        aria-controls="id-panel-content-1"
             aria-expanded="false" role="checkbox" />
         <h3 class="acc-heading">
             <label for="choco-cocoa">
@@ -824,8 +847,13 @@ export class HelpGuide {
     </article>
 
     <article>
-        <input id="alcohol-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-            aria-expanded="false" role="checkbox" />
+        <input id="alcohol-food" 
+        type="checkbox" 
+        name="tabs" 
+        tabindex="-1" 
+        aria-controls="id-panel-content-1"
+            aria-expanded="false" 
+            role="checkbox" />
         <h3 class="acc-heading">
             <label for="alcohol-food">
                 <span class="title">
@@ -864,8 +892,13 @@ export class HelpGuide {
 
 
     <article>
-        <input id="fruit-veg" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-            aria-expanded="false" role="checkbox" />
+        <input id="fruit-veg" 
+        type="checkbox" 
+        name="tabs" 
+        tabindex="-1" 
+        aria-controls="id-panel-content-1"
+            aria-expanded="false" 
+            role="checkbox" />
         <h3 class="acc-heading">
             <label for="fruit-veg">
                 <span class="title">
@@ -899,8 +932,13 @@ export class HelpGuide {
     </article>
 
     <article>
-        <input id="hemp-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-            aria-expanded="false" role="checkbox" />
+        <input id="hemp-food" 
+        type="checkbox" 
+        name="tabs" 
+        tabindex="-1" 
+        aria-controls="id-panel-content-1"
+            aria-expanded="false" 
+            role="checkbox" />
         <h3 class="acc-heading">
             <label for="hemp-food">
                 <span class="title">
@@ -927,8 +965,13 @@ export class HelpGuide {
     </article>
 
     <article>
-        <input id="honey-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-            aria-expanded="false" role="checkbox" />
+        <input id="honey-food" 
+        type="checkbox" 
+        name="tabs" 
+        tabindex="-1" 
+        aria-controls="id-panel-content-1"
+            aria-expanded="false" 
+            role="checkbox" />
         <h3 class="acc-heading">
             <label for="honey-food">
                 <span class="title">
@@ -965,8 +1008,13 @@ export class HelpGuide {
         </div>
     </article>
     <article>
-<input id="jam-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="jam-food" 
+type="checkbox" 
+name="tabs" 
+tabindex="-1" 
+aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
 <h3 class="acc-heading">
     <label for="jam-food">
         <span class="title">
@@ -992,8 +1040,13 @@ export class HelpGuide {
 </div>
 </article>
 <article>
-<input id="kava-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="kava-food" 
+type="checkbox" 
+name="tabs" 
+tabindex="-1" 
+aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
 <h3 class="acc-heading">
     <label for="kava-food">
         <span class="title">
@@ -1026,8 +1079,13 @@ export class HelpGuide {
 </div>
 </article>
 <article>
-<input id="meat-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="meat-food" 
+type="checkbox" 
+name="tabs" 
+tabindex="-1" 
+aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
 <h3 class="acc-heading">
     <label for="meat-food">
         <span class="title">
@@ -1053,8 +1111,13 @@ export class HelpGuide {
 </div>
 </article>
 <article>
-<input id="dairy-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="dairy-food" 
+  type="checkbox" 
+  name="tabs" 
+  tabindex="-1" 
+  aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
 <h3 class="acc-heading">
     <label for="dairy-food">
         <span class="title">
@@ -1105,8 +1168,13 @@ export class HelpGuide {
 </div>
 </article>
 <article>
-<input id="non-alcoholic-drinks" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="non-alcoholic-drinks" 
+  type="checkbox" 
+  name="tabs" 
+  tabindex="-1" 
+  aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
 <h3 class="acc-heading">
     <label for="non-alcoholic-drinks">
         <span class="title">
@@ -1164,8 +1232,13 @@ export class HelpGuide {
 </div>
 </article>
 <article>
-<input id="nuts-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="nuts-food" 
+type="checkbox" 
+name="tabs" 
+tabindex="-1" 
+aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
 <h3 class="acc-heading">
     <label for="nuts-food">
         <span class="title">
@@ -1191,8 +1264,13 @@ export class HelpGuide {
 </div>
 </article>
 <article>
-<input id="oils-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="oils-food" 
+  type="checkbox" 
+  name="tabs" 
+  tabindex="-1" 
+  aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
 <h3 class="acc-heading">
     <label for="oils-food">
         <span class="title">
@@ -1219,8 +1297,13 @@ export class HelpGuide {
 </div>
 </article>
 <article>
-<input id="salt-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="salt-food" 
+type="checkbox" 
+name="tabs" 
+tabindex="-1" 
+aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
 <h3 class="acc-heading">
     <label for="salt-food">
         <span class="title">
@@ -1251,8 +1334,13 @@ export class HelpGuide {
 </div>
 </article>
 <article>
-<input id="sugar-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="sugar-food" 
+type="checkbox" 
+name="tabs" 
+tabindex="-1" 
+aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
 <h3 class="acc-heading">
     <label for="sugar-food">
         <span class="title">
@@ -1280,8 +1368,13 @@ export class HelpGuide {
 </div>
 </article>
 <article>
-<input id="vinegar-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
-    aria-expanded="false" role="checkbox" />
+<input id="vinegar-food" 
+type="checkbox" 
+name="tabs" 
+tabindex="-1" 
+aria-controls="id-panel-content-1"
+    aria-expanded="false" 
+    role="checkbox" />
     <h3 class="acc-heading">
         <span class="title">  
         <label for="vinegar-food">
