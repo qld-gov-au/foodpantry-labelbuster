@@ -22,7 +22,13 @@ export class HelpGuide {
     });
 
     window.addEventListener('helpGuideAccordion', ({ detail: { id } }) => {
-      this._openAccordionItem(id);
+      if (!this.open) {
+        this.updateTemplate({ open: true });
+      }
+
+      setTimeout(() => {
+        this._openAccordionItem(id);
+      }, 500);
     });
   }
 
