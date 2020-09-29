@@ -20,6 +20,16 @@ export class HelpGuide {
     window.addEventListener('labelbusterPageChange', () => {
       this.render(this.state);
     });
+
+    window.addEventListener('helpGuideAccordion', ({ detail: { id } }) => {
+      this._openAccordionItem(id);
+    });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  _openAccordionItem(itemID) {
+    const accordionItem = document.getElementById(itemID);
+    accordionItem.checked = true;
   }
 
   _closeButton() {
