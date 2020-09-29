@@ -38,8 +38,11 @@ import initialView from './components/partials/help-guide-lb-initial';
   const bg = new ButtonGroup(document.querySelector('.button-container'));
   attachStepHandler();
   const hg = new HelpGuide(document.getElementById('help-guide'), {
-    main: mainView,
-    initial: initialView,
+    views: {
+      main: mainView,
+      initial: initialView,
+    },
+    initialState: 'onboarding',
   });
 
   window.addEventListener('DOMContentLoaded', () => {

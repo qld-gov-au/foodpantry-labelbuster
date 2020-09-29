@@ -6,15 +6,28 @@ import { html, render } from 'lit-html';
 export class HelpGuide {
   /**
    * @param {HTMLElement} target the target for the help guide
-   * @param {Object} views an object containing partial views for template
+   * @param {Object} config an object containing views and initialState setting of menu
    */
-  constructor(target, views) {
+  constructor(target, config) {
     this.target = target;
-    this.views = views;
-    this.state = {
-      firstView: true,
-      open: true,
-    };
+    this.views = config.views;
+    this.initialState = config.initialState;
+    if (this.initialState === 'minimized') {
+      this._setState({
+        firstView: false,
+        open: false,
+      });
+    } else if (this.initialState === 'active') {
+      this._setState({
+        firstView: false,
+        open: true,
+      });
+    } else {
+      this._setState({
+        firstView: true,
+        open: true,
+      });
+    }
     this.render(this.state);
 
     window.addEventListener('labelbusterPageChange', () => {
@@ -30,6 +43,13 @@ export class HelpGuide {
         this._openAccordionItem(id);
       }, 500);
     });
+  }
+
+  _setState(newState) {
+    this.state = {
+      ...this.state,
+      ...newState,
+    };
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -68,11 +88,7 @@ export class HelpGuide {
   }
 
   updateTemplate(newState) {
-    this.state = {
-      ...this.state,
-      ...newState,
-    };
-
+    this._setState(newState);
     this.render(this.state);
   }
 
