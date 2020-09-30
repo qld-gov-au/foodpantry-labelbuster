@@ -16,7 +16,7 @@ export function modifyAccordionState(e, newState) {
 }
 
 /**
- * @param {html} accordionSection html section
+ * @param {HTMLElement} accordionSection html section
  */
 export const addExpandCollapse = (accordionSection) => {
   const collapse = accordionSection.querySelector('label[for="collapse"]');
