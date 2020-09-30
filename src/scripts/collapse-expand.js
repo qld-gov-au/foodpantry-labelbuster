@@ -1,31 +1,26 @@
 /**
- * @param {Boolean} newState checked or not checked
+ * @param {Event} e the event on click
+ * @param {Boolean} newState expand or collapse state
  */
-function modifyAllCheckbox(newState) {
-  const accordionArticles = document.querySelectorAll(
-    '.qg-accordion article input[type="checkbox"]'
+export function modifyAccordionState(e, newState) {
+  const accordionSection = e
+    .composedPath()
+    .find((element) => element.classList.contains('qg-accordion'));
+  const articles = accordionSection.querySelectorAll(
+    '.qg-accordion article input[type="checkbox"]',
   );
-  accordionArticles.forEach((article) => {
+  articles.forEach((article) => {
     // eslint-disable-next-line no-param-reassign
     article.checked = newState;
   });
 }
 
 /**
- * @returns {void}
+ * @param {HTMLElement} accordionSection html section
  */
-export default () => {
-  const collapse = document.querySelector('label[for="collapse"]');
-  const expand = document.querySelector('label[for="expand"]');
-  if (collapse) {
-    collapse.addEventListener('click', () => {
-      modifyAllCheckbox(false);
-    });
-  }
-
-  if (expand) {
-    expand.addEventListener('click', () => {
-      modifyAllCheckbox(true);
-    });
-  }
+export const addExpandCollapse = (accordionSection) => {
+  const collapse = accordionSection.querySelector('label[for="collapse"]');
+  const expand = accordionSection.querySelector('label[for="expand"]');
+  expand.addEventListener('click', (e) => modifyAccordionState(e, true));
+  collapse.addEventListener('click', (e) => modifyAccordionState(e, false));
 };

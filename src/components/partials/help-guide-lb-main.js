@@ -1,10 +1,36 @@
 import { html } from 'lit-html';
+import { modifyAccordionState } from '../../scripts/collapse-expand';
 
 export default () => html`
       <div class="side-padding vertical-padding"> 
       <h4>Complex requirements</h4>
       <section class="qg-accordion flex-column" aria-label="Accordion Label">
-          
+      <div class="controls-group">
+      <input
+      type="radio"
+      name="control"
+      id="collapse"
+      class="controls collapse"
+      value="collapse"
+      role="radio">
+  
+      <label for="collapse" class="controls" @click=${(e) =>
+        modifyAccordionState(e, false)}>Collapse all</label>
+  
+      <span class="controls">|</span>
+  
+      <input
+      type="radio"
+      name="control"
+      id="expand"
+      class="controls expand"
+      value="expand"
+      role="radio">
+  
+      <label for="expand" class="controls"  @click=${(e) =>
+        modifyAccordionState(e, true)}>Expand all</label>
+      </div>
+
       <article>
       <input
         id="alcoholic-drinks"
