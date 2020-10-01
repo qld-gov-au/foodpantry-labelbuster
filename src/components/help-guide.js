@@ -1,3 +1,4 @@
+/* global $ */
 import { html, render } from 'lit-html';
 /**
  * @class HelpGuide
@@ -56,6 +57,13 @@ export class HelpGuide {
   _openAccordionItem(itemID) {
     const accordionItem = document.getElementById(itemID);
     accordionItem.checked = true;
+    // SWE JQuery
+    $('.help-guide-content').animate(
+      {
+        scrollTop: $(`#${itemID}`).offset().top,
+      },
+      1000,
+    );
   }
 
   _closeButton() {
