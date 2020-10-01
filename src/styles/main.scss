@@ -12,14 +12,26 @@
 }
 
 .lb {
-  p button {
+  p button:not(.accordion-btn) {
     margin-right: 5px;
+  }
+
+  .accordion-btn {
+    color: #13578b;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    display: inline;
+    padding: 0;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
   }
 }
 
 ol.lb {
   counter-reset: lb-counter;
-  text-align:left;
+  text-align: left;
   text-size-adjust: 100%;
   margin-left: 0;
   padding-left: 0;
@@ -27,12 +39,12 @@ ol.lb {
   flex-direction: column;
   li {
     counter-increment: lb-counter;
-    font-size: .875rem;
-    transition: all .2s;
+    font-size: 0.875rem;
+    transition: all 0.2s;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding-left: 60px!important;
+    padding-left: 60px !important;
     button {
       width: 100%;
       text-align: left;
@@ -58,7 +70,8 @@ ol.lb {
     &:hover {
       background-color: #d1d1d1;
     }
-    &:active, &.active {
+    &:active,
+    &.active {
       background-color: #005e85;
       color: white;
     }
