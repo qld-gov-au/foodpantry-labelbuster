@@ -86,8 +86,8 @@ export class HelpGuide {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  _overlay() {
-    return html`<div class="overlay"></div>`;
+  _overlay(isVisible) {
+    return html`<div class="overlay ${isVisible ? 'visible' : 'hide'}"></div>`;
   }
 
   // CLOSED STATE
@@ -111,7 +111,7 @@ export class HelpGuide {
   createTemplate(state) {
     return html`
       ${!state.open ? this._callout() : ''}
-      ${state.firstView ? this._overlay() : ''}
+      ${state.open ? this._overlay(state.firstView) : ''}
       <div
         class=${state.open
           ? 'help-guide-content open-menu'
