@@ -31,18 +31,23 @@ export class HelpGuide {
     }
     this.render(this.state);
 
-    window.addEventListener('labelbusterPageChange', () => {
-      this.render(this.state);
+    window.addEventListener('formiowrapperPageChange', ({ detail }) => {
+      this.updateTemplate(detail);
     });
 
-    window.addEventListener('helpGuideAccordion', ({ detail: { id } }) => {
-      if (!this.open) {
-        this.updateTemplate({ open: true });
-      }
+    // eslint-disable-next-line no-shadow
+    document.querySelector('.lb').addEventListener('click', ({ target }) => {
+      if (target.classList.contains('accordion-btn')) {
+        const itemID = target.dataset.accordionItem;
+        const isOpen = this.state.open;
+        if (!this.state.open) {
+          this.updateTemplate({ open: true });
+        }
 
-      setTimeout(() => {
-        this._openAccordionItem(id);
-      }, 500);
+        setTimeout(() => {
+          this._openAccordionItem(itemID, isOpen);
+        }, 500);
+      }
     });
   }
 
@@ -54,8 +59,11 @@ export class HelpGuide {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  _openAccordionItem(itemID) {
+  _openAccordionItem(itemID, isOpen) {
     const accordionItem = document.getElementById(itemID);
+    if (accordionItem.checked && isOpen) {
+      return;
+    }
     accordionItem.checked = true;
     // SWE JQuery
     $('.help-guide-content').animate(
