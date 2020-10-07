@@ -43,6 +43,8 @@ import initialView from './components/partials/help-guide-lb-initial';
       initial: initialView,
     },
     initialState: 'onboarding',
+    displayOnSteps: [3],
+    formWrapper: lb,
   });
 
   window.addEventListener('DOMContentLoaded', () => {
