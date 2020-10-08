@@ -86,16 +86,21 @@ export class HelpGuide {
       },
       1000,
     );
-    const focusable = accordionArticle.querySelectorAll(
+
+    this._addKeyboardTrap(accordionArticle);
+  }
+
+  _addKeyboardTrap(accordionArticle) {
+    const focusableElements = accordionArticle.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
     );
-    const firstFocusable = focusable[0];
-    const lastFocusable = focusable[focusable.length - 1];
+    const firstItem = focusableElements[0];
+    const lastItem = focusableElements[focusableElements.length - 1];
 
-    firstFocusable.focus();
+    firstItem.focus();
 
     const keyboardTrap = (e) => {
-      if (e.target === lastFocusable) {
+      if (e.target === lastItem) {
         e.preventDefault();
         this.updateTemplate({ open: false });
         this.returnTab.focus();
