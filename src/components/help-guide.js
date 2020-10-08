@@ -75,6 +75,7 @@ export class HelpGuide {
   _openAccordionItem(itemID, isOpen) {
     const accordionItem = document.getElementById(itemID);
     this.activeAccordion = accordionItem.parentElement;
+    this._addKeyboardTrap();
     if (accordionItem.checked && isOpen) {
       return;
     }
@@ -86,8 +87,6 @@ export class HelpGuide {
       },
       1000,
     );
-
-    this._addKeyboardTrap();
   }
 
   _addKeyboardTrap() {
@@ -100,10 +99,17 @@ export class HelpGuide {
     firstItem.focus();
 
     const keyboardTrap = (e) => {
+      const isFocusedInAccordion = Array.from(focusableElements).some(
+        (element) => element === e.target,
+      );
+
       if (e.target === lastItem) {
         e.preventDefault();
         this.updateTemplate({ open: false });
         this.returnTab.focus();
+      }
+
+      if (e.target === lastItem || !isFocusedInAccordion) {
         document.removeEventListener('keydown', keyboardTrap);
       }
     };
