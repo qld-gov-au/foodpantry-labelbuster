@@ -74,7 +74,7 @@ export class HelpGuide {
   // eslint-disable-next-line class-methods-use-this
   _openAccordionItem(itemID, isOpen) {
     const accordionItem = document.getElementById(itemID);
-    const accordionArticle = accordionItem.parentElement;
+    this.activeAccordion = accordionItem.parentElement;
     if (accordionItem.checked && isOpen) {
       return;
     }
@@ -87,11 +87,11 @@ export class HelpGuide {
       1000,
     );
 
-    this._addKeyboardTrap(accordionArticle);
+    this._addKeyboardTrap();
   }
 
-  _addKeyboardTrap(accordionArticle) {
-    const focusableElements = accordionArticle.querySelectorAll(
+  _addKeyboardTrap() {
+    const focusableElements = this.activeAccordion.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
     );
     const firstItem = focusableElements[0];
