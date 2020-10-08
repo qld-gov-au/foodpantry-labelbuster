@@ -38,6 +38,7 @@ export class HelpGuide {
     // eslint-disable-next-line no-shadow
     document.querySelector('.lb').addEventListener('click', ({ target }) => {
       if (target.classList.contains('accordion-btn')) {
+        this.returnTab = target;
         const itemID = target.dataset.accordionItem;
         const isOpen = this.state.open;
         if (!this.state.open) {
@@ -61,6 +62,7 @@ export class HelpGuide {
   // eslint-disable-next-line class-methods-use-this
   _openAccordionItem(itemID, isOpen) {
     const accordionItem = document.getElementById(itemID);
+    const accordionArticle = accordionItem.parentElement;
     if (accordionItem.checked && isOpen) {
       return;
     }
@@ -72,6 +74,23 @@ export class HelpGuide {
       },
       1000,
     );
+    const focusable = accordionArticle.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    const firstFocusable = focusable[0];
+    const lastFocusable = focusable[focusable.length - 1];
+
+    firstFocusable.focus();
+
+    const keyboardTrap = (e) => {
+      if (e.target === lastFocusable) {
+        e.preventDefault();
+        this.updateTemplate({ open: false });
+        this.returnTab.focus();
+        document.removeEventListener('keydown', keyboardTrap);
+      }
+    };
+    document.addEventListener('keydown', keyboardTrap);
   }
 
   _closeButton() {
