@@ -12,7 +12,17 @@ export class HelpGuide {
   constructor(target, config) {
     this.target = target;
     this.views = config.views;
-    this.initialState = config.initialState;
+    if (config.formWrapper) {
+      this.formWrapper = config.formWrapper;
+      this.displayOnSteps = new Map();
+      config.displayOnSteps.forEach((step) =>
+        this.displayOnSteps.set(step, true),
+      );
+    }
+    this.initialState = localStorage.getItem('help-guide')
+      ? 'active'
+      : config.initialState;
+
     if (this.initialState === 'minimized') {
       this._setState({
         firstView: false,
@@ -29,8 +39,10 @@ export class HelpGuide {
         open: true,
       });
     }
-    this.render(this.state);
 
+    this.updateTemplate();
+    // has seen help guide
+    localStorage.setItem('help-guide', true);
     window.addEventListener('formiowrapperPageChange', ({ detail }) => {
       this.updateTemplate(detail);
     });
@@ -123,8 +135,14 @@ export class HelpGuide {
   }
 
   updateTemplate(newState) {
-    this._setState(newState);
-    this.render(this.state);
+    if (newState) {
+      this._setState(newState);
+    }
+    if (this.displayOnSteps.has(this.formWrapper.wizard.page)) {
+      this.render(this.state);
+    } else {
+      this.render(null);
+    }
   }
 
   createTemplate(state) {
@@ -150,7 +168,7 @@ export class HelpGuide {
     `;
   }
 
-  render() {
-    render(this.createTemplate(this.state), this.target);
+  render(state) {
+    render(state ? this.createTemplate(state) : null, this.target);
   }
 }
