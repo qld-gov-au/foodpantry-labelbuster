@@ -57,6 +57,12 @@
     .controls-group {
       display: flex;
       justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .collapsing-section {
+      padding-left: 0;
+      padding-top: 0;
     }
   }
 }
