@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import './components/help-guide.scss';
 @import './formio/radio.scss';
 
@@ -140,3 +141,49 @@ ol.lb {
   border: none;
   color: #777;
 }
+
+// button.formio-drag-button.btn.btn-default.fa.fa-bars,
+// .fa-navicon::before,
+// .fa-reorder::before {
+//   background-color: transparent;
+//   background-image: url('https://princenekretnine.com/css/fontawesome-free-5.0.6/advanced-options/raw-svg/solid/arrows-alt.svg');
+//   background-repeat: no-repeat;
+//   border: none;
+//   height: 20px;
+//   width: 20px;
+// }
+
+// button.btn.btn-secondary.formio-button-remove-row {
+//   background-color: transparent;
+//   background-image: url('https://princenekretnine.com/css/fontawesome-free-5.0.6/advanced-options/raw-svg/solid/trash-alt.svg');
+//   background-repeat: no-repeat;
+//   border: none;
+//   height: 20px;
+//   width: 20px;
+// }
+
+// .fa-bars::before,
+// .fa-navicon::before,
+// .fa-reorder::before,
+// .fa-times-circle-o::before {
+//   content: none;
+// }
+
+.fa-times-circle-o {
+  content: '\f014';
+  color: black;
+}
+
+.fa-bars::before,
+.fa-navicon::before,
+.fa-reorder::before {
+  content: '\f047';
+  color: black;
+}
+
+// .fa-bars:active,
+// .fa-navicon:active,
+// .fa-reorder:active {
+//   content: '\f047';
+//   color: red;
+// }
