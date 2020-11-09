@@ -10,8 +10,9 @@ import { Environment } from './environment';
 
 (() => {
   const environment = new Environment();
-  configuration.location = environment.url;
-  configuration.baseLocation = environment.url;
+  configuration.form.location = environment.url;
+  // configuration.form.baseLocation = environment.url;
+
   const lb = new FormioWrapper(configuration);
   const bg = new ButtonGroup(document.querySelector('.button-container'));
   attachStepHandler();
