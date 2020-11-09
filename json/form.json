@@ -617,31 +617,22 @@
           "input": false,
           "components": [
             {
-              "label": "<small class=\"hint\">   You can change the order of your ingredients using the up and down arrows. </small>",
+              "label": "<small class=\"hint\">  You can change the order of your ingredients using the up and down arrows. </small>",
               "reorder": true,
               "addAnotherPosition": "bottom",
               "defaultOpen": false,
               "layoutFixed": false,
               "enableRowGroups": false,
               "tableView": false,
-              "defaultValue": [
-                { "textField": "", "textField1": "", "textField2": "" }
-              ],
-              "key": "dataGrid",
+              "defaultValue": [{ "ingredientInfo": "" }],
+              "key": "IngredientData",
               "type": "datagrid",
               "input": true,
               "components": [
                 {
-                  "label": "Order",
-                  "tableView": true,
-                  "key": "textField",
-                  "type": "textfield",
-                  "input": true
-                },
-                {
                   "label": "Ingredient",
                   "tableView": true,
-                  "key": "textField1",
+                  "key": "ingredientInfo",
                   "type": "textfield",
                   "input": true
                 }
@@ -650,8 +641,8 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<div class=\"alert alert-instructions\" role=\"alert\"> <h2> <i class=\"fa fa-info-circle\"></i>\nThe ingredients should be shown on a food label as:\n\n</h2> \n<p>Ingredients: (To be dynamic)\n</p>\n</div>",
-              "refreshOnChange": false,
+              "content": "<div class=\"alert alert-instructions\" role=\"alert\"> <h2> <i class=\"fa fa-info-circle\"></i>\nThe ingredients should be shown on a food label as:\n\n</h2> \n<p>\nIngredient: {{JSON.stringify(data.IngredientData)}}\n</p>\n</div>",
+              "refreshOnChange": true,
               "tableView": false,
               "key": "html28",
               "type": "htmlelement",
@@ -709,7 +700,7 @@
     }
   ],
   "revisions": "current",
-  "_vid": 42,
+  "_vid": 87,
   "title": "LB",
   "display": "wizard",
   "access": [
@@ -730,6 +721,6 @@
   "path": "formwizard",
   "project": "5f44969319d1a97a819d80a7",
   "created": "2020-10-07T02:38:04.620Z",
-  "modified": "2020-11-05T06:36:19.556Z",
+  "modified": "2020-11-09T03:52:46.320Z",
   "machineName": "fesrqwsyzlbtegd:lbReplace"
 }
