@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* global $ */
 import { html, render } from 'lit-html';
 /**
@@ -12,6 +13,7 @@ export class HelpGuide {
   constructor(target, config) {
     this.target = target;
     this.views = config.views;
+    this.shouldAnimate = true;
     if (config.formWrapper) {
       this.formWrapper = config.formWrapper;
       this.displayOnSteps = new Map();
@@ -43,8 +45,8 @@ export class HelpGuide {
     this.updateTemplate();
     // has seen help guide
     localStorage.setItem('help-guide', true);
-    window.addEventListener('formiowrapperPageChange', ({ detail }) => {
-      this.updateTemplate(detail);
+    window.addEventListener('formiowrapperPageChange', () => {
+      this.updateTemplate();
     });
 
     // eslint-disable-next-line no-shadow
@@ -137,7 +139,11 @@ export class HelpGuide {
     return html`
       <button
         class="help-guide-callout"
-        @click=${() => this.updateTemplate({ open: true })}
+        @click=${() => {
+          this.updateTemplate({ open: true });
+          const expandButton = document.querySelector('#help-guide #expand');
+          expandButton.focus();
+        }}
       >
         <i class="fa fa-book"></i>
         <span>Help guide</span>
@@ -147,10 +153,12 @@ export class HelpGuide {
 
   updateTemplate(newState) {
     if (newState) {
+      this.shouldAnimate = true;
       this._setState(newState);
     }
     if (this.displayOnSteps.has(this.formWrapper.wizard.page)) {
       this.render(this.state);
+      this.shouldAnimate = false;
     } else {
       this.render(null);
     }
@@ -161,9 +169,9 @@ export class HelpGuide {
       ${!state.open ? this._callout() : ''}
       ${state.open ? this._overlay(state.firstView) : ''}
       <div
-        class=${state.open
-          ? 'help-guide-content open-menu'
-          : 'help-guide-content close-menu'}
+        class=${`help-guide-content ${
+          this.shouldAnimate ? (state.open ? 'open-menu' : 'close-menu') : ''
+        } ${!state.open && !this.shouldAnimate ? 'hide' : ''}`}
       >
         <div class="top-block">
           <div class="side-padding">

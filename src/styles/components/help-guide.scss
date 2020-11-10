@@ -20,6 +20,10 @@
     align-self: flex-end;
     overflow-y: scroll;
 
+    &.hide {
+      display: none;
+    }
+
     .top-block {
       height: 90px;
       background-color: #00384f;
