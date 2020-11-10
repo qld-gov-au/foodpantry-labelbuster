@@ -16,7 +16,7 @@ export class FormioWrapper {
 
   initialise(firstInit = true) {
     if (!this.config.form.location) return;
-    this.submissionEndpoint = `${this.config.form.location}/${this.config.form.endpoint}`;
+    this.submissionEndpoint = `${this.config.form.baseLocation}${this.config.form.pdfEndpoint}/submission`;
     this.formElement = document.querySelector('#formio');
 
     // create main form
@@ -495,7 +495,7 @@ export class FormioWrapper {
           const data = window.URL.createObjectURL(newBlob);
           const link = document.createElement('a');
           link.href = data;
-          link.download = `Know Your Food Business summary - ${this.submissionData.topicName}.pdf`;
+          link.download = `Label Buster summary – Label Buster Foods: ${this.submissionData.productName}`;
           link.click();
           setTimeout(() => {
             // For Firefox
