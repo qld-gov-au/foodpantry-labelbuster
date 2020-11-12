@@ -174,7 +174,7 @@ export class HelpGuide {
         </div>
         ${state.firstView
           ? this.views.initial(() => this.updateTemplate({ firstView: false }))
-          : this.views.main()}
+          : this.views[this.formWrapper.wizard.page]()}
       </div>
     `;
   }
