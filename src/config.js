@@ -10,12 +10,11 @@ export const configuration = {
     },
     adminEmail: '',
     endpoint: 'submission',
-    pdfEndpoint: '',
-    pdfSubmission: '',
+    pdfEndpoint: 'lbpdf',
     selector: '#formio',
     title: 'Label Buster',
     location: '',
-    baseLocation: '',
+    baseLocation: 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/',
   },
   scroll: {
     target: 0,
@@ -47,5 +46,7 @@ export const configuration = {
     type: localStorage,
     name: 'lbcompleted',
   },
-  extraTriggersOnActions: {},
+  extraTriggersOnActions: {
+    next: 'checkForAutoEmail',
+  },
 };

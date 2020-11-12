@@ -50,4 +50,13 @@ import { Environment } from './environment';
 
     const sectionNavigation = new ButtonGroup(sectionNavTarget, 'navigation');
   });
+
+  window.addEventListener('checkForAutoEmail', (event) => {
+    if (event.detail.page === 9) {
+      const newEvent = new CustomEvent('formiowrapperSendAdminEmail', {
+        bubbles: true,
+      });
+      window.dispatchEvent(newEvent);
+    }
+  });
 })();
