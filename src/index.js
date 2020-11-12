@@ -6,6 +6,7 @@ import { HelpGuide } from './components/help-guide';
 import mainView from './components/partials/help-guide-lb-main';
 import initialView from './components/partials/help-guide-lb-initial';
 import ingredients from './components/partials/help-guide-lb-ingredient';
+import businessView from './components/partials/help-guide-lb-business';
 import { configuration } from './config';
 import { Environment } from './environment';
 
@@ -21,10 +22,11 @@ import { Environment } from './environment';
     views: {
       initial: initialView,
       3: mainView,
+      5: businessView,
       8: ingredients,
     },
     initialState: 'onboarding',
-    displayOnSteps: [3, 8],
+    displayOnSteps: [3, 5, 8],
     formWrapper: lb,
   });
 
