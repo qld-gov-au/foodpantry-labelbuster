@@ -5,6 +5,7 @@ import attachStepHandler from './scripts/step-handlers';
 import { HelpGuide } from './components/help-guide';
 import mainView from './components/partials/help-guide-lb-main';
 import initialView from './components/partials/help-guide-lb-initial';
+import businessView from './components/partials/help-guide-lb-business';
 import { configuration } from './config';
 import { Environment } from './environment';
 
@@ -20,9 +21,10 @@ import { Environment } from './environment';
     views: {
       initial: initialView,
       3: mainView,
+      5: businessView,
     },
     initialState: 'onboarding',
-    displayOnSteps: [3],
+    displayOnSteps: [3, 5],
     formWrapper: lb,
   });
 

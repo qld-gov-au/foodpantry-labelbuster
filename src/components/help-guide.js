@@ -15,9 +15,7 @@ export class HelpGuide {
     if (config.formWrapper) {
       this.formWrapper = config.formWrapper;
       this.displayOnSteps = new Map();
-      config.displayOnSteps.forEach((step) =>
-        this.displayOnSteps.set(step, true),
-      );
+      config.displayOnSteps.forEach(step => this.displayOnSteps.set(step, true));
     }
     this.initialState = localStorage.getItem('help-guide')
       ? 'active'
@@ -100,7 +98,7 @@ export class HelpGuide {
 
     const keyboardTrap = (e) => {
       const isFocusedInAccordion = Array.from(focusableElements).some(
-        (element) => element === e.target,
+        element => element === e.target,
       );
 
       if (e.target === lastItem) {
@@ -162,8 +160,8 @@ export class HelpGuide {
       ${state.open ? this._overlay(state.firstView) : ''}
       <div
         class=${state.open
-          ? 'help-guide-content open-menu'
-          : 'help-guide-content close-menu'}
+    ? 'help-guide-content open-menu'
+    : 'help-guide-content close-menu'}
       >
         <div class="top-block">
           <div class="side-padding">
@@ -173,8 +171,8 @@ export class HelpGuide {
           ${!state.firstView ? this._closeButton() : ''}
         </div>
         ${state.firstView
-          ? this.views.initial(() => this.updateTemplate({ firstView: false }))
-          : this.views[this.formWrapper.wizard.page]()}
+    ? this.views.initial(() => this.updateTemplate({ firstView: false }))
+    : this.views[this.formWrapper.wizard.page]()}
       </div>
     `;
   }
