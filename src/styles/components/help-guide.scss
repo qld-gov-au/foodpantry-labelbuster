@@ -20,6 +20,10 @@
     align-self: flex-end;
     overflow-y: scroll;
 
+    &.hide {
+      display: none;
+    }
+
     .top-block {
       height: 90px;
       background-color: #00384f;
@@ -57,6 +61,12 @@
     .controls-group {
       display: flex;
       justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .collapsing-section {
+      padding-left: 0;
+      padding-top: 0;
     }
   }
 }
