@@ -18,8 +18,8 @@ import { Environment } from './environment';
   attachStepHandler();
   const hg = new HelpGuide(document.getElementById('help-guide'), {
     views: {
-      main: mainView,
       initial: initialView,
+      3: mainView,
     },
     initialState: 'onboarding',
     displayOnSteps: [3],
