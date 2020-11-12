@@ -46,5 +46,7 @@ export const configuration = {
     type: localStorage,
     name: 'lbcompleted',
   },
-  extraTriggersOnActions: {},
+  extraTriggersOnActions: {
+    next: 'checkForAutoEmail',
+  },
 };
