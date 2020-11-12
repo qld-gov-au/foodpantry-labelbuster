@@ -53,28 +53,24 @@
     <tbody>
       <tr>
         <td>Food name and description</td>
-        <td>Strawberry yoghurt crunch
-          A healthy breakfast yoghurt with banana granola and dark chocolate.
+        <td>
+          {{data.productDescription || 'no data provided'}}
         </td>
       </tr>
       <tr>
         <td>Business details</td>
-        <td>Label Buster Foods, 123 Rocky Road, FOODTOWN QLD 4444 </td>
+        <td>
+          {{data.address || 'no data provided'}}
+        </td>
       </tr>
       <tr>
         <td>Ingredients</td>
-        <td><b>Ingredients:</b> Yoghurt (55%) [skim milk, cream, live yoghurt cultures, intense sweetener (962)],
-          strawberries (21%), rolled oats (gluten), banana (4.5%), dark chocolate (5%)[sugar, milk solids, cocoa butter,
-          cocoa mass, emulsifiers (322 (soy), 476), flavours], honey, dried figs, pecans, almonds, sunflower seeds,
-          vanilla bean extract [thickener (413)], cinnamon
+        <td><b>Ingredients:</b> {{data.IngredientData.map((data) => data.ingredient) || 'no data provided'}}
         </td>
       </tr>
       <tr>
         <td>Weight</td>
-        <td>For information on how to comply with weights and measures laws visit the <a
-            href="https://www.measurement.gov.au">National
-            Measurement
-            Institute website.</a></td>
+        <td>{{data.ingredients || 'no data provided'}}</td>
       </tr>
       <tr>
         <td>Nutrition information panel</td>
@@ -85,8 +81,7 @@
       <tr>
         <td>Statements and declarations</td>
         <td>
-          <p><b>Contains:</b> gluten, milk, tree nuts, soy.
-            This food contains phenylalanine.
+          <p><b>Contains:</b> {{data.allergens || 'no data provided'}}
             </br>
             Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum
             size of type of 1.5 mm is required.</p>
@@ -94,19 +89,19 @@
       </tr>
       <tr>
         <td>Date marks</td>
-        <td>Best Before: 05 / 04 / 2021</td>
+        <td>Best Before: {{data.bestBefore || 'no data provided'}}</td>
       </tr>
       <tr>
         <td>Lot identification</td>
-        <td>Batch 42</td>
+        <td>{{data.batch || 'no data provided'}}</td>
       </tr>
       <tr>
         <td>Storage conditions and directions for use</td>
         <td>
           <p>
-            <b>Storage conditions: </b> Keep refrigerated at 1°C to 5°C. Store in an upright position.
+            <b>Storage conditions: </b> {{data.storageConditions || 'no data provided'}}
             </br>
-            <b>Directions for use:</b> Consume within 2 days of opening.
+            <b>Directions for use:</b> {{data.directions || 'no data provided'}}
           </p>
         </td>
       </tr>
@@ -146,6 +141,47 @@
     components can be placed anywhere on the label you create. They do not need to be in the specific layout shown here.
     They may be displayed in any order or arrangement
   </p>
+  <div class="example-label">
+    <div class="eg-col">
+      <h3>Product name</h3>
+      <p>Product description</p>
+      <div>
+        <p>
+          <strong>Storage conditions:</strong> Keep refrigerated at 1 degree to 5
+          degree. Shake well before opening. Store in an upright position.
+        </p>
+        <p>
+          <strong>Directions for use:</strong> Consume within 2 days of opening.
+        </p>
+      </div>
+      <div>
+        <p><strong>Best before:</strong> 05 / 04 / 2021</p>
+        <p><strong>Lot identification:</strong> Batch 42</p>
+      </div>
+    </div>
+    <div class="eg-col">
+      <div>
+        <p>
+          <strong>Ingredients:</strong>
+          {{data.IngredientData.map((data) => data.ingredient)}}
+        </p>
+        <p>
+          <strong>Contains:</strong> 
+          list items
+        </p>
+      </div>
+      <div class="address-block">
+          Address line one 
+          <br />
+          Address line two
+          <br />
+          Address line three
+      </div>
+    </div>
+    <div class="eg-col">
+      <img src="https://www.qld.gov.au/dev/food-pantry/lb-images/nutrition-panel-placeholder@3x.png" alt="example food label" class="src" />
+    </div>
+  </div>
 </section>
 
 <section>

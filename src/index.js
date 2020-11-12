@@ -5,6 +5,7 @@ import attachStepHandler from './scripts/step-handlers';
 import { HelpGuide } from './components/help-guide';
 import mainView from './components/partials/help-guide-lb-main';
 import initialView from './components/partials/help-guide-lb-initial';
+import ingredientsView from './components/partials/help-guide-lb-ingredients';
 import { configuration } from './config';
 import { Environment } from './environment';
 
@@ -18,11 +19,12 @@ import { Environment } from './environment';
   attachStepHandler();
   const hg = new HelpGuide(document.getElementById('help-guide'), {
     views: {
-      main: mainView,
       initial: initialView,
+      3: mainView,
+      4: ingredientsView,
     },
     initialState: 'onboarding',
-    displayOnSteps: [3],
+    displayOnSteps: [3, 4],
     formWrapper: lb,
   });
 
