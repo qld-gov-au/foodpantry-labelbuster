@@ -17,9 +17,7 @@ export class HelpGuide {
     if (config.formWrapper) {
       this.formWrapper = config.formWrapper;
       this.displayOnSteps = new Map();
-      config.displayOnSteps.forEach((step) =>
-        this.displayOnSteps.set(step, true),
-      );
+      config.displayOnSteps.forEach(step => this.displayOnSteps.set(step, true));
     }
     this.initialState = localStorage.getItem('help-guide')
       ? 'active'
@@ -102,7 +100,7 @@ export class HelpGuide {
 
     const keyboardTrap = (e) => {
       const isFocusedInAccordion = Array.from(focusableElements).some(
-        (element) => element === e.target,
+        element => element === e.target,
       );
 
       if (e.target === lastItem) {
@@ -140,10 +138,10 @@ export class HelpGuide {
       <button
         class="help-guide-callout"
         @click=${() => {
-          this.updateTemplate({ open: true });
-          const expandButton = document.querySelector('#help-guide #expand');
-          expandButton.focus();
-        }}
+    this.updateTemplate({ open: true });
+    const expandButton = document.querySelector('#help-guide #expand');
+    expandButton.focus();
+  }}
       >
         <i class="fa fa-book"></i>
         <span>Help guide</span>
@@ -170,8 +168,8 @@ export class HelpGuide {
       ${state.open ? this._overlay(state.firstView) : ''}
       <div
         class=${`help-guide-content ${
-          this.shouldAnimate ? (state.open ? 'open-menu' : 'close-menu') : ''
-        } ${!state.open && !this.shouldAnimate ? 'hide' : ''}`}
+    this.shouldAnimate ? (state.open ? 'open-menu' : 'close-menu') : ''
+  } ${!state.open && !this.shouldAnimate ? 'hide' : ''}`}
       >
         <div class="top-block">
           <div class="side-padding">
@@ -181,8 +179,8 @@ export class HelpGuide {
           ${!state.firstView ? this._closeButton() : ''}
         </div>
         ${state.firstView
-          ? this.views.initial(() => this.updateTemplate({ firstView: false }))
-          : this.views.main()}
+    ? this.views.initial(() => this.updateTemplate({ firstView: false }))
+    : this.views[this.formWrapper.wizard.page]()}
       </div>
     `;
   }

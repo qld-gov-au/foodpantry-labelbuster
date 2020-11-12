@@ -1,4 +1,5 @@
 @import './components/help-guide.scss';
+@import './formio/radio.scss';
 
 .formio-form {
   > div {
@@ -26,6 +27,45 @@
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
+  }
+
+  .heading-primary {
+    font-size: 1.5625rem;
+  }
+
+  .alert.alert-danger {
+    display: none;
+  }
+
+  > .alert.alert-success {
+    display: none;
+  }
+
+  .question-margin {
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+
+  legend {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .required-element::after,
+  .required_fieldset legend::after {
+    content: '*';
+    color: #f85c50;
+  }
+
+  .fa {
+    margin-right: 5px;
+    font-size: 1.5625rem;
+  }
+
+  .alert-instructions {
+    background-color: #f5f5f5;
+    border-left: 5px solid #808080;
   }
 }
 
@@ -81,4 +121,17 @@ ol.lb {
       cursor: not-allowed;
     }
   }
+}
+
+#formio:focus {
+  outline: none;
+}
+
+#formnav {
+  display: none;
+}
+
+// https://meowni.ca/hidden.is.a.lie.html
+[hidden] {
+  display: none !important;
 }

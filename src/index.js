@@ -5,45 +5,26 @@ import attachStepHandler from './scripts/step-handlers';
 import { HelpGuide } from './components/help-guide';
 import mainView from './components/partials/help-guide-lb-main';
 import initialView from './components/partials/help-guide-lb-initial';
+import businessView from './components/partials/help-guide-lb-business';
+import { configuration } from './config';
+import { Environment } from './environment';
 
 (() => {
-  const configuration = {
-    formLocation:
-      'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard',
-    formSettings: {
-      buttonSettings: {
-        showCancel: false,
-        showPrevious: false,
-        showNext: false,
-        showSubmit: false,
-      },
-    },
-    buttonCSS: {
-      baseClass: 'qg-btn',
-      previous: 'btn-default',
-      next: 'btn-primary',
-      cancel: 'btn-link',
-    },
-    scrollTarget: 0,
-    buttonConfig: {
-      startOnFirst: true,
-      acceptWhenTermsFound: true,
-    },
-    navigationCSS: {
-      baseClass: 'qg-btn btn-link',
-    },
-  };
+  const environment = new Environment();
+  configuration.form.location = environment.url;
+  // configuration.form.baseLocation = environment.url;
 
   const lb = new FormioWrapper(configuration);
   const bg = new ButtonGroup(document.querySelector('.button-container'));
   attachStepHandler();
   const hg = new HelpGuide(document.getElementById('help-guide'), {
     views: {
-      main: mainView,
       initial: initialView,
+      3: mainView,
+      5: businessView,
     },
     initialState: 'onboarding',
-    displayOnSteps: [3],
+    displayOnSteps: [3, 5],
     formWrapper: lb,
   });
 

@@ -1,5 +1,5 @@
 {
-  "_id": "5f449bab19d1a9fbf29d80d4",
+  "_id": "5f7d2a0cdb95750374835d57",
   "type": "form",
   "tags": [],
   "owner": "5f3ccdbde35dab29a5bc1e88",
@@ -15,6 +15,20 @@
       "label": "Page 1",
       "input": false,
       "components": [
+        {
+          "label": "sendEmail",
+          "key": "sendEmail",
+          "type": "hidden",
+          "input": true,
+          "tableView": false
+        },
+        {
+          "label": "adminEmail",
+          "key": "adminEmail",
+          "type": "hidden",
+          "input": true,
+          "tableView": false
+        },
         {
           "label": "HTML",
           "tag": "div",
@@ -91,7 +105,7 @@
       "input": false
     },
     {
-      "title": "Exclusions",
+      "title": "Limitations",
       "breadcrumbClickable": true,
       "buttonSettings": { "previous": true, "cancel": true, "next": true },
       "collapsible": false,
@@ -104,7 +118,7 @@
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<style></style><h1> Label Buster exclusions\n</h1><p> Foods with complex labelling requirements are excluded from Label Buster. The following questions will help you to work out if you can use Label Buster for your food.\n</p><p> Is your food <button data-accordion-item=\"alcoholic-drinks\" class=\"accordion-btn\">alcohol</button>, a formulated caffeinated drink, an electrolyte drink or a drink made from cereals, nuts, and/or seeds?\n</p>",
+          "content": "<style></style><h1> Label Buster exclusions (test)\n</h1><p> Foods with complex labelling requirements are excluded from Label Buster. The following questions will help you to work out if you can use Label Buster for your food.\n</p><p> Is your food <button data-accordion-item=\"alcoholic-drinks\" class=\"accordion-btn\">alcohol</button>, a formulated caffeinated drink, an electrolyte drink or a drink made from cereals, nuts, and/or seeds?\n</p>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html2",
@@ -114,7 +128,7 @@
       ]
     },
     {
-      "title": "Your Label",
+      "title": "Food name",
       "breadcrumbClickable": true,
       "buttonSettings": { "previous": true, "cancel": true, "next": true },
       "collapsible": false,
@@ -126,7 +140,7 @@
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<style>.kyfb .fa{margin-right:5px;font-size:1.5625rem}.kyfb .alert-instructions{background-color:#f5f5f5;border-left:5px solid grey}.kyfb .btn-kyfb{border:none;background:none;text-decoration:underline;color:#005e85}.kyfb .emailHeader{font-family:Lato;font-size:14px;color:#666}.kyfb .textFieldEmail{border-radius:4px;background-color:#fff}.kyfb table td{text-align:left}.kyfb tbody tr:nth-child(2n){background:#f6f6f6}\n/*# sourceMappingURL=/styles.c6703d05.css.map */</style><h1>Your label information</h1><section> <div class=\"alert alert-success\" role=\"alert\"> <h2><i class=\"fa fa-check-circle\"></i>Congratulations! You have completed all the steps in Label Buster.</h2> <p> Using your responses to each question, Label Buster has generated a product sheet and an example food label. </p> </div> <p> Label Buster is a brief guide to help you understand your labelling requirements. You may choose to get advice from a labelling consultant to make sure that your label complies with the Food Standards Code. </p> <p> On this page, you will find: <ul> <li> <a href=\"#\">Product sheet</a> </li> <li> <a href=\"#\">Example food label</a> </li> <li> <a href=\"#\">Legibility requirements</a> </li> <li> <a href=\"#\">Exemptions</a> </li> <li> <a href=\"#\">Download or email your summary</a> </li> <li> <a href=\"#\">Need to update your label?</a> </li> </ul> </p>\n</section><section> <h2>Product Sheet</h2> <p> You can take this information to a printer or graphic designer to create a label or use your own tools/templates. When creating your food label, you must ensure you meet the <a href=\"#\" rel=\"nofollow\" target=\"_blank\"> <span class=\"title\">legibility requirements</span> </a>, such as minimum type size. </p> <table> <tbody> <tr> <td>Food name and description</td> <td>Strawberry yoghurt crunch A healthy breakfast yoghurt with banana granola and dark chocolate. </td> </tr> <tr> <td>Business details</td> <td>Label Buster Foods, 123 Rocky Road, FOODTOWN QLD 4444 </td> </tr> <tr> <td>Ingredients</td> <td><b>Ingredients:</b> Yoghurt (55%) [skim milk, cream, live yoghurt cultures, intense sweetener (962)], strawberries (21%), rolled oats (gluten), banana (4.5%), dark chocolate (5%)[sugar, milk solids, cocoa butter, cocoa mass, emulsifiers (322 (soy), 476), flavours], honey, dried figs, pecans, almonds, sunflower seeds, vanilla bean extract [thickener (413)], cinnamon </td> </tr> <tr> <td>Weight</td> <td>For information on how to comply with weights and measures laws visit the <a href=\"#\">National Measurement Institute website.</a></td> </tr> <tr> <td>Nutrition information panel</td> <td>A Nutrition Information Panel must be added to your food label. The Food Standards Australia New Zealand <a href=\"#\">nutrition panel calculator</a> can help you prepare your nutrition information panel. </td> </tr> <tr> <td>Statements and declarations</td> <td> <p><b>Contains:</b> gluten, milk, tree nuts, soy. This food contains phenylalanine. <br> Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum size of type of 1.5 mm is required.</p> </td> </tr> <tr> <td>Date marks</td> <td>Best Before: 05 / 04 / 2021</td> </tr> <tr> <td>Lot identification</td> <td>Batch 42</td> </tr> <tr> <td>Storage conditions and directions for use</td> <td> <p> <b>Storage conditions: </b> Keep refrigerated at 1°C to 5°C. Store in an upright position. <br> <b>Directions for use:</b> Consume within 2 days of opening. </p> </td> </tr> <tr> <td>Claims</td> <td> <p>Making voluntary claims about your food is very complex and you are recommended to seek professional advice. <br> Please note, that making a claim on your food has other requirements not addressed in Label Buster such as additional sections in your nutritional information panel and requirements under Australian Consumer Law. </p> </td> </tr> <tr> <td>Country of origin</td> <td>Information on how to calculate and display mandatory <a href=\"#\">country of origin can be found on the Australian Competition and Consumer Commission website. </a></td> </tr> <tr> <td>Health star rating</td> <td>Information on how to calculate and display a voluntary <a href=\"#\">health star rating can be found at the health star rating system website.</a></td> </tr> </tbody> </table>\n</section><section> <h2>Example of food label</h2> <p> Below is an example of what your label could look like, using the information you provided in Label Buster. Label components can be placed anywhere on the label you create. They do not need to be in the specific layout shown here. They may be displayed in any order or arrangement </p>\n</section><section> <h2>Legibility requirements</h2> <p> All required words, statements, expressions or designs provided on a food label must be in English, be legible, and be prominent so as to contrast distinctly with the background of the label. </p> <p> Information in other languages is permitted, provided it does not negate or contradict the English information. </p> <p> No specific print type or size is defined for general labelling requirements, however: </p> <ul> <li> warning statements must be in a type size of at least 3mm (or 1.5mm on small packages) </li> <li> a print size is prescribed in the Food Standards Code for some foods where a required statement must be shown (e.g. infant formula). </li> </ul>\n</section><section> <h2>Exemptions</h2> <p> All of the food label information needs to be included on your food label, except for:<br> <ul> <li> <a href=\"#\">Food sold in small packages</a> </li> <li> <a href=\"#\">Food with one ingredient</a> </li> </ul> </p> <p> There are extra requirements for:<br> <ul> <li> <a href=\"#\">Food sold from a vending machine</a> </li> <li> <a href=\"#\">Food sold in a hamper</a> </li> </ul> </p>\n</section><section> <h2>Your label information summary</h2> <p> Download your label information summary. This summary includes your product sheet and an example of what your label could look like. </p> <button type=\"button\" class=\"btn btn-primary\">Download summary (PDF, 123 KB)</button> <p> If you prefer, we can send you your self-assessment summary by providing an email address below. </p> <p><b>Email</b></p> <p class=\"emailHeader\">Depending on your email provider, personal information may be transferred outside of Australia. By providing your email address, you voluntarily agree to this transfer.</p> <p class=\"textFieldEmail\"> <input type=\"text\" id=\"email\" name=\"email\"><br> </p> <button type=\"button\" class=\"btn btn-primary\">Email summary</button>\n</section><section> <h2>Need to update your food label?</h2> <p> If you would like to update details in your food label, such as different flavours or ingredients, you can go back and update your answers by clicking on the relevant step. You can then regenerate your label with these new details. </p>\n</section>",
+          "content": "<div>\n  In development.\n</div>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html3",
@@ -135,13 +149,638 @@
         }
       ],
       "input": false
+    },
+    {
+      "title": "Business details",
+      "breadcrumbClickable": true,
+      "buttonSettings": { "previous": true, "cancel": true, "next": true },
+      "collapsible": false,
+      "tableView": false,
+      "key": "page6",
+      "type": "panel",
+      "label": "Page 6",
+      "input": false,
+      "components": [
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<div>\n  In development.\n</div>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html5",
+          "type": "htmlelement",
+          "input": false
+        }
+      ]
+    },
+    {
+      "title": "Date marks",
+      "breadcrumbClickable": true,
+      "buttonSettings": { "previous": true, "cancel": true, "next": true },
+      "collapsible": false,
+      "tableView": false,
+      "key": "page7",
+      "type": "panel",
+      "label": "Page 7",
+      "input": false,
+      "components": [
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<div>\n  In development.\n</div>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html6",
+          "type": "htmlelement",
+          "input": false
+        }
+      ]
+    },
+    {
+      "title": "Storage and use",
+      "breadcrumbClickable": true,
+      "buttonSettings": { "previous": true, "cancel": true, "next": true },
+      "collapsible": false,
+      "tableView": false,
+      "key": "page8",
+      "type": "panel",
+      "label": "Page 8",
+      "input": false,
+      "components": [
+        {
+          "input": false,
+          "key": "columns",
+          "tableView": false,
+          "label": "Columns",
+          "type": "columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "input": true,
+                  "key": "checkbox",
+                  "tableView": false,
+                  "label": "Checkbox",
+                  "type": "checkbox",
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 4,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [],
+              "width": 4,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "input": true,
+                  "key": "number",
+                  "tableView": false,
+                  "label": "Number",
+                  "type": "number",
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "size": "md",
+              "width": 4,
+              "offset": 0,
+              "push": 0,
+              "pull": 0
+            }
+          ]
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<div>\n  In development.\n</div>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html7",
+          "type": "htmlelement",
+          "input": false
+        }
+      ]
+    },
+    {
+      "title": "Ingredients",
+      "breadcrumbClickable": true,
+      "buttonSettings": { "previous": true, "cancel": true, "next": true },
+      "collapsible": false,
+      "tableView": false,
+      "key": "page9",
+      "type": "panel",
+      "label": "Page 9",
+      "input": false,
+      "components": [
+        {
+          "label": "ingredientData",
+          "key": "ingredientData",
+          "type": "hidden",
+          "input": true,
+          "tableView": false
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<h1>Ingredients</h1>\n<section class=\"qg-callout__box qg-callout__default-theme\">\n  <div class=\"qg-callout__content col-12\">\n\n    <div class=\"qg-callout__right-alignment\">\n      <div class=\"qg-callout__description\">\n        <p>\n          A food label must contain a list of ingredients that have been used to make\n  the food. This is also known as the statement of ingredients.\n        </p>\n      </div>\n      <div class=\"qg-callout__image\">\n        <img src=\"https://via.placeholder.com/98X138\" alt=\"\">\n      </div>\n    </div>\n  </div>\n</section>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html8",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "legend": "Do you mention an ingredient, category of ingredients or a part of the food in the name on the label (characterising ingredients)?",
+          "customClass": "required_fieldset",
+          "tableView": false,
+          "key": "fieldSet",
+          "type": "fieldset",
+          "label": "Do you mention an ingredient, category of ingredients or a part of the food in the name on the label (characterising ingredients)?",
+          "input": false,
+          "components": [
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\">For example: strawberries in strawberry jam, meat in a meat pie.</small>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html10",
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Do you mention an ingredient, category of ingredients or a part of the food in the name on the label (characterising ingredients)?",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": true,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "validate": { "required": true },
+              "key": "isIngredient",
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\n   Characterising ingredients\n  </h2> \n<p>\n  Food labels must show the percentage of the characterising ingredients in the food. The Food Standards Code provides details on how characterising ingredients and components should be calculated and shown.\n  <br/>\n  For example: The ingredient list would show the strawberries in strawberry jam as: <b>Strawberries (23%).</b>\n</p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html11",
+              "conditional": {
+                "show": true,
+                "when": "isIngredient",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Do you use any compound ingredients to make your food?",
+          "customClass": "required_fieldset",
+          "tableView": false,
+          "key": "fieldSet1",
+          "conditional": { "show": false, "when": "isIngredient" },
+          "type": "fieldset",
+          "label": "Do you use any compound ingredients to make your food?",
+          "input": false,
+          "components": [
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\">\n  A compound ingredient is any ingredient that is made from two or more ingredients. For example: chocolate chips in a muffin, tomato paste on a pizza.\n  </small>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html12",
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Do you use any compound ingredients to make your food?",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "validate": { "required": true },
+              "key": "compundIng",
+              "conditional": { "show": false, "when": "isIngredient" },
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nCompound ingredients\n</h2> \n<p>\n  If a food contains compound ingredients that contribute 5% or more to the final food, then all the ingredients and additives in that compound ingredient must be declared. \nIf a food contains a compound ingredient that contributes less than 5% to the final food, then only allergens and food additives require listing. \n<br/>\nFor example: The ingredient list would show the dark chocolate chips in a muffin as:<b> dark chocolate chips [sugar, cocoa mass, cocoa butter, emulsifier (soy lecithin), natural vanilla flavour]\n</b>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html22",
+              "conditional": {
+                "show": true,
+                "when": "compundIng",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Do you sometimes replace an ingredient with an alternative ingredient to make your food?",
+          "customClass": "required_fieldset",
+          "tableView": false,
+          "key": "fieldSet2",
+          "conditional": { "show": false, "when": "compundIng" },
+          "type": "fieldset",
+          "label": "Do you sometimes replace an ingredient with an alternative ingredient to make your food?",
+          "input": false,
+          "components": [
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\">\n  This includes a food ingredient or additive that is replaced with another food or additive that serves the same function. \nFor example: sultanas or raisins in a protein ball.\n\n  </small>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html15",
+              "conditional": { "show": false, "when": "compundIng" },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Do you sometimes replace an ingredient with an alternative ingredient to make your food?",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "validate": { "required": true },
+              "key": "altIngredient",
+              "conditional": { "show": false, "when": "compundIng" },
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nAlternative ingredients\n</h2> \n<p>\n Alternative ingredients, including food additives, must be declared.\n<br/>\nFor example: The ingredient list would show: <b>sultanas or raisins.\n</b>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html23",
+              "conditional": {
+                "show": true,
+                "when": "altIngredient",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Do you want to list an ingredient with a generic name? ",
+          "customClass": "required_fieldset",
+          "tableView": false,
+          "key": "fieldSet3",
+          "conditional": { "show": false, "when": "altIngredient" },
+          "type": "fieldset",
+          "label": "Field Set",
+          "input": false,
+          "components": [
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\">\n  <p>\n    Generic names may be used to describe the ingredient.\n    <br />\n    Cheese, cocoa butter, crystallised fruit, fruit, gum bases, herbs, meat,\n    milk protein, poultry meat, spices and vegetables can be used as a generic\n    name without any conditions.\n    <br />\n    Cereals, fats or oils, fish, milk solids, offal, nuts, starch, and sugar\n    have other requirements.\n    <br />\n    For example: Apple, pear and peach listed as “fruit” in a fruit pie.\n  </p>\n</small>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html16",
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Do you want to list an ingredient with a generic name? ",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "validate": { "required": true },
+              "key": "genericName",
+              "conditional": { "show": false, "when": "altIngredient" },
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nGeneric Names\n</h2> \n<p>\nGeneric names are specified in the Food Standards Code.\n<br/>\nGeneric names are specified in the Food Standards Code. \n\nFor example: The ingredient list could show the ingredients apple, pear and peach as either: \n<ul>\n    <li>Fruit, or</li>\n    <li>Fruit (apple, pear, peach) </li>\n</u;\n</p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html24",
+              "conditional": {
+                "show": true,
+                "when": "genericName",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Does your food contain any food additives?",
+          "customClass": "required_fieldset",
+          "tableView": false,
+          "key": "fieldSet4",
+          "conditional": { "show": false, "when": "genericName" },
+          "type": "fieldset",
+          "label": "Does your food contain any food additives?",
+          "input": false,
+          "components": [
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\">\n  For example: Food colours, flavours, preservatives, sweeteners, thickeners, etc.\n  </small>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html18",
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Does your food contain any food additives?",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "validate": { "required": true },
+              "key": "foodAdditives",
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nFood additives \n</h2> \n<p>\nThe substance (including a vitamin or mineral) used as a food additive must be declared.\n<br/>\nThe Food Standards Code specifies how to list food additives in the ingredient list. This includes a list of class names and codes to use for specific food additives.\n<br/>\nFor example: The ingredient list would show the yellow food colouring tartrazine as either:\n<ul>\n    <li>Colour (tartrazine), or </li>\n    <li>Colour (102)</li>\n</u;\n</p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html25",
+              "conditional": {
+                "show": true,
+                "when": "foodAdditives",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Does your food contain any exempt ingredients that do not need to be included in a statement of ingredients? ",
+          "customClass": "required_fieldset",
+          "tableView": false,
+          "key": "fieldSet5",
+          "conditional": { "show": false, "when": "foodAdditives" },
+          "type": "fieldset",
+          "label": "Does your food contain any exempt ingredients that do not need to be included in a statement of ingredients? ",
+          "input": false,
+          "components": [
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\">\n   <p> For example:\n    <ul>\n        <li>A substance or food that is used as a processing aid.</li>\n        <li> An ingredient of a flavouring substance.</li>\n        <li>An ingredient such as water or alcohol, that is completely removed during the manufacture of the food. </li>\n        <li>Added water that forms part of broth, brine or syrup. </li>\n    </ul>\n   </p>\n</small>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html20",
+              "conditional": { "show": false, "when": "foodAdditives" },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Does your food contain any exempt ingredients that do not need to be included in a statement of ingredients? ",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "validate": { "required": true },
+              "key": "StatementOfIngredients",
+              "conditional": { "show": false, "when": "foodAdditives" },
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nExempt ingredients \n</h2> \n<p>\nExempt ingredients do not need to be included in the ingredient list.\n</p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html26",
+              "conditional": {
+                "show": true,
+                "when": "StatementOfIngredients",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<h3>Enter ingredients in <a href=\"#\"> descending order of ingoing weight</a> </h3>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html13",
+          "conditional": { "show": false, "when": "StatementOfIngredients" },
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "legend": "Enter each ingredient that is used to make your food in<a href=\"#\"> descending order of ingoing weight.</a>",
+          "customClass": "required_fieldset",
+          "tableView": false,
+          "key": "fieldSet6",
+          "conditional": { "show": false, "when": "StatementOfIngredients" },
+          "type": "fieldset",
+          "label": "Enter each ingredient that is used to make your food in<a href=\"#\"> descending order of ingoing weight.</a>",
+          "input": false,
+          "components": [
+            {
+              "label": "<small class=\"hint\">  You can change the order of your ingredients using the up and down arrows. </small>",
+              "reorder": true,
+              "addAnother": "Add another ingredient",
+              "addAnotherPosition": "bottom",
+              "defaultOpen": false,
+              "layoutFixed": false,
+              "enableRowGroups": false,
+              "tableView": false,
+              "defaultValue": [{ "ingredientInfo": "" }],
+              "validate": { "maxLength": 50, "required": true },
+              "key": "IngredientData",
+              "type": "datagrid",
+              "input": true,
+              "components": [
+                {
+                  "label": "Ingredient",
+                  "tableView": true,
+                  "key": "ingredientInfo",
+                  "type": "textfield",
+                  "input": true
+                }
+              ]
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<style>\n  .fa-times-circle-o:before {\n  content: \"\\f1f8\";\n  color: black;\n}\n\n.fa-bars:before,\n.fa-navicon:before,\n.fa-reorder:before {\n  content: \"\\f047\";\n  color: black;\n}\n\nbutton.btn.btn-secondary.formio-button-remove-row, \nbutton.formio-drag-button.btn.btn-default.fa.fa-bars{\n  background-color: transparent;\n  border:none;\n}\n\n.btn-secondary:not(:disabled):not(.disabled):active:focus {\n  box-shadow: none;\n  background-color: transparent;\n}\n\n.fa.fa-times-circle-o:hover:before,\n.fa-bars:hover:before,\n.fa-navicon:hover:before,\n.fa-reorder:hover:before \n{\n    color: #13578b;\n}\n\nth:nth-child(1):after {\n    content: \"Re-order\";\n}\nth:nth-child(3):after {\n    content: \"Delete\";\n}\n</style>\n<div class=\"alert alert-instructions\" role=\"alert\"> <h2> <i class=\"fa fa-info-circle\"></i>\nThe ingredients should be shown on a food label as:\n\n</h2> \n<p>\nIngredients: {{data.IngredientData.map((data) => data.ingredientInfo)}}\n</p>\n</div>",
+              "refreshOnChange": true,
+              "tableView": false,
+              "key": "html28",
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Statements",
+      "breadcrumbClickable": true,
+      "buttonSettings": { "previous": true, "cancel": true, "next": true },
+      "collapsible": false,
+      "tableView": false,
+      "key": "page10",
+      "type": "panel",
+      "label": "Page 10",
+      "input": false,
+      "components": [
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<div>\n  In development.\n</div>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html9",
+          "type": "htmlelement",
+          "input": false
+        }
+      ]
+    },
+    {
+      "title": "Your Label",
+      "breadcrumbClickable": true,
+      "buttonSettings": { "previous": true, "cancel": true, "next": true },
+      "collapsible": false,
+      "tableView": false,
+      "key": "page11",
+      "type": "panel",
+      "label": "Page 11",
+      "components": [
+        {
+          "label": "HTML",
+          "tag": "div",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<style>.lb .fa{margin-right:5px;font-size:1.5625rem}.lb .alert-instructions{background-color:#f5f5f5;border-left:5px solid grey}.lb .special{color:#f85c50}.lb .qg-grab{margin-bottom:1rem}.lb .flex-row{display:flex;flex-direction:row}</style>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<h1>Your label information</h1>\n<section>\n  <div class=\"alert alert-success\" role=\"alert\">\n    <h2><i class=\"fa fa-check-circle\"></i>Congratulations! You have completed all the steps in Label Buster.</h2>\n    <p>\n      Using your responses to each question, Label Buster has generated a product sheet and an example food label.\n    </p>\n  </div>\n  <p>\n    Label Buster is a brief guide to help you understand your labelling requirements. You may choose to get advice from\n    a\n    labelling consultant to make sure that your label complies with the Food Standards Code.\n  </p>\n\n  <p>\n    On this page, you will find:\n  <ul>\n    <li>\n      <a href=\"#\">Product sheet</a>\n    </li>\n    <li>\n      <a href=\"#\">Example food label</a>\n    </li>\n    <li>\n      <a href=\"#\">Legibility requirements</a>\n    </li>\n    <li>\n      <a href=\"#\">Exemptions</a>\n    </li>\n    <li>\n      <a href=\"#\">Download or email your summary</a>\n    </li>\n    <li>\n      <a href=\"#\">Need to update your label?</a>\n    </li>\n  </ul>\n  </p>\n</section>\n\n<section>\n  <h2>Product Sheet</h2>\n  <p>\n    You can take this information to a printer or graphic designer to create a label or use your own tools/templates.\n    When\n    creating your food label, you must ensure you meet the <a href=\"#\" rel=\"nofollow\" target=\"_blank\">\n      <span class=\"title\">legibility requirements</span>\n    </a>, such as minimum type size.\n  </p>\n\n  <table>\n    <tbody>\n      <tr>\n        <td>Food name and description</td>\n        <td>Strawberry yoghurt crunch\n          A healthy breakfast yoghurt with banana granola and dark chocolate.\n        </td>\n      </tr>\n      <tr>\n        <td>Business details</td>\n        <td>Label Buster Foods, 123 Rocky Road, FOODTOWN QLD 4444 </td>\n      </tr>\n      <tr>\n        <td>Ingredients</td>\n        <td><b>Ingredients:</b> Yoghurt (55%) [skim milk, cream, live yoghurt cultures, intense sweetener (962)],\n          strawberries (21%), rolled oats (gluten), banana (4.5%), dark chocolate (5%)[sugar, milk solids, cocoa butter,\n          cocoa mass, emulsifiers (322 (soy), 476), flavours], honey, dried figs, pecans, almonds, sunflower seeds,\n          vanilla bean extract [thickener (413)], cinnamon\n        </td>\n      </tr>\n      <tr>\n        <td>Weight</td>\n        <td>For information on how to comply with weights and measures laws visit the <a\n            href=\"https://www.measurement.gov.au\">National\n            Measurement\n            Institute website.</a></td>\n      </tr>\n      <tr>\n        <td>Nutrition information panel</td>\n        <td>A Nutrition Information Panel must be added to your food label. The Food Standards Australia New Zealand <a\n            href=\"https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx\">nutrition\n            panel calculator</a> can help you prepare your nutrition information panel. </td>\n      </tr>\n      <tr>\n        <td>Statements and declarations</td>\n        <td>\n          <p><b>Contains:</b> gluten, milk, tree nuts, soy.\n            This food contains phenylalanine.\n            </br>\n            Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum\n            size of type of 1.5 mm is required.</p>\n        </td>\n      </tr>\n      <tr>\n        <td>Date marks</td>\n        <td>Best Before: 05 / 04 / 2021</td>\n      </tr>\n      <tr>\n        <td>Lot identification</td>\n        <td>Batch 42</td>\n      </tr>\n      <tr>\n        <td>Storage conditions and directions for use</td>\n        <td>\n          <p>\n            <b>Storage conditions: </b> Keep refrigerated at 1°C to 5°C. Store in an upright position.\n            </br>\n            <b>Directions for use:</b> Consume within 2 days of opening.\n          </p>\n        </td>\n      </tr>\n      <tr>\n        <td>Claims</td>\n        <td>\n          <p>Making voluntary claims about your food is very complex and you are recommended to seek professional\n            advice.\n            </br>\n            Please note, that making a claim on your food has other requirements not addressed in Label Buster such as\n            additional sections in your nutritional information panel and requirements under Australian Consumer Law.\n          </p>\n        </td>\n      </tr>\n      <tr>\n        <td>Country of origin</td>\n        <td>Information on how to calculate and display mandatory <a\n            href=\"https://www.accc.gov.au/business/advertising-promoting-your-business/country-of-origin-claims/country-of-origin-food-labelling\">country\n            of origin can be found on the\n            Australian Competition and Consumer Commission website. </a></td>\n      </tr>\n      <tr>\n        <td>Health star rating</td>\n        <td>Information on how to calculate and display a voluntary <a\n            href=\"https://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/Content/guide-for-industry-document\">health\n            star rating can be found at the\n            health star rating system website.</a></td>\n      </tr>\n    </tbody>\n  </table>\n</section>\n\n<section>\n  <h2>Example of food label</h2>\n  <p>\n    Below is an example of what your label could look like, using the information you provided in Label Buster. Label\n    components can be placed anywhere on the label you create. They do not need to be in the specific layout shown here.\n    They may be displayed in any order or arrangement\n  </p>\n</section>\n\n<section>\n  <h2>Legibility requirements</h2>\n  <p>\n    All required words, statements, expressions or designs provided on a food label must be in English, be legible, and\n    be\n    prominent so as to contrast distinctly with the background of the label.\n  </p>\n  <p>\n    Information in other languages is permitted, provided it does not negate or contradict the English information.\n  </p>\n  <p>\n    No specific print type or size is defined for general labelling requirements, however:\n  </p>\n  <ul>\n    <li>\n      warning statements must be in a type size of at least 3mm (or 1.5mm on small packages)\n    </li>\n    <li>\n      a print size is prescribed in the Food Standards Code for some foods where a required statement must be shown\n      (e.g.\n      infant formula).\n    </li>\n  </ul>\n</section>\n\n<section>\n  <h2>Exemptions</h2>\n  <p>\n    All of the food label information needs to be included on your food label, except for:</br>\n  <ul>\n    <li>\n      <a href=\"#\">Food sold in small packages</a>\n    </li>\n    <li>\n      <a href=\"#\">Food with one ingredient</a>\n    </li>\n  </ul>\n  </p>\n  <p>\n    There are extra requirements for:</br>\n  <ul>\n    <li>\n      <a href=\"#\">Food sold from a vending machine</a>\n    </li>\n    <li>\n      <a href=\"#\">Food sold in a hamper</a>\n    </li>\n  </ul>\n  </p>\n</section>\n\n  <h2>Your label information summary</h2>\n  <p>\n    Download your label information summary. This summary includes your product sheet and an example of what your\n    label\n    could look like.\n  </p>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html14",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "label": "Download summary (PDF)",
+          "action": "event",
+          "showValidations": false,
+          "tableView": false,
+          "key": "downloadSummary",
+          "type": "button",
+          "event": "downloadPDF",
+          "input": true
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<p>\n    If you prefer, we can send you your self-assessment summary by providing an email address below.\n  </p>\n\n  <p><b>Email</b></p>\n  <p class=\"emailHeader\">Depending on your email provider, personal information may be transferred outside of\n    Australia. By providing your\n    email address, you voluntarily agree to this transfer.</p>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html19",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "label": "Email",
+          "tableView": true,
+          "key": "email",
+          "type": "email",
+          "input": true
+        },
+        {
+          "label": "Email summary",
+          "action": "event",
+          "showValidations": false,
+          "tableView": true,
+          "key": "emailButton",
+          "type": "button",
+          "event": "sendEmail",
+          "input": true
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<section>\n  <h2>Need to update your food label?</h2>\n  <p>\n    If you would like to update details in your food label, such as different flavours or ingredients, you can go back\n    and update your answers by clicking on the relevant step. You can then regenerate your label with these new details.\n  </p>\n</section>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html17",
+          "type": "htmlelement",
+          "input": false
+        }
+      ],
+      "input": false
     }
   ],
   "revisions": "current",
-  "_vid": 18,
+  "_vid": 124,
   "title": "LB",
   "display": "wizard",
   "access": [
+    { "roles": [], "type": "create_own" },
+    { "roles": [], "type": "create_all" },
+    { "roles": [], "type": "read_own" },
     {
       "roles": [
         "5f44969319d1a9d9029d80a8",
@@ -149,16 +788,35 @@
         "5f44969319d1a9ffc69d80aa"
       ],
       "type": "read_all"
-    }
+    },
+    { "roles": [], "type": "update_own" },
+    { "roles": [], "type": "update_all" },
+    { "roles": [], "type": "delete_own" },
+    { "roles": [], "type": "delete_all" },
+    { "roles": [], "type": "team_read" },
+    { "roles": [], "type": "team_write" },
+    { "roles": [], "type": "team_admin" }
   ],
-  "submissionAccess": [],
+  "submissionAccess": [
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "create_own" },
+    { "roles": [], "type": "create_all" },
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "read_own" },
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "read_all" },
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "update_own" },
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "update_all" },
+    { "roles": [], "type": "delete_own" },
+    { "roles": [], "type": "delete_all" },
+    { "roles": [], "type": "team_read" },
+    { "roles": [], "type": "team_write" },
+    { "roles": [], "type": "team_admin" }
+  ],
   "controller": "",
   "properties": {},
   "settings": {},
   "name": "formWizard",
   "path": "formwizard",
   "project": "5f44969319d1a97a819d80a7",
-  "created": "2020-08-25T05:03:39.822Z",
-  "modified": "2020-10-01T06:49:16.734Z",
-  "machineName": "fesrqwsyzlbtegd:formWizard"
+  "created": "2020-10-07T02:38:04.620Z",
+  "modified": "2020-11-10T06:41:23.261Z",
+  "machineName": "fesrqwsyzlbtegd:lbReplace"
 }
