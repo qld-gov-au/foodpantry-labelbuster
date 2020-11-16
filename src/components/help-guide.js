@@ -48,7 +48,7 @@ export class HelpGuide {
     });
 
     // eslint-disable-next-line no-shadow
-    document.querySelector('.lb').addEventListener('click', ({ target }) => {
+    document.body.addEventListener('click', ({ target }) => {
       if (target.classList.contains('accordion-btn')) {
         this.returnTab = target;
         const itemID = target.dataset.accordionItem;
@@ -163,6 +163,7 @@ export class HelpGuide {
   }
 
   createTemplate(state) {
+    if (!state) return null;
     return html`
       ${!state.open ? this._callout() : ''}
       ${state.open ? this._overlay(state.firstView) : ''}
@@ -186,6 +187,8 @@ export class HelpGuide {
   }
 
   render(state) {
-    render(state ? this.createTemplate(state) : null, this.target);
+    const templateResult = state ? this.createTemplate(state) : null;
+    render(templateResult, this.target);
+    return templateResult;
   }
 }
