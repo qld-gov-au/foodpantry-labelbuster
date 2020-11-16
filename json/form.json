@@ -164,12 +164,174 @@
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<div>\n  In development.\n</div>",
+          "content": "<style>.lb input[type=text]{width:90%}.lb .input-smaller{width:55%}.lb .address-autocomplete-container{display:flex;align-items:center}.lb .formio-select-autocomplete-input{opacity:0;position:absolute;z-index:-1}.lb .choices{font-size:16px;position:relative;margin-bottom:24px}.lb .choices:focus{outline:0}.lb .choices:last-child{margin-bottom:0}.lb .choices [hidden]{display:none!important}.lb .choices.is-disabled .choices__inner,.lb .choices.is-disabled .choices__input{cursor:not-allowed;-webkit-user-select:none;-ms-user-select:none;user-select:none;background-color:#eaeaea}.lb .choices.is-disabled .choices__item{cursor:not-allowed}.lb .choices[data-type*=select-one]{cursor:pointer}.lb .choices[data-type*=select-one] .choices__inner{padding-bottom:7.5px}.lb .choices[data-type*=select-one] .choices__input{display:block;width:100%;margin:0;padding:10px;border-bottom:1px solid #ddd;background-color:#fff}.lb .choices[data-type*=select-one] .choices__button{position:absolute;top:50%;right:0;width:20px;height:20px;margin-top:-10px;margin-right:25px;padding:0;opacity:.5;border-radius:10em;background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMi41OTIuMDQ0bDE4LjM2NCAxOC4zNjQtMi41NDggMi41NDhMLjA0NCAyLjU5MnoiLz48cGF0aCBkPSJNMCAxOC4zNjRMMTguMzY0IDBsMi41NDggMi41NDhMMi41NDggMjAuOTEyeiIvPjwvZz48L3N2Zz4=);background-size:8px}.lb .choices[data-type*=select-one] .choices__button:focus{opacity:1;box-shadow:0 0 0 2px #00bcd4}.lb .choices[data-type*=select-one] .choices__button:hover{opacity:1}.lb .choices[data-type*=select-one] .choices__item[data-value=\"\"] .choices__button{display:none}.lb .choices[data-type*=select-one]:after{position:absolute;top:50%;right:11.5px;width:0;height:0;margin-top:-2.5px;content:\"\";pointer-events:none;border:5px solid transparent;border-top-color:#333}.lb .choices[data-type*=select-one].is-open:after{margin-top:-7.5px;border-color:transparent transparent #333}.lb .choices[data-type*=select-one][dir=rtl]:after{right:auto;left:11.5px}.lb .choices[data-type*=select-one][dir=rtl] .choices__button{right:auto;left:0;margin-right:0;margin-left:25px}.lb .choices[data-type*=select-multiple] .choices__inner{cursor:text}.lb .choices[data-type*=select-multiple] .choices__button{line-height:1;position:relative;display:inline-block;width:8px;margin:0 -4px 0 8px;padding-left:16px;opacity:.75;border-left:1px solid #008fa1;border-radius:0;background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMi41OTIuMDQ0bDE4LjM2NCAxOC4zNjQtMi41NDggMi41NDhMLjA0NCAyLjU5MnoiLz48cGF0aCBkPSJNMCAxOC4zNjRMMTguMzY0IDBsMi41NDggMi41NDhMMi41NDggMjAuOTEyeiIvPjwvZz48L3N2Zz4=);background-size:8px}.lb .choices[data-type*=select-multiple] .choices__button:focus{opacity:1}.lb .choices[data-type*=select-multiple] .choices__button:hover{opacity:1}.lb .choices[data-type*=text] .choices__inner{cursor:text}.lb .choices[data-type*=text] .choices__button{line-height:1;position:relative;display:inline-block;width:8px;margin:0 -4px 0 8px;padding-left:16px;opacity:.75;border-left:1px solid #008fa1;border-radius:0;background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMi41OTIuMDQ0bDE4LjM2NCAxOC4zNjQtMi41NDggMi41NDhMLjA0NCAyLjU5MnoiLz48cGF0aCBkPSJNMCAxOC4zNjRMMTguMzY0IDBsMi41NDggMi41NDhMMi41NDggMjAuOTEyeiIvPjwvZz48L3N2Zz4=);background-size:8px}.lb .choices[data-type*=text] .choices__button:focus{opacity:1}.lb .choices[data-type*=text] .choices__button:hover{opacity:1}.lb .choices__inner{font-size:14px;display:inline-block;overflow:hidden;width:100%;min-height:44px;padding:7.5px 7.5px 3.75px;vertical-align:top;border:1px solid #ddd;border-radius:2.5px;background-color:#f9f9f9}.lb .is-focused .choices__inner{border-color:#b7b7b7}.lb .is-open .choices__inner{border-color:#b7b7b7;border-radius:2.5px 2.5px 0 0}.lb .is-open .choices__list--dropdown{border-color:#b7b7b7}.lb .is-flipped.is-open .choices__inner{border-radius:0 0 2.5px 2.5px}.lb .choices__list{margin:0;padding-left:0;list-style:none}.lb .choices__list--single{display:inline-block;width:100%;padding:0}.lb .choices__list--single .choices__item{width:100%}.lb [dir=rtl] .choices__list--single{padding-right:4px;padding-left:16px}.lb [dir=rtl] .choices__list--multiple .choices__item{margin-right:0;margin-left:3.75px}.lb [dir=rtl] .choices__list--dropdown .choices__item{text-align:right}.lb [dir=rtl] .choices__input{padding-right:2px;padding-left:0}.lb .choices__list--multiple{display:inline}.lb .choices__list--multiple .choices__item{font-size:12px;font-weight:500;display:inline-block;box-sizing:border-box;margin-right:3.75px;vertical-align:middle;word-break:break-all;color:#fff;border:1px solid #00a5bb;border-radius:20px;background-color:#00bcd4;line-height:1em;margin-bottom:6px;padding:2px 8px;border-radius:0}.lb .choices__list--multiple .choices__item[data-deletable]{padding-right:5px}.lb .choices__list--multiple .choices__item.is-highlighted{border:1px solid #008fa1;background-color:#00a5bb}.lb .is-disabled .choices__list--multiple .choices__item{border:1px solid #919191;background-color:#aaa;padding:5px 10px}.lb .is-disabled .choices__list--multiple .choices__item .choices__button{display:none}.lb .choices__list--dropdown{position:absolute;z-index:1;top:100%;visibility:hidden;overflow:hidden;width:100%;margin-top:-1px;word-break:break-all;border:1px solid #ddd;border-bottom-right-radius:2.5px;border-bottom-left-radius:2.5px;background-color:#fff;will-change:visibility;z-index:100}.lb .choices__list--dropdown .choices__list{position:relative;overflow:auto;max-height:300px;-webkit-overflow-scrolling:touch;will-change:scroll-position}.lb .choices__list--dropdown .choices__item{font-size:14px;position:relative;padding:10px}.lb .choices__list--dropdown .choices__item--selectable.is-highlighted{background-color:#f2f2f2}.lb .choices__list--dropdown .choices__item--selectable.is-highlighted:after{opacity:.5}.lb .choices__list--dropdown .choices__item--selectable{padding-right:0}.lb .choices__list--dropdown.is-active{visibility:visible}.lb .is-flipped .choices__list--dropdown{top:auto;bottom:100%;margin-top:0;margin-bottom:-1px;border-radius:.25rem .25rem 0 0}.lb .choices__item{cursor:default}.lb .choices__item--selectable{cursor:pointer}.lb .choices__item--disabled{cursor:not-allowed;-webkit-user-select:none;-ms-user-select:none;user-select:none;opacity:.5}.lb .choices__heading{font-size:12px;font-weight:600;padding:10px;color:grey;border-bottom:1px solid #f7f7f7}.lb .choices__button{cursor:pointer;text-indent:-9999px;border:0;background-color:transparent;background-repeat:no-repeat;background-position:50%;-webkit-appearance:none;-moz-appearance:none;appearance:none}.lb .choices__button:focus{outline:0}.lb .choices__input{font-size:14px;display:inline-block;max-width:100%;margin-bottom:5px;vertical-align:baseline;border:0;border-radius:0;background-color:#f9f9f9;padding:2px}.lb .choices__input:focus{outline:0}.lb .choices__placeholder{opacity:.5}.lb .formio-component-multiple .choices__input{width:100%}.lb .choices__item.choices__item--selectable{overflow:hidden;padding-right:25px;white-space:nowrap;text-overflow:ellipsis}.lb .choices[dir=rtl]>*{text-align:right}.lb .choices[dir=rtl] .choices__list--multiple .choices__item[data-deletable]{float:right;padding-left:5px}.lb .choices[dir=rtl] .choices__list--multiple .choices__item[data-deletable] .choices__button{float:left;overflow:hidden;margin:0 8px 0 -4px;padding-right:16px;padding-left:unset;border-right:1px solid #008fa1;border-left:unset}.lb .formio-choices.form-group{margin-bottom:0}.lb .formio-choices[data-type=select-multiple] .form-control{height:auto}.lb .form-control.formio-multiple-mask-select{z-index:4;width:15%}.lb .formio-collapse-icon{margin-right:4px;cursor:pointer}.lb [dir=rtl] .formio-collapse-icon{margin-right:unset;margin-left:4px}.lb .formio-component-select select[disabled=disabled]{text-indent:1px;text-overflow:\"\";-webkit-appearance:none;-moz-appearance:none}.lb .formio-component-select div[disabled=disabled] button{display:none}.lb .formio-component-select .choices.is-disabled[data-type*=select-one]:after{display:none}.lb .form-control.formio-multiple-mask-input{width:85%}.lb .input-group.formio-multiple-mask-container{width:100%}@media (min-width:640px){.lb .choices__list--dropdown .choices__item--selectable{padding-right:100px}.lb .choices__list--dropdown .choices__item--selectable:after{font-size:12px;position:absolute;top:50%;right:10px;content:attr(data-select-text);transform:translateY(-50%);opacity:0}.lb [dir=rtl] .choices__list--dropdown .choices__item--selectable{padding-right:10px;padding-left:100px;text-align:right}.lb [dir=rtl] .choices__list--dropdown .choices__item--selectable:after{right:auto;left:10px}}</style><h1>Business details</h1><section class=\"qg-callout__box qg-callout__default-theme\"> <div class=\"qg-callout__content col-12\"> <div class=\"qg-callout__right-alignment\"> <div class=\"qg-callout__description\"> <p> Food labels must include the business details (name and address) of the supplier on the label. A supplier is a business which packs, manufactures, sells or imports food. Business details help consumers, other businesses and government agencies know who to contact in the event of a complaint or food recall. </p> </div> <div class=\"qg-callout__image\"> <img src=\"https://via.placeholder.com/98X138\" alt=\"\"> </div> </div> </div>\n</section>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html21",
           "type": "htmlelement",
           "input": false
+        },
+        {
+          "label": "Business name",
+          "description": "This is the name of the food business that is the supplier, manufacturer, packer, vendor or importer of the food.",
+          "tableView": true,
+          "validate": { "required": true },
+          "key": "businessName",
+          "type": "textfield",
+          "input": true
+        },
+        {
+          "label": "Business Address",
+          "placeholder": "Enter your business address",
+          "description": "A business address is the street address, or a description of the location, of the premises, where the business is operating in Australia.  A post office box or similar is not allowed.",
+          "customClass": "formio-address",
+          "tableView": false,
+          "defaultValue": [{}],
+          "redrawOn": "data",
+          "provider": "google",
+          "validate": {
+            "required": true,
+            "customMessage": "Nup, we need this filled out mate."
+          },
+          "validateOn": "blur",
+          "errorLabel": "Buzz",
+          "key": "address",
+          "conditional": {
+            "show": true,
+            "when": "cantFindTheAddressEnterItManually",
+            "eq": "false"
+          },
+          "type": "address",
+          "providerOptions": {
+            "params": {
+              "key": "AIzaSyBPurr77mmPbeoHBjnIRyZPafdzSSoX1og",
+              "region": "QLD"
+            }
+          },
+          "input": true,
+          "components": [
+            {
+              "label": "Address 1",
+              "tableView": false,
+              "key": "address1",
+              "type": "textfield",
+              "input": true,
+              "customConditional": "show = _.get(instance, 'parent.manualMode', false);"
+            },
+            {
+              "label": "Address 2",
+              "tableView": false,
+              "key": "address2",
+              "type": "textfield",
+              "input": true,
+              "customConditional": "show = _.get(instance, 'parent.manualMode', false);"
+            },
+            {
+              "label": "City",
+              "tableView": false,
+              "key": "city",
+              "type": "textfield",
+              "input": true,
+              "customConditional": "show = _.get(instance, 'parent.manualMode', false);"
+            },
+            {
+              "label": "State",
+              "tableView": false,
+              "key": "state",
+              "type": "textfield",
+              "input": true,
+              "customConditional": "show = _.get(instance, 'parent.manualMode', false);"
+            },
+            {
+              "label": "Country",
+              "tableView": false,
+              "key": "country",
+              "type": "textfield",
+              "input": true,
+              "customConditional": "show = _.get(instance, 'parent.manualMode', false);"
+            },
+            {
+              "label": "Zip Code",
+              "tableView": false,
+              "key": "zip",
+              "type": "textfield",
+              "input": true,
+              "customConditional": "show = _.get(instance, 'parent.manualMode', false);"
+            }
+          ]
+        },
+        {
+          "label": "Manual address",
+          "tableView": false,
+          "key": "manualAddress",
+          "conditional": {
+            "show": true,
+            "when": "cantFindTheAddressEnterItManually",
+            "eq": "true"
+          },
+          "type": "well",
+          "input": false,
+          "components": [
+            {
+              "label": "Address line 1",
+              "customClass": "input-smaller",
+              "tableView": true,
+              "validate": { "required": true },
+              "key": "addressLine1",
+              "type": "textfield",
+              "input": true
+            },
+            {
+              "label": "Address line 2",
+              "customClass": "input-smaller",
+              "tableView": true,
+              "validate": { "required": true },
+              "key": "addressLine2",
+              "type": "textfield",
+              "input": true
+            },
+            {
+              "label": "Suburb, town or city",
+              "customClass": "input-smaller",
+              "tableView": true,
+              "validate": { "required": true },
+              "key": "addressLine3",
+              "type": "textfield",
+              "input": true
+            },
+            {
+              "label": "State",
+              "widget": "choicesjs",
+              "customClass": "input-smaller",
+              "tableView": true,
+              "data": {
+                "values": [
+                  { "label": "Australian Capital Territory", "value": "ACT" },
+                  { "label": "New South Wales", "value": "NSW" },
+                  { "label": "Northern Territory", "value": "NT" },
+                  { "label": " Queensland", "value": "QLD" },
+                  { "label": "South Australia", "value": "SA" },
+                  { "label": "Tasmania", "value": "TAS" },
+                  { "label": " Victoria", "value": "VIC" },
+                  { "label": "Western Australia", "value": "WA" }
+                ]
+              },
+              "selectThreshold": 0.3,
+              "validate": { "required": true },
+              "key": "state1",
+              "type": "select",
+              "indexeddb": { "filter": {} },
+              "input": true
+            }
+          ]
+        },
+        {
+          "label": "Can’t find the address? Enter it manually.",
+          "tableView": false,
+          "defaultValue": false,
+          "key": "cantFindTheAddressEnterItManually",
+          "type": "checkbox",
+          "input": true
         }
       ]
     },
@@ -299,7 +461,7 @@
           "input": false
         },
         {
-          "legend": "Do you mention an ingredient, category of ingredients or a part of the food in the name on the label (characterising ingredients)?",
+          "legend": "Do you mention an ingredient, category of ingredients or a part of the food in the name on the label (<button data-accordion-item=\"char-ingredient\" class=\"accordion-btn\">characterising ingredients</button> )?",
           "customClass": "required_fieldset",
           "tableView": false,
           "key": "fieldSet",
@@ -318,7 +480,7 @@
               "input": false
             },
             {
-              "label": "Do you mention an ingredient, category of ingredients or a part of the food in the name on the label (characterising ingredients)?",
+              "label": "Do you mention an ingredient, category of ingredients or a part of the food in the name on the label (<button data-accordion-item=\"char-ingredient\" class=\"accordion-btn\">characterising ingredients</button> )?",
               "optionsLabelPosition": "right",
               "inline": false,
               "tableView": true,
@@ -334,7 +496,7 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\n   Characterising ingredients\n  </h2> \n<p>\n  Food labels must show the percentage of the characterising ingredients in the food. The Food Standards Code provides details on how characterising ingredients and components should be calculated and shown.\n  <br/>\n  For example: The ingredient list would show the strawberries in strawberry jam as: <b>Strawberries (23%).</b>\n</p>\n</div>",
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\n   Characterising ingredients\n  </h2> \n<p>\n  Food labels must show the percentage of the characterising ingredients in the food. The Food Standards Code provides details on how <button data-accordion-item=\"char-ingredient\" class=\"accordion-btn\">characterising ingredients and components</button> should be calculated and shown.\n  <br/>\n  For example: The ingredient list would show the strawberries in strawberry jam as: <b>Strawberries (23%).</b>\n</p>\n</div>",
               "refreshOnChange": false,
               "tableView": false,
               "key": "html11",
@@ -349,7 +511,7 @@
           ]
         },
         {
-          "legend": "Do you use any compound ingredients to make your food?",
+          "legend": "Do you use any <button data-accordion-item=\"comp-ingredient\" class=\"accordion-btn\"> compound ingredients </button>  to make your food?",
           "customClass": "required_fieldset",
           "tableView": false,
           "key": "fieldSet1",
@@ -386,7 +548,7 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nCompound ingredients\n</h2> \n<p>\n  If a food contains compound ingredients that contribute 5% or more to the final food, then all the ingredients and additives in that compound ingredient must be declared. \nIf a food contains a compound ingredient that contributes less than 5% to the final food, then only allergens and food additives require listing. \n<br/>\nFor example: The ingredient list would show the dark chocolate chips in a muffin as:<b> dark chocolate chips [sugar, cocoa mass, cocoa butter, emulsifier (soy lecithin), natural vanilla flavour]\n</b>\n</div>",
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n  <h2>\n    <i class=\"fa fa-info-circle\"></i>\n    Compound ingredients\n  </h2>\n  <p>\n    If a food contains\n    <button data-accordion-item=\"comp-ingredient\" class=\"accordion-btn\">\n      compound ingredients\n    </button>\n    that contribute 5% or more to the final food, then all the ingredients and\n    additives in that compound ingredient must be declared. If a food contains a\n    compound ingredient that contributes less than 5% to the final food, then\n    only allergens and food additives require listing.\n    <br />\n    For example: The ingredient list would show the dark chocolate chips in a\n    muffin as:<b>\n      dark chocolate chips [sugar, cocoa mass, cocoa butter, emulsifier (soy\n      lecithin), natural vanilla flavour]\n    </b>\n  </p>\n</div>",
               "refreshOnChange": false,
               "tableView": false,
               "key": "html22",
@@ -401,7 +563,7 @@
           ]
         },
         {
-          "legend": "Do you sometimes replace an ingredient with an alternative ingredient to make your food?",
+          "legend": "Do you sometimes replace an ingredient with an     <button data-accordion-item=\"alt-ingredient\" class=\"accordion-btn\"> alternative ingredient  </button> to make your food?",
           "customClass": "required_fieldset",
           "tableView": false,
           "key": "fieldSet2",
@@ -439,7 +601,7 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nAlternative ingredients\n</h2> \n<p>\n Alternative ingredients, including food additives, must be declared.\n<br/>\nFor example: The ingredient list would show: <b>sultanas or raisins.\n</b>\n</div>",
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nAlternative ingredients\n</h2> \n<p>\n  <button data-accordion-item=\"alt-ingredient\" class=\"accordion-btn\"> Alternative ingredients </button>, including food additives, must be declared.\n<br/>\nFor example: The ingredient list would show: <b>sultanas or raisins.\n</b>\n</div>",
               "refreshOnChange": false,
               "tableView": false,
               "key": "html23",
@@ -454,7 +616,7 @@
           ]
         },
         {
-          "legend": "Do you want to list an ingredient with a generic name? ",
+          "legend": "Do you want to list an ingredient with a <button data-accordion-item=\"generic-name\" class=\"accordion-btn\"> generic name</button>? ",
           "customClass": "required_fieldset",
           "tableView": false,
           "key": "fieldSet3",
@@ -466,7 +628,7 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<small class=\"hint\">\n  <p>\n    Generic names may be used to describe the ingredient.\n    <br />\n    Cheese, cocoa butter, crystallised fruit, fruit, gum bases, herbs, meat,\n    milk protein, poultry meat, spices and vegetables can be used as a generic\n    name without any conditions.\n    <br />\n    Cereals, fats or oils, fish, milk solids, offal, nuts, starch, and sugar\n    have other requirements.\n    <br />\n    For example: Apple, pear and peach listed as “fruit” in a fruit pie.\n  </p>\n</small>",
+              "content": "<small class=\"hint\">\n  <p>\n    Generic names may be used to describe the ingredient.\n    <br />\n    Cheese, cocoa butter, crystallised fruit, fruit, gum bases, herbs, meat,\n    milk protein, poultry meat, spices and vegetables can be used as a generic\n    name without any conditions.\n    <br />\n    <button data-accordion-item=\"bcr\" class=\"accordion-btn\">Cereals</button>,\n    <button data-accordion-item=\"oils-margarine\" class=\"accordion-btn\">\n      fats or oils</button\n    >,\n    <button data-accordion-item=\"fish-seafood\" class=\"accordion-btn\">\n      fish</button\n    >,\n    <button data-accordion-item=\"milk-dairy\" class=\"accordion-btn\">\n      milk solids</button\n    >,\n    <button data-accordion-item=\"meat-prod\" class=\"accordion-btn\">offal</button\n    >,\n    <button data-accordion-item=\"nuts-seeds\" class=\"accordion-btn\">nuts</button\n    >, <button data-accordion-item=\"bcr\" class=\"accordion-btn\">starch</button>,\n    and\n    <button data-accordion-item=\"sugar-alt\" class=\"accordion-btn\">sugar</button>\n    have other requirements.\n    <br />\n    For example: Apple, pear and peach listed as “fruit” in a fruit pie.\n  </p>\n</small>",
               "refreshOnChange": false,
               "tableView": false,
               "key": "html16",
@@ -491,7 +653,7 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nGeneric Names\n</h2> \n<p>\nGeneric names are specified in the Food Standards Code.\n<br/>\nGeneric names are specified in the Food Standards Code. \n\nFor example: The ingredient list could show the ingredients apple, pear and peach as either: \n<ul>\n    <li>Fruit, or</li>\n    <li>Fruit (apple, pear, peach) </li>\n</u;\n</p>\n</div>",
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n    <h2>\n        <i class=\"fa fa-info-circle\"></i>\n        Generic Names\n    </h2>\n    <p>\n        <button data-accordion-item=\"generic-name\" class=\"accordion-btn\">\n        Generic names\n        </button>\n        are specified in the Food Standards Code.\n        <br />\n        For example: The ingredient list could show the ingredients apple, pear and peach as either:\n    <ul>\n        <li>Fruit, or</li>\n        <li>Fruit (apple, pear, peach) </li>\n    </ul>\n    </p>\n</div>",
               "refreshOnChange": false,
               "tableView": false,
               "key": "html24",
@@ -506,7 +668,7 @@
           ]
         },
         {
-          "legend": "Does your food contain any food additives?",
+          "legend": "Does your food contain any         <button data-accordion-item=\"food-additive\" class=\"accordion-btn\">food additives </button>?",
           "customClass": "required_fieldset",
           "tableView": false,
           "key": "fieldSet4",
@@ -542,7 +704,7 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nFood additives \n</h2> \n<p>\nThe substance (including a vitamin or mineral) used as a food additive must be declared.\n<br/>\nThe Food Standards Code specifies how to list food additives in the ingredient list. This includes a list of class names and codes to use for specific food additives.\n<br/>\nFor example: The ingredient list would show the yellow food colouring tartrazine as either:\n<ul>\n    <li>Colour (tartrazine), or </li>\n    <li>Colour (102)</li>\n</u;\n</p>\n</div>",
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n    <h2>\n        <i class=\"fa fa-info-circle\"></i>\n        Food additives\n    </h2>\n    <p>\n        The substance (including a vitamin or mineral) used as a \n        <button data-accordion-item=\"food-additive\" class=\"accordion-btn\">\n            food additive\n        </button> \n        must be declared.\n        <br />\n        The Food Standards Code specifies how to list food additives in the ingredient list. This includes a list of\n        class names and codes to use for specific food additives.\n        <br />\n        For example: The ingredient list would show the yellow food colouring tartrazine as either:\n        <ul>\n            <li>Colour (tartrazine), or </li>\n            <li>Colour (102)</li>\n        </ul>\n    </p>\n</div>",
               "refreshOnChange": false,
               "tableView": false,
               "key": "html25",
@@ -557,7 +719,7 @@
           ]
         },
         {
-          "legend": "Does your food contain any exempt ingredients that do not need to be included in a statement of ingredients? ",
+          "legend": "Does your food contain any         <button data-accordion-item=\"exempt-ingredient\" class=\"accordion-btn\">exempt ingredients </button> that do not need to be included in a statement of ingredients? ",
           "customClass": "required_fieldset",
           "tableView": false,
           "key": "fieldSet5",
@@ -595,7 +757,7 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<div class=\"alert alert-info\" role=\"alert\">\n   <h2>\n     <i class=\"fa fa-info-circle\"></i>\nExempt ingredients \n</h2> \n<p>\nExempt ingredients do not need to be included in the ingredient list.\n</p>\n</div>",
+              "content": "<div class=\"alert alert-info\" role=\"alert\">\n  <h2>\n    <i class=\"fa fa-info-circle\"></i>\n    Exempt ingredients\n  </h2>\n  <p>\n    <button data-accordion-item=\"exempt-ingredient\" class=\"accordion-btn\">\n      Exempt ingredients\n    </button>\n    do not need to be included in the ingredient list.\n  </p>\n</div>",
               "refreshOnChange": false,
               "tableView": false,
               "key": "html26",
@@ -612,7 +774,7 @@
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<h3>Enter ingredients in <a href=\"#\"> descending order of ingoing weight</a> </h3>",
+          "content": "<h3>\n  Enter ingredients in\n  <button data-accordion-item=\"order-ingredient\" class=\"accordion-btn\">\n    descending order of ingoing weight\n  </button>\n</h3>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html13",
@@ -621,7 +783,7 @@
           "input": false
         },
         {
-          "legend": "Enter each ingredient that is used to make your food in<a href=\"#\"> descending order of ingoing weight.</a>",
+          "legend": "Enter each ingredient that is used to make your food in   <button data-accordion-item=\"order-ingredient\" class=\"accordion-btn\">     descending order of ingoing weight   </button> .",
           "customClass": "required_fieldset",
           "tableView": false,
           "key": "fieldSet6",
@@ -718,7 +880,7 @@
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<style>.lb .example-label{padding:10px;border:2px solid #919191;display:flex;flex-direction:row}.lb .example-label .eg-col{width:33%;padding:5px;display:flex;flex-direction:column;justify-content:space-between}.lb .example-label .eg-col .address-block{font-weight:700}.lb .example-label .eg-col h3{margin:0}.lb .example-label .eg-col img{width:100%}.lb .fa{margin-right:5px;font-size:1.5625rem}.lb .alert-instructions{background-color:#f5f5f5;border-left:5px solid grey}.lb .btn-kyfb{border:none;background:none;text-decoration:underline;color:#005e85;padding:5px}.lb .emailHeader{font-family:Lato;font-size:14px;color:#666}.lb .textFieldEmail{border-radius:4px;background-color:#fff}.lb table td{text-align:left}.lb tbody tr:nth-child(2n){background:#f6f6f6}</style><h1>Your label information</h1><section> <div class=\"alert alert-success\" role=\"alert\"> <h2><i class=\"fa fa-check-circle\"></i>Congratulations! You have completed all the steps in Label Buster.</h2> <p> Using your responses to each question, Label Buster has generated a product sheet and an example food label. </p> </div> <p> Label Buster is a brief guide to help you understand your labelling requirements. You may choose to get advice from a labelling consultant to make sure that your label complies with the Food Standards Code. </p> <p> On this page, you will find: <ul> <li> <a href=\"#\">Product sheet</a> </li> <li> <a href=\"#\">Example food label</a> </li> <li> <a href=\"#\">Legibility requirements</a> </li> <li> <a href=\"#\">Exemptions</a> </li> <li> <a href=\"#\">Download or email your summary</a> </li> <li> <a href=\"#\">Need to update your label?</a> </li> </ul> </p>\n</section><section> <h2>Product Sheet</h2> <p> You can take this information to a printer or graphic designer to create a label or use your own tools/templates. When creating your food label, you must ensure you meet the <a href=\"#\" rel=\"nofollow\" target=\"_blank\"> <span class=\"title\">legibility requirements</span> </a>, such as minimum type size. </p> <table> <tbody> <tr> <td>Food name and description</td> <td> {{data.productDescription || 'no data provided'}} </td> </tr> <tr> <td>Business details</td> <td> {{data.address || 'no data provided'}} </td> </tr> <tr> <td>Ingredients</td> <td><b>Ingredients:</b> {{data.IngredientData.map((data) => data.ingredient) || 'no data provided'}} </td> </tr> <tr> <td>Weight</td> <td>{{data.ingredients || 'no data provided'}}</td> </tr> <tr> <td>Nutrition information panel</td> <td>A Nutrition Information Panel must be added to your food label. The Food Standards Australia New Zealand <a href=\"https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx\">nutrition panel calculator</a> can help you prepare your nutrition information panel. </td> </tr> <tr> <td>Statements and declarations</td> <td> <p><b>Contains:</b> {{data.allergens || 'no data provided'}} <br> Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum size of type of 1.5 mm is required.</p> </td> </tr> <tr> <td>Date marks</td> <td>Best Before: {{data.bestBefore || 'no data provided'}}</td> </tr> <tr> <td>Lot identification</td> <td>{{data.batch || 'no data provided'}}</td> </tr> <tr> <td>Storage conditions and directions for use</td> <td> <p> <b>Storage conditions: </b> {{data.storageConditions || 'no data provided'}} <br> <b>Directions for use:</b> {{data.directions || 'no data provided'}} </p> </td> </tr> <tr> <td>Claims</td> <td> <p>Making voluntary claims about your food is very complex and you are recommended to seek professional advice. <br> Please note, that making a claim on your food has other requirements not addressed in Label Buster such as additional sections in your nutritional information panel and requirements under Australian Consumer Law. </p> </td> </tr> <tr> <td>Country of origin</td> <td>Information on how to calculate and display mandatory <a href=\"https://www.accc.gov.au/business/advertising-promoting-your-business/country-of-origin-claims/country-of-origin-food-labelling\">country of origin can be found on the Australian Competition and Consumer Commission website. </a></td> </tr> <tr> <td>Health star rating</td> <td>Information on how to calculate and display a voluntary <a href=\"https://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/Content/guide-for-industry-document\">health star rating can be found at the health star rating system website.</a></td> </tr> </tbody> </table>\n</section><section> <h2>Example of food label</h2> <p> Below is an example of what your label could look like, using the information you provided in Label Buster. Label components can be placed anywhere on the label you create. They do not need to be in the specific layout shown here. They may be displayed in any order or arrangement </p> <div class=\"example-label\"> <div class=\"eg-col\"> <h3>Product name</h3> <p>Product description</p> <div> <p> <strong>Storage conditions:</strong> Keep refrigerated at 1 degree to 5 degree. Shake well before opening. Store in an upright position. </p> <p> <strong>Directions for use:</strong> Consume within 2 days of opening. </p> </div> <div> <p><strong>Best before:</strong> 05 / 04 / 2021</p> <p><strong>Lot identification:</strong> Batch 42</p> </div> </div> <div class=\"eg-col\"> <div> <p> <strong>Ingredients:</strong> {{data.IngredientData.map((data) => data.ingredient)}} </p> <p> <strong>Contains:</strong> list items </p> </div> <div class=\"address-block\"> Address line one <br> Address line two <br> Address line three </div> </div> <div class=\"eg-col\"> <img src=\"https://www.qld.gov.au/dev/food-pantry/lb-images/nutrition-panel-placeholder@3x.png\" alt=\"example food label\" class=\"src\"> </div> </div>\n</section><section> <h2>Legibility requirements</h2> <p> All required words, statements, expressions or designs provided on a food label must be in English, be legible, and be prominent so as to contrast distinctly with the background of the label. </p> <p> Information in other languages is permitted, provided it does not negate or contradict the English information. </p> <p> No specific print type or size is defined for general labelling requirements, however: </p> <ul> <li> warning statements must be in a type size of at least 3mm (or 1.5mm on small packages) </li> <li> a print size is prescribed in the Food Standards Code for some foods where a required statement must be shown (e.g. infant formula). </li> </ul>\n</section><section> <h2>Exemptions</h2> <p> All of the food label information needs to be included on your food label, except for:<br> <ul> <li> <a href=\"#\">Food sold in small packages</a> </li> <li> <a href=\"#\">Food with one ingredient</a> </li> </ul> </p> <p> There are extra requirements for:<br> <ul> <li> <a href=\"#\">Food sold from a vending machine</a> </li> <li> <a href=\"#\">Food sold in a hamper</a> </li> </ul> </p>\n</section><section> <h2>Your label information summary</h2> <p> Download your label information summary. This summary includes your product sheet and an example of what your label could look like. </p>\n</section>",
+          "content": "<style>.lb .example-label{padding:10px;border:2px solid #919191;display:flex;flex-direction:row}.lb .example-label .eg-col{width:33%;padding:5px;display:flex;flex-direction:column;justify-content:space-between}.lb .example-label .eg-col .address-block{font-weight:700}.lb .example-label .eg-col h3{margin:0}.lb .example-label .eg-col img{width:100%;height:auto}.lb .fa{margin-right:5px;font-size:1.5625rem}.lb .alert-instructions{background-color:#f5f5f5;border-left:5px solid grey}.lb .btn-kyfb{border:none;background:none;text-decoration:underline;color:#005e85;padding:5px}.lb .emailHeader{font-family:Lato;font-size:14px;color:#666}.lb .textFieldEmail{border-radius:4px;background-color:#fff}.lb table td{text-align:left}.lb tbody tr:nth-child(2n){background:#f6f6f6}</style><h1>Your label information</h1><section> <div class=\"alert alert-success\" role=\"alert\"> <h2><i class=\"fa fa-check-circle\"></i>Congratulations! You have completed all the steps in Label Buster.</h2> <p> Using your responses to each question, Label Buster has generated a product sheet and an example food label. </p> </div> <p> Label Buster is a brief guide to help you understand your labelling requirements. You may choose to get advice from a labelling consultant to make sure that your label complies with the Food Standards Code. </p> <p> On this page, you will find: <ul> <li> <a href=\"#\">Product sheet</a> </li> <li> <a href=\"#\">Example food label</a> </li> <li> <a href=\"#\">Legibility requirements</a> </li> <li> <a href=\"#\">Exemptions</a> </li> <li> <a href=\"#\">Download or email your summary</a> </li> <li> <a href=\"#\">Need to update your label?</a> </li> </ul> </p>\n</section><section> <h2>Product Sheet</h2> <p> You can take this information to a printer or graphic designer to create a label or use your own tools/templates. When creating your food label, you must ensure you meet the <a href=\"#\" rel=\"nofollow\" target=\"_blank\"> <span class=\"title\">legibility requirements</span> </a>, such as minimum type size. </p> <table> <tbody> <tr> <td>Food name and description</td> <td> {{data.productDescription || 'no data provided'}} </td> </tr> <tr> <td>Business details</td> <td> {{data.address || 'no data provided'}} </td> </tr> <tr> <td>Ingredients</td> <td><b>Ingredients:</b> {{data.IngredientData.map((data) => ' ' + data.ingredient) || 'no data provided'}} </td> </tr> <tr> <td>Weight</td> <td>For information on how to comply with weights and measures laws visit the <a href=\"https://www.measurement.gov.au\">National Measurement Institute (www.measurement.gov.au)</a></td> </tr> <tr> <td>Nutrition information panel</td> <td>A Nutrition Information Panel must be added to your food label. The Food Standards Australia New Zealand <a href=\"https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx\">nutrition panel calculator</a> can help you prepare your nutrition information panel. <img src=\"https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png\" alt=\"\" class=\"src\"> </td> </tr> <tr> <td>Statements and declarations</td> <td> <p><b>Contains:</b> {{data.allergens || 'no data provided'}} <br> Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum size of type of 1.5 mm is required.</p> </td> </tr> <tr> <td>Date marks</td> <td>Best Before: {{data.bestBefore || 'no data provided'}}</td> </tr> <tr> <td>Lot identification</td> <td>{{data.batch || 'no data provided'}}</td> </tr> <tr> <td>Storage conditions and directions for use</td> <td> <p> <b>Storage conditions: </b> {{data.storageConditions || 'no data provided'}} <br> <b>Directions for use:</b> {{data.directions || 'no data provided'}} </p> </td> </tr> <tr> <td>Claims</td> <td> <p>Making voluntary claims about your food is very complex and you are recommended to seek professional advice. <br> Please note, that making a claim on your food has other requirements not addressed in Label Buster such as additional sections in your nutritional information panel and requirements under Australian Consumer Law. </p> </td> </tr> <tr> <td>Country of origin</td> <td>Information on how to calculate and display mandatory <a href=\"https://www.accc.gov.au/business/advertising-promoting-your-business/country-of-origin-claims/country-of-origin-food-labelling\">country of origin can be found on the Australian Competition and Consumer Commission website. </a></td> </tr> <tr> <td>Health star rating</td> <td>Information on how to calculate and display a voluntary <a href=\"https://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/Content/guide-for-industry-document\">health star rating can be found at the health star rating system website.</a></td> </tr> </tbody> </table>\n</section><section> <h2>Example of food label</h2> <p> Below is an example of what your label could look like, using the information you provided in Label Buster. Label components can be placed anywhere on the label you create. They do not need to be in the specific layout shown here. They may be displayed in any order or arrangement </p> <div class=\"example-label\"> <div class=\"eg-col\"> <h3>Product name</h3> <p>Product description</p> <div> <p> <strong>Storage conditions:</strong> Keep refrigerated at 1 degree to 5 degree. Shake well before opening. Store in an upright position. </p> <p> <strong>Directions for use:</strong> Consume within 2 days of opening. </p> </div> <div> <p><strong>Best before:</strong> 05 / 04 / 2021</p> <p><strong>Lot identification:</strong> Batch 42</p> </div> </div> <div class=\"eg-col\"> <div> <p> <strong>Ingredients:</strong> {{data.IngredientData.map((data) => data.ingredient)}} </p> <p> <strong>Contains:</strong> list items </p> </div> <div class=\"address-block\"> Address line one <br> Address line two <br> Address line three </div> </div> <div class=\"eg-col\"> <img src=\"https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png\" alt=\"example food label\" class=\"src\"> </div> </div>\n</section><section> <h2>Legibility requirements</h2> <p> All required words, statements, expressions or designs provided on a food label must be in English, be legible, and be prominent so as to contrast distinctly with the background of the label. </p> <p> Information in other languages is permitted, provided it does not negate or contradict the English information. </p> <p> No specific print type or size is defined for general labelling requirements, however: </p> <ul> <li> warning statements must be in a type size of at least 3mm (or 1.5mm on small packages) </li> <li> a print size is prescribed in the Food Standards Code for some foods where a required statement must be shown (e.g. infant formula). </li> </ul>\n</section><section> <h2>Exemptions</h2> <p> All of the food label information needs to be included on your food label, except for:<br> <ul> <li> <a href=\"#\">Food sold in small packages</a> </li> <li> <a href=\"#\">Food with one ingredient</a> </li> </ul> </p> <p> There are extra requirements for:<br> <ul> <li> <a href=\"#\">Food sold from a vending machine</a> </li> <li> <a href=\"#\">Food sold in a hamper</a> </li> </ul> </p>\n</section><section> <h2>Your label information summary</h2> <p> Download your label information summary. This summary includes your product sheet and an example of what your label could look like. </p>\n</section>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html14",
@@ -777,7 +939,7 @@
     }
   ],
   "revisions": "current",
-  "_vid": 180,
+  "_vid": 196,
   "title": "LB",
   "display": "wizard",
   "access": [
@@ -820,6 +982,6 @@
   "path": "formwizard",
   "project": "5f44969319d1a97a819d80a7",
   "created": "2020-10-07T02:38:04.620Z",
-  "modified": "2020-11-12T05:40:53.289Z",
+  "modified": "2020-11-16T06:36:48.901Z",
   "machineName": "fesrqwsyzlbtegd:lbReplace"
 }
