@@ -1,0 +1,47 @@
+<h2>Example food label</h2>
+<p>
+  Below is an example of what your label could look like, using the informaiton
+  you provided in Label Buster.
+</p>
+
+<div class="example-label">
+  <div class="eg-col">
+    <h3>Product name</h3>
+    <p>Product description</p>
+    <div>
+      <p>
+        <strong>Storage conditions:</strong> Keep refrigerated at 1 degree to 5
+        degree. Shake well before opening. Store in an upright position.
+      </p>
+      <p>
+        <strong>Directions for use:</strong> Consume within 2 days of opening.
+      </p>
+    </div>
+    <div>
+      <p><strong>Best before:</strong> 05 / 04 / 2021</p>
+      <p><strong>Lot identification:</strong> Batch 42</p>
+    </div>
+  </div>
+  <div class="eg-col">
+    <div>
+      <p>
+        <strong>Ingredients:</strong>
+        {{data.IngredientData.map((data) => data.ingredient)}}
+      </p>
+      <p>
+        <strong>Contains:</strong> 
+        list items
+      </p>
+    </div>
+    <div class="address-block">
+        Address line one 
+        <br />
+        Address line two
+        <br />
+        Address line three
+    </div>
+  </div>
+  <div class="eg-col">
+    <img src="https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png" alt="example food label" class="src" />
+  </div>
+</div>
