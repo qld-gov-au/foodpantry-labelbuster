@@ -1,0 +1,245 @@
+<link rel="stylesheet" href="./styles.scss">
+
+<h1>Your label information</h1>
+<section>
+  <div class="alert alert-success" role="alert">
+    <h2><i class="fa fa-check-circle"></i>Congratulations! You have completed all the steps in Label Buster.</h2>
+    <p>
+      Using your responses to each question, Label Buster has generated a product sheet and an example food label.
+    </p>
+  </div>
+  <p>
+    Label Buster is a brief guide to help you understand your labelling requirements. You may choose to get advice from
+    a
+    labelling consultant to make sure that your label complies with the Food Standards Code.
+  </p>
+
+  <p>
+    On this page, you will find:
+  <ul>
+    <li>
+      <a href="#">Product sheet</a>
+    </li>
+    <li>
+      <a href="#">Example food label</a>
+    </li>
+    <li>
+      <a href="#">Legibility requirements</a>
+    </li>
+    <li>
+      <a href="#">Exemptions</a>
+    </li>
+    <li>
+      <a href="#">Download or email your summary</a>
+    </li>
+    <li>
+      <a href="#">Need to update your label?</a>
+    </li>
+  </ul>
+  </p>
+</section>
+
+<section>
+  <h2>Product Sheet</h2>
+  <p>
+    You can take this information to a printer or graphic designer to create a label or use your own tools/templates.
+    When
+    creating your food label, you must ensure you meet the <a href="#" rel="nofollow" target="_blank">
+      <span class="title">legibility requirements</span>
+    </a>, such as minimum type size.
+  </p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>Food name and description</td>
+        <td>
+          {{data.productDescription || 'no data provided'}}
+        </td>
+      </tr>
+      <tr>
+        <td>Business details</td>
+        <td>
+          {{data.address || 'no data provided'}}
+        </td>
+      </tr>
+      <tr>
+        <td>Ingredients</td>
+        <td><b>Ingredients:</b> {{data.IngredientData.map((data) => data.ingredient) || 'no data provided'}}
+        </td>
+      </tr>
+      <tr>
+        <td>Weight</td>
+        <td>{{data.ingredients || 'no data provided'}}</td>
+      </tr>
+      <tr>
+        <td>Nutrition information panel</td>
+        <td>A Nutrition Information Panel must be added to your food label. The Food Standards Australia New Zealand <a
+            href="https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx">nutrition
+            panel calculator</a> can help you prepare your nutrition information panel. </td>
+      </tr>
+      <tr>
+        <td>Statements and declarations</td>
+        <td>
+          <p><b>Contains:</b> {{data.allergens || 'no data provided'}}
+            </br>
+            Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum
+            size of type of 1.5 mm is required.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>Date marks</td>
+        <td>Best Before: {{data.bestBefore || 'no data provided'}}</td>
+      </tr>
+      <tr>
+        <td>Lot identification</td>
+        <td>{{data.batch || 'no data provided'}}</td>
+      </tr>
+      <tr>
+        <td>Storage conditions and directions for use</td>
+        <td>
+          <p>
+            <b>Storage conditions: </b> {{data.storageConditions || 'no data provided'}}
+            </br>
+            <b>Directions for use:</b> {{data.directions || 'no data provided'}}
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>Claims</td>
+        <td>
+          <p>Making voluntary claims about your food is very complex and you are recommended to seek professional
+            advice.
+            </br>
+            Please note, that making a claim on your food has other requirements not addressed in Label Buster such as
+            additional sections in your nutritional information panel and requirements under Australian Consumer Law.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>Country of origin</td>
+        <td>Information on how to calculate and display mandatory <a
+            href="https://www.accc.gov.au/business/advertising-promoting-your-business/country-of-origin-claims/country-of-origin-food-labelling">country
+            of origin can be found on the
+            Australian Competition and Consumer Commission website. </a></td>
+      </tr>
+      <tr>
+        <td>Health star rating</td>
+        <td>Information on how to calculate and display a voluntary <a
+            href="https://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/Content/guide-for-industry-document">health
+            star rating can be found at the
+            health star rating system website.</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Example of food label</h2>
+  <p>
+    Below is an example of what your label could look like, using the information you provided in Label Buster. Label
+    components can be placed anywhere on the label you create. They do not need to be in the specific layout shown here.
+    They may be displayed in any order or arrangement
+  </p>
+  <div class="example-label">
+    <div class="eg-col">
+      <h3>Product name</h3>
+      <p>Product description</p>
+      <div>
+        <p>
+          <strong>Storage conditions:</strong> Keep refrigerated at 1 degree to 5
+          degree. Shake well before opening. Store in an upright position.
+        </p>
+        <p>
+          <strong>Directions for use:</strong> Consume within 2 days of opening.
+        </p>
+      </div>
+      <div>
+        <p><strong>Best before:</strong> 05 / 04 / 2021</p>
+        <p><strong>Lot identification:</strong> Batch 42</p>
+      </div>
+    </div>
+    <div class="eg-col">
+      <div>
+        <p>
+          <strong>Ingredients:</strong>
+          {{data.IngredientData.map((data) => data.ingredient)}}
+        </p>
+        <p>
+          <strong>Contains:</strong> 
+          list items
+        </p>
+      </div>
+      <div class="address-block">
+          Address line one 
+          <br />
+          Address line two
+          <br />
+          Address line three
+      </div>
+    </div>
+    <div class="eg-col">
+      <img src="https://www.qld.gov.au/dev/food-pantry/lb-images/nutrition-panel-placeholder@3x.png" alt="example food label" class="src" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Legibility requirements</h2>
+  <p>
+    All required words, statements, expressions or designs provided on a food label must be in English, be legible, and
+    be
+    prominent so as to contrast distinctly with the background of the label.
+  </p>
+  <p>
+    Information in other languages is permitted, provided it does not negate or contradict the English information.
+  </p>
+  <p>
+    No specific print type or size is defined for general labelling requirements, however:
+  </p>
+  <ul>
+    <li>
+      warning statements must be in a type size of at least 3mm (or 1.5mm on small packages)
+    </li>
+    <li>
+      a print size is prescribed in the Food Standards Code for some foods where a required statement must be shown
+      (e.g.
+      infant formula).
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Exemptions</h2>
+  <p>
+    All of the food label information needs to be included on your food label, except for:</br>
+  <ul>
+    <li>
+      <a href="#">Food sold in small packages</a>
+    </li>
+    <li>
+      <a href="#">Food with one ingredient</a>
+    </li>
+  </ul>
+  </p>
+  <p>
+    There are extra requirements for:</br>
+  <ul>
+    <li>
+      <a href="#">Food sold from a vending machine</a>
+    </li>
+    <li>
+      <a href="#">Food sold in a hamper</a>
+    </li>
+  </ul>
+  </p>
+</section>
+
+<section>
+  <h2>Your label information summary</h2>
+  <p>
+    Download your label information summary. This summary includes your product sheet and an example of what your
+    label
+    could look like.
+  </p>
+</section>
