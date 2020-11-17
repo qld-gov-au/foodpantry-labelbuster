@@ -118,12 +118,302 @@
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<style></style><h1> Label Buster exclusions (test)\n</h1><p> Foods with complex labelling requirements are excluded from Label Buster. The following questions will help you to work out if you can use Label Buster for your food.\n</p><p> Is your food <button data-accordion-item=\"alcoholic-drinks\" class=\"accordion-btn\">alcohol</button>, a formulated caffeinated drink, an electrolyte drink or a drink made from cereals, nuts, and/or seeds?\n</p>",
+          "content": "<h1>Limitations of Label Buster</h1>\n<p>Foods with complex labelling requirements are excluded from Label Buster. The following questions will help you to work out if you can use Label Buster for your food.</p>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html2",
           "type": "htmlelement",
           "input": false
+        },
+        {
+          "legend": "<div>     Is your food:<abbr title=\"(required)\" class=\"required\">*</abbr> <ul>   <li>     an     <button data-accordion-item=\"alcoholic-drinks\" class=\"accordion-btn\">       alcohol     </button>   </li>   <li>     a     <button data-accordion-item=\"caffeinated-drinks\" class=\"accordion-btn\">       formulated caffeinated drink</button     >,   </li>   <li>     an     <button data-accordion-item=\"drinks-electrolyte\" class=\"accordion-btn\">       electrolyte drink     </button>   </li>   <li>     a     <button data-accordion-item=\"drinks-made\" class=\"accordion-btn\">       drink made from cereals, nuts, and/or seeds     </button>   </li>   <li>     a drink base (solid or liquid) that is used to make any of the drinks above?   </li> </ul> </div>",
+          "tableView": false,
+          "key": "fieldSet7",
+          "type": "fieldset",
+          "label": "Field Set",
+          "input": false,
+          "components": [
+            {
+              "label": "<div>     Is your food:<abbr title=\"(required)\" class=\"required\">*</abbr> <ul>   <li>     an     <button data-accordion-item=\"alcoholic-drinks\" class=\"accordion-btn\">       alcohol     </button>   </li>   <li>     a     <button data-accordion-item=\"caffeinated-drinks\" class=\"accordion-btn\">       formulated caffeinated drink</button     >,   </li>   <li>     an     <button data-accordion-item=\"drinks-electrolyte\" class=\"accordion-btn\">       electrolyte drink     </button>   </li>   <li>     a     <button data-accordion-item=\"drinks-made\" class=\"accordion-btn\">       drink made from cereals, nuts, and/or seeds     </button>   </li>   <li>     a drink base (solid or liquid) that is used to make any of the drinks above?   </li> </ul> </div>",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "validate": { "required": true },
+              "key": "pleaseAnswer",
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-warning\" role=\"alert\">\n  <h2><i class=\"fa fa-exclamation-triangle\"></i>Seek professional advice</h2>\n  <p>Thank you for your interest in Label Buster. Unfortunately, Label buster does not provide labelling information for these drinks. We recommend you seek professional advice from a food labelling consultant to prepare your food label.</p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html32",
+              "conditional": {
+                "show": true,
+                "when": "pleaseAnswer",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Is your food a <button data-accordion-item=\"special-food\" class=\"accordion-btn\">special purpose food</button>?",
+          "tableView": false,
+          "key": "fieldSet8",
+          "conditional": {
+            "show": true,
+            "when": "pleaseAnswer",
+            "eq": "false"
+          },
+          "type": "fieldset",
+          "label": "Is your food a <button data-accordion-item=\"special-food\" class=\"accordion-btn\">special purpose food</button>?",
+          "input": false,
+          "components": [
+            {
+              "input": false,
+              "key": "html34",
+              "tableView": false,
+              "label": "HTML",
+              "type": "htmlelement",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\">Special purpose foods include:\n  <ul>\n    <li>Infant formula products</li>\n    <li>Foods for infants</li>\n    <li>Formulated meal replacements and formulated supplementary foods</li>\n    <li>Formulated supplementary sports foods</li>\n    <li>Food for special medical purposes</li>\n  </ul>\n</small>",
+              "refreshOnChange": false
+            },
+            {
+              "label": "Is your food a <button data-accordion-item=\"special-food\" class=\"accordion-btn\">special purpose food</button>?",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "key": "specialPurposeFood",
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-warning\" role=\"alert\">\n  <h2><i class=\"fa fa-exclamation-triangle\"></i>Seek professional advice</h2>\n  <p>Thank you for your interest in Label Buster. Unfortunately, Label Buster does not provide labelling information for special purposefoods. We recommend you seek professional advice from a food labelling consultant to prepare your food label. </p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html33",
+              "conditional": {
+                "show": true,
+                "when": "specialPurposeFood",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Is your food a <button class=\"accordion-btn\" data-accordion-item=\"novel-food\">novel food</button> or does it contain an ingredient that is a novel food?",
+          "tableView": false,
+          "key": "fieldSet9",
+          "conditional": {
+            "show": true,
+            "when": "specialPurposeFood",
+            "eq": "false"
+          },
+          "type": "fieldset",
+          "label": "Is your food a <button class=\"accordion-btn\" data-accordion-item=\"novel-food\">novel food</button> or does it contain an ingredient that is a novel food?",
+          "input": false,
+          "components": [
+            {
+              "input": false,
+              "key": "html36",
+              "tableView": false,
+              "label": "HTML",
+              "type": "htmlelement",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\">\n    A novel food is a food or component that does not have a history of human consumption in Australia or New Zealand. This includes food that is typically not considered food, or a food made from processes not previously applied to food.\n</small>",
+              "refreshOnChange": false
+            },
+            {
+              "label": "Is your food a <button class=\"accordion-btn\" data-accordion-item=\"novel-food\">novel food</button> or does it contain an ingredient that is a novel food?",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "key": "novelFood",
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-warning\" role=\"alert\">\n  <h2><i class=\"fa fa-exclamation-triangle\"></i>Seek professional advice</h2>\n  <p>Thank you for your interest in Label Buster. Unfortunately, Label Buster does not provide labelling information for novel foods.</p>\n  <p>Novel foods require pre-market clearance before the food can be sold. We recommend you seek professional advice from a food labelling consultant to prepare your food label.</p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html35",
+              "conditional": {
+                "show": true,
+                "when": "novelFood",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Does your food contain ingredients that are produced from gene technology, or is your food a <button data-accordion-item=\"modified-food\" class=\"accordion-btn\">   genetically modified food </button>",
+          "tableView": false,
+          "key": "fieldSet10",
+          "conditional": { "show": true, "when": "novelFood", "eq": "false" },
+          "type": "fieldset",
+          "label": "Does your food contain ingredients that are produced from gene technology, or is your food a <button data-accordion-item=\"modified-food\" class=\"accordion-btn\">   genetically modified food </button>",
+          "input": false,
+          "components": [
+            {
+              "label": "Does your food contain ingredients that are produced from gene technology, or is your food a <button data-accordion-item=\"modified-food\" class=\"accordion-btn\">genetically modified food</button>",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "key": "geneticallyModified",
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-warning\" role=\"alert\">\n  <h2><i class=\"fa fa-exclamation-triangle\"></i>Seek professional advice</h2>\n  <p>Thank you for your interest in Label Buster. Unfortunately, Label Buster does not provide labelling information for genetically modified foods.</p>\n  <p>Genetically modified food requires pre-market clearance before the food can be sold. We recommend you seek professional advice from a food labelling consultant to prepare your food label.</p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html37",
+              "conditional": {
+                "show": true,
+                "when": "geneticallyModified",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Is your food an <button class=\"accordion-btn\" data-accordion-item=\"irradiated-food\">irradiated food</button>?",
+          "tableView": false,
+          "key": "fieldSet11",
+          "conditional": {
+            "show": true,
+            "when": "geneticallyModified",
+            "eq": "false"
+          },
+          "type": "fieldset",
+          "label": "Is your food an <button class=\"accordion-btn\" data-accordion-item=\"irradiated-food\">irradiated food</button>?",
+          "input": false,
+          "components": [
+            {
+              "input": false,
+              "key": "html39",
+              "tableView": false,
+              "label": "HTML",
+              "type": "htmlelement",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\"\n  >Irradiation of food is prohibited unless specifically permitted by the Food\n  Standards Code and must comply with the specified conditions, using only a\n  permitted source of radiation.\n</small>",
+              "refreshOnChange": false
+            },
+            {
+              "label": "Is your food an <button class=\"accordion-btn\" data-accordion-item=\"irradiated-food\">irradiated food</button>?",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "key": "irritatedFood",
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-warning\" role=\"alert\">\n  <h2><i class=\"fa fa-exclamation-triangle\"></i>Seek professional advice</h2>\n  <p>Thank you for your interest in Label Buster. Unfortunately, Label Buster does not provide labelling information for genetically modified foods.</p>\n  <p>Genetically modified food requires pre-market clearance before the food can be sold. We recommend you seek professional advice from a food labelling consultant to prepare your food label.</p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html38",
+              "conditional": {
+                "show": true,
+                "when": "irritatedFood",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
+        },
+        {
+          "legend": "Do you make a <button class=\"accordion-btn\" data-accordion-item=\"nutrition-claims\">   claim </button> about your food?",
+          "tableView": false,
+          "key": "fieldSet12",
+          "conditional": {
+            "show": true,
+            "when": "irritatedFood",
+            "eq": "false"
+          },
+          "type": "fieldset",
+          "label": "Do you make a <button class=\"accordion-btn\" data-accordion-item=\"nutrition-claims\">   claim </button> about your food?",
+          "input": false,
+          "components": [
+            {
+              "input": false,
+              "key": "html41",
+              "tableView": false,
+              "label": "HTML",
+              "type": "htmlelement",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<small class=\"hint\">\n  Claims are voluntary statements made on a food label and in advertising about\n  a link between your food and health. For example, Gluten free, good source of\n  calcium, organic, cage free.\n</small>",
+              "refreshOnChange": false
+            },
+            {
+              "label": "Do you make a <button class=\"accordion-btn\" data-accordion-item=\"nutrition-claims\">   claim </button> about your food?",
+              "optionsLabelPosition": "right",
+              "inline": false,
+              "tableView": false,
+              "values": [
+                { "label": "Yes", "value": "true", "shortcut": "" },
+                { "label": "No", "value": "false", "shortcut": "" }
+              ],
+              "key": "doYouMakeAButtonClassAccordionBtnDataAccordionItemNutritionClaimsClaimButtonAboutYourFoodBrSmallClassHintClaimsAreVoluntaryStatementsMadeOnAFoodLabelAndInAdvertisingAboutALinkBetweenYourFoodAndHealthForExampleGlutenFreeGoodSourceOfCalciumOrganicCageFreeSmall",
+              "type": "radio",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<div class=\"alert alert-warning\" role=\"alert\">\n  <h2><i class=\"fa fa-exclamation-triangle\"></i>Seek professional advice</h2>\n  <p>Making voluntary <button class=\"accordion-btn\" data-accordion-item=\"nutrition-claims\">claim</button>  about your food is very complex and you are recommended to seek professional advice. </p>\n  <p>Please note, that <button class=\"accordion-btn\" data-accordion-item=\"nutrition-claims\">making a claim</button>  about your food has other requirements such as additional information in your nutritional information panel and requirements under Australian Consumer Law.</p>\n  <p>You can only continue using Label Buster if you choose not to make a claim about your product.</p>\n</div>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html40",
+              "conditional": {
+                "show": true,
+                "when": "doYouMakeAButtonClassAccordionBtnDataAccordionItemNutritionClaimsClaimButtonAboutYourFoodBrSmallClassHintClaimsAreVoluntaryStatementsMadeOnAFoodLabelAndInAdvertisingAboutALinkBetweenYourFoodAndHealthForExampleGlutenFreeGoodSourceOfCalciumOrganicCageFreeSmall",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            }
+          ]
         }
       ]
     },
@@ -187,6 +477,7 @@
           "customClass": "formio-address",
           "tableView": false,
           "defaultValue": [{}],
+          "persistent": false,
           "redrawOn": "data",
           "provider": "google",
           "validate": {
@@ -371,62 +662,879 @@
       "components": [
         {
           "input": false,
-          "key": "columns",
+          "key": "storageConditions",
           "tableView": false,
-          "label": "Columns",
-          "type": "columns",
-          "columns": [
+          "label": "Storage Conditions",
+          "type": "well",
+          "components": [
             {
-              "components": [
-                {
-                  "input": true,
-                  "key": "checkbox",
-                  "tableView": false,
-                  "label": "Checkbox",
-                  "type": "checkbox",
-                  "hideOnChildrenHidden": false
-                }
-              ],
-              "width": 4,
-              "offset": 0,
-              "push": 0,
-              "pull": 0,
-              "size": "md"
+              "label": "Storage Conditions output",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<link rel=\"stylesheet\" href=\"./styles.scss\">\n\n<h1>Storage and use</h1>\n<section>\n  <article class=\"alert alert-info\" role=\"alert\">\n    <h2>\n        <i class=\"fa fa-info-circle\"></i>\n        The storage conditions should be shown on the food label as:\n    </h2>\n    <p class=\"wrap\">\n      Storage conditions:\n    </p>\n  </article>\n</section>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "storageConditionsOutput",
+              "type": "htmlelement",
+              "input": false
             },
             {
-              "components": [],
-              "width": 4,
-              "offset": 0,
-              "push": 0,
-              "pull": 0,
-              "size": "md"
+              "input": false,
+              "key": "html30",
+              "tableView": false,
+              "label": "HTML",
+              "conditional": {
+                "show": true,
+                "when": "storeInCoolDryConditions",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "Store in cool dry conditions.",
+              "refreshOnChange": false
             },
             {
-              "components": [
-                {
-                  "input": true,
-                  "key": "number",
-                  "tableView": false,
-                  "label": "Number",
-                  "type": "number",
-                  "hideOnChildrenHidden": false
-                }
-              ],
-              "size": "md",
-              "width": 4,
-              "offset": 0,
-              "push": 0,
-              "pull": 0
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "Refrigerate after purchase.",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html31",
+              "type": "htmlelement",
+              "input": false,
+              "conditional": {
+                "show": true,
+                "when": "refrigerateAfterPurchase",
+                "eq": "true"
+              }
             }
           ]
         },
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<div>\n  In development.\n</div>",
           "refreshOnChange": false,
           "tableView": false,
-          "key": "html7",
+          "key": "html4",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "label": "Store in cool dry conditions.",
+          "tableView": false,
+          "key": "storeInCoolDryConditions",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Refrigerate after purchase.",
+          "tableView": false,
+          "key": "refrigerateAfterPurchase",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Refrigerate after opening.",
+          "tableView": false,
+          "key": "refrigerateAfterOpening",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Keep refrigerated at",
+                  "tableView": false,
+                  "key": "keepRefrigeratedAt",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Keep refrigerated at minimum",
+                  "suffix": " °C",
+                  "hideLabel": true,
+                  "mask": false,
+                  "spellcheck": true,
+                  "tableView": false,
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "inputFormat": "plain",
+                  "key": "keepRefrigeratedAtMinimum",
+                  "type": "number",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "HTML",
+                  "attrs": [{ "attr": "", "value": "" }],
+                  "content": "to",
+                  "refreshOnChange": false,
+                  "tableView": false,
+                  "key": "html5",
+                  "type": "htmlelement",
+                  "input": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "size": "md",
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0
+            },
+            {
+              "components": [
+                {
+                  "label": "Keep refrigerated at maximum",
+                  "suffix": " °C",
+                  "hideLabel": true,
+                  "mask": false,
+                  "spellcheck": true,
+                  "tableView": false,
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "inputFormat": "plain",
+                  "key": "keepRefrigeratedAtMaximum",
+                  "type": "number",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "size": "md",
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0
+            }
+          ],
+          "tableView": false,
+          "key": "columns",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Keep refrigerated at or below",
+                  "tableView": false,
+                  "key": "keepRefrigeratedAtOrBelow",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Keep refrigerated at or below temperature",
+                  "suffix": "°C",
+                  "hideLabel": true,
+                  "mask": false,
+                  "spellcheck": true,
+                  "tableView": false,
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "inputFormat": "plain",
+                  "key": "number",
+                  "type": "number",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            }
+          ],
+          "tableView": false,
+          "key": "columns1",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "Keep frozen solid.",
+          "tableView": false,
+          "key": "keepFrozenSolid",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Keep frozen solid until ready to use.",
+          "tableView": false,
+          "key": "keepFrozenSolidUntilReadyToUse",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Other, please enter",
+                  "tableView": false,
+                  "key": "otherPleaseEnter",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Other please enter details",
+                  "autoExpand": false,
+                  "hideLabel": true,
+                  "tableView": true,
+                  "key": "otherPleaseEnterDetails",
+                  "conditional": {
+                    "show": true,
+                    "when": "otherPleaseEnter",
+                    "eq": "true"
+                  },
+                  "type": "textarea",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 6,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            }
+          ],
+          "tableView": false,
+          "key": "columns2",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "</p>\n  </article>\n</section>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html29",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "label": "Directions for use",
+          "attrs": [{ "attr": "", "value": "" }],
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "directionsForUse",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "label": "Wash before use.",
+          "tableView": false,
+          "key": "washBeforeUse",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Shake well before use.",
+          "tableView": false,
+          "key": "shakeWellBeforeUse",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Food should be drained before consumption.",
+          "tableView": false,
+          "key": "foodShouldBeDrainedBeforeConsumption",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Once opened, store in an airtight container.",
+          "tableView": false,
+          "key": "onceOpenedStoreInAnAirtightContainer",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Once opened, keep refrigerated.",
+          "tableView": false,
+          "key": "onceOpenedKeepRefrigerated",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": " Consume within",
+                  "tableView": false,
+                  "key": "consumeWithin",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Consume within days of opening",
+                  "suffix": " days of opening.",
+                  "hideLabel": true,
+                  "mask": false,
+                  "spellcheck": true,
+                  "tableView": false,
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "inputFormat": "plain",
+                  "key": "consumeWithinDaysOfOpening",
+                  "type": "number",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            }
+          ],
+          "tableView": false,
+          "key": "columns3",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "Thaw before cooking.",
+          "tableView": false,
+          "key": "thawBeforeCooking",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Cook from frozen.",
+          "tableView": false,
+          "key": "cookFromFrozen",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Once thawed, use within",
+                  "tableView": false,
+                  "key": "onceThawedUseWithin",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Once thawed, use within hours",
+                  "suffix": "hours.",
+                  "hideLabel": true,
+                  "mask": false,
+                  "spellcheck": true,
+                  "tableView": false,
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "inputFormat": "plain",
+                  "key": "onceThawedUseWithinHours",
+                  "type": "number",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            }
+          ],
+          "tableView": false,
+          "key": "columns4",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "This is a raw product and must be cooked before eating.",
+          "tableView": false,
+          "key": "thisIsARawProductAndMustBeCookedBeforeEating",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Not suitable for microwave cooking.",
+          "tableView": false,
+          "key": "notSuitableForMicrowaveCooking",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Microwave on",
+                  "tableView": false,
+                  "key": "microwaveOn",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Microwave power",
+                  "widget": "choicesjs",
+                  "hideLabel": true,
+                  "tableView": true,
+                  "data": {
+                    "values": [
+                      { "label": "high", "value": "high" },
+                      { "label": "medium", "value": "medium" },
+                      { "label": "low", "value": "low" }
+                    ]
+                  },
+                  "selectThreshold": 0.3,
+                  "key": "select1",
+                  "type": "select",
+                  "indexeddb": { "filter": {} },
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "HTML",
+                  "attrs": [{ "attr": "", "value": "" }],
+                  "content": "for",
+                  "refreshOnChange": false,
+                  "tableView": false,
+                  "key": "html7",
+                  "type": "htmlelement",
+                  "input": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "size": "md",
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0
+            },
+            {
+              "components": [
+                {
+                  "label": "Microwave on power for minutes",
+                  "suffix": "minutes",
+                  "hideLabel": true,
+                  "mask": false,
+                  "spellcheck": true,
+                  "tableView": false,
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "inputFormat": "plain",
+                  "key": "microwaveOnHighForMinutes",
+                  "type": "number",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "size": "md",
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0
+            }
+          ],
+          "tableView": false,
+          "key": "columns5",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Cook for ",
+                  "tableView": false,
+                  "key": "cookFor",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Cook for time",
+                  "suffix": "minutes",
+                  "hideLabel": true,
+                  "mask": false,
+                  "spellcheck": true,
+                  "tableView": false,
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "inputFormat": "plain",
+                  "key": "cookForTime",
+                  "type": "number",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "HTML",
+                  "attrs": [{ "attr": "", "value": "" }],
+                  "content": "at",
+                  "refreshOnChange": false,
+                  "tableView": false,
+                  "key": "html27",
+                  "type": "htmlelement",
+                  "input": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "size": "md",
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0
+            },
+            {
+              "components": [
+                {
+                  "label": "Cook for time at temperature",
+                  "suffix": "°C.",
+                  "hideLabel": true,
+                  "mask": false,
+                  "spellcheck": true,
+                  "tableView": false,
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "inputFormat": "plain",
+                  "key": "cookForTimeAtTemperature",
+                  "type": "number",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "size": "md",
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0
+            }
+          ],
+          "tableView": false,
+          "key": "columns6",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "Cook until steaming hot in the middle.",
+          "tableView": false,
+          "key": "cookUntilSteamingHotInTheMiddle",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Caution, contents may be hot after heating.",
+          "tableView": false,
+          "key": "cautionContentsMayBeHotAfterHeating",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Allow to stand for",
+                  "tableView": false,
+                  "key": "allowToStandFor",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Allow to stand for minutes before serving",
+                  "suffix": " minutes before serving.",
+                  "hideLabel": true,
+                  "mask": false,
+                  "spellcheck": true,
+                  "tableView": false,
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "inputFormat": "plain",
+                  "key": "allowToStandForMinutesBeforeServing",
+                  "type": "number",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 3,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            }
+          ],
+          "tableView": false,
+          "key": "columns7",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "Do not refrigerate or reheat once heated.",
+          "tableView": false,
+          "key": "doNotRefrigerateOrReheatOnceHeated",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": " Care has been taken to remove all bones from this product, however some bones may remain. ",
+          "tableView": false,
+          "key": "careHasBeenTakenToRemoveAllBonesFromThisProductHoweverSomeBonesMayRemain",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Other directions for use",
+                  "tableView": false,
+                  "key": "otherDirectionsForUse",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Other directions for use details",
+                  "autoExpand": false,
+                  "hideLabel": true,
+                  "tableView": true,
+                  "key": "otherDirectionsForUseDetails",
+                  "conditional": {
+                    "show": true,
+                    "when": "otherDirectionsForUse",
+                    "eq": "true"
+                  },
+                  "type": "textarea",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 6,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            }
+          ],
+          "tableView": false,
+          "key": "columns8",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Cooking / preparation instructions",
+                  "description": "Note: You must include cooking instructions that would make the food safe.",
+                  "tableView": false,
+                  "key": "cookingPreparationInstructions",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 2,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Cooking preparation instructions",
+                  "autoExpand": false,
+                  "hideLabel": true,
+                  "tableView": true,
+                  "key": "cookingPreparationInstructions1",
+                  "conditional": {
+                    "show": true,
+                    "when": "cookingPreparationInstructions",
+                    "eq": "true"
+                  },
+                  "type": "textarea",
+                  "input": true,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 6,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            }
+          ],
+          "tableView": false,
+          "key": "columns9",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "The directions of use should be shown.",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "{{ console.log(data) }}\n\n{{ data.storeInCoolDryConditions && \"Store in\" }}",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "theDirectionsOfUseShouldBeShown",
           "type": "htmlelement",
           "input": false
         }
@@ -847,10 +1955,118 @@
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<div>\n  In development.\n</div>",
+          "content": "<h1>Statements</h1>\n<section class=\"qg-callout__box qg-callout__default-theme\">\n  <div class=\"qg-callout__content col-12\">\n\n    <div class=\"qg-callout__right-alignment\">\n      <div class=\"qg-callout__description\">\n        <p>\nSome foods or ingredients may be harmful to some people who are allergic or sensitive. These foods or ingredients must be written on the label no matter how small the amount and may also need a warning statement.\n        </p>\n      </div>\n      <div class=\"qg-callout__image\">\n        <img src=\"https://via.placeholder.com/104X142\" alt=\"\">\n      </div>\n    </div>\n  </div>\n</section>\n<h2>Allergen declarations</h2>\n<p>Select any food or ingredient in your food from the allergen declaration list below.</p>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html9",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "label": "Container",
+          "customClass": "statement-label",
+          "tableView": false,
+          "key": "container",
+          "type": "container",
+          "input": true,
+          "components": [
+            {
+              "label": "Cereals containing gluten </br> <small class=\"hint\">   For example, wheat, rye, barley, oats and spelt and their hybridised strains   other than:   <ul>     <li>where these substances are present in beer and spirits; or</li>     <li>       glucose syrups that are made from wheat starch and that:       <ul>         <li>           have been subject to a refining process that has removed gluten           protein content to the lowest level that is reasonably achievable; and         </li>         <li>have a gluten protein content that does not exceed 20 mg/kg; or</li>       </ul>     </li>     <li>alcohol distilled from wheat</li>   </ul> </small>",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Gluten",
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Crustacea",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Crustacea",
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Egg",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Egg",
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Fish <br><small class=\"hint\">   Except for isinglass derived from swim bladders and used as a clarifying agent in beer or wine   </small>",
+              "tableView": false,
+              "key": "fishBrSmallClassHintExceptForIsinglassDerivedFromSwimBladdersAndUsedAsAClarifyingAgentInBeerOrWineSmall",
+              "type": "checkbox",
+              "input": true,
+              "defaultValue": false
+            },
+            {
+              "label": "Milk <br> <small class=\"hint\">   Other than alcohol distilled from whey   </small>",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Milk",
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Lupin",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Lupin",
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Peanuts",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Peanuts",
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Soybeans <br> <small class=\"hint\">   Other than:   <ul>     <li>       soybean oil that has been degummed, neutralised, bleached and deodorised     </li>     <li>       soybean derivatives that are a tocopherol or a phytosterol     </li>   </ul>   </small>",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Soybeans",
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Sesame seeds",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Sesame",
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Sulphites added in concentrations of 10mg/kg or more",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Sulphites",
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Tree nuts <br> <small class=\"hint\"> Other than coconut from the fruit of the palm Cocos nucifera. </small>",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Tree_Nuts",
+              "type": "checkbox",
+              "input": true
+            }
+          ]
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<style>\n.statement-label label {\n  font-weight:400;\n}\n</style>\n\n<div class=\"alert alert-instructions\" role=\"alert\"> <h2> <i class=\"fa fa-info-circle\"></i>\nThe ingredients should be shown on a food label as:\n\n</h2> \n<p class=\"wrap\">\n  The allergens should be shown on the food label as:\n</br>\nContains: {{_.keys(_.pickBy(data.container))}}\n</p>\n</div>",
+          "refreshOnChange": true,
+          "tableView": false,
+          "key": "html16",
           "type": "htmlelement",
           "input": false
         }
@@ -939,7 +2155,7 @@
     }
   ],
   "revisions": "current",
-  "_vid": 196,
+  "_vid": 228,
   "title": "LB",
   "display": "wizard",
   "access": [
@@ -982,6 +2198,6 @@
   "path": "formwizard",
   "project": "5f44969319d1a97a819d80a7",
   "created": "2020-10-07T02:38:04.620Z",
-  "modified": "2020-11-16T06:36:48.901Z",
+  "modified": "2020-11-17T06:47:36.290Z",
   "machineName": "fesrqwsyzlbtegd:lbReplace"
 }
