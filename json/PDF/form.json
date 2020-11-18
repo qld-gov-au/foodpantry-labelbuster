@@ -49,6 +49,31 @@
       "tableView": false
     },
     {
+      "label": "IngredientData",
+      "key": "IngredientData",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "address",
+      "key": "address",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<style>@media print{body{margin:40px}h1,h2,h3,h4,h5,h6{font-weight:700}p{margin:10px 0}a{text-decoration:underline}.link-style,a{color:#185889!important}.link-style{font-weight:700}.alert.alert-success{font-weight:400;color:#000;margin:0;border-radius:0;padding:.75rem 1.25rem;border:none;border-left:5px solid #9ebf6d;background-color:#f2f7ea}.product-sheet-row{display:flex;flex-direction:row;padding:20px 10px}.product-sheet-row.secondary{background-color:#f6f6f6}.product-sheet-row div{text-align:left;width:50%}.product-sheet-row img{display:block}.example-label{padding:10px;border:2px solid #000;display:flex;flex-direction:row}.example-label .eg-col{width:33%;display:flex;flex-direction:column;justify-content:space-between}.example-label .eg-col img{height:auto;width:100%}.formio-component-radio label{display:none}.formio-component-radio .form-radio{display:flex;flex-direction:row}.formio-component-radio .form-radio .form-check{flex-grow:2;padding:20px 10px;margin:5px;border-radius:5px;border:1px solid #979797;background-color:#fff}.formio-component-radio .form-radio .form-check .form-check-label{display:flex;align-items:center}.formio-component-radio .form-radio .form-check .form-check-label .form-check-input{position:relative;margin:0}.formio-component-radio .form-radio .form-check .form-check-label input[type=radio]:after{width:24px;height:24px;border-radius:24px;top:-3px;position:relative;background-color:#fff;content:\"\";display:inline-block;visibility:visible;border:1px solid #979797}.formio-component-radio .form-radio .form-check .form-check-label input[type=radio]:checked:after{width:21px;height:21px;background-color:#4a4a4a;border:4px solid #fff}.formio-component-radio .form-radio .form-check .form-check-label span{margin:0 20px}.formio-component-radio .form-radio .form-check .radio input[type=radio]:after{background-color:#007eb1;color:#fff}.radio input[type=radio]:after{background-color:#007eb1;color:#fff}.alert.alert-info{border:none;border-left:5px solid #005e85;background-color:#eef3f6}.qg-card{flex-direction:column}[hidden]{display:none!important}hr.notes{padding-top:20px}.alert.alert-danger,.alert.alert-info,.alert.alert-success,.alert.alert-tip,.alert.alert-warning{font-weight:400;color:#000;margin:0;border-radius:0}.alert.alert-danger h2 i,.alert.alert-info h2 i,.alert.alert-success h2 i,.alert.alert-tip h2 i,.alert.alert-warning h2 i{margin-right:10px}.qg-card{margin-bottom:2rem;display:flex}.qg-card.card__full-width{padding:0!important}.qg-card .content .details{padding:1em}.qg-card.card__light-theme .content .details{color:#000}.qg-card.card__light-theme .content{background:none}.qg-card .content{width:100%;border:1px solid #d3d3d3;position:relative;overflow:hidden;border-radius:4px}h3{margin-bottom:12px;font-size:1.125rem}p{margin-bottom:.75rem}.qg-card.card__light-theme .content .qg-card__footer{border-top:1px solid #d3d3d3}.qg-card .qg-card__footer{padding:1em}.formio-component-radio .form-radio .form-check.radio-selected{background-color:#007eb1;color:#fff}.kyfb-header{display:flex}.kyfb-header>.kyfb-heading{flex-grow:2;text-align:center}.kyfb-email,.qg-card__footer a,.resource-url{color:#005e85}.question-margin{margin-top:40px;margin-bottom:0}.required-element:after{content:\"*\";color:#f85c50}}</style>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html",
+      "conditional": { "show": false },
+      "type": "htmlelement",
+      "input": false
+    },
+    {
       "label": "HTML",
       "attrs": [{ "attr": "", "value": "" }],
       "content": "<div class=\"kyfb-header\">\n  <div class=\"kyfb-date\">\n    {{ moment().format(\"DD/MM/YYYY\")}} \n  </div>\n  <div class=\"kyfb-heading\"> \n  Label Buster | Health and wellbeing | Queensland Government\n  </div>\n</div>",
@@ -71,16 +96,156 @@
     {
       "label": "HTML",
       "attrs": [{ "attr": "", "value": "" }],
-      "content": "<style>@media print{h1,h2,h3,h4,h5,h6{font-weight:700}div,p{margin:10px 0}a{text-decoration:underline}.link-style,a{color:#185889!important}.link-style{font-weight:700}.product-sheet-row{display:flex;flex-direction:row}.product-sheet-row:nth-of-type(odd){background-color:#f6f6f6}.product-sheet-row div{text-align:left;width:50%}.example-label{padding:10px;border:2px solid #000;display:flex;flex-direction:row}.example-label .eg-col{width:33%;display:flex;flex-direction:column;justify-content:space-between}.formio-component-radio label{display:none}.formio-component-radio .form-radio{display:flex;flex-direction:row}.formio-component-radio .form-radio .form-check{flex-grow:2;padding:20px 10px;margin:5px;border-radius:5px;border:1px solid #979797;background-color:#fff}.formio-component-radio .form-radio .form-check .form-check-label{display:flex;align-items:center}.formio-component-radio .form-radio .form-check .form-check-label .form-check-input{position:relative;margin:0}.formio-component-radio .form-radio .form-check .form-check-label input[type=radio]:after{width:24px;height:24px;border-radius:24px;top:-3px;position:relative;background-color:#fff;content:\"\";display:inline-block;visibility:visible;border:1px solid #979797}.formio-component-radio .form-radio .form-check .form-check-label input[type=radio]:checked:after{width:21px;height:21px;background-color:#4a4a4a;border:4px solid #fff}.formio-component-radio .form-radio .form-check .form-check-label span{margin:0 20px}.formio-component-radio .form-radio .form-check .radio input[type=radio]:after{background-color:#007eb1;color:#fff}.radio input[type=radio]:after{background-color:#007eb1;color:#fff}.alert.alert-info{border:none;border-left:5px solid #005e85;background-color:#eef3f6}.qg-card{flex-direction:column}[hidden]{display:none!important}hr.notes{padding-top:20px}.alert.alert-danger,.alert.alert-info,.alert.alert-success,.alert.alert-tip,.alert.alert-warning{font-weight:400;color:#000;margin:0;border-radius:0}.alert.alert-danger h2 i,.alert.alert-info h2 i,.alert.alert-success h2 i,.alert.alert-tip h2 i,.alert.alert-warning h2 i{margin-right:10px}.qg-card{margin-bottom:2rem;display:flex}.qg-card.card__full-width{padding:0!important}.qg-card .content .details{padding:1em}.qg-card.card__light-theme .content .details{color:#000}.qg-card.card__light-theme .content{background:none}.qg-card .content{width:100%;border:1px solid #d3d3d3;position:relative;overflow:hidden;border-radius:4px}h3{margin-bottom:12px;font-size:1.125rem}p{margin-bottom:.75rem}.qg-card.card__light-theme .content .qg-card__footer{border-top:1px solid #d3d3d3}.qg-card .qg-card__footer{padding:1em}.formio-component-radio .form-radio .form-check.radio-selected{background-color:#007eb1;color:#fff}.kyfb-header{display:flex}.kyfb-header>.kyfb-heading{flex-grow:2;text-align:center}.kyfb-email,.qg-card__footer a,.resource-url{color:#005e85}.question-margin{margin-top:40px;margin-bottom:0}.required-element:after{content:\"*\";color:#f85c50}}</style><h2>Your Label</h2><div class=\"alert alert-success\" role=\"alert\"> <h2> <i class=\"fa fa-check-circle\"></i>Congratulations! You have completed all the steps in Label Buster. </h2> <p> Using your responses to each question, Label Buster has generated a product sheet and an example food label. </p>\n</div><p> Label Buster is a brief guide to help you understand your labelling requirements. You may choose to get advice from a labelling consultant to make sure that your label complies with the Food Standards Code.\n</p><h3>Product sheet</h3><p> You can take this information to a printer or graphic designer to create a label or use your own tools/templates. When creating your food label, you must ensure you meet the <a>legibility requirements</a>, such as minimum type size.\n</p><div class=\"product-sheet-row\"> <div> <strong>Food name and description</strong> </div> <div>placeholder</div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Business details</strong> </div> <div> placeholder <br> placeholder <br> placeholder </div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Ingredients</strong> </div> <div>placeholder</div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Weight</strong> </div> <div> placeholder <br> placeholder <br> placeholder </div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Nutritional information panel</strong> </div> <div>placeholder</div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Statement and declarations</strong> </div> <div> placeholder <br> placeholder <br> placeholder </div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Date marks</strong> </div> <div>placeholder</div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Lot identification</strong> </div> <div> placeholder <br> placeholder <br> placeholder </div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Storage conditions and directions for use</strong> </div> <div>placeholder</div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Claims</strong> </div> <div> placeholder <br> placeholder <br> placeholder </div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Country of origin</strong> </div> <div>placeholder</div>\n</div><div class=\"product-sheet-row\"> <div> <strong>Health star rating</strong> </div> <div> placeholder <br> placeholder <br> placeholder </div>\n</div><h3>Example food label</h3><p> Below is an example of what your label could look like, using the informaiton you provided in Label Buster.\n</p><div class=\"example-label\"> <div class=\"eg-col\"> <h3>Product name</h3> <p>Product description</p> <div> <p> <strong>Storage conditions:</strong> Keep refrigerated at 1 degree to 5 degree. Shake well before opening. Store in an upright position. </p> <p> <strong>Directions for use:</strong> Consume within 2 days of opening. </p> </div> <div> <p><strong>Best before:</strong> 05 / 04 / 2021</p> <p><strong>Lot identification:</strong> Batch 42</p> </div> </div> <div class=\"eg-col\"> <div> <p><strong>Best before:</strong> 05 / 04 / 2021</p> <p><strong>Lot identification:</strong> Batch 42</p> </div> <div> <p><strong>Lot identification:</strong> Batch 42</p> </div> </div> <div class=\"eg-col\"> <img src=\"https://via.placeholder.com/400x400.png\" alt=\"\" class=\"src\"> </div>\n</div><h3>Legibility requirements</h3><p> All required words, statements, expressions or designs provided on a food label must be in English, be legible, and be prominent so as to contrast distinctly with the background of the label.\n</p><p> Information in other language is permitted, provided it does not negate or contradict the English information.\n</p><p> No specific print type or size is defined for general labelling requirements, however:\n</p><ul> <li> warning statements must be in a type size of at least 3mm (or 1.5mm on small packages) </li> <li> A print size is prescribed in the Food Standards Code for some foods where a required statement must be shown (e.g. infant formula). </li>\n</ul><h3>Exemptions</h3><p> All of the food label information needs to be included on your food label, except for:\n</p><ul> dynamically generated list of Exemptions\n</ul><br><br><br><br><p> <strong>Copyright</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/copyright/)</span>\n</p><p> <strong>Disclaimer</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/disclaimer/)</span>\n</p><p> <strong>Disclaimer</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/privacy/)</span>\n</p><p> <strong>Disclaimer</strong> <span class=\"link-style\">(https://www.qld.gov.au/right-to-information/)</span>\n</p><br><br><br><p> <strong>© The State of Queensland</strong>\n</p><p> <strong>Queensland Government</strong> <span class=\"link-style\">(https://www.qld.gov.au/)</span>\n</p>",
+      "content": "<br><br><h2>Your Label</h2><div class=\"alert alert-success\" role=\"alert\"> <h2> <i class=\"fa fa-check-circle\"></i>Congratulations! You have completed all the steps in Label Buster. </h2> <p> Using your responses to each question, Label Buster has generated a product sheet and an example food label. </p> </div><p> Label Buster is a brief guide to help you understand your labelling requirements. You may choose to get advice from a labelling consultant to make sure that your label complies with the Food Standards Code. </p>",
       "refreshOnChange": false,
       "tableView": false,
-      "key": "html",
+      "key": "html2",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<h2>Product sheet</h2>\n<p>\n  You can take this information to a printer or graphic designer to create a\n  label or use your own tools/templates. When creating your food label, you must\n  ensure you meet the <a>legibility requirements</a>, such as minimum type size.\n</p>\n\n<div class=\"product-sheet-row\">\n  <div>\n    <strong>Food name and description</strong>\n  </div>\n  <div>placeholder</div>\n</div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html3",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Business details</strong>\n    </div>\n    <div>\n      {{data.address || 'no data provided'}}\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html6",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n    <div>\n      <strong>Ingredients</strong>\n    </div>\n    <div><b>Ingredients:</b> {{data.IngredientData.map((data) => ' ' + data.ingredient) || 'no data provided'}}</div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html7",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\"> <div> <strong>Weight</strong> </div> <div> For information on how to comply with weights and measures laws visit the <a href=\"https://www.measurement.gov.au\">National Measurement Institute (www.measurement.gov.au)</a> </div> </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html8",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n  <div>\n    <strong>Nutritional information panel</strong>\n  </div>\n  <div>\n    A Nutrition Informational Panel must be added to your food label. The\n    <a\n      >Food Standards Australia New Zealand nutrition panel calculator\n      (https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx</a\n    >\n    can help you prepare your nutrition information panel.\n    <img\n      src=\"https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png\"\n      alt=\"\"\n      class=\"src\"\n    />\n  </div>\n</div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html9",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Statement and declarations</strong>\n    </div>\n    <div>\n      <p><b>Contains:</b> {{data.allergens || 'no data provided'}}\n      </br>\n      Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum\n      size of type of 1.5 mm is required.</p>\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html10",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n    <div>\n      <strong>Date marks</strong>\n    </div>\n    <div>Best Before: {{data.bestBefore || 'no data provided'}}</div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html11",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Lot identification</strong>\n    </div>\n    <div>\n      {{data.batch || 'no data provided'}}\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html12",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n    <div>\n      <strong>Storage conditions and directions for use</strong>\n    </div>\n    <div><p>\n      <b>Storage conditions: </b> {{data.storageConditions || 'no data provided'}}\n      </br>\n      <b>Directions for use:</b> {{data.directions || 'no data provided'}}\n    </p></div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html13",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Claims</strong>\n    </div>\n    <div>\n      <p>Making voluntary claims about your food is very complex and you are recommended to seek professional\n        advice.\n        </br>\n        Please note, that making a claim on your food has other requirements not addressed in Label Buster such as\n        additional sections in your nutritional information panel and requirements under Australian Consumer Law.\n      </p>\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html15",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n    <div>\n      <strong>Country of origin</strong>\n    </div>\n    <div>Information on how to calculate and display mandatory <a\n      href=\"https://www.accc.gov.au/business/advertising-promoting-your-business/country-of-origin-claims/country-of-origin-food-labelling\">country\n      of origin can be found on the\n      Australian Competition and Consumer Commission website. </a></div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html14",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Health star rating</strong>\n    </div>\n    <div>\n      Information on how to calculate and display a voluntary <a\n            href=\"https://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/Content/guide-for-industry-document\">health\n            star rating can be found at the\n            health star rating system website.</a>\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html16",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<h2>Example food label</h2><p> Below is an example of what your label could look like, using the informaiton you provided in Label Buster.\n</p><div class=\"example-label\"> <div class=\"eg-col\"> <h3>Product name</h3> <p>Product description</p> <div> <p> <strong>Storage conditions:</strong> Keep refrigerated at 1 degree to 5 degree. Shake well before opening. Store in an upright position. </p> <p> <strong>Directions for use:</strong> Consume within 2 days of opening. </p> </div> <div> <p><strong>Best before:</strong> 05 / 04 / 2021</p> <p><strong>Lot identification:</strong> Batch 42</p> </div> </div> <div class=\"eg-col\"> <div> <p> <strong>Ingredients:</strong> {{data.IngredientData.map((data) => data.ingredient)}} </p> <p> <strong>Contains:</strong> list items </p> </div> <div class=\"address-block\"> Address line one <br> Address line two <br> Address line three </div> </div> <div class=\"eg-col\"> <img src=\"https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png\" alt=\"example food label\" class=\"src\"> </div>\n</div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html4",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<h2>Legibility requirements</h2><p> All required words, statements, expressions or designs provided on a food label must be in English, be legible, and be prominent so as to contrast distinctly with the background of the label.\n</p><p> Information in other language is permitted, provided it does not negate or contradict the English information.\n</p><p> No specific print type or size is defined for general labelling requirements, however:\n</p><ul> <li> warning statements must be in a type size of at least 3mm (or 1.5mm on small packages) </li> <li> A print size is prescribed in the Food Standards Code for some foods where a required statement must be shown (e.g. infant formula). </li>\n</ul><h3>Exemptions</h3><p> All of the food label information needs to be included on your food label, except for:\n</p><ul> dynamically generated list of Exemptions\n</ul><br><br><br><br><p> <strong>Copyright</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/copyright/)</span>\n</p><p> <strong>Disclaimer</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/disclaimer/)</span>\n</p><p> <strong>Privacy</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/privacy/)</span>\n</p><p> <strong>Right to information</strong> <span class=\"link-style\">(https://www.qld.gov.au/right-to-information/)</span>\n</p><br><br><br><p> <strong>© The State of Queensland 1995-2020</strong>\n</p><p> <strong>Queensland Government</strong> <span class=\"link-style\">(https://www.qld.gov.au/)</span>\n</p>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html5",
       "type": "htmlelement",
       "input": false
     }
   ],
   "revisions": "current",
-  "_vid": 16,
+  "_vid": 35,
   "title": "LB - PDF",
   "display": "form",
   "access": [
@@ -118,11 +283,14 @@
   ],
   "controller": "",
   "properties": {},
-  "settings": {},
+  "settings": {
+    "hideTitle": true,
+    "footer": "<html>\n<style>\nfooter{\n  font-size: 7px;\n  line-height: 100px;\n  margin-left: 10px;\n}\ndiv.pageNumbers {\n  float: right;\n  margin-right: 10px;\n}\n</style>\n<footer>\n    https://www.qld.gov.au/health/staying-healthy/food-pantry/label-buster\n<div class=\"pageNumbers\"><span class=\"pageNumber\"></span>/<span class=\"totalPages\"></span></div>\n</footer>\n</html>"
+  },
   "name": "lbPdf",
   "path": "lbpdf",
   "project": "5f44969319d1a97a819d80a7",
   "created": "2020-11-10T03:20:18.793Z",
-  "modified": "2020-11-11T06:13:26.758Z",
+  "modified": "2020-11-16T06:56:43.375Z",
   "machineName": "fesrqwsyzlbtegd:lbPdf"
 }
