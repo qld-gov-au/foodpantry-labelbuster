@@ -33,7 +33,7 @@
           "label": "HTML",
           "tag": "div",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<style>.lb .fa{margin-right:5px;font-size:1.5625rem}.lb .alert-instructions{background-color:#f5f5f5;border-left:5px solid grey}.lb .special{color:#f85c50}.lb .qg-grab{margin-bottom:1rem}.lb .flex-row{display:flex;flex-direction:row}\n/*# sourceMappingURL=/styles.6937bb1c.css.map */</style><h1>Label Buster</h1><figure> <img src=\"https://via.placeholder.com/400x300.png/ccc/ccc\" alt=\"\">\n</figure><p> Label Buster is a step-by-step guide to help you identify information you need to create a food label that meets Australian requirements. At the end of Label Buster, you will generate:\n<ul> <li> a product sheet you can give to a printer to design a label for you </li> <li> an example of what your food label should look like. </li>\n</ul>\n</p><p> The <a href=\"https://www.foodstandards.gov.au/code/Pages/default.aspx\" rel=\"nofollow\" target=\"_blank\"> <span class=\"title\"><i>Australia New Zealand Food Standards Code</i></span> </a> (the Food Standards Code) sets the standards for food labelling in Australia. Significant penalties apply in Queensland under the <i>Food Act 2006</i> (the Act), for non-compliance with the Food Standards Code.\n</p><div class=\"qg-grab\"> <h3><i class=\"fa fa-lightbulb-o\"></i>Did you know</h3> <p> Labels must have the same information whether you sell your product once at a market stall, or regularly to a supermarket. </p>\n</div><h2>Who can use Label Buster?</h2><p> Label Buster is designed for small to medium food businesses. If your food has complex labelling requirements, such as infant formula, sports supplements or alcohol, the tool does not provide all the information you need, and you are recommended to seek professional legal advice from a food labelling consultant.\n</p><div class=\"alert alert-instructions\" role=\"alert\"> <h3>Before you start</h3> <p>To use Label Buster, you will need:</p> <div class=\"flex-row\"> <i class=\"fa fa-clock-o\"></i> <div> <p> Up to 1 hour - if you are familiar with food labelling requirements. </p> <p>Up to 2 hours - if you have never made a food label before.</p> </div> </div> <p> <i class=\"fa fa-info-circle\"></i>You will need information about your food, such as: </p> <ul> <li>ingredients</li> <li>use-by or best-before dates</li> <li>any storage conditions or directions for use</li> </ul> <p> The questions marked with a <span class=\"special\">*</span> must be completed. Other questions are optional. </p>\n</div><div class=\"qg-grab\"> <h3><i class=\"fa fa-lightbulb-o\"></i>Did you know</h3> <p> Label Buster will provide you with food labelling information to help you to comply with the Food Standards Code. After you finish Label Buster, you will need to include other mandatory requirements for a <a href=\"https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx\" target=\"_blank\" rel=\"noopener\"> Nutrition Information Panel </a>, <a href=\"https://www.industry.gov.au/regulations-and-standards/buying-and-selling-goods-and-services-by-weights-and-other-measures\" target=\"_blank\" rel=\"noopener\"> weights and measures </a>, and <a href=\"https://www.accc.gov.au/consumers/groceries/country-of-origin\" target=\"_blank\" rel=\"noopener\"> Country of origin </a> labelling. <a href=\"http://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/content/home\" target=\"_blank\" rel=\"noopener\"> Health Star Rating </a> is a voluntary scheme you can choose to add to your food. </p>\n</div>",
+          "content": "<style>.lb .alert-instructions{background-color:#f5f5f5;border-left:5px solid grey}.lb .special{color:#f85c50}.lb .flex-row{display:flex;flex-direction:row}</style><h1>Label Buster</h1><figure> <img src=\"https://via.placeholder.com/400x300.png/ccc/ccc\" alt=\"\">\n</figure><p> Label Buster is a step-by-step guide to help you identify information you need to create a food label that meets Australian requirements. At the end of Label Buster, you will generate:\n<ul> <li> a product sheet you can give to a printer to design a label for you </li> <li> an example of what your food label should look like. </li>\n</ul>\n</p><p> The <a href=\"https://www.foodstandards.gov.au/code/Pages/default.aspx\" rel=\"nofollow\" target=\"_blank\"> <span class=\"title\"><i>Australia New Zealand Food Standards Code</i></span> </a> (the Food Standards Code) sets the standards for food labelling in Australia. Significant penalties apply in Queensland under the <i>Food Act 2006</i> (the Act), for non-compliance with the Food Standards Code.\n</p><section class=\"qg-callout__box qg-callout__default-theme\"> <div class=\"qg-callout__header col-12\"> <span class=\"qg-callout__icon\"> <i class=\"fa fa-lightbulb-o\"></i> </span> <h2 class=\"qg-callout__title\">Did you know</h2> </div> <div class=\"qg-callout__content col-12\"> <div class=\"qg-callout__bottom-alignment\"> <div class=\"qg-callout__description\"> <p>Labels must have the same information whether you sell your product once at a market stall, or regularly to a supermarket.</p> </div> </div> </div>\n</section><h2>Who can use Label Buster?</h2><p> Label Buster is designed for small to medium food businesses. If your food has complex labelling requirements, such as infant formula, sports supplements or alcohol, the tool does not provide all the information you need, and you are recommended to seek professional legal advice from a food labelling consultant.\n</p><div class=\"alert alert-instructions\" role=\"alert\"> <h2>Before you start</h2> <p>To use Label Buster, you will need:</p> <div class=\"flex-row\"> <i class=\"fa fa-clock-o\"></i> <div> <p> Up to 1 hour - if you are familiar with food labelling requirements. </p> <p>Up to 2 hours - if you have never made a food label before.</p> </div> </div> <p> <i class=\"fa fa-info-circle\"></i>You will need information about your food, such as: </p> <ul> <li>ingredients</li> <li>use-by or best-before dates</li> <li>any storage conditions or directions for use</li> </ul> <p> The questions marked with a <span class=\"special\">*</span> must be completed. Other questions are optional. </p>\n</div><section class=\"qg-callout__box qg-callout__default-theme\"> <div class=\"qg-callout__header col-12\"> <span class=\"qg-callout__icon\"> <i class=\"fa fa-lightbulb-o\"></i> </span> <h2 class=\"qg-callout__title\">Did you know</h2> </div> <div class=\"qg-callout__content col-12\"> <div class=\"qg-callout__bottom-alignment\"> <div class=\"qg-callout__description\"> <p> Label Buster will provide you with food labelling information to help you to comply with the Food Standards Code. After you finish Label Buster, you will need to include other mandatory requirements for a <a href=\"https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx\" target=\"_blank\" rel=\"noopener\"> Nutrition Information Panel </a>, <a href=\"https://www.industry.gov.au/regulations-and-standards/buying-and-selling-goods-and-services-by-weights-and-other-measures\" target=\"_blank\" rel=\"noopener\"> weights and measures </a>, and <a href=\"https://www.accc.gov.au/consumers/groceries/country-of-origin\" target=\"_blank\" rel=\"noopener\"> Country of origin </a> labelling. <a href=\"http://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/content/home\" target=\"_blank\" rel=\"noopener\"> Health Star Rating </a> is a voluntary scheme you can choose to add to your food. </p> </div> </div> </div>\n</section>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html",
@@ -111,8 +111,9 @@
       "collapsible": false,
       "tableView": false,
       "key": "page4",
+      "nextPage": "shouldBeDisabled = data.limitationOne ||\n                   data.limitationTwo ||\n                   data.limitationThree ||\n                   data.limitationFour ||\n                   data.limitationFive ||\n                   data.limitationSix;\nnext = shouldBeDisabled ? false : 'page5';",
       "type": "panel",
-      "label": "Page 4",
+      "label": "Limitations",
       "input": false,
       "components": [
         {
@@ -126,7 +127,7 @@
           "input": false
         },
         {
-          "legend": "<div>     Is your food:<abbr title=\"(required)\" class=\"required\">*</abbr> <ul>   <li>     an     <button data-accordion-item=\"alcoholic-drinks\" class=\"accordion-btn\">       alcohol     </button>   </li>   <li>     a     <button data-accordion-item=\"caffeinated-drinks\" class=\"accordion-btn\">       formulated caffeinated drink</button     >,   </li>   <li>     an     <button data-accordion-item=\"drinks-electrolyte\" class=\"accordion-btn\">       electrolyte drink     </button>   </li>   <li>     a     <button data-accordion-item=\"drinks-made\" class=\"accordion-btn\">       drink made from cereals, nuts, and/or seeds     </button>   </li>   <li>     a drink base (solid or liquid) that is used to make any of the drinks above?   </li> </ul> </div>",
+          "legend": "<div>   Is your food:<abbr title=\"(required)\" class=\"required\">*</abbr>   <ul>     <li>       an       <button data-accordion-item=\"alcoholic-drinks\" class=\"accordion-btn\">         alcohol       </button>     </li>     <li>       a       <button data-accordion-item=\"caffeinated-drinks\" class=\"accordion-btn\">         formulated caffeinated drink</button       >,     </li>     <li>       an       <button data-accordion-item=\"drinks-electrolyte\" class=\"accordion-btn\">         electrolyte drink       </button>     </li>     <li>       a       <button data-accordion-item=\"drinks-made\" class=\"accordion-btn\">         drink made from cereals, nuts, and/or seeds       </button>     </li>     <li>       a drink base (solid or liquid) that is used to make any of the drinks       above?     </li>   </ul> </div>",
           "tableView": false,
           "key": "fieldSet7",
           "type": "fieldset",
@@ -143,7 +144,7 @@
                 { "label": "No", "value": "false", "shortcut": "" }
               ],
               "validate": { "required": true },
-              "key": "pleaseAnswer",
+              "key": "limitationOne",
               "type": "radio",
               "input": true
             },
@@ -156,7 +157,7 @@
               "key": "html32",
               "conditional": {
                 "show": true,
-                "when": "pleaseAnswer",
+                "when": "limitationOne",
                 "eq": "true"
               },
               "type": "htmlelement",
@@ -165,12 +166,12 @@
           ]
         },
         {
-          "legend": "Is your food a <button data-accordion-item=\"special-food\" class=\"accordion-btn\">special purpose food</button>?",
+          "legend": "Is your food a <button data-accordion-item=\"special-food\" class=\"accordion-btn\">   special purpose food</button >? <abbr title=\"(required)\" class=\"required\">*</abbr>",
           "tableView": false,
           "key": "fieldSet8",
           "conditional": {
             "show": true,
-            "when": "pleaseAnswer",
+            "when": "limitationOne",
             "eq": "false"
           },
           "type": "fieldset",
@@ -196,7 +197,8 @@
                 { "label": "Yes", "value": "true", "shortcut": "" },
                 { "label": "No", "value": "false", "shortcut": "" }
               ],
-              "key": "specialPurposeFood",
+              "validate": { "required": true },
+              "key": "limitationTwo",
               "type": "radio",
               "input": true
             },
@@ -209,7 +211,7 @@
               "key": "html33",
               "conditional": {
                 "show": true,
-                "when": "specialPurposeFood",
+                "when": "limitationTwo",
                 "eq": "true"
               },
               "type": "htmlelement",
@@ -218,12 +220,12 @@
           ]
         },
         {
-          "legend": "Is your food a <button class=\"accordion-btn\" data-accordion-item=\"novel-food\">novel food</button> or does it contain an ingredient that is a novel food?",
+          "legend": "Is your food a <button class=\"accordion-btn\" data-accordion-item=\"novel-food\">   novel food </button> or does it contain an ingredient that is a novel food? <abbr   title=\"(required)\"   class=\"required\"   >*</abbr >",
           "tableView": false,
           "key": "fieldSet9",
           "conditional": {
             "show": true,
-            "when": "specialPurposeFood",
+            "when": "limitationTwo",
             "eq": "false"
           },
           "type": "fieldset",
@@ -249,7 +251,8 @@
                 { "label": "Yes", "value": "true", "shortcut": "" },
                 { "label": "No", "value": "false", "shortcut": "" }
               ],
-              "key": "novelFood",
+              "validate": { "required": true },
+              "key": "limitationThree",
               "type": "radio",
               "input": true
             },
@@ -262,7 +265,7 @@
               "key": "html35",
               "conditional": {
                 "show": true,
-                "when": "novelFood",
+                "when": "limitationThree",
                 "eq": "true"
               },
               "type": "htmlelement",
@@ -271,10 +274,14 @@
           ]
         },
         {
-          "legend": "Does your food contain ingredients that are produced from gene technology, or is your food a <button data-accordion-item=\"modified-food\" class=\"accordion-btn\">   genetically modified food </button>",
+          "legend": "Does your food contain ingredients that are produced from gene technology, or is your food a <button data-accordion-item=\"modified-food\" class=\"accordion-btn\">   genetically modified food </button> ? <abbr title=\"(required)\" class=\"required\">*</abbr>",
           "tableView": false,
           "key": "fieldSet10",
-          "conditional": { "show": true, "when": "novelFood", "eq": "false" },
+          "conditional": {
+            "show": true,
+            "when": "limitationThree",
+            "eq": "false"
+          },
           "type": "fieldset",
           "label": "Does your food contain ingredients that are produced from gene technology, or is your food a <button data-accordion-item=\"modified-food\" class=\"accordion-btn\">   genetically modified food </button>",
           "input": false,
@@ -288,7 +295,8 @@
                 { "label": "Yes", "value": "true", "shortcut": "" },
                 { "label": "No", "value": "false", "shortcut": "" }
               ],
-              "key": "geneticallyModified",
+              "validate": { "required": true },
+              "key": "limitationFour",
               "type": "radio",
               "input": true
             },
@@ -301,7 +309,7 @@
               "key": "html37",
               "conditional": {
                 "show": true,
-                "when": "geneticallyModified",
+                "when": "limitationFour",
                 "eq": "true"
               },
               "type": "htmlelement",
@@ -310,12 +318,12 @@
           ]
         },
         {
-          "legend": "Is your food an <button class=\"accordion-btn\" data-accordion-item=\"irradiated-food\">irradiated food</button>?",
+          "legend": "Is your food an <button class=\"accordion-btn\" data-accordion-item=\"irradiated-food\">   irradiated food</button >? <abbr title=\"(required)\" class=\"required\">*</abbr>",
           "tableView": false,
           "key": "fieldSet11",
           "conditional": {
             "show": true,
-            "when": "geneticallyModified",
+            "when": "limitationFour",
             "eq": "false"
           },
           "type": "fieldset",
@@ -341,7 +349,8 @@
                 { "label": "Yes", "value": "true", "shortcut": "" },
                 { "label": "No", "value": "false", "shortcut": "" }
               ],
-              "key": "irritatedFood",
+              "validate": { "required": true },
+              "key": "limitationFive",
               "type": "radio",
               "input": true
             },
@@ -354,7 +363,7 @@
               "key": "html38",
               "conditional": {
                 "show": true,
-                "when": "irritatedFood",
+                "when": "limitationFive",
                 "eq": "true"
               },
               "type": "htmlelement",
@@ -363,12 +372,12 @@
           ]
         },
         {
-          "legend": "Do you make a <button class=\"accordion-btn\" data-accordion-item=\"nutrition-claims\">   claim </button> about your food?",
+          "legend": "Do you make a <button class=\"accordion-btn\" data-accordion-item=\"nutrition-claims\">   claim </button> about your food? <abbr title=\"(required)\" class=\"required\">*</abbr>",
           "tableView": false,
           "key": "fieldSet12",
           "conditional": {
             "show": true,
-            "when": "irritatedFood",
+            "when": "limitationFive",
             "eq": "false"
           },
           "type": "fieldset",
@@ -394,7 +403,8 @@
                 { "label": "Yes", "value": "true", "shortcut": "" },
                 { "label": "No", "value": "false", "shortcut": "" }
               ],
-              "key": "doYouMakeAButtonClassAccordionBtnDataAccordionItemNutritionClaimsClaimButtonAboutYourFoodBrSmallClassHintClaimsAreVoluntaryStatementsMadeOnAFoodLabelAndInAdvertisingAboutALinkBetweenYourFoodAndHealthForExampleGlutenFreeGoodSourceOfCalciumOrganicCageFreeSmall",
+              "validate": { "required": true },
+              "key": "limitationSix",
               "type": "radio",
               "input": true
             },
@@ -407,7 +417,7 @@
               "key": "html40",
               "conditional": {
                 "show": true,
-                "when": "doYouMakeAButtonClassAccordionBtnDataAccordionItemNutritionClaimsClaimButtonAboutYourFoodBrSmallClassHintClaimsAreVoluntaryStatementsMadeOnAFoodLabelAndInAdvertisingAboutALinkBetweenYourFoodAndHealthForExampleGlutenFreeGoodSourceOfCalciumOrganicCageFreeSmall",
+                "when": "limitationSix",
                 "eq": "true"
               },
               "type": "htmlelement",
@@ -661,57 +671,9 @@
       "input": false,
       "components": [
         {
-          "input": false,
-          "key": "storageConditions",
-          "tableView": false,
-          "label": "Storage Conditions",
-          "type": "well",
-          "components": [
-            {
-              "label": "Storage Conditions output",
-              "attrs": [{ "attr": "", "value": "" }],
-              "content": "<link rel=\"stylesheet\" href=\"./styles.scss\">\n\n<h1>Storage and use</h1>\n<section>\n  <article class=\"alert alert-info\" role=\"alert\">\n    <h2>\n        <i class=\"fa fa-info-circle\"></i>\n        The storage conditions should be shown on the food label as:\n    </h2>\n    <p class=\"wrap\">\n      Storage conditions:\n    </p>\n  </article>\n</section>",
-              "refreshOnChange": false,
-              "tableView": false,
-              "key": "storageConditionsOutput",
-              "type": "htmlelement",
-              "input": false
-            },
-            {
-              "input": false,
-              "key": "html30",
-              "tableView": false,
-              "label": "HTML",
-              "conditional": {
-                "show": true,
-                "when": "storeInCoolDryConditions",
-                "eq": "true"
-              },
-              "type": "htmlelement",
-              "attrs": [{ "attr": "", "value": "" }],
-              "content": "Store in cool dry conditions.",
-              "refreshOnChange": false
-            },
-            {
-              "label": "HTML",
-              "attrs": [{ "attr": "", "value": "" }],
-              "content": "Refrigerate after purchase.",
-              "refreshOnChange": false,
-              "tableView": false,
-              "key": "html31",
-              "type": "htmlelement",
-              "input": false,
-              "conditional": {
-                "show": true,
-                "when": "refrigerateAfterPurchase",
-                "eq": "true"
-              }
-            }
-          ]
-        },
-        {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
+          "content": "<h1>Storage and use</h1>\n<section class=\"qg-callout__box qg-callout__default-theme\">\n  <div class=\"qg-callout__content col-12\">\n\n    <div class=\"qg-callout__right-alignment\">\n      <div class=\"qg-callout__description\">\n        <p>\n          Storage conditions describe how to keep food until its best-before or\n          use-by date.\n        </p>\n        <p>\n          Directions for use are instructions for how to prepare the food so\n          that it is ready to eat.\n        </p>\n      </div>\n      <div class=\"qg-callout__image\">\n        <img src=\"https://via.placeholder.com/98X138\" alt=\"\">\n      </div>\n    </div>\n  </div>\n</section>\n<h2>Storage conditions</h2>\n<section>\n  <article>\n    <b>Select the storage conditions for your food.</b>\n    If your food has specific storage conditions to make sure it will keep until\n    the best-before or use-by date, then you must include these on the label.\n    Examples of some storage conditions have been included. You may select none,\n    or one or more of these, depending on your requirements.I\n  </article>\n</section>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html4",
@@ -956,12 +918,12 @@
           "input": false
         },
         {
-          "label": "HTML",
+          "label": "Storage Conditions output",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "</p>\n  </article>\n</section>",
-          "refreshOnChange": false,
+          "content": "<h1>Storage and use</h1>\n<section>\n  <article class=\"alert alert-info\" role=\"alert\">\n    <h2>\n        <i class=\"fa fa-info-circle\"></i>\n        The storage conditions should be shown on the food label as:\n    </h2>\n    <p class=\"wrap\">\n      <b>Storage conditions:</b>\n      {{ data && data.storeInCoolDryConditions ? 'Store in cool dry conditions' : '' }}\n      {{ data && data.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}\n      {{ data && data.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}\n      {{ data && data.keepRefrigeratedAt ? `Keep refrigerated at ${data.keepRefrigeratedAtMinimum || 0} °C to ${data.keepRefrigeratedAtMaximum || 0} °C` : '' }}\n      {{ data && data.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.keepRefrigeratedAtOrBelowTemperature || 0}` : '' }}\n      {{ data && data.keepFrozenSolid ? 'Keep frozen solid.' : '' }}\n      {{ data && data.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.'  : '' }}\n      {{ data && data.otherPleaseEnter ? data.otherPleaseEnterDetails : '' }}\n    </p>\n  </article>\n</section>",
+          "refreshOnChange": true,
           "tableView": false,
-          "key": "html29",
+          "key": "storageConditionsOutput",
           "type": "htmlelement",
           "input": false
         },
@@ -1149,6 +1111,14 @@
           "defaultValue": false
         },
         {
+          "label": "Cook until steaming hot in the middle.",
+          "tableView": false,
+          "key": "cookUntilSteamingHotInTheMiddle",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
+        },
+        {
           "label": "Columns",
           "columns": [
             {
@@ -1184,6 +1154,7 @@
                     ]
                   },
                   "selectThreshold": 0.3,
+                  "persistent": "client-only",
                   "key": "select1",
                   "type": "select",
                   "indexeddb": { "filter": {} },
@@ -1246,6 +1217,14 @@
           "key": "columns5",
           "type": "columns",
           "input": false
+        },
+        {
+          "label": "Caution, contents may be hot after heating.",
+          "tableView": false,
+          "key": "cautionContentsMayBeHotAfterHeating",
+          "type": "checkbox",
+          "input": true,
+          "defaultValue": false
         },
         {
           "label": "Columns",
@@ -1341,22 +1320,6 @@
           "key": "columns6",
           "type": "columns",
           "input": false
-        },
-        {
-          "label": "Cook until steaming hot in the middle.",
-          "tableView": false,
-          "key": "cookUntilSteamingHotInTheMiddle",
-          "type": "checkbox",
-          "input": true,
-          "defaultValue": false
-        },
-        {
-          "label": "Caution, contents may be hot after heating.",
-          "tableView": false,
-          "key": "cautionContentsMayBeHotAfterHeating",
-          "type": "checkbox",
-          "input": true,
-          "defaultValue": false
         },
         {
           "label": "Columns",
@@ -1531,8 +1494,8 @@
         {
           "label": "The directions of use should be shown.",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "{{ console.log(data) }}\n\n{{ data.storeInCoolDryConditions && \"Store in\" }}",
-          "refreshOnChange": false,
+          "content": "<link rel=\"stylesheet\" href=\"./styles.scss\">\n\n<section>\n  <article class=\"alert alert-info\" role=\"alert\">\n    <h2>\n        <i class=\"fa fa-info-circle\"></i>\n        The directions for use should be shown on the food label as:\n    </h2>\n    <p class=\"wrap\">\n      <b>Directions for use:</b>\n          {{ data && data.washBeforeUse ? 'Wash before use.' : '' }}\n          {{ data && data.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}\n          {{ data && data.shakeWellBeforeUse ?  'Shake well before use.' : '' }}\n          {{ data && data.foodShouldBeDrainedBeforeConsumption ? 'Food should be drained before consumption.' : '' }}\n          {{ data && data.onceOpenedStoreInAnAirtightContainer ? 'Once opened, store in an airtight container.' : '' }}\n          {{ data && data.onceOpenedKeepRefrigerated  ? 'Once opened, keep refrigerated.' : '' }}\n          {{ data && data.consumeWithin ?  `Consume within ${data.consumeWithinDaysOfOpening || 0 } days of opening.` : '' }}\n          {{ data && data.thawBeforeCooking ? 'Thaw before cooking.' : '' }}\n          {{ data && data.cookFromFrozen ? 'Cook from frozen.': '' }}\n          {{ data && data.onceThawedDoNotRefreeze ? 'Once thawed, do not refreeze.' : '' }}\n          {{ data && data.onceThawedUseWithin ?  `Once thawed, use within ${data.onceThawedUseWithinHours} hours.`: '' }}\n          {{ data && data.thisIsARawProductAndMustBeCookedBeforeEating ? 'This is a raw product and must be cooked before eating.' : '' }}\n          {{ data && data.notSuitableForMicrowaveCooking ? 'Not suitable for microwave cooking.' : '' }}\n          {{ data && data.microwaveOn ? `Microwave on ${data.microwavePower || 'Low'} for ${data.microwaveOnPowerForMinuges || 0}`: '' }}\n          {{ data && data.cookFor ? `Cook for ${data.cookForTime} minutes at ${data.cookForTimeAtTemperature}` : '' }}\n          {{ data && data.cookUntilSteamingHotInTheMiddle ?  'Cook until steaming hot in the middle.' : '' }}\n          {{ data && data.cautionContentsMayBeHotAfterHeating ?  'Caution, contents may be hot after heating.' : '' }}\n          {{ data && data.allowToStandFor ? `Allow to stand for ${data.allowToStandForMinutesBeforeServing||0} minutes before serving.` : '' }}\n          {{ data && data.doNotRefrigerateOrReheatOnceHeated ? 'Do not refrigerate or reheat once heated.': '' }}\n          {{ data && data.careHasBeenTakenToRemoveAllBonesFromThisProductHoweverSomeBonesMayRemain ? 'Care has been taken to remove all bones from this product, however some bones may remain.' : '' }}\n          {{ data && data.otherDirectionsForUse ? `${otherDirectionsForUseDetails}` : '' }}\n          {{ data && data.cookingPreparationInstructions ? `${cookingPreparationInstructionsDetails}` : '' }}\n\n    </p>\n  </article>\n</section>",
+          "refreshOnChange": true,
           "tableView": false,
           "key": "theDirectionsOfUseShouldBeShown",
           "type": "htmlelement",
@@ -1997,10 +1960,10 @@
             {
               "label": "Fish <br><small class=\"hint\">   Except for isinglass derived from swim bladders and used as a clarifying agent in beer or wine   </small>",
               "tableView": false,
-              "key": "fishBrSmallClassHintExceptForIsinglassDerivedFromSwimBladdersAndUsedAsAClarifyingAgentInBeerOrWineSmall",
+              "defaultValue": false,
+              "key": "Fish",
               "type": "checkbox",
-              "input": true,
-              "defaultValue": false
+              "input": true
             },
             {
               "label": "Milk <br> <small class=\"hint\">   Other than alcohol distilled from whey   </small>",
@@ -2063,10 +2026,776 @@
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<style>\n.statement-label label {\n  font-weight:400;\n}\n</style>\n\n<div class=\"alert alert-instructions\" role=\"alert\"> <h2> <i class=\"fa fa-info-circle\"></i>\nThe ingredients should be shown on a food label as:\n\n</h2> \n<p class=\"wrap\">\n  The allergens should be shown on the food label as:\n</br>\nContains: {{_.keys(_.pickBy(data.container))}}\n</p>\n</div>",
+          "content": "<style>\n    .statement-label label {\n        font-weight: 400;\n    }\n\n</style>\n\n<div class=\"alert alert-instructions\" role=\"alert\">\n    <h2> <i class=\"fa fa-info-circle\"></i>\n        The ingredients should be shown on a food label as:\n    </h2>\n    <p class=\"wrap\">\n        The allergens should be shown on the food label as:\n        </br>\n        Contains: {{ data && data.container.Gluten ? 'Gluten, ' : '' }}\n        {{ data && data.container && data.container.Crustacea ? 'Crustacea, ' : '' }}\n        {{ data && data.container && data.container.Egg ? 'Egg, ' : '' }}\n        {{ data && data.container && data.container.Fish ? 'Fish, ' : '' }}\n        {{ data && data.container && data.container.Milk ? 'Milk, ' : '' }}\n        {{ data && data.container && data.container.Lupin ? 'Lupin, ' : '' }}\n        {{ data && data.container && data.container.Peanuts ? 'Peanuts, ' : '' }}\n        {{ data && data.container && data.container.Soybeans ? 'Soybeans, ' : '' }}\n        {{ data && data.container && data.container.Sesame ? 'Sesame seeds, ' : '' }}\n        {{ data && data.container && data.container.Sulphites ? 'Sulphites, ' : '' }}\n        {{ data && data.container && data.container.Tree_Nuts ? 'Tree nuts, ' : '' }}\n    </p>\n</div>",
           "refreshOnChange": true,
           "tableView": false,
-          "key": "html16",
+          "key": "html18",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<section>\n<h2>Warning and advisory statements</h2>\n<p>Select the food and ingredients from the list below to create warning and advisory statements.</p>\n</section>",
+          "refreshOnChange": false,
+          "tableView": false,
+          "key": "html12",
+          "type": "htmlelement",
+          "input": false
+        },
+        {
+          "label": "Columns",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Eggs and egg products",
+                  "tableView": false,
+                  "key": "eggsAndEggProducts",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Food additives and flavours",
+                  "tableView": false,
+                  "key": "foodAdditivesAndFlavours",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Honey and bee products",
+                  "tableView": false,
+                  "key": "honeyAndBeeProducts",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Legumes and pulses",
+                  "tableView": false,
+                  "key": "legumesAndPulses",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Milk, dairy and dairy alternatives",
+                  "tableView": false,
+                  "key": "milkDairyAndDairyAlternatives",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Oils and margarine",
+                  "tableView": false,
+                  "key": "oilsAndMargarine",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 6,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            },
+            {
+              "components": [
+                {
+                  "label": "Fish, crustacea and seafood",
+                  "tableView": false,
+                  "key": "fishCrustaceaAndSeafood",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Food containing alcohol",
+                  "tableView": false,
+                  "key": "foodContainingAlcohol",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Kava and kava root",
+                  "tableView": false,
+                  "key": "kavaAndKavaRoot",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Meat and meat products",
+                  "tableView": false,
+                  "key": "meatAndMeatProducts",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Non-alcoholic drinks",
+                  "tableView": false,
+                  "key": "nonAlcoholicDrinks",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                },
+                {
+                  "label": "Salt and salt substitutes",
+                  "tableView": false,
+                  "key": "saltAndSaltSubstitutes",
+                  "type": "checkbox",
+                  "input": true,
+                  "defaultValue": false,
+                  "hideOnChildrenHidden": false
+                }
+              ],
+              "width": 6,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md"
+            }
+          ],
+          "customClass": "statement-label",
+          "tableView": false,
+          "key": "columns",
+          "type": "columns",
+          "input": false
+        },
+        {
+          "label": "InformationContainer",
+          "customClass": "statement-label",
+          "tableView": false,
+          "key": "informationContainer",
+          "type": "container",
+          "input": true,
+          "components": [
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Eggs and egg products</h3>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html",
+              "conditional": {
+                "show": true,
+                "when": "eggsAndEggProducts",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Unpasteurised egg products",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "egg",
+              "conditional": {
+                "show": true,
+                "when": "eggsAndEggProducts",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Fish, crustacea and seafood</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html1",
+              "conditional": {
+                "show": true,
+                "when": "fishCrustaceaAndSeafood",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Raw fish that has been <b>formed</b> to look like a cut or fillet of fish using a binding system, without the application of heat, whether coated or not.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "formed_fish",
+              "conditional": {
+                "show": true,
+                "when": "fishCrustaceaAndSeafood",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Raw fish that has been <b>joined</b> to look like a cut or fillet of fish using a binding system, without the application of heat, whether coated or not.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "joined_fish",
+              "conditional": {
+                "show": true,
+                "when": "fishCrustaceaAndSeafood",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Food additives and flavours</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html2",
+              "conditional": {
+                "show": true,
+                "when": "foodAdditivesAndFlavours",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Contains one or more of the following substances, either alone or in combination, at a level of, or in excess of 10 g/100 g",
+              "description": "<ul>\n  <li>\n    lactitol\n    </li>\n  <li>\n    maltitol\n    </li>\n    <li>\n      maltitol syrup\n      </li>\n      <li>\n        mannitol\n        </li>\n        <li>\n          xylitol\n          </li>\n  </ul>",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "alcohol_10G100G",
+              "conditional": {
+                "show": true,
+                "when": "foodAdditivesAndFlavours",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Contains one or more of the following substances, either alone, or in combination, at a level or in excess of 25 g/100 g",
+              "description": "<ul>\n  <li>\n    erythritol\n    </li>\n  <li>\n    isomalt\n    </li>\n    <li>\n      polydextrose\n      </li>\n      <li>\n        sorbitol\n        </li>\n  </ul>",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "alcohol_25G100G",
+              "conditional": {
+                "show": true,
+                "when": "foodAdditivesAndFlavours",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Contains one or more of the following substances in combination at a level of or in excess of 10 g/100 g",
+              "description": "<ul>\n  <li>\n    erythritol\n    </li>\n  <li>\n    isomalt\n    </li>\n    <li>\n      lactitol\n      </li>\n      <li>\n        maltitol\n        </li>\n        <li>\n          maltitol syrup\n          </li>\n     <li>\n       mannitol\n      </li>\n      <li>\n        polydextrose\n        </li>\n        <li>\n          sorbitol\n          </li>       \n          <li>\n            xylitol\n            </li>\n  </ul>",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "alcohol_comb_10G100G",
+              "conditional": {
+                "show": true,
+                "when": "foodAdditivesAndFlavours",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Aspartame or aspartame-acesulphame salt",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "aspartame",
+              "conditional": {
+                "show": true,
+                "when": "foodAdditivesAndFlavours",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Added phytosterols, phytostanols or their esters.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "phytosterols",
+              "conditional": {
+                "show": true,
+                "when": "foodAdditivesAndFlavours",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Quinine",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "quinine",
+              "conditional": {
+                "show": true,
+                "when": "foodAdditivesAndFlavours",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Guarana or extracts of guarana",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "guarana",
+              "conditional": {
+                "show": true,
+                "when": "foodAdditivesAndFlavours",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Food containing alcohol</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html3",
+              "conditional": {
+                "show": true,
+                "when": "foodContainingAlcohol",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "A food (including an alcoholic beverage) that contains more than 1.15% alcohol by volume",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "Alcohol",
+              "conditional": {
+                "show": true,
+                "when": "foodContainingAlcohol",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "If selected, describe the nature of the process:",
+              "autoExpand": true,
+              "tableView": true,
+              "key": "ifSelectedAlcohol",
+              "conditional": {
+                "show": true,
+                "when": "foodContainingAlcohol",
+                "eq": "true"
+              },
+              "type": "textarea",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Honey and bee products</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html4",
+              "conditional": {
+                "show": true,
+                "when": "honeyAndBeeProducts",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Bee pollen",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "bee_pollen",
+              "conditional": {
+                "show": true,
+                "when": "honeyAndBeeProducts",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Propolis",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "propolls",
+              "conditional": {
+                "show": true,
+                "when": "honeyAndBeeProducts",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Royal jelly",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "royal_jelly",
+              "conditional": {
+                "show": true,
+                "when": "honeyAndBeeProducts",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Kava and kava root</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html5",
+              "conditional": {
+                "show": true,
+                "when": "kavaAndKavaRoot",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Dried or raw kava root",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "kava_dry",
+              "conditional": {
+                "show": true,
+                "when": "kavaAndKavaRoot",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "A beverage obtained by the aqueous suspension of kava root using cold water only, and not using any organic solvent",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "kava_root",
+              "conditional": {
+                "show": true,
+                "when": "kavaAndKavaRoot",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Legumes and pulses</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html6",
+              "conditional": {
+                "show": true,
+                "when": "legumesAndPulses",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Milk, or an equivalent beverage made from soy, that contains no more than 2.5% m/m fat.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "milk_falt",
+              "conditional": {
+                "show": true,
+                "when": "legumesAndPulses",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Evaporated milk, dried milk, or an equivalent product made from soy, that, when reconstituted as a beverage according to directions for direct consumption, contains no more than 2.5% m/m fat.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "evaporated_milk",
+              "conditional": {
+                "show": true,
+                "when": "legumesAndPulses",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Meat and meat products</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html7",
+              "conditional": {
+                "show": true,
+                "when": "meatAndMeatProducts",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Raw meat that has been <b> formed </b>to look like of a cut of meat, whether coated or not, using a binding system without the application of heat.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "formed_meat",
+              "conditional": {
+                "show": true,
+                "when": "meatAndMeatProducts",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Raw meat that has been <b>joined</b> to look like of a cut of meat, whether coated or not, using a binding system without the application of heat.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "joined_meat",
+              "conditional": {
+                "show": true,
+                "when": "meatAndMeatProducts",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Milk, dairy and dairy alternatives</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html8",
+              "conditional": {
+                "show": true,
+                "when": "milkDairyAndDairyAlternatives",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Unpasteurised milk",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "unpasteurised_milk",
+              "conditional": {
+                "show": true,
+                "when": "milkDairyAndDairyAlternatives",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Unpasteurised liquid milk products",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "unpasteurised_product",
+              "conditional": {
+                "show": true,
+                "when": "milkDairyAndDairyAlternatives",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Milk, or an equivalent beverage made from soy, that contains no more than 2.5% m/m fat.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "soy_milk",
+              "conditional": {
+                "show": true,
+                "when": "milkDairyAndDairyAlternatives",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Evaporated milk, dried milk, or an equivalent product made from soy, that, when reconstituted as a beverage according to directions for direct consumption, contains no more than 2.5% m/m fat.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "evap_milk",
+              "conditional": {
+                "show": true,
+                "when": "milkDairyAndDairyAlternatives",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Non-alcoholic drinks</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html9",
+              "conditional": {
+                "show": true,
+                "when": "nonAlcoholicDrinks",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "A cola beverage that contains added caffeine",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "cola_caffeine",
+              "conditional": {
+                "show": true,
+                "when": "nonAlcoholicDrinks",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "A food that contains a cola beverage that also contains added caffeine as an ingredient.",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "ingredient_caffeine",
+              "conditional": {
+                "show": true,
+                "when": "nonAlcoholicDrinks",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "Bottled water presented that contains added fluoride",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "added_fluoride",
+              "conditional": {
+                "show": true,
+                "when": "nonAlcoholicDrinks",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Oils and margarine</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html10",
+              "conditional": {
+                "show": true,
+                "when": "oilsAndMargarine",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Edible oil where",
+              "description": "<ul>\n  <li>\n    the label lists the specific source name of the oil, and\n  </li>\n    <li>\nthe oil has undergone a process that has altered its fatty acid composition (e.g.: hydrogenation)  </li>\n</ul>",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "edible_oil",
+              "conditional": {
+                "show": true,
+                "when": "oilsAndMargarine",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "If selected, describe the nature of the process:",
+              "autoExpand": true,
+              "tableView": true,
+              "key": "ifSelectedOil",
+              "conditional": {
+                "show": true,
+                "when": "oilsAndMargarine",
+                "eq": "true"
+              },
+              "type": "textarea",
+              "input": true
+            },
+            {
+              "label": "HTML",
+              "attrs": [{ "attr": "", "value": "" }],
+              "content": "<h4>Salt and salt substitutes</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+              "refreshOnChange": false,
+              "tableView": false,
+              "key": "html11",
+              "conditional": {
+                "show": true,
+                "when": "saltAndSaltSubstitutes",
+                "eq": "true"
+              },
+              "type": "htmlelement",
+              "input": false
+            },
+            {
+              "label": "Reduced sodium salt mixtures and salt substitutes",
+              "tableView": false,
+              "defaultValue": false,
+              "key": "salt_subs",
+              "conditional": {
+                "show": true,
+                "when": "saltAndSaltSubstitutes",
+                "eq": "true"
+              },
+              "type": "checkbox",
+              "input": true
+            },
+            {
+              "label": "If selected, describe the nature of the process:",
+              "autoExpand": true,
+              "tableView": true,
+              "key": "ifSelectedSalt",
+              "conditional": {
+                "show": true,
+                "when": "saltAndSaltSubstitutes",
+                "eq": "true"
+              },
+              "type": "textarea",
+              "input": true
+            }
+          ]
+        },
+        {
+          "label": "HTML",
+          "attrs": [{ "attr": "", "value": "" }],
+          "content": "<style>\n    .statement-label label {\n        font-weight: 400;\n    }\n\n</style>\n\n<div class=\"alert alert-instructions\" role=\"alert\">\n    <h2><i class=\"fa fa-info-circle\"></i>The statements should be shown on the food label as:\n    </h2>\n    <p class=\"wrap\">\n    </br>\n        {{ data && data.informationContainer.egg ? 'The product is unpasteurised.' : '' }}\n        {{ data && data.informationContainer && (data.informationContainer.alcohol_10G100G || data.informationContainer.alcohol_25G100G || data.informationContainer.alcohol_comb_10G100G) ? 'Excess consumption may have a laxative effect.' : '' }}\n        {{ data && data.informationContainer && data.informationContainer.aspartame ? 'This product contains phenylalanine.' : '' }}\n        {{ data && data.informationContainer && data.informationContainer.phytosterols ? 'This product should be consumed as part of a healthy diet.This product may not be suitable for children under 5 years and pregnant or lactating women.Plant sterols do not provide additional benefits when consumed in excess of 3 grams per day.' : '' }}\n        {{ data && data.informationContainer && data.informationContainer.quinine ? 'This product contains quinine.' : '' }}\n        {{ data && data.informationContainer && data.informationContainer.guarana ? 'This product contains caffeine.' : '' }}\n        {{ data && data.informationContainer && data.informationContainer.bee_pollen ? 'The product contains bee pollen which can cause severe allergic reactions.' : '' }}\n        {{ data && data.informationContainer && data.informationContainer.propolls ? 'The product contains propolis which can cause severe allergic reactions.' : '' }}\n        {{ data && data.informationContainer && data.informationContainer.royal_jelly ? 'This product contains royal jelly which has been reported to cause severe allergic reactions and in rare cases,fatalities, especially in asthma and allergy sufferers.' : '' }}\n        {{ data && data.informationContainer && (data.informationContainer.milk_falt || data.informationContainer.evaporated_milk || data.informationContainer.soy_milk || data.informationContainer.evap_milk)? 'The product is not suitable as a complete milk replacement for children under 2 years.' : '' }}\n        {{ data && data.informationContainer && (data.informationContainer.unpasteurised_product || data.informationContainer.unpasteurised_milk) ? 'The product has not been pasteurised.' : '' }}\n        {{ data && data.informationContainer && (data.informationContainer.formed_fish || data.informationContainer.formed_meat) ? 'This food is formed.' : '' }}\n        {{ data && data.informationContainer && (data.informationContainer.joined_fish || data.informationContainer.joined_meat) ? 'This food is joined.' : '' }}\n        {{ data && data.informationContainer && (data.informationContainer.kava_dry || data.informationContainer.kava_root) ? 'Use in moderation.May cause drowsiness.' : '' }}\n        {{ data && data.informationContainer && (data.informationContainer.cola_caffeine || data.informationContainer.ingredient_caffeine) ? 'The product contains caffeine.' : '' }}\n        {{ data && data.informationContainer && data.informationContainer.added_fluoride ? 'The product contains added fluoride.' : '' }}\n    </p>\n</div>",
+          "refreshOnChange": true,
+          "tableView": false,
+          "key": "html17",
           "type": "htmlelement",
           "input": false
         }
@@ -2155,7 +2884,7 @@
     }
   ],
   "revisions": "current",
-  "_vid": 228,
+  "_vid": 270,
   "title": "LB",
   "display": "wizard",
   "access": [
@@ -2198,6 +2927,6 @@
   "path": "formwizard",
   "project": "5f44969319d1a97a819d80a7",
   "created": "2020-10-07T02:38:04.620Z",
-  "modified": "2020-11-17T06:47:36.290Z",
+  "modified": "2020-11-18T06:45:19.607Z",
   "machineName": "fesrqwsyzlbtegd:lbReplace"
 }
