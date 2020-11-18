@@ -1,0 +1,296 @@
+{
+  "_id": "5faa06f2db0aba65bfc62546",
+  "type": "form",
+  "tags": [],
+  "owner": "5f3ccdbde35dab29a5bc1e88",
+  "components": [
+    {
+      "label": "email",
+      "key": "email",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "date",
+      "calculateValue": "moment.locale('en-au');\nvalue = moment().format('L');",
+      "calculateServer": true,
+      "key": "date",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "secureToken",
+      "key": "secureToken",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "topicName",
+      "key": "topicName",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "sendEmail",
+      "key": "sendEmail",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "adminEmail",
+      "key": "adminEmail",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "IngredientData",
+      "key": "IngredientData",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "address",
+      "key": "address",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<style>@media print{body{margin:40px}h1,h2,h3,h4,h5,h6{font-weight:700}p{margin:10px 0}a{text-decoration:underline}.link-style,a{color:#185889!important}.link-style{font-weight:700}.alert.alert-success{font-weight:400;color:#000;margin:0;border-radius:0;padding:.75rem 1.25rem;border:none;border-left:5px solid #9ebf6d;background-color:#f2f7ea}.product-sheet-row{display:flex;flex-direction:row;padding:20px 10px}.product-sheet-row.secondary{background-color:#f6f6f6}.product-sheet-row div{text-align:left;width:50%}.product-sheet-row img{display:block}.example-label{padding:10px;border:2px solid #000;display:flex;flex-direction:row}.example-label .eg-col{width:33%;display:flex;flex-direction:column;justify-content:space-between}.example-label .eg-col img{height:auto;width:100%}.formio-component-radio label{display:none}.formio-component-radio .form-radio{display:flex;flex-direction:row}.formio-component-radio .form-radio .form-check{flex-grow:2;padding:20px 10px;margin:5px;border-radius:5px;border:1px solid #979797;background-color:#fff}.formio-component-radio .form-radio .form-check .form-check-label{display:flex;align-items:center}.formio-component-radio .form-radio .form-check .form-check-label .form-check-input{position:relative;margin:0}.formio-component-radio .form-radio .form-check .form-check-label input[type=radio]:after{width:24px;height:24px;border-radius:24px;top:-3px;position:relative;background-color:#fff;content:\"\";display:inline-block;visibility:visible;border:1px solid #979797}.formio-component-radio .form-radio .form-check .form-check-label input[type=radio]:checked:after{width:21px;height:21px;background-color:#4a4a4a;border:4px solid #fff}.formio-component-radio .form-radio .form-check .form-check-label span{margin:0 20px}.formio-component-radio .form-radio .form-check .radio input[type=radio]:after{background-color:#007eb1;color:#fff}.radio input[type=radio]:after{background-color:#007eb1;color:#fff}.alert.alert-info{border:none;border-left:5px solid #005e85;background-color:#eef3f6}.qg-card{flex-direction:column}[hidden]{display:none!important}hr.notes{padding-top:20px}.alert.alert-danger,.alert.alert-info,.alert.alert-success,.alert.alert-tip,.alert.alert-warning{font-weight:400;color:#000;margin:0;border-radius:0}.alert.alert-danger h2 i,.alert.alert-info h2 i,.alert.alert-success h2 i,.alert.alert-tip h2 i,.alert.alert-warning h2 i{margin-right:10px}.qg-card{margin-bottom:2rem;display:flex}.qg-card.card__full-width{padding:0!important}.qg-card .content .details{padding:1em}.qg-card.card__light-theme .content .details{color:#000}.qg-card.card__light-theme .content{background:none}.qg-card .content{width:100%;border:1px solid #d3d3d3;position:relative;overflow:hidden;border-radius:4px}h3{margin-bottom:12px;font-size:1.125rem}p{margin-bottom:.75rem}.qg-card.card__light-theme .content .qg-card__footer{border-top:1px solid #d3d3d3}.qg-card .qg-card__footer{padding:1em}.formio-component-radio .form-radio .form-check.radio-selected{background-color:#007eb1;color:#fff}.kyfb-header{display:flex}.kyfb-header>.kyfb-heading{flex-grow:2;text-align:center}.kyfb-email,.qg-card__footer a,.resource-url{color:#005e85}.question-margin{margin-top:40px;margin-bottom:0}.required-element:after{content:\"*\";color:#f85c50}}</style>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html",
+      "conditional": { "show": false },
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"kyfb-header\">\n  <div class=\"kyfb-date\">\n    {{ moment().format(\"DD/MM/YYYY\")}} \n  </div>\n  <div class=\"kyfb-heading\"> \n  Label Buster | Health and wellbeing | Queensland Government\n  </div>\n</div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html1",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div id=\"header-footer\">\n    <div id=\"header\">\n\n<!--\n        <img class=\"headerImage\" src=\"qld-coat-of-arms.png\"/> \n-->\n<img style=\"height:20%; width:20%;padding-top:10px;padding-left:50px\"; src=\"data:image/png;base64,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LmFkb2JlLmNvbS94YXAvMS4wLyIKICAgeG1wTU06RG9jdW1lbnRJRD0iZ2ltcDpkb2NpZDpnaW1wOmViM2M5ZmQ5LTBlNmUtNGY0MS1iOTAwLTA1YTY0MjE2YjRjOSIKICAgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4OTlkODFlNC04OTMzLTRkMjYtYjYyMC1iYTFkOWIyYjJmNDIiCiAgIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpmOTRhM2I3MS0wN2Q3LTRmNzMtOTYwNS01N2QwNDhkM2U2ZTkiCiAgIEdJTVA6QVBJPSIyLjAiCiAgIEdJTVA6UGxhdGZvcm09IldpbmRvd3MiCiAgIEdJTVA6VGltZVN0YW1wPSIxNTk0Nzg5MjU4NjM4MzM0IgogICBHSU1QOlZlcnNpb249IjIuMTAuMTQiCiAgIGRjOkZvcm1hdD0iaW1hZ2UvcG5nIgogICB4bXA6Q3JlYXRvclRvb2w9IkdJTVAgMi4xMCI+CiAgIDxpcHRjRXh0OkxvY2F0aW9uQ3JlYXRlZD4KICAgIDxyZGY6QmFnLz4KICAgPC9pcHRjRXh0OkxvY2F0aW9uQ3JlYXRlZD4KICAgPGlwdGNFeHQ6TG9jYXRpb25TaG93bj4KICAgIDxyZGY6QmFnLz4KICAgPC9pcHRjRXh0OkxvY2F0aW9uU2hvd24+CiAgIDxpcHRjRXh0OkFydHdvcmtPck9iamVjdD4KICAgIDxyZGY6QmFnLz4KICAgPC9pcHRjRXh0OkFydHdvcmtPck9iamVjdD4KICAgPGlwdGNFeHQ6UmVnaXN0cnlJZD4KICAgIDxyZGY6QmFnLz4KICAgPC9pcHRjRXh0OlJlZ2lzdHJ5SWQ+CiAgIDx4bXBNTTpIaXN0b3J5PgogICAgPHJkZjpTZXE+CiAgICAgPHJkZjpsaQogICAgICBzdEV2dDphY3Rpb249InNhdmVkIgogICAgICBzdEV2dDpjaGFuZ2VkPSIvIgogICAgICBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmVlOWQyOWExLTA1OTYtNDcwNS1iODBhLTFhNTAwMzM4ZWQ2MSIKICAgICAgc3RFdnQ6c29mdHdhcmVBZ2VudD0iR2ltcCAyLjEwIChXaW5kb3dzKSIKICAgICAgc3RFdnQ6d2hlbj0iMjAyMC0wNy0xNVQxNTowMDo1OCIvPgogICAgPC9yZGY6U2VxPgogICA8L3htcE1NOkhpc3Rvcnk+CiAgIDxwbHVzOkltYWdlU3VwcGxpZXI+CiAgICA8cmRmOlNlcS8+CiAgIDwvcGx1czpJbWFnZVN1cHBsaWVyPgogICA8cGx1czpJbWFnZUNyZWF0b3I+CiAgICA8cmRmOlNlcS8+CiAgIDwvcGx1czpJbWFnZUNyZWF0b3I+CiAgIDxwbHVzOkNvcHlyaWdodE93bmVyPgogICAgPHJkZjpTZXEvPgogICA8L3BsdXM6Q29weXJpZ2h0T3duZXI+CiAgIDxwbHVzOkxpY2Vuc29yPgogICAgPHJkZjpTZXEvPgogICA8L3BsdXM6TGljZW5zb3I+CiAgPC9yZGY6RGVzY3JpcHRpb24+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz5zXavWAAAACXBIWXMABJPgAAST4AGIAg1vAAAAB3RJTUUH5AcPBQA6a4UkKwAAGWhJREFUeNrtfe153Lqu9dr7uf833goOU0GYCoypwEwFoSuIXAHtCmRXwEkFGldAuQIqFVCpgDoV4P1Bfc5H4uzknrtzHP7I42hGlLQEEMACwPlD8N2jv7+ywO1Hhd9jHH9+/yn7N3sD4F9vbobf+P1tGNsbVATAYP/+N35/G8Z7aAcAyqFtfwNYxh/fszb2RDi8N55GuXxPkYYOmn7jKC8ekQGXSOflCBmxgJNXPy7DmI9RJBDAiKtjHg0B6jeMF9fG9nb7/2E3VBlonV4dfMbtAOofjk/u3re/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\"/>\n    </div>\n</div>\n<hr>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html45",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<br><br><h2>Your Label</h2><div class=\"alert alert-success\" role=\"alert\"> <h2> <i class=\"fa fa-check-circle\"></i>Congratulations! You have completed all the steps in Label Buster. </h2> <p> Using your responses to each question, Label Buster has generated a product sheet and an example food label. </p> </div><p> Label Buster is a brief guide to help you understand your labelling requirements. You may choose to get advice from a labelling consultant to make sure that your label complies with the Food Standards Code. </p>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html2",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<h2>Product sheet</h2>\n<p>\n  You can take this information to a printer or graphic designer to create a\n  label or use your own tools/templates. When creating your food label, you must\n  ensure you meet the <a>legibility requirements</a>, such as minimum type size.\n</p>\n\n<div class=\"product-sheet-row\">\n  <div>\n    <strong>Food name and description</strong>\n  </div>\n  <div>placeholder</div>\n</div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html3",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Business details</strong>\n    </div>\n    <div>\n      {{data.address || 'no data provided'}}\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html6",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n    <div>\n      <strong>Ingredients</strong>\n    </div>\n    <div><b>Ingredients:</b> {{data.IngredientData.map((data) => ' ' + data.ingredient) || 'no data provided'}}</div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html7",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\"> <div> <strong>Weight</strong> </div> <div> For information on how to comply with weights and measures laws visit the <a href=\"https://www.measurement.gov.au\">National Measurement Institute (www.measurement.gov.au)</a> </div> </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html8",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n  <div>\n    <strong>Nutritional information panel</strong>\n  </div>\n  <div>\n    A Nutrition Informational Panel must be added to your food label. The\n    <a\n      >Food Standards Australia New Zealand nutrition panel calculator\n      (https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx</a\n    >\n    can help you prepare your nutrition information panel.\n    <img\n      src=\"https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png\"\n      alt=\"\"\n      class=\"src\"\n    />\n  </div>\n</div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html9",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Statement and declarations</strong>\n    </div>\n    <div>\n      <p><b>Contains:</b> {{data.allergens || 'no data provided'}}\n      </br>\n      Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum\n      size of type of 1.5 mm is required.</p>\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html10",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n    <div>\n      <strong>Date marks</strong>\n    </div>\n    <div>Best Before: {{data.bestBefore || 'no data provided'}}</div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html11",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Lot identification</strong>\n    </div>\n    <div>\n      {{data.batch || 'no data provided'}}\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html12",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n    <div>\n      <strong>Storage conditions and directions for use</strong>\n    </div>\n    <div><p>\n      <b>Storage conditions: </b> {{data.storageConditions || 'no data provided'}}\n      </br>\n      <b>Directions for use:</b> {{data.directions || 'no data provided'}}\n    </p></div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html13",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Claims</strong>\n    </div>\n    <div>\n      <p>Making voluntary claims about your food is very complex and you are recommended to seek professional\n        advice.\n        </br>\n        Please note, that making a claim on your food has other requirements not addressed in Label Buster such as\n        additional sections in your nutritional information panel and requirements under Australian Consumer Law.\n      </p>\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html15",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row\">\n    <div>\n      <strong>Country of origin</strong>\n    </div>\n    <div>Information on how to calculate and display mandatory <a\n      href=\"https://www.accc.gov.au/business/advertising-promoting-your-business/country-of-origin-claims/country-of-origin-food-labelling\">country\n      of origin can be found on the\n      Australian Competition and Consumer Commission website. </a></div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html14",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Health star rating</strong>\n    </div>\n    <div>\n      Information on how to calculate and display a voluntary <a\n            href=\"https://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/Content/guide-for-industry-document\">health\n            star rating can be found at the\n            health star rating system website.</a>\n    </div>\n  </div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html16",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<h2>Example food label</h2><p> Below is an example of what your label could look like, using the informaiton you provided in Label Buster.\n</p><div class=\"example-label\"> <div class=\"eg-col\"> <h3>Product name</h3> <p>Product description</p> <div> <p> <strong>Storage conditions:</strong> Keep refrigerated at 1 degree to 5 degree. Shake well before opening. Store in an upright position. </p> <p> <strong>Directions for use:</strong> Consume within 2 days of opening. </p> </div> <div> <p><strong>Best before:</strong> 05 / 04 / 2021</p> <p><strong>Lot identification:</strong> Batch 42</p> </div> </div> <div class=\"eg-col\"> <div> <p> <strong>Ingredients:</strong> {{data.IngredientData.map((data) => data.ingredient)}} </p> <p> <strong>Contains:</strong> list items </p> </div> <div class=\"address-block\"> Address line one <br> Address line two <br> Address line three </div> </div> <div class=\"eg-col\"> <img src=\"https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png\" alt=\"example food label\" class=\"src\"> </div>\n</div>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html4",
+      "type": "htmlelement",
+      "input": false
+    },
+    {
+      "label": "HTML",
+      "attrs": [{ "attr": "", "value": "" }],
+      "content": "<h2>Legibility requirements</h2><p> All required words, statements, expressions or designs provided on a food label must be in English, be legible, and be prominent so as to contrast distinctly with the background of the label.\n</p><p> Information in other language is permitted, provided it does not negate or contradict the English information.\n</p><p> No specific print type or size is defined for general labelling requirements, however:\n</p><ul> <li> warning statements must be in a type size of at least 3mm (or 1.5mm on small packages) </li> <li> A print size is prescribed in the Food Standards Code for some foods where a required statement must be shown (e.g. infant formula). </li>\n</ul><h3>Exemptions</h3><p> All of the food label information needs to be included on your food label, except for:\n</p><ul> dynamically generated list of Exemptions\n</ul><br><br><br><br><p> <strong>Copyright</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/copyright/)</span>\n</p><p> <strong>Disclaimer</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/disclaimer/)</span>\n</p><p> <strong>Privacy</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/privacy/)</span>\n</p><p> <strong>Right to information</strong> <span class=\"link-style\">(https://www.qld.gov.au/right-to-information/)</span>\n</p><br><br><br><p> <strong>© The State of Queensland 1995-2020</strong>\n</p><p> <strong>Queensland Government</strong> <span class=\"link-style\">(https://www.qld.gov.au/)</span>\n</p>",
+      "refreshOnChange": false,
+      "tableView": false,
+      "key": "html5",
+      "type": "htmlelement",
+      "input": false
+    }
+  ],
+  "revisions": "current",
+  "_vid": 35,
+  "title": "LB - PDF",
+  "display": "form",
+  "access": [
+    { "roles": [], "type": "create_own" },
+    { "roles": [], "type": "create_all" },
+    { "roles": [], "type": "read_own" },
+    {
+      "roles": [
+        "5f44969319d1a9d9029d80a8",
+        "5f44969319d1a96eeb9d80a9",
+        "5f44969319d1a9ffc69d80aa"
+      ],
+      "type": "read_all"
+    },
+    { "roles": [], "type": "update_own" },
+    { "roles": [], "type": "update_all" },
+    { "roles": [], "type": "delete_own" },
+    { "roles": [], "type": "delete_all" },
+    { "roles": [], "type": "team_read" },
+    { "roles": [], "type": "team_write" },
+    { "roles": [], "type": "team_admin" }
+  ],
+  "submissionAccess": [
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "create_own" },
+    { "roles": [], "type": "create_all" },
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "read_own" },
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "read_all" },
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "update_own" },
+    { "roles": ["5f44969319d1a9ffc69d80aa"], "type": "update_all" },
+    { "roles": [], "type": "delete_own" },
+    { "roles": [], "type": "delete_all" },
+    { "roles": [], "type": "team_read" },
+    { "roles": [], "type": "team_write" },
+    { "roles": [], "type": "team_admin" }
+  ],
+  "controller": "",
+  "properties": {},
+  "settings": {
+    "hideTitle": true,
+    "footer": "<html>\n<style>\nfooter{\n  font-size: 7px;\n  line-height: 100px;\n  margin-left: 10px;\n}\ndiv.pageNumbers {\n  float: right;\n  margin-right: 10px;\n}\n</style>\n<footer>\n    https://www.qld.gov.au/health/staying-healthy/food-pantry/label-buster\n<div class=\"pageNumbers\"><span class=\"pageNumber\"></span>/<span class=\"totalPages\"></span></div>\n</footer>\n</html>"
+  },
+  "name": "lbPdf",
+  "path": "lbpdf",
+  "project": "5f44969319d1a97a819d80a7",
+  "created": "2020-11-10T03:20:18.793Z",
+  "modified": "2020-11-16T06:56:43.375Z",
+  "machineName": "fesrqwsyzlbtegd:lbPdf"
+}
