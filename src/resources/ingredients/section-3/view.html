@@ -1,7 +1,20 @@
-<div class="alert alert-instructions" role="alert">
-  <h2>
-    <i class="fa fa-info-circle"></i>
-    The ingredients should be shown on a food label as:
-  </h2>
-  <p>Ingredients: (To be dynamic)</p>
-</div>
+<section class="qg-callout__box">
+  <div class="qg-callout__header col-12">
+    <span class="qg-callout__icon">
+      <i class="fa fa-info-circle"></i>
+    </span>
+    <h2 class="qg-callout__title">
+      The ingredients should be shown on a food label as:
+    </h2>
+  </div>
+
+  <div class="qg-callout__content col-12">
+    <div class="qg-callout__bottom-alignment">
+      <div class="qg-callout__description">
+        <p class="wrap">
+          Ingredients: {{data.IngredientData.map((data) => data.ingredient)}}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
