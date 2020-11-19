@@ -1,0 +1,29 @@
+<section>
+  <article class="qg-callout__box qg-callout__grey-theme">
+    <div class="qg-callout__header col-12">
+      <span class="qg-callout__icon">
+        <i class="fa fa-info-circle"></i>
+      </span>
+      <h2 class="qg-callout__title">
+        The storage conditions should be shown on the food label as:
+      </h2>
+    </div>
+    <div class="qg-callout__content col-12">
+      <div class="qg-callout__bottom-alignment">
+        <div class="qg-callout__description">
+          <p>
+            <b>Storage conditions:</b>
+            {{ data && data.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
+            {{ data && data.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
+            {{ data && data.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
+            {{ data && data.keepRefrigeratedAt ? `Keep refrigerated at ${data.keepRefrigeratedAtMinimum || 0} °C to ${data.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
+            {{ data && data.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.keepRefrigeratedAtOrBelowTemperature || 0}.` : '' }}
+            {{ data && data.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
+            {{ data && data.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
+            {{ data && data.otherPleaseEnter ? data.otherPleaseEnterDetails : '' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
