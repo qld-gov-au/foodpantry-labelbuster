@@ -7,13 +7,13 @@
     </h2>
     <p class="wrap">
       <b>Storage conditions:</b>
-      {{ data && data.storeInCoolDryConditions ? 'Store in cool dry conditions' : '' }}
+      {{ data && data.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
       {{ data && data.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
       {{ data && data.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
-      {{ data && data.keepRefrigeratedAt ? `Keep refrigerated at ${data.keepRefrigeratedAtMinimum || 0} °C to ${data.keepRefrigeratedAtMaximum || 0} °C` : '' }}
-      {{ data && data.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.keepRefrigeratedAtOrBelowTemperature || 0}` : '' }}
+      {{ data && data.keepRefrigeratedAt ? `Keep refrigerated at ${data.keepRefrigeratedAtMinimum || 0} °C to ${data.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
+      {{ data && data.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.keepRefrigeratedAtOrBelowTemperature || 0}.` : '' }}
       {{ data && data.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
-      {{ data && data.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.'  : '' }}
+      {{ data && data.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
       {{ data && data.otherPleaseEnter ? data.otherPleaseEnterDetails : '' }}
     </p>
   </article>
