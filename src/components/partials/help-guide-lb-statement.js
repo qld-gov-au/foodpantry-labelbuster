@@ -43,15 +43,31 @@ export default () => html`
                 <p><b>Further reading</b></br>
                     <i>Australia New Zealand Food Standards Code</i>
                 <ul>
-                    <li>Standard 1.2.3 Information requirements – warning statements, advisory statements and declarations</li>
-                    <li>Schedule 9 Mandatory advisory statements</li>
+                    <li>
+                    <a 
+                    href="https://www.legislation.gov.au/Details/F2017C00418" 
+                    target="_blank">
+                    Standard 1.2.3
+                    </a> 
+                    Information requirements – warning statements, advisory statements and declarations</li>
+                    <li>
+                    <a 
+                    href="https://www.legislation.gov.au/Details/F2016C00827"
+                    target="_blank">
+                    Schedule 9
+                    </a> 
+                     Mandatory advisory statements</li>
                 </ul>
                 </p>
                 <p>
                     Food Standards Australia and New Zealand
                 <ul>
                     <li>
+                    <a 
+                    href="https://www.foodstandards.gov.au/code/userguide/Documents/Guide%20to%201.2.3%20-%20Warning%20and%20Advisory%20Statements.pdf"
+                    target="_blank">
                         User Guide – Warning and Advisory Statements and Declarations
+                    </a>
                     </li>
                 </ul>
                 </p>
@@ -93,21 +109,36 @@ export default () => html`
                     <i>Australia New Zealand Food Standards Code</i>
                 <ul>
                     <li>
-                    Standard 1.2.1 Requirement to have labels or otherwise provide information
+                    <a 
+                    href="https://www.legislation.gov.au/Series/F2015L00386"
+                    target="_blank">
+                        Standard 1.2.1
+                    </a> 
+                    Requirement to have labels or otherwise provide information
                     <ul>
-                        <li>
+                        <li>          
                         See section 1.2.1—6 When the food for sale must bear a label
                         </li>
                     </ul>
                     </li>
-                    <li>Standard 1.2.3 Information requirements – warning statements, advisory statements and declarations</li>
+                    <li>
+                    <a 
+                    href="https://www.legislation.gov.au/Details/F2017C00418"
+                    target="_blank">
+                    Standard 1.2.3 
+                    </a>
+                    Information requirements – warning statements, advisory statements and declarations</li>
                 </ul>
                 </p>
                 <p>
                     Food Standards Australia and New Zealand
                 <ul>
                     <li>
-                        User Guide – Warning and Advisory Statements and Declarations
+                    <a 
+                    href="https://www.foodstandards.gov.au/code/userguide/Documents/Guide%20to%201.2.3%20-%20Warning%20and%20Advisory%20Statements.pdf"
+                    target="_blank">
+                    User Guide – Warning and Advisory Statements and Declarations
+                    </a>
                     </li>
                 </ul>
                 </p>
@@ -142,22 +173,43 @@ export default () => html`
                 <i>Australia New Zealand Food Standards Code</i>
                 <ul>
                     <li>
-                    Standard 1.2.1 Requirement to have labels or otherwise provide information
+                    <a 
+                    href="https://www.legislation.gov.au/Series/F2015L00386"
+                    target="_blank">                    
+                    Standard 1.2.1 
+                    </a>
+                    Requirement to have labels or otherwise provide information
                     <ul>
                         <li>
                         See section 1.2.1—6 When the food for sale must bear a label
                         </li>
                     </ul>
                     </li>
-                    <li>Standard 1.2.3 Information requirements – warning statements, advisory statements and declarations</li>
-                    <li>Standard 2.6.3 Kava</li>
+                    <li>
+                    <a 
+                    href="https://www.legislation.gov.au/Details/F2017C00418"
+                    target="_blank">                    
+                    Standard 1.2.3 
+                    </a>
+                    Information requirements – warning statements, advisory statements and declarations</li>
+                    <li>
+                    <a 
+                    href="https://www.legislation.gov.au/Series/F2015L00466"
+                    target="_blank">                    
+                    Standard 2.6.3 
+                    </a>
+                    Kava</li>
                 </ul>
                 </p>
                 <p>
                     Food Standards Australia and New Zealand
                 <ul>
                     <li>
+                    <a 
+                    href="https://www.foodstandards.gov.au/code/userguide/Documents/Guide%20to%201.2.3%20-%20Warning%20and%20Advisory%20Statements.pdf"
+                    target="_blank">                    
                         User Guide – Warning and Advisory Statements and Declarations
+                    </a>
                     </li>
                 </ul>
                 </p>
