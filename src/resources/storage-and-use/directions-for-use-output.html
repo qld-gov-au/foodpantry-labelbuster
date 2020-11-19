@@ -20,7 +20,7 @@
           {{ data && data.thisIsARawProductAndMustBeCookedBeforeEating ? 'This is a raw product and must be cooked before eating.' : '' }}
           {{ data && data.notSuitableForMicrowaveCooking ? 'Not suitable for microwave cooking.' : '' }}
           {{ data && data.microwaveOn ? `Microwave on ${data.microwavePower || 'low'} for ${data.microwaveOnPowerForMinutes || 0} minutes.`: '' }}
-          {{ data && data.cookFor ? `Cook for ${data.cookForTime||0} minutes at ${data.cookForTimeAtTemperature||0} °C` : '' }}
+          {{ data && data.cookFor ? `Cook for ${data.cookForTime||0} minutes at ${data.cookForTimeAtTemperature||0} °C.` : '' }}
           {{ data && data.cookUntilSteamingHotInTheMiddle ?  'Cook until steaming hot in the middle.' : '' }}
           {{ data && data.cautionContentsMayBeHotAfterHeating ?  'Caution, contents may be hot after heating.' : '' }}
           {{ data && data.allowToStandFor ? `Allow to stand for ${data.allowToStandForMinutesBeforeServing||0} minutes before serving.` : '' }}
