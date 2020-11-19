@@ -1,0 +1,31 @@
+<section class="qg-callout__box">
+    <div class="qg-callout__header col-12">
+        <span class="qg-callout__icon">
+            <i class="fa fa-info-circle"></i>
+        </span>
+        <h2 class="qg-callout__title">
+            The ingredients should be shown on a food label as:
+        </h2>
+    </div>
+
+    <div class="qg-callout__content col-12">
+        <div class="qg-callout__bottom-alignment">
+            <div class="qg-callout__description">
+                <p class="wrap">
+                    The allergens should be shown on the food label as:
+                    Contains: {{ data && data.container.Gluten ? 'Gluten, ' : '' }}
+                    {{ data && data.container && data.container.Crustacea ? 'Crustacea, ' : '' }}
+                    {{ data && data.container && data.container.Egg ? 'Egg, ' : '' }}
+                    {{ data && data.container && data.container.Fish ? 'Fish, ' : '' }}
+                    {{ data && data.container && data.container.Milk ? 'Milk, ' : '' }}
+                    {{ data && data.container && data.container.Lupin ? 'Lupin, ' : '' }}
+                    {{ data && data.container && data.container.Peanuts ? 'Peanuts, ' : '' }}
+                    {{ data && data.container && data.container.Soybeans ? 'Soybeans, ' : '' }}
+                    {{ data && data.container && data.container.Sesame ? 'Sesame seeds, ' : '' }}
+                    {{ data && data.container && data.container.Sulphites ? 'Sulphites, ' : '' }}
+                    {{ data && data.container && data.container.Tree_Nuts ? 'Tree nuts, ' : '' }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
