@@ -116,7 +116,7 @@ export default () => html`
                     </a> 
                     Requirement to have labels or otherwise provide information
                     <ul>
-                        <li>          
+                        <li>    
                         See section 1.2.1—6 When the food for sale must bear a label
                         </li>
                     </ul>
