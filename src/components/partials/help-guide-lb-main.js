@@ -14,8 +14,7 @@ export default () => html`
       value="expand"
       role="radio">
   
-      <label for="expand" class="controls"  @click=${(e) =>
-        modifyAccordionState(e, true)}>Expand all</label>
+      <label for="expand" class="controls"  @click=${e => modifyAccordionState(e, true)}>Expand all</label>
 
         <span class="controls">|</span>
         
@@ -27,8 +26,7 @@ export default () => html`
       value="collapse"
       role="radio">
   
-      <label for="collapse" class="controls" @click=${(e) =>
-        modifyAccordionState(e, false)}>Collapse all</label> 
+      <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, false)}>Collapse all</label> 
       </div>
 
       <article>
@@ -60,19 +58,19 @@ export default () => html`
         <i>Australia New Zealand Food Standards Code</i>
         <ul>
           <li>
-          <a href="#">Standard 2.7.1</a> Labelling of alcoholic beverages and food containing alcohol
+          <a href="https://www.legislation.gov.au/Series/F2015L00469" target="_blank" rel="noopener">Standard 2.7.1</a> Labelling of alcoholic beverages and food containing alcohol
           </li>
           <li>
-          <a href="#">Standard 2.7.2</a> Beer 
+          <a href="https://www.legislation.gov.au/Series/F2015L00384" target="_blank" rel="noopener">Standard 2.7.2</a> Beer
           </li>
           <li>
-          <a href="#">Standard 2.7.3</a> Fruit wine, vegetable wine and mead
+          <a href="https://www.legislation.gov.au/Series/F2015L00388" target="_blank" rel="noopener">Standard 2.7.3</a> Fruit wine, vegetable wine and mead
           </li>
           <li>
-          <a href="#">Standard 2.7.4</a> Wine and wine product           
+          <a href="https://www.legislation.gov.au/Series/F2015L00391" target="_blank" rel="noopener">Standard 2.7.4</a> Wine and wine product           
           </li>
           <li>
-          <a href="#">Standard 2.7.5</a> Spirits
+          <a href="https://www.legislation.gov.au/Series/F2015L00399" target="_blank" rel="noopener">Standard 2.7.5</a> Spirits
           </li>                                        
         </ul>
         </p>
@@ -141,7 +139,7 @@ export default () => html`
           <p>
           Health claims are not permitted on foods that are high in saturated fat, sugar or salt.</br>
           There are lists of pre-approved food-health relationships that businesses can base their 
-          claims on. These are listed in <a href="#">Schedule 4 of the Code</a>.
+          claims on. These are listed in <a href="https://www.legislation.gov.au/Series/F2015L00474" target="_blank" rel="noopener">Schedule 4 of the Code</a>.
           </p>
         </p> 
 
@@ -169,7 +167,7 @@ export default () => html`
         <b>Further reading</b></br>
         <i>Australia New Zealand Food Standards Code</i>
         <ul>
-          <li> <a href="#">Standard 1.2.7</a> Nutrition, health and related claims.
+          <li> <a href="https://www.legislation.gov.au/Details/F2018C00942" target="_blank" rel="noopener">Standard 1.2.7</a> Nutrition, health and related claims.
             <li>
             See section 1.2.7—23 Endorsing bodies
             </li>
@@ -178,17 +176,17 @@ export default () => html`
             </li>
           </li>
           <li>
-            <a href = "#">Schedule 4</a> Nutrition, health and related claims
+            <a href="https://www.legislation.gov.au/Series/F2015L00474" target="_blank" rel="noopener">Schedule 4</a> Nutrition, health and related claims
           </li>
           <li>
           Australian Government Department of Health
           <li>
           Getting Your Claims Right 7. Endorsing bodies and endorsements 
-          <a href="#">https://www1.health.gov.au/internet/publications/publishing.nsf/Content/frs-getting-your-claims-right-toc~7-endorsing</a>        
+          <a href="https://www1.health.gov.au/internet/publications/publishing.nsf/Content/frs-getting-your-claims-right-toc~7-endorsing" target="_blank" rel="noopener">https://www1.health.gov.au/internet/publications/publishing.nsf/Content/frs-getting-your-claims-right-toc~7-endorsing</a>        
           </li>
           </li>
           <li>
-          <a href= "#">Australian Competition and Consumer Commission</a>
+          <a href="https://www.accc.gov.au/business" target="_blank" rel="noopener">Australian Competition and Consumer Commission</a>
           <li>
           website https://www.accc.gov.au/business
           </li>
@@ -222,11 +220,11 @@ export default () => html`
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
-                <a href="#">Standard 1.2.3</a> Information requirements – warning statements, advisory statements and
+                <a href="https://www.legislation.gov.au/Details/F2017C00418" target="_blank" rel="noopener">Standard 1.2.3</a> Information requirements – warning statements, advisory statements and
                 declarations
             </li>
             <li>
-                <a href="#">Schedule 9 </a> Mandatory advisory statements
+                <a href="https://www.legislation.gov.au/Details/F2016C00827" target="_blank" rel="noopener">Schedule 9 </a> Mandatory advisory statements
             </li>
         </ul>
         </p>
@@ -255,7 +253,7 @@ export default () => html`
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
-                <a href="#">Standard 2.6.2</a> Non-alcoholic beverages and brewed soft drinks
+                <a href="https://www.legislation.gov.au/Details/F2017C00721" target="_blank" rel="noopener">Standard 2.6.2</a> Non-alcoholic beverages and brewed soft drinks
             </li>
         </ul>
         </p>
@@ -283,7 +281,7 @@ export default () => html`
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
-                <a href="#">Standard 2.6.4</a> Formulated caffeinated beverages
+                <a href="https://www.legislation.gov.au/Details/F2015L00467" target="_blank" rel="noopener">Standard 2.6.4</a> Formulated caffeinated beverages
             </li>
         </ul>
         </p>
@@ -306,16 +304,16 @@ export default () => html`
         <p>
             Food produced using gene technology means a food that has been derived or developed from an organism that
             has been genetically modified. Genetically modified food means a food produced using gene technology that
-            contains novel DNA, novel protein or is listed in <a href="#">Schedule 26</a> of the Food Standard Code.
+            contains novel DNA, novel protein or is listed in <a href="https://www.legislation.gov.au/Series/F2015L00450" target="_blank" rel="noopener">Schedule 26</a> of the Food Standard Code.
             </br>
             <b>Further reading</b> </br>
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
-                <a href="#">Standard 1.5.2</a> Food produced using gene technology
+                <a href="https://www.legislation.gov.au/Series/F2015L00404" target="_blank" rel="noopener">Standard 1.5.2</a> Food produced using gene technology
             </li>
             <li>
-                <a href="#">Schedule 26</a> Food produced using gene technology
+                <a href="https://www.legislation.gov.au/Series/F2015L00450" target="_blank" rel="noopener">Schedule 26</a> Food produced using gene technology
             </li>
         </ul>
         </p>
@@ -345,7 +343,7 @@ export default () => html`
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
-                <a href="#">Standard 1.5.3</a> Irradiation of food
+                <a href="https://www.legislation.gov.au/Series/F2015L00406" target="_blank" rel="noopener">Standard 1.5.3</a> Irradiation of food
             </li>
         </ul>
         </p>
@@ -377,16 +375,16 @@ export default () => html`
                 Insects for human consumption as a protein source
             </li>
         </ul>
-        <p>The <a href="#">Australian Novel Food Committee has developed resources to help determine if a food is a
-                novel food that needs assessment. </a></p>
+        <p>The <a href="https://www.foodstandards.gov.au/industry/novel/Pages/default.aspx" target="_blank" rel="noopener">Australian Novel Food Committee</a> has developed resources to help determine if a food is a
+        novel food that needs assessment.</p>
         <b>Further reading</b> </br>
         <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
-                <a href="#">Standard 1.5.1</a> Novel foods
+                <a href="https://www.legislation.gov.au/Series/F2015L00403" target="_blank" rel="noopener">Standard 1.5.1</a> Novel foods
             </li>
             <li>
-                <a href="#">Schedule 25</a> Permitted Novel foods
+                <a href="https://www.legislation.gov.au/Series/F2015L00440" target="_blank" rel="noopener">Schedule 25</a> Permitted Novel foods
             </li>
         </ul>
         </p>
@@ -432,19 +430,19 @@ export default () => html`
         <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
-                <a href="#">Standard 2.9.1</a> Infant formula products
+                <a href="https://www.legislation.gov.au/Series/F2015L00409" target="_blank" rel="noopener">Standard 2.9.1</a> Infant formula products
             </li>
             <li>
-                <a href="#">Schedule 2.9.2</a> Food for infants
+                <a href="https://www.legislation.gov.au/Series/F2015L00417" target="_blank" rel="noopener">Schedule 2.9.2</a> Food for infants
             </li>
             <li>
-                <a href="#">Standard 2.9.3</a> Formulated meal replacements and formulated supplementary foods
+                <a href="https://www.legislation.gov.au/Series/F2015L00419" target="_blank" rel="noopener">Standard 2.9.3</a> Formulated meal replacements and formulated supplementary foods
             </li>
             <li>
-                <a href="#">Schedule 2.9.4</a> Formulated supplementary sports foods
+                <a href="https://www.legislation.gov.au/Series/F2015L00421" target="_blank" rel="noopener">Schedule 2.9.4</a> Formulated supplementary sports foods
             </li>
             <li>
-                <a href="#">Schedule 2.9.5</a> Food for special medical purposes
+                <a href="https://www.legislation.gov.au/Series/F2015L00472" target="_blank" rel="noopener">Schedule 2.9.5</a> Food for special medical purposes
             </li>
         </ul>
         </p>
