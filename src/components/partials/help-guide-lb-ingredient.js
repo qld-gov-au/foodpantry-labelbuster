@@ -133,7 +133,8 @@ export default () => html`<div class="side-padding vertical-padding">
                     that do not need to be included in the ingredient list.
                 </p>
                 <section>
-                <p><b>Further reading</b></br>
+                <p>
+                    <h4>Further reading</h4>    
                     <i>Australia New Zealand Food Standards Code</i>
                 <ul>
                     <li>
@@ -298,7 +299,8 @@ export default () => html`<div class="side-padding vertical-padding">
                 </ul>
                 </p>
                 <section>
-                <p><b>Further reading</b></br>
+                <p>
+                    <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
                 <ul>
                     <li>
@@ -450,7 +452,7 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                 <p>
-                    <b>Further reading</b> </br>
+                    <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
                 <ul>
                     <li>
@@ -550,7 +552,7 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <b>Further reading</b> </br>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -726,7 +728,7 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <b>Further reading</b> </br>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -783,7 +785,7 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <b>Further reading</b> </br>
+                        <h4>Further reading</h4>
                         To calculate and show the ingoing weight for water and other ingredients that disappear when cooked,
                         read:</br>
                         <i>Australia New Zealand Food Standards Code</i>
@@ -858,7 +860,7 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <b>Further reading</b> </br>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -921,7 +923,7 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <b>Further reading</b> </br>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -1011,18 +1013,18 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                    <b>Further reading</b> </br>
-                    <i>Australia New Zealand Food Standards Code</i>
-                    <ul>
-                        <li>
-                            <a 
+                        <h4>Further reading</h4>
+                        <i>Australia New Zealand Food Standards Code</i>
+                        <ul>
+                            <li>
+                             <a 
                                 href="https://www.legislation.gov.au/Series/F2015L00426"
                                 target="_blank">
                                 Standard 2.6.1
-                            </a>
+                             </a>
                             Fruit juice and vegetable juice
-                        </li>
-                    </ul>
+                             </li>
+                        </ul>
                     </p>
                 </section>
             </div>
@@ -1065,7 +1067,7 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <b>Further reading</b> </br>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -1137,8 +1139,8 @@ export default () => html`<div class="side-padding vertical-padding">
                 </ul>
                 </p>
                 <section>
-                    </p>
-                    <b>Further reading</b> </br>
+                    <p>
+                    <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -1217,8 +1219,9 @@ export default () => html`<div class="side-padding vertical-padding">
                 the orange juice is not required to be labelled as a juice blend
                 </p>
                 <section>
-                    <p><b>Further reading</b> </br>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <p>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
                             <a 
@@ -1277,7 +1280,8 @@ export default () => html`<div class="side-padding vertical-padding">
                     walnuts
                 </p>
                 <section>
-                    <p><b>Further reading</b> </br>
+                    <p>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -1342,7 +1346,8 @@ export default () => html`<div class="side-padding vertical-padding">
                 </ul>
                 </p>
                 <section>
-                    <p><b>Further reading</b> </br>
+                    <p>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -1411,7 +1416,8 @@ export default () => html`<div class="side-padding vertical-padding">
                 </ul>
                 </p>
                 <section>
-                    <p><b>Further reading</b> </br>
+                    <p>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -1461,7 +1467,8 @@ export default () => html`<div class="side-padding vertical-padding">
                     For example: A small a packet of chewing gum or a small bar of chocolate.
                 </p>
                 <section>
-                    <p><b>Further reading</b> </br>
+                    <p>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
@@ -1501,7 +1508,8 @@ export default () => html`<div class="side-padding vertical-padding">
                     For example: A bag of rice, frozen corn kernels, apple juice.
                 </p>
                 <section>
-                    <p><b>Further reading</b> </br>
+                    <p>
+                        <h4>Further reading</h4>
                         <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
