@@ -3,50 +3,57 @@
 <h1>Your label information</h1>
 <section>
   <div class="alert alert-success" role="alert">
-    <h2><i class="fa fa-check-circle"></i>Congratulations! You have completed all the steps in Label Buster.</h2>
+    <h2>
+      <i class="fa fa-check-circle"></i>
+      Congratulations! You have completed all the steps in Label Buster.
+    </h2>
     <p>
-      Using your responses to each question, Label Buster has generated a product sheet and an example food label.
+      Using your responses to each question, Label Buster has generated a
+      product sheet and an example food label.
     </p>
   </div>
   <p>
-    Label Buster is a brief guide to help you understand your labelling requirements. You may choose to get advice from
-    a
-    labelling consultant to make sure that your label complies with the Food Standards Code.
+    Label Buster is a brief guide to help you understand your labelling
+    requirements. You may choose to get advice from a labelling consultant to
+    make sure that your label complies with the Food Standards Code.
   </p>
 
   <p>
     On this page, you will find:
   <ul>
     <li>
-      <a href="#">Product sheet</a>
+      <a href="#product-sheet">Product sheet</a>
     </li>
     <li>
-      <a href="#">Example food label</a>
+      <a href="example-label">Example food label</a>
     </li>
     <li>
-      <a href="#">Legibility requirements</a>
+      <a href="legibility-requirements">Legibility requirements</a>
     </li>
     <li>
-      <a href="#">Exemptions</a>
+      <a href="exemptions">Exemptions</a>
     </li>
     <li>
-      <a href="#">Download or email your summary</a>
+      <a href="download-email">Download or email your summary</a>
     </li>
     <li>
-      <a href="#">Need to update your label?</a>
+      <a href="update">Need to update your label?</a>
     </li>
   </ul>
   </p>
 </section>
 
 <section>
+  <a name="product-sheet"></a>
   <h2>Product Sheet</h2>
   <p>
-    You can take this information to a printer or graphic designer to create a label or use your own tools/templates.
-    When
-    creating your food label, you must ensure you meet the <a href="#" rel="nofollow" target="_blank">
+    You can take this information to a printer or graphic designer to create a
+    label or use your own tools/templates. When creating your food label, you
+    must ensure you meet the
+    <a href="#" rel="nofollow" target="_blank">
       <span class="title">legibility requirements</span>
-    </a>, such as minimum type size.
+    </a>,
+    such as minimum type size.
   </p>
 
   <table>
@@ -65,86 +72,132 @@
       </tr>
       <tr>
         <td>Ingredients</td>
-        <td><b>Ingredients:</b> {{data.IngredientData.map((data) => ' ' + data.ingredient) || 'no data provided'}}
+        <td>
+          <b>Ingredients:</b>
+          {{data.IngredientData.map((data) => ' ' + data.ingredient) || 'no data provided'}}
         </td>
       </tr>
       <tr>
         <td>Weight</td>
-        <td>For information on how to comply with weights and measures laws visit the <a href="https://www.measurement.gov.au">National Measurement Institute (www.measurement.gov.au)</a></td>
+        <td>
+          For information on how to comply with weights and measures laws visit
+          the
+          <a
+            href="https://www.measurement.gov.au"
+            rel="nofollow"
+            target="_blank">
+            National Measurement Institute (www.measurement.gov.au)
+          </a>
+        </td>
       </tr>
       <tr>
         <td>Nutrition information panel</td>
-        <td>A Nutrition Information Panel must be added to your food label. The Food Standards Australia New Zealand <a
-            href="https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx">nutrition
-            panel calculator</a> can help you prepare your nutrition information panel.
-            <img
-        src="https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png"
-        alt=""
-        class="src"
-      /> 
-          </td>
+        <td>
+          A Nutrition Information Panel must be added to your food label. The
+          Food Standards Australia New Zealand
+          <a
+            href="https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx"
+            rel="nofollow"
+            target="_blank">
+            nutrition panel calculator
+          </a> can help you prepare your nutrition information panel.
+          
+          <img
+            src="https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png"
+            alt=""
+            class="src"
+          /> 
+        </td>
       </tr>
       <tr>
         <td>Statements and declarations</td>
         <td>
-          <p><b>Contains:</b> {{data.allergens || 'no data provided'}}
+          <p>
+            <b>Contains:</b>
+            {{data.allergens || 'no data provided'}}
             </br>
-            Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum
-            size of type of 1.5 mm is required.</p>
+            Note: Warning statements must be a minimum size of type of 3 mm. In
+            the case of small packages, a minimum size of type of 1.5 mm is
+            required.
+          </p>
         </td>
       </tr>
       <tr>
         <td>Date marks</td>
-        <td>Best Before: {{data.bestBefore || 'no data provided'}}</td>
+        <td>
+          Best Before:
+          {{data.bestBefore || 'no data provided'}}
+        </td>
       </tr>
       <tr>
         <td>Lot identification</td>
-        <td>{{data.batch || 'no data provided'}}</td>
+        <td>
+          {{data.batch || 'no data provided'}}
+        </td>
       </tr>
       <tr>
         <td>Storage conditions and directions for use</td>
         <td>
           <p>
-            <b>Storage conditions: </b> {{data.storageConditions || 'no data provided'}}
+            <b>Storage conditions: </b>
+            {{data.storageConditions || 'no data provided'}}
             </br>
-            <b>Directions for use:</b> {{data.directions || 'no data provided'}}
+            <b>Directions for use:</b>
+            {{data.directions || 'no data provided'}}
           </p>
         </td>
       </tr>
       <tr>
         <td>Claims</td>
         <td>
-          <p>Making voluntary claims about your food is very complex and you are recommended to seek professional
-            advice.
+          <p>
+            Making voluntary claims about your food is very complex and you are
+            recommended to seek professional advice.
             </br>
-            Please note, that making a claim on your food has other requirements not addressed in Label Buster such as
-            additional sections in your nutritional information panel and requirements under Australian Consumer Law.
+            Please note, that making a claim on your food has other requirements
+            not addressed in Label Buster such as additional sections in your
+            nutritional information panel and requirements under Australian
+            Consumer Law.
           </p>
         </td>
       </tr>
       <tr>
         <td>Country of origin</td>
-        <td>Information on how to calculate and display mandatory <a
-            href="https://www.accc.gov.au/business/advertising-promoting-your-business/country-of-origin-claims/country-of-origin-food-labelling">country
-            of origin can be found on the
-            Australian Competition and Consumer Commission website. </a></td>
+        <td>
+            Information on how to calculate and display mandatory
+            <a
+              href="https://www.accc.gov.au/business/advertising-promoting-your-business/country-of-origin-claims/country-of-origin-food-labelling"
+              rel="nofollow"
+              target="_blank">
+              country of origin can be found on the Australian Competition and
+              Consumer Commission website.
+            </a>
+        </td>
       </tr>
       <tr>
         <td>Health star rating</td>
-        <td>Information on how to calculate and display a voluntary <a
-            href="https://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/Content/guide-for-industry-document">health
-            star rating can be found at the
-            health star rating system website.</a></td>
+        <td>
+            Information on how to calculate and display a voluntary
+            <a
+              href="https://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/Content/guide-for-industry-document"
+              rel="nofollow"
+              target="_blank">
+              health star rating can be found at the health star rating system
+              website.
+            </a>
+        </td>
       </tr>
     </tbody>
   </table>
 </section>
 
 <section>
+  <a name="example-label"></a>
   <h2>Example of food label</h2>
   <p>
-    Below is an example of what your label could look like, using the information you provided in Label Buster. Label
-    components can be placed anywhere on the label you create. They do not need to be in the specific layout shown here.
+    Below is an example of what your label could look like, using the information
+    you provided in Label Buster. Label components can be placed anywhere on the
+    label you create. They do not need to be in the specific layout shown here.
     They may be displayed in any order or arrangement
   </p>
   <div class="example-label">
@@ -153,16 +206,51 @@
       <p>Product description</p>
       <div>
         <p>
-          <strong>Storage conditions:</strong> Keep refrigerated at 1 degree to 5
-          degree. Shake well before opening. Store in an upright position.
+          <b>Storage conditions:</b>
+          {{ data && data.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
+          {{ data && data.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
+          {{ data && data.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
+          {{ data && data.keepRefrigeratedAt ? `Keep refrigerated at ${data.keepRefrigeratedAtMinimum || 0} °C to ${data.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
+          {{ data && data.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.keepRefrigeratedAtOrBelowTemperature || 0}.` : '' }}
+          {{ data && data.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
+          {{ data && data.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
+          {{ data && data.otherPleaseEnter ? data.otherPleaseEnterDetails : '' }}
         </p>
         <p>
-          <strong>Directions for use:</strong> Consume within 2 days of opening.
+          <b>Directions for use:</b>
+          {{ data && data.washBeforeUse ? 'Wash before use.' : '' }}
+          {{ data && data.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}
+          {{ data && data.shakeWellBeforeUse ?  'Shake well before use.' : '' }}
+          {{ data && data.foodShouldBeDrainedBeforeConsumption ? 'Food should be drained before consumption.' : '' }}
+          {{ data && data.onceOpenedStoreInAnAirtightContainer ? 'Once opened, store in an airtight container.' : '' }}
+          {{ data && data.onceOpenedKeepRefrigerated  ? 'Once opened, keep refrigerated.' : '' }}
+          {{ data && data.consumeWithin ? `Consume within ${data.consumeWithinDaysOfOpening || 0 } days of opening.` : '' }}
+          {{ data && data.thawBeforeCooking ? 'Thaw before cooking.' : '' }}
+          {{ data && data.cookFromFrozen ? 'Cook from frozen.': '' }}
+          {{ data && data.onceThawedDoNotRefreeze ? 'Once thawed, do not refreeze.' : '' }}
+          {{ data && data.onceThawedUseWithin ? `Once thawed, use within ${data.onceThawedUseWithinHours} hours.`: '' }}
+          {{ data && data.thisIsARawProductAndMustBeCookedBeforeEating ? 'This is a raw product and must be cooked before eating.' : '' }}
+          {{ data && data.notSuitableForMicrowaveCooking ? 'Not suitable for microwave cooking.' : '' }}
+          {{ data && data.microwaveOn ? `Microwave on ${data.microwavePower || 'low'} for ${data.microwaveOnPowerForMinutes || 0} minutes.`: '' }}
+          {{ data && data.cookFor ? `Cook for ${data.cookForTime||0} minutes at ${data.cookForTimeAtTemperature||0} °C.` : '' }}
+          {{ data && data.cookUntilSteamingHotInTheMiddle ?  'Cook until steaming hot in the middle.' : '' }}
+          {{ data && data.cautionContentsMayBeHotAfterHeating ?  'Caution, contents may be hot after heating.' : '' }}
+          {{ data && data.allowToStandFor ? `Allow to stand for ${data.allowToStandForMinutesBeforeServing||0} minutes before serving.` : '' }}
+          {{ data && data.doNotRefrigerateOrReheatOnceHeated ? 'Do not refrigerate or reheat once heated.': '' }}
+          {{ data && data.careHasBeenTakenToRemoveAllBonesFromThisProductHoweverSomeBonesMayRemain ? 'Care has been taken to remove all bones from this product, however some bones may remain.' : '' }}
+          {{ data && data.otherDirectionsForUse ? `${data.otherDirectionsForUseDetails || ''}` : '' }}
+          {{ data && data.cookingPreparationInstructions ? `${data.cookingPreparationInstructionsDetails || ''}` : '' }}
         </p>
       </div>
       <div>
-        <p><strong>Best before:</strong> 05 / 04 / 2021</p>
-        <p><strong>Lot identification:</strong> Batch 42</p>
+        <p>
+          <strong>Best before:</strong>
+          05 / 04 / 2021
+        </p>
+        <p>
+          <strong>Lot identification:</strong>
+          Batch 42
+        </p>
       </div>
     </div>
     <div class="eg-col">
@@ -185,23 +273,29 @@
       </div>
     </div>
     <div class="eg-col">
-      <img src="https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png" alt="example food label" class="src" />
+      <img
+        src="https://cdn.zeplin.io/5ef040ac25b1322a575ffac8/assets/2947EBFE-48A3-46BE-8E05-BFD31906351D.png"
+        alt="example food label"
+        class="src" />
     </div>
   </div>
 </section>
 
 <section>
+  <a name="legibility-requirements"></a>
   <h2>Legibility requirements</h2>
   <p>
-    All required words, statements, expressions or designs provided on a food label must be in English, be legible, and
-    be
-    prominent so as to contrast distinctly with the background of the label.
+    All required words, statements, expressions or designs provided on a food
+    label must be in English, be legible, and be prominent so as to contrast
+    distinctly with the background of the label.
   </p>
   <p>
-    Information in other languages is permitted, provided it does not negate or contradict the English information.
+    Information in other languages is permitted, provided it does not negate or
+    contradict the English information.
   </p>
   <p>
-    No specific print type or size is defined for general labelling requirements, however:
+    No specific print type or size is defined for general labelling
+    requirements, however:
   </p>
   <ul>
     <li>
@@ -216,6 +310,7 @@
 </section>
 
 <section>
+  <a name="exemptions"></a>
   <h2>Exemptions</h2>
   <p>
     All of the food label information needs to be included on your food label, except for:</br>
@@ -242,6 +337,7 @@
 </section>
 
 <section>
+  <a name="download-email"></a>
   <h2>Your label information summary</h2>
   <p>
     Download your label information summary. This summary includes your product sheet and an example of what your
