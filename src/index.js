@@ -2,6 +2,7 @@
 import { FormioWrapper } from './components/formio-wrapper';
 import { ButtonGroup } from './components/button-group';
 import attachStepHandler from './scripts/step-handlers';
+import { ReapplySelected } from './scripts/reapply-selected';
 import { HelpGuide } from './components/help-guide';
 import mainView from './components/partials/help-guide-lb-main';
 import initialView from './components/partials/help-guide-lb-initial';
@@ -13,6 +14,7 @@ import { configuration } from './config';
 import { Environment } from './environment';
 
 (() => {
+  const cssReapplier = new ReapplySelected();
   const environment = new Environment();
   configuration.form.location = environment.url;
   // configuration.form.baseLocation = environment.url;
@@ -64,5 +66,9 @@ import { Environment } from './environment';
       });
       window.dispatchEvent(newEvent);
     }
+  });
+
+  window.addEventListener('formiowrapperPageChange', (event) => {
+    cssReapplier.reapply(['radio']);
   });
 })();
