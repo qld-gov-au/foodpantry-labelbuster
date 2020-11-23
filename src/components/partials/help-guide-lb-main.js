@@ -54,7 +54,7 @@ export default () => html`
         <p>
         Alcohol includes beer, wine and spirits and has unique and additional 
         requirements such as number of standard drinks. </br>          
-        <b>Further reading</b> </br>
+        <h4>Further reading</h4>
         <i>Australia New Zealand Food Standards Code</i>
         <ul>
           <li>
@@ -164,7 +164,7 @@ export default () => html`
           by Australian Competition and Consumer Commission.
         </p>
         
-        <b>Further reading</b></br>
+        <h4>Further reading</h4>
         <i>Australia New Zealand Food Standards Code</i>
         <ul>
           <li> <a href="https://www.legislation.gov.au/Details/F2018C00942" target="_blank" rel="noopener">Standard 1.2.7</a> Nutrition, health and related claims.
@@ -216,7 +216,7 @@ export default () => html`
             Drinks made from cereals, nuts and or seeds are not suitable for certain age groups,
             depending on the amount of protein and fats in the product. There are strict rules on
             how this information must be labelled. </br>
-            <b>Further reading</b> </br>
+            <h4>Further reading</h4>
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
@@ -249,7 +249,7 @@ export default () => html`
             carbohydrates, electrolytes and minerals. These types of drinks, or drink bases, have strict rules about
             what substances are allowed and how this information must be labelled.
             </br>
-            <b>Further reading</b> </br>
+            <h4>Further reading</h4>
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
@@ -277,7 +277,7 @@ export default () => html`
             Formulated caffeinated drinks have very specific rules about what substances are allowed and how this
             information must be labelled.
             </br>
-            <b>Further reading</b> </br>
+            <h4>Further reading</h4>
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
@@ -306,7 +306,7 @@ export default () => html`
             has been genetically modified. Genetically modified food means a food produced using gene technology that
             contains novel DNA, novel protein or is listed in <a href="https://www.legislation.gov.au/Series/F2015L00450" target="_blank" rel="noopener">Schedule 26</a> of the Food Standard Code.
             </br>
-            <b>Further reading</b> </br>
+            <h4>Further reading</h4>
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
@@ -339,7 +339,7 @@ export default () => html`
             eliminating microorganisms and insects. Some fruits, vegetables, herbs and spices are allowed to be
             irradiated under strict conditions.
             </br>
-            <b>Further reading</b> </br>
+            <h4>Further reading</h4>
             <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
@@ -377,7 +377,7 @@ export default () => html`
         </ul>
         <p>The <a href="https://www.foodstandards.gov.au/industry/novel/Pages/default.aspx" target="_blank" rel="noopener">Australian Novel Food Committee</a> has developed resources to help determine if a food is a
         novel food that needs assessment.</p>
-        <b>Further reading</b> </br>
+        <h4>Further reading</h4>
         <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>
@@ -426,7 +426,7 @@ export default () => html`
             </li>
         </ul>
 
-        <b>Further reading</b> </br>
+        <h4>Further reading</h4>
         <i>Australia New Zealand Food Standards Code</i>
         <ul>
             <li>

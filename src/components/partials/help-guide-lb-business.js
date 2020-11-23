@@ -62,10 +62,12 @@ export default () => html`
             aria-hidden="true"
             id="id-panel-content-1">
             <p>
-              Business details are the name and address of the food business
-              that is the supplier, manufacturer, packer, vendor or importer of
-              the food.
-              <b>Further reading</b>
+              <p>
+                Business details are the name and address of the food business
+                that is the supplier, manufacturer, packer, vendor or importer
+                of the food.
+              </p>
+              <h4>Further reading</h4>
               <br>
               <i>Australia New Zealand Food Standards Code</i>
               <ul>
