@@ -14,11 +14,6 @@
       "name": "Daniel Turner"
     }
   ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DanielTurner/label-buster.git"
-  },
   "browserslist": [
     "chrome >= 76",
     "safari >= 11",
