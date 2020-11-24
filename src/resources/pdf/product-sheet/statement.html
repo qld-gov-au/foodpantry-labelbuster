@@ -4,7 +4,14 @@
     <strong>Statement and declarations</strong>
   </div>
   <div>
-    <p><b>Contains:</b> {{data.allergens || 'no data provided'}}
+    <p><b>Contains:</b>
+      {{
+        _.reduce(_.filter(_.toPairs(data.statements), function([key, val]) { return val }), function(acc, [key, val], index) {
+          if (index === _.filter(_.toPairs(data.statements), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+          return acc + ` ${val}, `;
+        }, '')    
+      }}
+      
     </br>
     Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum
     size of type of 1.5 mm is required.</p>
