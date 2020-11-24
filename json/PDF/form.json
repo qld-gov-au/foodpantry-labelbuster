@@ -5,6 +5,13 @@
   "owner": "5f3ccdbde35dab29a5bc1e88",
   "components": [
     {
+      "label": "container",
+      "key": "container",
+      "type": "hidden",
+      "input": true,
+      "tableView": false
+    },
+    {
       "label": "email",
       "key": "email",
       "type": "hidden",
@@ -76,7 +83,7 @@
     {
       "label": "HTML",
       "attrs": [{ "attr": "", "value": "" }],
-      "content": "<div class=\"kyfb-header\">\n  <div class=\"kyfb-date\">\n    {{ moment().format(\"DD/MM/YYYY\")}} \n  </div>\n  <div class=\"kyfb-heading\"> \n  Label Buster | Health and wellbeing | Queensland Government\n  </div>\n</div>",
+      "content": "<div class=\"kyfb-header\">\n  <div class=\"kyfb-date\">\n    {{ moment().format(\"DD/MM/YYYY HH:MM:ss\")}}\n  </div>\n  <div class=\"kyfb-heading\"> \n  Label Buster | Health and wellbeing | Queensland Government\n  </div>\n</div>",
       "refreshOnChange": false,
       "tableView": false,
       "key": "html1",
@@ -156,7 +163,7 @@
     {
       "label": "HTML",
       "attrs": [{ "attr": "", "value": "" }],
-      "content": "<div class=\"product-sheet-row secondary\">\n    <div>\n      <strong>Statement and declarations</strong>\n    </div>\n    <div>\n      <p><b>Contains:</b> {{data.allergens || 'no data provided'}}\n      </br>\n      Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum\n      size of type of 1.5 mm is required.</p>\n    </div>\n  </div>",
+      "content": "<div class=\"product-sheet-row secondary\">\n  <div>\n    <strong>Statement and declarations</strong>\n  </div>\n  <div>\n    <p><b>Contains:</b>\n      {{\n        _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {\n          if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;\n          return acc + ` ${val}, `;\n        }, '')    \n      }}\n      \n    </br>\n    Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum\n    size of type of 1.5 mm is required.</p>\n  </div>\n</div>",
       "refreshOnChange": false,
       "tableView": false,
       "key": "html10",
@@ -245,7 +252,7 @@
     }
   ],
   "revisions": "current",
-  "_vid": 35,
+  "_vid": 54,
   "title": "LB - PDF",
   "display": "form",
   "access": [
@@ -285,12 +292,14 @@
   "properties": {},
   "settings": {
     "hideTitle": true,
-    "footer": "<html>\n<style>\nfooter{\n  font-size: 7px;\n  line-height: 100px;\n  margin-left: 10px;\n}\ndiv.pageNumbers {\n  float: right;\n  margin-right: 10px;\n}\n</style>\n<footer>\n    https://www.qld.gov.au/health/staying-healthy/food-pantry/label-buster\n<div class=\"pageNumbers\"><span class=\"pageNumber\"></span>/<span class=\"totalPages\"></span></div>\n</footer>\n</html>"
+    "footer": "<html>\n<style>\nfooter{\n  font-size: 7px;\n  line-height: 100px;\n  margin-left: 10px;\n}\ndiv.pageNumbers {\n  float: right;\n  margin-right: 10px;\n}\n</style>\n<footer>\n    https://www.qld.gov.au/health/staying-healthy/food-pantry/label-buster\n<div class=\"pageNumbers\"><span class=\"pageNumber\"></span>/<span class=\"totalPages\"></span></div>\n</footer>\n</html>",
+    "margins": "38,38,100,38",
+    "header": ""
   },
   "name": "lbPdf",
   "path": "lbpdf",
   "project": "5f44969319d1a97a819d80a7",
   "created": "2020-11-10T03:20:18.793Z",
-  "modified": "2020-11-16T06:56:43.375Z",
+  "modified": "2020-11-24T06:55:00.307Z",
   "machineName": "fesrqwsyzlbtegd:lbPdf"
 }
