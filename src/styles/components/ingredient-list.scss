@@ -6,6 +6,11 @@
   color: #fff !important;
   border: none;
   box-shadow: none !important;
+  padding-left: 14px;
+}
+
+.btn.btn-primary.formio-button-add-row i.fa.fa-plus::before {
+  content: none;
 }
 
 .fa-times-circle-o:before {
