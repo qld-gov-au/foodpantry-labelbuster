@@ -1980,13 +1980,14 @@
           "input": false,
           "components": [
             {
-              "label": "<small class=\"hint\">To change the order of your ingredients: <ul><li>Click <span class=\"inside-header-instruction\"> the </span>button</li> <li> Drag and drop your ingredient</li></ul> </small>",
+              "label": "<small class=\"hint\">To change the order of your ingredients: <ul><li><span class=\"dis\">Click the </span> &#xf07d button</li> <li> Drag and drop your ingredient</li></ul> </small>",
               "reorder": true,
               "addAnother": "Add",
               "addAnotherPosition": "bottom",
               "defaultOpen": false,
               "layoutFixed": false,
               "enableRowGroups": false,
+              "customClass": "ingredient-button",
               "tableView": false,
               "defaultValue": [{ "ingredient": "" }],
               "validate": {
@@ -2013,7 +2014,7 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<style>\n.btn.btn-primary.formio-button-add-row,\n.btn.btn-primary.formio-button-add-row:hover,\n.btn-primary:hover,\n.btn.btn-primary.formio-button-add-row:active,\n{\n  background-color:#007eb1;\n  color:#fff !important;\n  border:none;\n}\n\n.fa-times-circle-o:before {\n  content: '\\f1f8';\n  color: #000000;\n}\n\n.fa-bars:before,\n.fa-navicon:before,\n.fa-reorder:before\n {\n  content: '\\f07d';\n  color: #000000;\n}\n\nbutton.btn.btn-secondary.formio-button-remove-row,\nbutton.formio-drag-button.btn.btn-default.fa.fa-bars {\n  background-color: transparent;\n  border: none;\n}\n\n.btn-secondary:not(:disabled):not(.disabled):active:focus {\n  box-shadow: none;\n  background-color: transparent;\n}\n\n.fa.fa-times-circle-o:hover:before,\n.fa-bars:hover:before,\n.fa-navicon:hover:before,\n.fa-reorder:hover:before {\n  color: #13578b;\n}\n\nth:nth-child(1):before {\n  content: 'Re-order';\n  white-space: pre;\n}\nth:nth-child(3):before {\n  content: 'Delete';\n}\n\n.qg-table thead th,\n.table thead th,\n.table thead th,\n.qg-table th,\n.table th {\n  vertical-align: middle;\n}\n\np.wrap {\n  word-break: break-all;\n  white-space: normal;\n}\n\n#qg-primary-content table tr:nth-child(2n),\n#qg-primary-content table tr {\n  background: transparent;\n}\n\n#qg-primary-content table tbody tr:nth-child(2n):hover,\n#qg-primary-content table tbody tr:hover {\n  background: #c0c0c0;\n}\n\n#qg-primary-content table tr td {\n  padding-bottom: 0em;\n}\n\n.btn.btn-primary.formio-button-add-row {\n  margin-bottom: 15px;\n}\n\ntfoot {\n  background-color: #fff;\n}\n\n</style>\n<section class=\"qg-callout__box\">\n  <div class=\"qg-callout__header col-12\">\n    <span class=\"qg-callout__icon\">\n      <i class=\"fa fa-info-circle\"></i>\n    </span>\n    <h2 class=\"qg-callout__title\">\n      The ingredients should be shown on a food label as:\n    </h2>\n  </div>\n\n  <div class=\"qg-callout__content col-12\">\n    <div class=\"qg-callout__bottom-alignment\">\n      <div class=\"qg-callout__description\">\n        <p class=\"wrap\">\n          <b>Ingredients:</b> {{data.IngredientData.map((data) => data.ingredient+\" \")}}\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
+              "content": "<style>\n.btn.btn-primary.formio-button-add-row,\n.btn.btn-primary.formio-button-add-row:active,\n.btn.btn-primary.formio-button-add-row:focus\n  .btn.btn-primary.formio-button-add-row:active:focus {\n  background-color: #007eb1;\n  color: #fff !important;\n  border: none;\n  box-shadow: none !important;\n  padding-left: 14px;\n  margin-top: 15px;\n}\n\n.btn.btn-primary.formio-button-add-row i.fa.fa-plus:before {\n  content: none;\n}\n\n.fa-times-circle-o:before {\n  content: '\\f1f8';\n  color: #000000;\n}\n\n.fa-bars:before,\n.fa-navicon:before,\n.fa-reorder:before {\n  content: '\\f07d';\n  color: #000000;\n}\n\nbutton.btn.btn-secondary.formio-button-remove-row,\nbutton.formio-drag-button.btn.btn-default.fa.fa-bars {\n  background-color: transparent;\n  border: none;\n}\n\n.btn-secondary:not(:disabled):not(.disabled):active:focus {\n  box-shadow: none;\n  background-color: transparent;\n}\n\n.fa.fa-times-circle-o:hover:before,\n.fa-bars:hover:before,\n.fa-navicon:hover:before,\n.fa-reorder:hover:before {\n  color: #13578b;\n}\n\nth:nth-child(1):before {\n  content: 'Re-order';\n  white-space: pre;\n}\nth:nth-child(3):before {\n  content: 'Delete';\n}\n\n.qg-table thead th,\n.table thead th,\n.table thead th,\n.qg-table th,\n.table th {\n  vertical-align: middle;\n}\n\np.wrap {\n  word-break: break-all;\n  white-space: normal;\n}\n\n#qg-primary-content table tr:nth-child(2n),\n#qg-primary-content table tr {\n  background: transparent;\n}\n\n#qg-primary-content table tbody tr:nth-child(2n):hover,\n#qg-primary-content table tbody tr:hover {\n  background: #c0c0c0;\n}\n\n#qg-primary-content table tr td {\n  padding-bottom: 0em;\n  padding-top: 0em;\n  padding-left: 15px;\n  padding-right: 15px;\n  font-weight: 400;\n  vertical-align: middle;\n}\n\n.btn.btn-primary.formio-button-add-row {\n  margin-bottom: 15px;\n}\n\ntfoot {\n  background-color: #fff;\n}\n\n</style>\n<section class=\"qg-callout__box\">\n  <div class=\"qg-callout__header col-12\">\n    <span class=\"qg-callout__icon\">\n      <i class=\"fa fa-info-circle\"></i>\n    </span>\n    <h2 class=\"qg-callout__title\">\n      The ingredients should be shown on a food label as:\n    </h2>\n  </div>\n\n  <div class=\"qg-callout__content col-12\">\n    <div class=\"qg-callout__bottom-alignment\">\n      <div class=\"qg-callout__description\">\n        <p class=\"wrap\">\n          <b>Ingredients:</b> {{data.IngredientData.map((data) => \" \" + data.ingredient)}}\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
               "refreshOnChange": true,
               "tableView": false,
               "key": "html28",
@@ -2046,10 +2047,10 @@
           "input": false
         },
         {
-          "label": "Container",
+          "label": "Allergy Declarations",
           "customClass": "statement-label",
           "tableView": false,
-          "key": "container",
+          "key": "allergyDeclarations",
           "type": "container",
           "input": true,
           "components": [
@@ -3004,7 +3005,7 @@
     }
   ],
   "revisions": "current",
-  "_vid": 319,
+  "_vid": 346,
   "title": "LB",
   "display": "wizard",
   "access": [
@@ -3047,6 +3048,6 @@
   "path": "formwizard",
   "project": "5f44969319d1a97a819d80a7",
   "created": "2020-10-07T02:38:04.620Z",
-  "modified": "2020-11-23T07:01:36.806Z",
+  "modified": "2020-11-24T06:51:08.205Z",
   "machineName": "fesrqwsyzlbtegd:lbReplace"
 }
