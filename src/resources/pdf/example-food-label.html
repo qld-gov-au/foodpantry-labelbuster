@@ -29,8 +29,14 @@
         {{data.IngredientData.map((data) => data.ingredient)}}
       </p>
       <p>
-        <strong>Contains:</strong>
-        list items
+        <b>Contains:</b>
+        {{
+          _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
+            if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+            return acc + ` ${val}, `;
+          }, '')    
+        }}
+      </br>
       </p>
     </div>
     <div class="address-block">
