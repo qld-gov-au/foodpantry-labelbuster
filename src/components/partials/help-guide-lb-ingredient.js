@@ -2,7 +2,8 @@ import { html } from 'lit-html';
 import { modifyAccordionState } from '../../scripts/collapse-expand';
 /* eslint-disable no-irregular-whitespace */
 
-export default () => html`<div class="side-padding vertical-padding">
+export default () => html`
+<div class="side-padding vertical-padding">
     <h4>General requirements</h4>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
         <div class="controls-group">
@@ -133,71 +134,71 @@ export default () => html`<div class="side-padding vertical-padding">
                     that do not need to be included in the ingredient list.
                 </p>
                 <section>
-                <p>
-                    <h4>Further reading</h4>    
+                    <p>
+                    <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
-                <ul>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00386" target="_blank">
-                            Standard 1.2.1
-                        </a>
-                        Requirements to have labels or otherwise provide information
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
-                            Standard 1.2.4
-                        </a>
-                        Information requirements – statement of ingredients
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00398" target="_blank">
-                            Standard 1.2.10
-                        </a>
-                        Information requirements – characterising ingredients and components of food
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00402" target="_blank">
-                            Standard 1.3.3
-                        </a>
-                        Processing aids
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00477" target="_blank">
-                            Schedule 7
-                        </a>
-                        Food additive class names (for statement of ingredients)
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00478" target="_blank">
-                            Schedule 8
-                        </a>
-                        Food additive names and code numbers (for statement of ingredients)
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00480" target="_blank">
-                            Schedule 10
-                        </a>
-                        Generic names of ingredients and conditions for their use
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00442" target="_blank">
-                            Schedule 16
-                        </a>
-                        Types of substances that may be used as food additives
-                    </li>
-                </ul>
-                </p>
-                <p>
-                    Food Standards Australia and New Zealand
-                <ul>
-                    <li>
-                        <a href="https://www.foodstandards.gov.au/code/userguide/pages/overviewoffoodlabell1267.aspx"
-                            target="_blank">
-                            User Guides - Overview of Food Labelling
-                        </a>
-                    </li>
-                </ul>
-                </p>
+                    <ul>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00386" target="_blank">
+                                Standard 1.2.1
+                            </a>
+                            Requirements to have labels or otherwise provide information
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
+                                Standard 1.2.4
+                            </a>
+                            Information requirements – statement of ingredients
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00398" target="_blank">
+                                Standard 1.2.10
+                            </a>
+                            Information requirements – characterising ingredients and components of food
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00402" target="_blank">
+                                Standard 1.3.3
+                            </a>
+                            Processing aids
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00477" target="_blank">
+                                Schedule 7
+                            </a>
+                            Food additive class names (for statement of ingredients)
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00478" target="_blank">
+                                Schedule 8
+                            </a>
+                            Food additive names and code numbers (for statement of ingredients)
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00480" target="_blank">
+                                Schedule 10
+                            </a>
+                            Generic names of ingredients and conditions for their use
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00442" target="_blank">
+                                Schedule 16
+                            </a>
+                            Types of substances that may be used as food additives
+                        </li>
+                    </ul>
+                    </p>
+                    <p>
+                        Food Standards Australia and New Zealand
+                    <ul>
+                        <li>
+                            <a href="https://www.foodstandards.gov.au/code/userguide/pages/overviewoffoodlabell1267.aspx"
+                                target="_blank">
+                                User Guides - Overview of Food Labelling
+                            </a>
+                        </li>
+                    </ul>
+                    </p>
                 </section>
             </div>
         </article>
@@ -243,7 +244,7 @@ export default () => html`<div class="side-padding vertical-padding">
                 <p>
                     If you mention an ingredient, category of ingredients or a part of the food in the name on the
                     label, then it becomes a
-                    characterising ingredient or component. 
+                    characterising ingredient or component.
                 </p>
                 <p>
                     If an ingredient is usually associated with the food (for example, fruit in Christmas pudding), or
@@ -270,9 +271,10 @@ export default () => html`<div class="side-padding vertical-padding">
                 yoghurt ingredients must state <b>Strawberries (23%)</b>.
                 </p>
                 <p>
-                If the amount of the characterising ingredient is less than 5%, then the proportion must be given to the
-                nearest 0.5
-                decimal place, e.g. Banana (4.5%)
+                    If the amount of the characterising ingredient is less than 5%, then the proportion must be given to
+                    the
+                    nearest 0.5
+                    decimal place, e.g. Banana (4.5%)
                 </p>
                 <p>
                     The percentage information is not required for the following:
@@ -299,51 +301,53 @@ export default () => html`<div class="side-padding vertical-padding">
                 </ul>
                 </p>
                 <section>
-                <p>
+                    <p>
                     <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
-                <ul>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00385" target="_blank">
-                            Standard 1.1.2
-                        </a>
-                        Definitions used throughout the Code
-                        <ul>
-                            <li>
-                                See section 1.1.2—4 Definition of characterising component and characterising ingredient
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00386" target="_blank">
-                            Standard 1.2.1
-                        </a>
-                        Requirements to have labels or otherwise provide information
-                        <ul>
-                            <li>
-                                See section 1.2.1—9 Information requirements for food for sale that is not required to bear a
-                                label
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00398" target="_blank">
-                            Standard 1.2.10
-                        </a>
-                        Information requirements – characterising ingredients and components of food.
-                    </li>
-                </ul></br>
-                Food Standards Australia New Zealand
-                <ul>
-                    <li>
-                        <a href="https://www.foodstandards.gov.au/code/userguide/pages/percentagelabelling.aspx"
-                            target="_blank">
-                            User Guide – Percentage labelling of food
-                        </a>
-                    </li>
-                </ul>
-                </p>
-             </section>
+                    <ul>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00385" target="_blank">
+                                Standard 1.1.2
+                            </a>
+                            Definitions used throughout the Code
+                            <ul>
+                                <li>
+                                    See section 1.1.2—4 Definition of characterising component and characterising
+                                    ingredient
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00386" target="_blank">
+                                Standard 1.2.1
+                            </a>
+                            Requirements to have labels or otherwise provide information
+                            <ul>
+                                <li>
+                                    See section 1.2.1—9 Information requirements for food for sale that is not required
+                                    to bear a
+                                    label
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00398" target="_blank">
+                                Standard 1.2.10
+                            </a>
+                            Information requirements – characterising ingredients and components of food.
+                        </li>
+                    </ul></br>
+                    Food Standards Australia New Zealand
+                    <ul>
+                        <li>
+                            <a href="https://www.foodstandards.gov.au/code/userguide/pages/percentagelabelling.aspx"
+                                target="_blank">
+                                User Guide – Percentage labelling of food
+                            </a>
+                        </li>
+                    </ul>
+                    </p>
+                </section>
             </div>
         </article>
 
@@ -420,7 +424,8 @@ export default () => html`<div class="side-padding vertical-padding">
                                 is added to reconstitute dehydrated or concentrated ingredients; or
                             </li>
                             <li>
-                                forms part of broth, brine or syrup that is declared in the statement of ingredients or is part
+                                forms part of broth, brine or syrup that is declared in the statement of ingredients or
+                                is part
                                 of the name of the food; or
                             </li>
                             <li>
@@ -444,47 +449,48 @@ export default () => html`<div class="side-padding vertical-padding">
                 </ul>
                 </p>
                 <p>
-                The ingoing weight of water or an ingredient which is completely removed during processing must be
-                calculated according
-                to Standard 1.2.4—5 of the Food Standards Code and added to the statement of ingredients in the order of
-                descending
-                weight.
+                    The ingoing weight of water or an ingredient which is completely removed during processing must be
+                    calculated according
+                    to Standard 1.2.4—5 of the Food Standards Code and added to the statement of ingredients in the
+                    order of
+                    descending
+                    weight.
                 </p>
                 <section>
-                <p>
+                    <p>
                     <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
-                <ul>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00386" target="_blank">
-                            Standard 1.2.1
-                        </a>
-                        Requirements to have labels or otherwise provide information
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
-                            Standard 1.2.4
-                        </a>
-                        Information requirements – statement of ingredients
-                    </li>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00402" target="_blank">
-                            Standard 1.3.3
-                        </a>
-                        Processing aids
-                    </li>
-                </ul></br>
-                Food Standards Australia New Zealand
-                <ul>
-                    <li>
-                        <a href="https://www.foodstandards.gov.au/code/userguide/pages/overviewoffoodlabell1267.aspx"
-                            target="_blank">
-                            User Guide – Overview of Food Labelling
-                        </a>
-                    </li>
-                </ul>
-                </p>
-            </section>
+                    <ul>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00386" target="_blank">
+                                Standard 1.2.1
+                            </a>
+                            Requirements to have labels or otherwise provide information
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
+                                Standard 1.2.4
+                            </a>
+                            Information requirements – statement of ingredients
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00402" target="_blank">
+                                Standard 1.3.3
+                            </a>
+                            Processing aids
+                        </li>
+                    </ul></br>
+                    Food Standards Australia New Zealand
+                    <ul>
+                        <li>
+                            <a href="https://www.foodstandards.gov.au/code/userguide/pages/overviewoffoodlabell1267.aspx"
+                                target="_blank">
+                                User Guide – Overview of Food Labelling
+                            </a>
+                        </li>
+                    </ul>
+                    </p>
+                </section>
             </div>
         </article>
 
@@ -504,13 +510,13 @@ export default () => html`<div class="side-padding vertical-padding">
                 <p>
                     <b>If you are adding food additives:</b>
                     </br>
-                        Food additives are substances added to foods to keep them fresh or to enhance their colour, flavour
-                        or texture. They may
-                        include food colourings, flavour enhancers (such as MSG) or a range of preservatives. Most food
-                        additives are listed on
-                        the product label, along with other ingredients, in a descending order by weight (flavours are an
-                        exception and do not
-                        need to be identified).
+                    Food additives are substances added to foods to keep them fresh or to enhance their colour, flavour
+                    or texture. They may
+                    include food colourings, flavour enhancers (such as MSG) or a range of preservatives. Most food
+                    additives are listed on
+                    the product label, along with other ingredients, in a descending order by weight (flavours are an
+                    exception and do not
+                    need to be identified).
                 </p>
                 <p>
                     In most cases you can define the food additive with either its name or the code number. Refer to
@@ -522,17 +528,17 @@ export default () => html`<div class="side-padding vertical-padding">
                         Schedule 8
                     </a>
                     for food additive class names and code numbers. For example:
-                    <ul>
-                        <li>
-                            cochineal may be listed as Colour (cochineal) or Colour (120)
-                        </li>
-                        <li>
-                            sodium sulphite may be shown as Preservative (sodium sulphite) or Preservative (221).
-                        </li>
-                        <li>
-                            fermented manufactured meat – not heat treated
-                        </li>
-                    </ul>
+                <ul>
+                    <li>
+                        cochineal may be listed as Colour (cochineal) or Colour (120)
+                    </li>
+                    <li>
+                        sodium sulphite may be shown as Preservative (sodium sulphite) or Preservative (221).
+                    </li>
+                    <li>
+                        fermented manufactured meat – not heat treated
+                    </li>
+                </ul>
                 </p>
                 <p>
                     <b>If you are adding vitamins and minerals:</b>
@@ -552,8 +558,8 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
                             <a href="https://www.legislation.gov.au/Series/F2015L00385" target="_blank">
@@ -612,7 +618,7 @@ export default () => html`<div class="side-padding vertical-padding">
                         </li>
                     </ul>
                     </p>
-                </section>    
+                </section>
             </div>
         </article>
 
@@ -631,112 +637,111 @@ export default () => html`<div class="side-padding vertical-padding">
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     Generic names may be used in the ingredient list, instead of: </br>
-                    <ul>
-                        <li>
-                            a common name of an ingredient, or
-                        </li>
-                        <li>
-                            a name that describes the true nature of the ingredient.
-                        </li>
-                    </ul>
+                <ul>
+                    <li>
+                        a common name of an ingredient, or
+                    </li>
+                    <li>
+                        a name that describes the true nature of the ingredient.
+                    </li>
+                </ul>
                 </p>
                 <p>
                     The following generic names of foods can be used without any specific conditions:
-                    <ul>
-                        <li>
-                            cheese
-                        </li>
-                        <li>
-                            cocoa butter
-                        </li>
-                        <li>
-                            crystallised fruit
-                        </li>
-                        <li>
-                            fruit
-                        </li>
-                        <li>
-                            gum bases
-                        </li>
-                        <li>
-                            herbs
-                        </li>
-                        <li>
-                            meat
-                        </li>
-                        <li>
-                            milk protein
-                        </li>
-                        <li>
-                            poultry meat
-                        </li>
-                        <li>
-                            spices
-                        </li>
-                        <li>
-                            vegetables
-                        </li>
-                    </ul>
+                <ul>
+                    <li>
+                        cheese
+                    </li>
+                    <li>
+                        cocoa butter
+                    </li>
+                    <li>
+                        crystallised fruit
+                    </li>
+                    <li>
+                        fruit
+                    </li>
+                    <li>
+                        gum bases
+                    </li>
+                    <li>
+                        herbs
+                    </li>
+                    <li>
+                        meat
+                    </li>
+                    <li>
+                        milk protein
+                    </li>
+                    <li>
+                        poultry meat
+                    </li>
+                    <li>
+                        spices
+                    </li>
+                    <li>
+                        vegetables
+                    </li>
+                </ul>
                 </p>
                 <p>
-                For example, the term ‘fruit’ can be used in place of bananas or oranges.
+                    For example, the term ‘fruit’ can be used in place of bananas or oranges.
                 </p>
                 <p>
-                    The following generic food names may only be used under specific conditions in the Food Standards Code:
-                    <ul>
-                        <li>
-                            <a href="#bcr">
-                                cereals
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#oils-margarine">
-                                fats or oils
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#fish-seafood">
-                                fish
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#milk-dairy">
-                                milk solids
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#meat-prod">
-                                offal
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#nuts-seeds">
-                                nuts
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#bcr">
-                                starch
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#sugar-alt">
-                                sugar
-                            </a>
-                        </li>
-                    </ul>
+                    The following generic food names may only be used under specific conditions in the Food Standards
+                    Code:
+                <ul>
+                    <li>
+                        <a href="#bcr">
+                            cereals
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#oils-margarine">
+                            fats or oils
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#fish-seafood">
+                            fish
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#milk-dairy">
+                            milk solids
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#meat-prod">
+                            offal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#nuts-seeds">
+                            nuts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#bcr">
+                            starch
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sugar-alt">
+                            sugar
+                        </a>
+                    </li>
+                </ul>
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
                                 Standard 1.2.4
-                            </a> 
+                            </a>
                             Information requirements – statement of ingredients.
                             <ul>
                                 <li>
@@ -745,11 +750,9 @@ export default () => html`<div class="side-padding vertical-padding">
                             </ul>
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00480"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00480" target="_blank">
                                 Schedule 10
-                            </a> 
+                            </a>
                             Generic names of ingredients and conditions for their use
                         </li>
                     </ul>
@@ -785,22 +788,21 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        To calculate and show the ingoing weight for water and other ingredients that disappear when cooked,
-                        read:</br>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    To calculate and show the ingoing weight for water and other ingredients that disappear when cooked,
+                    read:</br>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392">
                                 Standard 1.2.4
-                            </a> 
+                            </a>
                             Information requirements – statement of ingredients.'
-                        <ul>
-                            <li>
-                                See section 1.2.4—5 Ingredients to be listed in descending order of ingoing weight
-                            </li>
-                        </ul>
+                            <ul>
+                                <li>
+                                    See section 1.2.4—5 Ingredients to be listed in descending order of ingoing weight
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     </p>
@@ -828,6 +830,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="bcr" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145849">
                 <label for="bcr">
                     <span class="title">
                         Breads, cereals and grains
@@ -860,15 +863,13 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
                                 Standard 1.2.4
-                            </a> 
+                            </a>
                             Information requirements – statement of ingredients.
                             <ul>
                                 <li>
@@ -877,11 +878,9 @@ export default () => html`<div class="side-padding vertical-padding">
                             </ul>
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00480"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00480" target="_blank">
                                 Schedule 10
-                            </a> 
+                            </a>
                             Generic names of ingredients and conditions for their use
                         </li>
                     </ul>
@@ -894,6 +893,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="fish-seafood" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145854">
                 <label for="fish-seafood">
                     <span class="title">
                         Fish, crustacea and seafood
@@ -923,17 +923,15 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00397"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00397" target="_blank">
                                 Standard 1.2.3
-                            </a> 
-                                Information requirements – warning statements, advisory
-                                statements and declarations
+                            </a>
+                            Information requirements – warning statements, advisory
+                            statements and declarations
                             <ul>
                                 <li>
                                     See section 1.2.3—4 Mandatory declaration of certain foods or substances in food
@@ -941,12 +939,10 @@ export default () => html`<div class="side-padding vertical-padding">
                             </ul>
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00480"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00480" target="_blank">
                                 Schedule 10
-                            </a> 
-                                Generic names of ingredients and conditions for their use
+                            </a>
+                            Generic names of ingredients and conditions for their use
                         </li>
                     </ul>
                     </p>
@@ -954,19 +950,15 @@ export default () => html`<div class="side-padding vertical-padding">
                         Australian Standard Fish Names
                     <ul>
                         <li>
-                            A searchable database of Australian Standard Fish Names is available at 
-                            <a
-                                href="http://www.fishnames.com.au"
-                                target="_blank">
+                            A searchable database of Australian Standard Fish Names is available at
+                            <a href="http://www.fishnames.com.au" target="_blank">
                                 http://www.fishnames.com.au
                             </a>
                         </li>
                         <li>
                             Hard copies of the Australian Fish Names Standard (AS 5300) are available from FRDC’s Online
                             Shop at
-                            <a 
-                                href="http://www.seafood.net.au/shop"
-                                target="_blank">
+                            <a href="http://www.seafood.net.au/shop" target="_blank">
                                 http://www.seafood.net.au/shop
                             </a>
                         </li>
@@ -980,6 +972,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="fruit-veg" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145857">
                 <label for="fruit-veg">
                     <span class="title">
                         Fruit and vegetables
@@ -998,33 +991,31 @@ export default () => html`<div class="side-padding vertical-padding">
                 <p>
                     <b>If the food is an orange juice blend:</b></br>
                     Where an orange juice blend has less than 10% in total of: </br>
-                    <ul>
-                        <li>
-                            mandarin juice; or
-                        </li>
-                        <li>
-                            tangelo juice; or
-                        </li>
-                        <li>
-                            mandarin and tangelo juice
-                        </li>
-                    </ul>
-                    the orange juice is not required to be labelled as a juice blend.
+                <ul>
+                    <li>
+                        mandarin juice; or
+                    </li>
+                    <li>
+                        tangelo juice; or
+                    </li>
+                    <li>
+                        mandarin and tangelo juice
+                    </li>
+                </ul>
+                the orange juice is not required to be labelled as a juice blend.
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
-                        <ul>
-                            <li>
-                             <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00426"
-                                target="_blank">
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
+                    <ul>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00426" target="_blank">
                                 Standard 2.6.1
-                             </a>
+                            </a>
                             Fruit juice and vegetable juice
-                             </li>
-                        </ul>
+                        </li>
+                    </ul>
                     </p>
                 </section>
             </div>
@@ -1034,6 +1025,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="meat-prod" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145868">
                 <label for="meat-prod">
                     <span class="title">
                         Meat and meat products
@@ -1056,25 +1048,24 @@ export default () => html`<div class="side-padding vertical-padding">
                 <p>
                     For brain, heart, kidney, liver, tongue or tripe, the food name or description must be identified as
                     either:
-                    <ul>
-                        <li>offal</li>
-                        <li>the specific name of the type of offal</li>
-                    </ul>
+                <ul>
+                    <li>offal</li>
+                    <li>the specific name of the type of offal</li>
+                </ul>
                 </p>
                 <p>
-                    For any other type of offal, the food name or description must be identified by the specific name of the
+                    For any other type of offal, the food name or description must be identified by the specific name of
+                    the
                     type of offal.
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392"
-                                target="_blank">
-                                Standard 1.2.4 
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
+                                Standard 1.2.4
                             </a>
                             Information requirements – statement of ingredients.
                             <ul>
@@ -1084,12 +1075,10 @@ export default () => html`<div class="side-padding vertical-padding">
                             </ul>
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00427"
-                                target="_blank">
-                                Standard 2.2.1 
+                            <a href="https://www.legislation.gov.au/Series/F2015L00427" target="_blank">
+                                Standard 2.2.1
                             </a>
-                                Meat and meat products.
+                            Meat and meat products.
                             <ul>
                                 <li>
                                     See section 2.2.1—6 Statement indicating the presence of offal
@@ -1109,6 +1098,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="milk-dairy" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145869">
                 <label for="milk-dairy">
                     <span class="title">
                         Milk, dairy and dairy alternatives
@@ -1144,12 +1134,10 @@ export default () => html`<div class="side-padding vertical-padding">
                     <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
                                 Standard 1.2.4
-                            </a> 
-                                Information requirements – statement of ingredients.
+                            </a>
+                            Information requirements – statement of ingredients.
                             <ul>
                                 <li>
                                     See section 1.2.4—4 Ingredients to be listed by common, descriptive or generic name
@@ -1157,12 +1145,10 @@ export default () => html`<div class="side-padding vertical-padding">
                             </ul>
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00480"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00480" target="_blank">
                                 Schedule 10
-                            </a> 
-                                Generic names of ingredients and conditions for their use
+                            </a>
+                            Generic names of ingredients and conditions for their use
                         </li>
                     </ul>
                     </p>
@@ -1174,6 +1160,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="non-alcoholic" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145870">
                 <label for="non-alcoholic">
                     <span class="title">
                         Non-alcoholic drinks
@@ -1187,10 +1174,8 @@ export default () => html`<div class="side-padding vertical-padding">
                     <b>If the food is packaged water:</b>
                     </br>
                     The ingredients list is not required for a water that is packaged and labelled to the requirements
-                    of 
-                    <a
-                        href="https://www.legislation.gov.au/Series/F2015L00465"
-                        target="_blank">
+                    of
+                    <a href="https://www.legislation.gov.au/Series/F2015L00465" target="_blank">
                         Standard 2.6.2.
                     </a>
                 </p>
@@ -1224,33 +1209,27 @@ export default () => html`<div class="side-padding vertical-padding">
                     <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
                                 Standard 1.2.4
-                            </a> 
-                                Information requirements – statement of ingredients.
+                            </a>
+                            Information requirements – statement of ingredients.
                             <ul>
                                 <li>
                                     See section 1.2.4—2 Requirement for statement of ingredients
                                 </li>
-                            </ul> 
+                            </ul>
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00426"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00426" target="_blank">
                                 Standard 2.6.1
-                            </a> 
-                                Fruit juice and vegetable juice
+                            </a>
+                            Fruit juice and vegetable juice
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00465"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00465" target="_blank">
                                 Standard 2.6.2
-                            </a> 
-                                Non-alcoholic beverages and brewed soft drinks
+                            </a>
+                            Non-alcoholic beverages and brewed soft drinks
                         </li>
                     </ul>
                     </p>
@@ -1262,6 +1241,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="nuts-seeds" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145872">
                 <label for="nuts-seeds">
                     <span class="title">
                         Nuts and seeds
@@ -1281,17 +1261,15 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00397"
-                                target="_blank">
-                                Standard 1.2.3 
-                            </a> 
-                                Information requirements – warning statements, advisory
-                                statements and declarations
+                            <a href="https://www.legislation.gov.au/Series/F2015L00397" target="_blank">
+                                Standard 1.2.3
+                            </a>
+                            Information requirements – warning statements, advisory
+                            statements and declarations
                             <ul>
                                 <li>
                                     See section 1.2.3—4 Mandatory declaration of certain foods or substances in food
@@ -1299,12 +1277,10 @@ export default () => html`<div class="side-padding vertical-padding">
                             </ul>
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00480"
-                                target="_blank">
-                                Schedule 10 
-                            </a> 
-                                Generic names of ingredients and conditions for their use
+                            <a href="https://www.legislation.gov.au/Series/F2015L00480" target="_blank">
+                                Schedule 10
+                            </a>
+                            Generic names of ingredients and conditions for their use
                         </li>
                     </ul>
                     </p>
@@ -1316,6 +1292,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="oils-margarine" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145873">
                 <label for="oils-margarine">
                     <span class="title">
                         Oils and margarine
@@ -1347,24 +1324,20 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00461"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00461" target="_blank">
                                 Standard 2.4.2
-                            </a> 
-                                Edible oil spreads
+                            </a>
+                            Edible oil spreads
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392"
-                                target="_blank">
-                                Standard 1.2.4 
-                            </a> 
-                                Information requirements – statement of ingredients.
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
+                                Standard 1.2.4
+                            </a>
+                            Information requirements – statement of ingredients.
                             <ul>
                                 <li>
                                     See section 1.2.4—4 Ingredients to be listed by common, descriptive or generic name
@@ -1372,12 +1345,10 @@ export default () => html`<div class="side-padding vertical-padding">
                             </ul>
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00480"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00480" target="_blank">
                                 Schedule 10
-                            </a> 
-                                Generic names of ingredients and conditions for their use
+                            </a>
+                            Generic names of ingredients and conditions for their use
                         </li>
                     </ul>
                     </p>
@@ -1389,6 +1360,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="sugar-alt" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145881">
                 <label for="sugar-alt">
                     <span class="title">
                         Sugar and sugar alternatives
@@ -1417,29 +1389,25 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
                                 Standard 1.2.4
-                            </a> 
-                                Information requirements – statement of ingredients.
+                            </a>
+                            Information requirements – statement of ingredients.
                             <ul>
                                 <li>
-                                    See section 1.2.4—4 Ingredients to be listed by common, descriptive or generic name 
+                                    See section 1.2.4—4 Ingredients to be listed by common, descriptive or generic name
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00480"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00480" target="_blank">
                                 Schedule 10
-                            </a> 
-                                Generic names of ingredients and conditions for their use
+                            </a>
+                            Generic names of ingredients and conditions for their use
                         </li>
                     </ul>
                     </p>
@@ -1451,6 +1419,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="food-package" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145879">
                 <label for="food-package">
                     <span class="title">
                         Food in small packages
@@ -1468,16 +1437,14 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
                                 Standard 1.2.4
-                            </a> 
-                                Information requirements – statement of ingredients.
+                            </a>
+                            Information requirements – statement of ingredients.
                             <ul>
                                 <li>
                                     See section 1.2.4—2 Requirement for statement of ingredients
@@ -1494,6 +1461,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="one-ingredient" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145874">
                 <label for="one-ingredient">
                     <span class="title">
                         Food with one ingredient
@@ -1509,16 +1477,14 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <p>
-                        <h4>Further reading</h4>
-                        <i>Australia New Zealand Food Standards Code</i>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a 
-                                href="https://www.legislation.gov.au/Series/F2015L00392"
-                                target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00392" target="_blank">
                                 Standard 1.2.4
-                            </a> 
-                                Information requirements – statement of ingredients.
+                            </a>
+                            Information requirements – statement of ingredients.
                             <ul>
                                 <li>
                                     See section 1.2.4—2 Requirement for statement of ingredients
