@@ -7,9 +7,10 @@
   border: none;
   box-shadow: none !important;
   padding-left: 14px;
+  margin-top: 15px;
 }
 
-.btn.btn-primary.formio-button-add-row i.fa.fa-plus::before {
+.btn.btn-primary.formio-button-add-row i.fa.fa-plus:before {
   content: none;
 }
 
@@ -51,6 +52,11 @@ th:nth-child(3):before {
   content: 'Delete';
 }
 
+th:nth-child(1),
+th:nth-child(3) {
+  width: 10%;
+}
+
 .qg-table thead th,
 .table thead th,
 .table thead th,
@@ -76,6 +82,11 @@ p.wrap {
 
 #qg-primary-content table tr td {
   padding-bottom: 0em;
+  padding-top: 0em;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 400;
+  vertical-align: middle;
 }
 
 .btn.btn-primary.formio-button-add-row {
