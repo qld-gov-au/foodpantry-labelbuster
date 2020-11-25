@@ -6,38 +6,47 @@ export default () => html`
 <h4>General requirements</h4>
 <section class="qg-accordion flex-column" aria-label="Accordion Label">
     <div class="controls-group">
-    <input
-    type="radio"
-    name="control"
-    id="collapse"
-    class="controls collapse"
-    value="collapse"
-    role="radio">
+        <input
+        type="radio"
+        name="control"
+        id="collapse"
+        class="controls collapse"
+        value="collapse"
+        role="radio">
 
-    <label for="collapse" class="controls" @click=${(e) =>
-      modifyAccordionState(e, false)}>Collapse all</label>
+        <label
+            for="collapse"
+            class="controls"
+            @click=${e => modifyAccordionState(e, false)}>
+            Collapse all
+        </label>
 
-    <span class="controls">|</span>
+        <span class="controls">|</span>
 
-    <input
-    type="radio"
-    name="control"
-    id="expand"
-    class="controls expand"
-    value="expand"
-    role="radio">
+        <input
+        type="radio"
+        name="control"
+        id="expand"
+        class="controls expand"
+        value="expand"
+        role="radio">
 
-    <label for="collapse" class="controls" @click=${(e) =>
-      modifyAccordionState(e, true)}>Expand all</label>
+        <label
+            for="collapse"
+            class="controls"
+            @click=${e => modifyAccordionState(e, true)}>
+            Expand all
+        </label>
     </div>
 
     <article>
-        <input id="about-food" 
-        type="checkbox" 
-        name="tabs" 
-        tabindex = "-1" 
-        aria-controls = "id-panel-content-1"
-            aria-expanded="false" role="checkbox" />
+        <input id="about-food"
+            type="checkbox"
+            name="tabs"
+            tabindex = "-1"
+            aria-controls = "id-panel-content-1"
+            aria-expanded="false"
+            role="checkbox" />
         <h3 class="acc-heading">
             <label for="about-food">
                 <span class="title">
@@ -47,15 +56,21 @@ export default () => html`
             </label>
         </h3>
 
-        <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+        <div
+            class="collapsing-section"
+            aria-hidden="true"
+            id="id-panel-content-1">
             <p>
-                Food names must correctly describe the food. For example, strawberry yoghurt must contain
-                strawberries. If the yoghurt contains strawberry flavouring instead of the fruit, then the name
-                would need to be strawberry-flavoured yoghurt.
+                Food names must correctly describe the food. For example,
+                strawberry yoghurt must contain strawberries. If the yoghurt
+                contains strawberry flavouring instead of the fruit, then the
+                name would need to be strawberry-flavoured yoghurt.
             </p>
-            <p>    
-                The Food Standards Code includes definitions for many foods, which includes what a food is made of.
-                For example, a fruit juice cannot contain added water but a fruit drink can have water added.
+            <p>
+                The Food Standards Code includes definitions for many foods,
+                which includes what a food is made of. For example, a fruit
+                juice cannot contain added water but a fruit drink can have
+                water added.
             </p>
             <p>
                 Some food have names that must be used (<a href="#">prescribed names</a>). For example, ‘fermented
@@ -226,8 +241,7 @@ export default () => html`
     value="collapse"
     role="radio">
 
-    <label for="collapse" class="controls" @click=${(e) =>
-      modifyAccordionState(e, false)}>Collapse all</label>
+    <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, false)}>Collapse all</label>
 
     <span class="controls">|</span>
 
@@ -239,8 +253,7 @@ export default () => html`
     value="expand"
     role="radio">
 
-    <label for="collapse" class="controls" @click=${(e) =>
-      modifyAccordionState(e, true)}>Expand all</label>
+    <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, true)}>Expand all</label>
     </div>
     <article>
         <input id="bcr" 
@@ -262,12 +275,13 @@ export default () => html`
         <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
             <p>
                 There are rules for the use of wholegrain and wholemeal in the food name.
-                </br>
+                <br>
                 The names ‘shortbread’, ‘crispbread’ and ‘unleavened bread’ can be used for foods which are not
                 ‘bread’, because a consumer understands that they are not ‘bread’ as defined in the Food Standards
                 Code.
-                <b>Further reading</b> </br>
+                <b>Further reading</b> <br>
                 <i>Australia New Zealand Food Standards Code</i>
+            </p>
             <ul>
                 <li>
                     <a href="#">Standard 1.1.1</a> -13 Food sold with a specified name or representation
@@ -276,7 +290,6 @@ export default () => html`
                     <a href="#">Standard 2.1.1</a> -Cereal and cereal products
                 </li>
             </ul>
-            </p>
         </div>
     </article>
 
