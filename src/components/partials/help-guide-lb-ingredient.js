@@ -325,8 +325,7 @@ export default () => html`
                             <ul>
                                 <li>
                                     See section 1.2.1—9 Information requirements for food for sale that is not required
-                                    to bear a
-                                    label
+                                    to bear a label
                                 </li>
                             </ul>
                         </li>
