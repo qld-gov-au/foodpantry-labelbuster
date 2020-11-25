@@ -140,4 +140,180 @@ export default () => html`
 
       </section>
 </div>
+<div class="side-padding vertical-padding">
+    <h4>Food with extra requirements</h4>
+    <section class="qg-accordion flex-column" aria-label="Accordion Label">
+        <div class="controls-group">
+            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
+            <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, false)}>Collapse all</label>
+            <span class="controls">|</span>
+            <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
+            <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, true)}>Expand all</label>
+        </div>
+        <article>
+            <input id="bamboo-shoot" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+                aria-expanded="false" role="checkbox" />
+            <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145883">
+                <label for="bamboo-shoot">
+                    <span class="title">
+                        Bamboo shoots
+                    </span>
+                    <span class="arrow"><i></i></span>
+                </label>
+            </h3>
+            <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+                <p>
+                    <b>If the food is raw bamboo shoots:</b>
+                    </br>
+                        The label must include directions for use indicating that bamboo shoots should be fully cooked 
+                        before being eaten.
+                </p>
+                <section>
+                    <p>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
+                    <ul>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00393" target="_blank">
+                                Standard 1.2.6
+                            </a>
+                            Information requirements – directions for use and storage
+                        </li>
+                    </ul>
+                    </p>
+                </section>
+            </div>
+        </article>
+
+        <article>
+            <input id="cassava-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+                aria-expanded="false" role="checkbox" />
+            <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145859">
+                <label for="cassava-food">
+                    <span class="title">
+                        Cassava
+                    </span>
+                    <span class="arrow"><i></i></span>
+                </label>
+            </h3>
+            <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+                <p>
+                    <b>If the food is raw sweet cassava:</b>
+                    </br>
+                    The label must include directions for use indicating that sweet cassava should be peeled and fully cooked before being
+                    consumed.
+                </p>
+                <section>
+                    <p>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
+                    <ul>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00393" target="_blank">
+                                Standard 1.2.6
+                            </a>
+                            Information requirements – directions for use and storage
+                        </li>
+                    </ul>
+                    </p>
+                </section>
+            </div>
+        </article>
+
+        <article>
+            <input id="fish-seafood" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+                aria-expanded="false" role="checkbox" />
+            <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145866">
+                <label for="fish-seafood">
+                    <span class="title">
+                        Fish, crustacea and seafood
+                    </span>
+                    <span class="arrow"><i></i></span>
+                </label>
+            </h3>
+            <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+                <p>
+                    <b>If the food is raw fish which has been moulded or combined to look like a cut or fillet of fish:</b></br>
+                        The label must say that the food is either formed or joined and give cooking instructions to 
+                        make it safe to eat.   
+                </p>
+                <section>
+                    <p>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
+                    <ul>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00393" target="_blank">
+                                Standard 1.2.6
+                            </a>
+                            Information requirements – directions for use and storage
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00429" target="_blank">
+                                Standard 2.2.3
+                            </a>
+                            Fish and fish products.
+                            <ul>
+                                <li>
+                                    See section 2.2.3—3 Labelling of formed or joined fish
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </p>
+                </section>
+            </div>
+        </article>
+
+        <article>
+            <input id="kava-root" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+                aria-expanded="false" role="checkbox" />
+            <h3 class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145866">
+                <label for="kava-root">
+                    <span class="title">
+                        Kava and kava root
+                    </span>
+                    <span class="arrow"><i></i></span>
+                </label>
+            </h3>
+            <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+                <p>
+                    <b>If the food is raw meat which has been moulded or combined to look like a cut of meat:</b></br>
+                    The label must say that the food is either formed or joined and give cooking instructions 
+                    to make it safe to eat.
+                </p>
+                <section>
+                    <p>
+                    <h4>Further reading</h4>
+                    <i>Australia New Zealand Food Standards Code</i>
+                    <ul>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00393" target="_blank">
+                                Standard 1.2.6
+                            </a>
+                            Information requirements – directions for use and storage
+                        </li>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00427" target="_blank">
+                                Standard 2.2.1
+                            </a>
+                            Meat and meat products.
+                            <ul>
+                                <li>
+                                    See section 2.2.3—8 Information about raw meat joined or formed into the
+                                    semblance of a cut of meat
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </p>
+                </section>
+            </div>
+        </article>
+    </section>
+</div>
 `;
