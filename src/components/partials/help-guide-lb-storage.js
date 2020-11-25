@@ -269,13 +269,13 @@ export default () => html`
         </article>
 
         <article>
-            <input id="kava-root" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+            <input id="meat-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
-                <img src="https://www.qld.gov.au/?a=145866">
-                <label for="kava-root">
+                <img src="https://www.qld.gov.au/?a=145868">
+                <label for="meat-food">
                     <span class="title">
-                        Kava and kava root
+                        Meat and meat products
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
