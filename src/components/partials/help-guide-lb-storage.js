@@ -154,7 +154,7 @@ export default () => html`
             <input id="bamboo-shoot" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
-                <img src="https://www.qld.gov.au/?a=145883">
+                <img src="https://www.qld.gov.au/?a=145848">
                 <label for="bamboo-shoot">
                     <span class="title">
                         Bamboo shoots
@@ -190,7 +190,7 @@ export default () => html`
             <input id="cassava-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
-                <img src="https://www.qld.gov.au/?a=145859">
+                <img src="https://www.qld.gov.au/?a=145850">
                 <label for="cassava-food">
                     <span class="title">
                         Cassava
@@ -226,7 +226,7 @@ export default () => html`
             <input id="fish-seafood" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
-                <img src="https://www.qld.gov.au/?a=145866">
+                <img src="https://www.qld.gov.au/?a=145854">
                 <label for="fish-seafood">
                     <span class="title">
                         Fish, crustacea and seafood
@@ -269,13 +269,13 @@ export default () => html`
         </article>
 
         <article>
-            <input id="kava-root" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
+            <input id="meat-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <h3 class="acc-heading">
-                <img src="https://www.qld.gov.au/?a=145866">
-                <label for="kava-root">
+                <img src="https://www.qld.gov.au/?a=145868">
+                <label for="meat-food">
                     <span class="title">
-                        Kava and kava root
+                        Meat and meat products
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
