@@ -5,7 +5,7 @@
 export function modifyAccordionState(e, newState) {
   const accordionSection = e
     .composedPath()
-    .find((element) => element.classList.contains('qg-accordion'));
+    .find(element => element.classList.contains('qg-accordion'));
   const articles = accordionSection.querySelectorAll(
     '.qg-accordion article input[type="checkbox"]',
   );
@@ -21,6 +21,6 @@ export function modifyAccordionState(e, newState) {
 export const addExpandCollapse = (accordionSection) => {
   const collapse = accordionSection.querySelector('label[for="collapse"]');
   const expand = accordionSection.querySelector('label[for="expand"]');
-  expand.addEventListener('click', (e) => modifyAccordionState(e, true));
-  collapse.addEventListener('click', (e) => modifyAccordionState(e, false));
+  expand.addEventListener('click', e => modifyAccordionState(e, true));
+  collapse.addEventListener('click', e => modifyAccordionState(e, false));
 };
