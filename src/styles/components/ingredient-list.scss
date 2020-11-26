@@ -1,3 +1,23 @@
+.btn.btn-primary.formio-button-add-row,
+.btn.btn-primary.formio-button-add-row:active,
+.btn.btn-primary.formio-button-add-row:focus
+  .btn.btn-primary.formio-button-add-row:active:focus {
+  background-color: #007eb1;
+  color: #fff !important;
+  border: none;
+  box-shadow: none !important;
+  padding-left: 14px;
+  margin-top: 15px;
+}
+
+.fa.fa-arrows-v.ingredient-arrow::before {
+  font-size: small;
+}
+
+.btn.btn-primary.formio-button-add-row i.fa.fa-plus:before {
+  content: none;
+}
+
 .fa-times-circle-o:before {
   content: '\f1f8';
   color: #000000;
@@ -16,12 +36,6 @@ button.formio-drag-button.btn.btn-default.fa.fa-bars {
   border: none;
 }
 
-.btn-secondary {
-  background: transparent;
-  border: none;
-  color: #777;
-}
-
 .btn-secondary:not(:disabled):not(.disabled):active:focus {
   box-shadow: none;
   background-color: transparent;
@@ -35,11 +49,16 @@ button.formio-drag-button.btn.btn-default.fa.fa-bars {
 }
 
 th:nth-child(1):before {
-  content: 'Click and \a drag '\f07d' to \a Re-order';
+  content: 'Re-order';
   white-space: pre;
 }
 th:nth-child(3):before {
   content: 'Delete';
+}
+
+th:nth-child(1),
+th:nth-child(3) {
+  width: 10%;
 }
 
 .qg-table thead th,
@@ -66,7 +85,12 @@ p.wrap {
 }
 
 #qg-primary-content table tr td {
-  padding-bottom: 0em;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 400;
+  vertical-align: middle;
 }
 
 .btn.btn-primary.formio-button-add-row {
