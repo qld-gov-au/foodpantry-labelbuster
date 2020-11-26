@@ -144,11 +144,12 @@ export default () => html`
     <h4>Food with extra requirements</h4>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
         <div class="controls-group">
-            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
-            <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, false)}>Collapse all</label>
-            <span class="controls">|</span>
             <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
             <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, true)}>Expand all</label>
+  
+            <span class="controls">|</span>
+            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
+            <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, false)}>Collapse all</label>
         </div>
         <article>
             <input id="bamboo-shoot" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
