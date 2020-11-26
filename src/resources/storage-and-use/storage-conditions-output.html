@@ -13,14 +13,14 @@
         <div class="qg-callout__description">
           <p>
             <b>Storage conditions:</b>
-            {{ data && data.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
-            {{ data && data.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
-            {{ data && data.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
-            {{ data && data.keepRefrigeratedAt ? `Keep refrigerated at ${data.keepRefrigeratedAtMinimum || 0} °C to ${data.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
-            {{ data && data.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.keepRefrigeratedAtOrBelowTemperature || 0}.` : '' }}
-            {{ data && data.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
-            {{ data && data.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
-            {{ data && data.otherPleaseEnter ? data.otherPleaseEnterDetails : '' }}
+            {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
+            {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
+            {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
+            {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
+            {{ data && data.storageConditions.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.storageConditions.keepRefrigeratedAtOrBelowTemperature || 0}.` : '' }}
+            {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
+            {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
+            {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
           </p>
         </div>
       </div>

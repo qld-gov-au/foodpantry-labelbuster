@@ -12,7 +12,7 @@
   }
 }
 
-.lb {
+#formio.lb {
   p button:not(.accordion-btn) {
     margin-right: 5px;
   }
@@ -66,6 +66,20 @@
   .alert-instructions {
     background-color: #f5f5f5;
     border-left: 5px solid #808080;
+  }
+
+  .qg-callout__box {
+    img {
+      width: 150px;
+    }
+  }
+
+  .qg-accordion {
+    article {
+      img {
+        width: 250px;
+      }
+    }
   }
 }
 
@@ -134,4 +148,10 @@ ol.lb {
 // https://meowni.ca/hidden.is.a.lie.html
 [hidden] {
   display: none !important;
+}
+
+.qg-accordion article .acc-heading img {
+  width: 1.65em;
+  height: auto;
+  margin-left: -15px;
 }

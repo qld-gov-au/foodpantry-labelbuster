@@ -31,7 +31,7 @@ export const configuration = {
   buttons: {
     overwriteFirstButton: true,
     overwriteValue: 'Start',
-    showButtonsOnLast: false,
+    showButtonsOnLast: true,
     css: {
       base: 'qg-btn',
       previous: 'btn-default',
