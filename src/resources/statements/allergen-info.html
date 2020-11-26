@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="./allergen-info.scss">
+
 <section class="qg-callout__box">
     <div class="qg-callout__header col-12">
         <span class="qg-callout__icon">
@@ -13,17 +15,13 @@
             <div class="qg-callout__description">
                 <p class="wrap">
                     The allergens should be shown on the food label as:
-                    Contains: {{ data && data.container.Gluten ? 'Gluten, ' : '' }}
-                    {{ data && data.container && data.container.Crustacea ? 'Crustacea, ' : '' }}
-                    {{ data && data.container && data.container.Egg ? 'Egg, ' : '' }}
-                    {{ data && data.container && data.container.Fish ? 'Fish, ' : '' }}
-                    {{ data && data.container && data.container.Milk ? 'Milk, ' : '' }}
-                    {{ data && data.container && data.container.Lupin ? 'Lupin, ' : '' }}
-                    {{ data && data.container && data.container.Peanuts ? 'Peanuts, ' : '' }}
-                    {{ data && data.container && data.container.Soybeans ? 'Soybeans, ' : '' }}
-                    {{ data && data.container && data.container.Sesame ? 'Sesame seeds, ' : '' }}
-                    {{ data && data.container && data.container.Sulphites ? 'Sulphites, ' : '' }}
-                    {{ data && data.container && data.container.Tree_Nuts ? 'Tree nuts, ' : '' }}
+                    Contains: 
+                    {{
+                        _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
+                          if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+                          return acc + ` ${val}, `;
+                        }, '')    
+                      }}
                 </p>
             </div>
         </div>
