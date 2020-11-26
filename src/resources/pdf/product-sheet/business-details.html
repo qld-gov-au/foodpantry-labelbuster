@@ -2,5 +2,15 @@
   <div>
     <strong>Business details</strong>
   </div>
-  <div>{{data.address || 'no data provided'}}</div>
+  <div>
+    <b>{{data.businessName}}</b>
+    <br>
+    {{data.addressLine1}}
+    <br>
+    {{data.addressLine2}}
+    <br>
+    <span class="suburb">{{data.addressLine3}}</span>
+    <br>
+    {{data.state1}}
+  </div>
 </div>

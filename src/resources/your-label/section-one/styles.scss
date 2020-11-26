@@ -32,36 +32,40 @@
       font-size: 1.5625rem;
     }
   
-    .alert-instructions {
-      background-color: #f5f5f5;
-      border-left: 5px solid #808080;
-    }
-  
-    .btn-kyfb {
-      border: none;
-      background: none;
-      text-decoration: underline;
-      color: #005e85;
-      padding: 5px;
-    }
-
-    .emailHeader {
-            font-family: Lato;
-            font-size: 14px;
-            color: #666666;
-    }
-
-    .textFieldEmail {
-            border-radius: 4px;
-            background-color: #ffffff;
-    }
-
-    table td {
-      text-align: left;
-    }
-
-    tbody tr:nth-child(even) {
-      background: #f6f6f6;
-    }
-
+  .alert-instructions {
+    background-color: #f5f5f5;
+    border-left: 5px solid #808080;
   }
+  
+  .btn-kyfb {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    color: #005e85;
+    padding: 5px;
+  }
+
+  .emailHeader {
+          font-family: Lato;
+          font-size: 14px;
+          color: #666666;
+  }
+
+  .textFieldEmail {
+          border-radius: 4px;
+          background-color: #ffffff;
+  }
+
+  table td {
+    text-align: left;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f6f6f6;
+  }
+
+  .suburb {
+    text-transform: uppercase;
+  }
+
+}
