@@ -5,6 +5,7 @@
   <div>
     <p>
       <b>Storage conditions: </b>
+      <!-- prettier-ignore -->
       {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
       {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
       {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
@@ -13,8 +14,9 @@
       {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
       {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
       {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
-      </br>
+      <br />
       <b>Directions for use:</b>
+      <!-- prettier-ignore -->
       {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
       {{ data && data.directionsForUse.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}
       {{ data && data.directionsForUse.shakeWellBeforeUse ?  'Shake well before use.' : '' }}
