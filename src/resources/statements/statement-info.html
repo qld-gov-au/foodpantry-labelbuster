@@ -1,18 +1,18 @@
 <section>
-    <article class="qg-callout__box qg-callout__grey-theme">
-        <div class="qg-callout__header col-12">
-            <span class="qg-callout__icon">
-                <i class="fa fa-info-circle"></i> </span>
-            <h2 class="qg-callout__title">
-            The statements should be shown on the food label as:
-        </h2>
+  <article class="qg-callout__box qg-callout__grey-theme">
+    <div class="qg-callout__header col-12">
+      <span class="qg-callout__icon"> <i class="fa fa-info-circle"></i> </span>
+      <h2 class="qg-callout__title">
+        The statements should be shown on the food label as:
+      </h2>
     </div>
 
     <div class="qg-callout__content col-12">
-        <div class="qg-callout__bottom-alignment">
-            <div class="qg-callout__description">
-                <p class="wrap">
-                    {{ data && data.statementsSummary.egg ? 'The product is unpasteurised.' : '' }}
+      <div class="qg-callout__bottom-alignment">
+        <div class="qg-callout__description">
+          <p class="wrap">
+            <!-- prettier-ignore -->
+            {{ data && data.statementsSummary.egg ? 'The product is unpasteurised.' : '' }}
                     {{ data && data.statementsSummary && (data.statementsSummary.alcohol_10G100G || data.statementsSummary.alcohol_25G100G || data.statementsSummary.alcohol_comb_10G100G) ? 'Excess consumption may have a laxative effect.' : '' }}
                     {{ data && data.statementsSummary && data.statementsSummary.aspartame ? 'This product contains phenylalanine.' : '' }}
                     {{ data && data.statementsSummary && data.statementsSummary.phytosterols ? 'This product should be consumed as part of a healthy diet.This product may not be suitable for children under 5 years and pregnant or lactating women.Plant sterols do not provide additional benefits when consumed in excess of 3 grams per day.' : '' }}
@@ -28,9 +28,9 @@
                     {{ data && data.statementsSummary && (data.statementsSummary.kava_dry || data.statementsSummary.kava_root) ? 'Use in moderation.May cause drowsiness.' : '' }}
                     {{ data && data.statementsSummary && (data.statementsSummary.cola_caffeine || data.statementsSummary.ingredient_caffeine) ? 'The product contains caffeine.' : '' }}
                     {{ data && data.statementsSummary && data.statementsSummary.added_fluoride ? 'The product contains added fluoride.' : '' }}
-                </p>
-            </div>
+          </p>
         </div>
+      </div>
     </div>
-    </article>
+  </article>
 </section>
