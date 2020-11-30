@@ -39,7 +39,7 @@
     "test": "echo hello",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "start": "parcel src/index.html",
-    "build": "rimraf dist && npm run build:resources && npm run build:squiz",
+    "build": "npm install && rimraf dist && npm run build:resources && npm run build:squiz",
     "build:resources": "parcel build src/resources/**/*.html src/resources/**/**/*.html --no-source-maps",
     "build:squiz": "parcel build src/index.html --no-source-maps",
     "svg-icons-to-png": "convert-svg-to-png --height 24px --width 24px src/assets/*.svg && mv src/assets/*.png static",
@@ -83,14 +83,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm test"
     }
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "prettier --write",
       "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
     ]
   },
   "dependencies": {
