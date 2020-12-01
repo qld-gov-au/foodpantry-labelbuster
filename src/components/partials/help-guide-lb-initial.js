@@ -40,6 +40,6 @@ export default handler => html`
       <img src="https://via.placeholder.com/338x106.png/ccc/ccc" alt="" />
     </figure>
 
-    <button class="qg-btn btn-primary" @click=${handler}>Got it!</button>
+    <button id="gotHelpGuide" class="qg-btn btn-primary" @click=${handler}>Got it!</button>
   </div>
 `;
