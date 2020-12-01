@@ -155,3 +155,8 @@ ol.lb {
   height: auto;
   margin-left: -15px;
 }
+
+button:disabled,
+input:disabled {
+  cursor: not-allowed;
+}
