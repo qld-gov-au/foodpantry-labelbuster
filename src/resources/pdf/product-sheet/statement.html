@@ -1,18 +1,22 @@
-
 <div class="product-sheet-row secondary">
   <div>
     <strong>Statement and declarations</strong>
   </div>
   <div>
-    <p><b>Contains:</b>
+    <p>
+      <b>Contains:</b>
+      <!-- prettier-ignore -->
       {{
         _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
           if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
           return acc + ` ${val}, `;
         }, '')    
       }}
-    </br>
+      <br />
+    </p>
+
     <p class="wrap">
+      <!-- prettier-ignore -->
       {{ data && data.statementsSummary.egg ? 'The product is unpasteurised.' : '' }}
       {{ data && data.statementsSummary && (data.statementsSummary.alcohol_10G100G || data.statementsSummary.alcohol_25G100G || data.statementsSummary.alcohol_comb_10G100G) ? 'Excess consumption may have a laxative effect.' : '' }}
       {{ data && data.statementsSummary && data.statementsSummary.aspartame ? 'This product contains phenylalanine.' : '' }}
@@ -29,10 +33,10 @@
       {{ data && data.statementsSummary && (data.statementsSummary.kava_dry || data.statementsSummary.kava_root) ? 'Use in moderation.May cause drowsiness.' : '' }}
       {{ data && data.statementsSummary && (data.statementsSummary.cola_caffeine || data.statementsSummary.ingredient_caffeine) ? 'The product contains caffeine.' : '' }}
       {{ data && data.statementsSummary && data.statementsSummary.added_fluoride ? 'The product contains added fluoride.' : '' }}
-  </p>
-    </br>
-    </br>
-    Note: Warning statements must be a minimum size of type of 3 mm. In the case of small packages, a minimum
-    size of type of 1.5 mm is required.</p>
+    </p>
+    <p>
+      Note: Warning statements must be a minimum size of type of 3 mm. In the
+      case of small packages, a minimum size of type of 1.5 mm is required.
+    </p>
   </div>
 </div>
