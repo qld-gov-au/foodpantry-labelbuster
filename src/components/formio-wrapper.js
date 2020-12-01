@@ -44,11 +44,11 @@ export class FormioWrapper {
       this._firePageChangeEvent();
     });
     this.wizard.on('render', () => {
-      this._firePageChangeEvent();
       this.scrollToTop(
         this.config.form.baseElement,
         this.config.scroll.focusTarget,
       );
+      this._firePageChangeEvent();
     });
     this.wizard.on('change', () => {
       this._firePageChangeEvent();

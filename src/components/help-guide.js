@@ -160,6 +160,15 @@ export class HelpGuide {
     } else {
       this.render(null);
     }
+    if (this.state.firstView) {
+      const gotItButton = document.querySelector('#gotHelpGuide');
+      if (gotItButton) {
+        gotItButton.addEventListener('click', () => {
+          document.querySelector('#focusTarget').focus();
+        });
+        gotItButton.focus();
+      }
+    }
   }
 
   createTemplate(state) {
