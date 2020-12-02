@@ -129,7 +129,11 @@ export class HelpGuide {
 
   // eslint-disable-next-line class-methods-use-this
   _overlay(isVisible) {
-    return html`<div class="overlay ${isVisible ? 'visible' : 'hide'}"></div>`;
+    return html`<div
+      class="overlay ${isVisible ? 'visible' : 'hide'}"
+      @click=${() => this.updateTemplate({ open: false })}
+    >
+    </div>`;
   }
 
   // CLOSED STATE
@@ -159,6 +163,15 @@ export class HelpGuide {
       this.shouldAnimate = false;
     } else {
       this.render(null);
+    }
+    if (this.state.firstView) {
+      const gotItButton = document.querySelector('#gotHelpGuide');
+      if (gotItButton) {
+        gotItButton.addEventListener('click', () => {
+          document.querySelector('#focusTarget').focus();
+        });
+        gotItButton.focus();
+      }
     }
   }
 
