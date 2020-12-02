@@ -46,7 +46,6 @@ export default () => html`
           <span class="arrow"><i></i></span>
         </label>
       </button>
-
       
       <div
         class="collapsing-section"
@@ -96,7 +95,6 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-
         
         <div
           class="collapsing-section"
@@ -213,7 +211,6 @@ export default () => html`
         </label>
     </button>
 
-
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
             Drinks made from cereals, nuts and or seeds are not suitable for certain age groups,
@@ -246,7 +243,6 @@ export default () => html`
         </label>
     </button>
 
-
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
             Electrolyte drinks are formulated drinks which are designed for the rapid replacement of fluid,
@@ -276,7 +272,6 @@ export default () => html`
         </label>
     </button>
 
-
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
             Formulated caffeinated drinks have very specific rules about what substances are allowed and how this
@@ -304,7 +299,6 @@ export default () => html`
             <span class="arrow"><i></i></span>
         </label>
     </button>
-
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
@@ -339,7 +333,6 @@ export default () => html`
         </label>
     </button>
 
-
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
             Food irradiation is a technology that improves the safety and extends the shelf life of foods by reducing or
@@ -368,7 +361,6 @@ export default () => html`
             <span class="arrow"><i></i></span>
         </label>
     </button>
-
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
@@ -410,7 +402,6 @@ export default () => html`
             <span class="arrow"><i></i></span>
         </label>
     </button>
-
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>

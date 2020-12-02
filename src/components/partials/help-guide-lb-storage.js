@@ -56,7 +56,6 @@ export default () => html`
               <span class="arrow"><i></i></span>
             </label>
           </button>
-
           <div
             class="collapsing-section"
             aria-hidden="true"
@@ -107,7 +106,6 @@ export default () => html`
               <span class="arrow"><i></i></span>
             </label>
           </button>
-
           <div
             class="collapsing-section"
             aria-hidden="true"
@@ -164,7 +162,6 @@ export default () => html`
                 </label>
             </button>
 
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is raw bamboo shoots:</b>
@@ -202,7 +199,6 @@ export default () => html`
                 </label>
             </button>
 
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is raw sweet cassava:</b>
@@ -239,7 +235,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -287,7 +282,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>

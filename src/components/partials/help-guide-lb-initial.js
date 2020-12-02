@@ -24,6 +24,5 @@ export default handler => html`
     </p>
 
     <button id="gotHelpGuide" class="qg-btn btn-primary" @click=${handler}>Got it!</button>
-
   </div>
 `;

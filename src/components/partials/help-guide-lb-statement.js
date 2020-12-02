@@ -55,7 +55,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -128,7 +127,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -218,7 +216,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div
                 class="collapsing-section"
                 aria-hidden="true"

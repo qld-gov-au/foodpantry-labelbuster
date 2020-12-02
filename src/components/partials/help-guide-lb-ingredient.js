@@ -50,7 +50,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     The ingredient list is a statement of ingredients that are used to make the food. The ingredient
@@ -235,7 +234,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     Where from time to time, a food ingredient or additive is replaced with another food or additive
@@ -260,7 +258,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     If you mention an ingredient, category of ingredients or a part of the food in the name on the
@@ -382,7 +379,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     A compound ingredient is an ingredient that contains two or more ingredients.
@@ -429,7 +425,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     The ingredient list does not need to include: </br>
@@ -525,7 +520,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If you are adding food additives:</b>
@@ -653,7 +647,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     Generic names may be used in the ingredient list, instead of: </br>
@@ -792,7 +785,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     All ingredients must be listed in descending order of ingoing weight. This means that the ingredient
@@ -854,7 +846,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the cereal is wheat, rye, barley, oats or spelt or a hybridised strain of one of those
@@ -917,7 +908,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is, or contains crustacea:</b>
@@ -996,7 +986,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is a juice blend:</b></br>
@@ -1049,7 +1038,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is minced meat:</b>
@@ -1122,7 +1110,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b> The generic name of milk solid may be used to describe an ingredient that is: </b></br>
@@ -1184,7 +1171,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is packaged water:</b>
@@ -1265,7 +1251,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is, or contains nuts:</b>
@@ -1316,7 +1301,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food contains fats and oils:</b></br>
@@ -1384,7 +1368,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is, or contains sugar:</b></br>
@@ -1443,7 +1426,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p><b>If the food sold in a small package where the package has a surface area of less than 100 cm2:</b>
                     </br>
@@ -1485,7 +1467,6 @@ export default () => html`
                     <span class="arrow"><i></i></span>
                 </label>
             </button>
-
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p><b>If the food has only one ingredient:</b></br>
                     the ingredient list is not required.</br>
