@@ -129,7 +129,11 @@ export class HelpGuide {
 
   // eslint-disable-next-line class-methods-use-this
   _overlay(isVisible) {
-    return html`<div class="overlay ${isVisible ? 'visible' : 'hide'}"></div>`;
+    return html`<div
+      class="overlay ${isVisible ? 'visible' : 'hide'}"
+      @click=${() => this.updateTemplate({ open: false })}
+    >
+    </div>`;
   }
 
   // CLOSED STATE
