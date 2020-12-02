@@ -1,48 +1,27 @@
-.checkbox-style label, .dependent-questions label {
-    font-weight: 400;
-}
-.checkbox-style input[type="checkbox"] , .statement-label input[type="checkbox"], .dependent-questions input[type="checkbox"] {
+.allergen-checkbox input[type="checkbox"], .advisory-checkbox input[type="checkbox"] , .dependent-questions input[type="checkbox"]{
     height:28px;
     width:28px;
 }
-.statement-label span, .statement-label small.hint , .checkbox-style span, .checkbox-style small.hint, .dependent-questions span{ 
+
+.allergen-checkbox span, .allergen-checkbox small.hint , .advisory-checkbox span, .advisory-checkbox small.hint, .dependent-questions span{ 
     margin-left: 20px;
+    display: block;
 }
 
-.statement-label .form-check.checkbox {
-    width: 260px;
-    height: 144px;
-    margin: 16px 16px 16px 50px;
-    padding: 8px 27px 14px 8px;
-    background-color: #fff;
-    position: relative;
-    border: solid 2px #000;
+.allergen-checkbox label, .dependent-questions label {
+    font-weight: normal;
 }
 
-.statement-label input[type=".checkbox"]{
-    margin-left: 5px;
+.allergen-checkbox input[type="checkbox"]{
+    margin-top: 0px;
 }
 
-.statement-label .form-check.checkbox:active {
-    width: 260px;
-    height: 144px;
-    margin: 16px 16px 16px 50px;
-    padding: 8px 27px 14px 8px;
-    background-color: #007eb1;
-    position: relative;
-}
-
-.statement-label input[type="checkbox"]:active{
-    background-color: #007eb1;
-    position: relative;
-}
-
-.statement input[type="checkbox"]{
+.advisory-checkbox input[type="checkbox"]{
     margin-top: 40px;
     margin-left: 0px;
 }
 
-.section_egg {
+.warning-section {
     width: 260px;
     height: 144px;
     margin: 5px;
@@ -51,16 +30,21 @@
     border: solid 1px #808080;
 }
 
-.section_egg img{
+.warning-section img{
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top:45px;
 }
 
-.section_egg span {
+.warning-section span {
     display:table;
     margin-left: auto;
     margin-right: auto;
     margin-top:20px ;
 }
+
+input.form-check-input:hover > .warning-section{
+    background-color: #007eb1;
+}
+
