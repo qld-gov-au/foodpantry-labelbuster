@@ -47,14 +47,15 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="ad-statement">
                     <span class="title">
                         Advisory statements
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div
                 class="collapsing-section"
@@ -119,7 +120,7 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label
                     for="alt-declaration">
                     <span class="title">
@@ -127,7 +128,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div
                 class="collapsing-section"
@@ -209,7 +211,7 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label
                     for="warn-statement">
                     <span class="title">
@@ -217,7 +219,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div
                 class="collapsing-section"

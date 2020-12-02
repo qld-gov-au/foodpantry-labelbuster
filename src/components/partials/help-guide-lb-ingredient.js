@@ -42,14 +42,15 @@ export default () => html`
         <article>
             <input id="ingredient-list" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="ingredient-list">
                     <span class="title">
                         What is an ingredient list?
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -227,14 +228,15 @@ export default () => html`
         <article>
             <input id="alt-ingredient" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="alt-ingredient">
                     <span class="title">
                         Alternative ingredients
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -252,14 +254,15 @@ export default () => html`
         <article>
             <input id="char-ingredient" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="char-ingredient">
                     <span class="title">
                         Characterising ingredients
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -374,14 +377,15 @@ export default () => html`
         <article>
             <input id="comp-ingredient" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="comp-ingredient">
                     <span class="title">
                         Compound ingredients
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -421,14 +425,15 @@ export default () => html`
         <article>
             <input id="exempt-ingredient" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="exempt-ingredient">
                     <span class="title">
                         Exempt ingredients
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -517,14 +522,15 @@ export default () => html`
         <article>
             <input id="food-additive" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="food-additive">
                     <span class="title">
                         Food additives
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -645,14 +651,15 @@ export default () => html`
         <article>
             <input id="generic-name" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="generic-name">
                     <span class="title">
                         Generic names
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -784,14 +791,15 @@ export default () => html`
         <article>
             <input id="order-ingredient" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="order-ingredient">
                     <span class="title">
                         Order of ingredients
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -845,7 +853,7 @@ export default () => html`
         <article>
             <input id="bcr" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145849">
                 <label for="bcr">
                     <span class="title">
@@ -853,7 +861,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -908,7 +917,7 @@ export default () => html`
         <article>
             <input id="fish-seafood" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145854">
                 <label for="fish-seafood">
                     <span class="title">
@@ -916,7 +925,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -987,7 +997,7 @@ export default () => html`
         <article>
             <input id="fruit-veg" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145857">
                 <label for="fruit-veg">
                     <span class="title">
@@ -995,7 +1005,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -1040,7 +1051,7 @@ export default () => html`
         <article>
             <input id="meat-prod" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145868">
                 <label for="meat-prod">
                     <span class="title">
@@ -1048,7 +1059,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -1113,7 +1125,7 @@ export default () => html`
         <article>
             <input id="milk-dairy" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145869">
                 <label for="milk-dairy">
                     <span class="title">
@@ -1121,7 +1133,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -1175,7 +1188,7 @@ export default () => html`
         <article>
             <input id="non-alcoholic" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145870">
                 <label for="non-alcoholic">
                     <span class="title">
@@ -1183,7 +1196,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -1256,7 +1270,7 @@ export default () => html`
         <article>
             <input id="nuts-seeds" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145872">
                 <label for="nuts-seeds">
                     <span class="title">
@@ -1264,7 +1278,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -1307,7 +1322,7 @@ export default () => html`
         <article>
             <input id="oils-margarine" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145873">
                 <label for="oils-margarine">
                     <span class="title">
@@ -1315,7 +1330,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -1375,7 +1391,7 @@ export default () => html`
         <article>
             <input id="sugar-alt" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145881">
                 <label for="sugar-alt">
                     <span class="title">
@@ -1383,7 +1399,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -1434,7 +1451,7 @@ export default () => html`
         <article>
             <input id="food-package" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145879">
                 <label for="food-package">
                     <span class="title">
@@ -1442,7 +1459,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p><b>If the food sold in a small package where the package has a surface area of less than 100 cm2:</b>
@@ -1476,7 +1494,7 @@ export default () => html`
         <article>
             <input id="one-ingredient" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145874">
                 <label for="one-ingredient">
                     <span class="title">
@@ -1484,7 +1502,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p><b>If the food has only one ingredient:</b></br>

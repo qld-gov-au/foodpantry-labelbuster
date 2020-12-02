@@ -48,14 +48,15 @@ export default () => html`
             aria-controls="id-panel-content-1"
             aria-expanded="false"
             role="checkbox"/>
-          <h3 class="acc-heading">
+          <button class="acc-heading">
             <label for="directions-for-use">
               <span class="title">
               Directions for use
               </span>
               <span class="arrow"><i></i></span>
             </label>
-          </h3>
+          </button>
+
 
           <div
             class="collapsing-section"
@@ -99,14 +100,15 @@ export default () => html`
             aria-controls="id-panel-content-1"
             aria-expanded="false"
             role="checkbox"/>
-          <h3 class="acc-heading">
+          <button class="acc-heading">
             <label for="storage-conditions">
               <span class="title">
                 Storage conditions
               </span>
               <span class="arrow"><i></i></span>
             </label>
-          </h3>
+          </button>
+
 
           <div
             class="collapsing-section"
@@ -154,7 +156,7 @@ export default () => html`
         <article>
             <input id="bamboo-shoot" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145848">
                 <label for="bamboo-shoot">
                     <span class="title">
@@ -162,7 +164,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is raw bamboo shoots:</b>
@@ -190,7 +193,7 @@ export default () => html`
         <article>
             <input id="cassava-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145850">
                 <label for="cassava-food">
                     <span class="title">
@@ -198,7 +201,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is raw sweet cassava:</b>
@@ -226,7 +230,7 @@ export default () => html`
         <article>
             <input id="fish-seafood" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145854">
                 <label for="fish-seafood">
                     <span class="title">
@@ -234,7 +238,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is raw fish which has been moulded or combined to look like a cut or fillet of fish:</b></br>
@@ -272,7 +277,7 @@ export default () => html`
         <article>
             <input id="meat-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145868">
                 <label for="meat-food">
                     <span class="title">
@@ -280,7 +285,8 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
+
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
                     <b>If the food is raw meat which has been moulded or combined to look like a cut of meat:</b></br>

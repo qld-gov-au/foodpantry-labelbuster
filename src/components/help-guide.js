@@ -41,6 +41,7 @@ export class HelpGuide {
     }
 
     this.updateTemplate();
+    this._initAccordionButtons();
     // has seen help guide
     localStorage.setItem('help-guide', true);
     window.addEventListener('formiowrapperPageChange', () => {
@@ -114,6 +115,16 @@ export class HelpGuide {
       }
     };
     document.addEventListener('keydown', keyboardTrap);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  _initAccordionButtons() {
+    document.body.addEventListener('click', (e) => {
+      const { target } = e;
+      if (target.className === 'acc-heading') {
+        target.querySelector('label').control.checked = !target.querySelector('label').control.checked;
+      }
+    });
   }
 
   _closeButton() {
