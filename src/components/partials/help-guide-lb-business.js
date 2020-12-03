@@ -3,7 +3,7 @@ import { modifyAccordionState } from '../../scripts/collapse-expand';
 
 export default () => html`
       <div class="side-padding vertical-padding"> 
-      <h4>What are business details?</h4>
+      <h2>What are business details?</h2>
 
       <section class="qg-accordion flex-column" aria-label="Accordion Label">
         <div class="controls-group">

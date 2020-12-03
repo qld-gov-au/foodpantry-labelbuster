@@ -2,9 +2,9 @@ import { html } from 'lit-html';
 
 export default handler => html`
   <div class="side-padding vertical-padding">
-    <h4>
+    <h2>
       <i class="fa fa-info-circle"></i> Before you start
-    </h4>
+    </h2>
     <p>
       <b>Please use the help guide</b> 
       to create a food label that complies with the Food Standards Code.
