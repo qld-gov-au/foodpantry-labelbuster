@@ -1,3 +1,7 @@
+.allergen-checkbox input[type='checkbox'] {
+  margin-top: 0px;
+}
+
 .allergen-checkbox input[type="checkbox"], .advisory-checkbox input[type="checkbox"] , .dependent-questions input[type="checkbox"]{
     height:28px;
     width:28px;
@@ -44,7 +48,6 @@
     margin-top:20px ;
 }
 
-input.form-check-input:hover > .warning-section{
-    background-color: #007eb1;
+input.form-check-input:hover > .warning-section {
+  background-color: #007eb1;
 }
-
