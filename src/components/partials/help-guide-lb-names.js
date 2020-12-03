@@ -919,35 +919,38 @@ export default () => html`
         >
           <p>
             <b>If the food is drink made from fruit or vegetables:</b>
-            <br>
-            There are naming rules for juice, juice blends and juice drinks. Please read the Food Standards Code to determine which one applies to your food. 
+            <br />
+            There are naming rules for juice, juice blends and juice drinks.
+            Please read the Food Standards Code to determine which one applies
+            to your food.
           </p>
 
           <p>
-              <b>If the food is non-alcoholic or brewed soft drink:</b>
-              <br>
-              Non-alcoholic drinks and brewed soft drinks (eg fermented ginger beer or kombucha) must not suggest the product is an alcoholic beverage.
-          </p>
-          
-          <p>
-              <b>If the food is tea or coffee:</b>
-              <br>
-              There are naming rules for coffee and tea. Please read the Food Standards Code to ensure your label is correct.
+            <b>If the food is non-alcoholic or brewed soft drink:</b>
+            <br />
+            Non-alcoholic drinks and brewed soft drinks (eg fermented ginger
+            beer or kombucha) must not suggest the product is an alcoholic
+            beverage.
           </p>
 
           <p>
-            Coffee and tea include types that are:
+            <b>If the food is tea or coffee:</b>
+            <br />
+            There are naming rules for coffee and tea. Please read the Food
+            Standards Code to ensure your label is correct.
           </p>
+
+          <p>Coffee and tea include types that are:</p>
           <ul>
-              <li>caffeinated,</li>
-              <li>decaffeinated,</li>
-              <li>instant or</li>
-              <li>soluble</li>
+            <li>caffeinated,</li>
+            <li>decaffeinated,</li>
+            <li>instant or</li>
+            <li>soluble</li>
           </ul>
           <p>
-              <b>If your food is spring water or mineral water:</b>
-              <br>
-              Spring and mineral water means ground water.
+            <b>If your food is spring water or mineral water:</b>
+            <br />
+            Spring and mineral water means ground water.
           </p>
           <section>
             <h4>Further reading</h4>
@@ -959,7 +962,7 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                    Standard 2.6.1
+                  Standard 2.6.1
                 </a>
                 Fruit juice and vegetable juice
               </li>
@@ -969,7 +972,7 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                    Standard 2.6.2
+                  Standard 2.6.2
                 </a>
                 Non-alcoholic beverages and brewed soft drinks
               </li>
@@ -979,7 +982,7 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                    Standard 2.10.4
+                  Standard 2.10.4
                 </a>
                 Miscellaneous standards for other foods
               </li>
@@ -1012,7 +1015,8 @@ export default () => html`
           id="id-panel-content-1"
         >
           <p>
-            Food that is sold as peanut butter must be a peanut based spread that has no less than 850 g/kg of peanuts.
+            Food that is sold as peanut butter must be a peanut based spread
+            that has no less than 850 g/kg of peanuts.
           </p>
 
           <section>
@@ -1025,7 +1029,7 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                    Standard 2.10.4
+                  Standard 2.10.4
                 </a>
                 Miscellaneous standards for other foods
               </li>
@@ -1057,15 +1061,17 @@ export default () => html`
           aria-hidden="true"
           id="id-panel-content-1"
         >
-        <p>
-            Margarine means an edible oil spread containing no less than 800 g/kg of edible oils.
-        </p>
+          <p>
+            Margarine means an edible oil spread containing no less than 800
+            g/kg of edible oils.
+          </p>
 
-        <p>
-            You can only name your food an oil spread or table margarine, if the food contain no less than 55 μg/kg of vitamin D.
-        </p>
+          <p>
+            You can only name your food an oil spread or table margarine, if the
+            food contain no less than 55 μg/kg of vitamin D.
+          </p>
 
-        <section>
+          <section>
             <h4>Further reading</h4>
             <i>Australia New Zealand Food Standards Code</i>
             <ul>
@@ -1075,7 +1081,7 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                    Standard 2.4.2
+                  Standard 2.4.2
                 </a>
                 Edible oil spreads
               </li>
@@ -1107,15 +1113,19 @@ export default () => html`
           aria-hidden="true"
           id="id-panel-content-1"
         >
-        <p>
-            Foods that are labelled salt or a salt product have special requirements. These products cannot make nutrition or health claim, must have extra information in the nutrition information panel and must be made from certain elements.
-        </p>
+          <p>
+            Foods that are labelled salt or a salt product have special
+            requirements. These products cannot make nutrition or health claim,
+            must have extra information in the nutrition information panel and
+            must be made from certain elements.
+          </p>
 
-        <p>
-            You need to read the Food Standards Code to ensure your label is correct.
-        </p>
+          <p>
+            You need to read the Food Standards Code to ensure your label is
+            correct.
+          </p>
 
-        <section>
+          <section>
             <h4>Further reading</h4>
             <i>Australia New Zealand Food Standards Code</i>
             <ul>
@@ -1125,7 +1135,7 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                    Standard 2.10.2
+                  Standard 2.10.2
                 </a>
                 Salt and salt products
               </li>
@@ -1135,7 +1145,7 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                    Standard 2.10.4
+                  Standard 2.10.4
                 </a>
                 Miscellaneous standards for other foods
               </li>
@@ -1167,15 +1177,18 @@ export default () => html`
           aria-hidden="true"
           id="id-panel-content-1"
         >
-        <p>
-            Food that is sold as white sugar or a sugar must be purified crystallised sucrose and have no less than 99.7% sucrose when dry.
-        </p>
+          <p>
+            Food that is sold as white sugar or a sugar must be purified
+            crystallised sucrose and have no less than 99.7% sucrose when dry.
+          </p>
 
-        <p>
-            Food that is sold as icing must be a mixture of sugar and other foods for use as a coating and includes frosting, plastic icing and icing gel.
-        </p>
+          <p>
+            Food that is sold as icing must be a mixture of sugar and other
+            foods for use as a coating and includes frosting, plastic icing and
+            icing gel.
+          </p>
 
-        <section>
+          <section>
             <h4>Further reading</h4>
             <i>Australia New Zealand Food Standards Code</i>
             <ul>
@@ -1185,7 +1198,7 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                    Standard 2.8.1
+                  Standard 2.8.1
                 </a>
                 Sugar and sugar products
               </li>
@@ -1217,11 +1230,12 @@ export default () => html`
           aria-hidden="true"
           id="id-panel-content-1"
         >
-        <p>
-            A food that is sold as imitation vinegar or vinegar must contain no less than 40 g/kg of acetic acid.
-        </p>
+          <p>
+            A food that is sold as imitation vinegar or vinegar must contain no
+            less than 40 g/kg of acetic acid.
+          </p>
 
-        <section>
+          <section>
             <h4>Further reading</h4>
             <i>Australia New Zealand Food Standards Code</i>
             <ul>
@@ -1231,7 +1245,7 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                    Standard 2.10.1
+                  Standard 2.10.1
                 </a>
                 Vinegar and related products
               </li>
@@ -1239,7 +1253,6 @@ export default () => html`
           </section>
         </div>
       </article>
-
     </section>
   </div>
 `;
