@@ -38,14 +38,14 @@ export default () => html`
         aria-controls="id-panel-content-1"
         aria-expanded="false"
         role="checkbox"/>
-      <h3 class="acc-heading">
+      <button class="acc-heading">
         <label for="alcoholic-drinks">
           <span class="title">
           Alcoholic drinks
           </span>
           <span class="arrow"><i></i></span>
         </label>
-      </h3>
+      </button>
       
       <div
         class="collapsing-section"
@@ -86,7 +86,7 @@ export default () => html`
           aria-controls="id-panel-content-1"
           aria-expanded="false"
           role="checkbox"/>
-        <h3
+        <button
           class="acc-heading">
           <label for="nutrition-claims">
             <span class="title">
@@ -94,7 +94,7 @@ export default () => html`
             </span>
             <span class="arrow"><i></i></span>
           </label>
-        </h3>
+        </button>
         
         <div
           class="collapsing-section"
@@ -202,14 +202,14 @@ export default () => html`
     <article>
     <input id="drinks-made" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
         aria-expanded="false" role="checkbox" />
-    <h3 class="acc-heading">
+    <button class="acc-heading">
         <label for="drinks-made">
             <span class="title">
                 Drinks made from cereals, nuts, and/or seeds
             </span>
             <span class="arrow"><i></i></span>
         </label>
-    </h3>
+    </button>
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
@@ -234,14 +234,14 @@ export default () => html`
 <article>
     <input id="drinks-electrolyte" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
         aria-expanded="false" role="checkbox" />
-    <h3 class="acc-heading">
+    <button class="acc-heading">
         <label for="drinks-electrolyte">
             <span class="title">
                 Electrolyte drinks
             </span>
             <span class="arrow"><i></i></span>
         </label>
-    </h3>
+    </button>
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
@@ -263,14 +263,14 @@ export default () => html`
 <article>
     <input id="caffeinated-drinks" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
         aria-expanded="false" role="checkbox" />
-    <h3 class="acc-heading">
+    <button class="acc-heading">
         <label for="caffeinated-drinks">
             <span class="title">
                 Formulated caffeinated drinks
             </span>
             <span class="arrow"><i></i></span>
         </label>
-    </h3>
+    </button>
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
@@ -291,14 +291,14 @@ export default () => html`
 <article>
     <input id="modified-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
         aria-expanded="false" role="checkbox" />
-    <h3 class="acc-heading">
+    <button class="acc-heading">
         <label for="modified-food">
             <span class="title">
                 Genetically modified food
             </span>
             <span class="arrow"><i></i></span>
         </label>
-    </h3>
+    </button>
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
@@ -324,14 +324,14 @@ export default () => html`
 <article>
     <input id="irradiated-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
         aria-expanded="false" role="checkbox" />
-    <h3 class="acc-heading">
+    <button class="acc-heading">
         <label for="irradiated-food">
             <span class="title">
                 Irradiated food
             </span>
             <span class="arrow"><i></i></span>
         </label>
-    </h3>
+    </button>
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
@@ -353,14 +353,14 @@ export default () => html`
 <article>
     <input id="novel-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
         aria-expanded="false" role="checkbox" />
-    <h3 class="acc-heading">
+    <button class="acc-heading">
         <label for="novel-food">
             <span class="title">
                 Novel foods
             </span>
             <span class="arrow"><i></i></span>
         </label>
-    </h3>
+    </button>
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
@@ -394,14 +394,14 @@ export default () => html`
 <article>
     <input id="special-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
         aria-expanded="false" role="checkbox" />
-    <h3 class="acc-heading">
+    <button class="acc-heading">
         <label for="special-food">
             <span class="title">
                 Special purpose foods
             </span>
             <span class="arrow"><i></i></span>
         </label>
-    </h3>
+    </button>
 
     <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
         <p>
