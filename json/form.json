@@ -688,7 +688,7 @@
         {
           "label": "HTML",
           "attrs": [{ "attr": "", "value": "" }],
-          "content": "<h1>Storage and use</h1><section class=\"qg-callout__box qg-callout__default-theme\"> <div class=\"col-12 qg-callout__content\"> <div class=\"qg-callout__right-alignment\"> <div class=\"qg-callout__description\"> <p> Storage conditions describe how to keep food until its best-before or use-by date. </p> <p> Directions for use are instructions for how to prepare the food so that it is ready to eat. </p> </div> <div class=\"qg-callout__image\"> <img src=\"https://www.qld.gov.au/?a=145924\" alt=\"Example food label with storage conditions and directions for use.\"> </div> </div> </div> </section><h2>Storage conditions</h2><section> <article> <b>Select the <button data-accordion-item=\"storage-conditions\" class=\"accordion-btn\"> storage conditions </button> for your food.</b> If your food has specific storage conditions to make sure it will keep until the best-before or use-by date, then you must include these on the label. Examples of some storage conditions have been included. You may select none, or one or more of these, depending on your requirements. </article> </section>",
+          "content": "<style>.storage-section span{margin-left:20px;display:block}.storage-section label{font-weight:400}.storage-section input[type=checkbox]{margin-top:0;height:28px;width:28px}</style><h1>Storage and use</h1><section class=\"qg-callout__box qg-callout__default-theme\"> <div class=\"qg-callout__content col-12\"> <div class=\"qg-callout__right-alignment\"> <div class=\"qg-callout__description\"> <p> Storage conditions describe how to keep food until its best-before or use-by date. </p> <p> Directions for use are instructions for how to prepare the food so that it is ready to eat. </p> </div> <div class=\"qg-callout__image\"> <img src=\"https://www.qld.gov.au/?a=145924\" alt=\"Example food label with storage conditions and directions for use.\"> </div> </div> </div>\n</section><h2>Storage conditions</h2><section> <article> <b> Select the <button data-accordion-item=\"storage-conditions\" class=\"accordion-btn\"> storage conditions </button> for your food. </b> If your food has specific storage conditions to make sure it will keep until the best-before or use-by date, then you must include these on the label. Examples of some storage conditions have been included. You may select none, or one or more of these, depending on your requirements. </article>\n</section>",
           "refreshOnChange": false,
           "tableView": false,
           "key": "html4",
@@ -697,7 +697,7 @@
         },
         {
           "label": "Storage Conditions",
-          "customClass": "statement-label",
+          "customClass": "storage-section",
           "tableView": false,
           "key": "storageConditions",
           "type": "container",
@@ -1000,7 +1000,7 @@
         },
         {
           "label": "Directions for use",
-          "customClass": "statement-label",
+          "customClass": "storage-section",
           "tableView": false,
           "key": "directionsForUse",
           "type": "container",
@@ -2073,7 +2073,7 @@
         },
         {
           "label": "Allergy Declarations",
-          "customClass": "checkbox-style",
+          "customClass": "allergen-checkbox",
           "tableView": false,
           "key": "allergyDeclarations",
           "type": "container",
@@ -2192,7 +2192,7 @@
             {
               "label": "HTML",
               "attrs": [{ "attr": "", "value": "" }],
-              "content": "<style>.checkbox-style label,.dependent-questions label{font-weight:400}.checkbox-style input[type=checkbox],.dependent-questions input[type=checkbox],.statement-label input[type=checkbox]{height:28px;width:28px}.checkbox-style small.hint,.checkbox-style span,.dependent-questions span,.statement-label small.hint,.statement-label span{margin-left:20px}.statement-label .form-check.checkbox{width:260px;height:144px;margin:16px 16px 16px 50px;padding:8px 27px 14px 8px;background-color:#fff;position:relative;border:2px solid #000}.statement-label input[type=\".checkbox\"]{margin-left:5px}.statement-label input[type=\".checkbox\"]:checked{background-color:red;position:relative}.statement-label .form-check.checkbox:active{width:260px;height:144px;margin:16px 16px 16px 50px;padding:8px 27px 14px 8px;background-color:#007eb1;position:relative}.statement-label input[type=checkbox]:active{background-color:#007eb1;position:relative}.statement input[type=checkbox]{margin-top:40px;margin-left:0}.section_egg{width:260px;height:144px;margin:5px;background-color:#fff;border-radius:5px;border:1px solid grey}.section_egg img{display:block;margin-left:auto;margin-right:auto;margin-top:45px}.section_egg span{display:table;margin-left:auto;margin-right:auto;margin-top:20px}</style><section> <article class=\"qg-callout__box qg-callout__grey-theme\"> <div class=\"qg-callout__header col-12\"> <span class=\"qg-callout__icon\"> <i class=\"fa fa-info-circle\"></i> </span> <h2 class=\"qg-callout__title\"> The ingredients should be shown on a food label as: </h2> </div> <div class=\"qg-callout__content col-12\"> <div class=\"qg-callout__bottom-alignment\"> <div class=\"qg-callout__description\"> <p class=\"wrap\"> The allergens should be shown on the food label as: Contains: {{ _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) { if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`; return acc + ` ${val}, `; }, '') }} </p> </div> </div> </div> </article>\n</section>",
+              "content": "<style>.advisory-checkbox input[type=checkbox],.allergen-checkbox input[type=checkbox],.dependent-questions input[type=checkbox]{height:28px;width:28px}.advisory-checkbox small.hint,.advisory-checkbox span,.allergen-checkbox small.hint,.allergen-checkbox span,.dependent-questions span{margin-left:20px;display:block}.allergen-checkbox label,.dependent-questions label{font-weight:400}.allergen-checkbox input[type=checkbox]{margin-top:0}.advisory-checkbox input[type=checkbox]{margin-top:20px;margin-left:40px}.warning-section{width:260px;height:144px;margin:5px;background-color:#fff;border-radius:5px;border:1px solid grey}.warning-section img{display:block;margin-left:auto;margin-right:auto;margin-top:45px}.warning-section span{display:table;margin-left:auto;margin-right:auto;margin-top:20px}input.form-check-input:hover>.warning-section{background-color:#007eb1}</style><section> <article class=\"qg-callout__box qg-callout__grey-theme\"> <div class=\"qg-callout__header col-12\"> <span class=\"qg-callout__icon\"> <i class=\"fa fa-info-circle\"></i> </span> <h2 class=\"qg-callout__title\"> The ingredients should be shown on a food label as: </h2> </div> <div class=\"qg-callout__content col-12\"> <div class=\"qg-callout__bottom-alignment\"> <div class=\"qg-callout__description\"> <p class=\"wrap\"> The allergens should be shown on the food label as: Contains: {{ _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) { if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`; return acc + ` ${val}, `; }, '') }} </p> </div> </div> </div> </article>\n</section>",
               "refreshOnChange": true,
               "tableView": false,
               "key": "html18",
@@ -2217,130 +2217,69 @@
             {
               "components": [
                 {
-                  "label": "Eggs and egg products",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145853\">   <span>Egg and egg products</span> </section>",
+                  "customClass": "checked-boxes",
                   "tableView": false,
                   "defaultValue": false,
+                  "redrawOn": "data",
                   "key": "eggsAndEggProducts",
+                  "conditional": { "show": true },
+                  "customConditional": "component.customClass = component.value ? \"selected\" : null;",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145854\">\n  <span>Eggs and egg products</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html30",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Food additives and flavours",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\"> <img src=\"https://www.qld.gov.au/?a=145855\">   <span>Food additives and flavours</span> </section>",
+                  "customClass": "check-hover",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "foodAdditivesAndFlavours",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145854\">\n  <span>Food additives and flavours</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html31",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Honey and bee products",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145861\">   <span>Honey and bee products</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "honeyAndBeeProducts",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145854\">\n  <span>Honey and bee products</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html44",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Legumes and pulses",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145867\">   <span>Legumes and pulses</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "legumesAndPulses",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145854\">\n  <span>Legumes and pulses</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html45",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Milk, dairy and dairy alternatives",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145869\">   <span>Milk, dairy and dairy alternatives</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "milkDairyAndDairyAlternatives",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145869\">\n  <span>Milk, dairy and dairy alternatives</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html46",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Oils and margarine",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145873\">   <span>Oils and margarine</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "oilsAndMargarine",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145873\">\n  <span>Oils and margarine</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html47",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 }
               ],
               "offset": 0,
@@ -2352,130 +2291,65 @@
             {
               "components": [
                 {
-                  "label": "Fish, crustacea and seafood",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145854\">   <span>Fish, crustacea and seafood</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "fishCrustaceaAndSeafood",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145854\">\n  <span>Fish, crustacea and seafood</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html42",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Food containing alcohol",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145856\">   <span>Food containing alcohol</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "foodContainingAlcohol",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145854\">\n  <span>Food containing alcohol</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html43",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Kava and kava root",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145866\">   <span>Kava and kava root</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "kavaAndKavaRoot",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145866\">\n  <span>Kava and kava root</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html48",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Meat and meat products",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145868\">   <span>Meat and meat products</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "meatAndMeatProducts",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145868\">\n  <span>Meat and meat products</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html49",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Non-alcoholic drinks",
-                  "hideLabel": true,
+                  "label": "<section class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145870\">   <span>Non-alcoholic drinks</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "nonAlcoholicDrinks",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 },
                 {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"https://www.qld.gov.au/?a=145870\">\n  <span>Non-alcoholic drinks</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html50",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "Salt and salt substitutes",
-                  "hideLabel": true,
+                  "label": "<section  class=\"warning-section\">   <img src=\"https://www.qld.gov.au/?a=145878\">   <span>Salt and salt substitutes</span> </section>",
                   "tableView": false,
                   "defaultValue": false,
                   "key": "saltAndSaltSubstitutes",
+                  "customConditional": "component.customClass = component.value ? \"selected\" : null;",
                   "type": "checkbox",
                   "input": true,
-                  "hideOnChildrenHidden": false
-                },
-                {
-                  "label": "HTML",
-                  "attrs": [{ "attr": "", "value": "" }],
-                  "content": "<section class=\"section_egg\">\n  <img src=\"Salt and salt substitutes\">\n  <span>Salt and salt substitutes</span>\n</section>",
-                  "refreshOnChange": false,
-                  "tableView": false,
-                  "key": "html51",
-                  "type": "htmlelement",
-                  "input": false,
-                  "hideOnChildrenHidden": false
+                  "hideOnChildrenHidden": false,
+                  "width": 2
                 }
               ],
               "offset": 0,
@@ -2485,7 +2359,7 @@
               "width": 5
             }
           ],
-          "customClass": "statement",
+          "customClass": "advisory-checkbox",
           "tableView": false,
           "key": "columns",
           "type": "columns",
@@ -3196,7 +3070,7 @@
     }
   ],
   "revisions": "current",
-  "_vid": 434,
+  "_vid": 461,
   "title": "LB",
   "display": "wizard",
   "access": [
@@ -3239,6 +3113,6 @@
   "path": "formwizard",
   "project": "5f44969319d1a97a819d80a7",
   "created": "2020-10-07T02:38:04.620Z",
-  "modified": "2020-12-01T06:33:59.887Z",
+  "modified": "2020-12-02T06:39:52.562Z",
   "machineName": "fesrqwsyzlbtegd:lbReplace"
 }
