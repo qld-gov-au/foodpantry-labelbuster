@@ -13,12 +13,12 @@ export default handler => html`
       There are two sections in the help guide.
     </p>
 
-    <h4>1. General requirements</h4>
+    <h3>1. General requirements</h3>
     <p>
       Click on hyperlinks in Label Buster to open the help guide for a topic that applies to all food.
     </p>
 
-    <h4>2. Food with extra requirements</h4>
+    <h3>2. Food with extra requirements</h3>
     <p>
       Some foods and ingredients have extra rules.  Select the food groups that apply to your food or its ingredients to learn more about these extra rules.
     </p>
