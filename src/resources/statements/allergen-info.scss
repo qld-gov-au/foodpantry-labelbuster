@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .checkbox-style label, .dependent-questions label {
     font-weight: 400;
 }
@@ -38,11 +39,36 @@
 }
 
 .statement input[type="checkbox"]{
+=======
+.allergen-checkbox input[type="checkbox"], .advisory-checkbox input[type="checkbox"] , .dependent-questions input[type="checkbox"]{
+    height:28px;
+    width:28px;
+}
+
+.allergen-checkbox span, .allergen-checkbox small.hint , .advisory-checkbox span, .advisory-checkbox small.hint, .dependent-questions span{ 
+    margin-left: 20px;
+    display: block;
+}
+
+.allergen-checkbox label, .dependent-questions label {
+    font-weight: normal;
+}
+
+.allergen-checkbox input[type="checkbox"]{
+    margin-top: 0px;
+}
+
+.advisory-checkbox input[type="checkbox"]{
+>>>>>>> origin
     margin-top: 40px;
     margin-left: 0px;
 }
 
+<<<<<<< HEAD
 .section_egg {
+=======
+.warning-section {
+>>>>>>> origin
     width: 260px;
     height: 144px;
     margin: 5px;
@@ -51,16 +77,32 @@
     border: solid 1px #808080;
 }
 
+<<<<<<< HEAD
 .section_egg img{
+=======
+.warning-section img{
+>>>>>>> origin
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top:45px;
 }
 
+<<<<<<< HEAD
 .section_egg span {
+=======
+.warning-section span {
+>>>>>>> origin
     display:table;
     margin-left: auto;
     margin-right: auto;
     margin-top:20px ;
 }
+<<<<<<< HEAD
+=======
+
+input.form-check-input:hover > .warning-section{
+    background-color: #007eb1;
+}
+
+>>>>>>> origin

@@ -48,14 +48,14 @@ export default () => html`
             aria-controls="id-panel-content-1"
             aria-expanded="false"
             role="checkbox"/>
-          <h3 class="acc-heading">
+          <button class="acc-heading">
             <label for="business-details">
               <span class="title">
               Business details
               </span>
               <span class="arrow"><i></i></span>
             </label>
-          </h3>
+          </button>
 
           <div
             class="collapsing-section"
@@ -124,7 +124,7 @@ export default () => html`
         <article>
             <input id="vending-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145883">
                 <label for="vending-food">
                     <span class="title">
@@ -132,7 +132,7 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -161,7 +161,7 @@ export default () => html`
         <article>
             <input id="hamper-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145859">
                 <label for="hamper-food">
                     <span class="title">
@@ -169,7 +169,7 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -203,7 +203,7 @@ export default () => html`
         <article>
             <input id="kava-root" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145866">
                 <label for="kava-root">
                     <span class="title">
@@ -211,7 +211,7 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>

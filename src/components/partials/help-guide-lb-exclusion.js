@@ -48,14 +48,14 @@ export default () => html`
                 aria-controls = "id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="about-food">
                     <span class="title">
                         About food names
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
 
             <div
                 class="collapsing-section"
@@ -119,14 +119,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="about-ingredients">
                     <span class="title">
                         Characterising ingredients
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
 
             <div
                 class="collapsing-section"
@@ -208,15 +208,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="prescribed-names">
                     <span class="title">
                         Prescribed names
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -312,15 +311,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="bcr">
                     <span class="title">
                         Breads, cereals and grains
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -360,15 +358,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="choco-cocoa">
                     <span class="title">
                         Chocolate and cocoa
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -417,15 +414,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="alcohol-food">
                     <span class="title">
                         Food containing alcohol
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -471,15 +467,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="fruit-veg">
                     <span class="title">
                         Fruit and vegetables
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -523,15 +518,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="hemp-food">
                     <span class="title">
                         Hemp food products
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -565,15 +559,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="honey-food">
                     <span class="title">
                         Honey and honey products
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -623,15 +616,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="jam-food">
                     <span class="title">
                         Jams
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -665,15 +657,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="kava-food">
                     <span class="title">
                         Kava and kava root
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -713,15 +704,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="meat-food">
                     <span class="title">
                         Meat and meat products
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -755,15 +745,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="dairy-food">
                     <span class="title">
                         Milk, dairy and dairy alternatives
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -828,15 +817,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="non-alcoholic-drinks">
                     <span class="title">
                         Non-alcoholic drinks
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -907,15 +895,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="nuts-food">
                     <span class="title">
                         Nuts and seeds
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -947,15 +934,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="oils-food">
                     <span class="title">
                         Oils and margarine
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -991,15 +977,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="salt-food">
                     <span class="title">
                         Salt and salt products
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -1040,15 +1025,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="sugar-food">
                     <span class="title">
                         Miscellaneous standards for other foods
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -1085,15 +1069,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="vinegar-food">
                     <span class="title">
                     Vinegar
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-                </h3>
-
+                </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
