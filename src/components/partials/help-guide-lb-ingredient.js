@@ -4,7 +4,7 @@ import { modifyAccordionState } from '../../scripts/collapse-expand';
 
 export default () => html`
 <div class="side-padding vertical-padding">
-    <h4>General requirements</h4>
+    <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
         <div class="controls-group">
           <input
@@ -825,7 +825,7 @@ export default () => html`
 </div>
 
 <div class="side-padding vertical-padding">
-    <h4>Food with extra requirements</h4>
+    <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
         <div class="controls-group">
             <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
