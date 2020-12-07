@@ -121,11 +121,13 @@
         <td>
           <p>
             <b>Contains:</b>
-            {{ _.reduce(_.filter(_.toPairs(data.allergyDeclarations),
-            function([key, val]) { return val }), function(acc, [key, val],
-            index) { if (index === _.filter(_.toPairs(data.allergyDeclarations),
-            function([key, val]) { return val }).length - 1) return acc + `
-            ${val}.`; return acc + ` ${val}, `; }, '') }}
+            <!-- prettier-ignore -->
+            {{
+              _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
+                if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+                return acc + ` ${val}, `;
+              }, '')    
+            }}
             <br />
           </p>
 
@@ -392,7 +394,7 @@
               _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
                 if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
                 return acc + ` ${val}, `;
-              }, '')    
+              }, '')
             }}
             <br />
           </p>
