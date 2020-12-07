@@ -81,6 +81,11 @@
       }
     }
   }
+
+  .termsCheckbox {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 }
 
 ol.lb {
@@ -154,4 +159,9 @@ ol.lb {
   width: 1.65em;
   height: auto;
   margin-left: -15px;
+}
+
+button:disabled,
+input:disabled {
+  cursor: not-allowed;
 }

@@ -3,38 +3,39 @@ import { modifyAccordionState } from '../../scripts/collapse-expand';
 
 export default () => html`
 <div class="side-padding vertical-padding">
-    <h4>General requirements</h4>
+    <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
         <div class="controls-group">
-            <input
-                type="radio"
-                name="control"
-                id="collapse"
-                class="controls collapse"
-                value="collapse"
-                role="radio">
-            <label
-                for="collapse"
-                class="controls"
-                @click=${e => modifyAccordionState(e, false)}>
-                Collapse all
-            </label>
+          <input
+            type="radio"
+            name="control"
+            id="expand"
+            class="controls expand"
+            value="expand"
+            role="radio">
 
-            <span class="controls">|</span>
-
-            <input
-                type="radio"
-                name="control"
-                id="expand"
-                class="controls expand"
-                value="expand"
-                role="radio">
-            <label
-                for="collapse"
-                class="controls"
-                @click=${e => modifyAccordionState(e, true)}>
-                Expand all
-            </label>
+          <label
+            for="expand"
+            class="controls"
+            @click=${e => modifyAccordionState(e, true)}>
+            Expand all
+          </label>
+          <span class="controls">|</span>
+          
+          <input
+            type="radio"
+            name="control"
+            id="collapse"
+            class="controls collapse"
+            value="collapse"
+            role="radio">
+          
+          <label
+            for="collapse"
+            class="controls"
+            @click=${e => modifyAccordionState(e, false)}>
+            Collapse all
+          </label>
         </div>
 
         <article>
@@ -46,15 +47,14 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label for="ad-statement">
                     <span class="title">
                         Advisory statements
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -118,7 +118,7 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label
                     for="alt-declaration">
                     <span class="title">
@@ -126,8 +126,7 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"
@@ -208,7 +207,7 @@ export default () => html`
                 aria-controls="id-panel-content-1"
                 aria-expanded="false"
                 role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <label
                     for="warn-statement">
                     <span class="title">
@@ -216,8 +215,7 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
-
+            </button>
             <div
                 class="collapsing-section"
                 aria-hidden="true"

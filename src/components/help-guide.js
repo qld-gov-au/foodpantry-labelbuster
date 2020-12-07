@@ -41,6 +41,7 @@ export class HelpGuide {
     }
 
     this.updateTemplate();
+    this._initAccordionButtons();
     // has seen help guide
     localStorage.setItem('help-guide', true);
     window.addEventListener('formiowrapperPageChange', () => {
@@ -116,6 +117,16 @@ export class HelpGuide {
     document.addEventListener('keydown', keyboardTrap);
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  _initAccordionButtons() {
+    document.body.addEventListener('click', (e) => {
+      const { target } = e;
+      if (target.className === 'acc-heading') {
+        target.querySelector('label').control.checked = !target.querySelector('label').control.checked;
+      }
+    });
+  }
+
   _closeButton() {
     return html`
       <button
@@ -129,7 +140,11 @@ export class HelpGuide {
 
   // eslint-disable-next-line class-methods-use-this
   _overlay(isVisible) {
-    return html`<div class="overlay ${isVisible ? 'visible' : 'hide'}"></div>`;
+    return html`<div
+      class="overlay ${isVisible ? 'visible' : 'hide'}"
+      @click=${() => this.updateTemplate({ open: false })}
+    >
+    </div>`;
   }
 
   // CLOSED STATE
@@ -160,6 +175,15 @@ export class HelpGuide {
     } else {
       this.render(null);
     }
+    if (this.state.firstView) {
+      const gotItButton = document.querySelector('#gotHelpGuide');
+      if (gotItButton) {
+        gotItButton.addEventListener('click', () => {
+          document.querySelector('#focusTarget').focus();
+        });
+        gotItButton.focus();
+      }
+    }
   }
 
   createTemplate(state) {
@@ -175,7 +199,7 @@ export class HelpGuide {
         <div class="top-block">
           <div class="side-padding">
             <i class="fa fa-book"></i>
-            <h3>Help guide</h3>
+            <h2>Help guide</h2>
           </div>
           ${!state.firstView ? this._closeButton() : ''}
         </div>

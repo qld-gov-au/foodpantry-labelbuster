@@ -3,7 +3,7 @@ import { modifyAccordionState } from '../../scripts/collapse-expand';
 
 export default () => html`
       <div class="side-padding vertical-padding"> 
-      <h4>What are business details?</h4>
+      <h2>What are business details?</h2>
 
       <section class="qg-accordion flex-column" aria-label="Accordion Label">
         <div class="controls-group">
@@ -48,14 +48,14 @@ export default () => html`
             aria-controls="id-panel-content-1"
             aria-expanded="false"
             role="checkbox"/>
-          <h3 class="acc-heading">
+          <button class="acc-heading">
             <label for="business-details">
               <span class="title">
               Business details
               </span>
               <span class="arrow"><i></i></span>
             </label>
-          </h3>
+          </button>
 
           <div
             class="collapsing-section"
@@ -106,23 +106,25 @@ export default () => html`
 </div>
 
 <div class="side-padding vertical-padding">
-    <h4>Food with extra requirements</h4>
+    <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
         <div class="controls-group">
-            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
-
-            <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, false)}>Collapse all</label>
-
-            <span class="controls">|</span>
 
             <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
 
             <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, true)}>Expand all</label>
+              
+                <span class="controls">|</span>
+            
+            <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
+
+            <label for="collapse" class="controls" @click=${e => modifyAccordionState(e, false)}>Collapse all</label>
+
         </div>
         <article>
             <input id="vending-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145883">
                 <label for="vending-food">
                     <span class="title">
@@ -130,7 +132,7 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -159,7 +161,7 @@ export default () => html`
         <article>
             <input id="hamper-food" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145859">
                 <label for="hamper-food">
                     <span class="title">
@@ -167,7 +169,7 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
@@ -201,7 +203,7 @@ export default () => html`
         <article>
             <input id="kava-root" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
-            <h3 class="acc-heading">
+            <button class="acc-heading">
                 <img src="https://www.qld.gov.au/?a=145866">
                 <label for="kava-root">
                     <span class="title">
@@ -209,7 +211,7 @@ export default () => html`
                     </span>
                     <span class="arrow"><i></i></span>
                 </label>
-            </h3>
+            </button>
 
             <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
                 <p>
