@@ -57,7 +57,10 @@
     <tbody>
       <tr>
         <td>Food name and description</td>
-        <td>{{data.productDescription || 'no data provided'}}</td>
+        <td>
+          {{data.foodName || 'no name provided'}} {{data.productDescription ||
+          'no description provided'}}
+        </td>
       </tr>
       <tr>
         <td>Business details</td>

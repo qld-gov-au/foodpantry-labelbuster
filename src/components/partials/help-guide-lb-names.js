@@ -4,7 +4,7 @@ import { modifyAccordionState } from '../../scripts/collapse-expand';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-    <h2>General requirements</h2>
+    <h2>Food names</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="controls-group">
         <input
@@ -79,7 +79,7 @@ export default () => html`
           <p>
             Some food have names that must be used (
             <button
-              data-accordion-item="prescribed-names"
+              data-accordion-item="food-names-prescribed-names"
               class="accordion-btn"
             >
               prescribed names
@@ -338,7 +338,7 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
+          <img src="https://www.qld.gov.au/?a=145852" />
           <label for="food-names-chocolate">
             <span class="title"> Chocolate and cocoa </span>
             <span class="arrow"><i></i></span>
@@ -397,9 +397,9 @@ export default () => html`
         />
 
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
+          <img src="https://www.qld.gov.au/?a=145856" />
           <label for="food-names-alcohol">
-            <span class="title"> Food containing alcohol </span>
+            <span class="title">Food containing alcohol</span>
             <span class="arrow"><i></i></span>
           </label>
         </h3>
@@ -440,7 +440,7 @@ export default () => html`
 
       <article>
         <input
-          id="generic-name"
+          id="food-names-fruit-and-vegetables"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -449,8 +449,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="bcr">
+          <img src="https://www.qld.gov.au/?a=145857" />
+          <label for="food-names-fruit-and-vegetables">
             <span class="title"> Fruit and vegetables </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -506,7 +506,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-hemp"
+          id="food-names-hemp"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -515,8 +515,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-hemp">
+          <img src="https://www.qld.gov.au/?a=145860" />
+          <label for="food-names-hemp">
             <span class="title"> Hemp food products </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -554,7 +554,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-honey"
+          id="food-names-honey"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -563,8 +563,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-honey">
+          <img src="https://www.qld.gov.au/?a=145861" />
+          <label for="food-names-honey">
             <span class="title"> Honey and honey products </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -619,7 +619,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-jams"
+          id="food-names-jams"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -628,8 +628,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-jams">
+          <img src="https://www.qld.gov.au/?a=145865" />
+          <label for="food-names-jams">
             <span class="title"> Jams </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -666,7 +666,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-kava"
+          id="food-names-kava"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -675,8 +675,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-kava">
+          <img src="https://www.qld.gov.au/?a=145866" />
+          <label for="food-names-kava">
             <span class="title"> Kava and kava root </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -716,7 +716,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-meat"
+          id="food-names-meat"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -725,8 +725,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-meat">
+          <img src="https://www.qld.gov.au/?a=145868" />
+          <label for="food-names-meat">
             <span class="title"> Meat and meat products </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -744,7 +744,7 @@ export default () => html`
           <p>
             There are
             <button
-              data-accordion-item="prescribed-names"
+              data-accordion-item="food-names-prescribed-names"
               class="accordion-btn"
             >
               prescribed names
@@ -772,7 +772,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-milk"
+          id="food-names-milk"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -781,8 +781,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-milk">
+          <img src="https://www.qld.gov.au/?a=145869" />
+          <label for="food-names-milk">
             <span class="title"> Milk, dairy and dairy alternatives </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -896,7 +896,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-non-alcoholic"
+          id="food-names-non-alcoholic"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -905,8 +905,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-non-alcoholic">
+          <img src="https://www.qld.gov.au/?a=145870" />
+          <label for="food-names-non-alcoholic">
             <span class="title"> Non-alcoholic drinks </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -993,7 +993,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-nuts"
+          id="food-names-nuts"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -1002,8 +1002,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-nuts">
+          <img src="https://www.qld.gov.au/?a=145872" />
+          <label for="food-names-nuts">
             <span class="title">Nuts and seeds</span>
             <span class="arrow"><i></i></span>
           </label>
@@ -1040,7 +1040,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-oils"
+          id="food-names-oils"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -1049,8 +1049,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-oils">
+          <img src="https://www.qld.gov.au/?a=145873" />
+          <label for="food-names-oils">
             <span class="title">Oils and margarine</span>
             <span class="arrow"><i></i></span>
           </label>
@@ -1092,7 +1092,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-salt"
+          id="food-names-salt"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -1101,8 +1101,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-salt">
+          <img src="https://www.qld.gov.au/?a=145878" />
+          <label for="food-names-salt">
             <span class="title">Salt and salt products</span>
             <span class="arrow"><i></i></span>
           </label>
@@ -1156,7 +1156,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-sugar"
+          id="food-names-sugar"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -1165,8 +1165,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-sugar">
+          <img src="https://www.qld.gov.au/?a=145881" />
+          <label for="food-names-sugar">
             <span class="title">Sugar and sugar alternatives</span>
             <span class="arrow"><i></i></span>
           </label>
@@ -1209,7 +1209,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-name-vinegar"
+          id="food-names-vinegar"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -1218,8 +1218,8 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <img src="https://www.qld.gov.au/?a=145849" />
-          <label for="food-name-vinegar">
+          <img src="https://www.qld.gov.au/?a=145884" />
+          <label for="food-names-vinegar">
             <span class="title">Vinegar</span>
             <span class="arrow"><i></i></span>
           </label>
