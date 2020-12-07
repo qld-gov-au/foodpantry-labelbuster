@@ -1254,5 +1254,4 @@ export default () => html`
         </div>
       </article>
     </section>
-  </div>
-`;
+  </div>`;
