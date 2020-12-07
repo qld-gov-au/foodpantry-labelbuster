@@ -26,7 +26,7 @@ export class Environment {
         break;
       }
       case 'uat': {
-        this.url = 'https://api.forms.platforms.qld.gov.au/uatmidsprint7-fesrqwsyzlbtegd/formwizard';
+        this.url = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
         this.email = '';
         break;
       }
