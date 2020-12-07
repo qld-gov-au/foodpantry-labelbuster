@@ -199,7 +199,7 @@ export class HelpGuide {
         <div class="top-block">
           <div class="side-padding">
             <i class="fa fa-book"></i>
-            <h3>Help guide</h3>
+            <h2>Help guide</h2>
           </div>
           ${!state.firstView ? this._closeButton() : ''}
         </div>

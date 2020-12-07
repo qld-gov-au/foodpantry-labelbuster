@@ -41,7 +41,7 @@
     },
     {
       "label": "date",
-      "calculateValue": "moment.locale('en-au');\nvalue = moment().format('L');",
+      "calculateValue": "value = moment().tz('Australia/Brisbane').format(\"D MMMM YYYY h:mm:ss\");",
       "calculateServer": true,
       "key": "date",
       "type": "hidden",
@@ -114,7 +114,7 @@
     {
       "label": "HTML",
       "attrs": [{ "attr": "", "value": "" }],
-      "content": "<h2>Product sheet</h2>\n<p>\n  You can take this information to a printer or graphic designer to create a\n  label or use your own tools/templates. When creating your food label, you must\n  ensure you meet the <a>legibility requirements</a>, such as minimum type size.\n</p>\n\n<div class=\"product-sheet-row\">\n  <div>\n    <strong>Food name and description</strong>\n  </div>\n  <div>placeholder</div>\n</div>",
+      "content": "<h2>Product sheet</h2><p> You can take this information to a printer or graphic designer to create a label or use your own tools/templates. When creating your food label, you must ensure you meet the <a href=\"#legibility-requirements\">legibility requirements</a>, such as minimum type size.\n</p><div class=\"product-sheet-row\"> <div> <strong>Food name and description</strong> </div> <div>placeholder</div>\n</div>",
       "refreshOnChange": false,
       "tableView": false,
       "key": "html3",
@@ -244,7 +244,7 @@
     {
       "label": "HTML",
       "attrs": [{ "attr": "", "value": "" }],
-      "content": "<h2>Legibility requirements</h2><p> All required words, statements, expressions or designs provided on a food label must be in English, be legible, and be prominent so as to contrast distinctly with the background of the label.\n</p><p> Information in other language is permitted, provided it does not negate or contradict the English information.\n</p><p> No specific print type or size is defined for general labelling requirements, however:\n</p><ul> <li> warning statements must be in a type size of at least 3mm (or 1.5mm on small packages) </li> <li> A print size is prescribed in the Food Standards Code for some foods where a required statement must be shown (e.g. infant formula). </li>\n</ul><section> <h2>Exemptions</h2> <p> All of the food label information needs to be included on your food label, except for:<br> <ul> <li> <a href=\"https://www.qld.gov.au/health/staying-healthy/food-pantry/food-labelling/food-labelling-exemptions-and-extra-requirements\" target=\"_blank\" rel=\"nofollow\"> Food sold in small packages </a> </li> <li> <a href=\"https://www.qld.gov.au/health/staying-healthy/food-pantry/food-labelling/food-labelling-exemptions-and-extra-requirements\" target=\"_blank\" rel=\"nofollow\"> Food with one ingredient </a> </li> </ul> </p> <p> There are extra requirements for:<br> <ul> <li> <a href=\"https://www.qld.gov.au/health/staying-healthy/food-pantry/food-labelling/food-labelling-exemptions-and-extra-requirements\" target=\"_blank\" rel=\"nofollow\"> Food sold from a vending machine </a> </li> <li> <a href=\"https://www.qld.gov.au/health/staying-healthy/food-pantry/food-labelling/food-labelling-exemptions-and-extra-requirements\" target=\"_blank\" rel=\"nofollow\"> Food sold in a hamper </a> </li> </ul> </p>\n</section><br><br><br><br><p> <strong>Copyright</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/copyright/)</span>\n</p><p> <strong>Disclaimer</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/disclaimer/)</span>\n</p><p> <strong>Privacy</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/privacy/)</span>\n</p><p> <strong>Right to information</strong> <span class=\"link-style\">(https://www.qld.gov.au/right-to-information/)</span>\n</p><br><br><br><p> <strong>© The State of Queensland 1995-2020</strong>\n</p><p> <strong>Queensland Government</strong> <span class=\"link-style\">(https://www.qld.gov.au/)</span>\n</p>",
+      "content": "<h2 id=\"legibility-requirements\">Legibility requirements</h2><p> All required words, statements, expressions or designs provided on a food label must be in English, be legible, and be prominent so as to contrast distinctly with the background of the label.\n</p><p> Information in other language is permitted, provided it does not negate or contradict the English information.\n</p><p> No specific print type or size is defined for general labelling requirements, however:\n</p><ul> <li> warning statements must be in a type size of at least 3mm (or 1.5mm on small packages) </li> <li> A print size is prescribed in the Food Standards Code for some foods where a required statement must be shown (e.g. infant formula). </li>\n</ul><section> <h2>Exemptions</h2> <p> All of the food label information needs to be included on your food label, except for: </p> <ul> <li> <a href=\"https://www.qld.gov.au/health/staying-healthy/food-pantry/food-labelling/food-labelling-exemptions-and-extra-requirements\" target=\"_blank\" rel=\"nofollow\"> Food sold in small packages </a> </li> <li> <a href=\"https://www.qld.gov.au/health/staying-healthy/food-pantry/food-labelling/food-labelling-exemptions-and-extra-requirements\" target=\"_blank\" rel=\"nofollow\"> Food with one ingredient </a> </li> </ul> <p>There are extra requirements for:</p> <ul> <li> <a href=\"https://www.qld.gov.au/health/staying-healthy/food-pantry/food-labelling/food-labelling-exemptions-and-extra-requirements\" target=\"_blank\" rel=\"nofollow\"> Food sold from a vending machine </a> </li> <li> <a href=\"https://www.qld.gov.au/health/staying-healthy/food-pantry/food-labelling/food-labelling-exemptions-and-extra-requirements\" target=\"_blank\" rel=\"nofollow\"> Food sold in a hamper </a> </li> </ul>\n</section><br><br><br><br><p> <strong>Copyright</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/copyright/)</span>\n</p><p> <strong>Disclaimer</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/disclaimer/)</span>\n</p><p> <strong>Privacy</strong> <span class=\"link-style\">(https://www.qld.gov.au/legal/privacy/)</span>\n</p><p> <strong>Right to information</strong> <span class=\"link-style\">(https://www.qld.gov.au/right-to-information/)</span>\n</p><br><br><br><p> <strong>© The State of Queensland 1995-2020</strong>\n</p><p> <strong>Queensland Government</strong> <span class=\"link-style\">(https://www.qld.gov.au/)</span>\n</p>",
       "refreshOnChange": false,
       "tableView": false,
       "key": "html5",
@@ -253,7 +253,7 @@
     }
   ],
   "revisions": "current",
-  "_vid": 71,
+  "_vid": 77,
   "title": "LB - PDF",
   "display": "form",
   "access": [
@@ -301,6 +301,6 @@
   "path": "lbpdf",
   "project": "5f44969319d1a97a819d80a7",
   "created": "2020-11-10T03:20:18.793Z",
-  "modified": "2020-11-26T05:47:45.574Z",
+  "modified": "2020-12-03T02:36:45.813Z",
   "machineName": "fesrqwsyzlbtegd:lbPdf"
 }

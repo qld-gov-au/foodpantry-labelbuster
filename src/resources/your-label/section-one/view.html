@@ -68,13 +68,13 @@
         <td>
           <b>{{data.businessName}}</b>
           <br />
-          {{data.addressLine1}}
+          {{data.addressDetails.addressLine1}}
           <br />
-          {{data.addressLine2}}
+          {{data.addressDetails.addressLine2}}
           <br />
-          <span class="suburb">{{data.addressLine3}}</span>
+          <span class="suburb">{{data.addressDetails.addressLine3}}</span>
           <br />
-          {{data.state1}}
+          {{data.addressDetails.state1}}
         </td>
       </tr>
       <tr>
@@ -126,7 +126,12 @@
           <p>
             <b>Contains:</b>
             <!-- prettier-ignore -->
-            {{ _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) { if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`; return acc + ` ${val}, `; }, '') }}
+            {{
+              _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
+                if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+                return acc + ` ${val}, `;
+              }, '')    
+            }}
             <br />
           </p>
 
@@ -347,7 +352,12 @@
           <p>
             <b>Contains:</b>
             <!-- prettier-ignore -->
-            {{ _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) { if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`; return acc + ` ${val}, `; }, '') }}
+            {{
+              _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
+                if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+                return acc + ` ${val}, `;
+              }, '')
+            }}
             <br />
           </p>
 
@@ -381,13 +391,13 @@
       <div class="address-block">
         <b>{{data.businessName}}</b>
         <br />
-        {{data.addressLine1}}
+        {{data.addressDetails.addressLine1}}
         <br />
-        {{data.addressLine2}}
+        {{data.addressDetails.addressLine2}}
         <br />
-        <span class="suburb">{{data.addressLine3}}</span>
+        <span class="suburb">{{data.addressDetails.addressLine3}}</span>
         <br />
-        {{data.state1}}
+        {{data.addressDetails.state1}}
       </div>
     </div>
     <div class="eg-col">
