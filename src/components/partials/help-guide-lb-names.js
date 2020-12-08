@@ -3,7 +3,7 @@ import { modifyAccordionState } from '../../scripts/collapse-expand';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-    <h2>Food names</h2>
+    <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="controls-group">
         <input
@@ -203,7 +203,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-names-prescribed"
+          id="food-names-prescribed-names"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -212,7 +212,7 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <label for="food-names-prescribed">
+          <label for="food-names-prescribed-names">
             <span class="title"> Prescribed names </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -264,6 +264,46 @@ export default () => html`
           </section>
         </div>
       </article>
+    </section>
+    <br /><br />
+    <h2>Food with extra requirements</h2>
+    <section class="qg-accordion flex-column" aria-label="Accordion Label">
+      <div class="controls-group">
+        <input
+          type="radio"
+          name="control"
+          id="expand"
+          class="controls expand"
+          value="expand"
+          role="radio"
+        />
+
+        <label
+          for="expand"
+          class="controls"
+          @click="${e => modifyAccordionState(e, true)}"
+        >
+          Expand all
+        </label>
+        <span class="controls">|</span>
+
+        <input
+          type="radio"
+          name="control"
+          id="collapse"
+          class="controls collapse"
+          value="collapse"
+          role="radio"
+        />
+
+        <label
+          for="collapse"
+          class="controls"
+          @click="${e => modifyAccordionState(e, false)}"
+        >
+          Collapse all
+        </label>
+      </div>
 
       <article>
         <input
