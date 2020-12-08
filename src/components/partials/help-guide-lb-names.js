@@ -203,7 +203,7 @@ export default () => html`
 
       <article>
         <input
-          id="food-names-prescribed"
+          id="food-names-prescribed-names"
           type="checkbox"
           name="tabs"
           tabindex="-1"
@@ -212,7 +212,7 @@ export default () => html`
           role="checkbox"
         />
         <h3 class="acc-heading">
-          <label for="food-names-prescribed">
+          <label for="food-names-prescribed-names">
             <span class="title"> Prescribed names </span>
             <span class="arrow"><i></i></span>
           </label>
