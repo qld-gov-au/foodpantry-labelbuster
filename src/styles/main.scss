@@ -17,18 +17,6 @@
     margin-right: 5px;
   }
 
-  .accordion-btn {
-    color: #13578b;
-    text-decoration: underline;
-    background: none;
-    border: none;
-    display: inline;
-    padding: 0;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
   .heading-primary {
     font-size: 1.5625rem;
   }
@@ -164,4 +152,16 @@ ol.lb {
 button:disabled,
 input:disabled {
   cursor: not-allowed;
+}
+
+.accordion-btn {
+  color: #13578b;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  display: inline;
+  padding: 0;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
 }
