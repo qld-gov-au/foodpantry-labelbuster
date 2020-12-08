@@ -1,6 +1,5 @@
 import { html } from 'lit-html';
 import { modifyAccordionState } from '../../scripts/collapse-expand';
-/* eslint-disable no-irregular-whitespace */
 
 export default () => html`
   <div class="side-padding vertical-padding">
@@ -19,7 +18,7 @@ export default () => html`
         <label
           for="expand"
           class="controls"
-          @click=${e => modifyAccordionState(e, true)}
+          @click="${e => modifyAccordionState(e, true)}"
         >
           Expand all
         </label>
@@ -37,7 +36,7 @@ export default () => html`
         <label
           for="collapse"
           class="controls"
-          @click=${e => modifyAccordionState(e, false)}
+          @click="${e => modifyAccordionState(e, false)}"
         >
           Collapse all
         </label>
@@ -1254,4 +1253,5 @@ export default () => html`
         </div>
       </article>
     </section>
-  </div>`;
+  </div>
+`;
