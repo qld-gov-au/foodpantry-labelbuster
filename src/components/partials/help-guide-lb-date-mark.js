@@ -95,12 +95,11 @@ export default () => html`<div class="side-padding vertical-padding">
                     longer shelf life.
                 </p>
                 <section>
-                    <p>
                     <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
                                 Standard 1.2.5
                             </a>
                             Information requirements – date marking of food for sale
@@ -144,25 +143,24 @@ export default () => html`<div class="side-padding vertical-padding">
                     followed by the date, for example, Bkd On 15 Apr.
                 </p>
                 <section>
-                <p>
-                <h4>Further reading</h4>
-                <p>Queensland Health publication</p>
-                <ul>
-                    <li>
-                        <a href="https://www.publications.qld.gov.au/dataset/food-labelling/resource/50bf4dcb-48fe-4321-8866-dfbb36a56259" target="_blank">
-                            Bread and Bakery Products
-                        </a>
-                    </li>
-                </ul>
-                <i>Australia New Zealand Food Standards Code</i>
-                <ul>
-                    <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank">
-                            Standard 1.2.5
-                        </a>
-                        Information requirements – date marking of food for sale
-                    </li>
-                </ul>
+                    <h4>Further reading</h4>
+                    <p>Queensland Health publication</p>
+                    <ul>
+                        <li>
+                            <a href="https://www.publications.qld.gov.au/dataset/food-labelling/resource/50bf4dcb-48fe-4321-8866-dfbb36a56259" target="_blank" rel="noopener">
+                                Bread and Bakery Products
+                            </a>
+                        </li>
+                    </ul>
+                    <i>Australia New Zealand Food Standards Code</i>
+                    <ul>
+                        <li>
+                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
+                                Standard 1.2.5
+                            </a>
+                            Information requirements – date marking of food for sale
+                        </li>
+                    </ul>
               </section>
             </div>
         </article>
@@ -204,12 +202,11 @@ export default () => html`<div class="side-padding vertical-padding">
                     legislation.
                 </p>
                 <section>
-                    <p>
                     <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
                                 Standard 1.2.5
                             </a>
                             Information requirements – date marking of food for sale
@@ -261,12 +258,11 @@ export default () => html`<div class="side-padding vertical-padding">
                     a shelf life of 3 months or less. The month and year (e.g.: Apr 2021) are required for a food with a longer shelf life.
                 </p>
             <section>
-                <p>
                 <h4>Further reading</h4>
                 <i>Australia New Zealand Food Standards Code</i>
                 <ul>
                     <li>
-                        <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank">
+                        <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
                             Standard 1.2.5
                         </a>
                         Information requirements – date marking of food for sale
@@ -295,12 +291,11 @@ export default () => html`<div class="side-padding vertical-padding">
                     manufacturer or packer can be used for lot identification.
                 </p>
                 <section>
-                    <p>
                     <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a href="https://www.legislation.gov.au/Series/F2015L00389" target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00389" target="_blank" rel="noopener">
                                 Standard 1.2.2
                             </a>
                             Information requirements – food identification
@@ -342,12 +337,11 @@ export default () => html`<div class="side-padding vertical-padding">
                     Food cannot be sold and should not be eaten after the use-by date.
                 </p>
                 <section>
-                    <p>
                     <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
                                 Standard 1.2.5
                             </a>
                             Information requirements – date marking of food for sale
@@ -385,12 +379,11 @@ export default () => html`<div class="side-padding vertical-padding">
                     to be included. For example: A small packet of chewing gum or a small bar of chocolate.
                 </p>
                 <section>
-                    <p>
                     <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
                                 Standard 1.2.5
                             </a>
                             Information requirements – date marking of food for sale
@@ -417,12 +410,11 @@ export default () => html`<div class="side-padding vertical-padding">
                     If the food is a single serve of ice cream or ice confection no date marking information is required.
                 </p>
                 <section>
-                    <p>
                     <h4>Further reading</h4>
                     <i>Australia New Zealand Food Standards Code</i>
                     <ul>
                         <li>
-                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank">
+                            <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
                                 Standard 1.2.5
                             </a>
                             Information requirements – date marking of food for sale
