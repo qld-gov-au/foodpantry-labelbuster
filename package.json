@@ -92,7 +92,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix"
+      "eslint --fix",
+      "npm run format:partials"
     ],
     "*.html": [
       "prettier --write"
