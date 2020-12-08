@@ -96,7 +96,9 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <h4>Further reading</h4>
-                    <i>Australia New Zealand Food Standards Code</i>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
                     <ul>
                         <li>
                             <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
@@ -152,7 +154,9 @@ export default () => html`<div class="side-padding vertical-padding">
                             </a>
                         </li>
                     </ul>
-                    <i>Australia New Zealand Food Standards Code</i>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
                     <ul>
                         <li>
                             <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
@@ -203,7 +207,9 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <h4>Further reading</h4>
-                    <i>Australia New Zealand Food Standards Code</i>
+                    <p>  
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
                     <ul>
                         <li>
                             <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
@@ -259,7 +265,9 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
             <section>
                 <h4>Further reading</h4>
-                <i>Australia New Zealand Food Standards Code</i>
+                <p>
+                    <i>Australia New Zealand Food Standards Code</i>
+                </p>
                 <ul>
                     <li>
                         <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
@@ -292,7 +300,9 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <h4>Further reading</h4>
-                    <i>Australia New Zealand Food Standards Code</i>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
                     <ul>
                         <li>
                             <a href="https://www.legislation.gov.au/Series/F2015L00389" target="_blank" rel="noopener">
@@ -338,7 +348,9 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <h4>Further reading</h4>
-                    <i>Australia New Zealand Food Standards Code</i>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
                     <ul>
                         <li>
                             <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
@@ -380,7 +392,9 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <h4>Further reading</h4>
-                    <i>Australia New Zealand Food Standards Code</i>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
                     <ul>
                         <li>
                             <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
@@ -411,7 +425,9 @@ export default () => html`<div class="side-padding vertical-padding">
                 </p>
                 <section>
                     <h4>Further reading</h4>
-                    <i>Australia New Zealand Food Standards Code</i>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
                     <ul>
                         <li>
                             <a href="https://www.legislation.gov.au/Series/F2015L00401" target="_blank" rel="noopener">
