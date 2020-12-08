@@ -377,7 +377,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="small-package" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <button class="acc-heading">
-                <img src="https://www.qld.gov.au/?a=145849">
+                <img src="https://www.qld.gov.au/?a=145879">
                 <label for="small-package">
                     <span class="title">
                         Food in small packages
@@ -411,7 +411,7 @@ export default () => html`<div class="side-padding vertical-padding">
             <input id="ice-confection" type="checkbox" name="tabs" tabindex="-1" aria-controls="id-panel-content-1"
                 aria-expanded="false" role="checkbox" />
             <button class="acc-heading">
-                <img src="https://www.qld.gov.au/?a=145854">
+                <img src="https://www.qld.gov.au/?a=145862">
                 <label for="ice-confection">
                     <span class="title">
                         Ice cream or ice confection
