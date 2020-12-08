@@ -33,8 +33,9 @@
     "lint:prettierjs": "prettier \"**/*.js\" --check --ignore-path .gitignore",
     "format:prettier": "prettier \"**/*.html\" --write --ignore-path .gitignore",
     "format:prettierjs": "prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "format:partials": "npm run formatFile './src/components/partials/*.js'",
     "lint": "npm run lint:eslint && npm run lint:prettier",
-    "format": "npm run format:eslint && npm run format:prettier",
+    "format": "npm run format:eslint && npm run format:prettier && npm run format:partials",
     "test2": "karma start --coverage",
     "test": "echo hello",
     "test:watch": "karma start --auto-watch=true --single-run=false",
@@ -43,7 +44,8 @@
     "build:resources": "parcel build src/resources/**/*.html src/resources/**/**/*.html --no-source-maps",
     "build:squiz": "parcel build src/index.html --no-source-maps",
     "svg-icons-to-png": "convert-svg-to-png --height 24px --width 24px src/assets/*.svg && mv src/assets/*.png static",
-    "postinstall": "rm -rf ./.cache && node ./postinstall.js"
+    "postinstall": "rm -rf ./.cache && node ./postinstall.js",
+    "formatFile": "node ./formatFile.js"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
@@ -79,7 +81,9 @@
   },
   "prettier": {
     "singleQuote": true,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "printWidth": 80,
+    "arrowParens": "avoid"
   },
   "husky": {
     "hooks": {
