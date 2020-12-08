@@ -265,7 +265,7 @@ export default () => html`
         </div>
       </article>
     </section>
-    <br><br>
+    <br /><br />
     <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="controls-group">
