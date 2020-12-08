@@ -87,13 +87,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm test"
+      "pre-commit": "lint-staged && npm test && npm run format:partials"
     }
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "npm run format:partials"
+      "eslint --fix"
     ],
     "*.html": [
       "prettier --write"
