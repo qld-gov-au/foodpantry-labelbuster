@@ -32,6 +32,15 @@ The Label Buster is a product that allows you to better understand requirements 
     - [Setting up Squiz with Form.io](#setting-up-squiz-with-formio)
     - [Leveraging Form.io](#leveraging-formio)
   - [Decisions](#decisions-1)
+- [Documentation for Formio Wrapper](#documentation-for-formio-wrapper)
+  - [Rationale](#rationale)
+  - [Technology](#technology)
+  - [Configuration](#configuration)
+    - [Each part will now be detailed](#each-part-will-now-be-detailed)
+- [Documentation for Button Group and Step Navigation](#documentation-for-button-group-and-step-navigation)
+  - [Rationale](#rationale-1)
+  - [Usage](#usage-1)
+  - [Ex](#ex)
 
 
 ## About The Project
@@ -142,3 +151,233 @@ To this end we need to:
 * Code splitting
 
 TBC
+
+
+# Documentation for Formio Wrapper
+## Rationale
+Formio's API is clumsy, heavy and as a product formio isn't the best to handle forms, provide a frontend for forms or even handle form submissions. However, it was the technology choice given to us.
+
+So in order to ensure our components worked with our without formio we setup a wrapper that enabled us to communicate with the wrappers API and be able to navigate forward and backwards as much as needed. When formio changes the wrapper changes and the other elements remain the same. This wrapper also enabled us to put in tweaks to make the functioning of formio more consistent with patterns the user expects.
+
+We do expect further implementation of tweaks to make formio behave as the users expect and additions to this wrapper could include missing functionality like the reapply selected we have kept separate for now
+
+## Technology
+The formio wrapper has no external dependencies and uses pure es6 javasccript (framework agnostic) to accomplish the task.
+The formio wrapper is designed to be an external npm dependency to your appliction.
+Your application components can communicate with the formio wrapper through the events.
+
+* formiowrapperGoToNext
+* formiowrapperGoToPrevious
+* formiowrapperCancel
+* formiowrapperGoToPage
+* formiowrapperSendAdminEmail
+
+To fire extra events for other parts of your application to respond to you would use the configuration
+```extraTriggersOnActions```
+This would then fire the extra event and your application can respond accordingly.
+
+## Configuration
+The main way to alter the functionality of the wrapper is to configure it differently.
+The configuration object is passed in as follows.
+```javascript
+const wrapper = new FormioWrapper(configuration);
+```
+The best way to modify the configuration is to create a config.js and import it like this.
+```javascript
+import { configuration } from './config';
+```
+It is best to use native es module imports rather than other types of importing.
+
+**Here is an example config:**
+```javascript
+export const configuration = {
+  form: {
+    baseElement: window,
+    queryElement: document,
+    formioConfig: {
+      showCancel: false,
+      showPrevious: false,
+      showNext: false,
+      showSubmit: false,
+    },
+    adminEmail: '',
+    endpoint: 'submission',
+    pdfEndpoint: 'pdf',
+    selector: '#formio',
+    title: 'Title',
+    location: '',
+    baseLocation: 'asdf',
+  },
+  scroll: {
+    target: 0,
+    type: 'auto',
+    focusTarget: '#focusTarget',
+  },
+  terms: {
+    title: 'terms',
+    termsStorageType: sessionStorage,
+    termsStorageName: 'name',
+    skipIfTermsAlreadyAccepted: true,
+    dataName: 'termsteerms',
+  },
+  buttons: {
+    overwriteFirstButton: true,
+    overwriteValue: 'Go',
+    showButtonsOnLast: true,
+    css: {
+      base: 'baseClass',
+      previous: 'previous-class',
+      next: 'next-class',
+      cancel: 'cancel-class',
+    },
+  },
+  navigation: {
+    baseClass: 'navigationclass',
+  },
+  storage: {
+    type: localStorage,
+    name: 'storagenameforcompletion',
+  },
+  extraTriggersOnActions: {
+    next: 'checkForAutoEmail',
+  },
+};
+```
+### Each part will now be detailed
+**baseElement: window,**
+This is the base element, most of the time you would leave this to window, unless you are using webcomponents or  are writing tests.
+
+**queryElement: document,**
+This is the query element, best to leave that as is unless you are using webcomponents. This is for querying for focus and scolling.
+
+**formioConfig: {}**
+This is the config used to control formio's buttons, these are best being turned off, as our navigation can be styled
+
+**adminEmail: '',**
+This is the admin email address, which can be triggered by the `formiowrapperSendAdminEmail` event.
+
+**endpoint: 'submission',**
+This is used to build the submission object, to submit to the formio backend.
+````${this.config.form.baseLocation}${this.config.form.pdfEndpoint}/${this.config.form.endpoint}`;```
+
+**pdfEndpoint: 'pdf',**
+This is used to build the pdf formio form (since formio needs pdf in a separate form)
+
+**selector: '#formio',**
+This is the query selector.
+
+**title: 'Title',**
+This is the title of the form
+
+**location: '',**
+This is the location of the original form.
+
+**baseLocation: 'asdf',**
+This is the base location to build several locations like below
+````${this.config.form.baseLocation}${this.config.form.pdfEndpoint}/${this.config.form.endpoint}`;```
+
+**scroll: {}**
+This is the object that deals with the properties of the scroll top and focus on page change
+
+**target: 0,** 
+This is the target in pixels from the top of the page, you can scroll to another element by changing it
+
+**type: 'auto',**
+This is the scroll types, auto and smooth are the available options at the time of writing this. (As per javascript)
+
+**focusTarget: '#focusTarget',**
+This is the ID of the target element for the focus. This helps with a11y.
+
+**terms: {}**
+This is a special terms and conditions view configuration.
+Use this to setup a page/view a special conditional page that the user must agree to.
+
+**title: 'terms',**
+This is the title of the view, it is used to match to run the conditions for terms and conditions views.
+
+**termsStorageType: sessionStorage,**
+This is the type of storage used to see if the user has accepted terms and conditions optioins are sessionStorage and localStorage (as per javascript)
+
+**termsStorageName: 'name',**
+The name that the storage stores the condition under.
+
+**skipIfTermsAlreadyAccepted: true,**
+Do we skip the view if the user has already accepted the terms and conditions?
+
+**dataName: 'termsteerms',**
+This is the name for the terms checkbox on the formio side.
+
+**buttons: {}**
+This is for the configuration of the navigation buttons to replace formio controls as they don't style well.
+
+**overwriteFirstButton: true,**
+This overwrites the first button, instead of saying next it can say whatever value you set.
+
+**overwriteValue: 'Go',**
+This contains the overwrite value for the first button.
+
+**showButtonsOnLast: true,**
+This flag determines if you have the buttons cancel and back on the last view.
+
+**css: {}**
+This is the button css classes so that your buttons have the right classes.
+
+**base: 'baseClass',**
+This is the class string applied to all buttons.
+
+**previous: 'previous-class',**
+This is the class string applied to all previous buttons
+
+**next: 'next-class',**
+This is the class string applied to all next buttons
+
+**cancel: 'cancel-class',**
+This is the class string applied to all cancel buttons
+
+**navigation: {}**
+This is the configurations specifically for the alternate step menu, specifically for styling.
+
+**baseClass: 'navigationclass',**
+This is the class string applied to all steps returned.
+
+**storage: {}**
+This the storage setup for completed topics and extended for form data
+
+**type: localStorage,**
+Storage type is as above for other storage types.
+
+**name: 'storagenameforcompletion',** 
+This is the name for the storage on completion. As in if you have completed a multi form you can show it as done.
+
+**extraTriggersOnActions: {}** 
+This object has several extra triggers on actions, leave blank for none but this way you can trigger something after a formio action like go to next or check to see if you should trigger and admin email.
+Options are previous, next, goto, and cancel.
+
+**next: 'checkForAutoEmail',**
+Eg. This triggers an event inside your application that you can fire functions from.
+
+
+# Documentation for Button Group and Step Navigation
+## Rationale
+The button group was used as formio buttons are difficult to style properly.
+
+The button group is framework agnostic and but uses lit-html to emulate some of the functionality of a true web component. However is just a light-dom javascript object.
+
+This functionality was extended to work with the step navigation of the form steps.
+
+## Usage
+This imports lit element from a npm module like this.
+```import { html, render } from 'lit-html';```
+
+To use the button group include it in your index.js like so.
+```import { ButtonGroup } from './thelocation/button-group';```
+
+
+Then make sure you initialise the button group.
+```const bg = new ButtonGroup(document.querySelector('.button-container'));```
+
+Your html will need a target.
+```<div class="button-container"></div>```
+
+## Extension - Step navigation.
+
