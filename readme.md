@@ -41,10 +41,10 @@ The Label Buster is a product that allows you to better understand requirements 
   - [Rationale](#rationale-1)
   - [Usage](#usage-1)
   - [Extension - Step navigation.](#extension---step-navigation)
-- [Documentation for Button Group and Step Navigation](#documentation-for-help-guide)
+- [Documentation for Help Guide](#documentation-for-help-guide)
   - [Rationale](#rationale-2)
   - [Usage](#usage-2)
-  - [Extension - Step navigation.](#how-to-use-help-guide)
+  - [How to use](#how-to-use-help-guide)
 
 
 ## About The Project
