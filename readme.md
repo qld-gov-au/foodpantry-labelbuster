@@ -40,7 +40,7 @@ The Label Buster is a product that allows you to better understand requirements 
 - [Documentation for Button Group and Step Navigation](#documentation-for-button-group-and-step-navigation)
   - [Rationale](#rationale-1)
   - [Usage](#usage-1)
-  - [Ex](#ex)
+  - [Extension - Step navigation.](#extension---step-navigation)
 
 
 ## About The Project
@@ -380,4 +380,9 @@ Your html will need a target.
 ```<div class="button-container"></div>```
 
 ## Extension - Step navigation.
+To use the step navigation part of the button group you only need to create the target like above and intialise like this:
+```const sectionNavigation = new ButtonGroup(sectionNavTarget, 'navigation');```
+
+Finding the target for the inject depends on the use case.
+
 
