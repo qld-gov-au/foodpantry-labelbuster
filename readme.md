@@ -41,6 +41,10 @@ The Label Buster is a product that allows you to better understand requirements 
   - [Rationale](#rationale-1)
   - [Usage](#usage-1)
   - [Extension - Step navigation.](#extension---step-navigation)
+- [Documentation for Button Group and Step Navigation](#documentation-for-help-guide)
+  - [Rationale](#rationale-2)
+  - [Usage](#usage-2)
+  - [Extension - Step navigation.](#how-to-use-help-guide)
 
 
 ## About The Project
@@ -384,5 +388,77 @@ To use the step navigation part of the button group you only need to create the 
 ```const sectionNavigation = new ButtonGroup(sectionNavTarget, 'navigation');```
 
 Finding the target for the inject depends on the use case.
+
+# Documentation for Help Guide
+## Rationale
+The Help Guide is a component which allows supplementary content to be deployed along side the main form content. It also supports interaction between links in the main content and sections within the guide to allow users to find information quicker. 
+
+In supports multiple states based on user interaction and form state. It requires the Formio Wrapper to be deployed along side it to support these state updates.
+
+## Technology
+The Help Guide has no external dependencies and uses ES6 class  to encapsulate all state and functionality related to it.
+
+<a name="HelpGuide"></a>
+
+## Usage
+**Kind**: global class  
+
+
+<a name="HelpGuide+HelpGuide"></a>
+
+
+#### new HelpGuide(target, config)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| target | <code>HTMLElement</code> | the DOM target for the help guide to render it's template result |
+| config | <code>Object</code> | an object containing views and initialState setting of menu
+| config.views | <code>Object</code> | an object which can describe an <code>initial</code> property and any number property which correlates to a step. The value of initial should be the initial view to render, and the value of any numbered step describes the view rendered for the subsequent steps.
+| config.initialState | <code>string</code> | describes what view should be rendered first and if the menu should be open. Currently includes 'minimized', 'active' and other which will will default to onboarding. |
+| config.displayOnSteps | <code>Array</code> | An array of what steps of the wizard the help guide should render|
+| config.formWrapper | <code>FormioWrapper</code> | An instance of the form.io wrapper to listen to.
+### Example
+```javascript
+const hg = new HelpGuide(document.getElementById('help-guide'), {
+    views: {
+      initial: initialView,
+      3: mainView,
+      4: nameView,
+      5: businessView,
+      6: dateMarks,
+      7: storageView,
+      8: ingredients,
+      9: statements,
+    },
+    initialState: 'onboarding',
+    displayOnSteps: [3, 4, 5, 6, 7, 8, 9],
+    formWrapper: lb,
+  });
+  ```
+
+### How to use Help Guide
+This is an example of what is required to get started.
+
+```javascript
+import { HelpGuide } from './components/help-guide';
+import mainView from './components/partials/help-guide-lb-main';
+import initialView from './components/partials/help-guide-lb-initial';
+
+const hg = new HelpGuide(document.getElementById('help-guide'), {
+    views: {
+      1: initialView,
+      2: mainView,
+      3: mainView,
+    },
+    initialState: 'active',
+    displayOnSteps: [1, 2, 3],
+    formWrapper: new FormioWrapper(config),
+  });
+```
+The a view should consist of a function that returns html, such as the lit-html template below:
+```javascript
+export default () => html` <div class="main-content">some-html</div> `;
+
+```
 
 
