@@ -333,12 +333,18 @@
         {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails || ''}` : '' }}
       <div>
         <p>
-          <strong>{{data.dateMarkFood}}</strong> {{data.bestDate || 'no data
-          provided'}}
+          <strong>
+            <!-- prettier-ignore -->
+            {{data.dateMarkFood}}</strong
+          >
+          {{data.bestDate || 'no data provided'}}
         </p>
         <p>
-          <strong>Lot identification:</strong> {{data.batch || 'no data
-          provided'}}
+          <strong>
+            <!-- prettier-ignore -->
+            Lot identification:</strong
+          >
+          {{data.batch || 'no data provided'}}
         </p>
       </div>
     </div>
