@@ -1,6 +1,5 @@
 import { html } from 'lit-html';
 import { modifyAccordionState } from '../../scripts/collapse-expand';
-/* eslint-disable no-irregular-whitespace */
 
 export default () => html`<div class="side-padding vertical-padding">
     <h2>General requirements</h2>
