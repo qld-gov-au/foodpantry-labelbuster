@@ -46,8 +46,14 @@
       {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails || ''}` : '' }}
     </p>
     <div>
-      <p><strong>Best before:</strong> 05 / 04 / 2021</p>
-      <p><strong>Lot identification:</strong> Batch 42</p>
+      <p>
+        <strong>{{data.dateMarkFood}}</strong> {{data.bestDate || 'no data
+        provided'}}
+      </p>
+      <p>
+        <strong>Lot identification:</strong> {{data.batch || 'no data
+        provided'}}
+      </p>
     </div>
   </div>
   <div class="eg-col">
