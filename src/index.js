@@ -9,7 +9,9 @@ import initialView from './components/partials/help-guide-lb-initial';
 import ingredients from './components/partials/help-guide-lb-ingredient';
 import statements from './components/partials/help-guide-lb-statement';
 import businessView from './components/partials/help-guide-lb-business';
+import nameView from './components/partials/help-guide-lb-names';
 import storageView from './components/partials/help-guide-lb-storage';
+import dateMarks from './components/partials/help-guide-lb-date-mark';
 import { configuration } from './config';
 import { Environment } from './environment';
 
@@ -26,13 +28,15 @@ import { Environment } from './environment';
     views: {
       initial: initialView,
       3: mainView,
+      4: nameView,
       5: businessView,
+      6: dateMarks,
       7: storageView,
       8: ingredients,
       9: statements,
     },
     initialState: 'onboarding',
-    displayOnSteps: [3, 5, 7, 8, 9],
+    displayOnSteps: [3, 4, 5, 6, 7, 8, 9],
     formWrapper: lb,
   });
 

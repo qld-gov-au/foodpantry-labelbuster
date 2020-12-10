@@ -11,5 +11,9 @@
   <div>
     <strong>Food name and description</strong>
   </div>
-  <div>placeholder</div>
+  <div>
+    {{data.foodName || 'no name provided'}}
+    <br />
+    {{data.productDescription || 'no description provided'}}
+  </div>
 </div>
