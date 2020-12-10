@@ -81,8 +81,8 @@
         <td>Ingredients</td>
         <td>
           <b>Ingredients:</b>
-          {{data.IngredientData.map((data) => ' ' + data.ingredient) || 'no data
-          provided'}}
+          <!-- prettier-ignore -->
+          {{data.IngredientData.map((data) => ' ' + data.ingredient) || 'no data provided'}}
         </td>
       </tr>
       <tr>
@@ -292,12 +292,13 @@
   </p>
   <div class="example-label">
     <div class="eg-col">
-      <h3>Product name</h3>
-      <p>Product description</p>
-      <p>
-        <b>Storage conditions: </b>
-        <!-- prettier-ignore -->
-        {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
+      <h3>{{data.foodName || 'no name provided'}}</h3>
+
+      <p>{{data.productDescription || 'no description provided'}}</p>
+
+      <b>Storage conditions: </b>
+      <!-- prettier-ignore -->
+      {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
         {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
         {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
         {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
@@ -305,10 +306,10 @@
         {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
         {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
         {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
-        <br />
-        <b>Directions for use:</b>
-        <!-- prettier-ignore -->
-        {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
+      <br />
+      <b>Directions for use:</b>
+      <!-- prettier-ignore -->
+      {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
         {{ data && data.directionsForUse.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}
         {{ data && data.directionsForUse.shakeWellBeforeUse ?  'Shake well before use.' : '' }}
         {{ data && data.directionsForUse.foodShouldBeDrainedBeforeConsumption ? 'Food should be drained before consumption.' : '' }}
@@ -330,7 +331,6 @@
         {{ data && data.directionsForUse.careHasBeenTakenToRemoveAllBonesFromThisProductHoweverSomeBonesMayRemain ? 'Care has been taken to remove all bones from this product, however some bones may remain.' : '' }}
         {{ data && data.directionsForUse.otherDirectionsForUse ? `${data.directionsForUse.otherDirectionsForUseDetails || ''}` : '' }}
         {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails || ''}` : '' }}
-      </p>
       <div>
         <p>
           <strong>{{data.dateMarkFood}}</strong> {{data.bestDate || 'no data
@@ -346,7 +346,8 @@
       <div>
         <p>
           <strong>Ingredients:</strong>
-          {{data.IngredientData.map((data) => data.ingredient)}}
+          <!-- prettier-ignore -->
+          {{data.IngredientData.map((data) => " " + data.ingredient)}}
         </p>
         <div>
           <p>
