@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const { exec } = require('child_process');
+const { exit } = require('process');
 
 const filename = process.argv[2];
 const prettierHtmlCommand = `prettier ${filename} --write --parser=html`;
@@ -13,6 +14,7 @@ prettierHtml.stdout.on('data', (data) => {
 });
 prettierHtml.stderr.on('data', (data) => {
   console.error(`stderr: ${data}`);
+  exit(-1);
 });
 prettierHtml.on('close', (code) => {
   if (code === 0) {
@@ -24,6 +26,7 @@ prettierHtml.on('close', (code) => {
 
     prettierJS.stderr.on('data', (data) => {
       console.error(`stderr: ${data}`);
+      exit(-1);
     });
 
     prettierJS.on('close', (jscode) => {
@@ -37,6 +40,7 @@ prettierHtml.on('close', (code) => {
 
         esLint.stderr.on('data', (data) => {
           console.error(`stderr: ${data}`);
+          exit(-1);
         });
       }
     });
