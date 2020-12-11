@@ -10,7 +10,8 @@
         "eslint-plugin-html"
     ],
     "extends": [
-        "airbnb-base"
+        "airbnb-base",
+        "eslint-config-prettier"
     ],
     "rules": {
         "import/prefer-default-export": "off",
