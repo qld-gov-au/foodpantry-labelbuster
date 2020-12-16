@@ -499,7 +499,7 @@ export class FormioWrapper {
             const data = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = data;
-            link.download = `Know Your Food Business summary - ${successBody.data.topicName}.pdf`;
+            link.download = `Label Buster summary - Label Buster Foods ${this.submissionData.foodName}`;
             link.click();
             setTimeout(() => {
               // For Firefox
