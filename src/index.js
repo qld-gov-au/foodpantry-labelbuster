@@ -63,16 +63,16 @@ import { Environment } from './environment';
     const sectionNavigation = new ButtonGroup(sectionNavTarget, 'navigation');
   });
 
-  window.addEventListener('checkForAutoEmail', (event) => {
+  window.addEventListener('formioNewPageRender', (event) => {
+    // apply styles against to any radio's
+    cssReapplier.reapply(['radio']);
+
+    // automated email on summary
     if (event.detail.page === 9) {
       const newEvent = new CustomEvent('formiowrapperSendAdminEmail', {
         bubbles: true,
       });
       window.dispatchEvent(newEvent);
     }
-  });
-
-  window.addEventListener('formiowrapperPageChange', (event) => {
-    cssReapplier.reapply(['radio']);
   });
 })();
