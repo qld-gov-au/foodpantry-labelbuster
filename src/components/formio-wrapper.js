@@ -503,7 +503,7 @@ export class FormioWrapper {
             const data = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = data;
-            link.download = `Label Buster summary - Label Buster Foods ${this.submissionData.foodName}`;
+            link.download = `Label Buster summary - Label Buster Foods ${successBody.data.foodName}`;
             link.click();
             setTimeout(() => {
               // For Firefox
