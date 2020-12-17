@@ -47,6 +47,5 @@ export const configuration = {
     name: 'lbcompleted',
   },
   extraTriggersOnActions: {
-    next: 'checkForAutoEmail',
   },
 };
