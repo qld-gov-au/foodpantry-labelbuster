@@ -57,8 +57,9 @@
             ? 'Care has been taken to remove all bones from this product,
             however some bones may remain.' : '' }} {{ data &&
             data.directionsForUse.otherDirectionsForUse ?
-            `${data.directionsForUse.otherDirectionsForUseDetails || ''}` : ''
-            }} {{ data && data.directionsForUse.cookingPreparationInstructions ?
+            `${data.directionsForUse.otherDirectionsForUseDetails + ', ' || ''}`
+            : '' }} {{ data &&
+            data.directionsForUse.cookingPreparationInstructions ?
             `${data.directionsForUse.cookingPreparationInstructionsDetails ||
             ''}` : '' }}
           </p>
