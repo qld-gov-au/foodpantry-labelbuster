@@ -923,7 +923,11 @@ export default () => html`
             </p>
             <ul>
               <li>
-                <a href="https://www.legislation.gov.au/Series/F2015L00392">
+                <a
+                  href="https://www.legislation.gov.au/Series/F2015L00392"
+                  target="_blank"
+                  rel="noopener"
+                >
                   Standard 1.2.4
                 </a>
                 Information requirements – statement of ingredients.'
