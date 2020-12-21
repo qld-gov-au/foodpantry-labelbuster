@@ -173,3 +173,10 @@ input:disabled {
 #qg-primary-content figure.no-max-width:not(.qg-nofig) {
   max-width: unset !important;
 }
+
+@media print {
+  #help-guide,
+  #help-guide * {
+    display: none !important;
+  }
+}
