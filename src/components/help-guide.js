@@ -142,7 +142,7 @@ export class HelpGuide {
   _overlay(isVisible) {
     return html`<div
       class="overlay ${isVisible ? 'visible' : 'hide'}"
-      @click=${() => this.updateTemplate({ open: false })}
+      @click=${!this.state.firstView ? () => this.updateTemplate({ open: false }) : ''}
     >
     </div>`;
   }

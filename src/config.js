@@ -11,6 +11,7 @@ export const configuration = {
     adminEmail: '',
     endpoint: 'submission',
     pdfEndpoint: 'lbpdf',
+    pdfDownloadName: data => `Label Buster summary - Label Buster Foods ${data.foodName}`,
     selector: '#formio',
     title: 'Label Buster',
     location: '',
