@@ -68,10 +68,7 @@ export default () => html`
             food with a shelf life of two years or less must show a date mark,
             except for individual portions of ice cream or ice confection.
           </p>
-          <p>
-            <a href="#"> Shelf life </a>
-            refers to the length of time a food remains:
-          </p>
+          <p>Shelf life refers to the length of time a food remains:</p>
           <ul>
             <li>safe to eat</li>
             <li>looks, smells and tastes ok, and</li>
@@ -85,13 +82,13 @@ export default () => html`
             <a href="#use-by-date"> use-by date </a>
             is required when a food becomes unsafe to eat. Food cannot be sold
             and should not be eaten after its
-            <a href="#use-by-date"> use-by date </a>
-            . A food can be eaten past its
-            <a href="#best-before-date"> best-before date </a>
+            <a href="#use-by-date"> use-by date</a>. A food can be eaten past
+            its
+            <a href="#best-before-date"> best-before date</a>
             , but may not look, smell or taste the same as when it was fresh.
             Bread with a shelf life of less than 7 days, can be date marked with
             a
-            <a href="#baked-for-on-date"> baked-on or baked-for date. </a>
+            <a href="#baked-for-on-date"> baked-on or baked-for date.</a>
           </p>
 
           <p>
