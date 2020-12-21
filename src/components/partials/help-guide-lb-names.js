@@ -257,8 +257,9 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                  Honey
+                  Standard 2.8.2
                 </a>
+                Honey
               </li>
             </ul>
           </section>
@@ -746,7 +747,7 @@ export default () => html`
                 >
                   Standard 2.6.3
                 </a>
-                Jam
+                Kava
               </li>
             </ul>
           </section>
