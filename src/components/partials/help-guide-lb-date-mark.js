@@ -69,8 +69,7 @@ export default () => html`
             except for individual portions of ice cream or ice confection.
           </p>
           <p>
-            <a href="#"> Shelf life </a>
-            refers to the length of time a food remains:
+            Shelf life refers to the length of time a food remains:
           </p>
           <ul>
             <li>safe to eat</li>
