@@ -163,7 +163,7 @@ export default () => html`
             </li>
           </ul>
 
-          <h4>Health Claims</h4>
+          <h4>Health claims</h4>
           <p>
             Health claims refer to a relationship between a food and health. For
             example:
