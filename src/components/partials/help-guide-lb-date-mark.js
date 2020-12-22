@@ -454,138 +454,135 @@ export default () => html`
           </section>
         </div>
       </article>
-
-      <div class="side-padding vertical-padding">
-        <h2>Food with extra requirements</h2>
-        <section class="qg-accordion flex-column" aria-label="Accordion Label">
-          <div class="controls-group">
-            <input
-              type="radio"
-              name="control"
-              id="expand"
-              class="controls expand"
-              value="expand"
-              role="radio"
-            />
-            <label
-              for="collapse"
-              class="controls"
-              @click="${e => modifyAccordionState(e, true)}"
-              >Expand all</label
-            >
-            <span class="controls">|</span>
-            <input
-              type="radio"
-              name="control"
-              id="collapse"
-              class="controls collapse"
-              value="collapse"
-              role="radio"
-            />
-            <label
-              for="collapse"
-              class="controls"
-              @click="${e => modifyAccordionState(e, false)}"
-              >Collapse all</label
-            >
-          </div>
-          <article>
-            <input
-              id="small-package"
-              type="checkbox"
-              name="tabs"
-              tabindex="-1"
-              aria-controls="id-panel-content-1"
-              aria-expanded="false"
-              role="checkbox"
-            />
-            <button class="acc-heading">
-              <img src="https://www.qld.gov.au/?a=145879" />
-              <label for="small-package">
-                <span class="title"> Food in small packages </span>
-                <span class="arrow"><i></i></span>
-              </label>
-            </button>
-            <div
-              class="collapsing-section"
-              aria-hidden="true"
-              id="id-panel-content-1"
-            >
-              <p>
-                If the food sold in a small package where the package has a
-                surface area of less than 100 cm2 only a use-by date needs to be
-                included. For example: A small packet of chewing gum or a small
-                bar of chocolate.
-              </p>
-              <section>
-                <h4>Further reading</h4>
-                <p>
-                  <i>Australia New Zealand Food Standards Code</i>
-                </p>
-                <ul>
-                  <li>
-                    <a
-                      href="https://www.legislation.gov.au/Series/F2015L00401"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      Standard 1.2.5
-                    </a>
-                    Information requirements – date marking of food for sale
-                  </li>
-                </ul>
-              </section>
-            </div>
-          </article>
-
-          <article>
-            <input
-              id="ice-confection"
-              type="checkbox"
-              name="tabs"
-              tabindex="-1"
-              aria-controls="id-panel-content-1"
-              aria-expanded="false"
-              role="checkbox"
-            />
-            <button class="acc-heading">
-              <img src="https://www.qld.gov.au/?a=145862" />
-              <label for="ice-confection">
-                <span class="title"> Ice cream or ice confection </span>
-                <span class="arrow"><i></i></span>
-              </label>
-            </button>
-            <div
-              class="collapsing-section"
-              aria-hidden="true"
-              id="id-panel-content-1"
-            >
-              <p>
-                If the food is a single serve of ice cream or ice confection no
-                date marking information is required.
-              </p>
-              <section>
-                <h4>Further reading</h4>
-                <p>
-                  <i>Australia New Zealand Food Standards Code</i>
-                </p>
-                <ul>
-                  <li>
-                    <a
-                      href="https://www.legislation.gov.au/Series/F2015L00401"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      Standard 1.2.5
-                    </a>
-                    Information requirements – date marking of food for sale
-                  </li>
-                </ul>
-              </section>
-            </div>
-          </article>
-        </section>
+    </section>
+    <h2>Food with extra requirements</h2>
+    <section class="qg-accordion flex-column" aria-label="Accordion Label">
+      <div class="controls-group">
+        <input
+          type="radio"
+          name="control"
+          id="expand"
+          class="controls expand"
+          value="expand"
+          role="radio"
+        />
+        <label
+          for="collapse"
+          class="controls"
+          @click="${e => modifyAccordionState(e, true)}"
+          >Expand all</label
+        >
+        <span class="controls">|</span>
+        <input
+          type="radio"
+          name="control"
+          id="collapse"
+          class="controls collapse"
+          value="collapse"
+          role="radio"
+        />
+        <label
+          for="collapse"
+          class="controls"
+          @click="${e => modifyAccordionState(e, false)}"
+          >Collapse all</label
+        >
       </div>
+      <article>
+        <input
+          id="small-package"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox"
+        />
+        <button class="acc-heading">
+          <img src="https://www.qld.gov.au/?a=145879" />
+          <label for="small-package">
+            <span class="title"> Food in small packages </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </button>
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1"
+        >
+          <p>
+            If the food sold in a small package where the package has a surface
+            area of less than 100 cm2 only a use-by date needs to be included.
+            For example: A small packet of chewing gum or a small bar of
+            chocolate.
+          </p>
+          <section>
+            <h4>Further reading</h4>
+            <p>
+              <i>Australia New Zealand Food Standards Code</i>
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://www.legislation.gov.au/Series/F2015L00401"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Standard 1.2.5
+                </a>
+                Information requirements – date marking of food for sale
+              </li>
+            </ul>
+          </section>
+        </div>
+      </article>
+
+      <article>
+        <input
+          id="ice-confection"
+          type="checkbox"
+          name="tabs"
+          tabindex="-1"
+          aria-controls="id-panel-content-1"
+          aria-expanded="false"
+          role="checkbox"
+        />
+        <button class="acc-heading">
+          <img src="https://www.qld.gov.au/?a=145862" />
+          <label for="ice-confection">
+            <span class="title"> Ice cream or ice confection </span>
+            <span class="arrow"><i></i></span>
+          </label>
+        </button>
+        <div
+          class="collapsing-section"
+          aria-hidden="true"
+          id="id-panel-content-1"
+        >
+          <p>
+            If the food is a single serve of ice cream or ice confection no date
+            marking information is required.
+          </p>
+          <section>
+            <h4>Further reading</h4>
+            <p>
+              <i>Australia New Zealand Food Standards Code</i>
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://www.legislation.gov.au/Series/F2015L00401"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Standard 1.2.5
+                </a>
+                Information requirements – date marking of food for sale
+              </li>
+            </ul>
+          </section>
+        </div>
+      </article>
     </section>
   </div>
 `;
