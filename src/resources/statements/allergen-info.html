@@ -5,7 +5,7 @@
     <div class="qg-callout__header col-12">
       <span class="qg-callout__icon"> <i class="fa fa-info-circle"></i> </span>
       <h2 class="qg-callout__title">
-        The ingredients should be shown on a food label as:
+        The allergens should be shown on the food label as:
       </h2>
     </div>
 
@@ -13,8 +13,9 @@
       <div class="qg-callout__bottom-alignment">
         <div class="qg-callout__description">
           <p class="wrap">
-            The allergens should be shown on the food label as: Contains: {{
-            _.reduce(_.filter(_.toPairs(data.allergyDeclarations),
+            <b>Contains</b>:
+            <!-- prettier-ignore -->
+            {{_.reduce(_.filter(_.toPairs(data.allergyDeclarations),
             function([key, val]) { return val }), function(acc, [key, val],
             index) { if (index === _.filter(_.toPairs(data.allergyDeclarations),
             function([key, val]) { return val }).length - 1) return acc + `
