@@ -177,8 +177,10 @@ export class FormioWrapper {
   _populateDataFromStorage(storage, key) {
     const storedData = storage.getItem(key);
     if (storedData) {
-      this.wizard.data = JSON.parse(storedData);
-      this.pdfInstance.data = JSON.parse(storedData);
+      this.storedData = JSON.parse(storedData);
+      this.wizard.data = this.storedData;
+      this.submissionData = this.wizard.data;
+
       if(this.wizard.data.currentPage) {
         this._goToPage(this.wizard.data.currentPage);
       }
