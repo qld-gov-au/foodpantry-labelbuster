@@ -178,6 +178,7 @@ export class FormioWrapper {
     const storedData = storage.getItem(key);
     if (storedData) {
       this.wizard.data = JSON.parse(storedData);
+      this.pdfInstance.data = JSON.parse(storedData);
       if(this.wizard.data.currentPage) {
         this._goToPage(this.wizard.data.currentPage);
       }
