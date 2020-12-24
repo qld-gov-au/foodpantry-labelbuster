@@ -68,7 +68,7 @@ import { Environment } from './environment';
     cssReapplier.reapply(['radio']);
 
     // automated email on summary
-    if (event.detail.page === 9) {
+    if (event.detail.page === 10) {
       const newEvent = new CustomEvent('formiowrapperSendAdminEmail', {
         bubbles: true,
       });
