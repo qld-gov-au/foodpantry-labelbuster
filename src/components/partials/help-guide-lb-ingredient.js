@@ -1333,7 +1333,7 @@ export default () => html`
         <button class="acc-heading">
           <img src="https://www.qld.gov.au/?a=145869" />
           <label for="milk-dairy">
-            <span class="title"> Milk, dairy and dairy alternatives </span>
+            <span class="title"> Milk, dairy and dairy substitutes </span>
             <span class="arrow"><i></i></span>
           </label>
         </button>
