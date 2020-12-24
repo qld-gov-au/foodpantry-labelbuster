@@ -541,6 +541,7 @@ export class FormioWrapper {
 
     this._formSubmission().then((successBody) => {
       const { pdfDownloadName } = this.config.form;
+      const formioWrapper = this;
       const xhr = new XMLHttpRequest();
       xhr.open(
         'GET',
@@ -568,7 +569,7 @@ export class FormioWrapper {
           }
         }
         downloadButton.disabled = false;
-        this.requestedDownload = false;
+        formioWrapper.requestedDownload = false;
       };
       xhr.send();
     });
