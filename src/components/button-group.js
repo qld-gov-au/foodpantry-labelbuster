@@ -1,4 +1,6 @@
 import { html, render, nothing } from 'lit-html';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
+
 import { configuration } from '../config';
 
 export class ButtonGroup {
@@ -43,7 +45,6 @@ export class ButtonGroup {
     if (JSON.stringify(output).indexOf('</li>') === -1) {
       confirmation = this._createConfirmation();
     }
-
     return html`${output}${confirmation}`;
   }
 
@@ -54,11 +55,11 @@ export class ButtonGroup {
     return html`
       <div
         id="cancelconfirmationwrapper"
-        .hidden=${!this.showDialog}
+        ?hidden=${!this.showDialog}
         @click="${e => this.backgroundClose(e)}">
         <div id="cancelconfirmationdialog">
           <button class="close" @click="${() => this.toggleDialog()}">
-              ${configuration.confirmation.closeXButton}
+              ${unsafeHTML(configuration.confirmation.closeXButton)}
           </button>
           <h2>${configuration.confirmation.title}</h2>
           ${configuration.confirmation.description}
