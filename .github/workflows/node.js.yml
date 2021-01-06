@@ -43,12 +43,11 @@ jobs:
           name: dist
           path: |
             dist
-
-         - name: Publish
-           uses: qld-gov-au/gha-publish-to-git@master
-           with:
-             repository: ${{ secrets.TARGET_REPO }}
-             branch: ${{ secrets.DEPLOY_BRANCH }}
-             github_token: '${{ secrets.GH_TOKEN }}'
-             source_folder: dist
-           if: success() && github.event_name == 'push'
+      - name: Publish
+        uses: qld-gov-au/gha-publish-to-git@master
+        with:
+          repository: ${{ secrets.TARGET_REPO }}
+          branch: ${{ secrets.DEPLOY_BRANCH }}
+          github_token: '${{ secrets.GH_TOKEN }}'
+          source_folder: dist
+        if: success() && github.event_name == 'push'
