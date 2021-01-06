@@ -44,24 +44,11 @@ jobs:
           path: |
             dist
 
-      #    - name: Publish
-      #      uses: qld-gov-au/gha-publish-to-git@master
-      #      with:
-      #        repository: qld-gov-au/foodpantry-labelbuster-squiz
-      #        branch: master
-      #        github_token: '${{ secrets.GH_TOKEN }}'
-      #        github_pat: '${{ secrets.GH_PAT }}'
-      #        source_folder: dist
-      #      if: success() && github.event_name == 'push'
-
-      - name: Commit files
-        run: |
-          git config --local user.email "2324+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git commit -m "Add changes" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          branch: ${{ secrets.DEPLOY_BRANCH }}
-          repository: ${{ secrets.TARGET_REPO }}
+         - name: Publish
+           uses: qld-gov-au/gha-publish-to-git@master
+           with:
+             repository: ${{ secrets.TARGET_REPO }}
+             branch: ${{ secrets.DEPLOY_BRANCH }}
+             github_token: '${{ secrets.GH_TOKEN }}'
+             source_folder: dist
+           if: success() && github.event_name == 'push'
