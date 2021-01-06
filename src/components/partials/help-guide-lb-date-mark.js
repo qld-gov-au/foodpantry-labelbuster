@@ -84,8 +84,7 @@ export default () => html`
             and should not be eaten after its
             <a href="#use-by-date"> use-by date</a>. A food can be eaten past
             its
-            <a href="#best-before-date"> best-before date</a>
-            , but may not look, smell or taste the same as when it was fresh.
+            <a href="#best-before-date"> best-before date</a>, but may not look, smell or taste the same as when it was fresh.
             Bread with a shelf life of less than 7 days, can be date marked with
             a
             <a href="#baked-for-on-date"> baked-on or baked-for date.</a>
