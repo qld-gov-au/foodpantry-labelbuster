@@ -19,6 +19,10 @@
     align-self: flex-end;
     overflow-y: scroll;
 
+    &:not(.close-menu) {
+      bottom: 0;
+    }
+
     &.hide {
       display: none;
     }
