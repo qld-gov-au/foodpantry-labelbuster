@@ -5,7 +5,7 @@ name: Publish CI
 
 on:
   push:
-    branches: [develop, uat]
+    branches:
 
 jobs:
   build:
