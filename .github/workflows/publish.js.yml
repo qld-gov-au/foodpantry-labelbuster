@@ -5,7 +5,7 @@ name: Publish CI
 
 on:
   push:
-    branches:
+    branches: [develop, uat]
 
 jobs:
   build:
@@ -45,7 +45,6 @@ jobs:
         uses: qld-gov-au/gha-publish-to-git@master
         with:
           repository: ${{ secrets.TARGET_REPO }}
-          branch: 'dev'
           github_token: '${{ secrets.GH_TOKEN }}'
           source_folder: dist
         if: success()
