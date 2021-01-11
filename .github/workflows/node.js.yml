@@ -50,7 +50,7 @@ jobs:
           branch: 'dev'
           github_token: '${{ secrets.GH_TOKEN }}'
           source_folder: dist
-        if: success() && github.event_name == 'push' && github.ref == 'develop'
+        if: success() && github.event_name == 'push' && ${{ GITHUB_REF_NAME }} == 'develop'
 
       - name: Publish UAT
         uses: qld-gov-au/gha-publish-to-git@master
@@ -59,4 +59,4 @@ jobs:
           branch: uat
           github_token: '${{ secrets.GH_TOKEN }}'
           source_folder: dist
-        if: success() && github.event_name == 'push' && github.ref == 'uat'
+        if: success() && github.event_name == 'push' && ${{ GITHUB_REF_NAME }} == 'uat'
