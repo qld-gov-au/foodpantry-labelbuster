@@ -178,9 +178,21 @@ export class HelpGuide {
     if (this.state.firstView) {
       const gotItButton = document.querySelector('#gotHelpGuide');
       if (gotItButton) {
+        const keyboardTrap = (e) => {
+          e.preventDefault();
+          if (e.code === "Enter" && e.target === gotItButton) {
+            gotItButton.click();
+          } else {
+            gotItButton.focus();
+          }
+        }
+
         gotItButton.addEventListener('click', () => {
           document.querySelector('#focusTarget').focus();
+          document.removeEventListener('keydown', keyboardTrap);
         });
+
+        document.addEventListener('keydown', keyboardTrap);
         gotItButton.focus();
       }
     }

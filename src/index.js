@@ -22,7 +22,6 @@ import { Environment } from './environment';
   // configuration.form.baseLocation = environment.url;
 
   const lb = new FormioWrapper(configuration);
-  const bg = new ButtonGroup(document.querySelector('.button-container'));
   attachStepHandler();
   const hg = new HelpGuide(document.getElementById('help-guide'), {
     views: {
@@ -47,20 +46,27 @@ import { Environment } from './environment';
       pageHeader.removeChild(document.querySelector('h1'));
     }
 
-    let sectionNav = document.querySelector(
-      '#qg-section-nav > ul > li:nth-child(1)',
-    );
-    if (!sectionNav) {
-      sectionNav = document.querySelector('#formnav');
-      sectionNav.display = 'block';
+    const navigationSection = document.querySelector('#qg-section-nav');
+    let sectionNav;
+    if (!navigationSection) {
+      sectionNav = document.createElement('div');
+      sectionNav.id = 'qg-section-nav';
+      document.body.appendChild(sectionNav);
+      sectionNav = document.querySelector('#qg-section-nav');
+    } else {
+      sectionNav = navigationSection.querySelector('ul > li > a.active')
+        .parentElement;
     }
 
+    navigationSection.querySelector('ul > li > a.active').classList
+      .add('opened');
     const unorderdList = document.createElement('ol');
-    unorderdList.classList = 'lb guide-sub-nav';
+    unorderdList.classList.add('lb', 'guide-sub-nav');
     sectionNav.appendChild(unorderdList);
     const sectionNavTarget = sectionNav.querySelector('ol');
 
     const sectionNavigation = new ButtonGroup(sectionNavTarget, 'navigation');
+    const bg = new ButtonGroup(document.querySelector('.button-container'));
   });
 
   window.addEventListener('formioNewPageRender', (event) => {

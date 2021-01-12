@@ -211,12 +211,12 @@ input:disabled {
   }
 
   h2 {
-    margin-top: 0;
+    margin-top: -14px;
+    margin-inline-end: 14px;
     padding-top: 0;
   }
 
   .close {
-    position: absolute;
     display: flex;
     align-self: flex-end;
     width: 40px;
@@ -225,13 +225,8 @@ input:disabled {
     border: 0;
     padding: 0;
     margin: -16px;
-    i {
-      height: 11px;
-      width: 11px;
-      display: flex;
-      align-self: center;
-      justify-self: center;
-    }
+    align-items: center;
+    justify-content: center;
   }
 
   hr {
@@ -241,6 +236,15 @@ input:disabled {
     margin-bottom: 16px;
     margin-top: 24px;
   }
+}
+
+#qg-content #qg-section-nav li a.opened:before {
+  opacity: 0.5;
+}
+
+#qg-content #qg-section-nav li a.opened {
+  color: #005375;
+  background-color: transparent;
 }
 
 @media screen and (max-width: 767px) {
