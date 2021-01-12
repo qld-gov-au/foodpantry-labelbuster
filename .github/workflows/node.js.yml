@@ -36,3 +36,4 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - run: npm run test
+      - run: echo ${{ github.base_ref }}
