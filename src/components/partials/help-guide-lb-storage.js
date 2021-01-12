@@ -396,7 +396,7 @@ export default () => html`
                 Meat and meat products.
                 <ul>
                   <li>
-                    See section 2.2.3—8 Information about raw meat joined or
+                    See section 2.2.1—8 Information about raw meat joined or
                     formed into the semblance of a cut of meat
                   </li>
                 </ul>

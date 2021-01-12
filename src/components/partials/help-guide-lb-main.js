@@ -134,7 +134,7 @@ export default () => html`
         <button class="acc-heading">
           <label for="nutrition-claims">
             <span class="title">
-              Claims: Nutrition, health and realted claims
+              Claims: Nutrition, health and related claims
             </span>
             <span class="arrow"><i></i></span>
           </label>
@@ -163,7 +163,7 @@ export default () => html`
             </li>
           </ul>
 
-          <h4>Health Claims</h4>
+          <h4>Health claims</h4>
           <p>
             Health claims refer to a relationship between a food and health. For
             example:
@@ -658,7 +658,7 @@ export default () => html`
                 href="https://www.legislation.gov.au/Series/F2015L00417"
                 target="_blank"
                 rel="noopener"
-                >Schedule 2.9.2</a
+                >Standard 2.9.2</a
               >
               Food for infants
             </li>
@@ -676,7 +676,7 @@ export default () => html`
                 href="https://www.legislation.gov.au/Series/F2015L00421"
                 target="_blank"
                 rel="noopener"
-                >Schedule 2.9.4</a
+                >Standard 2.9.4</a
               >
               Formulated supplementary sports foods
             </li>
@@ -685,7 +685,7 @@ export default () => html`
                 href="https://www.legislation.gov.au/Series/F2015L00472"
                 target="_blank"
                 rel="noopener"
-                >Schedule 2.9.5</a
+                >Standard 2.9.5</a
               >
               Food for special medical purposes
             </li>

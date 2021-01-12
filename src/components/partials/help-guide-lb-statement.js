@@ -82,6 +82,7 @@ export default () => html`
               <a
                 href="https://www.legislation.gov.au/Details/F2017C00418"
                 target="_blank"
+                rel="noopener"
               >
                 Standard 1.2.3
               </a>
@@ -92,6 +93,7 @@ export default () => html`
               <a
                 href="https://www.legislation.gov.au/Details/F2016C00827"
                 target="_blank"
+                rel="noopener"
               >
                 Schedule 9
               </a>
@@ -104,6 +106,7 @@ export default () => html`
               <a
                 href="https://www.foodstandards.gov.au/code/userguide/Documents/Guide%20to%201.2.3%20-%20Warning%20and%20Advisory%20Statements.pdf"
                 target="_blank"
+                rel="noopener"
               >
                 User Guide – Warning and Advisory Statements and Declarations
               </a>
@@ -163,6 +166,7 @@ export default () => html`
               <a
                 href="https://www.legislation.gov.au/Series/F2015L00386"
                 target="_blank"
+                rel="noopener"
               >
                 Standard 1.2.1
               </a>
@@ -177,6 +181,7 @@ export default () => html`
               <a
                 href="https://www.legislation.gov.au/Details/F2017C00418"
                 target="_blank"
+                rel="noopener"
               >
                 Standard 1.2.3
               </a>
@@ -190,6 +195,7 @@ export default () => html`
               <a
                 href="https://www.foodstandards.gov.au/code/userguide/Documents/Guide%20to%201.2.3%20-%20Warning%20and%20Advisory%20Statements.pdf"
                 target="_blank"
+                rel="noopener"
               >
                 User Guide – Warning and Advisory Statements and Declarations
               </a>
@@ -236,6 +242,7 @@ export default () => html`
               <a
                 href="https://www.legislation.gov.au/Series/F2015L00386"
                 target="_blank"
+                rel="noopener"
               >
                 Standard 1.2.1
               </a>
@@ -250,6 +257,7 @@ export default () => html`
               <a
                 href="https://www.legislation.gov.au/Details/F2017C00418"
                 target="_blank"
+                rel="noopener"
               >
                 Standard 1.2.3
               </a>
@@ -260,6 +268,7 @@ export default () => html`
               <a
                 href="https://www.legislation.gov.au/Series/F2015L00466"
                 target="_blank"
+                rel="noopener"
               >
                 Standard 2.6.3
               </a>
@@ -272,6 +281,7 @@ export default () => html`
               <a
                 href="https://www.foodstandards.gov.au/code/userguide/Documents/Guide%20to%201.2.3%20-%20Warning%20and%20Advisory%20Statements.pdf"
                 target="_blank"
+                rel="noopener"
               >
                 User Guide – Warning and Advisory Statements and Declarations
               </a>
