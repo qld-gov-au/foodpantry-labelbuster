@@ -82,7 +82,7 @@
         <td>
           <b>Ingredients:</b>
           <!-- prettier-ignore -->
-          {{data.IngredientData.map((data) => ' ' + data.ingredient) || 'no data provided'}}
+          {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) || 'no data provided'}}
         </td>
       </tr>
       <tr>
@@ -130,7 +130,7 @@
               _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
                 if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
                 return acc + ` ${val}, `;
-              }, '')    
+              }, '')
             }}
             <br />
           </p>
@@ -353,7 +353,7 @@
         <p>
           <strong>Ingredients:</strong>
           <!-- prettier-ignore -->
-          {{data.IngredientData.map((data) => " " + data.ingredient)}}
+          {{data.IngredientData && data.IngredientData.map(function(data){ return " " + data.ingredient})}}
         </p>
         <div>
           <p>
