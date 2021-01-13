@@ -34,8 +34,8 @@
             {{ data && data.directionsForUse.allowToStandFor ? `Allow to stand for ${data.directionsForUse.allowToStandForMinutesBeforeServing||0} minutes before serving.` : '' }}
             {{ data && data.directionsForUse.doNotRefrigerateOrReheatOnceHeated ? 'Do not refrigerate or reheat once heated.': '' }}
             {{ data && data.directionsForUse.careHasBeenTakenToRemoveAllBonesFromThisProductHoweverSomeBonesMayRemain ? 'Care has been taken to remove all bones from this product, however some bones may remain.' : '' }}
-            {{ data && data.directionsForUse.otherDirectionsForUse ? `${data.directionsForUse.otherDirectionsForUseDetails + ', ' || ''}` : '' }}
-            {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails || ''}` : '' }}
+            {{ data && data.directionsForUse.otherDirectionsForUse ? `${data.directionsForUse.otherDirectionsForUseDetails + '.' || ''}` : '' }}
+            {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails + '.'  || ''}` : '' }}
           </p>
         </div>
       </div>
