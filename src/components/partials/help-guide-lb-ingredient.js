@@ -79,7 +79,10 @@ export default () => html`
               </button>
             </li>
             <li>
-              <button data-accordion-item="one-ingredient" class="accordion-btn">
+              <button
+                data-accordion-item="one-ingredient"
+                class="accordion-btn"
+              >
                 Foods with one ingredient
               </button>
             </li>
