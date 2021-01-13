@@ -14,14 +14,14 @@
           <p>
             <b>Storage conditions:</b>
             <!-- prettier-ignore -->
-            {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
-            {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
-            {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
-            {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
-            {{ data && data.storageConditions.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.storageConditions.keepRefrigeratedAtOrBelowTemperature || 0}.` : '' }}
-            {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
-            {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
-            {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
+            {{ data && data.storageConditions && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
+            {{ data && data.storageConditions && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
+            {{ data && data.storageConditions && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
+            {{ data && data.storageConditions && data.storageConditions.keepRefrigeratedAt ? "Keep refrigerated at ".concat(data.storageConditions.keepRefrigeratedAtMinimum || 0, " \xB0C to ").concat(data.storageConditions.keepRefrigeratedAtMaximum || 0, " \xB0C.") : '' }}
+            {{ data && data.storageConditions && data.storageConditions.keepRefrigeratedAtOrBelow ? 'Keep refrigerated at or below '.concat(data.storageConditions.keepRefrigeratedAtOrBelowTemperature || 0, ".") : '' }}
+            {{ data && data.storageConditions && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
+            {{ data && data.storageConditions && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
+            {{ data && data.storageConditions && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
           </p>
         </div>
       </div>
