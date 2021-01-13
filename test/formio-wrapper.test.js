@@ -3,7 +3,7 @@
 import { fixture, html, expect, oneEvent } from '@open-wc/testing';
 import { stub, spy, assert } from 'sinon';
 import { FormioWrapper } from '../src/components/formio-wrapper';
-import { configuration } from '../src/config.js';
+import { configuration } from './config.js';
 
 describe('Formio Wrapper Tests.', () => {
   let wrapper = {};

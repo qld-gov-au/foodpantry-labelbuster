@@ -21,7 +21,11 @@
             {{ data && data.storageConditions && data.storageConditions.keepRefrigeratedAtOrBelow ? 'Keep refrigerated at or below '.concat(data.storageConditions.keepRefrigeratedAtOrBelowTemperature || 0, ".") : '' }}
             {{ data && data.storageConditions && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
             {{ data && data.storageConditions && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
+<<<<<<< HEAD
             {{ data && data.storageConditions && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
+=======
+            {{ data && data.storageConditions && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails + '.': '' }}
+>>>>>>> master
           </p>
         </div>
       </div>

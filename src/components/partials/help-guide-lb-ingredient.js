@@ -74,10 +74,17 @@ export default () => html`
           <ul>
             <li>Individual portion packs</li>
             <li>
-              <a href="#food-package"> Foods in small packages </a>
+              <button data-accordion-item="food-package" class="accordion-btn">
+                Foods in small packages
+              </button>
             </li>
             <li>
-              <a href="#one-ingredient"> Foods with one ingredient </a>
+              <button
+                data-accordion-item="one-ingredient"
+                class="accordion-btn"
+              >
+                Foods with one ingredient
+              </button>
             </li>
             <li>
               Water that is packaged and labelled in accordance with
@@ -89,7 +96,9 @@ export default () => html`
                 Standard 2.6.2
               </a>
               of the Food Standards Code. See
-              <a href="#non-alcoholic"> non-alcoholic drinks </a>
+              <button data-accordion-item="non-alcoholic" class="accordion-btn">
+                non-alcoholic drinks
+              </button>
               in food with extra requirements for more information.
             </li>
             <li>
@@ -105,7 +114,9 @@ export default () => html`
             <li>a name that describes the true nature of the ingredient</li>
             <li>
               a
-              <a href="#generic-name"> generic name </a>
+              <button data-accordion-item="generic-name" class="accordion-btn">
+                generic name
+              </button>
               specified in the Food Standards Code.
             </li>
           </ul>
