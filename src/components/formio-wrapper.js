@@ -195,7 +195,7 @@ export class FormioWrapper {
     this.config.storage.type.clear();
     this.wizard.resetValue();
     this.wizard.data = {};
-    localStorage.removeItem('Label Buster');
+    this.config.storage.type.removeItem(this.config.form.title);
   }
 
   /**
