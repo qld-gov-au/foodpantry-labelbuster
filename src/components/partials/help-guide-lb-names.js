@@ -79,7 +79,9 @@ export default () => html`
             Some food have names that must be used (<button
               data-accordion-item="food-names-prescribed-names"
               class="accordion-btn"
-            >prescribed names</button>). For example, ‘fermented processed meat – cooked’ or ‘infant
+            >
+              prescribed names</button
+            >). For example, ‘fermented processed meat – cooked’ or ‘infant
             formula’.
           </p>
           <p>
