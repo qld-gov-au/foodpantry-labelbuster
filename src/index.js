@@ -56,10 +56,9 @@ import { Environment } from './environment';
     } else {
       sectionNav = navigationSection.querySelector('ul > li > a.active')
         .parentElement;
+      navigationSection.querySelector('ul > li > a.active').classList
+        .add('opened');
     }
-
-    navigationSection.querySelector('ul > li > a.active').classList
-      .add('opened');
     const unorderdList = document.createElement('ol');
     unorderdList.classList.add('lb', 'guide-sub-nav');
     sectionNav.appendChild(unorderdList);

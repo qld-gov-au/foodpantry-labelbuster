@@ -67,7 +67,7 @@
       <p>
         <strong>Ingredients:</strong>
         <!-- prettier-ignore -->
-        {{data.IngredientData.map((data) => " " + data.ingredient)}}
+        {{data.IngredientData && data.IngredientData.map(function(data){ return " " + data.ingredient})}}
       </p>
       <div>
         <p>

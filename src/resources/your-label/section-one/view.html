@@ -82,7 +82,7 @@
         <td>
           <b>Ingredients:</b>
           <!-- prettier-ignore -->
-          {{data.IngredientData.map((data) => ' ' + data.ingredient) || 'no data provided'}}
+          {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) || 'no data provided'}}
         </td>
       </tr>
       <tr>
@@ -353,7 +353,7 @@
         <p>
           <strong>Ingredients:</strong>
           <!-- prettier-ignore -->
-          {{data.IngredientData.map((data) => " " + data.ingredient)}}
+          {{data.IngredientData && data.IngredientData.map(function(data){ return " " + data.ingredient})}}
         </p>
         <div>
           <p>

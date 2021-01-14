@@ -7,17 +7,19 @@
       <b>Contains:</b>
       <!-- prettier-ignore -->
       {{
-        _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
-          if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
-          return acc + ` ${val}, `;
-        }, '')    
+          _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
+            if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+            return acc + ` ${val}, `;
+              }, '');
+          }
+        }
       }}
       <br />
     </p>
 
     <p class="wrap">
       <!-- prettier-ignore -->
-      {{ data && data.statementsSummary.egg ? 'The product is unpasteurised.' : '' }}
+      {{ data && data.statementsSummary &&  data.statementsSummary.egg ? 'The product is unpasteurised.' : '' }}
       {{ data && data.statementsSummary && (data.statementsSummary.alcohol_10G100G || data.statementsSummary.alcohol_25G100G || data.statementsSummary.alcohol_comb_10G100G) ? 'Excess consumption may have a laxative effect.' : '' }}
       {{ data && data.statementsSummary && data.statementsSummary.aspartame ? 'This product contains phenylalanine.' : '' }}
       {{ data && data.statementsSummary && data.statementsSummary.phytosterols ? 'This product should be consumed as part of a healthy diet.This product may not be suitable for children under 5 years and pregnant or lactating women.Plant sterols do not provide additional benefits when consumed in excess of 3 grams per day.' : '' }}
