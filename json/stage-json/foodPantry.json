@@ -7353,6 +7353,26 @@
                   "input": true
                 },
                 {
+                  "label": "HTML",
+                  "attrs": [
+                    {
+                      "attr": "",
+                      "value": ""
+                    }
+                  ],
+                  "content": "<h4>Food containing alcohol</h4>\n<p>Please select any warning and advisory statements that apply.</p>",
+                  "refreshOnChange": false,
+                  "tableView": false,
+                  "key": "html12",
+                  "conditional": {
+                    "show": true,
+                    "when": "foodContainingAlcohol",
+                    "eq": "true"
+                  },
+                  "type": "htmlelement",
+                  "input": false
+                },
+                {
                   "label": "A food (including an alcoholic beverage) that contains more than 1.15% alcohol by volume",
                   "tableView": false,
                   "defaultValue": false,
@@ -7366,7 +7386,7 @@
                   "input": true
                 },
                 {
-                  "label": "If selected, describe the nature of the process:",
+                  "label": "If selected, alcohol content must be expressed in mL/100 g, mL/100 mL or as the percentage of alcohol by volume.",
                   "autoExpand": true,
                   "tableView": true,
                   "validate": {
@@ -7793,7 +7813,7 @@
                   "input": true
                 },
                 {
-                  "label": "If selected, describe the nature of the process:",
+                  "label": "If selected, enter the sodium and potassium content expressed per 100g. You may also include a declaration of the percentage reduction of sodium in the food, relative to salt.",
                   "autoExpand": true,
                   "tableView": true,
                   "validate": {
