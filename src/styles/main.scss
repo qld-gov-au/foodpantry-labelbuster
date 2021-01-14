@@ -264,4 +264,7 @@ input:disabled {
   #help-guide * {
     display: none !important;
   }
+  .form-radio input::after {
+    display: none !important;
+  }
 }
