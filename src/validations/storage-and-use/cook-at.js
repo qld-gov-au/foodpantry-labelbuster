@@ -9,13 +9,13 @@
 
 
   if (data && data.directionsForUse && data.directionsForUse.cookFor && data.directionsForUse.cookForTimeAtTemperature < 0) {
-    valid = "The oven cooking temperature must be a number between 0 and 999\n    \xB0C.";
+    valid = "The oven cooking temperature must be a number between 0 and 999 \xB0C.";
     return;
   } // Can`t be greater than 1000 minutes
 
 
   if (data && data.directionsForUse && data.directionsForUse.cookFor && data.directionsForUse.cookForTimeAtTemperature > 1000) {
-    valid = "The oven cooking temperature must be a number between 0 and 999\n    \xB0C.";
+    valid = "The oven cooking temperature must be a number between 0 and 999 \xB0C.";
     return;
   }
 

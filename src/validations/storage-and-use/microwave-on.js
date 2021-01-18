@@ -10,7 +10,7 @@
 
 
   if (data && data.directionsForUse && data.directionsForUse.microwaveOn && data.directionsForUse.microwavePower.length > 100) {
-    valid = " The microwave cooking temperature must have less than 100\n    characters.";
+    valid = " The microwave cooking temperature must have less than 100 characters.";
     return;
   }
 
