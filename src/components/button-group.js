@@ -45,7 +45,44 @@ export class ButtonGroup {
     if (JSON.stringify(output).indexOf('</li>') === -1) {
       confirmation = this._createConfirmation();
     }
+    this.updateParentIfFirstStepSkipped(data);
     return html`${output}${confirmation}`;
+  }
+
+  /**
+   * @param {Object} data the data used to generate all the buttons
+   */
+  updateParentIfFirstStepSkipped(data) {
+    if(!data || !data[0] || data[0].type !== 'li') return;
+
+    if (configuration.navigation ||
+        !configuration.navigation.skipFirstNavStep) return;
+
+    const parent = this.target.parentElement.querySelector('li > a.active');
+    const currentPage = this.getCurrentPage(data);
+    parent.setAttribute('data-event', data[0].event);
+    parent.setAttribute('data-confirm', !!data[0].confirm);
+    parent.setAttribute('data-detail', JSON.stringify(data[0].detail));
+
+    parent.addEventListener('click', (e) => {this.processClick(e) });
+    if (currentPage === 0) {
+      parent.classList.remove('opened');
+
+    } else {
+      parent.classList.add('opened');
+    }
+  }
+
+  /**
+   * @param {Object} data
+   * @return {Number|NULL}
+   */
+  // eslint-disable-next-line class-methods-use-this
+  getCurrentPage(data) {
+    if(!data) return null;
+    if(!data[0]) return null;
+    if(!data[0].detail) return null;
+    return data[0].detail.currentPage;
   }
 
   /**
@@ -156,6 +193,7 @@ export class ButtonGroup {
       bubbles: true,
       detail: JSON.parse(event.target.dataset.detail),
     });
+    console.log(newEvent);
     window.dispatchEvent(newEvent);
   }
 
