@@ -89,7 +89,6 @@ describe('Button Group Tests', () => {
       window.dispatchEvent(newEvent);
     } catch (e) {
       console.log(e);
-      console.log('falure');
       expect('failure').to.equal(true);
     }
     expect(true).to.equal(true);

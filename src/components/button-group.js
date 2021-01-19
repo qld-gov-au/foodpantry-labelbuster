@@ -193,7 +193,6 @@ export class ButtonGroup {
       bubbles: true,
       detail: JSON.parse(event.target.dataset.detail),
     });
-    console.log(newEvent);
     window.dispatchEvent(newEvent);
   }
 
