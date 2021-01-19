@@ -13,12 +13,12 @@ describe('Button Group Tests', () => {
     buttonGroup = new ButtonGroup(element, 'navigation');
   });
 
-  it('Configuration is set on load', async () => {
+  it('Configuration is set on load', () => {
     expect(buttonGroup.data).to.equal('navigation');
     expect(buttonGroup.target).to.equal(element);
   });
 
-  it('Button group renders as expected', async () => {
+  it('Button group renders as expected', () => {
     const data = {
       navigation: [
         {
@@ -78,7 +78,7 @@ describe('Button Group Tests', () => {
     buttonGroup.fireEvent(newEvent);
   });
 
-  it('Fire listens to the update event without failure', async () => {
+  it('Fire listens to the update event without failure', () => {
     try {
       const newEvent = new CustomEvent('formiowrapperPageChange', {
         bubbles: true,
@@ -94,7 +94,7 @@ describe('Button Group Tests', () => {
     expect(true).to.equal(true);
   });
 
-  it('Ensure that the default condition is used', async () => {
+  it('Ensure that the default condition is used', () => {
     const buttonGroup2 = new ButtonGroup(element);
     expect(buttonGroup2.data).to.equal('buttons');
   });
@@ -109,7 +109,7 @@ describe('Navigation specialities', () => {
     buttonGroup = new ButtonGroup(element, 'navigation');
   });
 
-  it('Button group as li renders as expected', async () => {
+  it('Button group as li renders as expected', () => {
     const data = {
       navigation: [
         {
@@ -150,7 +150,7 @@ describe('Navigation specialities', () => {
     expect(thirdButton).to.not.be.ok;
   });
 
-  it('Button group has cancel confirmation rendered in the dom', async () => {
+  it('Button group has cancel confirmation rendered in the dom', () => {
     const data = {
       navigation: [
         {
@@ -190,7 +190,7 @@ describe('Navigation specialities', () => {
   });
 
 
-  it('Process click not handles the different options', async () => {
+  it('Process click not handles the different options', () => {
     const data = {
       navigation: [
         {
