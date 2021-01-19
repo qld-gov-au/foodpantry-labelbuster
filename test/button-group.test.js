@@ -94,10 +94,10 @@ describe('Button Group Tests', () => {
     expect(true).to.equal(true);
   });
 
-  // it('Ensure that the default condition is used', () => {
-  //   const buttonGroup2 = new ButtonGroup(element);
-  //   expect(buttonGroup2.data).to.equal('buttons');
-  // });
+  it('Ensure that the default condition is used', () => {
+    const buttonGroup2 = new ButtonGroup(element);
+    expect(buttonGroup2.data).to.equal('buttons');
+  });
 });
 
 describe('Navigation specialities', () => {
