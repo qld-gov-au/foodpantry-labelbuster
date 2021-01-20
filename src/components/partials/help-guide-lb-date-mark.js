@@ -79,14 +79,28 @@ export default () => html`
 
           <p>
             A
-            <a href="#use-by-date"> use-by date </a>
+            <button data-accordion-item="use-by-date" class="accordion-btn">
+              use-by date
+            </button>
             is required when a food becomes unsafe to eat. Food cannot be sold
             and should not be eaten after its
-            <a href="#use-by-date"> use-by date</a>. A food can be eaten past
-            its <a href="#best-before-date">best-before date</a>, but may not
-            look, smell or taste the same as when it was fresh. Bread with a
-            shelf life of less than 7 days, can be date marked with a
-            <a href="#baked-for-on-date"> baked-on or baked-for date.</a>
+            <button data-accordion-item="use-by-date" class="accordion-btn">
+              use-by date</button
+            >. A food can be eaten past its
+            <button
+              data-accordion-item="best-before-date"
+              class="accordion-btn"
+            >
+              best-before date</button
+            >, but may not look, smell or taste the same as when it was fresh.
+            Bread with a shelf life of less than 7 days, can be date marked with
+            a
+            <button
+              data-accordion-item="baked-for-on-date"
+              class="accordion-btn"
+            >
+              baked-on or baked-for date.
+            </button>
           </p>
 
           <p>
@@ -101,7 +115,9 @@ export default () => html`
           </ul>
           <p>
             The Food Standards Code gives rules for the
-            <a href="#date-format"> format of the date mark </a>
+            <button data-accordion-item="date-format" class="accordion-btn">
+              format of the date mark
+            </button>
             (how it appears on label). The day and month are required for a food
             with a shelf life of 3 months or less, whereas the month and year
             are required for a food with a longer shelf life.
