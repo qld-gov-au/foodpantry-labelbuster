@@ -6,7 +6,7 @@ name: Publish
 on:
   push:
     branches: ['master', 'develop', 'uat']
-    tags: ['*']
+    # tags: ['*'] #todo work out how to get tag name reliably to send to next repo
 
 jobs:
   build:
@@ -43,11 +43,21 @@ jobs:
           name: dist
           path: |
             dist
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: display branch name
+        shell: bash
+        run: echo "${{ steps.extract_branch.outputs.branch }}"
+
       - name: Publish
         uses: qld-gov-au/gha-publish-to-git@master
         with:
           repository: ${{ secrets.TARGET_REPO }}
-          branch: ${{ github.head_ref }}
+          branch: '${{ steps.extract_branch.outputs.branch }}'
           github_token: '${{ secrets.GH_TOKEN }}'
           source_folder: dist
         if: success()
