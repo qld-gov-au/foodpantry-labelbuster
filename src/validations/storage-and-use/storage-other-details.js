@@ -1,28 +1,17 @@
 /* eslint-disable */
 
-(function () {
-  // Can not be below zero
-  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAtOrBelow && data.storageConditions.keepRefrigeratedAtOrBelowTemperature < 0) {
-    valid = "The keep refrigerated below temperature must a number be between   0 \xB0C and 30 \xB0C when the food is to be refrigerated below a specified   temperature.";
-    return;
-  } // Can not be above 30
-
-
-  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAtOrBelow && data.storageConditions.keepRefrigeratedAtOrBelowTemperature > 30) {
-    valid = "The keep refrigerated below temperature must a number be between 0 \xB0C and 30 \xB0C when the food is to be refrigerated below a specified temperature.";
-    return;
-  } // Can`t be left blank
-
-
-  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAtOrBelow && typeof data.storageConditions.keepRefrigeratedAtOrBelowTemperature === 'undefined') {
-    valid = "The keep refrigerated below temperature must a number be between 0 \xB0C and 30 \xB0C when the food is to be refrigerated below a specified temperature.";
+// Other please enter
+(() => {
+  // Can`t be left blank
+  if (data.storageConditions.otherPleaseEnter && data.storageConditions.otherPleaseEnterDetails === '') {
+    valid = `The other storage condition details must be entered when the other
+    is selected as a storage condition.`;
     return;
   }
-
-  if (/[|&;$%"<>()\{\}+\\\/]/.test(input)) {
-    valid = 'Please do not include html or special characters e.g. not any of these |&;$%"<>(){}+\/';
+  if (data.storageConditions.otherPleaseEnter && typeof data.storageConditions.otherPleaseEnterDetails.length > 10000) {
+    valid = `The other storage condition details must have less than 1000
+    characters.`;
     return;
   }
-
   valid = true;
 })();
