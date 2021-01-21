@@ -5,22 +5,16 @@
   if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAt && typeof data.storageConditions.keepRefrigeratedAtMinimum === 'undefined') {
     valid = "The keep refrigerated from temperature must be entered when the food is to be refrigerated between a specified temperature range.";
     return;
-  } // Minimum can`t be less than zero
+  }
 
-
-  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAt && data.storageConditions.keepRefrigeratedAtMinimum < 0) {
-    valid = "The keep refrigerated from temperature must be a number between 0 \xB0C and 30 \xB0C when the food is to be refrigerated between a specified temperature range.";
+  // Minimum can`t be greater than maximum
+  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAt &&  data.storageConditions.keepRefrigeratedAtMinimum && data.storageConditions.keepRefrigeratedAtMaximum && data.storageConditions.keepRefrigeratedAtMinimum >= data.storageConditions.keepRefrigeratedAtMaximum) {
+    valid = "The keep refrigerated from temperature must lower than the keep refrigerated to temperature when the food is to be refrigerated between a specified temperature range.";
     return;
-  } // Maximum can`t be zero or below
+  }
 
-
-  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAt && data.storageConditions.keepRefrigeratedAtMaxmium <= 0) {
-    valid = "The keep refrigerated from temperature must be a number between 0 \xB0C and 30 \xB0C when the food is to be refrigerated between a specified temperature range.";
-    return;
-  } // Minimum can`t be 30 or above.
-
-
-  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAt && data.storageConditions.keepRefrigeratedAtMinimum >= 30) {
+  // Minimum can`t be 30 and above or 0 and below.
+  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAt && (data.storageConditions.keepRefrigeratedAtMinimum < 0 ||  data.storageConditions.keepRefrigeratedAtMinimum > 30)) {
     valid = "The keep refrigerated from temperature must be a number between 0 \xB0C and 30 \xB0C when the food is to be refrigerated between a specified temperature range.";
     return;
   }
