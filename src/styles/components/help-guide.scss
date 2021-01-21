@@ -21,6 +21,7 @@
 
     &:not(.close-menu) {
       bottom: 0;
+      right: 0;
     }
 
     &.hide {
@@ -109,6 +110,7 @@
 .help-guide-callout {
   position: fixed;
   top: 50%;
+  right: 0;
   width: 70px;
   border: none;
   padding: 10px;

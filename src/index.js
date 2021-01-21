@@ -53,13 +53,11 @@ import { Environment } from './environment';
       sectionNav.id = 'qg-section-nav';
       document.body.appendChild(sectionNav);
       sectionNav = document.querySelector('#qg-section-nav');
+      sectionNav.innerHTML = '<ul><li><a class="active" href="#">Label Buster</li></ul>';
     } else {
       sectionNav = navigationSection.querySelector('ul > li > a.active')
         .parentElement;
     }
-
-    navigationSection.querySelector('ul > li > a.active').classList
-      .add('opened');
     const unorderdList = document.createElement('ol');
     unorderdList.classList.add('lb', 'guide-sub-nav');
     sectionNav.appendChild(unorderdList);

@@ -1,3 +1,5 @@
+import { html } from 'lit-html';
+
 export const configuration = {
   form: {
     baseElement: window,
@@ -10,30 +12,32 @@ export const configuration = {
     },
     adminEmail: '',
     endpoint: 'submission',
-    pdfEndpoint: 'lbpdf',
-    pdfDownloadName: data => `Label Buster summary - Label Buster Foods ${data.foodName}`,
+    pdfEndpoint: 'imagionary',
+    pdfDownloadName: 'The imaginary pdf',
+    pdfSubmission: 'pdfSubmission',
     selector: '#formio',
-    title: 'Label Buster',
-    location: '',
-    baseLocation: 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/',
+    title: '',
+    location:
+      'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard',
+    baseLocation: 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd',
     clearStorageOnCancel: true,
   },
   scroll: {
     target: 0,
     type: 'auto',
-    focusTarget: '#focusTarget',
+    focusTarget: '#formio',
   },
   terms: {
     title: 'terms of use',
     termsStorageType: sessionStorage,
-    termsStorageName: 'lbtermsAndConditions',
+    termsStorageName: 'termsAndConditions',
     skipIfTermsAlreadyAccepted: true,
-    dataName: 'lbtermsAndConditions',
+    dataName: 'termsAndConditions',
   },
   buttons: {
     overwriteFirstButton: true,
     overwriteValue: 'Start',
-    showButtonsOnLast: true,
+    showButtonsOnLast: false,
     confirmOnCancel: true,
     css: {
       base: 'qg-btn',
@@ -44,7 +48,7 @@ export const configuration = {
   },
   confirmation: {
     title: 'Are you sure you want to leave?',
-    closeXButton: '<i class="fa fa-times"></i>',
+    closeXButton: html`<i class="fa fa-times" aria-hidden="true"></i>`,
     description: 'Your progress will not be saved',
     continueButtonText: 'No, stay',
     continueButtonCssClass: 'qg-btn btn-primary',
@@ -56,8 +60,12 @@ export const configuration = {
   },
   storage: {
     type: localStorage,
-    name: 'lbcompleted',
+    name: 'completedTopics',
   },
   extraTriggersOnActions: {
+    cancel: 'doNothing',
+    next: 'doNothing',
+    goto: 'doNothing',
+    previous: 'doNothing',
   },
 };

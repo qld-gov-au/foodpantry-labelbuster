@@ -78,6 +78,12 @@
   .invalid-feedback {
     display: block;
   }
+
+  table.table {
+    width: 100%;
+    display: block;
+    overflow-x: scroll;
+  }
 }
 
 ol.lb {
@@ -169,6 +175,10 @@ input:disabled {
   font-size: 16px;
   cursor: pointer;
 
+  small {
+    pointer-events: none;
+  }
+
   &.lrg-link {
     font-size: 1.125rem;
   }
@@ -245,6 +255,12 @@ input:disabled {
 #qg-content #qg-section-nav li a.opened {
   color: #005375;
   background-color: transparent;
+  cursor: pointer;
+}
+
+#qg-content #qg-section-nav li a.opened:hover {
+  text-decoration: none;
+  background-color: #d1d1d1;
 }
 
 @media screen and (max-width: 767px) {
@@ -262,6 +278,9 @@ input:disabled {
 @media print {
   #help-guide,
   #help-guide * {
+    display: none !important;
+  }
+  .form-radio input::after {
     display: none !important;
   }
 }
