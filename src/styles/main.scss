@@ -169,6 +169,10 @@ input:disabled {
   font-size: 16px;
   cursor: pointer;
 
+  small {
+    pointer-events: none;
+  }
+
   &.lrg-link {
     font-size: 1.125rem;
   }
