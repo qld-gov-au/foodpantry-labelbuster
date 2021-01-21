@@ -10,6 +10,7 @@ on:
 
 jobs:
   build:
+    name: "build test and deploy"
     runs-on: ubuntu-latest
 
     strategy:
