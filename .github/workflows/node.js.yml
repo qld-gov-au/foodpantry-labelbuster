@@ -28,7 +28,10 @@ jobs:
           path: node_modules
           # An explicit key for restoring and saving the cache
           key: foodpantry-labelbuster-node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: foodpantry-labelbuster-node_modules
+          restore-keys: |
+            foodpantry-labelbuster-node_modules-${{ hashFiles('package-lock.json') }}
+            foodpantry-labelbuster-node_modules
+            foodpantry-labelbuster
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
