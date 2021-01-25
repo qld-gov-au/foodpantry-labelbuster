@@ -48,7 +48,7 @@ export class HelpGuide {
       this.updateTemplate();
     });
     window.addEventListener('formioNewPageRender', () => {
-      const menuOpenState = !(window.innerWidth <= 991);
+      const isMobileSite = !(window.innerWidth <= 991);
       this.updateTemplate({ open: menuOpenState });
     });
 
