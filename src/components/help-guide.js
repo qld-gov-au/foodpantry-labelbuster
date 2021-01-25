@@ -49,7 +49,7 @@ export class HelpGuide {
     });
     window.addEventListener('formioNewPageRender', () => {
       const isMobileSite = !(window.innerWidth <= 991);
-      this.updateTemplate({ open: menuOpenState });
+      this.updateTemplate({ open: isMobileSite });
     });
 
     // eslint-disable-next-line no-shadow
