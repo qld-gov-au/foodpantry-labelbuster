@@ -47,6 +47,10 @@ export class HelpGuide {
     window.addEventListener('formiowrapperPageChange', () => {
       this.updateTemplate();
     });
+    window.addEventListener('formioNewPageRender', () => {
+      const menuOpenState = !(window.innerWidth <= 768);
+      this.updateTemplate({ open: menuOpenState });
+    });
 
     // eslint-disable-next-line no-shadow
     document.body.addEventListener('click', ({ target }) => {
