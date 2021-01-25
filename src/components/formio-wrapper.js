@@ -52,7 +52,6 @@ export class FormioWrapper {
     });
     this.wizard.on('change', () => {
       this._firePageChangeEvent();
-
       if(this.wizard.page === 0) {
         this._populateDataFromStorage(
           this.config.storage.type,
@@ -181,8 +180,15 @@ export class FormioWrapper {
       this.wizard.data = this.storedData;
       this.submissionData = this.wizard.data;
 
+      this.config.terms.termsStorageType.setItem(
+        this.config.terms.termsStorageName,
+        this.submissionData[this.config.terms.dataName]
+      );
+
       if(this.wizard.data.currentPage) {
-        this._goToPage(this.wizard.data.currentPage);
+        this.wizard._seenPages =
+          [...Array(this.wizard.data.currentPage + 1).keys()];
+        this._goToPage(this.wizard.data.currentPage + 1);
       }
     }
   }
@@ -268,7 +274,6 @@ export class FormioWrapper {
     const { page } = this.wizard;
     const { pages } = this.wizard;
     const { data } = this.wizard;
-
     const { base } = this.config.buttons.css;
 
     const previousButton = {
