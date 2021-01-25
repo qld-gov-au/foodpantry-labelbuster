@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
-/* global $ */
 import { html, render } from 'lit-html';
+import smoothscroll from 'smoothscroll-polyfill';
 /**
  * @class HelpGuide
  */
@@ -11,6 +11,9 @@ export class HelpGuide {
    * @param {Object} config an object containing views and initialState setting of menu
    */
   constructor(target, config) {
+    // for open accordion item animation
+    smoothscroll.polyfill();
+
     this.target = target;
     this.views = config.views;
     this.shouldAnimate = true;
@@ -81,13 +84,10 @@ export class HelpGuide {
       return;
     }
     accordionItem.checked = true;
-    // SWE JQuery
-    $('.help-guide-content').animate(
-      {
-        scrollTop: $(`#${itemID}`).offset().top,
-      },
-      1000,
-    );
+
+    document.querySelector(`#${itemID}`).scrollIntoView({ 
+      behavior: 'smooth',
+    });
   }
 
   _addKeyboardTrap() {
