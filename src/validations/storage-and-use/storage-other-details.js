@@ -8,7 +8,7 @@
     is selected as a storage condition.`;
     return;
   }
-  if (data.storageConditions.otherPleaseEnter && typeof data.storageConditions.otherPleaseEnterDetails.length > 10000) {
+  if (data.storageConditions.otherPleaseEnter && typeof data.storageConditions.otherPleaseEnterDetails.length > 1000) {
     valid = `The other storage condition details must have less than 1000
     characters.`;
     return;

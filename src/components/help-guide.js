@@ -50,6 +50,10 @@ export class HelpGuide {
     window.addEventListener('formiowrapperPageChange', () => {
       this.updateTemplate();
     });
+    window.addEventListener('formioNewPageRender', () => {
+      const isMobileSite = !(window.innerWidth <= 991);
+      this.updateTemplate({ open: isMobileSite });
+    });
 
     // eslint-disable-next-line no-shadow
     document.body.addEventListener('click', ({ target }) => {

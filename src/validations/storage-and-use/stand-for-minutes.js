@@ -15,7 +15,7 @@
   } // Can`t be greater than 1000 minutes
 
 
-  if (data && data.directionsForUse && data.directionsForUse.allowToStandFor && data.directionsForUse.allowToStandForMinutesBeforeServing > 1000) {
+  if (data && data.directionsForUse && data.directionsForUse.allowToStandFor && data.directionsForUse.allowToStandForMinutesBeforeServing > 999) {
     valid = "The time to stand before serving food must be a number between 0 and 999 minutes.";
     return;
   }
