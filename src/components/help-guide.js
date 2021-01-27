@@ -1,6 +1,5 @@
 /* eslint-disable no-nested-ternary */
 import { html, render } from 'lit-html';
-import smoothscroll from 'smoothscroll-polyfill';
 /**
  * @class HelpGuide
  */
@@ -12,7 +11,6 @@ export class HelpGuide {
    */
   constructor(target, config) {
     // for open accordion item animation
-    smoothscroll.polyfill();
 
     this.target = target;
     this.views = config.views;
@@ -87,6 +85,14 @@ export class HelpGuide {
     if (accordionItem.checked && isOpen) {
       return;
     }
+    const articles = document.querySelectorAll(
+      '.help-guide-content .qg-accordion article input[type="checkbox"]',
+    );
+    articles.forEach((article) => {
+      // eslint-disable-next-line no-param-reassign
+      article.checked = false;
+    });
+
     accordionItem.checked = true;
 
     document.querySelector(`#${itemID}`).scrollIntoView({ 
