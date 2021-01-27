@@ -1,5 +1,4 @@
 /* eslint-disable no-nested-ternary */
-/* global $ */
 import { html, render } from 'lit-html';
 /**
  * @class HelpGuide
@@ -11,6 +10,7 @@ export class HelpGuide {
    * @param {Object} config an object containing views and initialState setting of menu
    */
   constructor(target, config) {
+    // for open accordion item animation
     this.target = target;
     this.views = config.views;
     this.shouldAnimate = true;
@@ -84,14 +84,19 @@ export class HelpGuide {
     if (accordionItem.checked && isOpen) {
       return;
     }
-    accordionItem.checked = true;
-    // SWE JQuery
-    $('.help-guide-content').animate(
-      {
-        scrollTop: $(`#${itemID}`).offset().top,
-      },
-      1000,
+    const articles = document.querySelectorAll(
+      '.help-guide-content .qg-accordion article input[type="checkbox"]',
     );
+    articles.forEach((article) => {
+      // eslint-disable-next-line no-param-reassign
+      article.checked = false;
+    });
+
+    accordionItem.checked = true;
+
+    document.querySelector(`#${itemID}`).scrollIntoView({ 
+      behavior: 'smooth',
+    });
   }
 
   _addKeyboardTrap() {
