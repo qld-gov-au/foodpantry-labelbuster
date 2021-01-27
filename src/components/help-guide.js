@@ -11,7 +11,6 @@ export class HelpGuide {
    */
   constructor(target, config) {
     // for open accordion item animation
-
     this.target = target;
     this.views = config.views;
     this.shouldAnimate = true;
