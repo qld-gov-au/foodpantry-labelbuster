@@ -14,8 +14,6 @@ export const configuration = {
     pdfDownloadName: data => `Label Buster summary - Label Buster Foods ${data.foodName}`,
     selector: '#formio',
     title: 'Label Buster',
-    location: '',
-    baseLocation: 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/',
     clearStorageOnCancel: true,
   },
   scroll: {
