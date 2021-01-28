@@ -22,16 +22,19 @@ export class Environment {
     switch (selectedEnvironment) {
       case 'development': {
         this.url = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
+        this.baseLocation = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/';
         this.email = '';
         break;
       }
       case 'uat': {
         this.url = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
+        this.baseLocation = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/';
         this.email = '';
         break;
       }
       default: {
         this.url = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/formwizard';
+        this.baseLocation = 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/';
         this.email = '';
         break;
       }
