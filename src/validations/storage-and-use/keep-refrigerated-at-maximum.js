@@ -14,7 +14,12 @@
   }
 
   // Maximum can`t be zero or below / 30 or above.
-  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAt && (data.storageConditions.keepRefrigeratedAtMaxmium < 0 || data.storageConditions.keepRefrigeratedAtMaximum > 30)) {
+  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAt && data.storageConditions.keepRefrigeratedAtMaxmium < 0 ) {
+    valid = "The keep refrigerated from temperature must be a number between 0 \xB0C and 30 \xB0C when the food is to be refrigerated between a specified temperature range.";
+    return;
+  }
+
+  if (data && data.directionsForUse && data.storageConditions.keepRefrigeratedAt && data.storageConditions.keepRefrigeratedAtMaximum > 30) {
     valid = "The keep refrigerated from temperature must be a number between 0 \xB0C and 30 \xB0C when the food is to be refrigerated between a specified temperature range.";
     return;
   }

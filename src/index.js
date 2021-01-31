@@ -19,7 +19,7 @@ import { Environment } from './environment';
   const cssReapplier = new ReapplySelected();
   const environment = new Environment();
   configuration.form.location = environment.url;
-  // configuration.form.baseLocation = environment.url;
+  configuration.form.baseLocation = environment.baseLocation;
 
   const lb = new FormioWrapper(configuration);
   attachStepHandler();

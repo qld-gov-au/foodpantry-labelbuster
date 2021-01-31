@@ -4,7 +4,7 @@
 (function () {
   // Can`t be left blank
   if (data && data.directionsForUse && data.directionsForUse.cookFor && typeof data.directionsForUse.cookForTime === 'undefined') {
-    valid = "The oven cooking time must be entered. ";
+    valid = "The oven cooking time must be entered.";
     return;
   } // Time can't be zero
 
@@ -15,7 +15,7 @@
   } // Time can't be greater than 999 minutes
 
 
-  if (data && data.directionsForUse && data.directionsForUse.cookFor && data.directionsForUse.cookForTime >= 1000) {
+  if (data && data.directionsForUse && data.directionsForUse.cookFor && data.directionsForUse.cookForTime > 999) {
     valid = "The oven cooking time must be a number between 0 and 999 minutes.";
     return;
   }
