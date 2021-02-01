@@ -2,6 +2,7 @@
   .example-label-wrapper {
     display: block;
     overflow-x: scroll;
+    word-wrap: break-word;
   }
 
   .example-label {
@@ -73,4 +74,10 @@
   .suburb {
     text-transform: uppercase;
   }
+}
+
+#qg-primary-content table tr td:nth-child(2){
+  table-layout: fixed;
+  word-break: break-word;
+  word-wrap: break-word;
 }
