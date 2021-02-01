@@ -1,16 +1,10 @@
-<!-- prettier-ignore -->
-{{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a || data.allergyDeclarations[e] === true, false) || Object.keys(data.statementsSummary).reduce((a, e) => a || data.statementsSummary[e] === true, false) ) ? `
 <div class="product-sheet-row secondary">
-  <div><strong>Statement and declarations</strong></div>
-  `:''}}
+  <div>
+    <strong>Statement and declarations</strong>
+  </div>
   <div>
     <p>
-      <b
-        >{{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a ||
-        data.allergyDeclarations[e] === true, false) ||
-        Object.keys(data.statementsSummary).reduce((a, e) => a ||
-        data.statementsSummary[e] === true, false) ) ? 'Contains:':''}}</b
-      >
+      <b>Contains:</b>
       <!-- prettier-ignore -->
       {{
           _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
@@ -20,7 +14,7 @@
           }
         }
       }}
-      {{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a || data.allergyDeclarations[e] === true, false) && Object.keys(data.statementsSummary).reduce((a, e) => a || data.statementsSummary[e] === true, false) ) ? `<br />`:''}}
+      <br />
     </p>
 
     <p class="wrap">
@@ -42,8 +36,9 @@
       {{ data && data.statementsSummary && (data.statementsSummary.cola_caffeine || data.statementsSummary.ingredient_caffeine) ? 'The product contains caffeine.' : '' }}
       {{ data && data.statementsSummary && data.statementsSummary.added_fluoride ? 'The product contains added fluoride.' : '' }}
     </p>
+    <p>
+      Note: Warning statements must be a minimum size of type of 3 mm. In the
+      case of small packages, a minimum size of type of 1.5 mm is required.
+    </p>
   </div>
-  <!-- prettier-ignore -->
-  {{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a || data.allergyDeclarations[e] === true, false) || Object.keys(data.statementsSummary).reduce((a, e) => a || data.statementsSummary[e] === true, false) ) ? `
 </div>
-`:''}}
