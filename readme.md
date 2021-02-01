@@ -84,16 +84,13 @@ This project is a single page application embedded within a Squiz Matrix page. I
 ### How do I change user authentication?
 
 #### Formio
-
-[MORE INFO REQUIRED]
+[Formio User Management](https://www.form.io/features/user-management-auth)
 
 #### SQUIZ
-
-[MORE INFO REQUIRED]
+[Squiz Matrix User Management](https://matrix.squiz.net/manuals/users-and-permissions)
 
 #### Github
-
-[MORE INFO REQUIRED]
+[Request Github Access](https://github.com/orgs/qld-gov-au/teams)
 
 ### Something is broken
 
