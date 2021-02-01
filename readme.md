@@ -194,10 +194,174 @@ Standard workflow with branched of feature or bug and then submit pull requests 
 ### CI/CD Pipelines
 
 Circle CI is the pipeline leveraged through github, while providing base standard actions it is most useful with bash.
-The node.js.yml is for building after merge, it performs unit tests and all passing it merges and then deploys the code to the secondary repo.
-The secondary repo pulls the main branch into SQUIZ via a webhook.
 
-The publish is to publish UAT and development branches to SQUIZ before code has gone to the main branch, this allows testing outside the local development server that has been setup.
+**Test contents - Nodejs**
+
+```bash
+name: Test
+
+on:
+  push:
+    branches: ['!develop', '!uat']
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/cache@v2.1.3
+        with:
+          # A list of files, directories, and wildcard patterns to cache and restore
+          path: node_modules
+          # An explicit key for restoring and saving the cache
+          key: foodpantry-labelbuster-node_modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: foodpantry-labelbuster-node_modules
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run lint
+      - run: npm run build
+      - run: npm run test
+```
+
+This runs on branches that aren't develop and UAT as they need to tested.
+The code setup says use node 12, and pre-built actions checkout v2.
+Then runs npm scripts listed.
+
+Returns success or failure
+
+**Publish contents**
+
+```bash
+name: Publish
+
+on:
+  push:
+    branches: [develop, uat]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/cache@v2.1.3
+        with:
+          # A list of files, directories, and wildcard patterns to cache and restore
+          path: node_modules
+          # An explicit key for restoring and saving the cache
+          key: foodpantry-labelbuster-node_modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: foodpantry-labelbuster-node_modules
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run lint
+      - run: npm run build
+      - run: npm run test
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: |
+            dist
+
+      - name: Deploy code
+        run: ./deploy.sh
+        env:
+          GH_DIRECTORY: 'dist'
+          GH_REPO: ${{ secrets.TARGET_REPO }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        if: success()
+
+      - name: Trigger Webhook
+        uses: distributhor/workflow-webhook@v1.0.5
+        env:
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+        if: success()
+
+```
+
+After setting up similar to test this then runs deploy code which actually just triggers a shell script code after pulling in the environment of target repo and github token, meaning different repos can use this code and trigger deployment.
+
+Once that is completed the code is then meant to trigger a webhook, and it does fire it at the correct URL but permissions have so far blocked a complete test of this functionality.
+
+This simple script pulls in environment variable or parameters for testing on the command line.
+Once the push is complete the exit is zero and the process continues, missing parameters will result in an error.
+
+**deploy.sh**
+
+```bash
+#! /bin/bash
+
+if [ -n "$GH_DIRECTORY" ]; then
+directory=${GH_DIRECTORY}
+else
+directory=$1
+fi
+
+echo $directory;
+
+if [ -n "$GH_REPO" ]; then
+repo=${GH_REPO}
+else
+repo=$2
+fi
+
+echo $repo;
+if [ -n "$GH_TOKEN" ]; then
+token=${GH_TOKEN}
+else
+token=$3
+fi
+echo $token;
+
+if [ -z "$directory" ] || [ -z "$repo" ] || [ -z "$token" ]
+then
+  echo "Some or all of the parameters are empty";
+  echo "Usage: $0 directory repo token";
+  echo "Repo SSH format like: github.com/ORGANISATION/repo.git";
+  exit 1;
+fi
+
+current_branch=$(git branch --show-current)
+echo $current_branch
+cd $directory;
+echo $PWD;
+echo "Creating repo from $directory"
+git init
+git remote add origin https://$token@$repo
+echo "$repo set as remote";
+
+git config user.email "noreplydeploy@github.com"
+git config user.name "Deployment Bot"
+
+git checkout -b "${current_branch}"
+git add .
+git commit -m 'Automated build'
+echo "git push origin ${current_branch}"
+git push origin "${current_branch}" -f
+```
 
 ### Webhook with SQUIZ
 
