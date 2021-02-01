@@ -74,10 +74,17 @@ export default () => html`
           <ul>
             <li>Individual portion packs</li>
             <li>
-              <a href="#food-package"> Foods in small packages </a>
+              <button data-accordion-item="food-package" class="accordion-btn">
+                Foods in small packages
+              </button>
             </li>
             <li>
-              <a href="#one-ingredient"> Foods with one ingredient </a>
+              <button
+                data-accordion-item="one-ingredient"
+                class="accordion-btn"
+              >
+                Foods with one ingredient
+              </button>
             </li>
             <li>
               Water that is packaged and labelled in accordance with
@@ -89,7 +96,9 @@ export default () => html`
                 Standard 2.6.2
               </a>
               of the Food Standards Code. See
-              <a href="#non-alcoholic"> non-alcoholic drinks </a>
+              <button data-accordion-item="non-alcoholic" class="accordion-btn">
+                non-alcoholic drinks
+              </button>
               in food with extra requirements for more information.
             </li>
             <li>
@@ -105,7 +114,9 @@ export default () => html`
             <li>a name that describes the true nature of the ingredient</li>
             <li>
               a
-              <a href="#generic-name"> generic name </a>
+              <button data-accordion-item="generic-name" class="accordion-btn">
+                generic name
+              </button>
               specified in the Food Standards Code.
             </li>
           </ul>
@@ -118,9 +129,8 @@ export default () => html`
           </p>
           <p>
             There are requirements in the Food Standards Code for how
-            ingredients are listed.
+            ingredients are listed. You must:
           </p>
-
           <ul>
             <li>List ingredients in descending order of ingoing weight</li>
             <li>
@@ -450,7 +460,7 @@ export default () => html`
           <ul>
             <li>
               Tomato paste is an ingredient in a pre-made pizza base. The tomato
-              paste is a <b>compound ingredient </b> it is made up of the
+              paste is a <b>compound ingredient </b> as it is made up of the
               following ingredients tomato, canola oil, olive oil, sugar, salt,
               citric acid (330), basil, oregano.
             </li>
@@ -524,8 +534,7 @@ export default () => html`
             <li>
               An ingredient of a flavouring substance (additive) – except in
               some circumstances (refer to
-              <a href="#food-additive"> food additives section </a>
-              )
+              <a href="#food-additive"> food additives section</a>)
             </li>
           </ul>
           <p>
@@ -923,10 +932,14 @@ export default () => html`
             </p>
             <ul>
               <li>
-                <a href="https://www.legislation.gov.au/Series/F2015L00392">
+                <a
+                  href="https://www.legislation.gov.au/Series/F2015L00392"
+                  target="_blank"
+                  rel="noopener"
+                >
                   Standard 1.2.4
                 </a>
-                Information requirements – statement of ingredients.'
+                Information requirements – statement of ingredients.
                 <ul>
                   <li>
                     See section 1.2.4—5 Ingredients to be listed in descending
@@ -1331,7 +1344,7 @@ export default () => html`
         <button class="acc-heading">
           <img src="https://www.qld.gov.au/?a=145869" />
           <label for="milk-dairy">
-            <span class="title"> Milk, dairy and dairy alternatives </span>
+            <span class="title"> Milk, dairy and dairy substitutes </span>
             <span class="arrow"><i></i></span>
           </label>
         </button>
@@ -1357,7 +1370,7 @@ export default () => html`
                 <li>lactose</li>
                 <li>casei nates</li>
                 <li>milk proteins</li>
-                <li>milk fat</li>
+                <li>milk fat.</li>
               </ul>
             </li>
           </ul>

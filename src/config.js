@@ -11,10 +11,10 @@ export const configuration = {
     adminEmail: '',
     endpoint: 'submission',
     pdfEndpoint: 'lbpdf',
+    pdfDownloadName: data => `Label Buster summary - Label Buster Foods ${data.foodName}`,
     selector: '#formio',
     title: 'Label Buster',
-    location: '',
-    baseLocation: 'https://api.forms.platforms.qld.gov.au/fesrqwsyzlbtegd/',
+    clearStorageOnCancel: true,
   },
   scroll: {
     target: 0,
@@ -32,6 +32,7 @@ export const configuration = {
     overwriteFirstButton: true,
     overwriteValue: 'Start',
     showButtonsOnLast: true,
+    confirmOnCancel: true,
     css: {
       base: 'qg-btn',
       previous: 'btn-default',
@@ -39,14 +40,23 @@ export const configuration = {
       cancel: 'btn-link',
     },
   },
+  confirmation: {
+    title: 'Are you sure you want to leave?',
+    closeXButton: '<i class="fa fa-times"></i>',
+    description: 'Your progress will not be saved',
+    continueButtonText: 'No, stay',
+    continueButtonCssClass: 'qg-btn btn-primary',
+    leaveButtonText: 'Yes, leave',
+    leaveButtonCssClass: 'qg-btn btn-link',
+  },
   navigation: {
     baseClass: 'qg-btn btn-link',
+    skipFirstNavStep: true,
   },
   storage: {
     type: localStorage,
     name: 'lbcompleted',
   },
   extraTriggersOnActions: {
-    next: 'checkForAutoEmail',
   },
 };

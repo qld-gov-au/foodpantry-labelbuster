@@ -1,5 +1,4 @@
 /* eslint-disable no-nested-ternary */
-/* global $ */
 import { html, render } from 'lit-html';
 /**
  * @class HelpGuide
@@ -11,6 +10,7 @@ export class HelpGuide {
    * @param {Object} config an object containing views and initialState setting of menu
    */
   constructor(target, config) {
+    // for open accordion item animation
     this.target = target;
     this.views = config.views;
     this.shouldAnimate = true;
@@ -47,6 +47,10 @@ export class HelpGuide {
     window.addEventListener('formiowrapperPageChange', () => {
       this.updateTemplate();
     });
+    window.addEventListener('formioNewPageRender', () => {
+      const isMobileSite = !(window.innerWidth <= 991);
+      this.updateTemplate({ open: isMobileSite });
+    });
 
     // eslint-disable-next-line no-shadow
     document.body.addEventListener('click', ({ target }) => {
@@ -80,14 +84,19 @@ export class HelpGuide {
     if (accordionItem.checked && isOpen) {
       return;
     }
-    accordionItem.checked = true;
-    // SWE JQuery
-    $('.help-guide-content').animate(
-      {
-        scrollTop: $(`#${itemID}`).offset().top,
-      },
-      1000,
+    const articles = document.querySelectorAll(
+      '.help-guide-content .qg-accordion article input[type="checkbox"]',
     );
+    articles.forEach((article) => {
+      // eslint-disable-next-line no-param-reassign
+      article.checked = false;
+    });
+
+    accordionItem.checked = true;
+
+    document.querySelector(`#${itemID}`).scrollIntoView({ 
+      behavior: 'smooth',
+    });
   }
 
   _addKeyboardTrap() {
@@ -142,7 +151,7 @@ export class HelpGuide {
   _overlay(isVisible) {
     return html`<div
       class="overlay ${isVisible ? 'visible' : 'hide'}"
-      @click=${() => this.updateTemplate({ open: false })}
+      @click=${!this.state.firstView ? () => this.updateTemplate({ open: false }) : ''}
     >
     </div>`;
   }
@@ -178,9 +187,21 @@ export class HelpGuide {
     if (this.state.firstView) {
       const gotItButton = document.querySelector('#gotHelpGuide');
       if (gotItButton) {
+        const keyboardTrap = (e) => {
+          e.preventDefault();
+          if (e.code === "Enter" && e.target === gotItButton) {
+            gotItButton.click();
+          } else {
+            gotItButton.focus();
+          }
+        }
+
         gotItButton.addEventListener('click', () => {
           document.querySelector('#focusTarget').focus();
+          document.removeEventListener('keydown', keyboardTrap);
         });
+
+        document.addEventListener('keydown', keyboardTrap);
         gotItButton.focus();
       }
     }

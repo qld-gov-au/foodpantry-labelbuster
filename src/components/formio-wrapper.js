@@ -44,14 +44,26 @@ export class FormioWrapper {
       this._firePageChangeEvent();
     });
     this.wizard.on('render', () => {
+      this._firePageChangeEvent();
       this.scrollToTop(
         this.config.form.baseElement,
         this.config.scroll.focusTarget,
       );
-      this._firePageChangeEvent();
     });
     this.wizard.on('change', () => {
       this._firePageChangeEvent();
+      if(this.wizard.page === 0) {
+        this._populateDataFromStorage(
+          this.config.storage.type,
+          this.config.form.title,
+        );
+      }
+
+      this._updateStorage(
+        this.config.storage.type,
+        this.config.form.title,
+        this.wizard.data,
+      );
     });
     this.wizard.on('downloadPDF', () => {
       this.wizard.data.sendEmail = false;
@@ -73,9 +85,6 @@ export class FormioWrapper {
 
     baseObject.addEventListener('formiowrapperGoToNext', () => {
       this._goToNextPage();
-      if (this.config.extraTriggersOnActions.next) {
-        this._fireExtraEvent(this.config.extraTriggersOnActions.next);
-      }
     });
 
     baseObject.addEventListener('formiowrapperGoToPrevious', () => {
@@ -86,6 +95,7 @@ export class FormioWrapper {
     });
 
     baseObject.addEventListener('formiowrapperCancel', () => {
+      this._clearStorage();
       this._goToPage(0);
       if (this.config.extraTriggersOnActions.cancel) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.cancel);
@@ -102,6 +112,13 @@ export class FormioWrapper {
     baseObject.addEventListener('formiowrapperSendAdminEmail', () => {
       this.wizard.data.sendEmail = 'admin';
       this._sendEmail();
+    });
+
+    baseObject.addEventListener('formiowrapperPageChange', (event) => {
+      if (event.detail.page !== this.currentPageRef) {
+        this._fireExtraEvent('formioNewPageRender');
+        this.currentPageRef = this.wizard.page;
+      }
     });
   }
 
@@ -139,6 +156,55 @@ export class FormioWrapper {
   }
 
   /**
+   * @param {Object} storage the storage option
+   * @param {Sting} key the key within the storage
+   * @param {Object} data the new data to be stored
+   */
+  // eslint-disable-next-line class-methods-use-this
+  _updateStorage(storage, key, data) {
+    const rawData = storage.getItem(key);
+    const previousStorage = rawData ? JSON.parse(rawData) : {};
+    const newStorage = { ...previousStorage, ...data };
+    newStorage.currentPage = this.wizard.page;
+    storage.setItem(key, JSON.stringify(newStorage));
+  }
+
+  /**
+   * @param {Object} storage the storage option
+   * @param {String} key the key within the storage
+   */
+  _populateDataFromStorage(storage, key) {
+    const storedData = storage.getItem(key);
+    if (storedData) {
+      this.storedData = JSON.parse(storedData);
+      this.wizard.data = this.storedData;
+      this.submissionData = this.wizard.data;
+
+      this.config.terms.termsStorageType.setItem(
+        this.config.terms.termsStorageName,
+        this.submissionData[this.config.terms.dataName]
+      );
+
+      if(this.wizard.data.currentPage) {
+        this.wizard._seenPages =
+          [...Array(this.wizard.data.currentPage + 1).keys()];
+        this._goToPage(this.wizard.data.currentPage + 1);
+      }
+    }
+  }
+
+  /**
+   */
+  _clearStorage() {
+    if(!this.config.form.clearStorageOnCancel) return;
+    this.config.terms.termsStorageType.clear();
+    this.config.storage.type.clear();
+    this.wizard.resetValue();
+    this.wizard.data = {};
+    this.config.storage.type.removeItem(this.config.form.title);
+  }
+
+  /**
    * @returns {Array} the array of options to distribute
    */
   buildProgressMenuData() {
@@ -166,6 +232,7 @@ export class FormioWrapper {
         cssClass: `${this.config.navigation.baseClass} ${activeClass} ${visitedClass}`,
         detail: {
           page: offset,
+          currentPage: this.wizard.page,
         },
         event: 'formiowrapperGoToPage',
         title: page.component.title,
@@ -177,7 +244,9 @@ export class FormioWrapper {
       if (!isValid) {
         invalidPreviousStep = true;
       }
-      navigationArray.push(outputObject);
+      if (!(this.config.navigation.skipFirstNavStep && offset === 0)) {
+        navigationArray.push(outputObject);
+      }
     });
     return navigationArray;
   }
@@ -205,7 +274,6 @@ export class FormioWrapper {
     const { page } = this.wizard;
     const { pages } = this.wizard;
     const { data } = this.wizard;
-
     const { base } = this.config.buttons.css;
 
     const previousButton = {
@@ -233,6 +301,7 @@ export class FormioWrapper {
       disabled: false,
       displayed: true,
       visited: false,
+      confirm: this.config.buttons.confirmOnCancel,
     };
 
     if (page === 0) {
@@ -479,42 +548,41 @@ export class FormioWrapper {
       '[name="data[downloadSummary]"',
     );
     downloadButton.disabled = true;
-    this._formSubmission()
-      .then(successBody => fetch(`${this.submissionEndpoint}/${successBody._id}/download`)
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res}`);
-          }
-          return res.blob();
-        })
-        .then((blob) => {
-          const newBlob = new Blob([blob], { type: 'application/pdf' });
 
-          // IE 11
+    this._formSubmission().then((successBody) => {
+      const { pdfDownloadName } = this.config.form;
+      const formioWrapper = this;
+      const xhr = new XMLHttpRequest();
+      xhr.open(
+        'GET',
+        `${this.submissionEndpoint}/${successBody._id}/download`,
+        true,
+      );
+      xhr.responseType = 'arraybuffer';
+      xhr.onload = function openPdf() {
+        if (this.status === 200) {
+          const blob = new Blob([this.response], { type: 'application/pdf' });
           if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-            window.navigator.msSaveOrOpenBlob(newBlob);
-            return;
+            // IE 11
+            window.navigator.msSaveOrOpenBlob(blob);
+          } else {
+            // Other browsers
+            const data = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = data;
+            link.download = pdfDownloadName(successBody.data);
+            link.click();
+            setTimeout(() => {
+              // For Firefox
+              window.URL.revokeObjectURL(data);
+            }, 100);
           }
-
-          // For other browsers
-          const data = window.URL.createObjectURL(newBlob);
-          const link = document.createElement('a');
-          link.href = data;
-          link.download = `Label Buster summary – Label Buster Foods: ${this.submissionData.productName}`;
-          link.click();
-          setTimeout(() => {
-            // For Firefox
-            window.URL.revokeObjectURL(data);
-          }, 100);
-
-          downloadButton.disabled = false;
-          this.requestedDownload = false;
-        }))
-      .catch((error) => {
+        }
         downloadButton.disabled = false;
-        this.requestedDownload = false;
-        return error;
-      });
+        formioWrapper.requestedDownload = false;
+      };
+      xhr.send();
+    });
   }
 
   /**

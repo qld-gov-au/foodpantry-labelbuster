@@ -36,8 +36,7 @@
     "format:partials": "npm run formatFile './src/components/partials/*.js'",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier && npm run format:partials",
-    "test2": "karma start --coverage",
-    "test": "echo hello",
+    "test": "karma start",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "start": "parcel src/index.html",
     "build": "npm install && rimraf dist && npm run build:resources && npm run build:squiz",
@@ -72,12 +71,6 @@
     "rimraf": "^3.0.2",
     "sass": "^1.26.10",
     "sinon": "^9.0.3"
-  },
-  "eslintConfig": {
-    "extends": [
-      "airbnb-base",
-      "eslint-config-prettier"
-    ]
   },
   "prettier": {
     "singleQuote": true,

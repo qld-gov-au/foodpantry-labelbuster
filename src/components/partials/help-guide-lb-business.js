@@ -24,7 +24,6 @@ export default () => html`
           Expand all
         </label>
         <span class="controls">|</span>
-
         <input
           type="radio"
           name="control"

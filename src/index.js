@@ -19,10 +19,9 @@ import { Environment } from './environment';
   const cssReapplier = new ReapplySelected();
   const environment = new Environment();
   configuration.form.location = environment.url;
-  // configuration.form.baseLocation = environment.url;
+  configuration.form.baseLocation = environment.baseLocation;
 
   const lb = new FormioWrapper(configuration);
-  const bg = new ButtonGroup(document.querySelector('.button-container'));
   attachStepHandler();
   const hg = new HelpGuide(document.getElementById('help-guide'), {
     views: {
@@ -47,32 +46,37 @@ import { Environment } from './environment';
       pageHeader.removeChild(document.querySelector('h1'));
     }
 
-    let sectionNav = document.querySelector(
-      '#qg-section-nav > ul > li:nth-child(1)',
-    );
-    if (!sectionNav) {
-      sectionNav = document.querySelector('#formnav');
-      sectionNav.display = 'block';
+    const navigationSection = document.querySelector('#qg-section-nav');
+    let sectionNav;
+    if (!navigationSection) {
+      sectionNav = document.createElement('div');
+      sectionNav.id = 'qg-section-nav';
+      document.body.appendChild(sectionNav);
+      sectionNav = document.querySelector('#qg-section-nav');
+      sectionNav.innerHTML = '<ul><li><a class="active" href="#">Label Buster</li></ul>';
+    } else {
+      sectionNav = navigationSection.querySelector('ul > li > a.active')
+        .parentElement;
     }
-
     const unorderdList = document.createElement('ol');
-    unorderdList.classList = 'lb guide-sub-nav';
+    unorderdList.classList.add('lb', 'guide-sub-nav');
     sectionNav.appendChild(unorderdList);
     const sectionNavTarget = sectionNav.querySelector('ol');
 
     const sectionNavigation = new ButtonGroup(sectionNavTarget, 'navigation');
+    const bg = new ButtonGroup(document.querySelector('.button-container'));
   });
 
-  window.addEventListener('checkForAutoEmail', (event) => {
-    if (event.detail.page === 9) {
+  window.addEventListener('formioNewPageRender', (event) => {
+    // apply styles against to any radio's
+    cssReapplier.reapply(['radio']);
+
+    // automated email on summary
+    if (event.detail.page === 10) {
       const newEvent = new CustomEvent('formiowrapperSendAdminEmail', {
         bubbles: true,
       });
       window.dispatchEvent(newEvent);
     }
-  });
-
-  window.addEventListener('formiowrapperPageChange', (event) => {
-    cssReapplier.reapply(['radio']);
   });
 })();

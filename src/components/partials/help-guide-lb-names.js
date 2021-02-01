@@ -76,14 +76,12 @@ export default () => html`
             contain added water but a fruit drink can have water added.
           </p>
           <p>
-            Some food have names that must be used (
-            <button
+            Some food have names that must be used (<button
               data-accordion-item="food-names-prescribed-names"
               class="accordion-btn"
             >
-              prescribed names
-            </button>
-            ). For example, ‘fermented processed meat – cooked’ or ‘infant
+              prescribed names</button
+            >). For example, ‘fermented processed meat – cooked’ or ‘infant
             formula’.
           </p>
           <p>
@@ -257,8 +255,9 @@ export default () => html`
                   target="_blank"
                   rel="nofollow"
                 >
-                  Honey
+                  Standard 2.8.2
                 </a>
+                Honey
               </li>
             </ul>
           </section>
@@ -746,7 +745,7 @@ export default () => html`
                 >
                   Standard 2.6.3
                 </a>
-                Jam
+                Kava
               </li>
             </ul>
           </section>

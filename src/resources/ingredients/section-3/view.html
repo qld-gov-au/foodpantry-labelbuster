@@ -12,8 +12,9 @@
       <div class="qg-callout__bottom-alignment">
         <div class="qg-callout__description">
           <p class="wrap">
-            <strong>Ingredients</strong>: {{data.IngredientData.map((data) => "
-            " + data.ingredient)}}
+            <strong>Ingredients</strong>: {{data.IngredientData &&
+            data.IngredientData.map(function(data){ return " " +
+            data.ingredient})}}
           </p>
         </div>
       </div>

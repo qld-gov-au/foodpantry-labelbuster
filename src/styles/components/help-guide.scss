@@ -2,7 +2,6 @@
   position: fixed;
   top: 0;
   right: 0;
-  height: 100%;
   z-index: 9999;
   display: flex;
   flex-direction: row;
@@ -19,6 +18,11 @@
     background-color: #fff;
     align-self: flex-end;
     overflow-y: scroll;
+
+    &:not(.close-menu) {
+      bottom: 0;
+      right: 0;
+    }
 
     &.hide {
       display: none;
@@ -104,6 +108,9 @@
 }
 
 .help-guide-callout {
+  position: fixed;
+  top: 50%;
+  right: 0;
   width: 70px;
   border: none;
   padding: 10px;
@@ -154,6 +161,8 @@
     align-self: flex-end;
     flex-direction: row;
     justify-content: space-evenly;
+    top: unset;
+    bottom: 0;
   }
 
   .open-menu {

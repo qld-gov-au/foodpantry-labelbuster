@@ -74,6 +74,16 @@
     margin-top: 30px;
     margin-bottom: 30px;
   }
+
+  .invalid-feedback {
+    display: block;
+  }
+
+  table.table {
+    width: 100%;
+    display: block;
+    overflow-x: scroll;
+  }
 }
 
 ol.lb {
@@ -164,4 +174,113 @@ input:disabled {
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
+
+  small {
+    pointer-events: none;
+  }
+
+  &.lrg-link {
+    font-size: 1.125rem;
+  }
+}
+
+#qg-primary-content figure.no-max-width:not(.qg-nofig) {
+  max-width: unset !important;
+}
+
+#cancelconfirmationwrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cancelconfirmationdialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 33%;
+  padding: 16px;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px;
+
+  .buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-self: flex-end;
+    justify-self: baseline;
+  }
+
+  h2 {
+    margin-top: -14px;
+    margin-inline-end: 14px;
+    padding-top: 0;
+  }
+
+  .close {
+    display: flex;
+    align-self: flex-end;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    margin: -16px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  hr {
+    border: 0;
+    border-bottom: 1px solid #e9ecef;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 24px;
+  }
+}
+
+#qg-content #qg-section-nav li a.opened:before {
+  opacity: 0.5;
+}
+
+#qg-content #qg-section-nav li a.opened {
+  color: #005375;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#qg-content #qg-section-nav li a.opened:hover {
+  text-decoration: none;
+  background-color: #d1d1d1;
+}
+
+@media screen and (max-width: 767px) {
+  #cancelconfirmationdialog {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  #cancelconfirmationdialog {
+    width: 60%;
+  }
+}
+
+@media print {
+  #help-guide,
+  #help-guide * {
+    display: none !important;
+  }
+  .form-radio input::after {
+    display: none !important;
+  }
 }
