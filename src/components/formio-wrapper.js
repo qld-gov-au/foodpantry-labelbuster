@@ -57,13 +57,14 @@ export class FormioWrapper {
           this.config.storage.type,
           this.config.form.title,
         );
+      } else {
+        this._updateStorage(
+          this.config.storage.type,
+          this.config.form.title,
+          this.wizard.data,
+        );
       }
 
-      this._updateStorage(
-        this.config.storage.type,
-        this.config.form.title,
-        this.wizard.data,
-      );
     });
     this.wizard.on('downloadPDF', () => {
       this.wizard.data.sendEmail = false;
@@ -163,8 +164,14 @@ export class FormioWrapper {
   // eslint-disable-next-line class-methods-use-this
   _updateStorage(storage, key, data) {
     const rawData = storage.getItem(key);
-    const previousStorage = rawData ? JSON.parse(rawData) : {};
-    const newStorage = { ...previousStorage, ...data };
+    let newStorage = {};
+    try {
+      const previousStorage = rawData ? JSON.parse(rawData) : {};
+      newStorage = { ...previousStorage, ...data };
+    } catch(error) {
+      newStorage = {...data};
+    }
+
     newStorage.currentPage = this.wizard.page;
     storage.setItem(key, JSON.stringify(newStorage));
   }
