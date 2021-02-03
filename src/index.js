@@ -68,9 +68,6 @@ import { Environment } from './environment';
   });
 
   window.addEventListener('formioNewPageRender', (event) => {
-    // apply styles against to any radio's
-    cssReapplier.reapply(['radio']);
-
     // automated email on summary
     if (event.detail.page === 10) {
       const newEvent = new CustomEvent('formiowrapperSendAdminEmail', {
@@ -79,4 +76,14 @@ import { Environment } from './environment';
       window.dispatchEvent(newEvent);
     }
   });
+
+  const mutationObserver = new MutationObserver(() => {
+    // apply styles against to any radio's
+    cssReapplier.reapply(['radio']);
+  });
+
+  mutationObserver.observe(
+    document.querySelector(configuration.form.selector),
+    {childList: true, subtree: true}
+  );
 })();
