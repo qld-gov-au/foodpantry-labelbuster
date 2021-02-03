@@ -17,9 +17,7 @@ export default handler => html`
 
     <h3>2. Food with extra requirements</h3>
     <p>
-      Some foods and ingredients have extra rules. Select the food groups that
-      apply to your food or its ingredients to learn more about these extra
-      rules.
+      Some foods and ingredients have extra rules. Select the food groups that apply to your food or its ingredients to learn more about these extra rules. Please check the help guide for food with extra requirements on each page in Label Buster.
     </p>
 
     <button id="gotHelpGuide" class="qg-btn btn-primary" @click="${handler}">
