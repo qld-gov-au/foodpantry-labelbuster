@@ -218,7 +218,6 @@ export class FormioWrapper {
               }
           }
         });
-        console.log(this.wizard.data.currentPage);
         loadPage = loadPage === 0 ? this.wizard.data.currentPage : loadPage;
         this._goToPage(loadPage);
       }
