@@ -44,6 +44,11 @@ export class FormioWrapper {
       this._firePageChangeEvent();
     });
     this.wizard.on('render', () => {
+      this._updateStorage(
+        this.config.storage.type,
+        this.config.form.title,
+        this.wizard.data,
+      );
       this._firePageChangeEvent();
       this.scrollToTop(
         this.config.form.baseElement,
@@ -57,14 +62,7 @@ export class FormioWrapper {
           this.config.storage.type,
           this.config.form.title,
         );
-      } else {
-        this._updateStorage(
-          this.config.storage.type,
-          this.config.form.title,
-          this.wizard.data,
-        );
       }
-
     });
     this.wizard.on('downloadPDF', () => {
       this.wizard.data.sendEmail = false;
@@ -184,6 +182,7 @@ export class FormioWrapper {
    */
   _populateDataFromStorage(storage, key) {
     const storedData = storage.getItem(key);
+
     if (storedData) {
       try {
         this.storedData = JSON.parse(storedData);
@@ -197,14 +196,12 @@ export class FormioWrapper {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
       }
-
       if(this.wizard.data.currentPage) {
 
         this.wizard._seenPages =
           [...Array(this.wizard.data.currentPage + 1).keys()];
-
         let loadPage = 0;
-        this.wizard._seenPages.forEach((page) =>{
+        this.wizard._seenPages.forEach((page) => {
           if (!this._checkPageValidity(
             page,
             this.wizard.components,
@@ -215,6 +212,8 @@ export class FormioWrapper {
               }
           }
         });
+        console.log(this.wizard.data.currentPage);
+        loadPage = loadPage === 0 ? this.wizard.data.currentPage : loadPage;
         this._goToPage(loadPage);
       }
     }
@@ -399,9 +398,10 @@ export class FormioWrapper {
     const storedValue = termsStorage.getItem(
       this.config.terms.termsStorageName,
     );
-    const storageValue = JSON.parse(storedValue);
-    if (storageValue === false) return false;
-    if (storageValue === true) return true;
+
+    if(typeof storedValue !== 'undefined') {
+      return storedValue;
+    }
 
     const previousPageNumber = page;
     const previousPageTitle = pages[previousPageNumber].component.title;
