@@ -47,10 +47,9 @@ export class HelpGuide {
     window.addEventListener('formiowrapperPageChange', () => {
       this.updateTemplate();
     });
-    window.addEventListener('formioNewPageRender', () => {
-      const isMobileSite = !(window.innerWidth <= 991);
-      this.updateTemplate({ open: isMobileSite });
-    });
+    window.addEventListener('formioNewPageRender', () =>
+      this.updateTemplate({ open: this._isMobileSite() })
+    );
 
     // eslint-disable-next-line no-shadow
     document.body.addEventListener('click', ({ target }) => {
@@ -74,6 +73,11 @@ export class HelpGuide {
       ...this.state,
       ...newState,
     };
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  _isMobileSite() {
+    return !(window.innerWidth <= 991);
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -199,6 +203,7 @@ export class HelpGuide {
         gotItButton.addEventListener('click', () => {
           document.querySelector('#focusTarget').focus();
           document.removeEventListener('keydown', keyboardTrap);
+          this.updateTemplate({ open: this._isMobileSite() });
         });
 
         document.addEventListener('keydown', keyboardTrap);
