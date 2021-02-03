@@ -56,6 +56,11 @@ export class FormioWrapper {
       );
     });
     this.wizard.on('change', () => {
+      this._updateStorage(
+        this.config.storage.type,
+        this.config.form.title,
+        this.wizard.data,
+      );
       this._firePageChangeEvent();
       if(this.wizard.page === 0) {
         this._populateDataFromStorage(
@@ -161,6 +166,7 @@ export class FormioWrapper {
    */
   // eslint-disable-next-line class-methods-use-this
   _updateStorage(storage, key, data) {
+    if (this.wizard.page === 0) return;
     const rawData = storage.getItem(key);
     let newStorage = {};
     try {
