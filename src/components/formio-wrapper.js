@@ -44,11 +44,6 @@ export class FormioWrapper {
       this._firePageChangeEvent();
     });
     this.wizard.on('render', () => {
-      this._updateStorage(
-        this.config.storage.type,
-        this.config.form.title,
-        this.wizard.data,
-      );
       this._firePageChangeEvent();
       this.scrollToTop(
         this.config.form.baseElement,
@@ -56,18 +51,7 @@ export class FormioWrapper {
       );
     });
     this.wizard.on('change', () => {
-      this._updateStorage(
-        this.config.storage.type,
-        this.config.form.title,
-        this.wizard.data,
-      );
       this._firePageChangeEvent();
-      if(this.wizard.page === 0) {
-        this._populateDataFromStorage(
-          this.config.storage.type,
-          this.config.form.title,
-        );
-      }
     });
     this.wizard.on('downloadPDF', () => {
       this.wizard.data.sendEmail = false;
@@ -147,6 +131,7 @@ export class FormioWrapper {
    */
   // eslint-ignored here while committing
   _firePageChangeEvent() {
+    this._updateStorages();
     const event = new CustomEvent('formiowrapperPageChange', {
       bubbles: true,
       detail: {
@@ -159,13 +144,32 @@ export class FormioWrapper {
     this.config.form.baseElement.dispatchEvent(event);
   }
 
+  _updateStorages() {
+    if(this.wizard.page === 0) {
+      this._populateDataFromStorage(
+        this.config.storage.type,
+        this.config.form.title,
+      );
+    } else {
+      this._updateStorage(
+        this.config.storage.type,
+        this.config.form.title,
+        this.wizard.data,
+        this.wizard._seenPages,
+        this.wizard.page,
+      );
+    }
+  }
+
   /**
    * @param {Object} storage the storage option
    * @param {Sting} key the key within the storage
    * @param {Object} data the new data to be stored
+   * @param {Array} seenPages the seen pages
+   * @param {Number} page the page number
    */
   // eslint-disable-next-line class-methods-use-this
-  _updateStorage(storage, key, data) {
+  _updateStorage(storage, key, data, seenPages, page) {
     if (this.wizard.page === 0) return;
     const rawData = storage.getItem(key);
     let newStorage = {};
@@ -174,11 +178,13 @@ export class FormioWrapper {
       newStorage = { ...previousStorage, ...data };
     } catch(error) {
       // eslint-disable-next-line no-console
-      console.warn('Data corrupted, moving on');
+      console.warn('Data corrupted, ignoring');
       newStorage = {...data};
     }
 
-    newStorage.currentPage = this.wizard.page;
+    newStorage.currentPage = page;
+    newStorage._seenPages = seenPages;
+
     storage.setItem(key, JSON.stringify(newStorage));
   }
 
@@ -192,6 +198,11 @@ export class FormioWrapper {
     if (storedData) {
       try {
         this.storedData = JSON.parse(storedData);
+
+        this.wizard._seenPages = this.storedData._seenPages;
+        delete this.storedData._seenPages;
+        this.wizard.page = this.storedData.page;
+        delete this.storedData.page;
         this.wizard.data = this.storedData;
         this.submissionData = this.wizard.data;
         this.config.terms.termsStorageType.setItem(
@@ -202,22 +213,21 @@ export class FormioWrapper {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
       }
-      if(this.wizard.data.currentPage) {
 
-        this.wizard._seenPages =
-          [...Array(this.wizard.data.currentPage + 1).keys()];
-        let loadPage = 0;
-        this.wizard._seenPages.forEach((page) => {
-          if (!this._checkPageValidity(
-            page,
-            this.wizard.components,
-            this.wizard.data,
-            )) {
-              if(loadPage === 0) {
-                loadPage = page;
-              }
-          }
-        });
+      let loadPage = 0;
+      this.wizard._seenPages.forEach((page) => {
+        if (!this._checkPageValidity(
+          page,
+          this.wizard.components,
+          this.wizard.data,
+          )) {
+            if(loadPage === 0) {
+              loadPage = page;
+            }
+        }
+      });
+
+      if(this.wizard.data.currentPage) {
         loadPage = loadPage === 0 ? this.wizard.data.currentPage : loadPage;
         this._goToPage(loadPage);
       }
@@ -400,11 +410,11 @@ export class FormioWrapper {
    */
   _areTermsAccepted(page, pages) {
     const termsStorage = this.config.terms.termsStorageType;
-    const storedValue = termsStorage.getItem(
+    let storedValue = termsStorage.getItem(
       this.config.terms.termsStorageName,
     );
-
-    if(typeof storedValue !== 'undefined') {
+    storedValue = typeof storedValue !== 'undefined' ? JSON.parse(storedValue) : storedValue;
+    if(typeof storedValue === 'boolean') {
       return storedValue;
     }
 

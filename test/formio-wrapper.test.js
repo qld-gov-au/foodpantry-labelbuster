@@ -455,6 +455,7 @@ describe('Formio Wrapper Tests.', () => {
       configuration.terms.termsStorageName,
       false,
     );
+
     wrapper.config.terms.skipIfTermsAlreadyAccepted = false;
     const pages = [
       { component: { title: 'Something mundane' } },
