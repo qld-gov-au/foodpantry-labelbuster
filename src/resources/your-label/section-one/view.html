@@ -60,7 +60,7 @@
         <td>
           {{data.foodName || 'no name provided'}}
           <br />
-          {{data.productDescription || ''}}
+          {{data.productDescription || 'no description provided'}}
         </td>
       </tr>
       <tr>
@@ -120,21 +120,11 @@
           />
         </td>
       </tr>
-      {{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a ||
-      data.allergyDeclarations[e] === true, false) ||
-      Object.keys(data.statementsSummary).reduce((a, e) => a ||
-      data.statementsSummary[e] === true, false) )? `
       <tr>
         <td>Statements and declarations</td>
         <td>
-          `:''}}
           <p>
-            <b
-              >{{data && (Object.keys(data.allergyDeclarations).reduce((a, e) =>
-              a || data.allergyDeclarations[e] === true, false) ||
-              Object.keys(data.statementsSummary).reduce((a, e) => a ||
-              data.statementsSummary[e] === true, false) ) ? 'Contains:':''}}</b
-            >
+            <b>Contains:</b>
             <!-- prettier-ignore -->
             {{
               _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
@@ -164,37 +154,26 @@
             {{ data && data.statementsSummary && (data.statementsSummary.cola_caffeine || data.statementsSummary.ingredient_caffeine) ? 'The product contains caffeine.' : '' }}
             {{ data && data.statementsSummary && data.statementsSummary.added_fluoride ? 'The product contains added fluoride.' : '' }}
           </p>
-          {{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a ||
-          data.allergyDeclarations[e] === true, false) ||
-          Object.keys(data.statementsSummary).reduce((a, e) => a ||
-          data.statementsSummary[e] === true, false) )? `
+          <p>
+            Note: Warning statements must be a minimum size of type of 3 mm. In
+            the case of small packages, a minimum size of type of 1.5 mm is
+            required.
+          </p>
         </td>
       </tr>
-      `:''}} {{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' : `
       <tr>
         <td>Date marks</td>
-        `}} {{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' : `
-        <td>${data.dateMarkFood} : ${data.bestDate}</td>
+        <td>{{data.dateMarkFood }}: {{data.bestDate || 'no data provided'}}</td>
       </tr>
-      `}} {{data.batch ? `
       <tr>
         <td>Lot identification</td>
-        ` : ''}} {{data.batch ? `
-        <td>${data.batch}</td>
+        <td>{{data.batch || 'no data provided'}}</td>
       </tr>
-      ` : ''}} {{data && (Object.keys(data.storageConditions).reduce((a, e) => a
-      || data.storageConditions[e] === true, false) ||
-      Object.keys(data.directionsForUse).reduce((a, e) => a ||
-      data.directionsForUse[e] === true, false)) ? `
       <tr>
-        <td>Storage conditions and directions for use:</td>
+        <td>Storage conditions and directions for use</td>
         <td>
-          `:''}}
           <p>
-            {{data && Object.keys(data.storageConditions).reduce((a, e) => a ||
-            data.storageConditions[e] === true, false) ? `<b
-              >Storage conditions:</b
-            >`:''}}
+            <b>Storage conditions: </b>
             <!-- prettier-ignore -->
             {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
             {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
@@ -204,13 +183,10 @@
             {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
             {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
             <br />
-            {{data && Object.keys(data.directionsForUse).reduce((a, e) => a ||
-            data.directionsForUse[e] === true, false) ? `<b
-              >Directions for use:</b
-            >` : ''}} {{ data && data.directionsForUse.washBeforeUse ? 'Wash
-            before use.' : '' }} {{ data &&
-            data.directionsForUse.refrigerateAfterPurchase ? 'Refrigerate after
-            opening.' : '' }} {{ data &&
+            <b>Directions for use:</b>
+            {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.'
+            : '' }} {{ data && data.directionsForUse.refrigerateAfterPurchase ?
+            'Refrigerate after opening.' : '' }} {{ data &&
             data.directionsForUse.shakeWellBeforeUse ? 'Shake well before use.'
             : '' }} {{ data &&
             data.directionsForUse.foodShouldBeDrainedBeforeConsumption ? 'Food
@@ -257,13 +233,8 @@
             `${data.directionsForUse.cookingPreparationInstructionsDetails ||
             ''}` : '' }}
           </p>
-          {{data && (Object.keys(data.storageConditions).reduce((a, e) => a ||
-          data.storageConditions[e] === true, false) ||
-          Object.keys(data.directionsForUse).reduce((a, e) => a ||
-          data.directionsForUse[e] === true, false)) ? `
         </td>
       </tr>
-      `:''}}
       <tr>
         <td>Claims</td>
         <td>
@@ -289,8 +260,8 @@
           >
             country of origin
           </a>
-          can be found on the Australian Competition and Consumer
-          Commission website.
+          can be found on the Australian Competition and Consumer Commission
+          website.
         </td>
       </tr>
       <tr>
@@ -533,9 +504,9 @@
 
 <section>
   <a name="download-email"></a>
-  <h2>Your label information summary</h2>
+  <h2>Download your label information summary</h2>
   <p>
-    Download your label information summary. This summary includes your product
-    sheet and an example of what your label could look like.
+    This summary includes your product sheet and an example of what your label
+    could look like.
   </p>
 </section>

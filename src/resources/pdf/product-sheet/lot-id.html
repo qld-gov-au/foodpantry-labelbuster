@@ -1,8 +1,9 @@
-<!-- prettier-ignore -->
-{{data.batch ? `
 <div class="product-sheet-row secondary">
-  <div><strong>Lot identification</strong></div>
-  ` : ''}} {{data.batch ? `
-  <div>${data.batch}</div>
+  <div>
+    <strong>Lot identification</strong>
+  </div>
+  <div>
+    <!-- prettier-ignore -->
+    {{data.batch || 'no data provided'}}
+  </div>
 </div>
-` : ''}}

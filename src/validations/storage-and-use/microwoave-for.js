@@ -3,11 +3,10 @@
 // Microwave instructions time
 (function () {
   // Can`t be left blank
-  if (data && data.directionsForUse && data.directionsForUse.microwaveOn && typeof data.directionsForUse.microwaveOnPowerForMinutes === 'undefined') {
+  if (data && data.directionsForUse && data.directionsForUse.microwaveOn && data.directionsForUse.microwaveOnPowerForMinutes === '') {
     valid = "The microwave cooking time must be entered.";
     return;
   } // Can`t be less than zero minutes.
-
   if (data && data.directionsForUse && data.directionsForUse.microwaveOn && data.directionsForUse.microwaveOnPowerForMinutes.length > 100) {
     valid = "The microwave cooking time must have less than 100 characters. ";
     return;
