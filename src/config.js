@@ -10,7 +10,7 @@ export const configuration = {
     },
     adminEmail: '',
     endpoint: 'submission',
-    pdfEndpoint: 'lbpdf',
+    pdfEndpoint: 'labelBusterPdf',
     pdfDownloadName: data => `Label Buster summary - Label Buster Foods ${data.foodName}`,
     selector: '#formio',
     title: 'Label Buster',
