@@ -124,7 +124,10 @@
         <td>Statements and declarations</td>
         <td>
           <p>
-            <b>Contains:</b>
+            <b>
+              {{data && Object.values(data.allergyDeclarations).every(valueCheck
+              => valueCheck===false) ? '':'Contains:'}}
+            </b>
             <!-- prettier-ignore -->
             {{
               _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
@@ -155,9 +158,15 @@
             {{ data && data.statementsSummary && data.statementsSummary.added_fluoride ? 'The product contains added fluoride.' : '' }}
           </p>
           <p>
-            Note: Warning statements must be a minimum size of type of 3 mm. In
-            the case of small packages, a minimum size of type of 1.5 mm is
-            required.
+            {{data &&
+            ((!(Object.values(data.allergyDeclarations).every(valueCheck =>
+            valueCheck===false)) && Object.values(data.statementsSummary).length
+            !== 0) || !(Object.values(data.allergyDeclarations).every(valueCheck
+            => valueCheck===false)) ||
+            (Object.values(data.statementsSummary).length !== 0)) ? 'Note:
+            Warning statements must be a minimum size of type of 3 mm. In the
+            case of small packages, a minimum size of type of 1.5 mm is
+            required.':'no data provided' }}
           </p>
         </td>
       </tr>
@@ -172,18 +181,27 @@
       <tr>
         <td>Storage conditions and directions for use</td>
         <td>
-          <p>
-            <b>Storage conditions: </b>
-            <!-- prettier-ignore -->
-            {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
+          <p></p>
+          <h1>In storage check - {{console.log(data.storageConditions)}}</h1>
+          <h1>In directions check - {{console.log(data.directionsForUse)}}</h1>
+          <b>
+            {{data && Object.values(data.storageConditions).some(valueCheck =>
+            valueCheck===true) ? 'Storage conditions:':''}}
+          </b>
+          <!-- prettier-ignore -->
+          {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
             {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
             {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
             {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : ''}}
             {{ data && data.storageConditions.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.storageConditions.keepRefrigeratedAtOrBelowTemperature || 0}.` : '' }} {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
             {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
             {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
-            <br />
-            <b>Directions for use:</b>
+          <br />
+          <b>
+            {{data && Object.values(data.directionsForUse).some(valueCheck =>
+            valueCheck===true) ? 'Directions for use:':''}}
+          </b>
+          <p>
             {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.'
             : '' }} {{ data && data.directionsForUse.refrigerateAfterPurchase ?
             'Refrigerate after opening.' : '' }} {{ data &&
@@ -233,6 +251,10 @@
             `${data.directionsForUse.cookingPreparationInstructionsDetails ||
             ''}` : '' }}
           </p>
+          {{(Object.values(data.directionsForUse).some(valueCheck =>
+          valueCheck===true) ||
+          Object.values(data.storageConditions).some(valueCheck =>
+          valueCheck===true))? '':'no data provided'}}
         </td>
       </tr>
       <tr>
@@ -362,13 +384,11 @@
           </p>
           <div>
             <p>
-              <b
-                >{{data && (Object.keys(data.allergyDeclarations).reduce((a, e)
-                => a || data.allergyDeclarations[e] === true, false) ||
-                Object.keys(data.statementsSummary).reduce((a, e) => a ||
-                data.statementsSummary[e] === true, false) ) ?
-                'Contains:':''}}</b
-              >
+              <b>
+                {{data &&
+                Object.values(data.allergyDeclarations).every(valueCheck =>
+                valueCheck===false) ? '':'Contains:'}}
+              </b>
               <!-- prettier-ignore -->
               {{
                 _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
@@ -381,7 +401,7 @@
 
             <p class="wrap">
               <!-- prettier-ignore -->
-              {{ data && data.statementsSummary.egg ? 'The product is unpasteurised.' : '' }}
+              {{ data && data.statementsSummary && data.statementsSummary.egg ? 'The product is unpasteurised.' : '' }}
               {{ data && data.statementsSummary && (data.statementsSummary.alcohol_10G100G || data.statementsSummary.alcohol_25G100G || data.statementsSummary.alcohol_comb_10G100G) ? 'Excess consumption may have a laxative effect.' : '' }}
               {{ data && data.statementsSummary && data.statementsSummary.aspartame ? 'This product contains phenylalanine.' : '' }}
               {{ data && data.statementsSummary && data.statementsSummary.phytosterols ? 'This product should be consumed as part of a healthy diet.This product may not be suitable for children under 5 years and pregnant or lactating women.Plant sterols do not provide additional benefits when consumed in excess of 3 grams per day.' : '' }}
