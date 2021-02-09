@@ -158,8 +158,8 @@
             {{ data && data.statementsSummary && data.statementsSummary.added_fluoride ? 'The product contains added fluoride.' : '' }}
           </p>
           <p>
-            {{data &&
-            ((!(Object.values(data.allergyDeclarations).every(valueCheck =>
+            <!-- prettier-ignore -->
+            {{data && ((!(Object.values(data.allergyDeclarations).every(valueCheck =>
             valueCheck===false)) && Object.values(data.statementsSummary).length
             !== 0) || !(Object.values(data.allergyDeclarations).every(valueCheck
             => valueCheck===false)) ||
@@ -181,10 +181,8 @@
       <tr>
         <td>Storage conditions and directions for use</td>
         <td>
-          <p></p>
-          <h1>In storage check - {{console.log(data.storageConditions)}}</h1>
-          <h1>In directions check - {{console.log(data.directionsForUse)}}</h1>
           <b>
+            <!-- prettier-ignore -->
             {{data && Object.values(data.storageConditions).some(valueCheck =>
             valueCheck===true) ? 'Storage conditions:':''}}
           </b>
@@ -251,10 +249,9 @@
             `${data.directionsForUse.cookingPreparationInstructionsDetails ||
             ''}` : '' }}
           </p>
-          {{(Object.values(data.directionsForUse).some(valueCheck =>
-          valueCheck===true) ||
-          Object.values(data.storageConditions).some(valueCheck =>
-          valueCheck===true))? '':'no data provided'}}
+          <!-- prettier-ignore -->
+          {{(Object.values(data.directionsForUse).some(valueCheck =>  valueCheck===true) ||
+          Object.values(data.storageConditions).some(valueCheck => valueCheck===true))? '':'no data provided'}}
         </td>
       </tr>
       <tr>
@@ -385,8 +382,8 @@
           <div>
             <p>
               <b>
-                {{data &&
-                Object.values(data.allergyDeclarations).every(valueCheck =>
+                <!-- prettier-ignore -->
+                {{data && Object.values(data.allergyDeclarations).every(valueCheck =>
                 valueCheck===false) ? '':'Contains:'}}
               </b>
               <!-- prettier-ignore -->
