@@ -20,6 +20,7 @@ import { Environment } from './environment';
   const environment = new Environment();
   configuration.form.location = environment.url;
   configuration.form.baseLocation = environment.baseLocation;
+  window.formEnv = environment.flag;
 
   const lb = new FormioWrapper(configuration);
   attachStepHandler();
