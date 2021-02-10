@@ -21,18 +21,21 @@ export class Environment {
 
     switch (selectedEnvironment) {
       case 'development': {
+        this.flag = 'dev'
         this.url = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
         this.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
         this.email = '';
         break;
       }
       case 'uat': {
+        this.flag = 'uat'
         this.url = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/labelbuster';
         this.baseLocation = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/';
         this.email = '';
         break;
       }
       default: {
+        this.flag = 'dev'
         this.url = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
         this.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
         this.email = '';
