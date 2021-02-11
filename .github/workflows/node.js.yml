@@ -5,9 +5,12 @@ name: Test
 
 on:
   push:
-    branches: ['!develop', '!uat']
+    branches: 
+      - '*'
   pull_request:
-    branches: [master]
+    branches: 
+      - 'develop'
+      - 'master'
 
 jobs:
   build:
