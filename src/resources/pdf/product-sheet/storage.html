@@ -50,6 +50,6 @@
     <!-- prettier-ignore -->
     {{data && Object.keys(data.storageConditions).reduce((a, e) => a ||
       data.storageConditions[e] === true, false) || Object.keys(data.directionsForUse).reduce((a, e) => a ||
-      data.directionsForUse[e] === true, false) ? '' : ''}}
+      data.directionsForUse[e] === true, false) ? '' : 'no data provided'}}
   </div>
 </div>
