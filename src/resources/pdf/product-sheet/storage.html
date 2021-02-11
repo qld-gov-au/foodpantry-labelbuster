@@ -6,8 +6,8 @@
     <p>
       <b>
         <!-- prettier-ignore -->
-        {{data && Object.values(data.storageConditions).some(valueCheck =>
-        valueCheck===true) ? 'Storage conditions:':''}}
+        {{data && Object.keys(data.storageConditions).reduce((a, e) => a ||
+          data.storageConditions[e] === true, false) ? 'Storage conditions:':''}}
       </b>
       <!-- prettier-ignore -->
       {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
@@ -20,8 +20,8 @@
       {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
       <br />
       <b>
-        {{data && Object.values(data.directionsForUse).some(valueCheck =>
-        valueCheck===true) ? 'Directions for use:':''}}
+        {{data && Object.keys(data.directionsForUse).reduce((a, e) => a ||
+        data.directionsForUse[e] === true, false) ? 'Directions for use:' : ''}}
       </b>
       <!-- prettier-ignore -->
       {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
@@ -48,7 +48,8 @@
       {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails || ''}` : '' }}
     </p>
     <!-- prettier-ignore -->
-    {{(Object.values(data.directionsForUse).some(valueCheck =>  valueCheck===true) ||
-      Object.values(data.storageConditions).some(valueCheck => valueCheck===true))? '':'no data provided'}}
+    {{data && Object.keys(data.storageConditions).reduce((a, e) => a ||
+      data.storageConditions[e] === true, false) || Object.keys(data.directionsForUse).reduce((a, e) => a ||
+      data.directionsForUse[e] === true, false) ? '' : ''}}
   </div>
 </div>
