@@ -7,10 +7,17 @@ export const configuration = {
       showPrevious: false,
       showNext: false,
       showSubmit: false,
+      hooks: {
+        beforeSubmit: (submission, next) => {
+          // eslint-disable-next-line no-param-reassign
+          submission.data.formEnv = window.formEnv;
+          next();
+        }
+      }
     },
     adminEmail: '',
     endpoint: 'submission',
-    pdfEndpoint: 'lbpdf',
+    pdfEndpoint: 'labelBusterPdf',
     pdfDownloadName: data => `Label Buster summary - Label Buster Foods ${data.foodName}`,
     selector: '#formio',
     title: 'Label Buster',
