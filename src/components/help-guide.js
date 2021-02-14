@@ -98,7 +98,7 @@ export class HelpGuide {
 
     accordionItem.checked = true;
 
-    document.querySelector(`#${itemID}`).scrollIntoView({ 
+    document.querySelector(`#${itemID}`).scrollIntoView({
       behavior: 'smooth',
     });
   }
@@ -134,8 +134,11 @@ export class HelpGuide {
   _initAccordionButtons() {
     document.body.addEventListener('click', (e) => {
       const { target } = e;
+      const parent = target.closest('article');
       if (target.className === 'acc-heading') {
-        target.querySelector('label').control.checked = !target.querySelector('label').control.checked;
+        // .control.checked is NOT SUPPORTED in IE11
+        // target.querySelector('label').control.checked = !target.querySelector('label').control.checked;
+        parent.querySelector('input').checked = !parent.querySelector('input').checked;
       }
     });
   }
