@@ -136,8 +136,7 @@ export class HelpGuide {
       const { target } = e;
       const parent = target.closest('article');
       if (target.className === 'acc-heading') {
-        // .control.checked is NOT SUPPORTED in IE11
-        // target.querySelector('label').control.checked = !target.querySelector('label').control.checked;
+        // .control.checked is not supported in IE11
         parent.querySelector('input').checked = !parent.querySelector('input').checked;
       }
     });

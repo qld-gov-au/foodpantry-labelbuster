@@ -3,8 +3,7 @@
  * @param {Boolean} newState expand or collapse state
  */
 export function modifyAccordionState(e, newState) {
-  // composedPath is not SUPPORTED IN IE11
-  // closest is working (supported using Babel polyfill)
+  // composedPath is not SUPPORTED IN IE11, closest is working (supported using Babel polyfill)
   const qgAccordion = e.target.closest('.qg-accordion');
   const articles = qgAccordion.querySelectorAll(
     '.qg-accordion article input[type="checkbox"]',
