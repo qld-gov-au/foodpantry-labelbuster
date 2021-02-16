@@ -24,7 +24,7 @@ export class Environment {
         this.flag = 'dev'
         this.url = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
         this.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
-        this.email = '';
+        this.email = '001.daniel.turner@gmail.com';
         break;
       }
       case 'uat': {

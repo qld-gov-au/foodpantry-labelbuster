@@ -98,7 +98,7 @@ export class HelpGuide {
 
     accordionItem.checked = true;
 
-    document.querySelector(`#${itemID}`).scrollIntoView({ 
+    document.querySelector(`#${itemID}`).scrollIntoView({
       behavior: 'smooth',
     });
   }

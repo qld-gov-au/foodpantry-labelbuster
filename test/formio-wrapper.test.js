@@ -18,6 +18,7 @@ describe('Formio Wrapper Tests.', () => {
     Formio._data = {};
 
     wrapper = new FormioWrapper(configuration);
+    wrapper.wizard.redraw = () => {};
 
     apiResponse = function (body = {}) {
       return new window.Response(JSON.stringify(body), {
@@ -93,6 +94,7 @@ describe('Formio Wrapper Tests.', () => {
   it('_gotoPage triggers the right wizard function', async () => {
     wrapper.loaded = true;
     wrapper.wizard.setPage = () => {};
+    wrapper._updateStorage = () => {};
     wrapper.wizard.pages = [
       {
         component: {
