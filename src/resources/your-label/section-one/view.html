@@ -325,7 +325,7 @@
         data.storageConditions[e] === true, false) ? `<b>Storage conditions:</b
         >`:''}}
         <!-- prettier-ignore -->
-          {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
+        {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
           {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
           {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
           {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
@@ -338,7 +338,7 @@
         data.directionsForUse[e] === true, false) ? `<b>Directions for use:</b>`
         : ''}}
         <!-- prettier-ignore -->
-          {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
+        {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
           {{ data && data.directionsForUse.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}
           {{ data && data.directionsForUse.shakeWellBeforeUse ?  'Shake well before use.' : '' }}
           {{ data && data.directionsForUse.foodShouldBeDrainedBeforeConsumption ? 'Food should be drained before consumption.' : '' }}
