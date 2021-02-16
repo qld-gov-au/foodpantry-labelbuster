@@ -156,6 +156,9 @@
             {{ data && data.statementsSummary && (data.statementsSummary.kava_dry || data.statementsSummary.kava_root) ? 'Use in moderation.May cause drowsiness.' : '' }}
             {{ data && data.statementsSummary && (data.statementsSummary.cola_caffeine || data.statementsSummary.ingredient_caffeine) ? 'The product contains caffeine.' : '' }}
             {{ data && data.statementsSummary && data.statementsSummary.added_fluoride ? 'The product contains added fluoride.' : '' }}
+            {{ data && data.statementsSummary && data.statementsSummary.Alcohol ? data.statementsSummary.ifSelectedAlcohol + '.': '' }}
+            {{ data && data.statementsSummary && data.statementsSummary.edible_oil ? data.statementsSummary.ifSelectedOil + '.': '' }}
+            {{ data && data.statementsSummary && data.statementsSummary.salt_subs ? data.statementsSummary.ifSelectedSalt + '.': '' }}
           </p>
           <p>
             <!-- prettier-ignore -->
@@ -191,6 +194,7 @@
             {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
             {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
             {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : ''}}
+            {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
             {{ data && data.storageConditions.keepRefrigeratedAtOrBelow ? `Keep refrigerated at or below ${data.storageConditions.keepRefrigeratedAtOrBelowTemperature || 0}.` : '' }} {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
             {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
             {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
@@ -321,7 +325,7 @@
         data.storageConditions[e] === true, false) ? `<b>Storage conditions:</b
         >`:''}}
         <!-- prettier-ignore -->
-        {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
+          {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
           {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
           {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
           {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
@@ -334,7 +338,7 @@
         data.directionsForUse[e] === true, false) ? `<b>Directions for use:</b>`
         : ''}}
         <!-- prettier-ignore -->
-        {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
+          {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
           {{ data && data.directionsForUse.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}
           {{ data && data.directionsForUse.shakeWellBeforeUse ?  'Shake well before use.' : '' }}
           {{ data && data.directionsForUse.foodShouldBeDrainedBeforeConsumption ? 'Food should be drained before consumption.' : '' }}
@@ -414,6 +418,9 @@
               {{ data && data.statementsSummary && (data.statementsSummary.kava_dry || data.statementsSummary.kava_root) ? 'Use in moderation.May cause drowsiness.' : '' }}
               {{ data && data.statementsSummary && (data.statementsSummary.cola_caffeine || data.statementsSummary.ingredient_caffeine) ? 'The product contains caffeine.' : '' }}
               {{ data && data.statementsSummary && data.statementsSummary.added_fluoride ? 'The product contains added fluoride.' : '' }}
+              {{ data && data.statementsSummary && data.statementsSummary.Alcohol ? data.statementsSummary.ifSelectedAlcohol + '.': '' }}
+              {{ data && data.statementsSummary && data.statementsSummary.edible_oil ? data.statementsSummary.ifSelectedOil + '.': '' }}
+              {{ data && data.statementsSummary && data.statementsSummary.salt_subs ? data.statementsSummary.ifSelectedSalt + '.': '' }}
             </p>
           </div>
           <br />
