@@ -19,26 +19,36 @@ export class Environment {
       selectedEnvironment = environment;
     }
 
+    this.form = {};
+    this.scroll = {};
+    this.terms = {};
+    this.buttons = {};
+    this.confirmation = {};
+    this.navigation = {};
+    this.storage = {};
+    this.extraTriggersOnActions = {};
+    this.helpGuide = {};
+
     switch (selectedEnvironment) {
       case 'development': {
         this.flag = 'dev'
-        this.url = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
-        this.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
-        this.email = '';
+        this.form.location = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
+        this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
+        this.form.adminEmail = '';
         break;
       }
       case 'uat': {
         this.flag = 'uat'
-        this.url = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/labelbuster';
-        this.baseLocation = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/';
-        this.email = '';
+        this.form.location = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/labelbuster';
+        this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/';
+        this.form.adminEmail = '';
         break;
       }
       default: {
         this.flag = 'dev'
-        this.url = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
-        this.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
-        this.email = '';
+        this.form.location = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
+        this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
+        this.form.adminEmail = '';
         break;
       }
     }

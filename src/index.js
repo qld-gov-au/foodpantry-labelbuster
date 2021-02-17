@@ -18,11 +18,15 @@ import { Environment } from './environment';
 (() => {
   const cssReapplier = new ReapplySelected();
   const environment = new Environment();
-  configuration.form.location = environment.url;
-  configuration.form.baseLocation = environment.baseLocation;
+
+  // Overwrite config with environment variables where applicable.
+  const config = {};
+  Object.keys(configuration).forEach((key) => {
+    config[key] = {...configuration[key], ...environment[key]}
+  })
   window.formEnv = environment.flag;
 
-  const lb = new FormioWrapper(configuration);
+  const lb = new FormioWrapper(config);
   attachStepHandler();
   const hg = new HelpGuide(document.getElementById('help-guide'), {
     views: {
@@ -35,9 +39,9 @@ import { Environment } from './environment';
       8: ingredients,
       9: statements,
     },
-    initialState: 'onboarding',
     displayOnSteps: [3, 4, 5, 6, 7, 8, 9],
     formWrapper: lb,
+    config: config.helpGuide,
   });
 
   window.addEventListener('DOMContentLoaded', () => {
@@ -84,7 +88,7 @@ import { Environment } from './environment';
   });
 
   mutationObserver.observe(
-    document.querySelector(configuration.form.selector),
+    document.querySelector(config.form.selector),
     {childList: true, subtree: true}
   );
 })();

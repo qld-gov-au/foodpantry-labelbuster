@@ -7,21 +7,24 @@ import { html, render } from 'lit-html';
 export class HelpGuide {
   /**
    * @param {HTMLElement} target the target for the help guide
-   * @param {Object} config an object containing views and initialState setting of menu
+   * @param {Object} config contains views and initialState setting of menu
    */
   constructor(target, config) {
     // for open accordion item animation
     this.target = target;
     this.views = config.views;
     this.shouldAnimate = true;
+    this.config = config.config;
+
     if (config.formWrapper) {
       this.formWrapper = config.formWrapper;
       this.displayOnSteps = new Map();
-      config.displayOnSteps.forEach(step => this.displayOnSteps.set(step, true));
+      config.displayOnSteps.forEach(step =>
+          this.displayOnSteps.set(step, true));
     }
     this.initialState = localStorage.getItem('help-guide')
       ? 'active'
-      : config.initialState;
+      : this.config.initialState;
 
     if (this.initialState === 'minimized') {
       this._setState({
@@ -48,7 +51,7 @@ export class HelpGuide {
       this.updateTemplate();
     });
     window.addEventListener('formioNewPageRender', () =>
-      this.updateTemplate({ open: this._isMobileSite() })
+      this.updateTemplate({ open: this._overWriteStateWithConfig() })
     );
 
     // eslint-disable-next-line no-shadow
@@ -68,6 +71,9 @@ export class HelpGuide {
     });
   }
 
+  /**
+   * @param {Object} newState new state object
+   */
   _setState(newState) {
     this.state = {
       ...this.state,
@@ -75,12 +81,29 @@ export class HelpGuide {
     };
   }
 
+  /**
+   * @return {Boolean}
+   */
   // eslint-disable-next-line class-methods-use-this
-  _isMobileSite() {
-    return !(window.innerWidth <= 991);
+  _overWriteStateWithConfig() {
+    if(this.state.firstView) {
+      return this.state.open;
+    }
+    if(typeof this.config.overwriteMobileStateWith !== 'undefined' &&
+      window.innerWidth <= this.config.mobileSize) {
+        return this.config.overwriteMobileStateWith;
+    }
+    if(typeof this.config.overwriteDesktopStateWith !== 'undefined' &&
+      window.innerWidth > this.config.mobileSize) {
+        return this.config.overwriteDesktopStateWith;
+    }
+    return this.state.open;
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  /**
+   * @param {String} itemID the id of the accordion item
+   * @param {Boolean} isOpen if its open
+   */
   _openAccordionItem(itemID, isOpen) {
     const accordionItem = document.getElementById(itemID);
     this.activeAccordion = accordionItem.parentElement;
@@ -137,7 +160,8 @@ export class HelpGuide {
       const parent = target.closest('article');
       if (target.className === 'acc-heading') {
         // .control.checked is not supported in IE11
-        parent.querySelector('input').checked = !parent.querySelector('input').checked;
+        parent.querySelector('input').checked =
+          !parent.querySelector('input').checked;
       }
     });
   }
@@ -157,7 +181,8 @@ export class HelpGuide {
   _overlay(isVisible) {
     return html`<div
       class="overlay ${isVisible ? 'visible' : 'hide'}"
-      @click=${!this.state.firstView ? () => this.updateTemplate({ open: false }) : ''}
+      @click=${!this.state.firstView ? () =>
+          this.updateTemplate({ open: false }) : ''}
     >
     </div>`;
   }
@@ -179,6 +204,9 @@ export class HelpGuide {
     `;
   }
 
+  /**
+   * @param {Object} newState the new state object
+   */
   updateTemplate(newState) {
     if (newState) {
       this.shouldAnimate = true;
@@ -205,7 +233,7 @@ export class HelpGuide {
         gotItButton.addEventListener('click', () => {
           document.querySelector('#focusTarget').focus();
           document.removeEventListener('keydown', keyboardTrap);
-          this.updateTemplate({ open: this._isMobileSite() });
+          this.updateTemplate({ open: this._overWriteStateWithConfig() });
         });
 
         document.addEventListener('keydown', keyboardTrap);
@@ -214,6 +242,10 @@ export class HelpGuide {
     }
   }
 
+  /**
+   * @param {Object} state the state
+   * @return {HTMLTemplate}
+   */
   createTemplate(state) {
     if (!state) return null;
     return html`
@@ -238,6 +270,10 @@ export class HelpGuide {
     `;
   }
 
+  /**
+   * @param {Object} state the state object
+   * @return {HTMLTemplate}
+   */
   render(state) {
     const templateResult = state ? this.createTemplate(state) : null;
     render(templateResult, this.target);

@@ -66,4 +66,9 @@ export const configuration = {
   },
   extraTriggersOnActions: {
   },
+  helpGuide: {
+    initialState: 'onboarding',
+    overwriteMobileStateWith: false,
+    mobileSize: 991,
+  }
 };
