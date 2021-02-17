@@ -20,9 +20,13 @@ async function helpGuideSetup() {
       5: businessView,
       8: ingredients,
     },
-    initialState: 'onboarding',
     displayOnSteps: [3, 5, 8],
     formWrapper: formWrapper,
+    config: {
+      initialState: 'onboarding',
+      overwriteMobileStateWith: false,
+      mobileSize: 991,
+    }
   });
 }
 
