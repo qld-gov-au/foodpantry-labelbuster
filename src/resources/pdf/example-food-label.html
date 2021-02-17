@@ -107,6 +107,9 @@
           {{ data && data.statementsSummary && (data.statementsSummary.kava_dry || data.statementsSummary.kava_root) ? 'Use in moderation.May cause drowsiness.' : '' }}
           {{ data && data.statementsSummary && (data.statementsSummary.cola_caffeine || data.statementsSummary.ingredient_caffeine) ? 'The product contains caffeine.' : '' }}
           {{ data && data.statementsSummary && data.statementsSummary.added_fluoride ? 'The product contains added fluoride.' : '' }}
+          {{ data && data.statementsSummary && data.statementsSummary.Alcohol ? data.statementsSummary.ifSelectedAlcohol + '.': '' }}
+          {{ data && data.statementsSummary && data.statementsSummary.edible_oil ? data.statementsSummary.ifSelectedOil + '.': '' }}
+          {{ data && data.statementsSummary && data.statementsSummary.salt_subs ? data.statementsSummary.ifSelectedSalt + '.': '' }}
         </p>
       </div>
       <br />
@@ -120,7 +123,7 @@
       <br />
       <span class="suburb">{{data.addressDetails.addressLine3}}</span>
       <br />
-      {{data.addressDetails.state1}}
+      {{data.addressDetails.state1}}, {{data.addressDetails.postcode}}
     </div>
   </div>
   <div class="eg-col">

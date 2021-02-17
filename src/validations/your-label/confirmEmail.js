@@ -11,7 +11,7 @@
       return;
     }
 
-    if(data.email==='' || data.email && !(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input))){
+    if(data.email && !(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input))){
       valid='Please enter a valid email address in the format of youremail@provider.com'
       return;
     }
