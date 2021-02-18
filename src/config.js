@@ -16,6 +16,9 @@ export const configuration = {
       }
     },
     adminEmail: '',
+    adminField: 'adminEmail',
+    emailField: 'toConfirmEmail',
+    emailConfirmField: 'email',
     endpoint: 'submission',
     pdfEndpoint: 'labelBusterPdf',
     pdfDownloadName: data => `Label Buster summary - Label Buster Foods ${data.foodName}`,
@@ -66,4 +69,9 @@ export const configuration = {
   },
   extraTriggersOnActions: {
   },
+  helpGuide: {
+    initialState: 'onboarding',
+    overwriteMobileStateWith: false,
+    mobileSize: 991,
+  }
 };

@@ -53,9 +53,7 @@
   }
 
   .emailHeader {
-    font-family: Lato;
-    font-size: 14px;
-    color: #666666;
+    font-weight: 400;
   }
 
   .textFieldEmail {
@@ -80,4 +78,25 @@
   table-layout: fixed;
   word-break: break-word;
   word-wrap: break-word;
+}
+
+@keyframes progressSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    color: #696969;
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-primary:disabled > .icon:after {
+  font-family: "FontAwesome";
+  display: inline-block;
+  animation: progressSpinner 3s infinite linear;
+  margin-left: 5px;
+  content:"\f110";
 }

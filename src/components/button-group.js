@@ -10,6 +10,7 @@ export class ButtonGroup {
     this.showDialog = false;
     this.cancelEvent = {};
     this.fullData = [];
+
     window.addEventListener('formiowrapperPageChange', ({ detail }) => {
       this.updateTarget(detail);
     });
@@ -53,7 +54,6 @@ export class ButtonGroup {
    * @param {Object} data the data used to generate all the buttons
    */
   updateParentIfFirstStepSkipped(data) {
-
     if(!data || !data[0] || data[0].type !== 'li') return;
 
     if (!configuration.navigation ||
@@ -63,12 +63,16 @@ export class ButtonGroup {
     if (!parent) return;
 
     const currentPage = this.getCurrentPage(data);
+    const clickData = {...data[0].detail, ...{page: 0}}
+
     parent.setAttribute('data-event', data[0].event);
     parent.setAttribute('data-confirm', !!data[0].confirm);
-    parent.setAttribute('data-detail', JSON.stringify(data[0].detail));
+    parent.setAttribute('data-detail', JSON.stringify(clickData));
     parent.removeAttribute("href");
 
+    parent.removeEventListener('click', (e) => {this.processClick(e) });
     parent.addEventListener('click', (e) => {this.processClick(e) });
+
     if (currentPage === 0) {
       parent.classList.remove('opened');
 
