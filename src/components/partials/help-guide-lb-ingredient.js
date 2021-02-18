@@ -655,7 +655,6 @@ export default () => html`
               sodium sulphite may be shown as Preservative (sodium sulphite) or
               Preservative (221).
             </li>
-            <li>fermented manufactured meat – not heat treated</li>
           </ul>
           <p>
             <b>If you are adding vitamins and minerals:</b>
