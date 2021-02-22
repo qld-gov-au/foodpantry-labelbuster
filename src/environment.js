@@ -32,21 +32,27 @@ export class Environment {
     switch (selectedEnvironment) {
       case 'development': {
         this.flag = 'dev';
+        // eslint-disable-next-line max-len
         this.form.location = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
+        // eslint-disable-next-line max-len
         this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
         this.form.adminEmail = '';
         break;
       }
       case 'uat': {
         this.flag = 'uat';
+        // eslint-disable-next-line max-len
         this.form.location = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/labelbuster';
+        // eslint-disable-next-line max-len
         this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/';
         this.form.adminEmail = 'foodpantry@health.qld.gov.au';
         break;
       }
       default: {
         this.flag = 'dev';
+        // eslint-disable-next-line max-len
         this.form.location = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
+        // eslint-disable-next-line max-len
         this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
         this.form.adminEmail = '';
         break;

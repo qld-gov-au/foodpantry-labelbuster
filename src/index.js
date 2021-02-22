@@ -58,6 +58,7 @@ import { Environment } from './environment';
       sectionNav.id = 'qg-section-nav';
       document.body.appendChild(sectionNav);
       sectionNav = document.querySelector('#qg-section-nav');
+      // eslint-disable-next-line max-len
       sectionNav.innerHTML = '<ul><li><a class="active" href="#">Label Buster</li></ul>';
     } else {
       sectionNav = navigationSection.querySelector('ul > li > a.active')

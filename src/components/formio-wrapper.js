@@ -16,6 +16,7 @@ export class FormioWrapper {
 
   initialise(firstInit = true) {
     if (!this.config.form.location) return;
+    // eslint-disable-next-line max-len
     this.submissionEndpoint = `${this.config.form.baseLocation}${this.config.form.pdfEndpoint}/${this.config.form.endpoint}`;
     this.formElement = document.querySelector('#formio');
 
@@ -313,6 +314,7 @@ export class FormioWrapper {
         invalidPreviousStep = true;
       }
       const outputObject = {
+        // eslint-disable-next-line max-len
         cssClass: `${this.config.navigation.baseClass} ${activeClass} ${visitedClass}`,
         detail: {
           page: offset,
@@ -430,7 +432,9 @@ export class FormioWrapper {
   _shouldNextPageBeSkipped(page, pages) {
     if (!this.config.terms.skipIfTermsAlreadyAccepted) return false;
     const pageTitle = pages[page + 1].component.title;
-    if (!pageTitle.toLowerCase().includes(this.config.terms.title)) return false;
+    if (!pageTitle.toLowerCase().includes(this.config.terms.title)) {
+      return false;
+    }
     return this._areTermsAccepted(page, pages);
   }
 
@@ -442,7 +446,9 @@ export class FormioWrapper {
   _shouldPreviousPageBeSkipped(page, pages) {
     if (!this.config.terms.skipIfTermsAlreadyAccepted) return false;
     const pageTitle = pages[page - 1].component.title;
-    if (!pageTitle.toLowerCase().includes(this.config.terms.title)) return false;
+    if (!pageTitle.toLowerCase().includes(this.config.terms.title)) {
+      return false;
+    }
     return this._areTermsAccepted(page, pages);
   }
 
@@ -567,7 +573,8 @@ export class FormioWrapper {
       this._shouldPreviousPageBeSkipped(this.wizard.page, this.wizard.pages)
     ) {
       const proposedPage = this.wizard.page - 2;
-      const targetPage = proposedPage <= 0 ? proposedPage : this.wizard.page - 1;
+      const targetPage = proposedPage <= 0
+        ? proposedPage : this.wizard.page - 1;
       if (this.wizard._data) {
         this.wizard._data[this.config.terms.dataName] = true;
       }
@@ -731,9 +738,12 @@ export class FormioWrapper {
         emailButton.disabled = false;
       }, 10000);
     } else {
-      this.wizard.data[this.config.form.adminField] = this.config.form.adminEmail;
-      this.wizard.data[this.config.form.emailField] = this.config.form.adminEmail;
-      this.wizard.data[this.config.form.emailConfirmField] = this.config.form.adminEmail;
+      this.wizard.data[
+        this.config.form.adminField] = this.config.form.adminEmail;
+      this.wizard.data[
+        this.config.form.emailField] = this.config.form.adminEmail;
+      this.wizard.data[
+        this.config.form.emailConfirmField] = this.config.form.adminEmail;
     }
     this.wizard.submit();
     if (this.wizard.data.sendEmail !== 'user') {
