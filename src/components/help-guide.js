@@ -19,8 +19,7 @@ export class HelpGuide {
     if (config.formWrapper) {
       this.formWrapper = config.formWrapper;
       this.displayOnSteps = new Map();
-      config.displayOnSteps.forEach(step =>
-          this.displayOnSteps.set(step, true));
+      config.displayOnSteps.forEach(step => this.displayOnSteps.set(step, true));
     }
     this.initialState = localStorage.getItem('help-guide')
       ? 'active'
@@ -50,9 +49,7 @@ export class HelpGuide {
     window.addEventListener('formiowrapperPageChange', () => {
       this.updateTemplate();
     });
-    window.addEventListener('formioNewPageRender', () =>
-      this.updateTemplate({ open: this._overWriteStateWithConfig() })
-    );
+    window.addEventListener('formioNewPageRender', () => this.updateTemplate({ open: this._overWriteStateWithConfig() }));
 
     // eslint-disable-next-line no-shadow
     document.body.addEventListener('click', ({ target }) => {
@@ -86,16 +83,16 @@ export class HelpGuide {
    */
   // eslint-disable-next-line class-methods-use-this
   _overWriteStateWithConfig() {
-    if(this.state.firstView) {
+    if (this.state.firstView) {
       return this.state.open;
     }
-    if(typeof this.config.overwriteMobileStateWith !== 'undefined' &&
-      window.innerWidth <= this.config.mobileSize) {
-        return this.config.overwriteMobileStateWith;
+    if (typeof this.config.overwriteMobileStateWith !== 'undefined'
+      && window.innerWidth <= this.config.mobileSize) {
+      return this.config.overwriteMobileStateWith;
     }
-    if(typeof this.config.overwriteDesktopStateWith !== 'undefined' &&
-      window.innerWidth > this.config.mobileSize) {
-        return this.config.overwriteDesktopStateWith;
+    if (typeof this.config.overwriteDesktopStateWith !== 'undefined'
+      && window.innerWidth > this.config.mobileSize) {
+      return this.config.overwriteDesktopStateWith;
     }
     return this.state.open;
   }
@@ -160,8 +157,7 @@ export class HelpGuide {
       const parent = target.closest('article');
       if (target.className === 'acc-heading') {
         // .control.checked is not supported in IE11
-        parent.querySelector('input').checked =
-          !parent.querySelector('input').checked;
+        parent.querySelector('input').checked = !parent.querySelector('input').checked;
       }
     });
   }
@@ -181,8 +177,7 @@ export class HelpGuide {
   _overlay(isVisible) {
     return html`<div
       class="overlay ${isVisible ? 'visible' : 'hide'}"
-      @click=${!this.state.firstView ? () =>
-          this.updateTemplate({ open: false }) : ''}
+      @click=${!this.state.firstView ? () => this.updateTemplate({ open: false }) : ''}
     >
     </div>`;
   }
@@ -223,12 +218,12 @@ export class HelpGuide {
       if (gotItButton) {
         const keyboardTrap = (e) => {
           e.preventDefault();
-          if (e.code === "Enter" && e.target === gotItButton) {
+          if (e.code === 'Enter' && e.target === gotItButton) {
             gotItButton.click();
           } else {
             gotItButton.focus();
           }
-        }
+        };
 
         gotItButton.addEventListener('click', () => {
           document.querySelector('#focusTarget').focus();

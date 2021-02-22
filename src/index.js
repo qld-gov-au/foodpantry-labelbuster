@@ -22,8 +22,8 @@ import { Environment } from './environment';
   // Overwrite config with environment variables where applicable.
   const config = {};
   Object.keys(configuration).forEach((key) => {
-    config[key] = {...configuration[key], ...environment[key]}
-  })
+    config[key] = { ...configuration[key], ...environment[key] };
+  });
   window.formEnv = environment.flag;
 
   const lb = new FormioWrapper(config);
@@ -89,6 +89,6 @@ import { Environment } from './environment';
 
   mutationObserver.observe(
     document.querySelector(config.form.selector),
-    {childList: true, subtree: true}
+    { childList: true, subtree: true },
   );
 })();

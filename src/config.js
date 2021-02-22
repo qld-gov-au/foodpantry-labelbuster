@@ -12,8 +12,8 @@ export const configuration = {
           // eslint-disable-next-line no-param-reassign
           submission.data.formEnv = window.formEnv;
           next();
-        }
-      }
+        },
+      },
     },
     adminEmail: '',
     adminField: 'adminEmail',
@@ -73,5 +73,5 @@ export const configuration = {
     initialState: 'onboarding',
     overwriteMobileStateWith: false,
     mobileSize: 991,
-  }
+  },
 };
