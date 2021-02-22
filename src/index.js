@@ -22,8 +22,8 @@ import { Environment } from './environment';
   // Overwrite config with environment variables where applicable.
   const config = {};
   Object.keys(configuration).forEach((key) => {
-    config[key] = {...configuration[key], ...environment[key]}
-  })
+    config[key] = { ...configuration[key], ...environment[key] };
+  });
   window.formEnv = environment.flag;
 
   const lb = new FormioWrapper(config);
@@ -58,6 +58,7 @@ import { Environment } from './environment';
       sectionNav.id = 'qg-section-nav';
       document.body.appendChild(sectionNav);
       sectionNav = document.querySelector('#qg-section-nav');
+      // eslint-disable-next-line max-len
       sectionNav.innerHTML = '<ul><li><a class="active" href="#">Label Buster</li></ul>';
     } else {
       sectionNav = navigationSection.querySelector('ul > li > a.active')
@@ -89,6 +90,6 @@ import { Environment } from './environment';
 
   mutationObserver.observe(
     document.querySelector(config.form.selector),
-    {childList: true, subtree: true}
+    { childList: true, subtree: true },
   );
 })();
