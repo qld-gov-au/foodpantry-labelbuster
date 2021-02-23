@@ -41,7 +41,7 @@ export class Environment {
         this.flag = 'uat'
         this.form.location = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/labelbuster';
         this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/uat-tzkqydhwrjrviss/';
-        this.form.adminEmail = '';
+        this.form.adminEmail = 'foodpantry@health.qld.gov.au';
         break;
       }
       default: {
