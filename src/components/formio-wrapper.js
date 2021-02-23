@@ -16,7 +16,6 @@ export class FormioWrapper {
 
   initialise(firstInit = true) {
     if (!this.config.form.location) return;
-    // eslint-disable-next-line max-len
     this.submissionEndpoint = `${this.config.form.baseLocation}${this.config.form.pdfEndpoint}/${this.config.form.endpoint}`;
     this.formElement = document.querySelector('#formio');
 
@@ -43,6 +42,10 @@ export class FormioWrapper {
   _attachHandlers() {
     this.wizard.on('initialized', () => {
       this._firePageChangeEvent();
+      this.scrollToTop(
+        this.config.form.baseElement,
+        this.config.scroll.focusTarget,
+      );
     });
     this.wizard.on('render', () => {
       this._firePageChangeEvent();
