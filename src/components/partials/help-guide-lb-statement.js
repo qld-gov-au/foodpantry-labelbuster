@@ -58,10 +58,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Advisory statements let consumers know important information about
             the safety (e.g. unpasteurised), suitability (e.g. not suitable as a
@@ -130,10 +127,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Some foods and ingredients can cause allergic reactions and must be
             stated on the label.
@@ -218,10 +212,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             The warning statement must be displayed on the label in the exact
             words and type size as specified in the Food Standards Code. Warning

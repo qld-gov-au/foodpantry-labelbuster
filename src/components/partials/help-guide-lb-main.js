@@ -58,10 +58,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Alcohol includes beer, wine and spirits and has unique and
             additional requirements such as number of standard drinks.
@@ -139,10 +136,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Nutrition, health and related claims are voluntary statements made
             by food businesses on labels and in advertising about the content of
@@ -288,10 +282,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Drinks made from cereals, nuts and or seeds are not suitable for
             certain age groups, depending on the amount of protein and fats in
@@ -344,10 +335,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Electrolyte drinks are formulated drinks which are designed for the
             rapid replacement of fluid, carbohydrates, electrolytes and
@@ -390,10 +378,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Formulated caffeinated drinks have very specific rules about what
             substances are allowed and how this information must be labelled.
@@ -433,10 +418,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Food produced using gene technology means a food that has been
             derived or developed from an organism that has been genetically
@@ -495,10 +477,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Food irradiation is a technology that improves the safety and
             extends the shelf life of foods by reducing or eliminating
@@ -540,10 +519,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Novel foods are non-traditional foods that require a safety
             assessment by FSANZ before they used in Australia. Examples of novel
@@ -611,10 +587,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Special purpose foods have complex labelling requirements, such as
             an expanded nutrition information panel, compositional requirements
