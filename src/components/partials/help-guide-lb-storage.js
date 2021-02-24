@@ -58,11 +58,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p></p>
           <p>
             Directions for use are the instructions for how to prepare the food
@@ -108,11 +104,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Storage conditions are instructions about how to store food so that
             the food will keep until the best-before or use-by date.
@@ -192,11 +184,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b>If the food is raw bamboo shoots:</b>
             <br />
@@ -241,11 +229,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b>If the food is raw sweet cassava:</b>
             <br />
@@ -290,11 +274,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b
               >If the food is raw fish which has been moulded or combined to
@@ -356,11 +336,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b
               >If the food is raw meat which has been moulded or combined to

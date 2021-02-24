@@ -59,11 +59,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Business details are the name and address of the food business that
             is the supplier, manufacturer, packer, vendor or importer of the
@@ -170,11 +166,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b>If your food is sold from a vending machine:</b>
             <br />
@@ -220,11 +212,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b
               >If your food is sold in a hamper (e.g. gourmet cheese, olives and
@@ -279,11 +267,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b
               >If the food for sale is not in a package and consists of kava

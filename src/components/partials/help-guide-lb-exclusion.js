@@ -60,11 +60,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Food names must correctly describe the food. For example, strawberry
             yoghurt must contain strawberries. If the yoghurt contains
@@ -130,11 +126,7 @@ export default () => html`
           </label>
         </button>
 
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>A characterising ingredient or component of a food is:</p>
           <ul>
             <li>mentioned in the name of the food; or</li>
@@ -199,11 +191,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             The following are considered prescribed names under the Food
             Standards Code and must be used when naming these foods.
@@ -287,11 +275,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             There are rules for the use of wholegrain and wholemeal in the food
             name.
@@ -333,11 +317,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>When naming a food chocolate, it must be:</p>
           <ul>
             <li>made from cocoa bean products; and</li>
@@ -383,11 +363,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             A food containing alcohol must not be represented in a way that
             suggests the food is non-alcoholic.
@@ -428,11 +404,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b>If the food is drink made from fruit or vegetables:</b>
             <br />
@@ -476,11 +448,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b>If the food is, or contains, allowed low THC hemp:</b>
             The label must not include the words ‘cannabis’, ‘marijuana’ or
@@ -516,11 +484,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Honey means the natural sweet substance produced by honey bees.
             <br />
@@ -569,11 +533,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             If you name a food jam, it must be made from no less than 400 g/kg
             of fruit.
@@ -609,11 +569,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Kava and kava root are allowed to be sold in Australia only if the
             food is:
@@ -651,11 +607,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             There are naming rules for meat, including jerky, meat pies and
             sausages.
@@ -690,11 +642,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             If your food is milk, dairy or dairy alternative, you need to read
             the Food Standards Code to identify the necessary naming format. For
@@ -762,11 +710,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b>If the food is drink made from fruit or vegetables:</b>
             There are naming rules for juice, juice blends and juice drinks.
@@ -832,11 +776,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Food that is sold as peanut butter must be a peanut based spread
             that has no less than 850 g/kg of peanuts.
@@ -870,11 +810,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Margarine means an edible oil spread containing no less than 800
             g/kg of edible oils.
@@ -911,11 +847,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Foods that are labelled salt or a salt product have special
             requirements. These products cannot make nutrition or health claim,
@@ -958,11 +890,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Food that is sold as white sugar or a sugar must be purified
             crystallised sucrose and have no less than 99.7% sucrose when dry.
@@ -1000,11 +928,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             A food that is sold as imitation vinegar or vinegar must contain no
             less than 40 g/kg of acetic acid.
