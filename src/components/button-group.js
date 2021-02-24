@@ -63,15 +63,16 @@ export class ButtonGroup {
     if (!parent) return;
 
     const currentPage = this.getCurrentPage(data);
-    const clickData = { ...data[0].detail, ...{ page: 0 } };
-
-    parent.setAttribute('data-event', data[0].event);
-    parent.setAttribute('data-confirm', !!data[0].confirm);
-    parent.setAttribute('data-detail', JSON.stringify(clickData));
-    parent.removeAttribute('href');
-
-    parent.removeEventListener('click', (e) => { this.processClick(e); });
-    parent.addEventListener('click', (e) => { this.processClick(e); });
+    if (!parent.getAttribute('updated')) {
+      const clickData = { ...data[0].detail, ...{ page: 0 } };
+      parent.setAttribute('data-event', data[0].event);
+      parent.setAttribute('data-confirm', !!data[0].confirm);
+      parent.setAttribute('data-detail', JSON.stringify(clickData));
+      parent.setAttribute('updated', true);
+      parent.removeAttribute('href');
+      parent.removeEventListener('click', (e) => { this.processClick(e); });
+      parent.addEventListener('click', (e) => { this.processClick(e); });
+    }
 
     if (currentPage === 0) {
       parent.classList.remove('opened');
