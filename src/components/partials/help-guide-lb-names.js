@@ -61,7 +61,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -136,7 +135,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>A characterising ingredient or component of a food is:</p>
@@ -218,7 +216,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -324,7 +321,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -385,7 +381,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>When naming a food chocolate, it must be:</p>
@@ -443,7 +438,6 @@ export default () => html`
         </h3>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -496,7 +490,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -562,7 +555,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -610,7 +602,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>Honey means the natural sweet substance produced by honey bees.</p>
@@ -675,7 +666,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -722,7 +712,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -772,7 +761,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -828,7 +816,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -952,7 +939,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1049,7 +1035,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1096,7 +1081,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1148,7 +1132,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1212,7 +1195,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1265,7 +1247,6 @@ export default () => html`
 
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>

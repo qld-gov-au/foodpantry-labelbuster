@@ -60,7 +60,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -161,7 +160,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -241,7 +239,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -307,7 +304,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -372,7 +368,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -423,7 +418,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -521,7 +515,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -570,7 +563,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>

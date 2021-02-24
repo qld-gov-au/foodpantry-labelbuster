@@ -60,7 +60,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -276,7 +275,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -310,7 +308,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -449,7 +446,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -503,7 +499,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>The ingredient list does not need to include:</p>
@@ -614,7 +609,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -792,7 +786,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>Generic names may be used in the ingredient list, instead of:</p>
@@ -906,7 +899,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1006,7 +998,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1093,7 +1084,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1196,7 +1186,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1260,7 +1249,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1349,7 +1337,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1429,7 +1416,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1531,7 +1517,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1599,7 +1584,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1689,7 +1673,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1769,7 +1752,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
@@ -1829,7 +1811,6 @@ export default () => html`
         </button>
         <div
           class="collapsing-section"
-          aria-hidden="true"
           id="id-panel-content-1"
         >
           <p>
