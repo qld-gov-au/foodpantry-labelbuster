@@ -58,11 +58,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             A date mark is a guide to how long a food will last. All packaged
             food with a shelf life of two years or less must show a date mark,
@@ -159,11 +155,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             The label on a package of bread with a shelf life of less than 7
             days may be date marked with a baked-on date or a baked-for date
@@ -239,11 +231,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             A best-before date is the last date on which you can expect a food
             to look, smell and taste fresh, and to keep any property for which a
@@ -305,11 +293,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             The day, month and year must be written so that it is clear which
             number refers to the day, the month or the year.
@@ -370,11 +354,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Lot identification means a number or other information that
             identifies the premises where the food was prepared or packed and
@@ -421,11 +401,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             The use-by date is the date after which the food should not be eaten
             because it is no longer safe, provided it has been stored according
@@ -519,11 +495,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             If the food sold in a small package where the package has a surface
             area of less than 100 cm2 only a use-by date needs to be included.
@@ -568,11 +540,7 @@ export default () => html`
             <span class="arrow"><i></i></span>
           </label>
         </button>
-        <div
-          class="collapsing-section"
-          aria-hidden="true"
-          id="id-panel-content-1"
-        >
+        <div class="collapsing-section" id="id-panel-content-1">
           <p>
             If the food is a single serve of ice cream or ice confection no date
             marking information is required.
