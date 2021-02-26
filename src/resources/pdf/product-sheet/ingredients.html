@@ -3,8 +3,7 @@
     <strong>Ingredients</strong>
   </div>
   <div>
-    <b>Ingredients:</b>
     <!-- prettier-ignore -->
-    {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) || 'no data provided'}}
+    {{ data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) }}
   </div>
 </div>
