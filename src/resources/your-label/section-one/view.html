@@ -83,9 +83,8 @@
       <tr>
         <td>Ingredients</td>
         <td>
-          <b>Ingredients:</b>
           <!-- prettier-ignore -->
-          {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) || 'no data provided'}}
+          {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) }}
         </td>
       </tr>
       <tr>
@@ -172,17 +171,17 @@
             (Object.values(data.statementsSummary).length !== 0)) ? 'Note:
             Warning statements must be a minimum size of type of 3 mm. In the
             case of small packages, a minimum size of type of 1.5 mm is
-            required.':'no data provided' }}
+            required.' }}
           </p>
         </td>
       </tr>
       <tr>
         <td>Date marks</td>
-        <td>{{data.dateMarkFood }}: {{data.bestDate || 'no data provided'}}</td>
+        <td>{{data.dateMarkFood }}: {{data.bestDate}}</td>
       </tr>
       <tr>
         <td>Lot identification</td>
-        <td>{{data.batch || 'no data provided'}}</td>
+        <td>{{data.batch}}</td>
       </tr>
       <tr>
         <td>Storage conditions and directions for use</td>
@@ -258,7 +257,7 @@
           </p>
           <!-- prettier-ignore -->
           {{(Object.values(data.directionsForUse).some(valueCheck =>  valueCheck===true) ||
-          Object.values(data.storageConditions).some(valueCheck => valueCheck===true))? '':'no data provided'}}
+          Object.values(data.storageConditions).some(valueCheck => valueCheck===true))? ''}}
         </td>
       </tr>
       <tr>
