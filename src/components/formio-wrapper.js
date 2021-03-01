@@ -739,7 +739,7 @@ export class FormioWrapper {
       setTimeout(() => {
         this.requestedEmail = false;
         emailButton.disabled = false;
-      }, 10000);
+      }, 30000);
     } else {
       this.wizard.data[
         this.config.form.adminField] = this.config.form.adminEmail;
