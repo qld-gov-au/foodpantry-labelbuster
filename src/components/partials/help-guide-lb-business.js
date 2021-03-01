@@ -7,9 +7,19 @@ export default () => html`
 
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
-        <button class="controls expand" @click="${e => modifyAccordionState(e, true)}">Expand all</button>
+        <button
+          class="controls expand"
+          @click="${e => modifyAccordionState(e, true)}"
+        >
+          Expand all
+        </button>
         <span class="controls">|</span>
-        <button class="controls collapse" @click="${e => modifyAccordionState(e, false)}">Collapse all</button>
+        <button
+          class="controls collapse"
+          @click="${e => modifyAccordionState(e, false)}"
+        >
+          Collapse all
+        </button>
       </div>
       <article>
         <input
