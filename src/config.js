@@ -26,6 +26,12 @@ export const configuration = {
     selector: '#formio',
     title: 'Label Buster',
     clearStorageOnCancel: true,
+    // https://api.forms.platforms.qld.gov.au/#/project/60208034a435f201eed4c5a1/env/settings/apiKeys
+    // API Keys should never be used in a browser.
+    pdfRequestHeaders: {
+      'Content-Type': 'application/json',
+      'x-token': 'ynDAuLoIDSBjPTaZiMQsu1k034LQOO',
+    },
   },
   scroll: {
     target: 0,
