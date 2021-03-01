@@ -6,42 +6,11 @@ export default () => html`
     <h2>What are business details?</h2>
 
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
-      <div class="controls-group">
-        <input
-          type="radio"
-          name="control"
-          id="expand"
-          class="controls expand"
-          value="expand"
-          role="radio"
-        />
-
-        <label
-          for="expand"
-          class="controls"
-          @click="${e => modifyAccordionState(e, true)}"
-        >
-          Expand all
-        </label>
+      <div class="qg-acc-controls">
+        <button class="controls expand" @click="${e => modifyAccordionState(e, true)}">Expand all</button>
         <span class="controls">|</span>
-        <input
-          type="radio"
-          name="control"
-          id="collapse"
-          class="controls collapse"
-          value="collapse"
-          role="radio"
-        />
-
-        <label
-          for="collapse"
-          class="controls"
-          @click="${e => modifyAccordionState(e, false)}"
-        >
-          Collapse all
-        </label>
+        <button class="controls collapse" @click="${e => modifyAccordionState(e, false)}">Collapse all</button>
       </div>
-
       <article>
         <input
           id="business-details"
