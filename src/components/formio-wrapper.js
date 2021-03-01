@@ -693,17 +693,17 @@ export class FormioWrapper {
       const { pdfDownloadName } = this.config.form;
       const formioWrapper = this;
       const xhr = new XMLHttpRequest();
+      xhr.open(
+        'GET',
+        `${this.submissionEndpoint}/${successBody._id}/download`,
+        true,
+      );
       if (this.config.form.pdfRequestHeaders) {
         const keys = Object.keys(this.config.form.pdfRequestHeaders);
         keys.forEach((key) => {
           xhr.setRequestHeader(key, this.config.form.pdfRequestHeaders[key]);
         });
       }
-      xhr.open(
-        'GET',
-        `${this.submissionEndpoint}/${successBody._id}/download`,
-        true,
-      );
       xhr.responseType = 'arraybuffer';
       xhr.onload = function openPdf() {
         if (this.status === 200) {
