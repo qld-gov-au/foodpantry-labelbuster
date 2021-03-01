@@ -12,8 +12,8 @@ export const configuration = {
           // eslint-disable-next-line no-param-reassign
           submission.data.formEnv = window.formEnv;
           next();
-        }
-      }
+        },
+      },
     },
     adminEmail: '',
     adminField: 'adminEmail',
@@ -21,6 +21,7 @@ export const configuration = {
     emailConfirmField: 'email',
     endpoint: 'submission',
     pdfEndpoint: 'labelBusterPdf',
+    // eslint-disable-next-line max-len
     pdfDownloadName: data => `Label Buster summary - Label Buster Foods ${data.foodName}`,
     selector: '#formio',
     title: 'Label Buster',
@@ -73,5 +74,5 @@ export const configuration = {
     initialState: 'onboarding',
     overwriteMobileStateWith: false,
     mobileSize: 991,
-  }
+  },
 };
