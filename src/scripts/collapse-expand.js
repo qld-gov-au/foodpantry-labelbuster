@@ -3,8 +3,7 @@
  * @param {Boolean} newState expand or collapse state
  */
 export function modifyAccordionState(e, newState) {
-  const accordionSection = e
-    .composedPath()
+  const accordionSection = e.composedPath()
     .find(element => element.classList.contains('qg-accordion'));
   const articles = accordionSection.querySelectorAll(
     '.qg-accordion article input[type="checkbox"]',
