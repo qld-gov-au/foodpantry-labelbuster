@@ -902,36 +902,20 @@ export default () => html`
   <div class="side-padding vertical-padding">
     <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
-      <div class="controls-group">
-        <input
-          type="radio"
-          name="control"
-          id="expand"
+      <div class="qg-acc-controls">
+        <button
           class="controls expand"
-          value="expand"
-          role="radio"
-        />
-        <label
-          for="collapse"
-          class="controls"
           @click="${e => modifyAccordionState(e, true)}"
-          >Expand all</label
         >
+          Expand all
+        </button>
         <span class="controls">|</span>
-        <input
-          type="radio"
-          name="control"
-          id="collapse"
+        <button
           class="controls collapse"
-          value="collapse"
-          role="radio"
-        />
-        <label
-          for="collapse"
-          class="controls"
           @click="${e => modifyAccordionState(e, false)}"
-          >Collapse all</label
         >
+          Collapse all
+        </button>
       </div>
       <article>
         <input
