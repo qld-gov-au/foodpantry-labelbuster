@@ -401,9 +401,9 @@ export default () => html`
             <i>Australia New Zealand Food Standards Code</i>
           </p>
           <ul>
-            <li><a href="#">Standard 2.3.2</a> Jam</li>
+            <li><a href="https://www.legislation.gov.au/Details/F2015L00459" target="_blank" rel="noopener">Standard 2.3.2</a> Jam</li>
             <li>
-              <a href="#">Standard 2.6.1</a>
+            <a href="https://www.legislation.gov.au/Series/F2015L00426" target="_blank" rel="noopener">Standard 2.6.1</a>
               Fruit juice and vegetable juice
             </li>
           </ul>
@@ -723,15 +723,15 @@ export default () => html`
           </p>
           <ul>
             <li>
-              <a href="#">Standard 2.6.1</a>
+              <a href="https://www.legislation.gov.au/Series/F2015L00426" target="_blank" rel="noopener">Standard 2.6.1</a>
               Fruit juice and vegetable juice
             </li>
             <li>
-              <a href="#">Standard 2.6.2</a>
+              <a href="https://www.legislation.gov.au/Series/F2015L00465" target="_blank" rel="noopener">Standard 2.6.2</a>
               Non-alcoholic beverages and brewed soft drinks
             </li>
             <li>
-              <a href="#">Standard 2.10.4</a>
+              <a href="https://www.legislation.gov.au/Series/F2015L00487" target="_blank" rel="noopener">Standard 2.10.4</a>
               Miscellaneous standards for other foods
             </li>
           </ul>
