@@ -199,42 +199,20 @@ export default () => html`
   <div class="side-padding vertical-padding">
     <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
-      <div class="controls-group">
-        <input
-          type="radio"
-          name="control"
-          id="collapse"
-          class="controls collapse"
-          value="collapse"
-          role="radio"
-        />
-
-        <label
-          for="collapse"
-          class="controls"
-          @click="${e => modifyAccordionState(e, false)}"
-        >
-          Collapse all
-        </label>
-
-        <span class="controls">|</span>
-
-        <input
-          type="radio"
-          name="control"
-          id="expand"
+      <div class="qg-acc-controls">
+        <button
           class="controls expand"
-          value="expand"
-          role="radio"
-        />
-
-        <label
-          for="collapse"
-          class="controls"
           @click="${e => modifyAccordionState(e, true)}"
         >
           Expand all
-        </label>
+        </button>
+        <span class="controls">|</span>
+        <button
+          class="controls collapse"
+          @click="${e => modifyAccordionState(e, false)}"
+        >
+          Collapse all
+        </button>
       </div>
 
       <article>
@@ -401,9 +379,9 @@ export default () => html`
             <i>Australia New Zealand Food Standards Code</i>
           </p>
           <ul>
-            <li><a href="#">Standard 2.3.2</a> Jam</li>
+            <li><a href="https://www.legislation.gov.au/Details/F2015L00459" target="_blank" rel="noopener">Standard 2.3.2</a> Jam</li>
             <li>
-              <a href="#">Standard 2.6.1</a>
+            <a href="https://www.legislation.gov.au/Series/F2015L00426" target="_blank" rel="noopener">Standard 2.6.1</a>
               Fruit juice and vegetable juice
             </li>
           </ul>
@@ -723,15 +701,15 @@ export default () => html`
           </p>
           <ul>
             <li>
-              <a href="#">Standard 2.6.1</a>
+              <a href="https://www.legislation.gov.au/Series/F2015L00426" target="_blank" rel="noopener">Standard 2.6.1</a>
               Fruit juice and vegetable juice
             </li>
             <li>
-              <a href="#">Standard 2.6.2</a>
+              <a href="https://www.legislation.gov.au/Series/F2015L00465" target="_blank" rel="noopener">Standard 2.6.2</a>
               Non-alcoholic beverages and brewed soft drinks
             </li>
             <li>
-              <a href="#">Standard 2.10.4</a>
+              <a href="https://www.legislation.gov.au/Series/F2015L00487" target="_blank" rel="noopener">Standard 2.10.4</a>
               Miscellaneous standards for other foods
             </li>
           </ul>
