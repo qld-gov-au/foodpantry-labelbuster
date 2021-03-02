@@ -30,7 +30,6 @@ jobs:
           key: foodpantry-labelbuster_node_modules-${{ hashFiles('package.json') }}
           restore-keys: |
             foodpantry-labelbuster_node_modules-${{ hashFiles('package.json') }}
-            foodpantry-labelbuster_node_modules
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
