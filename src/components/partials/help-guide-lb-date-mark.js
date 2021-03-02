@@ -335,10 +335,17 @@ export default () => html`
         </button>
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
-          Lot identification means a number or other information that identifies the premises where the food was prepared or packed, and the batch the food is part of. This may be useful when several batches of the same food are prepared, manufactured or packed on the same day. There is no set format for lot identification.
+            Lot identification means a number or other information that
+            identifies the premises where the food was prepared or packed, and
+            the batch the food is part of. This may be useful when several
+            batches of the same food are prepared, manufactured or packed on the
+            same day. There is no set format for lot identification.
           </p>
           <p>
-          It is not always necessary to include a lot identification on a label if a date mark, business name and address can identify the food.  If date marking is not required, lot identification must be added so that the food can be identified.
+            It is not always necessary to include a lot identification on a
+            label if a date mark, business name and address can identify the
+            food. If date marking is not required, lot identification must be
+            added so that the food can be identified.
           </p>
           <section>
             <h4>Further reading</h4>
