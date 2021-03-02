@@ -1404,6 +1404,14 @@
               "defaultValue": false
             },
             {
+              "label": "Once thawed, do not refreeze.",
+              "tableView": false,
+              "key": "onceThawedDoNotFreeze",
+              "type": "checkbox",
+              "input": true,
+              "defaultValue": false
+            },
+            {
               "label": "Once thawed, use within",
               "tableView": false,
               "key": "onceThawedUseWithin",
