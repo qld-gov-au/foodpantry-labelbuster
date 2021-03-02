@@ -3,6 +3,8 @@
  * @param {Boolean} newState expand or collapse state
  */
 export function modifyAccordionState(e, newState) {
+  // composedPath is not SUPPORTED IN IE11,
+  //  closest is working (supported using Babel polyfill)
   const accordionSection = e
     .composedPath()
     .find(element => element.classList.contains('qg-accordion'));
@@ -19,8 +21,8 @@ export function modifyAccordionState(e, newState) {
  * @param {HTMLElement} accordionSection html section
  */
 export const addExpandCollapse = (accordionSection) => {
-  const collapse = accordionSection.querySelector('label[for="collapse"]');
-  const expand = accordionSection.querySelector('label[for="expand"]');
+  const collapse = accordionSection.querySelector('.collapse');
+  const expand = accordionSection.querySelector('.expand');
   expand.addEventListener('click', e => modifyAccordionState(e, true));
   collapse.addEventListener('click', e => modifyAccordionState(e, false));
 };
