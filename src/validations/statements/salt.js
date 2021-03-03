@@ -10,8 +10,8 @@
     return;
   }
 
-  if (/[|&;$%"<>()\{\}+\\\/]/.test(input)) {
-    valid = 'Please do not include html or special characters e.g. not any of these |&;$%"<>(){}+\/';
+  if (!/^[a-zA-Z0-9" "% \/.,'°]*$/.test(input)) {
+    valid = 'Please do not include html or special characters e.g. not any of these % /';
     return;
   }
 
