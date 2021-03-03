@@ -13,9 +13,9 @@ if (input.length > 250)
   return;
 }
 
-if (/[|&;$%"<>()\{\}+\\\/]/.test(input)) {
-  valid = 'Please do not include html or special characters e.g. not any of these |&;$%"<>(){}+\/';
-  return;
+if (!/^[a-zA-Z0-9" .,'°()%\[\]<]*$/.test(input)) {
+    valid = 'You have entered an invalid character, please use only letters, numbers and these special characters ()%[]</.,\'°';
+    return;
 }
 
 valid = true;
