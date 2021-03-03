@@ -908,7 +908,7 @@ export default () => html`
               </li>
               <li>
                 <a
-                  href="http://www.comlaw.gov.au/Series/F2015L00427"
+                  href="https://www.legislation.gov.au/Series/F2015L00465"
                   target="_blank"
                   rel="nofollow"
                 >
