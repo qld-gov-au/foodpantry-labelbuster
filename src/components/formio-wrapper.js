@@ -41,6 +41,7 @@ export class FormioWrapper {
    */
   _attachHandlers() {
     this.wizard.on('initialized', () => {
+      console.log('initialized');
       this._firePageChangeEvent();
       this.scrollToTop(
         this.config.form.baseElement,
@@ -48,16 +49,22 @@ export class FormioWrapper {
       );
     });
     this.wizard.on('render', () => {
+      console.log(this.wizard.data);
+      console.log('render');
       this._firePageChangeEvent();
-      this.scrollToTop(
-        this.config.form.baseElement,
-        this.config.scroll.focusTarget,
-      );
+      if (this.wizard.page === 0) {
+        this.scrollToTop(
+          this.config.form.baseElement,
+          this.config.scroll.focusTarget,
+        );
+      }
     });
     this.wizard.on('change', () => {
+      console.log('change');
       this._firePageChangeEvent();
     });
     this.wizard.on('downloadPDF', () => {
+      console.log('download');
       this.wizard.data.sendEmail = false;
       this._downloadPDF();
     });
@@ -197,6 +204,7 @@ export class FormioWrapper {
   }
 
   _updateStorages() {
+    console.log(this.wizard.page);
     if (this.wizard.page === 0) {
       this._populateDataFromStorage(
         this.config.storage.type,
