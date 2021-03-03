@@ -41,7 +41,6 @@ export class FormioWrapper {
    */
   _attachHandlers() {
     this.wizard.on('initialized', () => {
-      console.log('initialized');
       this._firePageChangeEvent();
       this.scrollToTop(
         this.config.form.baseElement,
@@ -49,8 +48,6 @@ export class FormioWrapper {
       );
     });
     this.wizard.on('render', () => {
-      console.log(this.wizard.data);
-      console.log('render');
       this._firePageChangeEvent();
       if (this.wizard.page === 0) {
         this.scrollToTop(
@@ -60,11 +57,9 @@ export class FormioWrapper {
       }
     });
     this.wizard.on('change', () => {
-      console.log('change');
       this._firePageChangeEvent();
     });
     this.wizard.on('downloadPDF', () => {
-      console.log('download');
       this.wizard.data.sendEmail = false;
       this._downloadPDF();
     });
@@ -204,7 +199,6 @@ export class FormioWrapper {
   }
 
   _updateStorages() {
-    console.log(this.wizard.page);
     if (this.wizard.page === 0) {
       this._populateDataFromStorage(
         this.config.storage.type,
@@ -241,7 +235,6 @@ export class FormioWrapper {
       console.warn('Data corrupted, ignoring');
       newStorage = { ...data };
     }
-
     newStorage.page = page;
     newStorage._seenPages = seenPages;
 
@@ -254,6 +247,7 @@ export class FormioWrapper {
    */
   _populateDataFromStorage(storage, key) {
     const storedData = storage.getItem(key);
+    const termsStorage = this.config.terms.termsStorageType;
     if (storedData) {
       try {
         this.storedData = JSON.parse(storedData);
@@ -262,9 +256,11 @@ export class FormioWrapper {
         this.wizard.page = this.storedData.page;
         delete this.storedData.page;
         this.wizard.data = this.storedData;
-        this.wizard.data[this.config.terms.dataName] = this.config.terms
-          .termsStorageType.getItem(this.config.terms.termsStorageName);
-        this.submissionData = this.wizard.data;
+        this.wizard.data[this.config.terms.dataName] = termsStorage
+          .getItem(this.config.terms.termsStorageName);
+        if (this.wizard._data) {
+          this.wizard._data[this.config.terms.dataName] = true;
+        }
       } catch (error) {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
@@ -282,8 +278,10 @@ export class FormioWrapper {
           }
         }
       });
-      if (this.wizard.page) {
-        loadPage = loadPage === 0 ? this.wizard.page : loadPage;
+
+      loadPage = loadPage === 0 ? this.wizard.page : loadPage;
+
+      if (loadPage !== 0) {
         this._goToPage(loadPage);
       }
     }
@@ -296,7 +294,11 @@ export class FormioWrapper {
     this.config.terms.termsStorageType.clear();
     this.config.storage.type.clear();
     this.wizard.resetValue();
-    this.wizard.data = {};
+    delete this.wizard.data;
+    this.wizard._seenPages = [];
+    delete this.wizard._data;
+    delete this.wizard.page;
+
     this.config.storage.type.removeItem(this.config.form.title);
   }
 
