@@ -5,7 +5,7 @@
     return;
   }
 
-  if (data.statementsSummary.Alcohol  && input.length > 1000) {
+  if (data.statementsSummary.Alcohol && input.length > 1000) {
     valid = "The food containing alcohol details must have less than 1000 characters.";
     return;
   }
