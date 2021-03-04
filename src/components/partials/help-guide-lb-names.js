@@ -868,9 +868,17 @@ export default () => html`
           <p>
             <b>If the food is non-alcoholic or brewed soft drink:</b>
             <br />
-            Non-alcoholic drinks and brewed soft drinks (eg fermented ginger
+            Non-alcoholic drinks and brewed soft drinks (e.g.: fermented ginger
             beer or kombucha) must not suggest the product is an alcoholic
-            beverage.
+            beverage. There is a possible risk that brewed soft drinks may
+            <button
+              data-accordion-item="food-names-alcohol"
+              class="accordion-btn"
+            >
+              contain alcohol
+            </button>
+            which need extra labelling requirements.  We recommend you seek
+            professional advice to prepare your food label.
           </p>
 
           <p>
@@ -908,7 +916,7 @@ export default () => html`
               </li>
               <li>
                 <a
-                  href="http://www.comlaw.gov.au/Series/F2015L00427"
+                  href="https://www.legislation.gov.au/Series/F2015L00465"
                   target="_blank"
                   rel="nofollow"
                 >

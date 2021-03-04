@@ -104,21 +104,22 @@
       <tr>
         <td>Nutrition information panel</td>
         <td>
-          A Nutrition Information Panel must be added to your food label. The
-          Food Standards Australia New Zealand
-          <a
-            href="https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx"
-            rel="noopener"
-            target="_blank"
-          >
-            nutrition panel calculator
-          </a>
-          can help you prepare your nutrition information panel.
-
+          <p>
+            A Nutrition Information Panel must be added to your food label. The
+            Food Standards Australia New Zealand
+            <a
+              href="https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx"
+              rel="noopener"
+              target="_blank"
+            >
+              nutrition panel calculator
+            </a>
+            can help you prepare your nutrition information panel.
+          </p>
           <img
             src="https://www.qld.gov.au/?a=148984"
             alt="example food label"
-            class="src"
+            class="src img-fluid"
           />
         </td>
       </tr>
@@ -177,7 +178,7 @@
       </tr>
       <tr>
         <td>Date marks</td>
-        <td>{{data.dateMarkFood }}: {{data.bestDate}}</td>
+        <td><strong>{{data.dateMarkFood }}</strong>: {{data.bestDate}}</td>
       </tr>
       <tr>
         <td>Lot identification</td>
@@ -366,9 +367,12 @@
           <!-- prettier-ignore -->
           {{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' : `
           <p>
-            <strong>Date marks:</strong>`}} {{data.dateMarkFood &&
-            data.dateMarkFood === 'No date' ? '' : `${data.dateMarkFood} -
-            ${data.bestDate}
+            `}}
+            <strong
+              >{{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' :
+              `${data.dateMarkFood}</strong
+            >
+            - ${data.bestDate}
           </p>
           `}} {{data.batch ? `
           <p>
