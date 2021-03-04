@@ -366,9 +366,8 @@
         <div>
           <!-- prettier-ignore -->
           {{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' : `
-          <p>
-            <strong>Date marks:</strong>`}} {{data.dateMarkFood &&
-            data.dateMarkFood === 'No date' ? '' : `${data.dateMarkFood} -
+          <p>`}} <strong>{{data.dateMarkFood &&
+            data.dateMarkFood === 'No date' ? '' : `${data.dateMarkFood}</strong> -
             ${data.bestDate}
           </p>
           `}} {{data.batch ? `
