@@ -11,6 +11,7 @@ export class FormioWrapper {
     this.formElement = {};
     this.wizard = {};
     this.loaded = false;
+    this.lastNavigation = 0;
     this._addListeners(this.config.form.baseElement);
   }
 
@@ -42,18 +43,12 @@ export class FormioWrapper {
   _attachHandlers() {
     this.wizard.on('initialized', () => {
       this._firePageChangeEvent();
-      this.scrollToTop(
-        this.config.form.baseElement,
-        this.config.scroll.focusTarget,
-      );
+      this.scrollToTop();
     });
     this.wizard.on('render', () => {
       this._firePageChangeEvent();
       if (this.wizard.page === 0) {
-        this.scrollToTop(
-          this.config.form.baseElement,
-          this.config.scroll.focusTarget,
-        );
+        this.scrollToTop();
       }
     });
     this.wizard.on('change', () => {
@@ -80,10 +75,15 @@ export class FormioWrapper {
 
     baseObject.addEventListener('formiowrapperGoToNext', () => {
       this._goToNextPage();
+      this.scrollToTop();
+      if (this.config.extraTriggersOnActions.next) {
+        this._fireExtraEvent(this.config.extraTriggersOnActions.next);
+      }
     });
 
     baseObject.addEventListener('formiowrapperGoToPrevious', () => {
       this._goToPreviousPage();
+      this.scrollToTop();
       if (this.config.extraTriggersOnActions.previous) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.previous);
       }
@@ -99,6 +99,7 @@ export class FormioWrapper {
 
     baseObject.addEventListener('formiowrapperGoToPage', (event) => {
       this._goToPage(Number(event.detail.page));
+      this.scrollToTop();
       if (this.config.extraTriggersOnActions.goto) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.goto);
       }
@@ -199,7 +200,7 @@ export class FormioWrapper {
   }
 
   _updateStorages() {
-    if (this.wizard.page === 0) {
+    if (this.wizard.page === 0 && !this.lastNavigation) {
       this._populateDataFromStorage(
         this.config.storage.type,
         this.config.form.title,
@@ -237,7 +238,7 @@ export class FormioWrapper {
     }
     newStorage.page = page;
     newStorage._seenPages = seenPages;
-
+    newStorage.lastNavigation = this.lastNavigation;
     storage.setItem(key, JSON.stringify(newStorage));
   }
 
@@ -252,6 +253,7 @@ export class FormioWrapper {
       try {
         this.storedData = JSON.parse(storedData);
         this.wizard._seenPages = this.storedData._seenPages;
+        this.lastNavigation = this.storedData.lastNavigation;
         delete this.storedData._seenPages;
         this.wizard.page = this.storedData.page;
         delete this.storedData.page;
@@ -266,23 +268,10 @@ export class FormioWrapper {
         console.warn('Stored data corrupted, skipping');
       }
 
-      let loadPage = 0;
-      this.wizard._seenPages.forEach((page) => {
-        if (!this._checkPageValidity(
-          page,
-          this.wizard.pages,
-          this.wizard.data,
-        )) {
-          if (loadPage === 0) {
-            loadPage = page;
-          }
-        }
-      });
-
-      loadPage = loadPage === 0 ? this.wizard.page : loadPage;
-
-      if (loadPage !== 0) {
-        this._goToPage(loadPage);
+      console.log('Last navigation', this.lastNavigation);
+      if (this.lastNavigation !== 0) {
+        console.log('goto', this.lastNavigation);
+        this._goToPage(this.lastNavigation);
       }
     }
   }
@@ -293,13 +282,12 @@ export class FormioWrapper {
     if (!this.config.form.clearStorageOnCancel) return;
     this.config.terms.termsStorageType.clear();
     this.config.storage.type.clear();
-    this.wizard.resetValue();
     delete this.wizard.data;
-    this.wizard._seenPages = [];
     delete this.wizard._data;
+    this.wizard._seenPages = [];
     delete this.wizard.page;
-
     this.config.storage.type.removeItem(this.config.form.title);
+    this.wizard.resetValue();
   }
 
   /**
@@ -532,6 +520,7 @@ export class FormioWrapper {
         targetPage,
       );
       this._goToPage(targetPage);
+      this.lastNavigation = targetPage;
       return true;
     }
     this._updateIfCompleted(this.wizard.page + 1, this.wizard.pages);
@@ -543,6 +532,7 @@ export class FormioWrapper {
       this.wizard._seenPages,
       this.wizard.page + 1,
     );
+    this.lastNavigation = this.wizard.page + 1;
     this.wizard.nextPage();
     return true;
   }
@@ -581,6 +571,7 @@ export class FormioWrapper {
   _goToPreviousPage() {
     if (!this.loaded) {
       this.notLoaded();
+      return false;
     }
     if (
       this._shouldPreviousPageBeSkipped(this.wizard.page, this.wizard.pages)
@@ -598,6 +589,7 @@ export class FormioWrapper {
         this.wizard._seenPages,
         targetPage,
       );
+      this.lastNavigation = targetPage;
       this._goToPage(targetPage);
       return true;
     }
@@ -608,6 +600,7 @@ export class FormioWrapper {
       this.wizard._seenPages,
       this.wizard.page - 1,
     );
+    this.lastNavigation = this.wizard.page - 1;
     this.wizard.prevPage();
     return true;
   }
@@ -631,8 +624,13 @@ export class FormioWrapper {
     );
 
     this._updateIfCompleted(pageNo, this.wizard.pages);
-    this.wizard.setPage(pageNo);
-    this.wizard.redraw();
+    window.wizard = this.wizard;
+    // Oddness... seems it doesn't set page the first time.
+    this.wizard.setPage(pageNo)
+      .then(() => {
+        this.wizard.setPage(pageNo);
+        this.wizard.redraw();
+      });
     return true;
   }
 
@@ -654,7 +652,10 @@ export class FormioWrapper {
    * @param {HTMLElement} baseElement the base element for scrolling (window)
    * @param {HTMLElement} focusTarget the element for query selecting (document)
    */
-  scrollToTop(baseElement, focusTarget) {
+  scrollToTop(
+    baseElement = this.config.form.baseElement,
+    focusTarget = this.config.scroll.focusTarget,
+  ) {
     if (this.config.scroll.target !== -1) {
       baseElement.scroll({
         top: this.config.scroll.target,
