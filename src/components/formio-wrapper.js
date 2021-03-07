@@ -268,9 +268,7 @@ export class FormioWrapper {
         console.warn('Stored data corrupted, skipping');
       }
 
-      console.log('Last navigation', this.lastNavigation);
       if (this.lastNavigation !== 0) {
-        console.log('goto', this.lastNavigation);
         this._goToPage(this.lastNavigation);
       }
     }
