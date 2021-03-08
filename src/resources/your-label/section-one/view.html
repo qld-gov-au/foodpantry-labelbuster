@@ -33,6 +33,9 @@
       <a href="#exemptions">Exemptions</a>
     </li>
     <li>
+      <a href="#extra-requirements">Food with extra requirements</a>
+    </li>
+    <li>
       <a href="#download-email">Download or email your summary</a>
     </li>
     <li>
@@ -80,9 +83,8 @@
       <tr>
         <td>Ingredients</td>
         <td>
-          <b>Ingredients:</b>
           <!-- prettier-ignore -->
-          {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) || 'no data provided'}}
+          {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) }}
         </td>
       </tr>
       <tr>
@@ -102,21 +104,22 @@
       <tr>
         <td>Nutrition information panel</td>
         <td>
-          A Nutrition Information Panel must be added to your food label. The
-          Food Standards Australia New Zealand
-          <a
-            href="https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx"
-            rel="noopener"
-            target="_blank"
-          >
-            nutrition panel calculator
-          </a>
-          can help you prepare your nutrition information panel.
-
+          <p>
+            A Nutrition Information Panel must be added to your food label. The
+            Food Standards Australia New Zealand
+            <a
+              href="https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx"
+              rel="noopener"
+              target="_blank"
+            >
+              nutrition panel calculator
+            </a>
+            can help you prepare your nutrition information panel.
+          </p>
           <img
             src="https://www.qld.gov.au/?a=148984"
             alt="example food label"
-            class="src"
+            class="src img-fluid"
           />
         </td>
       </tr>
@@ -169,17 +172,17 @@
             (Object.values(data.statementsSummary).length !== 0)) ? 'Note:
             Warning statements must be a minimum size of type of 3 mm. In the
             case of small packages, a minimum size of type of 1.5 mm is
-            required.':'no data provided' }}
+            required.' }}
           </p>
         </td>
       </tr>
       <tr>
         <td>Date marks</td>
-        <td>{{data.dateMarkFood }}: {{data.bestDate || 'no data provided'}}</td>
+        <td><strong>{{data.dateMarkFood }}</strong>: {{data.bestDate}}</td>
       </tr>
       <tr>
         <td>Lot identification</td>
-        <td>{{data.batch || 'no data provided'}}</td>
+        <td>{{data.batch}}</td>
       </tr>
       <tr>
         <td>Storage conditions and directions for use</td>
@@ -255,7 +258,7 @@
           </p>
           <!-- prettier-ignore -->
           {{(Object.values(data.directionsForUse).some(valueCheck =>  valueCheck===true) ||
-          Object.values(data.storageConditions).some(valueCheck => valueCheck===true))? '':'no data provided'}}
+          Object.values(data.storageConditions).some(valueCheck => valueCheck===true))? ''}}
         </td>
       </tr>
       <tr>
@@ -364,9 +367,12 @@
           <!-- prettier-ignore -->
           {{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' : `
           <p>
-            <strong>Date marks:</strong>`}} {{data.dateMarkFood &&
-            data.dateMarkFood === 'No date' ? '' : `${data.dateMarkFood} -
-            ${data.bestDate}
+            `}}
+            <strong
+              >{{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' :
+              `${data.dateMarkFood}</strong
+            >
+            - ${data.bestDate}
           </p>
           `}} {{data.batch ? `
           <p>
@@ -503,6 +509,11 @@
       </a>
     </li>
   </ul>
+</section>
+
+<section>
+  <a name="extra-requirements"></a>
+  <h2>Food with extra requirements</h2>
   <p>There are extra requirements for:</p>
   <ul>
     <li>

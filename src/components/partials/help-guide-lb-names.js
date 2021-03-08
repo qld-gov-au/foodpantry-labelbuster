@@ -5,41 +5,20 @@ export default () => html`
   <div class="side-padding vertical-padding">
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
-      <div class="controls-group">
-        <input
-          type="radio"
-          name="control"
-          id="expand"
+      <div class="qg-acc-controls">
+        <button
           class="controls expand"
-          value="expand"
-          role="radio"
-        />
-
-        <label
-          for="expand"
-          class="controls"
           @click="${e => modifyAccordionState(e, true)}"
         >
           Expand all
-        </label>
+        </button>
         <span class="controls">|</span>
-
-        <input
-          type="radio"
-          name="control"
-          id="collapse"
+        <button
           class="controls collapse"
-          value="collapse"
-          role="radio"
-        />
-
-        <label
-          for="collapse"
-          class="controls"
           @click="${e => modifyAccordionState(e, false)}"
         >
           Collapse all
-        </label>
+        </button>
       </div>
 
       <article>
@@ -255,41 +234,20 @@ export default () => html`
     <br /><br />
     <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
-      <div class="controls-group">
-        <input
-          type="radio"
-          name="control"
-          id="expand"
+      <div class="qg-acc-controls">
+        <button
           class="controls expand"
-          value="expand"
-          role="radio"
-        />
-
-        <label
-          for="expand"
-          class="controls"
           @click="${e => modifyAccordionState(e, true)}"
         >
           Expand all
-        </label>
+        </button>
         <span class="controls">|</span>
-
-        <input
-          type="radio"
-          name="control"
-          id="collapse"
+        <button
           class="controls collapse"
-          value="collapse"
-          role="radio"
-        />
-
-        <label
-          for="collapse"
-          class="controls"
           @click="${e => modifyAccordionState(e, false)}"
         >
           Collapse all
-        </label>
+        </button>
       </div>
 
       <article>
@@ -910,9 +868,17 @@ export default () => html`
           <p>
             <b>If the food is non-alcoholic or brewed soft drink:</b>
             <br />
-            Non-alcoholic drinks and brewed soft drinks (eg fermented ginger
+            Non-alcoholic drinks and brewed soft drinks (e.g.: fermented ginger
             beer or kombucha) must not suggest the product is an alcoholic
-            beverage.
+            beverage. There is a possible risk that brewed soft drinks may
+            <button
+              data-accordion-item="food-names-alcohol"
+              class="accordion-btn"
+            >
+              contain alcohol
+            </button>
+            which need extra labelling requirements.  We recommend you seek
+            professional advice to prepare your food label.
           </p>
 
           <p>
@@ -950,7 +916,7 @@ export default () => html`
               </li>
               <li>
                 <a
-                  href="http://www.comlaw.gov.au/Series/F2015L00427"
+                  href="https://www.legislation.gov.au/Series/F2015L00465"
                   target="_blank"
                   rel="nofollow"
                 >

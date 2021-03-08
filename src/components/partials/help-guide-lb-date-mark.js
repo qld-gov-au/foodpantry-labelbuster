@@ -5,41 +5,20 @@ export default () => html`
   <div class="side-padding vertical-padding">
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
-      <div class="controls-group">
-        <input
-          type="radio"
-          name="control"
-          id="expand"
+      <div class="qg-acc-controls">
+        <button
           class="controls expand"
-          value="expand"
-          role="radio"
-        />
-
-        <label
-          for="expand"
-          class="controls"
           @click="${e => modifyAccordionState(e, true)}"
         >
           Expand all
-        </label>
+        </button>
         <span class="controls">|</span>
-
-        <input
-          type="radio"
-          name="control"
-          id="collapse"
+        <button
           class="controls collapse"
-          value="collapse"
-          role="radio"
-        />
-
-        <label
-          for="collapse"
-          class="controls"
           @click="${e => modifyAccordionState(e, false)}"
         >
           Collapse all
-        </label>
+        </button>
       </div>
 
       <article>
@@ -357,12 +336,16 @@ export default () => html`
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
             Lot identification means a number or other information that
-            identifies the premises where the food was prepared or packed and
-            the batch the food is part of. It is not necessary to include lot
-            identification on a label because the date mark, business name and
-            address can be used instead. Additional information that is part of
-            a system devised by the manufacturer or packer can be used for lot
-            identification.
+            identifies the premises where the food was prepared or packed, and
+            the batch the food is part of. This may be useful when several
+            batches of the same food are prepared, manufactured or packed on the
+            same day. There is no set format for lot identification.
+          </p>
+          <p>
+            It is not always necessary to include a lot identification on a
+            label if a date mark, business name and address can identify the
+            food. If date marking is not required, lot identification must be
+            added so that the food can be identified.
           </p>
           <section>
             <h4>Further reading</h4>
@@ -447,36 +430,20 @@ export default () => html`
     </section>
     <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
-      <div class="controls-group">
-        <input
-          type="radio"
-          name="control"
-          id="expand"
+      <div class="qg-acc-controls">
+        <button
           class="controls expand"
-          value="expand"
-          role="radio"
-        />
-        <label
-          for="collapse"
-          class="controls"
           @click="${e => modifyAccordionState(e, true)}"
-          >Expand all</label
         >
+          Expand all
+        </button>
         <span class="controls">|</span>
-        <input
-          type="radio"
-          name="control"
-          id="collapse"
+        <button
           class="controls collapse"
-          value="collapse"
-          role="radio"
-        />
-        <label
-          for="collapse"
-          class="controls"
           @click="${e => modifyAccordionState(e, false)}"
-          >Collapse all</label
         >
+          Collapse all
+        </button>
       </div>
       <article>
         <input
