@@ -1406,7 +1406,7 @@
             {
               "label": "Once thawed, do not refreeze.",
               "tableView": false,
-              "key": "onceThawedDoNotFreeze",
+              "key": "onceThawedDoNotRefreeze",
               "type": "checkbox",
               "input": true,
               "defaultValue": false
@@ -2790,7 +2790,7 @@
               "input": false
             },
             {
-              "label": "A food (including an alcoholic beverage) that contains more than 1.15% alcohol by volume",
+              "label": "A food that contains more than 1.15% alcohol by volume",
               "tableView": false,
               "defaultValue": false,
               "key": "Alcohol",

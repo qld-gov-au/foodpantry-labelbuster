@@ -178,7 +178,7 @@
       </tr>
       <tr>
         <td>Date marks</td>
-        <td>{{data.dateMarkFood }}: {{data.bestDate}}</td>
+        <td><strong>{{data.dateMarkFood }}</strong>: {{data.bestDate}}</td>
       </tr>
       <tr>
         <td>Lot identification</td>
@@ -367,9 +367,12 @@
           <!-- prettier-ignore -->
           {{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' : `
           <p>
-            <strong>Date marks:</strong>`}} {{data.dateMarkFood &&
-            data.dateMarkFood === 'No date' ? '' : `${data.dateMarkFood} -
-            ${data.bestDate}
+            `}}
+            <strong
+              >{{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' :
+              `${data.dateMarkFood}</strong
+            >
+            - ${data.bestDate}
           </p>
           `}} {{data.batch ? `
           <p>
