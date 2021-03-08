@@ -9,11 +9,10 @@
     valid = "The edible oil details must have less than 1000 characters.";
     return;
   }
-  // check if not a valid character
-  if (!/^[a-zA-Z0-9 "().,'°]*$/.test(input)) {
-    valid = 'You have entered an invalid character, please use only letters, numbers and these special characters ()°",\'';
+  // check for special characters
+  if (/[|&;$%"<>{}+/]/.test(input)) {
+    valid = 'Please do not special characters e.g. not any of these | & ; $ % " < > { } + /';
     return;
   }
-
   valid = true;
 })();
