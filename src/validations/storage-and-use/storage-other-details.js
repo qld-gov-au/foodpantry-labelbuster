@@ -16,7 +16,7 @@
 
   // check for special characters
   if (/[|&;$%"<>(){/}+]/.test(input)) {
-    valid = 'Please do not special characters e.g. not any of these | & ; $ % " < > ( ){ } + /';
+    valid = 'Please do not use special characters e.g. not any of these | & ; $ % " < > ( ){ } + /';
     return;
   }
 
