@@ -674,6 +674,9 @@ export class FormioWrapper {
    */
   _formSubmission() {
     this.pdfInstance.data = this.submissionData;
+    if (this.submissionData.uuid) {
+      localStorage.setItem('uuid', this.submissionData.uuid);
+    }
     return this.pdfInstance.submit();
   }
 
@@ -690,38 +693,42 @@ export class FormioWrapper {
     downloadButton.disabled = true;
 
     this._formSubmission().then((successBody) => {
-      const { pdfDownloadName } = this.config.form;
-      const formioWrapper = this;
-      const xhr = new XMLHttpRequest();
-      xhr.open(
-        'GET',
-        `${this.submissionEndpoint}/${successBody._id}/download`,
-        true,
-      );
-      xhr.responseType = 'arraybuffer';
-      xhr.onload = function openPdf() {
-        if (this.status === 200) {
-          const blob = new Blob([this.response], { type: 'application/pdf' });
-          if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-            // IE 11
-            window.navigator.msSaveOrOpenBlob(blob);
-          } else {
-            // Other browsers
-            const data = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = data;
-            link.download = pdfDownloadName(successBody.data);
-            link.click();
-            setTimeout(() => {
-              // For Firefox
-              window.URL.revokeObjectURL(data);
-            }, 100);
+      if (successBody.data.uuid === localStorage.getItem('uuid')) {
+        const { pdfDownloadName } = this.config.form;
+        const formioWrapper = this;
+        const xhr = new XMLHttpRequest();
+        xhr.open(
+          'GET',
+          `${this.submissionEndpoint}/${successBody._id}/download`,
+          true,
+        );
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function openPdf() {
+          if (this.status === 200) {
+            const blob = new Blob([this.response], {
+              type: 'application/pdf',
+            });
+            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+              // IE 11
+              window.navigator.msSaveOrOpenBlob(blob);
+            } else {
+              // Other browsers
+              const data = window.URL.createObjectURL(blob);
+              const link = document.createElement('a');
+              link.href = data;
+              link.download = pdfDownloadName(successBody.data);
+              link.click();
+              setTimeout(() => {
+                // For Firefox
+                window.URL.revokeObjectURL(data);
+              }, 100);
+            }
           }
-        }
-        downloadButton.disabled = false;
-        formioWrapper.requestedDownload = false;
-      };
-      xhr.send();
+          downloadButton.disabled = false;
+          formioWrapper.requestedDownload = false;
+        };
+        xhr.send();
+      }
     });
   }
 
