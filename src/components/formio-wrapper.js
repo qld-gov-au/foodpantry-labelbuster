@@ -253,7 +253,7 @@ export class FormioWrapper {
       try {
         this.storedData = JSON.parse(storedData);
         this.wizard._seenPages = this.storedData._seenPages;
-        this.lastNavigation = this.storedData.lastNavigation;
+        this.lastNavigation = this.storedData.lastNavigation || 0;
         delete this.storedData._seenPages;
         this.wizard.page = this.storedData.page;
         delete this.storedData.page;
