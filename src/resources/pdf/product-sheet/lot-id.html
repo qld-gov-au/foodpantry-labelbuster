@@ -4,6 +4,7 @@
   </div>
   <div>
     <!-- prettier-ignore -->
-    {{data.batch}}
+    {{(data.batch || data.noDateBatch) ? (data.batch || data.noDateBatch)
+      : 'no data provided'}}
   </div>
 </div>
