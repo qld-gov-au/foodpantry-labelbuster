@@ -75,8 +75,8 @@
       <tr>
         <td>Ingredients</td>
         <td>
-         <!-- prettier-ignore -->
-         {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) }}
+          <!-- prettier-ignore -->
+          {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) }}
         </td>
       </tr>
       <tr>
@@ -119,10 +119,10 @@
           <p>
             <b>
               {{data && Object.values(data.allergyDeclarations).every(valueCheck
-                => valueCheck===false) ? '':'Contains:'}}
+              => valueCheck===false) ? '':'Contains:'}}
             </b>
-              <!-- prettier-ignore -->
-              {{
+            <!-- prettier-ignore -->
+            {{
                 _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
                   if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
                   return acc + ` ${val}, `;
@@ -317,10 +317,10 @@
         <p>{{data.productDescription}}</p>
 
         {{data && Object.keys(data.storageConditions).reduce((a, e) => a ||
-          data.storageConditions[e] === true, false) ? `<b>Storage conditions:</b
-          >`:''}}
-          <!-- prettier-ignore -->
-          {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
+        data.storageConditions[e] === true, false) ? `<b>Storage conditions:</b
+        >`:''}}
+        <!-- prettier-ignore -->
+        {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
             {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
             {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
             {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
@@ -328,12 +328,12 @@
             {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
             {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
             {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
-          <br />
-          {{data && Object.keys(data.directionsForUse).reduce((a, e) => a ||
-          data.directionsForUse[e] === true, false) ? `<b>Directions for use:</b>`
-          : ''}}
-          <!-- prettier-ignore -->
-          {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
+        <br />
+        {{data && Object.keys(data.directionsForUse).reduce((a, e) => a ||
+        data.directionsForUse[e] === true, false) ? `<b>Directions for use:</b>`
+        : ''}}
+        <!-- prettier-ignore -->
+        {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
             {{ data && data.directionsForUse.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}
             {{ data && data.directionsForUse.shakeWellBeforeUse ?  'Shake well before use.' : '' }}
             {{ data && data.directionsForUse.foodShouldBeDrainedBeforeConsumption ? 'Food should be drained before consumption.' : '' }}
