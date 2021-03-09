@@ -93,7 +93,7 @@ describe('Formio Wrapper Tests.', () => {
 
   it('_gotoPage triggers the right wizard function', async () => {
     wrapper.loaded = true;
-    wrapper.wizard.setPage = () => {};
+    wrapper.wizard.setPage = () => Promise.resolve(true);
     wrapper._updateStorage = () => {};
     wrapper.wizard.pages = [
       {
@@ -588,7 +588,7 @@ describe('Formio Wrapper Tests.', () => {
     wrapper._shouldNextPageBeSkipped = () => {
       return true;
     };
-    wrapper.wizard.setPage = () => {};
+    wrapper.wizard.setPage = () => Promise.resolve(true);
     const spied = spy(wrapper, '_goToPage');
     wrapper._goToNextPage();
     spied.restore();
