@@ -118,17 +118,16 @@
         <td>
           <p>
             <b>
-              {{data &&
-              Object.values(data.allergyDeclarations).every(valueCheck=>
-              valueCheck===false) ? '':'Contains:'}}
-              </b>
-                  <!-- prettier-ignore -->
-                  {{
-                    _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
-                      if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
-                      return acc + ` ${val}, `;
-                    }, '')
-                  }}
+              {{data && Object.values(data.allergyDeclarations).every(valueCheck
+                => valueCheck===false) ? '':'Contains:'}}
+            </b>
+              <!-- prettier-ignore -->
+              {{
+                _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
+                  if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+                  return acc + ` ${val}, `;
+                }, '')
+              }}
             <br />
           </p>
           <p class="wrap">
