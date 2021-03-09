@@ -4,8 +4,8 @@
 <section>
   <div class="alert alert-success" role="alert">
     <h2>
-      <i class="fa fa-check-circle"></i>
-      Congratulations! You have completed all the steps in Label Buster.
+      <i class="fa fa-check-circle"></i> Congratulations! You have completed all
+      the steps in Label Buster.
     </h2>
     <p>
       Using your responses to each question, Label Buster has generated a
@@ -17,7 +17,6 @@
     requirements. You may choose to get advice from a labelling consultant to
     make sure that your label complies with the Food Standards Code.
   </p>
-
   <p>On this page, you will find:</p>
   <ul>
     <li>
@@ -43,41 +42,34 @@
     </li>
   </ul>
 </section>
-
 <section>
   <a name="product-sheet"></a>
   <h2>Product Sheet</h2>
   <p>
     You can take this information to a printer or graphic designer to create a
     label or use your own tools/templates. When creating your food label, you
-    must ensure you meet the
-    <a href="#legibility-requirements">
-      <span class="title">legibility requirements</span> </a
+    must ensure you meet the<a href="#legibility-requirements"
+      ><span class="title">legibility requirements</span></a
     >, such as minimum type size.
   </p>
-
   <table class="table">
     <tbody>
       <tr>
         <td>Food name and description</td>
         <td>
           {{data.foodName || 'no name provided'}}
-          <br />
-          {{data.productDescription || 'no description provided'}}
+          <br />{{data.productDescription || 'no description provided'}}
         </td>
       </tr>
       <tr>
         <td>Business details</td>
         <td>
           <b>{{data.businessName}}</b>
-          <br />
-          {{data.addressDetails.addressLine1}}
-          <br />
-          {{data.addressDetails.addressLine2}}
-          <br />
-          <span class="suburb">{{data.addressDetails.addressLine3}}</span>
-          <br />
-          {{data.addressDetails.state1}}, {{data.addressDetails.postcode}}
+          <br />{{data.addressDetails.addressLine1}}
+          <br />{{data.addressDetails.addressLine2}} <br /><span class="suburb"
+            >{{data.addressDetails.addressLine3}}</span
+          >
+          <br />{{data.addressDetails.state1}},{{data.addressDetails.postcode}}
         </td>
       </tr>
       <tr>
@@ -91,8 +83,7 @@
         <td>Weight</td>
         <td>
           For information on how to comply with weights and measures laws visit
-          the
-          <a
+          the<a
             href="https://www.measurement.gov.au"
             rel="noopener"
             target="_blank"
@@ -106,8 +97,7 @@
         <td>
           <p>
             A Nutrition Information Panel must be added to your food label. The
-            Food Standards Australia New Zealand
-            <a
+            Food Standards Australia New Zealand<a
               href="https://www.foodstandards.gov.au/industry/npc/Pages/Nutrition-Panel-Calculator-introduction.aspx"
               rel="noopener"
               target="_blank"
@@ -133,14 +123,13 @@
             </b>
             <!-- prettier-ignore -->
             {{
-              _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
-                if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
-                return acc + ` ${val}, `;
-              }, '')
-            }}
+                _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
+                  if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+                  return acc + ` ${val}, `;
+                }, '')
+              }}
             <br />
           </p>
-
           <p class="wrap">
             <!-- prettier-ignore -->
             {{ data && data.statementsSummary.egg ? 'The product is unpasteurised.' : '' }}
@@ -165,24 +154,32 @@
           </p>
           <p>
             <!-- prettier-ignore -->
-            {{data && ((!(Object.values(data.allergyDeclarations).every(valueCheck =>
+            {{data &&
+            ((!(Object.values(data.allergyDeclarations).every(valueCheck=>
             valueCheck===false)) && Object.values(data.statementsSummary).length
-            !== 0) || !(Object.values(data.allergyDeclarations).every(valueCheck
-            => valueCheck===false)) ||
-            (Object.values(data.statementsSummary).length !== 0)) ? 'Note:
+            !==0) ||
+            !(Object.values(data.allergyDeclarations).every(valueCheck=>
+            valueCheck===false)) ||
+            (Object.values(data.statementsSummary).length !==0)) ? 'Note:
             Warning statements must be a minimum size of type of 3 mm. In the
             case of small packages, a minimum size of type of 1.5 mm is
-            required.' }}
+            required.':'no data provided'}}
           </p>
         </td>
       </tr>
       <tr>
         <td>Date marks</td>
-        <td><strong>{{data.dateMarkFood }}</strong>: {{data.bestDate}}</td>
+        <td>
+          <strong>{{data.dateMarkFood}}</strong>:{{data.bestDate || 'no data
+          provided'}}
+        </td>
       </tr>
       <tr>
         <td>Lot identification</td>
-        <td>{{data.batch}}</td>
+        <td>
+          {{(data.batch || data.noDateBatch) ? (data.batch || data.noDateBatch)
+          : 'no data provided'}}
+        </td>
       </tr>
       <tr>
         <td>Storage conditions and directions for use</td>
@@ -207,58 +204,59 @@
             valueCheck===true) ? 'Directions for use:':''}}
           </b>
           <p>
-            {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.'
-            : '' }} {{ data && data.directionsForUse.refrigerateAfterPurchase ?
-            'Refrigerate after opening.' : '' }} {{ data &&
+            {{data && data.directionsForUse.washBeforeUse ? 'Wash before use.' :
+            ''}}{{data && data.directionsForUse.refrigerateAfterPurchase ?
+            'Refrigerate after opening.' : ''}}{{data &&
             data.directionsForUse.shakeWellBeforeUse ? 'Shake well before use.'
-            : '' }} {{ data &&
+            : ''}}{{data &&
             data.directionsForUse.foodShouldBeDrainedBeforeConsumption ? 'Food
-            should be drained before consumption.' : '' }} {{ data &&
+            should be drained before consumption.' : ''}}{{data &&
             data.directionsForUse.onceOpenedStoreInAnAirtightContainer ? 'Once
-            opened, store in an airtight container.' : '' }} {{ data &&
+            opened, store in an airtight container.' : ''}}{{data &&
             data.directionsForUse.onceOpenedKeepRefrigerated ? 'Once opened,
-            keep refrigerated.' : '' }} {{ data &&
+            keep refrigerated.' : ''}}{{data &&
             data.directionsForUse.consumeWithin ? `Consume within
-            ${data.directionsForUse.consumeWithinDaysOfOpening || 0 } days of
-            opening.` : '' }} {{ data && data.directionsForUse.thawBeforeCooking
-            ? 'Thaw before cooking.' : '' }} {{ data &&
-            data.directionsForUse.cookFromFrozen ? 'Cook from frozen.': '' }} {{
-            data && data.directionsForUse.onceThawedDoNotRefreeze ? 'Once
-            thawed, do not refreeze.' : '' }} {{ data &&
+            ${data.directionsForUse.consumeWithinDaysOfOpening || 0}days of
+            opening.` : ''}}{{data && data.directionsForUse.thawBeforeCooking ?
+            'Thaw before cooking.' : ''}}{{data &&
+            data.directionsForUse.cookFromFrozen ? 'Cook from frozen.':
+            ''}}{{data && data.directionsForUse.onceThawedDoNotRefreeze ? 'Once
+            thawed, do not refreeze.' : ''}}{{data &&
             data.directionsForUse.onceThawedUseWithin ? `Once thawed, use within
-            ${data.directionsForUse.onceThawedUseWithinHours} hours.`: '' }} {{
-            data &&
+            ${data.directionsForUse.onceThawedUseWithinHours}hours.`: ''}}{{data
+            &&
             data.directionsForUse.thisIsARawProductAndMustBeCookedBeforeEating ?
-            'This is a raw product and must be cooked before eating.' : '' }} {{
-            data && data.directionsForUse.notSuitableForMicrowaveCooking ? 'Not
-            suitable for microwave cooking.' : '' }} {{ data &&
+            'This is a raw product and must be cooked before eating.' :
+            ''}}{{data && data.directionsForUse.notSuitableForMicrowaveCooking ?
+            'Not suitable for microwave cooking.' : ''}}{{data &&
             data.directionsForUse.microwaveOn ? `Microwave on
-            ${data.directionsForUse.microwavePower || 'low'} for
-            ${data.directionsForUse.microwaveOnPowerForMinutes || 0} minutes.`:
-            '' }} {{ data && data.directionsForUse.cookFor ? `Cook for
-            ${data.directionsForUse.cookForTime||0} minutes at
-            ${data.directionsForUse.cookForTimeAtTemperature||0} °C.` : '' }} {{
-            data && data.directionsForUse.cookUntilSteamingHotInTheMiddle ?
-            'Cook until steaming hot in the middle.' : '' }} {{ data &&
+            ${data.directionsForUse.microwavePower || 'low'}for
+            ${data.directionsForUse.microwaveOnPowerForMinutes || 0}minutes.`:
+            ''}}{{data && data.directionsForUse.cookFor ? `Cook for
+            ${data.directionsForUse.cookForTime||0}minutes at
+            ${data.directionsForUse.cookForTimeAtTemperature||0}°C.` :
+            ''}}{{data && data.directionsForUse.cookUntilSteamingHotInTheMiddle
+            ? 'Cook until steaming hot in the middle.' : ''}}{{data &&
             data.directionsForUse.cautionContentsMayBeHotAfterHeating ?
-            'Caution, contents may be hot after heating.' : '' }} {{ data &&
+            'Caution, contents may be hot after heating.' : ''}}{{data &&
             data.directionsForUse.allowToStandFor ? `Allow to stand for
-            ${data.directionsForUse.allowToStandForMinutesBeforeServing||0}
-            minutes before serving.` : '' }} {{ data &&
+            ${data.directionsForUse.allowToStandForMinutesBeforeServing||0}minutes
+            before serving.` : ''}}{{data &&
             data.directionsForUse.doNotRefrigerateOrReheatOnceHeated ? 'Do not
-            refrigerate or reheat once heated.': '' }} {{ data &&
+            refrigerate or reheat once heated.': ''}}{{data &&
             data.directionsForUse.careHasBeenTakenToRemoveAllBonesFromThisProductHoweverSomeBonesMayRemain
             ? 'Care has been taken to remove all bones from this product,
-            however some bones may remain.' : '' }} {{ data &&
+            however some bones may remain.' : ''}}{{data &&
             data.directionsForUse.otherDirectionsForUse ?
-            `${data.directionsForUse.otherDirectionsForUseDetails || ''}` : ''
-            }} {{ data && data.directionsForUse.cookingPreparationInstructions ?
+            `${data.directionsForUse.otherDirectionsForUseDetails || ''}` :
+            ''}}{{data && data.directionsForUse.cookingPreparationInstructions ?
             `${data.directionsForUse.cookingPreparationInstructionsDetails ||
-            ''}` : '' }}
+            ''}` : ''}}
           </p>
-          <!-- prettier-ignore -->
-          {{(Object.values(data.directionsForUse).some(valueCheck =>  valueCheck===true) ||
-          Object.values(data.storageConditions).some(valueCheck => valueCheck===true))? ''}}
+          {{(Object.values(data.directionsForUse).some(valueCheck=>
+          valueCheck===true) ||
+          Object.values(data.storageConditions).some(valueCheck=>
+          valueCheck===true))? '':'no data provided'}}
         </td>
       </tr>
       <tr>
@@ -266,20 +264,17 @@
         <td>
           <p>
             Making voluntary claims about your food is very complex and you are
-            recommended to seek professional advice.
-            <br />
-            Please note, that making a claim on your food has other requirements
-            not addressed in Label Buster such as additional sections in your
-            nutritional information panel and requirements under Australian
-            Consumer Law.
+            recommended to seek professional advice. <br />Please note, that
+            making a claim on your food has other requirements not addressed in
+            Label Buster such as additional sections in your nutritional
+            information panel and requirements under Australian Consumer Law.
           </p>
         </td>
       </tr>
       <tr>
         <td>Country of origin</td>
         <td>
-          Information on how to calculate and display mandatory
-          <a
+          Information on how to calculate and display mandatory<a
             href="https://www.accc.gov.au/business/advertising-promoting-your-business/country-of-origin-claims/country-of-origin-food-labelling"
             rel="noopener"
             target="_blank"
@@ -293,8 +288,7 @@
       <tr>
         <td>Health star rating</td>
         <td>
-          Information on how to calculate and display a voluntary
-          <a
+          Information on how to calculate and display a voluntary<a
             href="https://www.healthstarrating.gov.au/internet/healthstarrating/publishing.nsf/Content/guide-for-industry-document"
             rel="noopener"
             target="_blank"
@@ -307,7 +301,6 @@
     </tbody>
   </table>
 </section>
-
 <section>
   <a name="example-label"></a>
   <h2>Example of food label</h2>
@@ -321,7 +314,6 @@
     <div class="example-label">
       <div class="eg-col">
         <h3>{{data.foodName || 'no name provided'}}</h3>
-
         <p>{{data.productDescription}}</p>
 
         {{data && Object.keys(data.storageConditions).reduce((a, e) => a ||
@@ -329,65 +321,59 @@
         >`:''}}
         <!-- prettier-ignore -->
         {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
-          {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
-          {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
-          {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
-          {{ data && data.storageConditions && data.storageConditions.keepRefrigeratedAtOrBelow ? 'Keep refrigerated at or below '.concat(data.storageConditions.keepRefrigeratedAtOrBelowTemperature || 0, " \xB0C.") : '' }}
-          {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
-          {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
-          {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
+            {{ data && data.storageConditions.refrigerateAfterPurchase ? 'Refrigerate after purchase.' : '' }}
+            {{ data && data.storageConditions.refrigerateAfterOpening ? 'Refrigerate after opening.' : '' }}
+            {{ data && data.storageConditions.keepRefrigeratedAt ? `Keep refrigerated at ${data.storageConditions.keepRefrigeratedAtMinimum || 0} °C to ${data.storageConditions.keepRefrigeratedAtMaximum || 0} °C.` : '' }}
+            {{ data && data.storageConditions && data.storageConditions.keepRefrigeratedAtOrBelow ? 'Keep refrigerated at or below '.concat(data.storageConditions.keepRefrigeratedAtOrBelowTemperature || 0, " \xB0C.") : '' }}
+            {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
+            {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
+            {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
         <br />
         {{data && Object.keys(data.directionsForUse).reduce((a, e) => a ||
         data.directionsForUse[e] === true, false) ? `<b>Directions for use:</b>`
         : ''}}
         <!-- prettier-ignore -->
         {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
-          {{ data && data.directionsForUse.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}
-          {{ data && data.directionsForUse.shakeWellBeforeUse ?  'Shake well before use.' : '' }}
-          {{ data && data.directionsForUse.foodShouldBeDrainedBeforeConsumption ? 'Food should be drained before consumption.' : '' }}
-          {{ data && data.directionsForUse.onceOpenedStoreInAnAirtightContainer ? 'Once opened, store in an airtight container.' : '' }}
-          {{ data && data.directionsForUse.onceOpenedKeepRefrigerated  ? 'Once opened, keep refrigerated.' : '' }}
-          {{ data && data.directionsForUse.consumeWithin ? `Consume within ${data.directionsForUse.consumeWithinDaysOfOpening || 0 } days of opening.` : '' }}
-          {{ data && data.directionsForUse.thawBeforeCooking ? 'Thaw before cooking.' : '' }}
-          {{ data && data.directionsForUse.cookFromFrozen ? 'Cook from frozen.': '' }}
-          {{ data && data.directionsForUse.onceThawedDoNotRefreeze ? 'Once thawed, do not refreeze.' : '' }}
-          {{ data && data.directionsForUse.onceThawedUseWithin ? `Once thawed, use within ${data.directionsForUse.onceThawedUseWithinHours} hours.`: '' }}
-          {{ data && data.directionsForUse.thisIsARawProductAndMustBeCookedBeforeEating ? 'This is a raw product and must be cooked before eating.' : '' }}
-          {{ data && data.directionsForUse.notSuitableForMicrowaveCooking ? 'Not suitable for microwave cooking.' : '' }}
-          {{ data && data.directionsForUse.microwaveOn ? `Microwave on ${data.directionsForUse.microwavePower || 'low'} for ${data.directionsForUse.microwaveOnPowerForMinutes || 0} minutes.`: '' }}
-          {{ data && data.directionsForUse.cookFor ? `Cook for ${data.directionsForUse.cookForTime||0} minutes at ${data.directionsForUse.cookForTimeAtTemperature||0} °C.` : '' }}
-          {{ data && data.directionsForUse.cookUntilSteamingHotInTheMiddle ?  'Cook until steaming hot in the middle.' : '' }}
-          {{ data && data.directionsForUse.cautionContentsMayBeHotAfterHeating ?  'Caution, contents may be hot after heating.' : '' }}
-          {{ data && data.directionsForUse.allowToStandFor ? `Allow to stand for ${data.directionsForUse.allowToStandForMinutesBeforeServing||0} minutes before serving.` : '' }}
-          {{ data && data.directionsForUse.doNotRefrigerateOrReheatOnceHeated ? 'Do not refrigerate or reheat once heated.': '' }}
-          {{ data && data.directionsForUse.careHasBeenTakenToRemoveAllBonesFromThisProductHoweverSomeBonesMayRemain ? 'Care has been taken to remove all bones from this product, however some bones may remain.' : '' }}
-          {{ data && data.directionsForUse.otherDirectionsForUse ? `${data.directionsForUse.otherDirectionsForUseDetails || ''}` : '' }}
-          {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails || ''}` : '' }}
+            {{ data && data.directionsForUse.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}
+            {{ data && data.directionsForUse.shakeWellBeforeUse ?  'Shake well before use.' : '' }}
+            {{ data && data.directionsForUse.foodShouldBeDrainedBeforeConsumption ? 'Food should be drained before consumption.' : '' }}
+            {{ data && data.directionsForUse.onceOpenedStoreInAnAirtightContainer ? 'Once opened, store in an airtight container.' : '' }}
+            {{ data && data.directionsForUse.onceOpenedKeepRefrigerated  ? 'Once opened, keep refrigerated.' : '' }}
+            {{ data && data.directionsForUse.consumeWithin ? `Consume within ${data.directionsForUse.consumeWithinDaysOfOpening || 0 } days of opening.` : '' }}
+            {{ data && data.directionsForUse.thawBeforeCooking ? 'Thaw before cooking.' : '' }}
+            {{ data && data.directionsForUse.cookFromFrozen ? 'Cook from frozen.': '' }}
+            {{ data && data.directionsForUse.onceThawedDoNotRefreeze ? 'Once thawed, do not refreeze.' : '' }}
+            {{ data && data.directionsForUse.onceThawedUseWithin ? `Once thawed, use within ${data.directionsForUse.onceThawedUseWithinHours} hours.`: '' }}
+            {{ data && data.directionsForUse.thisIsARawProductAndMustBeCookedBeforeEating ? 'This is a raw product and must be cooked before eating.' : '' }}
+            {{ data && data.directionsForUse.notSuitableForMicrowaveCooking ? 'Not suitable for microwave cooking.' : '' }}
+            {{ data && data.directionsForUse.microwaveOn ? `Microwave on ${data.directionsForUse.microwavePower || 'low'} for ${data.directionsForUse.microwaveOnPowerForMinutes || 0} minutes.`: '' }}
+            {{ data && data.directionsForUse.cookFor ? `Cook for ${data.directionsForUse.cookForTime||0} minutes at ${data.directionsForUse.cookForTimeAtTemperature||0} °C.` : '' }}
+            {{ data && data.directionsForUse.cookUntilSteamingHotInTheMiddle ?  'Cook until steaming hot in the middle.' : '' }}
+            {{ data && data.directionsForUse.cautionContentsMayBeHotAfterHeating ?  'Caution, contents may be hot after heating.' : '' }}
+            {{ data && data.directionsForUse.allowToStandFor ? `Allow to stand for ${data.directionsForUse.allowToStandForMinutesBeforeServing||0} minutes before serving.` : '' }}
+            {{ data && data.directionsForUse.doNotRefrigerateOrReheatOnceHeated ? 'Do not refrigerate or reheat once heated.': '' }}
+            {{ data && data.directionsForUse.careHasBeenTakenToRemoveAllBonesFromThisProductHoweverSomeBonesMayRemain ? 'Care has been taken to remove all bones from this product, however some bones may remain.' : '' }}
+            {{ data && data.directionsForUse.otherDirectionsForUse ? `${data.directionsForUse.otherDirectionsForUseDetails || ''}` : '' }}
+            {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails || ''}` : '' }}
         <div>
-          <!-- prettier-ignore -->
-          {{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' : `
+          {{data.dateMarkFood && data.dateMarkFood==='No date' ? '' : `
           <p>
-            `}}
-            <strong
-              >{{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' :
-              `${data.dateMarkFood}</strong
-            >
-            - ${data.bestDate}
+            `}}{{data.dateMarkFood && data.dateMarkFood==='No date' ? '' :
+            `${data.dateMarkFood}- ${data.bestDate}
           </p>
-          `}} {{data.batch ? `
+          `}}{{(data.batch || data.noDateBatch) ? `
           <p>
             <strong>Lot identification:</strong>` : ''}} {{data.batch ?
-            `${data.batch}
+            data.batch : ''}} {{data.noDateBatch ? data.noDateBatch : ''}}
           </p>
-          ` : ''}}
         </div>
       </div>
       <div class="eg-col">
         <div>
           <p>
-            <strong>Ingredients:</strong>
-            <!-- prettier-ignore -->
-            {{data.IngredientData && data.IngredientData.map(function(data){ return " " + data.ingredient})}}
+            <strong>Ingredients:</strong>{{data.IngredientData &&
+            data.IngredientData.map(function(data){return " " +
+            data.ingredient})}}
           </p>
           <div>
             <p>
@@ -405,7 +391,6 @@
               }}
               <br />
             </p>
-
             <p class="wrap">
               <!-- prettier-ignore -->
               {{ data && data.statementsSummary && data.statementsSummary.egg ? 'The product is unpasteurised.' : '' }}
@@ -433,14 +418,11 @@
         </div>
         <div class="address-block">
           <b>{{data.businessName}}</b>
-          <br />
-          {{data.addressDetails.addressLine1}}
-          <br />
-          {{data.addressDetails.addressLine2}}
-          <br />
-          <span class="suburb">{{data.addressDetails.addressLine3}}</span>
-          <br />
-          {{data.addressDetails.state1}}, {{data.addressDetails.postcode}}
+          <br />{{data.addressDetails.addressLine1}}
+          <br />{{data.addressDetails.addressLine2}} <br /><span class="suburb"
+            >{{data.addressDetails.addressLine3}}</span
+          >
+          <br />{{data.addressDetails.state1}},{{data.addressDetails.postcode}}
         </div>
       </div>
       <div class="eg-col">
@@ -453,7 +435,6 @@
     </div>
   </div>
 </section>
-
 <section>
   <a name="legibility-requirements"></a>
   <h2>Legibility requirements</h2>
@@ -481,7 +462,6 @@
     </li>
   </ul>
 </section>
-
 <section>
   <a name="exemptions"></a>
   <h2>Exemptions</h2>
@@ -510,7 +490,6 @@
     </li>
   </ul>
 </section>
-
 <section>
   <a name="extra-requirements"></a>
   <h2>Food with extra requirements</h2>
@@ -536,7 +515,6 @@
     </li>
   </ul>
 </section>
-
 <section>
   <a name="download-email"></a>
   <h2>Download your label information summary</h2>
