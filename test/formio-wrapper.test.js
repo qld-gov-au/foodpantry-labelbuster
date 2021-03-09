@@ -307,9 +307,9 @@ describe('Formio Wrapper Tests.', () => {
     const stubbedButtons = stub(wrapper, 'buildButtonData');
     const stubbedFire = stub(wrapper.config.form.baseElement, 'dispatchEvent');
     wrapper._firePageChangeEvent();
-    stubbedMenu.restore;
-    stubbedButtons.restore;
-    stubbedFire.restore;
+    stubbedMenu.restore();
+    stubbedButtons.restore();
+    stubbedFire.restore();
     assert.calledOnce(stubbedMenu);
     assert.calledOnce(stubbedButtons);
     assert.calledOnce(stubbedFire);
