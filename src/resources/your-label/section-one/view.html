@@ -357,9 +357,11 @@
             {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails || ''}` : '' }}
         <div>
           {{data.dateMarkFood && data.dateMarkFood==='No date' ? '' : `
-          <p> <strong>
-            `}}{{data.dateMarkFood && data.dateMarkFood==='No date' ? '' :
-            `${data.dateMarkFood} </strong>- ${data.bestDate}
+          <p>
+            <strong>
+              `}}{{data.dateMarkFood && data.dateMarkFood==='No date' ? '' :
+              `${data.dateMarkFood} </strong
+            >- ${data.bestDate}
           </p>
           `}}{{(data.batch || data.noDateBatch) ? `
           <p>
