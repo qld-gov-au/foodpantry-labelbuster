@@ -186,8 +186,7 @@
         <td>
           <b>
             <!-- prettier-ignore -->
-            {{data && Object.values(data.storageConditions).some(valueCheck =>
-            valueCheck===true) ? 'Storage conditions:':''}}
+            {{data && Object.values(data.storageConditions).some(valueCheck => valueCheck===true) ? 'Storage conditions:':''}}
           </b>
           <!-- prettier-ignore -->
           {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
@@ -198,11 +197,10 @@
             {{ data && data.storageConditions.keepFrozenSolid ? 'Keep frozen solid.' : '' }}
             {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
             {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
-          <br />
+          <br /><br />
           <b>
             <!-- prettier-ignore -->
-            {{data && Object.values(data.directionsForUse).some(valueCheck =>
-            valueCheck===true) ? 'Directions for use:':''}}
+            {{data && Object.values(data.directionsForUse).some(valueCheck => valueCheck===true) ? 'Directions for use:':''}}
           </b>
           <p>
             <!-- prettier-ignore -->
@@ -353,8 +351,7 @@
             <p>
               <b>
                 <!-- prettier-ignore -->
-                {{data && Object.values(data.allergyDeclarations).every(valueCheck =>
-                valueCheck===false) ? '':'Contains:'}}
+                {{data && Object.values(data.allergyDeclarations).every(valueCheck => valueCheck===false) ? '':'Contains:'}}
               </b>
               <!-- prettier-ignore -->
               {{

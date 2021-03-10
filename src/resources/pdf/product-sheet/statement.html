@@ -5,8 +5,8 @@
   <div>
     <p>
       <b>
-        {{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a ||
-        data.allergyDeclarations[e] === true, false)) ? 'Contains:':''}}
+        <!-- prettier-ignore -->
+        {{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a || data.allergyDeclarations[e] === true, false)) ? 'Contains:':''}}
       </b>
       <!-- prettier-ignore -->
       {{

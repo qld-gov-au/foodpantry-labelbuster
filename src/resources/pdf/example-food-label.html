@@ -9,9 +9,9 @@
     <h3>{{data.foodName || 'no name provided'}}</h3>
 
     <p>{{data.productDescription}}</p>
-
-    <b
-      >{{data && Object.keys(data.storageConditions).reduce((a, e) => a ||
+    <b>
+      <!-- prettier-ignore -->
+      {{data && Object.keys(data.storageConditions).reduce((a, e) => a ||
       data.storageConditions[e] === true, false) ? 'Storage conditions:':''}}
     </b>
     <!-- prettier-ignore -->
@@ -24,11 +24,12 @@
       {{ data && data.storageConditions.keepFrozenSolidUntilReadyToUse ? 'Keep frozen solid until ready to use.' : '' }}
       {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails : '' }}
     <br />
-    <b
-      >{{data && Object.keys(data.directionsForUse).reduce((a, e) => a ||
+    <b>
+      <!-- prettier-ignore -->
+      {{data && Object.keys(data.directionsForUse).reduce((a, e) => a ||
       data.directionsForUse[e] === true, false) ? 'Directions for use:' :
-      ''}}</b
-    >
+      ''}}
+    </b>
     <!-- prettier-ignore -->
     {{ data && data.directionsForUse.washBeforeUse ? 'Wash before use.' : '' }}
       {{ data && data.directionsForUse.refrigerateAfterPurchase ? 'Refrigerate after opening.' : '' }}
@@ -73,12 +74,10 @@
       </p>
       <div>
         <p>
-          <b
-            >{{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a
-            || data.allergyDeclarations[e] === true, false) ||
-            Object.keys(data.statementsSummary).reduce((a, e) => a ||
-            data.statementsSummary[e] === true, false) ) ? 'Contains:':''}}</b
-          >
+          <b>
+            <!-- prettier-ignore -->
+            {{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a || data.allergyDeclarations[e] === true, false) || Object.keys(data.statementsSummary).reduce((a, e) => a || data.statementsSummary[e] === true, false) ) ? 'Contains:':''}}
+          </b>
           <!-- prettier-ignore -->
           {{
             _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
