@@ -72,12 +72,10 @@
       </p>
       <div>
         <p>
-          <b
-            >{{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a
-            || data.allergyDeclarations[e] === true, false) ||
-            Object.keys(data.statementsSummary).reduce((a, e) => a ||
-            data.statementsSummary[e] === true, false) ) ? 'Contains:':''}}</b
-          >
+          <b>
+            <!-- prettier-ignore -->
+            {{data && Object.keys(data.allergyDeclarations).every(k => !data.allergyDeclarations[k]) ? '':'Contains:'}}
+          </b>
           <!-- prettier-ignore -->
           {{
             _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
