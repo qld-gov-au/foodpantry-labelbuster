@@ -358,8 +358,10 @@
         <div>
           {{data.dateMarkFood && data.dateMarkFood==='No date' ? '' : `
           <p>
-            `}}{{data.dateMarkFood && data.dateMarkFood==='No date' ? '' :
-            `${data.dateMarkFood}- ${data.bestDate}
+            <strong>
+              `}}{{data.dateMarkFood && data.dateMarkFood==='No date' ? '' :
+              `${data.dateMarkFood} </strong
+            >- ${data.bestDate}
           </p>
           `}}{{(data.batch || data.noDateBatch) ? `
           <p>
