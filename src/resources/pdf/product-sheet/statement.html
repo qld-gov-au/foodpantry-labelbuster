@@ -5,17 +5,14 @@
   <div>
     <p>
       <b>
-        {{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a ||
-        data.allergyDeclarations[e] === true, false)) ? 'Contains:':''}}
+        {{data && Object.keys(data.allergyDeclarations).every(k => !data.allergyDeclarations[k]) ? '':'Contains:'}}
       </b>
       <!-- prettier-ignore -->
       {{
-          _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
-            if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
-            return acc + ` ${val}, `;
-              }, '');
-          }
-        }
+        _.reduce(_.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }), function(acc, [key, val], index) {
+          if (index === _.filter(_.toPairs(data.allergyDeclarations), function([key, val]) { return val }).length - 1) return acc + ` ${val}.`;
+          return acc + ` ${val}, `;
+        }, '')
       }}
       <br />
     </p>
@@ -44,13 +41,10 @@
     </p>
     <p>
       <!-- prettier-ignore -->
-      {{data && (Object.keys(data.allergyDeclarations).reduce((a, e) => a
-        || data.allergyDeclarations[e] === true, false) ||
-        Object.keys(data.statementsSummary).reduce((a, e) => a ||
-        data.statementsSummary[e] === true, false) ) ? 'Note:
-        Warning statements must be a minimum size of type of 3 mm. In the
-        case of small packages, a minimum size of type of 1.5 mm is
-        required.'}}
+      {{data && Object.keys(data.allergyDeclarations).every(k => !data.allergyDeclarations[k]) ? '':'Note:
+      Warning statements must be a minimum size of type of 3 mm. In the
+      case of small packages, a minimum size of type of 1.5 mm is
+      required.'}}
     </p>
   </div>
 </div>
