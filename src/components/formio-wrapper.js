@@ -36,6 +36,7 @@ export class FormioWrapper {
         this.createPDFInstance();
       }
     });
+    window.wizard = this.wizard;
   }
 
   /**
@@ -139,8 +140,11 @@ export class FormioWrapper {
     });
 
     baseObject.removeEventListener('formiowrapperCancel', () => {
-      this._clearStorage();
-      this._goToPage(0);
+      if (this.config.form.clearStorageOnCancel) {
+        this._clearStorage();
+      } else {
+        this._goToPage(0);
+      }
       if (this.config.extraTriggersOnActions.cancel) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.cancel);
       }
@@ -278,15 +282,13 @@ export class FormioWrapper {
   /**
    */
   _clearStorage() {
-    if (!this.config.form.clearStorageOnCancel) return;
     this.config.terms.termsStorageType.clear();
-    this.config.storage.type.clear();
-    delete this.wizard.data;
-    delete this.wizard._data;
+    this.wizard.emit('resetForm');
     this.wizard._seenPages = [];
-    delete this.wizard.page;
     this.config.storage.type.removeItem(this.config.form.title);
-    this.wizard.resetValue();
+    this.lastNavigation = 0;
+    // Hack cause formio doesn't reset properly.
+    document.location.reload();
   }
 
   /**
