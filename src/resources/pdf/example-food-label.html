@@ -56,12 +56,11 @@
       <!-- prettier-ignore -->
       {{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' : `
       <p><strong>${data.dateMarkFood}:</strong> ${data.bestDate}</p>
-      `}} {{data.batch ? `
+      `}} {{data.batch || data.noDateBatch? `
       <p>
-        <strong>Lot identification:</strong>` : ''}} {{data.batch ?
-        `${data.batch}
+        <strong>Lot identification:</strong>` : ''}} {{data.batch ? data.batch :
+        ''}} {{data.noDateBatch ? data.noDateBatch : ''}}
       </p>
-      ` : ''}}
     </div>
   </div>
   <div class="eg-col">
