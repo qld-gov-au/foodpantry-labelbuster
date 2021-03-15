@@ -118,8 +118,7 @@
         <td>
           <p>
             <b>
-              {{data && Object.values(data.allergyDeclarations).every(valueCheck
-              => valueCheck===false) ? '':'Contains:'}}
+              {{data && Object.keys(data.allergyDeclarations).every(k => !data.allergyDeclarations[k]) ? '':'Contains:'}}
             </b>
             <!-- prettier-ignore -->
             {{
@@ -194,8 +193,8 @@
             {{ data && data.storageConditions.otherPleaseEnter ? data.storageConditions.otherPleaseEnterDetails + '.' : '' }}
           <br />
           <b>
-            {{data && Object.values(data.directionsForUse).some(valueCheck =>
-            valueCheck===true) ? 'Directions for use:':''}}
+            {{data && Object.keys(data.directionsForUse).reduce((a, e) => a ||
+              data.directionsForUse[e] === true, false) ? 'Directions for use:' : ''}}
           </b>
           <p>
             <!-- prettier-ignore -->
