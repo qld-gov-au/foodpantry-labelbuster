@@ -221,10 +221,9 @@
             {{ data && data.directionsForUse.otherDirectionsForUse ? data.directionsForUse.otherDirectionsForUseDetails + '.' : '' }}
             {{ data && data.directionsForUse.cookingPreparationInstructions ? data.directionsForUse.cookingPreparationInstructionsDetails + '.' : '' }}
           </p>
-          {{(Object.values(data.directionsForUse).some(valueCheck=>
-          valueCheck===true) ||
-          Object.values(data.storageConditions).some(valueCheck=>
-          valueCheck===true))? '':'no data provided'}}
+          {{data && (Object.values(data.storageConditions).some(valueCheck =>
+            valueCheck===true) || Object.keys(data.directionsForUse).reduce((a, e) => a ||
+            data.directionsForUse[e] === true, false))? '':'no data provided'}}
         </td>
       </tr>
       <tr>
