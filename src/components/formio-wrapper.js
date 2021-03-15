@@ -660,7 +660,6 @@ export class FormioWrapper {
 
     this._updateIfCompleted(pageNo, this.wizard.pages);
 
-    // Daniel test if this is still the case now.
     // Oddness... seems it doesn't set page the first time.
     this.wizard.setPage(pageNo)
       .then(() => {
