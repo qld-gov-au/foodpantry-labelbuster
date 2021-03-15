@@ -35,7 +35,6 @@ export class FormioWrapper {
         this.createPDFInstance();
       }
     });
-    window.wizard = this.wizard;
   }
 
   /**
