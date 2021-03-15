@@ -51,9 +51,9 @@ export class Environment {
       default: {
         this.flag = 'dev';
         // eslint-disable-next-line max-len
-        this.form.location = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
+        this.form.location = 'https://api.forms.platforms.qld.gov.au/tzkqydhwrjrviss/labelbuster';
         // eslint-disable-next-line max-len
-        this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
+        this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/tzkqydhwrjrviss/';
         this.form.adminEmail = '';
         break;
       }
