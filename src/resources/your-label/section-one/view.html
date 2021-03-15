@@ -118,7 +118,8 @@
         <td>
           <p>
             <b>
-              {{data && Object.keys(data.allergyDeclarations).every(k => !data.allergyDeclarations[k]) ? '':'Contains:'}}
+              {{data && Object.keys(data.allergyDeclarations).every(k =>
+              !data.allergyDeclarations[k]) ? '':'Contains:'}}
             </b>
             <!-- prettier-ignore -->
             {{
@@ -194,7 +195,8 @@
           <br />
           <b>
             {{data && Object.keys(data.directionsForUse).reduce((a, e) => a ||
-              data.directionsForUse[e] === true, false) ? 'Directions for use:' : ''}}
+            data.directionsForUse[e] === true, false) ? 'Directions for use:' :
+            ''}}
           </b>
           <p>
             <!-- prettier-ignore -->
@@ -222,8 +224,9 @@
             {{ data && data.directionsForUse.cookingPreparationInstructions ? data.directionsForUse.cookingPreparationInstructionsDetails + '.' : '' }}
           </p>
           {{data && (Object.keys(data.storageConditions).reduce((a, e) => a ||
-            data.storageConditions[e] === true, false) || Object.keys(data.directionsForUse).reduce((a, e) => a ||
-            data.directionsForUse[e] === true, false))? '':'no data provided'}}
+          data.storageConditions[e] === true, false) ||
+          Object.keys(data.directionsForUse).reduce((a, e) => a ||
+          data.directionsForUse[e] === true, false))? '':'no data provided'}}
         </td>
       </tr>
       <tr>
