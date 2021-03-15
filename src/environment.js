@@ -49,7 +49,7 @@ export class Environment {
         break;
       }
       default: {
-        this.flag = 'dev';
+        this.flag = 'prod';
         // eslint-disable-next-line max-len
         this.form.location = 'https://api.forms.platforms.qld.gov.au/tzkqydhwrjrviss/labelbuster';
         // eslint-disable-next-line max-len
