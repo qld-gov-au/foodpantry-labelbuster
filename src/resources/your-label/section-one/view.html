@@ -179,8 +179,8 @@
         <td>
           <b>
             <!-- prettier-ignore -->
-            {{data && Object.values(data.storageConditions).some(valueCheck =>
-            valueCheck===true) ? 'Storage conditions:':''}}
+            {{data && Object.keys(data.storageConditions).reduce((a, e) => a ||
+              data.storageConditions[e] === true, false) ? 'Storage conditions:':''}}
           </b>
           <!-- prettier-ignore -->
           {{ data && data.storageConditions.storeInCoolDryConditions ? 'Store in cool dry conditions.' : '' }}
@@ -221,8 +221,8 @@
             {{ data && data.directionsForUse.otherDirectionsForUse ? data.directionsForUse.otherDirectionsForUseDetails + '.' : '' }}
             {{ data && data.directionsForUse.cookingPreparationInstructions ? data.directionsForUse.cookingPreparationInstructionsDetails + '.' : '' }}
           </p>
-          {{data && (Object.values(data.storageConditions).some(valueCheck =>
-            valueCheck===true) || Object.keys(data.directionsForUse).reduce((a, e) => a ||
+          {{data && (Object.keys(data.storageConditions).reduce((a, e) => a ||
+            data.storageConditions[e] === true, false) || Object.keys(data.directionsForUse).reduce((a, e) => a ||
             data.directionsForUse[e] === true, false))? '':'no data provided'}}
         </td>
       </tr>
