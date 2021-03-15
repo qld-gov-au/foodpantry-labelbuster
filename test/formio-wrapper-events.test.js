@@ -24,7 +24,7 @@ describe('Formio Wrapper Event Tests.', () => {
 
   it('_addListeners works as intended', async () => {
     wrapper.loaded = true;
-
+    wrapper._clearStorage = () => {};
     wrapper.wizard.page = 1;
     wrapper.wizard.pages = [
       {
