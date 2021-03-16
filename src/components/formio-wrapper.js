@@ -437,6 +437,12 @@ export class FormioWrapper {
         cancelButton.displayed = false;
         nextButton.title = this.config.buttons.overwriteValue;
       }
+
+      if (this.config.buttons.overwriteFirstButtonShowExtras) {
+        cancelButton.displayed = true;
+        previousButton.displayed = true;
+        previousButton.event = 'formiowrapperCancel';
+      }
     }
 
     if (page === this.wizard.pages.length - 1) {
