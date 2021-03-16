@@ -265,9 +265,6 @@ export class FormioWrapper {
         this.wizard.data = this.storedData;
         this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage
           .getItem(this.config.terms.termsStorageName));
-        if (this.wizard._data) {
-          this.wizard._data[this.config.terms.dataName] = true;
-        }
       } catch (error) {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
@@ -546,9 +543,6 @@ export class FormioWrapper {
       const targetPage = proposedPage < this.wizard.pages.length
         ? proposedPage
         : this.wizard.page + 1;
-      if (this.wizard._data) {
-        this.wizard._data[this.config.terms.dataName] = true;
-      }
       this._updateStorage(
         this.config.storage.type,
         this.config.form.title,
@@ -616,9 +610,6 @@ export class FormioWrapper {
       const proposedPage = this.wizard.page - 2;
       const targetPage = proposedPage <= 0
         ? proposedPage : this.wizard.page - 1;
-      if (this.wizard._data) {
-        this.wizard._data[this.config.terms.dataName] = true;
-      }
       this._updateStorage(
         this.config.storage.type,
         this.config.form.title,
