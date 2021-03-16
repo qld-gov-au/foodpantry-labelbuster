@@ -36,7 +36,7 @@ export class Environment {
         this.form.location = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
         // eslint-disable-next-line max-len
         this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
-        this.form.adminEmail = '';
+        this.form.adminEmail = 'vani.ganapa@smartservice.qld.gov.au';
         break;
       }
       case 'uat': {
