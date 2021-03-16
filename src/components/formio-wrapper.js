@@ -30,7 +30,7 @@ export class FormioWrapper {
       this.wizard = wizard;
       this.wizard.data.parent = wizard.id;
       this.wizard.data.adminEmail = this.formAdminEmail;
-      this.wizard.data.sendPDF = this.config.form.sendPDF;
+      this.wizard.data.downloadPDF = this.config.form.downloadPDF;
       this.formTitle = !this.formTitle ? wizard._form.title : this.formTitle;
       this.loaded = true;
       if (firstInit) {

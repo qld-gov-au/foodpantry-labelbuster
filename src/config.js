@@ -21,7 +21,7 @@ export const configuration = {
     emailConfirmField: 'email',
     endpoint: 'submission',
     pdfEndpoint: 'labelBusterPdf',
-    sendPDF: false,
+    downloadPDF: false,
     // eslint-disable-next-line max-len
     pdfDownloadName: data => `Label Buster summary - Label Buster Foods ${data.foodName}`,
     selector: '#formio',
