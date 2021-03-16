@@ -9,6 +9,7 @@ export class FormioWrapper {
   constructor(configuration) {
     this.config = configuration;
     this.formElement = {};
+    this.emailElement = null;
     this.wizard = {};
     this.loaded = false;
     this.lastNavigation = 0;
@@ -28,6 +29,7 @@ export class FormioWrapper {
     ).then((wizard) => {
       this.wizard = wizard;
       this.wizard.data.adminEmail = this.formAdminEmail;
+      this.wizard.data.sendPDF = this.config.form.sendPDF;
       this.formTitle = !this.formTitle ? wizard._form.title : this.formTitle;
       this.loaded = true;
       if (firstInit) {
@@ -708,13 +710,37 @@ export class FormioWrapper {
    * @return {void}
    */
   createPDFInstance() {
-    if (!this.config.form.pdfEndpoint) return;
+    if (!this.config.form.pdfEndpoint || !this.config.form.sendPDF) return;
     Formio.createForm(
       document.createElement('div'),
       `${this.config.form.baseLocation}${this.config.form.pdfEndpoint}`,
     ).then((pdfInstance) => {
       this.pdfInstance = pdfInstance;
     });
+  }
+
+  /**
+   * @param {String} sendEmail user or admin for the send email attribute
+   */
+  _triggerEmailSubmission(sendEmail) {
+    if (!this.config.form.location) return;
+    if (!this.emailElement) {
+      this.emailElement = document.createElement('div');
+      this.emailElement.setAttribute('id', 'emailElement');
+      this.emailElement.setAttribute('hidden', true);
+    }
+
+    Formio.createForm(
+      this.emailElement,
+      `${this.config.form.location}`,
+    ).then((formInstance) => {
+      const emailForm = formInstance;
+      emailForm.data = this.wizard.data;
+      emailForm.sendEmail = sendEmail;
+      emailForm.submit();
+    });
+    this.emailElement.innerHTML = '';
+    this.emailElement = null;
   }
 
   /**
@@ -729,7 +755,7 @@ export class FormioWrapper {
    * @return {void}
    */
   _downloadPDF() {
-    if (this.requestedDownload) return;
+    if (this.requestedDownload || !this.config.form.sendPDF) return;
     this.requestedDownload = true;
     // wizard event does not capture EventTarget
     const downloadButton = this.config.form.queryElement.querySelector(
@@ -796,7 +822,7 @@ export class FormioWrapper {
       this.wizard.data[
         this.config.form.emailConfirmField] = this.config.form.adminEmail;
     }
-    this.wizard.submit();
+    this._triggerEmailSubmission(this.wizard.data.sendEmail);
     if (this.wizard.data.sendEmail !== 'user') {
       this.wizard.data[this.config.form.emailField] = '';
       this.wizard.data[this.config.form.emailConfirmField] = '';
