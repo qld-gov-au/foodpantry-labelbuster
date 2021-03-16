@@ -28,6 +28,7 @@ export class FormioWrapper {
       this.config.form.formioConfig,
     ).then((wizard) => {
       this.wizard = wizard;
+      this.wizard.data.parent = wizard.id;
       this.wizard.data.adminEmail = this.formAdminEmail;
       this.wizard.data.sendPDF = this.config.form.sendPDF;
       this.formTitle = !this.formTitle ? wizard._form.title : this.formTitle;
@@ -734,6 +735,10 @@ export class FormioWrapper {
       this.emailElement,
       `${this.config.form.location}`,
     ).then((formInstance) => {
+      if (!this.wizard.data.children) {
+        this.wizard.data.children = [];
+      }
+      this.wizard.data.children.push(formInstance.id);
       const emailForm = formInstance;
       emailForm.data = this.wizard.data;
       emailForm.sendEmail = sendEmail;
