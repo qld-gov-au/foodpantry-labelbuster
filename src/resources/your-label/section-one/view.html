@@ -326,11 +326,12 @@
             {{ data && data.directionsForUse.otherDirectionsForUse ? data.directionsForUse.otherDirectionsForUseDetails + '.' : '' }}
             {{ data && data.directionsForUse.cookingPreparationInstructions ? data.directionsForUse.cookingPreparationInstructionsDetails + '.' : '' }}
         <div>
-          {{data.dateMarkFood && data.dateMarkFood==='No date field required' ? '' : `
+          {{data.dateMarkFood && data.dateMarkFood==='No date field required' ?
+          '' : `
           <p>
             <strong>
-              `}}{{data.dateMarkFood && data.dateMarkFood==='No date field required' ? '' :
-              `${data.dateMarkFood}
+              `}}{{data.dateMarkFood && data.dateMarkFood==='No date field
+              required' ? '' : `${data.dateMarkFood}
             </strong>
             ${data.bestDate ? '-' + data.bestDate : ''}
           </p>
