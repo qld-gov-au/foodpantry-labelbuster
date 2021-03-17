@@ -5,9 +5,16 @@
     valid = "The date mark must 20 characters or less.";
     return;
   }
-  // check if not a valid character
-  if (!/^[a-zA-Z0-9" |/.,']*$/.test(input)) {
-    valid = 'You have entered an invalid character, please use only letters, numbers and these special characters "|./,\'';
+
+  // No value available
+  if (!input) {
+    valid = "Date must be entered when type of date mark is selected";
+    return;
+  }
+
+  // check for special characters
+  if (/[|&;$%"<>(){}+]/.test(input)) {
+    valid = 'Please do not use special characters e.g. not any of these | & ; $ % " < > ( ){ } +';
     return;
   }
   valid = true;
