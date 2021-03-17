@@ -164,7 +164,8 @@
       <tr>
         <td>Date marks</td>
         <td>
-          <strong>{{data.dateMarkFood}}</strong>{{data.bestDate ? ' : ' + data.bestDate : ''}}
+          <strong>{{data.dateMarkFood}}</strong>{{data.bestDate ? ' : ' +
+          data.bestDate : ''}}
         </td>
       </tr>
       <tr>
@@ -329,8 +330,9 @@
           <p>
             <strong>
               `}}{{data.dateMarkFood && data.dateMarkFood==='No date' ? '' :
-              `${data.dateMarkFood} </strong
-            > ${data.bestDate ? '-' + data.bestDate : ''}
+              `${data.dateMarkFood}
+            </strong>
+            ${data.bestDate ? '-' + data.bestDate : ''}
           </p>
           `}}{{(data.batch || data.noDateBatch) ? `
           <p>
