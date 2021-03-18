@@ -74,7 +74,7 @@
   }
 }
 
-#qg-primary-content table tr td:nth-child(2){
+#qg-primary-content table tr td:nth-child(2) {
   table-layout: fixed;
   word-break: break-word;
   word-wrap: break-word;
@@ -93,10 +93,14 @@
   }
 }
 
-.btn-primary:disabled > .icon:after {
-  font-family: "FontAwesome";
-  display: inline-block;
-  animation: progressSpinner 3s infinite linear;
-  margin-left: 5px;
-  content:"\f110";
+[busy='true'] {
+  cursor: not-allowed !important;
+  opacity: 0.65;
+  & > .icon:after {
+    font-family: 'FontAwesome';
+    display: inline-block;
+    animation: progressSpinner 3s infinite linear;
+    margin-left: 5px;
+    content: '\f110';
+  }
 }

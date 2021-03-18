@@ -813,10 +813,12 @@ export class FormioWrapper {
     );
     if (this.wizard.data.sendEmail === 'user') {
       emailButton.disabled = true;
+      emailButton.setAttribute('busy', true);
       this.requestedEmail = true;
       setTimeout(() => {
         this.requestedEmail = false;
         emailButton.disabled = false;
+        emailButton.setAttribute('busy', false);
       }, 3000);
     } else {
       previousEmail = this.wizard.data[
