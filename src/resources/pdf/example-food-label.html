@@ -54,7 +54,7 @@
       {{ data && data.directionsForUse.cookingPreparationInstructions ? `${data.directionsForUse.cookingPreparationInstructionsDetails + '.'|| ''}` : '' }}
     <div>
       <!-- prettier-ignore -->
-      {{data.dateMarkFood && data.dateMarkFood === 'No date' ? '' : `
+      {{data.dateMarkFood && data.dateMarkFood === 'No date field required' ? '' : `
       <p><strong>${data.dateMarkFood}:</strong> ${data.bestDate}</p>
       `}} {{data.batch || data.noDateBatch? `
       <p>

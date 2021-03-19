@@ -164,8 +164,8 @@
       <tr>
         <td>Date marks</td>
         <td>
-          <strong>{{data.dateMarkFood}}</strong>:{{data.bestDate || 'no data
-          provided'}}
+          <strong>{{data.dateMarkFood}}</strong>{{data.bestDate ? ' : ' +
+          data.bestDate : ''}}
         </td>
       </tr>
       <tr>
@@ -326,12 +326,14 @@
             {{ data && data.directionsForUse.otherDirectionsForUse ? data.directionsForUse.otherDirectionsForUseDetails + '.' : '' }}
             {{ data && data.directionsForUse.cookingPreparationInstructions ? data.directionsForUse.cookingPreparationInstructionsDetails + '.' : '' }}
         <div>
-          {{data.dateMarkFood && data.dateMarkFood==='No date' ? '' : `
+          {{data.dateMarkFood && data.dateMarkFood==='No date field required' ?
+          '' : `
           <p>
             <strong>
-              `}}{{data.dateMarkFood && data.dateMarkFood==='No date' ? '' :
-              `${data.dateMarkFood} </strong
-            >- ${data.bestDate}
+              `}}{{data.dateMarkFood && data.dateMarkFood==='No date field
+              required' ? '' : `${data.dateMarkFood}
+            </strong>
+            ${data.bestDate ? '-' + data.bestDate : ''}
           </p>
           `}}{{(data.batch || data.noDateBatch) ? `
           <p>
@@ -486,12 +488,4 @@
       </a>
     </li>
   </ul>
-</section>
-<section>
-  <a name="download-email"></a>
-  <h2>Download your label information summary</h2>
-  <p>
-    This summary includes your product sheet and an example of what your label
-    could look like.
-  </p>
 </section>
