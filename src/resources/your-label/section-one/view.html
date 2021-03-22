@@ -35,7 +35,7 @@
       <a href="#extra-requirements">Food with extra requirements</a>
     </li>
     <li>
-      <a href="#download-email">Download or email your summary</a>
+      <a href="#download-email">Email your summary</a>
     </li>
     <li>
       <a href="#update">Need to update your label?</a>
@@ -333,7 +333,7 @@
               `}}{{data.dateMarkFood && data.dateMarkFood==='No date field
               required' ? '' : `${data.dateMarkFood}
             </strong>
-            ${data.bestDate ? '-' + data.bestDate : ''}
+            ${data.bestDate ? ': ' + data.bestDate : ''}
           </p>
           `}}{{(data.batch || data.noDateBatch) ? `
           <p>
