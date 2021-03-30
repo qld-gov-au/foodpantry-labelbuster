@@ -4648,7 +4648,7 @@
           "customDefaultValue": "value = new Date().toLocaleString('en-AU', {timeZone: 'Australia/Brisbane'});",
           "calculateValue": "value = new Date().toLocaleString('en-AU', {timeZone: 'Australia/Brisbane'});",
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } +';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "printDate",
           "type": "textfield",
@@ -4662,7 +4662,7 @@
           "tableView": false,
           "clearOnHide": false,
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } +';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "dateMarkFood",
           "type": "textfield",
@@ -4705,7 +4705,7 @@
           "clearOnHide": false,
           "calculateServer": true,
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } +';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "date",
           "type": "textfield",
