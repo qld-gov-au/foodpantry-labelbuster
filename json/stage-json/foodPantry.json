@@ -2513,7 +2513,7 @@
                           "clearOnHide": false,
                           "customDefaultValue": "if(instance) {\n  instance.pristine = false;\n  instance.checkValidity();\n}",
                           "validate": {
-                            "custom": "/* eslint-disable */\n\n// other directions for use\n(function () {\n  // Can`t be left blank\n  if (data && data.directionsForUse && !input) {\n    valid = \"The other directions for use details must be entered when other is selected as a direction for use.\";\n    return;\n  }\n\n  if (data && data.directionsForUse && input.length > 1000) {\n    valid = \"The other directions for use details must have less than 1000 characters.\";\n    return;\n  }\n\n // check for special characters\n  if (/[|&;$%\"<>(){/}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | & ; $ % \" < > ( ){ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+                            "custom": "/* eslint-disable */\n\n// other directions for use\n(function () {\n  // Can`t be left blank\n  if (data && data.directionsForUse && !input) {\n    valid = \"The other directions for use details must be entered when other is selected as a direction for use.\";\n    return;\n  }\n\n  if (data && data.directionsForUse && input.length > 1000) {\n    valid = \"The other directions for use details must have less than 1000 characters.\";\n    return;\n  }\n\n // check for special characters\n  if (/[|&;$%\"<>(){}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | & ; $ % \" < > ( ){ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
                           },
                           "key": "otherDirectionsForUseDetails",
                           "conditional": {
@@ -2579,7 +2579,7 @@
                           "customDefaultValue": "if(instance) {\n  instance.pristine = false;\n  instance.checkValidity();  \n}",
                           "validateOn": "blur",
                           "validate": {
-                            "custom": "/* eslint-disable */\n\n// cooking / preparation instructions\n(function () {\n  // Can`t be left blank\n  if (data && data.directionsForUse && data.directionsForUse.cookingPreparationInstructions && data.directionsForUse.cookingPreparationInstructionsDetails === '') {\n    valid = \"The cooking / preparation instructions must be entered when the selected as a direction for use. \";\n    return;\n  } // Can`t be less than zero minutes.\n\n\n  if (data && data.directionsForUse && data.directionsForUse.cookingPreparationInstructions && data.directionsForUse.cookingPreparationInstructionsDetails.length > 1000) {\n    valid = \"The cooking / preparation instruction details must have less than 1000 characters. \";\n    return;\n  }\n\n  // check for special characters\n  if (/[|&;$%\"<>(){/}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | & ; $ % \" < > ( ){ } + /';\n    return;\n  }\n  \n  valid = true;\n})();"
+                            "custom": "/* eslint-disable */\n\n// cooking / preparation instructions\n(function () {\n  // Can`t be left blank\n  if (data && data.directionsForUse && data.directionsForUse.cookingPreparationInstructions && data.directionsForUse.cookingPreparationInstructionsDetails === '') {\n    valid = \"The cooking / preparation instructions must be entered when the selected as a direction for use. \";\n    return;\n  } // Can`t be less than zero minutes.\n\n\n  if (data && data.directionsForUse && data.directionsForUse.cookingPreparationInstructions && data.directionsForUse.cookingPreparationInstructionsDetails.length > 1000) {\n    valid = \"The cooking / preparation instruction details must have less than 1000 characters. \";\n    return;\n  }\n\n  // check for special characters\n  if (/[|&;$%\"<>(){}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | & ; $ % \" < > ( ){ } + /';\n    return;\n  }\n  \n  valid = true;\n})();"
                           },
                           "key": "cookingPreparationInstructionsDetails",
                           "conditional": {
@@ -4648,7 +4648,7 @@
           "customDefaultValue": "value = new Date().toLocaleString('en-AU', {timeZone: 'Australia/Brisbane'});",
           "calculateValue": "value = new Date().toLocaleString('en-AU', {timeZone: 'Australia/Brisbane'});",
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } +';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "printDate",
           "type": "textfield",
@@ -4662,7 +4662,7 @@
           "tableView": false,
           "clearOnHide": false,
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } +';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "dateMarkFood",
           "type": "textfield",
@@ -4676,7 +4676,7 @@
           "tableView": false,
           "clearOnHide": false,
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|&;$%\"<>(){}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | & ; $ % \" < > ( ) { } +';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[|&;$%\"<>(){}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } +';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "bestDate",
           "type": "textfield",
@@ -4705,7 +4705,7 @@
           "clearOnHide": false,
           "calculateServer": true,
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } +';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "date",
           "type": "textfield",
@@ -4747,7 +4747,7 @@
           "tableView": false,
           "clearOnHide": false,
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[&;$%\"<>(){}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these ; $ & % \" < > ( ) { } +';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "batch",
           "type": "textfield",
@@ -4761,7 +4761,7 @@
           "tableView": false,
           "clearOnHide": false,
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[&;$%\"<>(){}+]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these & ; $ % \" < >{ } +';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "noDateBatch",
           "type": "textfield",
@@ -4846,7 +4846,7 @@
           "tableView": false,
           "clearOnHide": false,
           "validate": {
-            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$%\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
+            "custom": "(function () {\n  // check if not a valid character\n  if (/[|;$\"<>{}+/]/.test(input)) {\n    valid = 'Please do not use special characters e.g. not any of these | ; $ \" < >{ } + /';\n    return;\n  }\n\n  valid = true;\n})();"
           },
           "key": "productDescription",
           "type": "textfield",
@@ -4918,7 +4918,7 @@
           "tableView": false,
           "clearOnHide": false,
           "validate": {
-            "custom": "(function () {\n\n  if (typeof input !== 'object') {\n    value = 'This needs to be an object'\n    return;\n  }\n\n  Object.keys(input).forEach((key) => {\n      // check if not a valid character\n    if (/[|;$%\"<>{}+/]/.test(input[key])) {\n      valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n      return;\n    }\n  })\n\n  valid = true;\n})();"
+            "custom": "(function () {\n\n  if (typeof input !== 'object') {\n    value = 'This needs to be an object'\n    return;\n  }\n\n  Object.keys(input).forEach((key) => {\n      // check if not a valid character\n    if (/[|&;$%\"<>(){}+/]/.test(input[key])) {\n      valid = 'Please do not use special characters e.g. not any of these | ; $ & % \" < > ( ) { } + /';\n      return;\n    }\n  })\n\n  valid = true;\n})();"
           },
           "key": "storageConditions",
           "type": "hidden",
