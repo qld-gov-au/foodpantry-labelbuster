@@ -4918,7 +4918,7 @@
           "tableView": false,
           "clearOnHide": false,
           "validate": {
-            "custom": "(function () {\n\n  if (typeof input !== 'object') {\n    value = 'This needs to be an object'\n    return;\n  }\n\n  Object.keys(input).forEach((key) => {\n      // check if not a valid character\n    if (/[|&;$%\"<>(){}+/]/.test(input[key])) {\n      valid = 'Please do not use special characters e.g. not any of these | ; $ % \" < >{ } + /';\n      return;\n    }\n  })\n\n  valid = true;\n})();"
+            "custom": "(function () {\n\n  if (typeof input !== 'object') {\n    value = 'This needs to be an object'\n    return;\n  }\n\n  Object.keys(input).forEach((key) => {\n      // check if not a valid character\n    if (/[|&;$%\"<>(){}+/]/.test(input[key])) {\n      valid = 'Please do not use special characters e.g. not any of these | ; $ & % \" < > ( ) { } + /';\n      return;\n    }\n  })\n\n  valid = true;\n})();"
           },
           "key": "storageConditions",
           "type": "hidden",
