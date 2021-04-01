@@ -54,7 +54,7 @@ export class Environment {
         this.form.location = 'https://api.forms.platforms.qld.gov.au/tzkqydhwrjrviss/labelbuster';
         // eslint-disable-next-line max-len
         this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/tzkqydhwrjrviss/';
-        this.form.adminEmail = 'foodpantry@health.qld.gov.au';
+        this.form.adminEmail = 'foodsafety@health.qld.gov.au';
         break;
       }
     }
