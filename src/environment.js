@@ -33,7 +33,7 @@ export class Environment {
       case 'development': {
         this.flag = 'dev';
         // eslint-disable-next-line max-len
-        this.form.location = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/labelbuster';
+        this.form.location = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/form/602080dca435f28006d4c5e1/v/331';
         // eslint-disable-next-line max-len
         this.form.baseLocation = 'https://api.forms.platforms.qld.gov.au/dev-tzkqydhwrjrviss/';
         this.form.adminEmail = 'FoodPantryDefects@DSITIAQLD.onmicrosoft.com';
