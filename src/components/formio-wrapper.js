@@ -270,10 +270,10 @@
         this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage
           .getItem(this.config.terms.termsStorageName)); */
        
-       var storedData = this.storedData;
-       storedData[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
+       var _storedData = this.storedData;
+       _storedData[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
        var submission = this.wizard.submission;
-       submission.data = storedData;
+       submission.data = _storedData;
        this.wizard.submission = submission;
       } catch (error) {
         // eslint-disable-next-line no-console
