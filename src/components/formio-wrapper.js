@@ -265,9 +265,16 @@
         delete this.storedData._seenPages;
         this.wizard.page = this.storedData.page;
         delete this.storedData.page;
+       /*
         this.wizard.data = this.storedData;
         this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage
-          .getItem(this.config.terms.termsStorageName));
+          .getItem(this.config.terms.termsStorageName)); */
+       
+       var storedData = this.storedData;
+       storedData[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
+       var submission = this.wizard.submission;
+       submission.data = storedData;
+       this.wizard.submission = submission;
       } catch (error) {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
