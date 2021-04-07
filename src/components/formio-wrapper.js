@@ -1,7 +1,7 @@
 /**
  * @class FormioWrapper
  */
- export class FormioWrapper {
+export class FormioWrapper {
   /**
    * @param {Object} configuration the configuration object
    * @returns {void}
@@ -270,11 +270,11 @@
         this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage
           .getItem(this.config.terms.termsStorageName)); */
        
-       var _storedData = this.storedData;
-       _storedData[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
-       var submission = this.wizard.submission;
-       submission.data = _storedData;
-       this.wizard.submission = submission;
+        var _storedData = this.storedData;
+        _storedData[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
+        var submission = this.wizard.submission;
+        submission.data = _storedData;
+        this.wizard.submission = submission;
       } catch (error) {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
