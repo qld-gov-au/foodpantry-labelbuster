@@ -76,7 +76,7 @@
         <td>Ingredients</td>
         <td>
           <!-- prettier-ignore -->
-          {{data.IngredientData && data.IngredientData.map(function(data){ return ' ' + data.ingredient}) }}
+          {{data.IngredientData}}
         </td>
       </tr>
       <tr>
@@ -345,9 +345,7 @@
       <div class="eg-col">
         <div>
           <p>
-            <strong>Ingredients:</strong>{{data.IngredientData &&
-            data.IngredientData.map(function(data){return " " +
-            data.ingredient})}}
+            <strong>Ingredients:</strong>{{data.IngredientData}}
           </p>
           <div>
             <p>
