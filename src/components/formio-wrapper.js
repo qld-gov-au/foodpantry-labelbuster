@@ -269,11 +269,6 @@ export class FormioWrapper {
         this.wizard.data = this.storedData;
         this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
 
-        // var _storedData = this.storedData;
-        // _storedData[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
-        // var submission = this.wizard.submission;
-        // submission.data = _storedData;
-        // this.wizard.submission = submission;
       } catch (error) {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
@@ -747,10 +742,6 @@ export class FormioWrapper {
       this.emailElement.setAttribute('hidden', true);
     }
 
-    //const _storedData = this.wizard.data;
-    // const submission = this.wizard.submission;
-    // submission.data = _storedData;
-
     Formio.createForm(
       this.emailElement,
       `${this.config.form.location}`,
@@ -765,18 +756,12 @@ export class FormioWrapper {
       wizardData
         .children = `${wizardData.children} ${formInstance.id}`;
       const emailForm = formInstance;
-      // emailForm.submission = this.wizard.submission;
-      // emailForm.submission.data = this.wizard.data;
       emailForm.data = wizardData;
       emailForm.sendEmail = sendEmail;
       emailForm.submit();
-      // this.wizard.submission = emailForm.submission;
     });
     this.emailElement.innerHTML = '';
     this.emailElement = null;
-
-    // this.wizard.submission = submission;
-
   }
 
   /**
