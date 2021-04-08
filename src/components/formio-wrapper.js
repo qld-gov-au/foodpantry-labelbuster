@@ -576,7 +576,7 @@ export class FormioWrapper {
       this._updateStorage(
         this.config.storage.type,
         this.config.form.title,
-        this.wizard.data,
+        this.wizard.submission,
         this.wizard._seenPages,
         targetPage,
       );
@@ -589,7 +589,7 @@ export class FormioWrapper {
     this._updateStorage(
       this.config.storage.type,
       this.config.form.title,
-      this.wizard.data,
+      this.wizard.submission,
       this.wizard._seenPages,
       this.wizard.page + 1,
     );
@@ -643,7 +643,7 @@ export class FormioWrapper {
       this._updateStorage(
         this.config.storage.type,
         this.config.form.title,
-        this.wizard.data,
+        this.wizard.submission,
         this.wizard._seenPages,
         targetPage,
       );
@@ -654,7 +654,7 @@ export class FormioWrapper {
     this._updateStorage(
       this.config.storage.type,
       this.config.form.title,
-      this.wizard.data,
+      this.wizard.submission,
       this.wizard._seenPages,
       this.wizard.page - 1,
     );
@@ -676,7 +676,7 @@ export class FormioWrapper {
     this._updateStorage(
       this.config.storage.type,
       this.config.form.title,
-      this.wizard.data,
+      this.wizard.submission,
       this.wizard._seenPages,
       pageNo,
     );
@@ -762,7 +762,7 @@ export class FormioWrapper {
       this.wizard.data
         .children = `${this.wizard.data.children} ${formInstance.id}`;
       const emailForm = formInstance;
-      emailForm.data = this.wizard.data;
+      emailForm.submission = { data: this.wizard.data };
       emailForm.sendEmail = sendEmail;
       emailForm.submit();
     });
@@ -774,7 +774,8 @@ export class FormioWrapper {
    * @return {Response}
    */
   _formSubmission() {
-    this.pdfInstance.data = this.wizard.data;
+    // data object is dynamic and point in time, submission is real model
+    this.pdfInstance.submission = { data: this.wizard.data };
     return this.pdfInstance.submit();
   }
 
@@ -836,7 +837,7 @@ export class FormioWrapper {
     const emailButton = this.config.form.queryElement.querySelector(
       '[name="data[emailButton]"',
     );
-    if (this.wizard.data.sendEmail === 'user') {
+    if (this.wizard.submission.data.sendEmail === 'user') {
       emailButton.disabled = true;
       emailButton.setAttribute('busy', true);
       this.requestedEmail = true;
