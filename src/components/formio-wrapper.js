@@ -1,7 +1,7 @@
 /**
  * @class FormioWrapper
  */
- export class FormioWrapper {
+export class FormioWrapper {
   /**
    * @param {Object} configuration the configuration object
    * @returns {void}
@@ -265,16 +265,16 @@
         delete this.storedData._seenPages;
         this.wizard.page = this.storedData.page;
         delete this.storedData.page;
-       /*
+        /*
         this.wizard.data = this.storedData;
         this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage
           .getItem(this.config.terms.termsStorageName)); */
-       
-       var _storedData = this.storedData;
-       _storedData[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
-       var submission = this.wizard.submission;
-       submission.data = _storedData;
-       this.wizard.submission = submission;
+
+        const _storedData = this.storedData;
+        _storedData[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
+        const { submission } = this.wizard;
+        submission.data = _storedData;
+        this.wizard.submission = submission;
       } catch (error) {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
@@ -523,6 +523,23 @@
    */
   _areTermsAccepted(page, pages) {
     const termsStorage = this.config.terms.termsStorageType;
+    const checkTermsAreAccepted = () => {
+      // eslint-disable-next-line no-unused-vars
+      for (const [key, value] of Object.entries(localStorage)) {
+        for (const [k, v] of Object.entries(JSON.parse(value))) {
+          if (k === 'termsAndConditions') {
+            if (v === 'true') {
+              if (localStorage.getItem('TermsAccepted') === null) {
+                localStorage.setItem('lbTermsAccepted', true);
+              }
+            } else {
+              localStorage.setItem('lbTermsAccepted', false);
+            }
+          }
+        }
+      }
+    };
+    checkTermsAreAccepted();
     let storedValue = termsStorage.getItem(
       this.config.terms.termsStorageName,
     );
