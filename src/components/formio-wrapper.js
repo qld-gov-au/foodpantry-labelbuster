@@ -236,13 +236,16 @@ export class FormioWrapper {
     if (this.wizard.page === 0) return;
     const rawData = storage.getItem(key);
     let newStorage = {};
+    const wizardData = JSON.parse(JSON.stringify(this.wizard.data));
     try {
-      const previousStorage = rawData ? this._unpackageData(rawData) : {};
-      newStorage = { ...previousStorage, ...data };
+      // rebuild storage form packaged data
+      newStorage = rawData ? this._unpackageData(rawData) : {};
+      // ensure memory structure is de-linked
+      newStorage.data = this._unpackageData(wizardData);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.warn('Data corrupted, ignoring');
-      newStorage = { ...data };
+      newStorage = { data: this._unpackageData(wizardData) };
     }
     newStorage.page = page;
     newStorage._seenPages = seenPages;
@@ -260,13 +263,16 @@ export class FormioWrapper {
     if (storedData) {
       try {
         this.storedData = this._unpackageData(storedData);
+        //Call function to build submission, this will build wizard.data
+        this.wizard.setSubmission(storedData.data);
         this.wizard._seenPages = this.storedData._seenPages;
         this.lastNavigation = this.storedData.lastNavigation || 0;
         delete this.storedData._seenPages;
         this.wizard.page = this.storedData.page;
         delete this.storedData.page;
 
-        this.wizard.data = this.storedData;
+        //handled above with setSubmission
+        //this.wizard.data = this.storedData;
         this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
 
       } catch (error) {
