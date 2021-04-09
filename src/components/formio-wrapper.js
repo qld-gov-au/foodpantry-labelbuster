@@ -265,16 +265,9 @@ export class FormioWrapper {
         delete this.storedData._seenPages;
         this.wizard.page = this.storedData.page;
         delete this.storedData.page;
-        /*
         this.wizard.data = this.storedData;
         this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage
-          .getItem(this.config.terms.termsStorageName)); */
-
-        const _storedData = this.storedData;
-        _storedData[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
-        const { submission } = this.wizard;
-        submission.data = _storedData;
-        this.wizard.submission = submission;
+          .getItem(this.config.terms.termsStorageName));
       } catch (error) {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
