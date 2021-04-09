@@ -525,11 +525,11 @@ export class FormioWrapper {
     const termsStorage = this.config.terms.termsStorageType;
     const checkTermsAreAccepted = () => {
       // eslint-disable-next-line no-unused-vars
-      for (const [key, value] of Object.entries(localStorage)) {
-        for (const [k, v] of Object.entries(JSON.parse(value))) {
-          if (k === 'termsAndConditions') {
-            if (v === 'true') {
-              if (localStorage.getItem('TermsAccepted') === null) {
+      if (localStorage.getItem('Label Buster')) {
+        for (const [key, value] of Object.entries(JSON.parse(localStorage.getItem('Label Buster')))) {
+          if (key === 'lbtermsAndConditions') {
+            if (value === 'true') {
+              if (localStorage.getItem('lbTermsAccepted') === null) {
                 localStorage.setItem('lbTermsAccepted', true);
               }
             } else {
