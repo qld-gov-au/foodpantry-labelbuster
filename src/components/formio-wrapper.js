@@ -226,7 +226,7 @@ export class FormioWrapper {
 
   /**
    * @param {Object} storage the storage option
-   * @param {Sting} key the key within the storage
+   * @param {String} key the key within the storage
    * @param {Object} data the new data to be stored
    * @param {Array} seenPages the seen pages
    * @param {Number} page the page number
