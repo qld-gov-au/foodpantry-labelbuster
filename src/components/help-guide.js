@@ -44,7 +44,7 @@ export class HelpGuide {
 
     this.updateTemplate();
     this._initAccordionButtons();
-    this.onHashChange();
+    this._onHashChange();
     // has seen help guide
     localStorage.setItem('help-guide', true);
     window.addEventListener('formiowrapperPageChange', () => {
@@ -167,8 +167,7 @@ export class HelpGuide {
     });
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  onHashChange() {
+  _onHashChange() {
     window.addEventListener('hashchange', () => {
       // eslint-disable-next-line no-restricted-globals
       const locationId = location.hash.replace('#', '');
