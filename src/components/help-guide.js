@@ -44,6 +44,7 @@ export class HelpGuide {
 
     this.updateTemplate();
     this._initAccordionButtons();
+    this.onHashChange();
     // has seen help guide
     localStorage.setItem('help-guide', true);
     window.addEventListener('formiowrapperPageChange', () => {
@@ -164,6 +165,15 @@ export class HelpGuide {
           .checked;
       }
     });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  onHashChange() {
+    window.addEventListener('hashchange', () => {
+      // eslint-disable-next-line no-restricted-globals
+      const locationId = location.hash.replace('#', '');
+      this._openAccordionItem(locationId);
+    }, false);
   }
 
   _closeButton() {
