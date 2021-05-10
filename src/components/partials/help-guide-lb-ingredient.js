@@ -109,7 +109,7 @@ export default () => html`
             <li>List ingredients in descending order of ingoing weight</li>
             <li>
               Declare all of the ingredients that make up a
-              <a href="#comp-ingredient"> compound ingredient </a>
+              <a href="#comp-ingredient"> compound ingredient</a>
               , if it contributes 5% or more to the final food.
             </li>
             <li>Declare food additives including flavouring substances</li>
@@ -423,7 +423,7 @@ export default () => html`
             <li>
               Tomato paste is an ingredient in a pre-made pizza base. The tomato
               paste is a <b>compound ingredient </b> as it is made up of the
-              following ingredients tomato, canola oil, olive oil, sugar, salt,
+              following ingredients: tomato, canola oil, olive oil, sugar, salt,
               citric acid (330), basil, oregano.
             </li>
             <li>
@@ -1277,7 +1277,7 @@ export default () => html`
                 <li>whey powder</li>
                 <li>whey protein</li>
                 <li>lactose</li>
-                <li>casei nates</li>
+                <li>caseinates</li>
                 <li>milk proteins</li>
                 <li>milk fat.</li>
               </ul>
@@ -1665,7 +1665,7 @@ export default () => html`
           <p>
             <b
               >If the food sold in a small package where the package has a
-              surface area of less than 100 cm2:</b
+              surface area of less than 100 cm<sup>2</sup>:</b
             >
             <br />
             The ingredient list is not required is not required for food in
