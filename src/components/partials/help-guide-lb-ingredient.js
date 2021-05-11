@@ -1087,11 +1087,11 @@ export default () => html`
                 Hard copies of the Australian Fish Names Standard (AS 5300) are
                 available from FRDC’s Online Shop at
                 <a
-                  href="http://www.seafood.net.au/shop"
+                  href="https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/"
                   target="_blank"
                   rel="noopener"
                 >
-                  http://www.seafood.net.au/shop
+                  https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/
                 </a>
               </li>
             </ul>
