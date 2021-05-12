@@ -109,8 +109,8 @@ export default () => html`
             <li>List ingredients in descending order of ingoing weight</li>
             <li>
               Declare all of the ingredients that make up a
-              <a href="#comp-ingredient"> compound ingredient</a>
-              , if it contributes 5% or more to the final food.
+              <a href="#comp-ingredient"> compound ingredient</a>,
+              if it contributes 5% or more to the final food.
             </li>
             <li>Declare food additives including flavouring substances</li>
             <li>
