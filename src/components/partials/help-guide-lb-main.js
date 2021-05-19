@@ -93,6 +93,17 @@ export default () => html`
               >
               Spirits
             </li>
+            <li>
+              Food Standards Australia and New Zealand
+              <ul>
+              <li><a
+                href="https://www.foodstandards.gov.au/consumer/labelling/Pages/Labelling-of-alcoholic-beverages.aspx"
+                target="_blank"
+                rel="noopener"
+              >Labelling of alcoholic beverages</a
+              ></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </article>
