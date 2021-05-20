@@ -116,3 +116,39 @@ import { Environment } from './environment';
     { childList: true, subtree: true },
   );
 })();
+
+function repopulateIngridientDataGrid(){
+  let ActiveTab = JSON.parse(document.querySelector("button.qg-btn.btn-link.visited.active").getAttribute("data-detail"));
+  if(ActiveTab.page === 8){
+    const data = JSON.parse(localStorage.getItem("Label Buster"));
+    const IngredientData = JSON.parse(data.IngredientData);
+
+    if(IngredientData && IngredientData.length > 0){
+      IngredientData.forEach((e, i)=>{
+        if(e.ingredient){
+          document.querySelector("button[ref='datagrid-IngredientData-addRow']").click();
+        }
+      });
+      var tbody = document.querySelector("tbody[data-key='datagrid-IngredientData']");
+      var lastTr = tbody.children[tbody.children.length - 1];
+      lastTr.querySelector("button[ref='datagrid-IngredientData-removeRow']").click();
+    }
+  }
+}
+setTimeout(() => {
+  let nextBtn = document.querySelector("button[data-event='formiowrapperGoToNext']");
+  let prevBtn = document.querySelector("button[data-event='formiowrapperGoToPrevious']");
+  nextBtn.addEventListener("click", ()=>{
+    repopulateIngridientDataGrid();
+  });
+  prevBtn.addEventListener("click", ()=>{
+    repopulateIngridientDataGrid();
+  });
+}, 5000);
+
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    repopulateIngridientDataGrid();
+  }, 5000);
+});
