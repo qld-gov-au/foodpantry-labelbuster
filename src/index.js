@@ -116,3 +116,22 @@ import { Environment } from './environment';
     { childList: true, subtree: true },
   );
 })();
+
+
+window.addEventListener("load", () => {
+  const data = JSON.parse(localStorage.getItem("Label Buster"));
+  const IngredientData = JSON.parse(data.IngredientData);
+
+  if(IngredientData && IngredientData.length > 0){
+    setTimeout(() => {
+      IngredientData.forEach((e, i)=>{
+        if(e.ingredient){
+          document.querySelector("button[ref='datagrid-IngredientData-addRow']").click();
+        }
+      });
+      var tbody = document.querySelector("tbody[data-key='datagrid-IngredientData']");
+      var lastTr = tbody.children[tbody.children.length - 1];
+      lastTr.querySelector("button[ref='datagrid-IngredientData-removeRow']").click();
+    }, 3500);
+  }
+});
