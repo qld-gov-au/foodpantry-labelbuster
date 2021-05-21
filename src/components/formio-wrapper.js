@@ -1,7 +1,7 @@
 /**
  * @class FormioWrapper
  */
-export class FormioWrapper {
+ export class FormioWrapper {
   /**
    * @param {Object} configuration the configuration object
    * @returns {void}
@@ -26,7 +26,7 @@ export class FormioWrapper {
       this.formElement,
       this.config.form.location,
       this.config.form.formioConfig,
-    ).then((wizard) => {
+    ).then(wizard => {
       this.wizard = wizard;
       this.wizard.data.parent = wizard.id;
       this.wizard.data.adminEmail = this.formAdminEmail;
@@ -82,6 +82,7 @@ export class FormioWrapper {
       if (this.config.extraTriggersOnActions.next) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.next);
       }
+      window.repopulateIngridientDataGrid();
     });
 
     baseObject.addEventListener('formiowrapperGoToPrevious', () => {
@@ -90,6 +91,7 @@ export class FormioWrapper {
       if (this.config.extraTriggersOnActions.previous) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.previous);
       }
+      window.repopulateIngridientDataGrid();
     });
     baseObject.addEventListener('formiowrapperCancel', () => {
       if (this.config.form.clearStorageOnCancel) {
@@ -102,7 +104,7 @@ export class FormioWrapper {
       }
     });
 
-    baseObject.addEventListener('formiowrapperGoToPage', (event) => {
+    baseObject.addEventListener('formiowrapperGoToPage', event => {
       this._goToPage(Number(event.detail.page));
       this.scrollToTop();
       if (this.config.extraTriggersOnActions.goto) {
@@ -115,7 +117,7 @@ export class FormioWrapper {
       this._sendEmail();
     });
 
-    baseObject.addEventListener('formiowrapperPageChange', (event) => {
+    baseObject.addEventListener('formiowrapperPageChange', event => {
       if (event.detail.page !== this.currentPageRef) {
         this._fireExtraEvent('formioNewPageRender');
         this.currentPageRef = this.wizard.page;
@@ -153,7 +155,7 @@ export class FormioWrapper {
       }
     });
 
-    baseObject.removeEventListener('formiowrapperGoToPage', (event) => {
+    baseObject.removeEventListener('formiowrapperGoToPage', event => {
       this._goToPage(Number(event.detail.page));
       if (this.config.extraTriggersOnActions.goto) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.goto);
@@ -165,7 +167,7 @@ export class FormioWrapper {
       this._sendEmail();
     });
 
-    baseObject.removeEventListener('formiowrapperPageChange', (event) => {
+    baseObject.removeEventListener('formiowrapperPageChange', event => {
       if (event.detail.page !== this.currentPageRef) {
         this._fireExtraEvent('formioNewPageRender');
         this.currentPageRef = this.wizard.page;
@@ -267,8 +269,9 @@ export class FormioWrapper {
         delete this.storedData.page;
 
         this.wizard.data = this.storedData;
-        this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage.getItem(this.config.terms.termsStorageName));
-
+        this.wizard.data[this.config.terms.dataName] = JSON.parse(
+          termsStorage.getItem(this.config.terms.termsStorageName),
+        );
       } catch (error) {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
@@ -280,11 +283,13 @@ export class FormioWrapper {
 
         // Ensure we have the last valid page to load on.
         for (counter = this.lastNavigation; counter > 0; counter -= 1) {
-          if (!this._checkPageValidity(
-            counter,
-            this.wizard.components,
-            this.wizard.data,
-          )) {
+          if (
+            !this._checkPageValidity(
+              counter,
+              this.wizard.components,
+              this.wizard.data,
+            )
+          ) {
             lowestValid = counter;
           }
         }
@@ -303,7 +308,7 @@ export class FormioWrapper {
     const newStorage = { ...storedData, ...newData };
 
     const keys = Object.keys(newStorage);
-    keys.forEach((key) => {
+    keys.forEach(key => {
       newStorage[key] = JSON.stringify(newStorage[key]);
     });
     return JSON.stringify(newStorage);
@@ -319,7 +324,7 @@ export class FormioWrapper {
     try {
       data = JSON.parse(stringData);
       const keys = Object.keys(data);
-      keys.forEach((key) => {
+      keys.forEach(key => {
         data[key] = JSON.parse(data[key]);
       });
     } catch (error) {
@@ -517,13 +522,13 @@ export class FormioWrapper {
    */
   _areTermsAccepted(page, pages) {
     const termsStorage = this.config.terms.termsStorageType;
-    let storedValue = termsStorage.getItem(
-      this.config.terms.termsStorageName,
-    );
+    let storedValue = termsStorage.getItem(this.config.terms.termsStorageName);
 
     try {
-      storedValue = typeof storedValue !== 'undefined'
-        ? JSON.parse(storedValue) : storedValue;
+      storedValue =
+        typeof storedValue !== 'undefined'
+          ? JSON.parse(storedValue)
+          : storedValue;
       if (typeof storedValue === 'boolean') {
         return storedValue;
       }
@@ -563,9 +568,10 @@ export class FormioWrapper {
     if (this.wizard.page === this.wizard.pages.length - 1) return false;
     if (this._shouldNextPageBeSkipped(this.wizard.page, this.wizard.pages)) {
       const proposedPage = this.wizard.page + 2;
-      const targetPage = proposedPage < this.wizard.pages.length
-        ? proposedPage
-        : this.wizard.page + 1;
+      const targetPage =
+        proposedPage < this.wizard.pages.length
+          ? proposedPage
+          : this.wizard.page + 1;
       this._updateStorage(
         this.config.storage.type,
         this.config.form.title,
@@ -614,6 +620,7 @@ export class FormioWrapper {
         this.config.storage.name,
         JSON.stringify(completed),
       );
+      console.log(completed);
       return completed;
     }
     return false;
@@ -631,8 +638,8 @@ export class FormioWrapper {
       this._shouldPreviousPageBeSkipped(this.wizard.page, this.wizard.pages)
     ) {
       const proposedPage = this.wizard.page - 2;
-      const targetPage = proposedPage <= 0
-        ? proposedPage : this.wizard.page - 1;
+      const targetPage =
+        proposedPage <= 0 ? proposedPage : this.wizard.page - 1;
       this._updateStorage(
         this.config.storage.type,
         this.config.form.title,
@@ -677,11 +684,10 @@ export class FormioWrapper {
     this._updateIfCompleted(pageNo, this.wizard.pages);
 
     // Oddness... seems it doesn't set page the first time.
-    this.wizard.setPage(pageNo)
-      .then(() => {
-        this.wizard.setPage(pageNo);
-        this.wizard.redraw();
-      });
+    this.wizard.setPage(pageNo).then(() => {
+      this.wizard.setPage(pageNo);
+      this.wizard.redraw();
+    });
     return true;
   }
 
@@ -726,7 +732,7 @@ export class FormioWrapper {
     Formio.createForm(
       document.createElement('div'),
       `${this.config.form.baseLocation}${this.config.form.pdfEndpoint}`,
-    ).then((pdfInstance) => {
+    ).then(pdfInstance => {
       this.pdfInstance = pdfInstance;
     });
   }
@@ -742,24 +748,22 @@ export class FormioWrapper {
       this.emailElement.setAttribute('hidden', true);
     }
 
-    Formio.createForm(
-      this.emailElement,
-      `${this.config.form.location}`,
-    ).then((formInstance) => {
-      const wizardData = JSON.parse(JSON.stringify(this.wizard.data));
-      if (!wizardData.children) {
-        wizardData.children = '';
-      }
-      if (wizardData.children.length) {
-        wizardData.children = `${wizardData.children},`;
-      }
-      wizardData
-        .children = `${wizardData.children} ${formInstance.id}`;
-      const emailForm = formInstance;
-      emailForm.data = wizardData;
-      emailForm.sendEmail = sendEmail;
-      emailForm.submit();
-    });
+    Formio.createForm(this.emailElement, `${this.config.form.location}`).then(
+      formInstance => {
+        const wizardData = JSON.parse(JSON.stringify(this.wizard.data));
+        if (!wizardData.children) {
+          wizardData.children = '';
+        }
+        if (wizardData.children.length) {
+          wizardData.children = `${wizardData.children},`;
+        }
+        wizardData.children = `${wizardData.children} ${formInstance.id}`;
+        const emailForm = formInstance;
+        emailForm.data = wizardData;
+        emailForm.sendEmail = sendEmail;
+        emailForm.submit();
+      },
+    );
     this.emailElement.innerHTML = '';
     this.emailElement = null;
   }
@@ -784,7 +788,7 @@ export class FormioWrapper {
     );
     downloadButton.disabled = true;
 
-    this._formSubmission().then((successBody) => {
+    this._formSubmission().then(successBody => {
       const { pdfDownloadName } = this.config.form;
       const formioWrapper = this;
       const xhr = new XMLHttpRequest();
@@ -841,16 +845,13 @@ export class FormioWrapper {
         emailButton.setAttribute('busy', false);
       }, 3000);
     } else {
-      previousEmail = wizardData[
-        this.config.form.emailField];
-      previousConfirm = wizardData[
-        this.config.form.emailConfirmField];
+      previousEmail = wizardData[this.config.form.emailField];
+      previousConfirm = wizardData[this.config.form.emailConfirmField];
+      wizardData[this.config.form.adminField] = this.config.form.adminEmail;
+      wizardData[this.config.form.emailField] = this.config.form.adminEmail;
       wizardData[
-        this.config.form.adminField] = this.config.form.adminEmail;
-      wizardData[
-        this.config.form.emailField] = this.config.form.adminEmail;
-      wizardData[
-        this.config.form.emailConfirmField] = this.config.form.adminEmail;
+        this.config.form.emailConfirmField
+      ] = this.config.form.adminEmail;
     }
     this._triggerEmailSubmission(wizardData.sendEmail);
     if (wizardData.sendEmail !== 'user') {
