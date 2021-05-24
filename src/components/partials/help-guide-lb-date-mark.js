@@ -464,10 +464,9 @@ export default () => html`
         </button>
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
-            If the food sold in a small package where the package has a surface
-            area of less than 100 cm2 only a use-by date needs to be included.
-            For example: A small packet of chewing gum or a small bar of
-            chocolate.
+            If the food is sold in a small package where the package has a surface
+            area of less than 100 cm<sup>2</sup> only a use-by date needs to be included.
+            For example: A small bar of chocolate.
           </p>
           <section>
             <h4>Further reading</h4>
