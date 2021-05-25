@@ -21,7 +21,7 @@ import { Environment } from './environment';
 
   // Overwrite config with environment variables where applicable.
   const config = {};
-  Object.keys(configuration).forEach((key) => {
+  Object.keys(configuration).forEach(key => {
     config[key] = { ...configuration[key], ...environment[key] };
   });
   window.formEnv = environment.flag;
@@ -59,7 +59,8 @@ import { Environment } from './environment';
       document.body.appendChild(sectionNav);
       sectionNav = document.querySelector('#qg-section-nav');
       // eslint-disable-next-line max-len
-      sectionNav.innerHTML = '<ul><li><a class="active" href="#">Label Buster</li></ul>';
+      sectionNav.innerHTML =
+        '<ul><li><a class="active" href="#">Label Buster</li></ul>';
     } else {
       sectionNav = navigationSection.querySelector('ul > li > a.active')
         .parentElement;
@@ -73,7 +74,7 @@ import { Environment } from './environment';
     const bg = new ButtonGroup(document.querySelector('.button-container'));
   });
 
-  window.addEventListener('formioNewPageRender', (event) => {
+  window.addEventListener('formioNewPageRender', event => {
     // automated email on summary
     if (event.detail.page === 10) {
       const newEvent = new CustomEvent('formiowrapperSendAdminEmail', {
@@ -84,7 +85,7 @@ import { Environment } from './environment';
   });
 
   window.dataLayer = window.dataLayer || [];
-  window.addEventListener('formioWrapperTracking', (event) => {
+  window.addEventListener('formioWrapperTracking', event => {
     const { form } = event.detail;
     const { change } = event.detail;
     if (!form.changed) return;
@@ -111,27 +112,57 @@ import { Environment } from './environment';
     cssReapplier.reapply(['radio']);
   });
 
-  mutationObserver.observe(
-    document.querySelector(config.form.selector),
-    { childList: true, subtree: true },
-  );
+  mutationObserver.observe(document.querySelector(config.form.selector), {
+    childList: true,
+    subtree: true,
+  });
 })();
 
-
-window.addEventListener("load", () => {
-  const data = JSON.parse(localStorage.getItem("Label Buster"));
+let timer = 0;
+window.repopulateIngridientDataGrid = () => {
+  let _l = true;
+  const data = JSON.parse(localStorage.getItem('Label Buster'));
   const IngredientData = JSON.parse(data.IngredientData);
-
-  if(IngredientData && IngredientData.length > 0){
-    setTimeout(() => {
-      IngredientData.forEach((e, i)=>{
-        if(e.ingredient){
-          document.querySelector("button[ref='datagrid-IngredientData-addRow']").click();
-        }
-      });
-      var tbody = document.querySelector("tbody[data-key='datagrid-IngredientData']");
-      var lastTr = tbody.children[tbody.children.length - 1];
-      lastTr.querySelector("button[ref='datagrid-IngredientData-removeRow']").click();
-    }, 3500);
+  const _isLoop = sessionStorage.getItem('IsLoopedOnce');
+  if (_isLoop == 'true') {
+    _l = false;
   }
+  if (IngredientData && IngredientData.length > 0) {
+    timer = setTimeout(() => {
+      let ActiveTab = document.querySelector(
+        'button.qg-btn.btn-link.active.visited',
+      );
+      ActiveTab = JSON.parse(ActiveTab.getAttribute('data-detail'));
+      if (ActiveTab.page == 8) {
+        if (_l) {
+          sessionStorage.setItem('IsLoopedOnce', true);
+          IngredientData.forEach((e, i) => {
+            if (e.ingredient) {
+              document
+                .querySelector("button[ref='datagrid-IngredientData-addRow']")
+                .click();
+            }
+          });
+        }
+        let tbody = document.querySelector(
+          "tbody[data-key='datagrid-IngredientData']",
+        );
+        for (let i = 0; i < tbody.children.length; i++) {
+          let tr = tbody.children[i];
+          let textArea = tr.getElementsByTagName('textarea');
+          if (textArea[0].value == '') {
+            tr.querySelector(
+              "button[ref='datagrid-IngredientData-removeRow']",
+            ).click();
+          }
+        }
+      }
+    }, 5000);
+  }
+};
+
+window.addEventListener('load', () => {
+  clearTimeout(timer);
+  sessionStorage.setItem('IsLoopedOnce', false);
+  window.repopulateIngridientDataGrid();
 });
