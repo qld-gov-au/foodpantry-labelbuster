@@ -1664,15 +1664,14 @@ export default () => html`
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b
-              >If the food sold in a small package where the package has a
+              >If the food is sold in a small package where the package has a
               surface area of less than 100 cm<sup>2</sup>:</b
             >
             <br />
             The ingredient list is not required is not required for food in
             small packages.
             <br />
-            For example: A small a packet of chewing gum or a small bar of
-            chocolate.
+            For example: A small bar of chocolate.
           </p>
           <section>
             <h4>Further reading</h4>
