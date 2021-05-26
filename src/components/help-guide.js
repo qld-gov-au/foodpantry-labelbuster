@@ -256,6 +256,14 @@ export class HelpGuide {
    * @return {HTMLTemplate}
    */
   createTemplate(state) {
+    // ----- This code is used to scroll to "Food with extra requirements" Section in Help guide ----- //
+    let helpGuideButton = document.querySelector("button[data-accordion-item='help-guide']");
+    if(helpGuideButton){
+      helpGuideButton.addEventListener("click", ()=>{
+        document.getElementById("foodWithExtraReq").scrollIntoView();
+      });
+    }
+    //---------------------------------------------------------------------------//
     if (!state) return null;
     return html`
       ${!state.open ? this._callout() : ''}
