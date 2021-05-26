@@ -47,12 +47,14 @@ describe('Formio Wrapper Event Tests.', () => {
     wrapper.wizard.prevPage = () => {};
     wrapper.wizard.setPage = () => Promise.resolve(true);
     wrapper.wizard.resetValue = () => {};
+    window.repopulateIngridientDataGrid = () => {};
 
     const spiedInitialise = spy(wrapper, 'initialise');
     const spiedGoToNext = spy(wrapper, '_goToNextPage');
     const spiedFireExtraEvent = spy(wrapper, '_fireExtraEvent');
     const spiedGoToPreviousPage = spy(wrapper, '_goToPreviousPage');
     const spiedGoToPage = spy(wrapper, '_goToPage');
+    const spiedRepopulateIngridientDataGrid = spy(window, 'repopulateIngridientDataGrid');
 
     wrapper._addListeners(element);
     element.dispatchEvent(new CustomEvent('DOMContentLoaded'));
@@ -77,6 +79,7 @@ describe('Formio Wrapper Event Tests.', () => {
     assert.called(spiedFireExtraEvent);
     assert.calledTwice(spiedGoToPreviousPage);
     assert.called(spiedGoToPage);
+    assert.called(spiedRepopulateIngridientDataGrid);
   });
 
   it('_addListeners gotopage', async () => {
