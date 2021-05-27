@@ -1,7 +1,7 @@
 /**
  * @class FormioWrapper
  */
- export class FormioWrapper {
+export class FormioWrapper {
   /**
    * @param {Object} configuration the configuration object
    * @returns {void}
@@ -26,7 +26,7 @@
       this.formElement,
       this.config.form.location,
       this.config.form.formioConfig,
-    ).then(wizard => {
+    ).then((wizard) => {
       this.wizard = wizard;
       this.wizard.data.parent = wizard.id;
       this.wizard.data.adminEmail = this.formAdminEmail;
@@ -104,7 +104,7 @@
       }
     });
 
-    baseObject.addEventListener('formiowrapperGoToPage', event => {
+    baseObject.addEventListener('formiowrapperGoToPage', (event) => {
       this._goToPage(Number(event.detail.page));
       this.scrollToTop();
       if (this.config.extraTriggersOnActions.goto) {
@@ -117,7 +117,7 @@
       this._sendEmail();
     });
 
-    baseObject.addEventListener('formiowrapperPageChange', event => {
+    baseObject.addEventListener('formiowrapperPageChange', (event) => {
       if (event.detail.page !== this.currentPageRef) {
         this._fireExtraEvent('formioNewPageRender');
         this.currentPageRef = this.wizard.page;
@@ -155,7 +155,7 @@
       }
     });
 
-    baseObject.removeEventListener('formiowrapperGoToPage', event => {
+    baseObject.removeEventListener('formiowrapperGoToPage', (event) => {
       this._goToPage(Number(event.detail.page));
       if (this.config.extraTriggersOnActions.goto) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.goto);
@@ -167,7 +167,7 @@
       this._sendEmail();
     });
 
-    baseObject.removeEventListener('formiowrapperPageChange', event => {
+    baseObject.removeEventListener('formiowrapperPageChange', (event) => {
       if (event.detail.page !== this.currentPageRef) {
         this._fireExtraEvent('formioNewPageRender');
         this.currentPageRef = this.wizard.page;
@@ -308,7 +308,7 @@
     const newStorage = { ...storedData, ...newData };
 
     const keys = Object.keys(newStorage);
-    keys.forEach(key => {
+    keys.forEach((key) => {
       newStorage[key] = JSON.stringify(newStorage[key]);
     });
     return JSON.stringify(newStorage);
@@ -324,7 +324,7 @@
     try {
       data = JSON.parse(stringData);
       const keys = Object.keys(data);
-      keys.forEach(key => {
+      keys.forEach((key) => {
         data[key] = JSON.parse(data[key]);
       });
     } catch (error) {
@@ -525,10 +525,9 @@
     let storedValue = termsStorage.getItem(this.config.terms.termsStorageName);
 
     try {
-      storedValue =
-        typeof storedValue !== 'undefined'
-          ? JSON.parse(storedValue)
-          : storedValue;
+      storedValue = typeof storedValue !== 'undefined'
+        ? JSON.parse(storedValue)
+        : storedValue;
       if (typeof storedValue === 'boolean') {
         return storedValue;
       }
@@ -568,10 +567,9 @@
     if (this.wizard.page === this.wizard.pages.length - 1) return false;
     if (this._shouldNextPageBeSkipped(this.wizard.page, this.wizard.pages)) {
       const proposedPage = this.wizard.page + 2;
-      const targetPage =
-        proposedPage < this.wizard.pages.length
-          ? proposedPage
-          : this.wizard.page + 1;
+      const targetPage = proposedPage < this.wizard.pages.length
+        ? proposedPage
+        : this.wizard.page + 1;
       this._updateStorage(
         this.config.storage.type,
         this.config.form.title,
@@ -620,7 +618,6 @@
         this.config.storage.name,
         JSON.stringify(completed),
       );
-      console.log(completed);
       return completed;
     }
     return false;
@@ -638,8 +635,8 @@
       this._shouldPreviousPageBeSkipped(this.wizard.page, this.wizard.pages)
     ) {
       const proposedPage = this.wizard.page - 2;
-      const targetPage =
-        proposedPage <= 0 ? proposedPage : this.wizard.page - 1;
+      const targetPage = proposedPage <= 0 ? proposedPage
+        : this.wizard.page - 1;
       this._updateStorage(
         this.config.storage.type,
         this.config.form.title,
@@ -732,7 +729,7 @@
     Formio.createForm(
       document.createElement('div'),
       `${this.config.form.baseLocation}${this.config.form.pdfEndpoint}`,
-    ).then(pdfInstance => {
+    ).then((pdfInstance) => {
       this.pdfInstance = pdfInstance;
     });
   }
@@ -749,7 +746,7 @@
     }
 
     Formio.createForm(this.emailElement, `${this.config.form.location}`).then(
-      formInstance => {
+      (formInstance) => {
         const wizardData = JSON.parse(JSON.stringify(this.wizard.data));
         if (!wizardData.children) {
           wizardData.children = '';
@@ -788,7 +785,7 @@
     );
     downloadButton.disabled = true;
 
-    this._formSubmission().then(successBody => {
+    this._formSubmission().then((successBody) => {
       const { pdfDownloadName } = this.config.form;
       const formioWrapper = this;
       const xhr = new XMLHttpRequest();

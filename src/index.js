@@ -21,7 +21,7 @@ import { Environment } from './environment';
 
   // Overwrite config with environment variables where applicable.
   const config = {};
-  Object.keys(configuration).forEach(key => {
+  Object.keys(configuration).forEach((key) => {
     config[key] = { ...configuration[key], ...environment[key] };
   });
   window.formEnv = environment.flag;
@@ -59,8 +59,7 @@ import { Environment } from './environment';
       document.body.appendChild(sectionNav);
       sectionNav = document.querySelector('#qg-section-nav');
       // eslint-disable-next-line max-len
-      sectionNav.innerHTML =
-        '<ul><li><a class="active" href="#">Label Buster</li></ul>';
+      sectionNav.innerHTML = '<ul><li><a class="active" href="#">Label Buster</li></ul>';
     } else {
       sectionNav = navigationSection.querySelector('ul > li > a.active')
         .parentElement;
@@ -74,7 +73,7 @@ import { Environment } from './environment';
     const bg = new ButtonGroup(document.querySelector('.button-container'));
   });
 
-  window.addEventListener('formioNewPageRender', event => {
+  window.addEventListener('formioNewPageRender', (event) => {
     // automated email on summary
     if (event.detail.page === 10) {
       const newEvent = new CustomEvent('formiowrapperSendAdminEmail', {
@@ -85,7 +84,7 @@ import { Environment } from './environment';
   });
 
   window.dataLayer = window.dataLayer || [];
-  window.addEventListener('formioWrapperTracking', event => {
+  window.addEventListener('formioWrapperTracking', (event) => {
     const { form } = event.detail;
     const { change } = event.detail;
     if (!form.changed) return;
@@ -124,7 +123,7 @@ window.repopulateIngridientDataGrid = () => {
   const data = JSON.parse(localStorage.getItem('Label Buster'));
   const IngredientData = JSON.parse(data.IngredientData);
   const _isLoop = sessionStorage.getItem('IsLoopedOnce');
-  if (_isLoop == 'true') {
+  if (_isLoop === 'true') {
     _l = false;
   }
   if (IngredientData && IngredientData.length > 0) {
@@ -133,7 +132,7 @@ window.repopulateIngridientDataGrid = () => {
         'button.qg-btn.btn-link.active.visited',
       );
       ActiveTab = JSON.parse(ActiveTab.getAttribute('data-detail'));
-      if (ActiveTab.page == 8) {
+      if (ActiveTab.page === 8) {
         if (_l) {
           sessionStorage.setItem('IsLoopedOnce', true);
           IngredientData.forEach((e, i) => {
@@ -144,18 +143,18 @@ window.repopulateIngridientDataGrid = () => {
             }
           });
         }
-        let tbody = document.querySelector(
+        const tbody = document.querySelector(
           "tbody[data-key='datagrid-IngredientData']",
         );
-        for (let i = 0; i < tbody.children.length; i++) {
-          let tr = tbody.children[i];
-          let textArea = tr.getElementsByTagName('textarea');
-          if (textArea[0].value == '') {
+        const tbodyChildren = [...tbody.children];
+        tbodyChildren.forEach((tr) => {
+          const textArea = tr.getElementsByTagName('textarea');
+          if (textArea[0].value === '') {
             tr.querySelector(
               "button[ref='datagrid-IngredientData-removeRow']",
             ).click();
           }
-        }
+        });
       }
     }, 5000);
   }
