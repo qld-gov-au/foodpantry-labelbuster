@@ -261,7 +261,7 @@ export class HelpGuide {
     const helpGuideButton = document.querySelector("button[data-accordion-item='help-guide']");
     if (helpGuideButton) {
       helpGuideButton.addEventListener('click', () => {
-        document.getElementById('foodWithExtraReq').scrollIntoView();
+        document.getElementsByClassName('food-with-extra-req')[0].scrollIntoView();
       });
     }
     // ----------------------------------------------------------------//

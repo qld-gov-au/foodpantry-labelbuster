@@ -428,7 +428,7 @@ export default () => html`
         </div>
       </article>
     </section>
-    <h2 id="foodWithExtraReq">Food with extra requirements</h2>
+    <h2 class="food-with-extra-req">Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
         <button
