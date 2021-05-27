@@ -54,7 +54,6 @@ describe('Formio Wrapper Event Tests.', () => {
     const spiedFireExtraEvent = spy(wrapper, '_fireExtraEvent');
     const spiedGoToPreviousPage = spy(wrapper, '_goToPreviousPage');
     const spiedGoToPage = spy(wrapper, '_goToPage');
-    const spiedRepopulateIngridientDataGrid = spy(window, 'repopulateIngridientDataGrid');
 
     wrapper._addListeners(element);
     element.dispatchEvent(new CustomEvent('DOMContentLoaded'));
@@ -79,7 +78,6 @@ describe('Formio Wrapper Event Tests.', () => {
     assert.called(spiedFireExtraEvent);
     assert.calledTwice(spiedGoToPreviousPage);
     assert.called(spiedGoToPage);
-    assert.called(spiedRepopulateIngridientDataGrid);
   });
 
   it('_addListeners gotopage', async () => {

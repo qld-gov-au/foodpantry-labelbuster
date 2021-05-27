@@ -47,16 +47,16 @@ export class FormioWrapper {
       this._firePageChangeEvent();
       this.scrollToTop();
     });
-    this.wizard.on('render', (form) => {
+    this.wizard.on('render', () => {
       this._firePageChangeEvent();
       if (this.wizard.page === 0) {
         this.scrollToTop();
       }
-      if(this.wizard.page === 8){
-        this.wizard.submission= {
+      if (this.wizard.page === 8) {
+        this.wizard.submission = {
           data: {
-            ...this.wizard._data
-          }
+            ...this.wizard._data,
+          },
         };
       }
     });
