@@ -47,10 +47,17 @@ export class FormioWrapper {
       this._firePageChangeEvent();
       this.scrollToTop();
     });
-    this.wizard.on('render', () => {
+    this.wizard.on('render', (form) => {
       this._firePageChangeEvent();
       if (this.wizard.page === 0) {
         this.scrollToTop();
+      }
+      if(this.wizard.page === 8){
+        this.wizard.submission= {
+          data: {
+            ...this.wizard._data
+          }
+        };
       }
     });
     this.wizard.on('change', (form, change) => {
@@ -82,7 +89,6 @@ export class FormioWrapper {
       if (this.config.extraTriggersOnActions.next) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.next);
       }
-      window.repopulateIngridientDataGrid();
     });
 
     baseObject.addEventListener('formiowrapperGoToPrevious', () => {
@@ -91,7 +97,6 @@ export class FormioWrapper {
       if (this.config.extraTriggersOnActions.previous) {
         this._fireExtraEvent(this.config.extraTriggersOnActions.previous);
       }
-      window.repopulateIngridientDataGrid();
     });
     baseObject.addEventListener('formiowrapperCancel', () => {
       if (this.config.form.clearStorageOnCancel) {
