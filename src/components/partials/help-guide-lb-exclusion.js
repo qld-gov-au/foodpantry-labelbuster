@@ -196,7 +196,7 @@ export default () => html`
     </section>
   </div>
 
-  <div class="side-padding vertical-padding">
+  <div class="side-padding vertical-padding food-with-extra-req">
     <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
