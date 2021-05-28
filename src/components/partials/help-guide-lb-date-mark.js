@@ -428,7 +428,7 @@ export default () => html`
         </div>
       </article>
     </section>
-    <h2>Food with extra requirements</h2>
+    <h2 class="food-with-extra-req">Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
         <button
@@ -464,10 +464,9 @@ export default () => html`
         </button>
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
-            If the food sold in a small package where the package has a surface
-            area of less than 100 cm2 only a use-by date needs to be included.
-            For example: A small packet of chewing gum or a small bar of
-            chocolate.
+            If the food is sold in a small package where the package has a surface
+            area of less than 100 cm<sup>2</sup> only a use-by date needs to be included.
+            For example: A small bar of chocolate.
           </p>
           <section>
             <h4>Further reading</h4>
