@@ -52,6 +52,13 @@ export class FormioWrapper {
       if (this.wizard.page === 0) {
         this.scrollToTop();
       }
+      if (this.wizard.page === 8) {
+        this.wizard.submission = {
+          data: {
+            ...this.wizard._data,
+          },
+        };
+      }
     });
     this.wizard.on('change', (form, change) => {
       this._firePageChangeEvent();
@@ -265,9 +272,11 @@ export class FormioWrapper {
         delete this.storedData._seenPages;
         this.wizard.page = this.storedData.page;
         delete this.storedData.page;
+
         this.wizard.data = this.storedData;
-        this.wizard.data[this.config.terms.dataName] = JSON.parse(termsStorage
-          .getItem(this.config.terms.termsStorageName));
+        this.wizard.data[this.config.terms.dataName] = JSON.parse(
+          termsStorage.getItem(this.config.terms.termsStorageName),
+        );
       } catch (error) {
         // eslint-disable-next-line no-console
         console.warn('Stored data corrupted, skipping');
@@ -279,11 +288,13 @@ export class FormioWrapper {
 
         // Ensure we have the last valid page to load on.
         for (counter = this.lastNavigation; counter > 0; counter -= 1) {
-          if (!this._checkPageValidity(
-            counter,
-            this.wizard.components,
-            this.wizard.data,
-          )) {
+          if (
+            !this._checkPageValidity(
+              counter,
+              this.wizard.components,
+              this.wizard.data,
+            )
+          ) {
             lowestValid = counter;
           }
         }
@@ -516,13 +527,12 @@ export class FormioWrapper {
    */
   _areTermsAccepted(page, pages) {
     const termsStorage = this.config.terms.termsStorageType;
-    let storedValue = termsStorage.getItem(
-      this.config.terms.termsStorageName,
-    );
+    let storedValue = termsStorage.getItem(this.config.terms.termsStorageName);
 
     try {
       storedValue = typeof storedValue !== 'undefined'
-        ? JSON.parse(storedValue) : storedValue;
+        ? JSON.parse(storedValue)
+        : storedValue;
       if (typeof storedValue === 'boolean') {
         return storedValue;
       }
@@ -630,8 +640,8 @@ export class FormioWrapper {
       this._shouldPreviousPageBeSkipped(this.wizard.page, this.wizard.pages)
     ) {
       const proposedPage = this.wizard.page - 2;
-      const targetPage = proposedPage <= 0
-        ? proposedPage : this.wizard.page - 1;
+      const targetPage = proposedPage <= 0 ? proposedPage
+        : this.wizard.page - 1;
       this._updateStorage(
         this.config.storage.type,
         this.config.form.title,
@@ -676,11 +686,10 @@ export class FormioWrapper {
     this._updateIfCompleted(pageNo, this.wizard.pages);
 
     // Oddness... seems it doesn't set page the first time.
-    this.wizard.setPage(pageNo)
-      .then(() => {
-        this.wizard.setPage(pageNo);
-        this.wizard.redraw();
-      });
+    this.wizard.setPage(pageNo).then(() => {
+      this.wizard.setPage(pageNo);
+      this.wizard.redraw();
+    });
     return true;
   }
 
@@ -741,23 +750,22 @@ export class FormioWrapper {
       this.emailElement.setAttribute('hidden', true);
     }
 
-    Formio.createForm(
-      this.emailElement,
-      `${this.config.form.location}`,
-    ).then((formInstance) => {
-      if (!this.wizard.data.children) {
-        this.wizard.data.children = '';
-      }
-      if (this.wizard.data.children.length) {
-        this.wizard.data.children = `${this.wizard.data.children},`;
-      }
-      this.wizard.data
-        .children = `${this.wizard.data.children} ${formInstance.id}`;
-      const emailForm = formInstance;
-      emailForm.data = this.wizard.data;
-      emailForm.sendEmail = sendEmail;
-      emailForm.submit();
-    });
+    Formio.createForm(this.emailElement, `${this.config.form.location}`).then(
+      (formInstance) => {
+        const wizardData = JSON.parse(JSON.stringify(this.wizard.data));
+        if (!wizardData.children) {
+          wizardData.children = '';
+        }
+        if (wizardData.children.length) {
+          wizardData.children = `${wizardData.children},`;
+        }
+        wizardData.children = `${wizardData.children} ${formInstance.id}`;
+        const emailForm = formInstance;
+        emailForm.data = wizardData;
+        emailForm.sendEmail = sendEmail;
+        emailForm.submit();
+      },
+    );
     this.emailElement.innerHTML = '';
     this.emailElement = null;
   }
@@ -828,7 +836,8 @@ export class FormioWrapper {
     const emailButton = this.config.form.queryElement.querySelector(
       '[name="data[emailButton]"',
     );
-    if (this.wizard.data.sendEmail === 'user') {
+    const wizardData = JSON.parse(JSON.stringify(this.wizard.data));
+    if (wizardData.sendEmail === 'user') {
       emailButton.disabled = true;
       emailButton.setAttribute('busy', true);
       this.requestedEmail = true;
@@ -838,19 +847,16 @@ export class FormioWrapper {
         emailButton.setAttribute('busy', false);
       }, 3000);
     } else {
-      previousEmail = this.wizard.data[
-        this.config.form.emailField];
-      previousConfirm = this.wizard.data[
-        this.config.form.emailConfirmField];
-      this.wizard.data[
-        this.config.form.adminField] = this.config.form.adminEmail;
-      this.wizard.data[
-        this.config.form.emailField] = this.config.form.adminEmail;
-      this.wizard.data[
-        this.config.form.emailConfirmField] = this.config.form.adminEmail;
+      previousEmail = wizardData[this.config.form.emailField];
+      previousConfirm = wizardData[this.config.form.emailConfirmField];
+      wizardData[this.config.form.adminField] = this.config.form.adminEmail;
+      wizardData[this.config.form.emailField] = this.config.form.adminEmail;
+      wizardData[
+        this.config.form.emailConfirmField
+      ] = this.config.form.adminEmail;
     }
-    this._triggerEmailSubmission(this.wizard.data.sendEmail);
-    if (this.wizard.data.sendEmail !== 'user') {
+    this._triggerEmailSubmission(wizardData.sendEmail);
+    if (wizardData.sendEmail !== 'user') {
       this.wizard.data[this.config.form.emailField] = previousEmail;
       this.wizard.data[this.config.form.emailConfirmField] = previousConfirm;
     }
