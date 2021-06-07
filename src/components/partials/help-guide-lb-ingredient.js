@@ -1086,8 +1086,8 @@ export default () => html`
                 </a>
               </li>
               <li>
-                Hard copies of the Australian Fish Names Standard (AS 5300) are
-                available from FRDC’s Online Shop at
+                Hard copies of the Australian Fish Names Standard (AS 5300) can
+                be purchased from SAI Global at
                 <a
                   href="https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/"
                   target="_blank"
