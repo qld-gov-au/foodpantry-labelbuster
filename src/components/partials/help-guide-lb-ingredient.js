@@ -1,8 +1,10 @@
 import { html } from 'lit-html';
 import { modifyAccordionState } from '../../scripts/collapse-expand';
+import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
+  <button class="controls" @click="${e => printScreen(e, document.getElementById('help-guide').innerHTML, '.expand')}">Print</button>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -1084,8 +1086,8 @@ export default () => html`
                 </a>
               </li>
               <li>
-                Hard copies of the Australian Fish Names Standard (AS 5300) are
-                available from FRDC’s Online Shop at
+                Hard copies of the Australian Fish Names Standard (AS 5300) can
+                be purchased from SAI Global at
                 <a
                   href="https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/"
                   target="_blank"
