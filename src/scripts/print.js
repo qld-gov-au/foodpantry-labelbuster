@@ -1,6 +1,6 @@
 export function printScreen(e, sourceSelector, accordianSelector = null) {
-  document.querySelector(".btn-print").remove();
-  document.querySelector(".help-guide-close").remove();
+  document.querySelector('.btn-print').remove();
+  document.querySelector('.help-guide-close').remove();
   if (accordianSelector) {
     const expands = document.querySelectorAll(accordianSelector);
     expands.forEach(btn => btn.click());
