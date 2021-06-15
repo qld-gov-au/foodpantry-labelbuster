@@ -4,7 +4,7 @@ import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-  <button class="controls" @click="${e => printScreen(e, document.getElementById('help-guide').innerHTML, '.expand')}">Print</button>
+  <button class="controls btn-print" @click="${e => printScreen(e, 'help-guide', '.expand')}">Print</button>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -901,7 +901,7 @@ export default () => html`
     </section>
   </div>
 
-  <div class="side-padding vertical-padding food-with-extra-req">
+  <div class="side-padding vertical-padding">
     <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -1086,8 +1086,8 @@ export default () => html`
                 </a>
               </li>
               <li>
-                Hard copies of the Australian Fish Names Standard (AS 5300) can
-                be purchased from SAI Global at
+                Hard copies of the Australian Fish Names Standard (AS 5300) are
+                available from FRDC’s Online Shop at
                 <a
                   href="https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/"
                   target="_blank"
@@ -1666,14 +1666,15 @@ export default () => html`
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
             <b
-              >If the food is sold in a small package where the package has a
+              >If the food sold in a small package where the package has a
               surface area of less than 100 cm<sup>2</sup>:</b
             >
             <br />
             The ingredient list is not required is not required for food in
             small packages.
             <br />
-            For example: A small bar of chocolate.
+            For example: A small a packet of chewing gum or a small bar of
+            chocolate.
           </p>
           <section>
             <h4>Further reading</h4>
