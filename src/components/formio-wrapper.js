@@ -836,8 +836,7 @@ export class FormioWrapper {
     const emailButton = this.config.form.queryElement.querySelector(
       '[name="data[emailButton]"',
     );
-    const wizardData = JSON.parse(JSON.stringify(this.wizard.data));
-    if (wizardData.sendEmail === 'user') {
+    if (this.wizard.data.sendEmail === 'user') {
       emailButton.disabled = true;
       emailButton.setAttribute('busy', true);
       this.requestedEmail = true;
@@ -847,16 +846,19 @@ export class FormioWrapper {
         emailButton.setAttribute('busy', false);
       }, 3000);
     } else {
-      previousEmail = wizardData[this.config.form.emailField];
-      previousConfirm = wizardData[this.config.form.emailConfirmField];
-      wizardData[this.config.form.adminField] = this.config.form.adminEmail;
-      wizardData[this.config.form.emailField] = this.config.form.adminEmail;
-      wizardData[
-        this.config.form.emailConfirmField
-      ] = this.config.form.adminEmail;
+      previousEmail = this.wizard.data[
+        this.config.form.emailField];
+      previousConfirm = this.wizard.data[
+        this.config.form.emailConfirmField];
+      this.wizard.data[
+        this.config.form.adminField] = this.config.form.adminEmail;
+      this.wizard.data[
+        this.config.form.emailField] = this.config.form.adminEmail;
+      this.wizard.data[
+        this.config.form.emailConfirmField] = this.config.form.adminEmail;
     }
-    this._triggerEmailSubmission(wizardData.sendEmail);
-    if (wizardData.sendEmail !== 'user') {
+    this._triggerEmailSubmission(this.wizard.data.sendEmail);
+    if (this.wizard.data.sendEmail !== 'user') {
       this.wizard.data[this.config.form.emailField] = previousEmail;
       this.wizard.data[this.config.form.emailConfirmField] = previousConfirm;
     }
