@@ -4,7 +4,7 @@ import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-  <button class="controls" @click="${e => printScreen(e, document.getElementById('help-guide').innerHTML, '.expand')}">Print</button>
+  <button class="controls btn-print" @click="${e => printScreen(e, 'help-guide')}">Print</button>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -430,7 +430,7 @@ export default () => html`
         </div>
       </article>
     </section>
-    <h2 class="food-with-extra-req">Food with extra requirements</h2>
+    <h2>Food with extra requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
         <button
