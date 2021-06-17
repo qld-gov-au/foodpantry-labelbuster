@@ -1,11 +1,10 @@
-export function printScreen(e, printableContent, accordianSelector = null) {
-  if (accordianSelector) {
-    const expands = document.querySelectorAll(accordianSelector);
-    expands.forEach(btn => btn.click());
-  }
-  const genuineBodyHtml = document.body.innerHTML;
-  document.body.innerHTML = printableContent;
+export function printScreen(e, sourceSelector) {
+  document.querySelector('.btn-print').remove();
+  document.querySelector('.help-guide-close').remove();
+  const contentSource = document.getElementById(sourceSelector);
+  const checkboxes = contentSource.querySelectorAll("input[type='checkbox']");
+  checkboxes.forEach(checkbox => checkbox.setAttribute('checked', true));
+  document.body.innerHTML = contentSource.innerHTML;
   window.print();
-  document.body.innerHTML = genuineBodyHtml;
   window.location.reload();
 }
