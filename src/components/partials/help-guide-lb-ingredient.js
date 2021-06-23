@@ -4,7 +4,7 @@ import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-  <button class="controls btn-print" @click="${e => printScreen(e, 'help-guide')}">Print</button>
+  <button class="controls btn-print qg-btn btn-secondary" @click="${e => printScreen(e, 'help-guide')}">Print</button>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -50,9 +50,9 @@ export default () => html`
           <ul>
             <li>Individual portion packs</li>
             <li>
-              <button data-accordion-item="food-package" class="accordion-btn">
+              <a data-accordion-item="food-package" class="accordion-btn">
                 Foods in small packages
-              </button>
+              </a>
             </li>
             <li>
               <button
@@ -72,9 +72,9 @@ export default () => html`
                 Standard 2.6.2
               </a>
               of the Food Standards Code. See
-              <button data-accordion-item="non-alcoholic" class="accordion-btn">
+              <a data-accordion-item="non-alcoholic" class="accordion-btn">
                 non-alcoholic drinks
-              </button>
+              </a>
               in food with extra requirements for more information.
             </li>
             <li>
@@ -90,9 +90,9 @@ export default () => html`
             <li>a name that describes the true nature of the ingredient</li>
             <li>
               a
-              <button data-accordion-item="generic-name" class="accordion-btn">
+              <a data-accordion-item="generic-name" class="accordion-btn">
                 generic name
-              </button>
+              </a>
               specified in the Food Standards Code.
             </li>
           </ul>

@@ -4,7 +4,7 @@ import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-  <button class="controls btn-print" @click="${e => printScreen(e, 'help-guide')}">Print</button>
+  <button class="controls btn-print qg-btn btn-secondary" @click="${e => printScreen(e, 'help-guide')}">Print</button>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -56,14 +56,13 @@ export default () => html`
 
           <p>
             A
-            <button data-accordion-item="use-by-date" class="accordion-btn">
+            <a data-accordion-item="use-by-date" class="accordion-btn">
               use-by date
-            </button>
+            </a>
             is required when a food becomes unsafe to eat. Food cannot be sold
             and should not be eaten after its
-            <button data-accordion-item="use-by-date" class="accordion-btn">
-              use-by date</button
-            >. A food can be eaten past its
+            <a data-accordion-item="use-by-date" class="accordion-btn">
+              use-by date</a>. A food can be eaten past its
             <button
               data-accordion-item="best-before-date"
               class="accordion-btn"
@@ -92,9 +91,9 @@ export default () => html`
           </ul>
           <p>
             The Food Standards Code gives rules for the
-            <button data-accordion-item="date-format" class="accordion-btn">
+            <a data-accordion-item="date-format" class="accordion-btn">
               format of the date mark
-            </button>
+            </a>
             (how it appears on label). The day and month are required for a food
             with a shelf life of 3 months or less, whereas the month and year
             are required for a food with a longer shelf life.

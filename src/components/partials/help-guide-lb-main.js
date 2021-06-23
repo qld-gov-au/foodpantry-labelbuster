@@ -4,7 +4,7 @@ import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-  <button class="controls btn-print" @click="${e => printScreen(e, 'help-guide')}">Print</button>
+  <button class="controls btn-print qg-btn btn-secondary" @click="${e => printScreen(e, 'help-guide')}">Print</button>
     <h2>Complex requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">

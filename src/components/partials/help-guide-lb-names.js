@@ -4,7 +4,7 @@ import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-  <button class="controls btn-print" @click="${e => printScreen(e, 'help-guide')}">Print</button>
+  <button class="controls btn-print qg-btn btn-secondary" @click="${e => printScreen(e, 'help-guide')}">Print</button>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -53,12 +53,11 @@ export default () => html`
             contain added water but a fruit drink can have water added.
           </p>
           <p>
-            Some food have names that must be used (<button
+            Some food have names that must be used (<a
               data-accordion-item="food-names-prescribed-names"
               class="accordion-btn"
             >
-              prescribed names</button
-            >). For example, ‘fermented processed meat – cooked’ or ‘infant
+              prescribed names</a>). For example, ‘fermented processed meat – cooked’ or ‘infant
             formula’.
           </p>
           <p>
@@ -693,12 +692,12 @@ export default () => html`
           </p>
           <p>
             There are
-            <button
+            <a
               data-accordion-item="food-names-prescribed-names"
               class="accordion-btn"
             >
               prescribed names
-            </button>
+            </a>
             for fermented manufactured meat.
           </p>
           <section>
@@ -873,12 +872,12 @@ export default () => html`
             Non-alcoholic drinks and brewed soft drinks (e.g.: fermented ginger
             beer or kombucha) must not suggest the product is an alcoholic
             beverage. There is a possible risk that brewed soft drinks may
-            <button
+            <a
               data-accordion-item="food-names-alcohol"
               class="accordion-btn"
             >
               contain alcohol
-            </button>
+            </a>
             which need extra labelling requirements.  We recommend you seek
             professional advice to prepare your food label.
           </p>
