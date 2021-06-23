@@ -60,12 +60,10 @@ export default () => html`
               </a>
             </li>
             <li>
-              <button
-                data-accordion-item="one-ingredient"
-                class="accordion-btn"
-              >
+              <a data-accordion-item="one-ingredient"
+                class="accordion-btn">
                 Foods with one ingredient
-              </button>
+              </a>
             </li>
             <li>
               Water that is packaged and labelled in accordance with

@@ -58,10 +58,8 @@ export default () => html`
             contain added water but a fruit drink can have water added.
           </p>
           <p>
-            Some food have names that must be used (<a
-              data-accordion-item="food-names-prescribed-names"
-              class="accordion-btn"
-            >
+            Some food have names that must be used (<a data-accordion-item="food-names-prescribed-names"
+              class="accordion-btn">
               prescribed names</a
             >). For example, ‘fermented processed meat – cooked’ or ‘infant
             formula’.
@@ -700,8 +698,7 @@ export default () => html`
             There are
             <a
               data-accordion-item="food-names-prescribed-names"
-              class="accordion-btn"
-            >
+              class="accordion-btn">
               prescribed names
             </a>
             for fermented manufactured meat.

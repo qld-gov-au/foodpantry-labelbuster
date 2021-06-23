@@ -69,20 +69,16 @@ export default () => html`
             <a data-accordion-item="use-by-date" class="accordion-btn">
               use-by date</a
             >. A food can be eaten past its
-            <button
-              data-accordion-item="best-before-date"
-              class="accordion-btn"
-            >
-              best-before date</button
-            >, but may not look, smell or taste the same as when it was fresh.
+            <a data-accordion-item="best-before-date"
+              class="accordion-btn">
+              best-before date</a>, but may not look, smell or taste the same as when it was fresh.
             Bread with a shelf life of less than 7 days, can be date marked with
             a
-            <button
+            <a
               data-accordion-item="baked-for-on-date"
-              class="accordion-btn"
-            >
+              class="accordion-btn">
               baked-on or baked-for date.
-            </button>
+            </a>
           </p>
 
           <p>
