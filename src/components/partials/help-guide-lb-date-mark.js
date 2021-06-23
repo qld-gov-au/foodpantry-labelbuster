@@ -4,7 +4,12 @@ import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-  <button class="controls btn-print" @click="${e => printScreen(e, 'help-guide')}">Print</button>
+    <button
+      class="controls btn-print qg-btn btn-secondary"
+      @click="${e => printScreen(e, 'help-guide')}"
+    >
+      Print
+    </button>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -56,28 +61,27 @@ export default () => html`
 
           <p>
             A
-            <button data-accordion-item="use-by-date" class="accordion-btn">
+            <a data-accordion-item="use-by-date" class="accordion-btn">
               use-by date
-            </button>
+            </a>
             is required when a food becomes unsafe to eat. Food cannot be sold
             and should not be eaten after its
-            <button data-accordion-item="use-by-date" class="accordion-btn">
-              use-by date</button
+            <a data-accordion-item="use-by-date" class="accordion-btn">
+              use-by date</a
             >. A food can be eaten past its
-            <button
+            <a
               data-accordion-item="best-before-date"
               class="accordion-btn"
             >
-              best-before date</button
-            >, but may not look, smell or taste the same as when it was fresh.
+              best-before date</a>, but may not look, smell or taste the same as when it was fresh.
             Bread with a shelf life of less than 7 days, can be date marked with
             a
-            <button
+            <a
               data-accordion-item="baked-for-on-date"
               class="accordion-btn"
             >
               baked-on or baked-for date.
-            </button>
+            </a>
           </p>
 
           <p>
@@ -92,9 +96,9 @@ export default () => html`
           </ul>
           <p>
             The Food Standards Code gives rules for the
-            <button data-accordion-item="date-format" class="accordion-btn">
+            <a data-accordion-item="date-format" class="accordion-btn">
               format of the date mark
-            </button>
+            </a>
             (how it appears on label). The day and month are required for a food
             with a shelf life of 3 months or less, whereas the month and year
             are required for a food with a longer shelf life.
@@ -466,9 +470,9 @@ export default () => html`
         </button>
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
-            If the food is sold in a small package where the package has a surface
-            area of less than 100 cm<sup>2</sup> only a use-by date needs to be included.
-            For example: A small bar of chocolate.
+            If the food is sold in a small package where the package has a
+            surface area of less than 100 cm<sup>2</sup> only a use-by date
+            needs to be included. For example: A small bar of chocolate.
           </p>
           <section>
             <h4>Further reading</h4>
