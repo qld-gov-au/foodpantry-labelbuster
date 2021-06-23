@@ -4,7 +4,12 @@ import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-  <button class="controls btn-print qg-btn btn-secondary" @click="${e => printScreen(e, 'help-guide')}">Print</button>
+    <button
+      class="controls btn-print qg-btn btn-secondary"
+      @click="${e => printScreen(e, 'help-guide')}"
+    >
+      Print
+    </button>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -111,8 +116,8 @@ export default () => html`
             <li>List ingredients in descending order of ingoing weight</li>
             <li>
               Declare all of the ingredients that make up a
-              <a href="#comp-ingredient"> compound ingredient</a>,
-              if it contributes 5% or more to the final food.
+              <a href="#comp-ingredient"> compound ingredient</a>, if it
+              contributes 5% or more to the final food.
             </li>
             <li>Declare food additives including flavouring substances</li>
             <li>

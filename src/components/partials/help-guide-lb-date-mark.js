@@ -4,7 +4,12 @@ import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
-  <button class="controls btn-print qg-btn btn-secondary" @click="${e => printScreen(e, 'help-guide')}">Print</button>
+    <button
+      class="controls btn-print qg-btn btn-secondary"
+      @click="${e => printScreen(e, 'help-guide')}"
+    >
+      Print
+    </button>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -62,7 +67,8 @@ export default () => html`
             is required when a food becomes unsafe to eat. Food cannot be sold
             and should not be eaten after its
             <a data-accordion-item="use-by-date" class="accordion-btn">
-              use-by date</a>. A food can be eaten past its
+              use-by date</a
+            >. A food can be eaten past its
             <button
               data-accordion-item="best-before-date"
               class="accordion-btn"
@@ -465,9 +471,9 @@ export default () => html`
         </button>
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
-            If the food is sold in a small package where the package has a surface
-            area of less than 100 cm<sup>2</sup> only a use-by date needs to be included.
-            For example: A small bar of chocolate.
+            If the food is sold in a small package where the package has a
+            surface area of less than 100 cm<sup>2</sup> only a use-by date
+            needs to be included. For example: A small bar of chocolate.
           </p>
           <section>
             <h4>Further reading</h4>
