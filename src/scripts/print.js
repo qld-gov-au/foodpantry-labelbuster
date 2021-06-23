@@ -7,6 +7,8 @@ export function printScreen(e, sourceSelector) {
   const checkboxes = contentSource.querySelectorAll("input[type='checkbox']");
   checkboxes.forEach(checkbox => checkbox.setAttribute('checked', true));
   document.body.innerHTML = contentSource.innerHTML;
-  window.print();
-  window.location.reload();
+  setTimeout(() => {
+    window.print();
+    window.location.reload();
+  }, 500);
 }
