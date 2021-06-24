@@ -5,7 +5,7 @@ import { printScreen } from '../../scripts/print';
 export default () => html`
   <div class="side-padding vertical-padding">
     <a
-      class="controls btn-print"
+      class="controls btn-printqg-btn btn-secondary"
       @click="${e => printScreen(e, 'help-guide')}"
     >
       <span class="fa fa-print"></span>
