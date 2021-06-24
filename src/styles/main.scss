@@ -265,6 +265,11 @@ input:disabled {
   text-decoration: none;
   background-color: #d1d1d1;
 }
+// print button styles
+
+.controls.btn-print{
+  cursor: pointer;
+}
 
 @media screen and (max-width: 767px) {
   #cancelconfirmationdialog {
