@@ -1,8 +1,16 @@
 import { html } from 'lit-html';
 import { modifyAccordionState } from '../../scripts/collapse-expand';
+import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
+    <a
+      class="controls btn-print"
+      @click="${e => printScreen(e, 'help-guide')}"
+    >
+      <span class="fa fa-print"></span>
+      Print
+    </a>
     <h2>Complex requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -92,6 +100,14 @@ export default () => html`
                 >Standard 2.7.5</a
               >
               Spirits
+            </li>
+            <li>
+              <a
+                href="https://www.foodstandards.gov.au/consumer/labelling/Pages/Labelling-of-alcoholic-beverages.aspx"
+                target="_blank"
+                rel="noopener"
+                >Labelling of alcoholic beverages</a
+              >
             </li>
           </ul>
         </div>

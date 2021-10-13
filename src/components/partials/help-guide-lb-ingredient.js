@@ -1,8 +1,16 @@
 import { html } from 'lit-html';
 import { modifyAccordionState } from '../../scripts/collapse-expand';
+import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
+    <a
+      class="controls btn-print"
+      @click="${e => printScreen(e, 'help-guide')}"
+    >
+      <span class="fa fa-print"></span>
+      Print
+    </a>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -48,17 +56,16 @@ export default () => html`
           <ul>
             <li>Individual portion packs</li>
             <li>
-              <button data-accordion-item="food-package" class="accordion-btn">
+              <a data-accordion-item="food-package" class="accordion-btn">
                 Foods in small packages
-              </button>
+              </a>
             </li>
             <li>
-              <button
+              <a
                 data-accordion-item="one-ingredient"
-                class="accordion-btn"
-              >
+                class="accordion-btn">
                 Foods with one ingredient
-              </button>
+              </a>
             </li>
             <li>
               Water that is packaged and labelled in accordance with
@@ -70,9 +77,9 @@ export default () => html`
                 Standard 2.6.2
               </a>
               of the Food Standards Code. See
-              <button data-accordion-item="non-alcoholic" class="accordion-btn">
+              <a data-accordion-item="non-alcoholic" class="accordion-btn">
                 non-alcoholic drinks
-              </button>
+              </a>
               in food with extra requirements for more information.
             </li>
             <li>
@@ -88,9 +95,9 @@ export default () => html`
             <li>a name that describes the true nature of the ingredient</li>
             <li>
               a
-              <button data-accordion-item="generic-name" class="accordion-btn">
+              <a data-accordion-item="generic-name" class="accordion-btn">
                 generic name
-              </button>
+              </a>
               specified in the Food Standards Code.
             </li>
           </ul>
@@ -109,8 +116,8 @@ export default () => html`
             <li>List ingredients in descending order of ingoing weight</li>
             <li>
               Declare all of the ingredients that make up a
-              <a href="#comp-ingredient"> compound ingredient </a>
-              , if it contributes 5% or more to the final food.
+              <a href="#comp-ingredient"> compound ingredient</a>, if it
+              contributes 5% or more to the final food.
             </li>
             <li>Declare food additives including flavouring substances</li>
             <li>
@@ -423,7 +430,7 @@ export default () => html`
             <li>
               Tomato paste is an ingredient in a pre-made pizza base. The tomato
               paste is a <b>compound ingredient </b> as it is made up of the
-              following ingredients tomato, canola oil, olive oil, sugar, salt,
+              following ingredients: tomato, canola oil, olive oil, sugar, salt,
               citric acid (330), basil, oregano.
             </li>
             <li>
@@ -1087,11 +1094,11 @@ export default () => html`
                 Hard copies of the Australian Fish Names Standard (AS 5300) are
                 available from FRDC’s Online Shop at
                 <a
-                  href="http://www.seafood.net.au/shop"
+                  href="https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/"
                   target="_blank"
                   rel="noopener"
                 >
-                  http://www.seafood.net.au/shop
+                  https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/
                 </a>
               </li>
             </ul>
@@ -1277,7 +1284,7 @@ export default () => html`
                 <li>whey powder</li>
                 <li>whey protein</li>
                 <li>lactose</li>
-                <li>casei nates</li>
+                <li>caseinates</li>
                 <li>milk proteins</li>
                 <li>milk fat.</li>
               </ul>
@@ -1665,7 +1672,7 @@ export default () => html`
           <p>
             <b
               >If the food sold in a small package where the package has a
-              surface area of less than 100 cm2:</b
+              surface area of less than 100 cm<sup>2</sup>:</b
             >
             <br />
             The ingredient list is not required is not required for food in

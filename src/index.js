@@ -111,8 +111,8 @@ import { Environment } from './environment';
     cssReapplier.reapply(['radio']);
   });
 
-  mutationObserver.observe(
-    document.querySelector(config.form.selector),
-    { childList: true, subtree: true },
-  );
+  mutationObserver.observe(document.querySelector(config.form.selector), {
+    childList: true,
+    subtree: true,
+  });
 })();

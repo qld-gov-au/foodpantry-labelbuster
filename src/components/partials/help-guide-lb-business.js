@@ -1,8 +1,16 @@
 import { html } from 'lit-html';
 import { modifyAccordionState } from '../../scripts/collapse-expand';
+import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
+    <a
+      class="controls btn-print"
+      @click="${e => printScreen(e, 'help-guide')}"
+    >
+      <span class="fa fa-print"></span>
+      Print
+    </a>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">

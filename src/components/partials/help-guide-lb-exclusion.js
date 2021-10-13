@@ -1,8 +1,16 @@
 import { html } from 'lit-html';
 import { modifyAccordionState } from '../../scripts/collapse-expand';
+import { printScreen } from '../../scripts/print';
 
 export default () => html`
   <div class="side-padding vertical-padding">
+    <a
+      class="controls btn-print"
+      @click="${e => printScreen(e, 'help-guide')}"
+    >
+      <span class="fa fa-print"></span>
+      Print
+    </a>
     <h2>General requirements</h2>
     <section class="qg-accordion flex-column" aria-label="Accordion Label">
       <div class="qg-acc-controls">
@@ -691,13 +699,10 @@ export default () => html`
             Non-alcoholic drinks and brewed soft drinks (e.g.: fermented ginger
             beer or kombucha) must not suggest the product is an alcoholic
             beverage. There is a possible risk that brewed soft drinks may
-            <button
-              data-accordion-item="food-names-alcohol"
-              class="accordion-btn"
-            >
+            <a data-accordion-item="food-names-alcohol" class="accordion-btn">
               contain alcohol
-            </button>
-            which need extra labelling requirements.  We recommend you seek
+            </a>
+            which need extra labelling requirements. We recommend you seek
             professional advice to prepare your food label.
           </p>
           <p>

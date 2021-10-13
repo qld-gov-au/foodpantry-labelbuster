@@ -176,7 +176,6 @@ input:disabled {
   display: inline;
   padding: 0;
   font-weight: 600;
-  font-size: 16px;
   cursor: pointer;
 
   small {
@@ -265,6 +264,11 @@ input:disabled {
 #qg-content #qg-section-nav li a.opened:hover {
   text-decoration: none;
   background-color: #d1d1d1;
+}
+// print button styles
+
+.controls.btn-print{
+  cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
