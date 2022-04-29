@@ -1,5 +1,4 @@
-#formio {
-  .formio-component-radio:not(.date-mark-radio-button) {
+.formio-component-radio:not(.date-mark-radio-button) {
     label {
       display: none;
     }
@@ -44,4 +43,3 @@
       }
     }
   }
-}
