@@ -17,12 +17,12 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [21.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Cache
-        uses: actions/cache@v2.1.3
+        uses: actions/cache@v4
         with:
           # A list of files, directories, and wildcard patterns to cache and restore
           path: node_modules
@@ -32,10 +32,10 @@ jobs:
             foodpantry-labelbuster_node_modules-${{ hashFiles('package.json') }}
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
+      - run: npm ci
       - run: npm run lint
       - run: npm run build
       - run: npm run test
