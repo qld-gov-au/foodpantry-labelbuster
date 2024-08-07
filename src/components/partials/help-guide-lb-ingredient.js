@@ -100,14 +100,20 @@ export default () => html`
               </a>
               specified in the Food Standards Code.
             </li>
+            <li>
+                a
+                <a href="#required-name"> required name </a>
+                if the ingredient is, or contains, an allergen
+            </li>
           </ul>
-
           <p>
             The ingredient name may also need a further description to ensure
             that the consumer is not misled about the nature of an ingredient.
             For example: if cheese powder is used as an ingredient, it should be
             listed as “cheese powder” instead of “cheese”.
           </p>
+            <p>Ingredients that contain allergens must be identified in the ingredient list using a <a href="">required name</a>. Allergens include: <a href="">cereals</a> such as barley, oats and rye that contain gluten, <a href="">wheat</a>, <a href="">milk</a>, <a href="">egg</a>, <a href="">peanuts</a>, <a href="">tree nuts</a> (i.e.: almond, Brazil nut, cashew, hazelnut, macadamia, pecan, pine nut, pistachio, walnut), <a href="">fish</a>, <a href="">crustacea</a>, <a href="">mollusc</a>, <a href="">sesame seed</a>, <a href="">soybeans</a>, <a href="">lupin</a> and <a href="">sulphites</a>.
+            </p>
           <p>
             There are requirements in the Food Standards Code for how
             ingredients are listed. You must:
@@ -129,6 +135,9 @@ export default () => html`
               <a href="#alt-ingredient"> alternative ingredients </a>
               are sometimes used to make the food.
             </li>
+            <li>
+                Declare allergens using the <a href="#required-names"> required names </a>and format the required name in bold text.
+            </li>
           </ul>
           <p>
             Some ingredients are
@@ -149,6 +158,16 @@ export default () => html`
                   Standard 1.2.1
                 </a>
                 Requirements to have labels or otherwise provide information
+              </li>
+              <li>
+                <a
+                  href="https://www.legislation.gov.au/F2015L00397/latest/text "
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Standard 1.2.3
+                </a>
+                  Information requirements – warning statements, advisory statements and declarations
               </li>
               <li>
                 <a
@@ -201,6 +220,16 @@ export default () => html`
                 </a>
                 Food additive names and code numbers (for statement of
                 ingredients)
+              </li>
+              <li>
+                <a
+                  href="https://www.legislation.gov.au/F2015L00479/latest/text"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Schedule 9
+                </a>
+                  Mandatory advisory statements and declarations
               </li>
               <li>
                 <a
@@ -493,8 +522,7 @@ export default () => html`
               </ul>
             </li>
             <li>
-              A food or substance that is used as a processing aid. For example:
-              antifoaming or clarifying agent used during food manufacture.
+                A food or substance that is used as a processing aid – except in some circumstances (refer to <a href="#processing-aids">processing aids</a> section).
             </li>
             <li>
               An ingredient of a flavouring substance (additive) – except in
@@ -545,22 +573,9 @@ export default () => html`
                 Processing aids
               </li>
             </ul>
-            <p>Food Standards Australia New Zealand</p>
-            <ul>
-              <li>
-                <a
-                  href="https://www.foodstandards.gov.au/code/userguide/pages/overviewoffoodlabell1267.aspx"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  User Guide – Overview of Food Labelling
-                </a>
-              </li>
-            </ul>
           </section>
         </div>
       </article>
-
       <article>
         <input
           id="food-additive"
