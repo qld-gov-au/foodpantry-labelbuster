@@ -100,14 +100,20 @@ export default () => html`
               </a>
               specified in the Food Standards Code.
             </li>
+            <li>
+                a
+                <a href="#required-name"> required name </a>
+                if the ingredient is, or contains, an allergen
+            </li>
           </ul>
-
           <p>
             The ingredient name may also need a further description to ensure
             that the consumer is not misled about the nature of an ingredient.
             For example: if cheese powder is used as an ingredient, it should be
             listed as “cheese powder” instead of “cheese”.
           </p>
+            <p>Ingredients that contain allergens must be identified in the ingredient list using a <a href="">required name</a>. Allergens include: <a href="">cereals</a> such as barley, oats and rye that contain gluten, <a href="">wheat</a>, <a href="">milk</a>, <a href="">egg</a>, <a href="">peanuts</a>, <a href="">tree nuts</a> (i.e.: almond, Brazil nut, cashew, hazelnut, macadamia, pecan, pine nut, pistachio, walnut), <a href="">fish</a>, <a href="">crustacea</a>, <a href="">mollusc</a>, <a href="">sesame seed</a>, <a href="">soybeans</a>, <a href="">lupin</a> and <a href="">sulphites</a>.
+            </p>
           <p>
             There are requirements in the Food Standards Code for how
             ingredients are listed. You must:
@@ -129,6 +135,9 @@ export default () => html`
               <a href="#alt-ingredient"> alternative ingredients </a>
               are sometimes used to make the food.
             </li>
+            <li>
+                Declare allergens using the <a href="#required-names"> required names </a>and format the required name in bold text.
+            </li>
           </ul>
           <p>
             Some ingredients are
@@ -149,6 +158,16 @@ export default () => html`
                   Standard 1.2.1
                 </a>
                 Requirements to have labels or otherwise provide information
+              </li>
+              <li>
+                <a
+                  href="https://www.legislation.gov.au/F2015L00397/latest/text "
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Standard 1.2.3
+                </a>
+                  Information requirements – warning statements, advisory statements and declarations
               </li>
               <li>
                 <a
@@ -201,6 +220,16 @@ export default () => html`
                 </a>
                 Food additive names and code numbers (for statement of
                 ingredients)
+              </li>
+              <li>
+                <a
+                  href="https://www.legislation.gov.au/F2015L00479/latest/text"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Schedule 9
+                </a>
+                  Mandatory advisory statements and declarations
               </li>
               <li>
                 <a
@@ -434,11 +463,7 @@ export default () => html`
               citric acid (330), basil, oregano.
             </li>
             <li>
-              Dark chocolate chips are used as an ingredient in chocolate chip
-              muffins. The dark chocolate chips are a
-              <b>compound ingredient</b> as they are made up of the following
-              ingredients: sugar, cocoa mass, cocoa butter, emulsifier (soy
-              lecithin), natural vanilla flavour.
+                Dark chocolate chips are used as an ingredient in chocolate chip muffins. The dark chocolate chips are a <b>compound ingredient</b> as they are made up of the following ingredients: sugar, cocoa mass, cocoa butter, natural vanilla flavour.
             </li>
           </ul>
           <p>
@@ -493,8 +518,7 @@ export default () => html`
               </ul>
             </li>
             <li>
-              A food or substance that is used as a processing aid. For example:
-              antifoaming or clarifying agent used during food manufacture.
+                A food or substance that is used as a processing aid – except in some circumstances (refer to <a href="#processing-aids">processing aids</a> section).
             </li>
             <li>
               An ingredient of a flavouring substance (additive) – except in
@@ -545,22 +569,9 @@ export default () => html`
                 Processing aids
               </li>
             </ul>
-            <p>Food Standards Australia New Zealand</p>
-            <ul>
-              <li>
-                <a
-                  href="https://www.foodstandards.gov.au/code/userguide/pages/overviewoffoodlabell1267.aspx"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  User Guide – Overview of Food Labelling
-                </a>
-              </li>
-            </ul>
           </section>
         </div>
       </article>
-
       <article>
         <input
           id="food-additive"
@@ -573,7 +584,7 @@ export default () => html`
         />
         <button class="acc-heading">
           <label for="food-additive">
-            <span class="title"> Food additives </span>
+            <span class="title"> Food additives and flavours</span>
             <span class="arrow"><i></i></span>
           </label>
         </button>
@@ -581,58 +592,30 @@ export default () => html`
           <p>
             <b>If you are adding food additives:</b>
             <br />
-            Food additives are substances added to foods to keep them fresh or
-            to enhance their colour, flavour or texture. They may include food
-            colourings, flavour enhancers (such as MSG) or a range of
-            preservatives. Most food additives are listed on the product label,
-            along with other ingredients, in a descending order by weight
-            (flavours are an exception and do not need to be identified).
+              Food additives are substances added to foods to keep them fresh or to enhance their colour, flavour or texture. They may include food colourings, flavour enhancers (such as MSG) or a range of preservatives. Most food additives are listed on the product label, along with other ingredients, in descending order by weight (flavours are an exception and do not need to be identified).
           </p>
           <p>
-            In most cases you can define the food additive with either its name
-            or the code number. Refer to
-            <a
-              href="https://www.legislation.gov.au/Series/F2015L00477"
-              target="_blank"
-              rel="noopener"
-            >
-              Schedule 7
-            </a>
-            and
-            <a
-              href="https://www.legislation.gov.au/Series/F2015L00478"
-              target="_blank"
-              rel="noopener"
-            >
-              Schedule 8
-            </a>
-            for food additive class names and code numbers. For example:
+              In most cases you can define the food additive with either its name or the code number. Refer to schedule 7 and schedule 8 for food additive class names and code numbers. 
+              <br/>
+              For example, cochineal may be listed as colour (cochineal) or colour (120).
           </p>
-          <ul>
-            <li>
-              cochineal may be listed as Colour (cochineal) or Colour (120)
-            </li>
-            <li>
-              sodium sulphite may be shown as Preservative (sodium sulphite) or
-              Preservative (221).
-            </li>
-          </ul>
-          <p>
-            <b>If you are adding vitamins and minerals:</b>
-            <br />
-          </p>
-          <p>
-            Vitamins and minerals are a specific type of food additive. The
-            vitamin or mineral may be declared using the class name of ‘vitamin’
-            or ‘mineral’.
-          </p>
-          <p>
-            Claims may be made about the presence of vitamins or minerals in
-            food. However, there are complex labelling requirements for making
-            these claims that are not covered by Label Buster. We recommend you
-            seek professional advice from a food labelling consultant to prepare
-            your food label.
-          </p>
+            <p>If the food additive or flavouring contains allergens: 
+                <br/>
+                The allergen must be declared in the ingredient list using the required name. For example: caramel can be listed as caramel [150a <b>milk</b>]. Monosodium L-glutamate (MSG) can be listed MSG (<b>wheat</b>).
+            </p>
+            <p><b>If you are adding vitamins and minerals:</b>
+                <br/>
+                Vitamins  and minerals are a specific type of food additive. The vitamin or mineral may be declared using the class name of ‘vitamin’ or ‘mineral’.
+                <br>
+                Claims may be made about the presence of vitamins or minerals in food. However, there are complex labelling requirements for making these claims that are not covered by Label Buster.
+                <br>
+                It is recommended that you seek professional advice from a food labelling consultant to prepare your food label.
+            </p>
+
+            <p><b>If the food is, or contains sulphites:</b>
+                <br/>
+                Sulphites must be declared in the ingredient list using the required name of ‘sulphites’ when added sulphites are in concentrations of 10mg/kg or more.
+            </p>
           <section>
             <h4>Further reading</h4>
             <p>
@@ -649,6 +632,21 @@ export default () => html`
                 </a>
                 Definitions used throughout the Code
               </li>
+                <li>
+                    <a
+                            href="www.legislation.gov.au/F2015L00397/latest/text"
+                            target="_blank"
+                            rel="noopener"
+                    >
+                        Standard 1.2.3
+                    </a>
+                    Information requirements – warning statements, advisory statements and declarations
+                    <ul>
+                        <li>
+                            see 1.2.3 Division 3 Mandatory declarations
+                        </li>
+                    </ul>
+                </li>
               <li>
                 <a
                   href="https://www.legislation.gov.au/Series/F2015L00392"
@@ -710,6 +708,16 @@ export default () => html`
                 Food additive names and code numbers (for statement of
                 ingredients)
               </li>
+                <li>
+                    <a
+                            href="https://www.legislation.gov.au/F2015L00479/latest/text"
+                            target="_blank"
+                            rel="noopener"
+                    >
+                        Schedule 9
+                    </a>
+                    Mandatory advisory statements and declarations
+                </li>
               <li>
                 <a
                   href="https://www.legislation.gov.au/Series/F2015L00442"
@@ -762,6 +770,7 @@ export default () => html`
             specific conditions:
           </p>
           <ul>
+            <li>cereals</li>
             <li>cheese</li>
             <li>cocoa butter</li>
             <li>crystallised fruit</li>
@@ -784,22 +793,13 @@ export default () => html`
           </p>
           <ul>
             <li>
-              <a href="#bcr"> cereals </a>
-            </li>
-            <li>
               <a href="#oils-margarine"> fats or oils </a>
             </li>
             <li>
               <a href="#fish-seafood"> fish </a>
             </li>
             <li>
-              <a href="#milk-dairy"> milk solids </a>
-            </li>
-            <li>
               <a href="#meat-prod"> offal </a>
-            </li>
-            <li>
-              <a href="#nuts-seeds"> nuts </a>
             </li>
             <li>
               <a href="#bcr"> starch </a>
@@ -903,6 +903,185 @@ export default () => html`
           </section>
         </div>
       </article>
+
+        <article>
+            <input
+                    id="order-ingredient"
+                    type="checkbox"
+                    name="tabs"
+                    tabindex="-1"
+                    aria-controls="id-panel-content-1"
+                    aria-expanded="false"
+                    role="checkbox"
+            />
+            <button class="acc-heading">
+                <label for="processing-aids">
+                    <span class="title"> Processing aids </span>
+                    <span class="arrow"><i></i></span>
+                </label>
+            </button>
+            <div class="collapsing-section" id="id-panel-content-1">
+                <p>
+                    A processing aid is a food or substance that is used during manufacture. For example, an antifoaming or clarifying agent. A processing aid is often an <a href="#exempt-ingredient">exempt ingredient</a>, which does not have to be included in the ingredient list.
+                </p>
+                <p>
+                    However, if it contains an allergen, it must be included in the ingredient list using the words ‘processing aid’ followed by the <a href="#required-names">required name</a> of the allergen.
+                </p>
+                <p>
+                    For example:
+                </p>
+                <ul>
+                    <li>Processing aid (wheat)</li>
+                    <li>Processing aid (wheat, egg)</li>
+                </ul>
+                <section>
+                    <h4>Further reading</h4>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
+                    <ul>
+                        <li>
+                            <a
+                                    href="https://www.legislation.gov.au/F2015L00397/latest/text"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                Standard 1.2.3
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    href="https://www.legislation.gov.au/F2015L00479/latest/text"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                Schedule 9
+                            </a>
+                            Mandatory advisory statements and declarations
+                        </li>
+                    </ul>
+                    <p>Australian Standard Fish Names</p>
+                    <ul>
+                        <li>
+                            A searchable database of Australian Standard Fish Names is
+                            available at
+                            <a
+                                    href="http://www.fishnames.com.au"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                http://www.fishnames.com.au
+                            </a>
+                        </li>
+                        <li>
+                            Hard copies of the Australian Fish Names Standard (AS 5300) are
+                            available from FRDC’s Online Shop at
+                            <a
+                                    href="https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+
+        <article>
+            <input
+                    id="order-ingredient"
+                    type="checkbox"
+                    name="tabs"
+                    tabindex="-1"
+                    aria-controls="id-panel-content-1"
+                    aria-expanded="false"
+                    role="checkbox"
+            />
+            <button class="acc-heading">
+                <label for="required-names">
+                    <span class="title"> Required names </span>
+                    <span class="arrow"><i></i></span>
+                </label>
+            </button>
+            <div class="collapsing-section" id="id-panel-content-1">
+                <p>
+                    Required names are to be used in the ingredient list and the separate summary statement to identify allergens in the food.
+                </p>
+                <ul>
+                    <li>Fish, crustacea and molluscs must be separately declared in both the ingredient list and summary statement, using ‘fish’, ‘crustacean’ and ‘mollusc’ as required names.</li>
+                    <li>The following tree nuts must be declared separately in the ingredient list and summary statement using the required name– ‘almond’, ‘Brazil nut’, ‘cashew’, ‘hazelnut’, ‘macadamia’, ‘pecan’, ‘pine nut’, ‘pistachio’, ‘walnut’.</li>
+                    <li>‘Wheat’ must be used as the required name in the ingredient list and summary statement when wheat (or its hybrids) is present. If gluten is present, then ‘gluten’ must also be included in the summary statement.</li>
+                    <li>‘Rye’, ‘barley’ and ‘oats’ (if they contain gluten) must be used as the required names in the ingredient list when these cereals (or their hybrids) are present. However, they must be declared as ‘gluten’ in the summary statement.</li>
+                    <li>Soybean must be declared in the ingredient list as either ‘soy’, ‘soya’ or ‘soybean’ and in the summary statement as ‘soy’.</li>
+                    <li>The required names for other allergens for use in the ingredient list and summary statement, are ‘sulphites’ (when added in concentrations of 10 mg/kg or more), ‘milk’, ‘egg’, ‘sesame’, ‘lupin’ and ‘peanut’.</li>
+                    <li>The term ‘processing aid’ (or its plural) must be listed in the ingredient list in association with                                     the allergen/s it contains or is derived from, e.g. processing aids (wheat, egg).</li>
+                </ul>
+                <p>
+                    The required name must be the same font size as all other ingredient names and printed in bold font type.
+                </p>
+                <p>The allergen may be present in the food as:</p>
+                <ul>
+                    <li>An ingredient</li>
+                    <li>An ingredient of a compound ingredient</li>
+                    <li>A substance used as a processing aid, or an ingredient or component of that substance.</li>
+                    <li>A substance used as a food additive, or an ingredient or component of that substance.</li>
+                </ul>
+                <section>
+                    <h4>Further reading</h4>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
+                    <ul>
+                        <li>
+                            <a
+                                    href="https://www.legislation.gov.au/F2015L00397/latest/text"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                Standard 1.2.3
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    href="https://www.legislation.gov.au/F2015L00479/latest/text"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                Schedule 9
+                            </a>
+                            Mandatory advisory statements and declarations
+                        </li>
+                    </ul>
+                    <p>Australian Standard Fish Names</p>
+                    <ul>
+                        <li>
+                            A searchable database of Australian Standard Fish Names is
+                            available at
+                            <a
+                                    href="http://www.fishnames.com.au"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                http://www.fishnames.com.au
+                            </a>
+                        </li>
+                        <li>
+                            Hard copies of the Australian Fish Names Standard (AS 5300) are
+                            available from FRDC’s Online Shop at
+                            <a
+                                    href="https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                https://infostore.saiglobal.com/en-au/Standards/AS-5300-2019-111200_SAIG_AS_AS_2741382/
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </article>
     </section>
   </div>
 
@@ -943,32 +1122,31 @@ export default () => html`
         </button>
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
-            <b
-              >If the cereal is wheat, rye, barley, oats or spelt or a
-              hybridised strain of one of those cereals:
-            </b>
-            <br />
-            The name of the cereal ingredient must be declared in the ingredient
-            list.
+            <b>If the ingredient is a cereal that is barley, oats, rye or a hybridised strain of barley, oats, rye:</b>
+            <br/>The name of the cereal ingredient must be declared in the ingredient list using the <a href="#required-names">required name</a> ‘barley’, ‘oats’, ‘rye’ when:
           </p>
+            <ul>
+                <li>the cereal or its hybridised strain contains gluten and the cereal is used to make foods other than beer or spirits e.g. Oats are used as an ingredient to make a muesli bar. The ingredients list for the muesli bar is described as – <b>oats</b>, coconut, sultanas, sugar, honey, cinnamon.
+                </li>
+            </ul>
           <p>
-            <b
-              >The generic name of starch must not be used to describe an
-              ingredient:</b
-            >
-            <br />
-            If the source of the starch is wheat, rye, barley, oats or spelt, or
-            hybridised strains of those cereals—the name of the cereal must be
-            declared.
+            <b>If the ingredient is a cereal that is wheat or a hybridised strain of wheat:</b>
+            <br/>The name of the cereal ingredient must be declared in the ingredient list using the required name ‘wheat’, other than when it is found in:
           </p>
+            <ul>
+              <li>beer or spirits</li>
+              <li>alcohol distilled from wheat</li>
+              <li>glucose syrups that are made from wheat starch and that:
+                <ul>
+                    <li>have been subject to a refining process that has removed gluten protein content to the lowest level that is reasonably achievable, not exceeding 20mg/kg.</li>
+                </ul>
+                  e.g. 1. If spelt is an ingredient, the required name ‘wheat’ must be used in the ingredient list i.e. spelt (<b>wheat</b>)
+                  2. If triticale (a wheat rye hybrid) is an ingredient, the required names ‘wheat’ and ‘rye’ must be used in the ingredient list as – triticale (<b>wheat, rye</b>).
+              </li>
+            </ul>
           <p>
-            <b
-              >The generic name of starch may be used to describe an
-              ingredient:</b
-            >
-            <br />
-            The name ‘starch’ may be used for any unmodified starch or any
-            starch which has been modified by either physical means or enzymes.
+            <b>If the ingredient is starch:</b>
+            <br/>The generic name of ‘starch’ may be used to describe an ingredient for any unmodified starch or any starch which has been modified by other means or enzymes.
           </p>
           <section>
             <h4>Further reading</h4>
@@ -976,6 +1154,15 @@ export default () => html`
               <i>Australia New Zealand Food Standards Code</i>
             </p>
             <ul>
+                <li>
+                    <a
+                            href="www.legislation.gov.au/F2015L00397/latest/text"
+                            target="_blank"
+                            rel="noopener"
+                    >
+                        Standard 1.2.3
+                    </a> Information requirements – warning statements, advisory statements and declarations
+                </li>
               <li>
                 <a
                   href="https://www.legislation.gov.au/Series/F2015L00392"
@@ -992,6 +1179,16 @@ export default () => html`
                   </li>
                 </ul>
               </li>
+                <li>
+                    <a
+                            href="www.legislation.gov.au/F2015L00479/latest/text"
+                            target="_blank"
+                            rel="noopener"
+                    >
+                        Schedule 9
+                    </a>
+                    Mandatory advisory statements and declarations
+                </li>
               <li>
                 <a
                   href="https://www.legislation.gov.au/Series/F2015L00480"
@@ -1006,7 +1203,63 @@ export default () => html`
           </section>
         </div>
       </article>
-
+        
+        <article>
+            <input
+                    id="bcr"
+                    type="checkbox"
+                    name="tabs"
+                    tabindex="-1"
+                    aria-controls="id-panel-content-1"
+                    aria-expanded="false"
+                    role="checkbox"
+            />
+            <button class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145849" />
+                <label for="bcr">
+                    <span class="title"> Eggs and egg products </span>
+                    <span class="arrow"><i></i></span>
+                </label>
+            </button>
+            <div class="collapsing-section" id="id-panel-content-1">
+                <p>
+                    <b>If the food is, or contains eggs:</b>
+                    <br/>
+                    Egg must be declared in the ingredient list using the <a href="#required-names">required name</a> of 'egg' or 'eggs'. For example: The ingredients list for egg noodles is described as -- <b>Wheat</b> flour, water, <b>eggs</b>, salt.
+                </p>
+                <section>
+                    <h4>Further reading</h4>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
+                    <ul>
+                        <li>
+                            <a
+                                    href="https://www.legislation.gov.au/F2015L00397/latest/text"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                Standard 1.2.3
+                            </a> Information requirements – warning statements, advisory statements and declarations
+                            <ul>
+                                <li>See 1.2.3 Division 3 Mandatory declarations</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a
+                                    href="https://www.legislation.gov.au/F2015L00479/latest/text"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                Schedule 9
+                            </a>
+                            Mandatory advisory statements and declarations
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+        
       <article>
         <input
           id="fish-seafood"
@@ -1028,20 +1281,23 @@ export default () => html`
           <p>
             <b>If the food is, or contains crustacea:</b>
             <br />
-            The name of the crustacea must be declared in the ingredient list.
-            <br />
-            For example: crab, crayfish, prawns, lobster, oyster, squid.
+              The name of the crustacea, followed by the required name ‘crustacean’ must be declared in the ingredient list.
+              <br />
+              e.g. crab (<b>crustacean</b>), crayfish (<b>crustacean</b>).
           </p>
           <p>
             <b>If the food is, or contains fish:</b>
             <br />
-            The name of the fish must be declared in the ingredient list.
-            <br />
-            For example: Barramundi, hake,
+              The name of the crustacea, followed by the required name ‘fish’ must be declared in the ingredient list.
+              <br />
+              e.g. barramundi (<b>fish</b>), hake (<b>fish</b>).
           </p>
           <p>
-            Note: This does not apply for isinglass derived from swim bladders
-            and used as a clarifying agent in beer or wine.
+            <b>If the food is, or contains molluscs:</b>
+            <br />
+              The name of the mollusc, followed by the required name ‘mollusc’ must be declared in the ingredient list.
+              <br />
+              e.g. oyster (<b>mollusc</b>), squid (<b>mollusc</b>).
           </p>
           <section>
             <h4>Further reading</h4>
@@ -1067,6 +1323,16 @@ export default () => html`
                 </ul>
               </li>
               <li>
+                <a
+                  href="www.legislation.gov.au/F2015L00479/latest/text"
+                  target="_blank"
+                  rel="noopener"
+                >
+                    Schedule 9
+                </a>
+                  Mandatory advisory statements and declarations
+              </li>
+                <li>
                 <a
                   href="https://www.legislation.gov.au/Series/F2015L00480"
                   target="_blank"
@@ -1166,6 +1432,72 @@ export default () => html`
         </div>
       </article>
 
+        <article>
+            <input
+                    id="fruit-veg"
+                    type="checkbox"
+                    name="tabs"
+                    tabindex="-1"
+                    aria-controls="id-panel-content-1"
+                    aria-expanded="false"
+                    role="checkbox"
+            />
+            <button class="acc-heading">
+                <img src="https://www.qld.gov.au/?a=145857" />
+                <label for="fruit-veg">
+                    <span class="title"> Legumes and pulses </span>
+                    <span class="arrow"><i></i></span>
+                </label>
+            </button>
+            <div class="collapsing-section" id="id-panel-content-1">
+                <p>
+                    <b>If the food is, or contains soy</b>
+                    <br />
+                    Soy must be declared in the ingredient list using the <a href="#required-names">required name</a> of either 'soy', 'soya', or 'soybean', except for:
+                </p>
+                <ul>
+                    <li>soybean oil that has been degummed, neutralised, bleached and deodorised</li>
+                    <li>soybean derivatives that are tocopherol or phytosterol</li>
+                </ul>
+                <p>
+                    <b>If the food is, or contains lupin:</b>
+                    <br />
+                    Lupin must be declared in the ingredient list using the <a href="#required-names">required name</a> of 'lupin'.
+                </p>
+                <section>
+                    <h4>Further reading</h4>
+                    <p>
+                        <i>Australia New Zealand Food Standards Code</i>
+                    </p>
+                    <ul>
+                        <li>
+                            <a
+                                    href="https://www.legislation.gov.au/F2015L00397/latest/text"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                Standard 1.2.3
+                            </a>
+                            Information requirements -- warning statements, advisory statements and declarations
+                            <ul>
+                                <li>See 1.2.3 Division 3 mandatory declarations</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a
+                                    href="www.legislation.gov.au/F2015L00479/latest/text"
+                                    target="_blank"
+                                    rel="noopener"
+                            >
+                                Schedule 9
+                            </a>
+                            Mandatory advisory statements and declarations
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+        
       <article>
         <input
           id="meat-prod"
@@ -1269,20 +1601,18 @@ export default () => html`
           </label>
         </button>
         <div class="collapsing-section" id="id-panel-content-1">
-          <p>
-            <b>
-              The generic name of milk solid may be used to describe an
-              ingredient that is:
-            </b>
-          </p>
+            <p>Milk or food or ingredients containing milk must be identified in the ingredient list using the required name ‘milk’ (except when the food is alcohol distilled from whey).</p>
+            <p>If the ingredient name contains the word ‘milk’ as a separate word, it meets the required name requirements, but the required name must be in <b>bold</b> type e.g. <b>milk</b> solids, <b>milk</b> protein.</p>
+            <p>The required name must be a separate word. For example, buttermilk must be listed in the ingredient list as buttermilk (<b>milk</b>).</p>
+            <p>If the ingredient name does not include the required name, then the required name must be provided with the ingredient name. For example: cheese (<b>milk</b>).</p>
+            <p><b>The generic name of ‘milk solid’ may be used to describe an ingredient that is:</b></p>
           <ul>
-            <li>milk powder, skim milk powder or dried milk products; or</li>
-            <li>
-              any 2 or more of the following ingredients:
-              <ul>
+            <li>Milk powder, skim milk powder or dried milk products; or</li>
+            <li>Any 2 or more of the following ingredients:
+                <ul>
                 <li>whey</li>
                 <li>whey powder</li>
-                <li>whey protein</li>
+                <li>whey proteins</li>
                 <li>lactose</li>
                 <li>caseinates</li>
                 <li>milk proteins</li>
@@ -1446,11 +1776,20 @@ export default () => html`
           <p>
             <b>If the food is, or contains nuts:</b>
             <br />
-            The name of the nut must be declared in the ingredient list.
-            <br />
-            For example: Almonds, cashews, brazil nuts, hazelnuts, macadamia
-            nuts, peanuts, pecans, pine nuts, walnuts
+              The name of the nut must be declared in the ingredient list using the required name for the nut:
           </p>
+            <ul>
+                <li>almond</li>
+                <li>Brazil nut</li>
+                <li>cashew</li>
+                <li>hazelnut</li>
+                <li>macadamia</li>
+                <li>peanut</li>
+                <li>pecan</li>
+                <li>pine nut</li>
+                <li>pistachio</li>
+                <li>walnut.</li>
+            </ul>
           <section>
             <h4>Further reading</h4>
             <p>
@@ -1459,30 +1798,28 @@ export default () => html`
             <ul>
               <li>
                 <a
-                  href="https://www.legislation.gov.au/Series/F2015L00397"
+                  href="www.legislation.gov.au/F2015L00397/latest/text"
                   target="_blank"
                   rel="noopener"
                 >
-                  Standard 1.2.3
+                    Standard 1.2.3
                 </a>
-                Information requirements – warning statements, advisory
-                statements and declarations
-                <ul>
+                  Information requirements – warning statements, advisory statements and declarations
+                  <ul>
                   <li>
-                    See section 1.2.3—4 Mandatory declaration of certain foods
-                    or substances in food
+                      see 1.2.3 Division 3 Mandatory declarations
                   </li>
                 </ul>
               </li>
               <li>
                 <a
-                  href="https://www.legislation.gov.au/Series/F2015L00480"
+                  href="www.legislation.gov.au/F2015L00479/latest/text"
                   target="_blank"
                   rel="noopener"
                 >
-                  Schedule 10
+                  Schedule 9
                 </a>
-                Generic names of ingredients and conditions for their use
+                  Mandatory advisory statements and declarations
               </li>
             </ul>
           </section>
@@ -1508,26 +1845,15 @@ export default () => html`
         </button>
         <div class="collapsing-section" id="id-panel-content-1">
           <p>
-            <b>If the food contains fats and oils:</b>
+            <b>If using the generic name of fats or oils:</b>
             <br />
-            The ingredient list must declare:
+              The ingredient list must declare:
           </p>
           <ul>
             <li>whether the source is animal or vegetable</li>
-            <li>
-              if the source of oil is lupin, peanut or sesame—the specific
-              source name
-            </li>
-            <li>
-              if the source of oil is soybeans and the oil has not been
-              degummed, neutralised, bleached and deodorised—the specific source
-              name
-            </li>
-            <li>
-              if the food is a dairy product, including ice cream—the specific
-              source of animal fats or oils.
-            </li>
+            <li>if the food is a dairy product, including ice cream – the specific source of animal fats or oils.</li>
           </ul>
+            <p>The generic name must not be used for diacylglycerol oil.</p>
           <section>
             <h4>Further reading</h4>
             <p>
@@ -1536,7 +1862,7 @@ export default () => html`
             <ul>
               <li>
                 <a
-                  href="https://www.legislation.gov.au/Series/F2015L00461"
+                  href="www.legislation.gov.au/F2015L00461/latest/text "
                   target="_blank"
                   rel="noopener"
                 >
@@ -1546,29 +1872,26 @@ export default () => html`
               </li>
               <li>
                 <a
-                  href="https://www.legislation.gov.au/Series/F2015L00392"
+                  href="www.legislation.gov.au/F2015L00392/latest/text"
                   target="_blank"
                   rel="noopener"
                 >
-                  Standard 1.2.4
+                    Standard 1.2.4 
                 </a>
-                Information requirements – statement of ingredients.
+                  Information requirements – statement of ingredients
                 <ul>
-                  <li>
-                    See section 1.2.4—4 Ingredients to be listed by common,
-                    descriptive or generic name
-                  </li>
+                  <li>see section 1.2.4 Ingredients to be listed by common, descriptive or generic name.</li>
                 </ul>
               </li>
               <li>
                 <a
-                  href="https://www.legislation.gov.au/Series/F2015L00480"
+                  href="www.legislation.gov.au/F2015L00480/latest/text"
                   target="_blank"
                   rel="noopener"
                 >
                   Schedule 10
                 </a>
-                Generic names of ingredients and conditions for their use
+                  Generic names of ingredients and conditions for their use
               </li>
             </ul>
           </section>
