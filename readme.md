@@ -212,9 +212,9 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Cache
-        uses: actions/cache@v2.1.3
+        uses: actions/cache@v3
         with:
           # A list of files, directories, and wildcard patterns to cache and restore
           path: node_modules
@@ -223,7 +223,7 @@ jobs:
           restore-keys: foodpantry-labelbuster-node_modules
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
@@ -256,9 +256,9 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Cache
-        uses: actions/cache@v2.1.3
+        uses: actions/cache@v3
         with:
           # A list of files, directories, and wildcard patterns to cache and restore
           path: node_modules
@@ -267,7 +267,7 @@ jobs:
           restore-keys: foodpantry-labelbuster-node_modules
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
@@ -276,7 +276,7 @@ jobs:
       - run: npm run test
 
       - name: Archive artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: dist
           path: |
@@ -291,7 +291,7 @@ jobs:
         if: success()
 
       - name: Trigger Webhook
-        uses: distributhor/workflow-webhook@v1.0.5
+        uses: distributhor/workflow-webhook@v3
         env:
           webhook_url: ${{ secrets.WEBHOOK_URL }}
           webhook_secret: ${{ secrets.WEBHOOK_SECRET }}

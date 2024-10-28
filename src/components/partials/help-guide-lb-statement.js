@@ -80,7 +80,7 @@ export default () => html`
               >
                 Schedule 9
               </a>
-              Mandatory advisory statements
+                Mandatory advisory statements and declarations
             </li>
           </ul>
           <p>Food Standards Australia and New Zealand</p>
@@ -131,6 +131,19 @@ export default () => html`
             <li>A substance or food used as a processing aid</li>
             <li>An ingredient or component of a processing aid.</li>
           </ul>
+            
+            <p>
+                The presence of an allergen in a food must be included in the ingredient list and in a summary statement using the required names. The summary statement must be:
+            </p>
+            <ul>
+                <li>separate from the ingredient list</li>
+                <li>located near the ingredient list</li>
+                <li>printed in bold font</li>
+                <li>use the same typeface and size as the ingredient list</li>
+                <li>start with the word ‘Contains’</li>
+                <li>must not include any other words except for the required names that can be used for the summary statement.</li>
+            </ul>
+            <p>Note: Sometimes a different required name must be used in the ingredient list and summary statement.</p>
           <p>
             Allergen declarations are required on individual portion packs that
             have a surface area of 30cm2 or greater.
@@ -158,28 +171,33 @@ export default () => html`
             </li>
             <li>
               <a
-                href="https://www.legislation.gov.au/Details/F2017C00418"
+                href="https://www.legislation.gov.au/F2015L00397/latest/text"
                 target="_blank"
                 rel="noopener"
               >
                 Standard 1.2.3
               </a>
-              Information requirements – warning statements, advisory statements
-              and declarations
+                Information requirements – warning statements, advisory statements and declarations.
+                <ul>
+                    <li>See 1.2.3 Division 3 Mandatory declarations</li>
+                </ul>
             </li>
-          </ul>
-          <p>Food Standards Australia and New Zealand</p>
-          <ul>
             <li>
               <a
-                href="https://www.foodstandards.gov.au/code/userguide/Documents/Guide%20to%201.2.3%20-%20Warning%20and%20Advisory%20Statements.pdf"
+                href="https://www.legislation.gov.au/Details/F2016C00827"
                 target="_blank"
                 rel="noopener"
               >
-                User Guide – Warning and Advisory Statements and Declarations
+                  Schedule 9
               </a>
+                Mandatory advisory statements and declarations
             </li>
           </ul>
+            <p>Allergen Bureau - the peak industry body representing food industry allergen management in Australia and New Zealand.
+                <ul>
+                    <li>https://allergenbureau.net/</li>
+                </ul>                
+            </p>
         </div>
       </article>
 

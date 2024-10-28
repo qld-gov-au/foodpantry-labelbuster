@@ -308,7 +308,7 @@ export default () => html`
                 rel="noopener"
                 >Schedule 9
               </a>
-              Mandatory advisory statements
+              Mandatory advisory statements and declarations
             </li>
           </ul>
         </div>
@@ -652,6 +652,93 @@ export default () => html`
           </ul>
         </div>
       </article>
+
+        <article>
+            <input
+                    id="special-food"
+                    type="checkbox"
+                    name="tabs"
+                    tabindex="-1"
+                    aria-controls="id-panel-content-1"
+                    aria-expanded="false"
+                    role="checkbox"
+            />
+            <button class="acc-heading">
+                <label for="required-name">
+                    <span class="title"> Required names </span>
+                    <span class="arrow"><i></i></span>
+                </label>
+            </button>
+        
+            <div class="collapsing-section" id="id-panel-content-1">
+                <p>
+                    Special purpose foods have complex labelling requirements, such as
+                    an expanded nutrition information panel, compositional requirements
+                    and advisory statements. Special purpose foods include:
+                </p>
+                <ul>
+                    <li>Infant formula products</li>
+                    <li>Foods for infants</li>
+                    <li>
+                        Formulated meal replacements and formulated supplementary foods
+                    </li>
+                    <li>Formulated supplementary sports foods</li>
+                    <li>Food for special medical purposes</li>
+                </ul>
+        
+                <h4>Further reading</h4>
+                <p>
+                    <i>Australia New Zealand Food Standards Code</i>
+                </p>
+                <ul>
+                    <li>
+                        <a
+                                href="https://www.legislation.gov.au/Series/F2015L00409"
+                                target="_blank"
+                                rel="noopener"
+                        >Standard 2.9.1</a
+                        >
+                        Infant formula products
+                    </li>
+                    <li>
+                        <a
+                                href="https://www.legislation.gov.au/Series/F2015L00417"
+                                target="_blank"
+                                rel="noopener"
+                        >Standard 2.9.2</a
+                        >
+                        Food for infants
+                    </li>
+                    <li>
+                        <a
+                                href="https://www.legislation.gov.au/Series/F2015L00419"
+                                target="_blank"
+                                rel="noopener"
+                        >Standard 2.9.3</a
+                        >
+                        Formulated meal replacements and formulated supplementary foods
+                    </li>
+                    <li>
+                        <a
+                                href="https://www.legislation.gov.au/Series/F2015L00421"
+                                target="_blank"
+                                rel="noopener"
+                        >Standard 2.9.4</a
+                        >
+                        Formulated supplementary sports foods
+                    </li>
+                    <li>
+                        <a
+                                href="https://www.legislation.gov.au/Series/F2015L00472"
+                                target="_blank"
+                                rel="noopener"
+                        >Standard 2.9.5</a
+                        >
+                        Food for special medical purposes
+                    </li>
+                </ul>
+            </div>
+        </article>
     </section>
   </div>
 `;
