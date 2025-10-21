@@ -27,7 +27,7 @@
     "url": "https://github.com/DanielTurner/label-buster/issues"
   },
   "scripts": {
-    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
+    "lint:eslint": "eslint --ext .js --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.html\" --check --ignore-path .gitignore",
     "lint:prettierjs": "prettier \"**/*.js\" --check --ignore-path .gitignore",
