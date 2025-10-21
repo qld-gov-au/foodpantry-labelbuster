@@ -5,7 +5,7 @@ name: Publish
 
 on:
   push:
-    branches: ['master', 'develop', 'uat']
+    branches: ['master', 'develop', 'uat', 'food-pantry--label-buster-uplift']
     # tags: ['*'] #todo work out how to get tag name reliably to send to next repo
 
 jobs:
