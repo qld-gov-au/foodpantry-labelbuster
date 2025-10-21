@@ -792,14 +792,14 @@ export default () => html`
             conditions in the Food Standards Code:
           </p>
           <ul>
-            <li>
+              <li>
               <a href="#oils-margarine"> fats or oils </a>
             </li>
             <li>
-              <a href="#fish-seafood"> fish </a>
+              <a href="#milk-solids"> milk solids </a>
             </li>
             <li>
-              <a href="#meat-prod"> offal </a>
+              <a href="#offal"> offal </a>
             </li>
             <li>
               <a href="#bcr"> starch </a>
