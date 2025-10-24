@@ -27,7 +27,7 @@
     "url": "https://github.com/DanielTurner/label-buster/issues"
   },
   "scripts": {
-    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
+    "lint:eslint": "eslint --ext .js --ignore-path .gitignore",
     "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
     "lint:prettier": "prettier \"**/*.html\" --check --ignore-path .gitignore",
     "lint:prettierjs": "prettier \"**/*.js\" --check --ignore-path .gitignore",
@@ -44,7 +44,8 @@
     "build:squiz": "parcel build src/index.html --no-source-maps",
     "svg-icons-to-png": "convert-svg-to-png --height 24px --width 24px src/assets/*.svg && mv src/assets/*.png static",
     "postinstall": "node ./postinstall.js",
-    "formatFile": "node ./formatFile.js"
+    "formatFile": "node ./formatFile.js",
+    "dev:template": "parcel src/swe-template.html"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
