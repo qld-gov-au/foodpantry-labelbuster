@@ -212,9 +212,9 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           # A list of files, directories, and wildcard patterns to cache and restore
           path: node_modules
@@ -256,9 +256,9 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           # A list of files, directories, and wildcard patterns to cache and restore
           path: node_modules
@@ -276,7 +276,7 @@ jobs:
       - run: npm run test
 
       - name: Archive artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: |
