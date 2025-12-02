@@ -45,7 +45,8 @@
     "svg-icons-to-png": "convert-svg-to-png --height 24px --width 24px src/assets/*.svg && mv src/assets/*.png static",
     "postinstall": "node ./postinstall.js",
     "formatFile": "node ./formatFile.js",
-    "dev:template": "parcel src/swe-template.html"
+    "dev:swe": "parcel src/swe-template.html",
+    "dev:qgds": "parcel src/qgds-index.html"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -94,5 +95,8 @@
   },
   "dependencies": {
     "lit-html": "^1.3.0"
+  },
+  "overrides": {
+    "deasync": "0.1.31"
   }
 }
