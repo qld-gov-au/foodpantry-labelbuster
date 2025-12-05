@@ -1,5 +1,5 @@
-@import './components/help-guide.scss';
-@import './formio/radio.scss';
+@use './components/help-guide';
+@use './formio/radio';
 
 .formio-form {
   > div {
